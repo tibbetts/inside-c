@@ -44,53 +44,31 @@
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#hello-world-c" aria-controls="hello-world-c" role="tab" data-toggle="tab">C Code</a></li>
-          <li role="presentation"><a href="#hello-world-s" aria-controls="hello-world-s" role="tab" data-toggle="tab">GCC Assembly</a></li>
-          <li role="presentation"><a href="#hello-world-mac" aria-controls="hello-world-mac" role="tab" data-toggle="tab">Mac Assembly</a></li>
+          <li role="presentation" class="active"><a href="#hello-world-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#hello-world-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#hello-world-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#hello-world-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#hello-world-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+          <li role="presentation"><a href="#hello-world-mac" role="tab" data-toggle="tab">Mac Assembly</a></li>
         </ul>
 
       <div class="tab-content">
         <div role="tab-panel" class="tab-pane active" id="hello-world-c">
-          Our source code, as you might expect, looks like this (<a href="hello-world.c">click here for the source in a file.</a>):
-          <pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main (int argc, char **argv) {
-    printf("Hello World.\n");
-    return 0;
-}
-          </code></pre>
+          Our source code, as you might expect, looks like this (<a href="../c/hello-world.c">click here for the source in a file.</a>):
+          <pre data-src="../c/hello-world.c"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="hello-world-s">
-
-      We turn that into assembly, and it looks like <a href="hello-world.s">hello-world.s</a>.
-      <pre><code class="language-nasm">	.file	"hello-world.c"
-	.version	"01.01"
-gcc2_compiled.:
-.section	.rodata
-.LC0:
-	.string	"Hello World.\n"
-.text
-	.align 4
-.globl main
-	.type	 main,@function
-main:
-	pushl %ebp
-	movl %esp,%ebp
-	subl $8,%esp
-	addl $-12,%esp
-	pushl $.LC0
-	call printf
-	addl $16,%esp
-	xorl %eax,%eax
-	jmp .L2
-	.p2align 4,,7
-.L2:
-	leave
-	ret
-.Lfe1:
-	.size	 main,.Lfe1-main
-	.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
-      </pre></code>
+        <div role="tab-panel" class="tab-pane" id="hello-world-clang-s">
+          We turn that into assembly, and it looks like <a href="../c/hello-world-clang.s">hello-world-clang.s</a>.
+          <pre data-src="../c/hello-world-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-world-ll">
+          <pre data-src="../c/hello-world.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-world-gcc-s">
+          <pre data-src="../c/hello-world-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-world-listing">
+          <pre data-src="../c/hello-world.listing"></pre>
         </div>
         <div role="tab-panel" class="tab-pane" id="hello-world-mac">
           Or on the mac:
@@ -114,6 +92,46 @@ main:
       <code>cc -g -c -Wa,-adhls=hello-world.listing hello-world.c</code>
       The output of that will look like <a href="hello-world.listing">hello-world.listing</a>
 
+    <h2>Crash Course in x86_64 Assembly</h2>
+
+    <a href="http://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf">http://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf</a>
+
+    <h3>Registers</h3>
+    <table class="table">
+      <tr><th>64 bit</th><th>32 bit</th><th>16 bit</th><th>Second 8bit</th><th>8 bit</th><th>Usage</th></tr>
+      <tr><td>%rax</td><td>%eax</td><td>%ax</td><td>%ah</td><td>%al</td><td>Return value</td></tr>
+      <tr><td>%rbx</td><td>%ebx</td><td>%ax</td><td>%bh</td><td>%bl</td><td>Callee saved</td></tr>
+      <tr><td>%rcx</td><td>%ecx</td><td>%cx</td><td>%ch</td><td>%cl</td><td>4th argument</td></tr>
+      <tr><td>%rdx</td><td>%edx</td><td>%dx</td><td>%dh</td><td>%dl</td><td>3rd argument</td></tr>
+      <tr><td>%rsi</td><td>%esi</td><td>%si</td><td></td><td>%sil</td><td>2nd argument</td></tr>
+      <tr><td>%rdi</td><td>%edi</td><td>%di</td><td></td><td>%dil</td><td>1st argument</td></tr>
+      <tr><td>%rbp</td><td>%ebp</td><td>%bp</td><td></td><td>%bpl</td><td>Basis Pointer, Callee saved</td></tr>
+      <tr><td>%rsp</td><td>%esp</td><td>%sp</td><td></td><td>%spl</td><td>Stack pointer</td></tr>
+      <tr><td>%r8</td><td>%r8d</td><td>%r8w</td><td></td><td>%r8b</td><td>5th argument</td></tr>
+      <tr><td>%r9</td><td>%r9d</td><td>%r9w</td><td></td><td>%r9b</td><td>6th argument</td></tr>
+      <tr><td>%r10</td><td>%r10d</td><td>%r10w</td><td></td><td>%r10b</td><td>Callee saved</td></tr>
+      <tr><td>%r11</td><td>%r11d</td><td>%r11w</td><td></td><td>%r11b</td><td>Used for linking</td></tr>
+      <tr><td>%r12</td><td>%r12d</td><td>%r12w</td><td></td><td>%r12b</td><td>Unused for C</td></tr>
+      <tr><td>%r13</td><td>%r13d</td><td>%r13w</td><td></td><td>%r13b</td><td>Callee saved</td></tr>
+      <tr><td>%r14</td><td>%r14d</td><td>%r14w</td><td></td><td>%r14b</td><td>Callee saved</td></tr>
+      <tr><td>%r15</td><td>%r15d</td><td>%r15w</td><td></td><td>%r15b</td><td>Callee saved</td></tr>
+    </table>
+    <h3>Operations</h3>
+    <h3>Types</h3>
+    <table class="table">
+      <tr><th>C declaration</th><th>Intel data type</th><th>GAS suffix x86-64</th><th>Size (Bytes)</th></tr>
+      <tr><td>char</td><td>Byte</td><td>b</td><td>1</td></tr>
+      <tr><td>short</td><td></td><td>w</td><td>2</td></tr>
+      <tr><td>int</td><td>Double word</td><td>l</td><td>4</td></tr>
+      <tr><td>unsigned</td><td>Double word</td><td>l</td><td>4</td></tr>
+      <tr><td>long int</td><td>Quad word</td><td>q</td><td>8</td></tr>
+      <tr><td>unsigned long</td><td>Quad word</td><td>q</td><td>8</td></tr>
+      <tr><td>char *</td><td>Quad word</td><td>q</td><td>8</td></tr>
+      <tr><td>float</td><td> Single precision</td><td>s</td><td>4</td></tr>
+      <tr><td>double</td><td>Double precision</td><td>d</td><td>8</td></tr>
+      <tr><td>long double</td><td>Extended precision</td><td>t</td><td>16</td></tr>
+    </table>
+
     <h2>Some notes about memory</h2>
 
     In a running process there are 5 parts to memory:
@@ -129,10 +147,36 @@ main:
 
     We can look at how global variables are defined in assembly. They
     are basically symbols which point into these memory areas and
-    never change. Sometimes the are exposed to LD, sometimes not. See
-    this <a href="global-variables.s">assembly</a> or this <a
-    href="global-variables.listing">listing</a> based on <a
-    href="global-variables.c">global-variables.c</a> for more detail.
+    never change. Sometimes they are exposed to ld, sometimes not.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#global-variables-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#global-variables-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#global-variables-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#global-variables-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#global-variables-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="global-variables-c">
+          <pre data-src="../c/global-variables.c"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="global-variables-clang-s">
+          <pre data-src="../c/global-variables-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="global-variables-ll">
+          <pre data-src="../c/global-variables.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="global-variables-gcc-s">
+          <pre data-src="../c/global-variables-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="global-variables-listing">
+          <pre data-src="../c/global-variables.listing"></pre>
+        </div>
+      </div>
 
     <h2>Functions</h2>
 
@@ -154,19 +198,72 @@ main:
     Calling convention just means identifying which registers the
     caller saves, which registers the callee saves, where to put the
     arguments and where to put the return value.
-    <p>
-    The example <a href="function.c">function.c</a> (<a
-    href="function.s">function.s</a>, <a
-    href="function.listing">function.listing</a>)
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#function-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#function-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#function-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#function-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#function-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="function-c">
+          <pre data-src="../c/function.c"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="function-clang-s">
+          <pre data-src="../c/function-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="function-ll">
+          <pre data-src="../c/function.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="function-gcc-s">
+          <pre data-src="../c/function-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="function-listing">
+          <pre data-src="../c/function.listing"></pre>
+        </div>
+      </div>
+
 
     <h2>Control Structures</h2>
 
     Control structures such as if/else, while and do-while are all
     implemented in terms of conditional jumps in assembly. This is
-    fairly straightforward. Check out <a
-    href="if-then.c">if-then.c</a> (<a href="if-then.s">if-then.s</a>,
-    <a href="if-then.listing">if-then.listing</a>) for a simple
-    example.
+    fairly straightforward.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#if-then-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#if-then-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#if-then-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#if-then-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#if-then-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tab-panel" class="tab-pane active" id="if-then-c">
+            <pre data-src="../c/if-then.c"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="if-then-clang-s">
+            <pre data-src="../c/if-then-clang.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="if-then-ll">
+            <pre data-src="../c/if-then.ll"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="if-then-gcc-s">
+            <pre data-src="../c/if-then-gcc.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="if-then-listing">
+            <pre data-src="../c/if-then.listing"></pre>
+          </div>
+        </div>
+      </div>
 
     <h2>Pointers</h2>
 
@@ -179,8 +276,35 @@ main:
     An array is just a pointer to the beginning of the array. To mess
     with a value to it, you just calculate the offset.
 
-    <p>
-    TODO: Write a short example.
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#arrays-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#arrays-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#arrays-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#arrays-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#arrays-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tab-panel" class="tab-pane active" id="arrays-c">
+            <pre data-src="../c/arrays.c"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="arrays-clang-s">
+            <pre data-src="../c/arrays-clang.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="arrays-ll">
+            <pre data-src="../c/arrays.ll"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="arrays-gcc-s">
+            <pre data-src="../c/arrays-gcc.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="arrays-listing">
+            <pre data-src="../c/arrays.listing"></pre>
+          </div>
+        </div>
+      </div>
 
     <h2>Structures</h2>
 
@@ -190,13 +314,72 @@ main:
     <p>
     Since they are of a fixed size, you can put them on the stack easily enough.
 
-    TODO: Write a short example.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#structs-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#structs-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#structs-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#structs-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#structs-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tab-panel" class="tab-pane active" id="structs-c">
+            <pre data-src="../c/structs.c"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="structs-clang-s">
+            <pre data-src="../c/structs-clang.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="structs-ll">
+            <pre data-src="../c/structs.ll"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="structs-gcc-s">
+            <pre data-src="../c/structs-gcc.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="structs-listing">
+            <pre data-src="../c/structs.listing"></pre>
+          </div>
+        </div>
+      </div>
 
     <h2>Unions</h2>
 
     And of course Unions are like structures, but with slightly more complex sorts of offsets.
     <p>
-    TODO: Write a short example.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#unions-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#unions-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#unions-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#unions-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#unions-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tab-panel" class="tab-pane active" id="unions-c">
+            <pre data-src="../c/unions.c"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="unions-clang-s">
+            <pre data-src="../c/unions-clang.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="unions-ll">
+            <pre data-src="../c/unions.ll"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="unions-gcc-s">
+            <pre data-src="../c/unions-gcc.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="unions-listing">
+            <pre data-src="../c/unions.listing"></pre>
+          </div>
+        </div>
+      </div>
+
 
     <hr>
 
