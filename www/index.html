@@ -1,26 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Secret Life of C++: What Your Compiler Doesn't Want You To Know</title>
 
-    <title>Inside C++: What Your Compiler Doesn't Want You To Know</title>
-
-    <meta name="description" content="An MIT IAP 2015 class on the internals of C++11">
-    <meta name="author" content="Richard Tibbetts">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/inside-c.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
+    <div class="container">
+      <h1>The Secret Life of C++: What Your Compiler Doesn't Want You To Know</h1>
+      <i>Richard Tibbetts</i><br>
+      <i>Date: Jan 13 6-8pm, Jan 14 6-8pm in 4-237</i><br>
+      <p>C++ is filled with strange and wonderful features, with a few more added in C++11. We will explore in detail how these features are implemented under the covers, in terms of the assembly code generated. Features to be explored include construction and destruction, copying, references, virtual methods, method dispatch, object layout, exceptions, templates, anonymous functions, captures, and more. No one should claim to be a C++ expert (including the instructor) but this class should help you win a geek fight (or job interview) with anyone who does. Examples will be worked on OSX or Linux with clang or gcc, but we will encourage experimentation if you show up with a Visual Studio 2013 environment.</p>
+      Attendance: Two-session series.<br>
+      Prereqs: Familiarity with C and C++, 6.004 useful.<br>
+      Contact: sipb-iap-cpp at mit dot edu<br>
 
-    <h1>Inside C++: What Your Compiler Doesn't Want You To Know</h1>
+      <ul>
+        <li><a href="c-primer.html">Hour One: The Not So Secret Life of C, and crash course in x86_64 assembly</a>
+        <li><a href="objects.html">Hour Two: Objects, Methods, Inheritance, Copying, References, Methods, Runtime Time Type Information</a>
+        <li><a href="exceptions.html">Hour Three: Exceptions and Templates</a>
+        <li><a href="closures.html">Hour Four: Functions, Anonymous Functions, Captures</a>
+      </ul>
+    </div>
+
+<a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
   </body>
 </html>
