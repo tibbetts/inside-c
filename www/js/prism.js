@@ -626,10 +626,10 @@ Prism.languages.nasm = {
         alias: 'function'
     },
     'keyword': [
-        /\[?BITS (16|32|64)\]?/m,
-        /^\s*section\s*[a-zA-Z\.]+:?/im,
-        /(?:extern|global)[^;]*/im,
-        /(?:CPU|FLOAT|DEFAULT).*$/m
+            /\[?BITS (16|32|64)\]?/m,
+            /^\s*section\s*[a-zA-Z\.]+:?/im,
+            /(?:extern|global)[^;]*/im,
+            /(?:CPU|FLOAT|DEFAULT).*$/m
     ],
     'register': {
         pattern: /\b(?:st\d|[xyz]mm\d\d?|[cdt]r\d|r\d\d?[bwd]?|[er]?[abcd]x|[abcd][hl]|[er]?(bp|sp|si|di)|[cdefgs]s)\b/gi, 
@@ -637,6 +637,23 @@ Prism.languages.nasm = {
     },
     'number': /(\b|-|(?=\$))(0[hx][\da-f]*\.?[\da-f]+(p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(\.?e[+-]?\d+)?[dt]?)\b/i,
     'operator': /[\[\]\*+\-\/%<>=&|\$!]/gm
+};
+Prism.languages.llvm = {
+    'comment': /;.*$/m,
+    'string': /("|'|`)(\\?.)*?\1/gm,
+    'label': {
+        pattern: /^\s*[A-Za-z\._\?\$][\w\.\?\$@~#]*:/m,
+        alias: 'function'
+    },
+    'keyword': [
+            /void|i[0-9]+|float|double|type|label|opaque/g,
+            /begin|end|true|false|zeroinitializer|declare|define|global|constant|const|internal|linkonce|linkonce_odr|weak|weak_odr|appending|uninitialized|implementation|\.\.\.|null|undef|to|except|not|target|endian|little|big|pointersize|volatile|fastcc|coldcc|cc|add|sub|mul|sdiv|udiv|urem|srem|and|or|xor|setne|seteq|setlt|setgt|setle|setge|fadd|fsub|fmul|fdiv|frem|phi|tail|call|select|to|shl|lshr|ashr|fcmp|icmp|va_arg|landingpad|ret|br|switch|invoke|resume|unwind|unreachable|indirectbr|malloc|alloca|free|load|store|getelementptr|fence|cmpxchg|atomicrmw|bitcast|inttoptr|ptrtoint|trunc|zext|sext|fptrunc|fpext|fptoui|fptosi|uitofp|sitofp|addrspacecast|extractelement|insertelement|shufflevector|extractvalue|insertvalue|distinct|uselistorder|uselistorder_bb/g,
+    ],
+    'variable': [
+            /%[-a-zA-Z$\._][-a-zA-Z$\._0-9]*/g,
+            /%[-]?[0-9]+/g,
+    ],
+    'number': /(\b|-|(?=\$))(0[hx][\da-f]*\.?[\da-f]+(p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(\.?e[+-]?\d+)?[dt]?)\b/i,
 };
 ;
 (function(){
@@ -787,7 +804,8 @@ var Extensions = {
 	'py': 'python',
 	'rb': 'ruby',
 	'ps1': 'powershell',
-	'psm1': 'powershell',
+    's': 'nasm',
+    'll': 'llvm',
 };
 
 Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function(pre) {
