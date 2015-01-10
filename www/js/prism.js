@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+c+cpp+nasm&plugins=line-highlight+line-numbers */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+c+cpp+nasm&plugins=line-highlight+line-numbers+file-highlight */
 self = (typeof window !== 'undefined')
 	? window   // if in browser
 	: (
@@ -468,6 +468,56 @@ Prism.hooks.add('wrap', function(env) {
 	}
 });
 ;
+Prism.languages.css = {
+	'comment': /\/\*[\w\W]*?\*\//g,
+	'atrule': {
+		pattern: /@[\w-]+?.*?(;|(?=\s*\{))/gi,
+		inside: {
+			'punctuation': /[;:]/g
+		}
+	},
+	'url': /url\((["']?).*?\1\)/gi,
+	'selector': /[^\{\}\s][^\{\};]*(?=\s*\{)/g,
+	'property': /(\b|\B)[\w-]+(?=\s*:)/ig,
+	'string': /("|')(\\?.)*?\1/g,
+	'important': /\B!important\b/gi,
+	'punctuation': /[\{\};:]/g,
+	'function': /[-a-z0-9]+(?=\()/ig
+};
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'style': {
+			pattern: /<style[\w\W]*?>[\w\W]*?<\/style>/ig,
+			inside: {
+				'tag': {
+					pattern: /<style[\w\W]*?>|<\/style>/ig,
+					inside: Prism.languages.markup.tag.inside
+				},
+				rest: Prism.languages.css
+			},
+			alias: 'language-css'
+		}
+	});
+	
+	Prism.languages.insertBefore('inside', 'attr-value', {
+		'style-attr': {
+			pattern: /\s*style=("|').+?\1/ig,
+			inside: {
+				'attr-name': {
+					pattern: /^\s*style/ig,
+					inside: Prism.languages.markup.tag.inside
+				},
+				'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+				'attr-value': {
+					pattern: /.+/gi,
+					inside: Prism.languages.css
+				}
+			},
+			alias: 'language-css'
+		}
+	}, Prism.languages.markup.tag);
+};
 Prism.languages.clike = {
 	'comment': [
 		{
@@ -723,3 +773,60 @@ Prism.hooks.add('after-highlight', function (env) {
 	env.element.appendChild(lineNumbersWrapper);
 
 });;
+(function(){
+
+if (!self.Prism || !self.document || !document.querySelector) {
+	return;
+}
+
+var Extensions = {
+	'js': 'javascript',
+	'html': 'markup',
+	'svg': 'markup',
+	'xml': 'markup',
+	'py': 'python',
+	'rb': 'ruby',
+	'ps1': 'powershell',
+	'psm1': 'powershell',
+};
+
+Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function(pre) {
+	var src = pre.getAttribute('data-src');
+	var extension = (src.match(/\.(\w+)$/) || [,''])[1];
+	var language = Extensions[extension] || extension;
+	
+	var code = document.createElement('code');
+	code.className = 'language-' + language;
+	
+	pre.textContent = '';
+	
+	code.textContent = 'Loading…';
+	
+	pre.appendChild(code);
+	
+	var xhr = new XMLHttpRequest();
+	
+	xhr.open('GET', src, true);
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) {
+			
+			if (xhr.status < 400 && xhr.responseText) {
+				code.textContent = xhr.responseText;
+			
+				Prism.highlightElement(code);
+			}
+			else if (xhr.status >= 400) {
+				code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+			}
+			else {
+				code.textContent = '✖ Error: File does not exist or is empty';
+			}
+		}
+	};
+	
+	xhr.send(null);
+});
+
+})();
+;
