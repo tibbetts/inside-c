@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The No So Secret Life of C</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/inside-c.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+    <h1>The Not So Secret Life of C</h1>
+
+    <p>
+      The idea of this class is to understand how C++ is translated
+      into assembly (how assembly is translated into object code is
+      left as an exercise for the student).
+
+    <p>
+      So first we will talk about how C is translated into assembly,
+      because C++ is mostly a superset of C, and because it a good way
+      to learn techniques for achieving this understanding.
+
+    <h2>Hello World</h2>
+
+    <p>
+      First lets look at what hello world looks like in assembly.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#hello-world-c" aria-controls="hello-world-c" role="tab" data-toggle="tab">C Code</a></li>
+          <li role="presentation"><a href="#hello-world-s" aria-controls="hello-world-s" role="tab" data-toggle="tab">GCC Assembly</a></li>
+          <li role="presentation"><a href="#hello-world-mac" aria-controls="hello-world-mac" role="tab" data-toggle="tab">Mac Assembly</a></li>
+        </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="hello-world-c">
+          Our source code, as you might expect, looks like this (<a href="hello-world.c">click here for the source in a file.</a>):
+          <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main (int argc, char **argv) {
+    printf("Hello World.\n");
+    return 0;
+}
+          </code></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-world-s">
+
+      We turn that into assembly, and it looks like <a href="hello-world.s">hello-world.s</a>.
+      <pre><code class="language-nasm">	.file	"hello-world.c"
+	.version	"01.01"
+gcc2_compiled.:
+.section	.rodata
+.LC0:
+	.string	"Hello World.\n"
+.text
+	.align 4
+.globl main
+	.type	 main,@function
+main:
+	pushl %ebp
+	movl %esp,%ebp
+	subl $8,%esp
+	addl $-12,%esp
+	pushl $.LC0
+	call printf
+	addl $16,%esp
+	xorl %eax,%eax
+	jmp .L2
+	.p2align 4,,7
+.L2:
+	leave
+	ret
+.Lfe1:
+	.size	 main,.Lfe1-main
+	.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+      </pre></code>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-world-mac">
+          Or on the mac:
+          <pre><code class="language-nasm">Test`helloWorld() at main.cpp:12:
+0x100000c80:  pushq  %rbp
+0x100000c81:  movq   %rsp, %rbp
+0x100000c84:  leaq   0x2b6(%rip), %rdi         ; "Hello, World"
+0x100000c8b:  popq   %rbp
+0x100000c8c:  jmp    0x100000ec0               ; symbol stub for: puts
+          </pre></code>
+        </div>
+      </div>
+    </div>
+    <p>
+      How do we do that? We run <code>cc -s -o hello-world.s hello-world.c</code> Or we set a breakpoint in XCode and check Debug -> Debug Workflow -> Always Show Assembly. Or we get the built objects and we run odump on them. If building with xocde they will be at /Users/tibbetts/Library/Developer/Xcode/DerivedData/Test-gklyipaixaqhfmaztcrgfnmrvniq/Build/Intermediates/Test.build/Debug/Test.build/Objects-normal/x86_64
+
+    <p>
+
+    <p>
+      We can also see it with source interpolated by running
+      <code>cc -g -c -Wa,-adhls=hello-world.listing hello-world.c</code>
+      The output of that will look like <a href="hello-world.listing">hello-world.listing</a>
+
+    <h2>Some notes about memory</h2>
+
+    In a running process there are 5 parts to memory:
+    <dl>
+    <dt>Text<dd>The area where the program code is found.
+    <dt>Data<dd>Area where initialized global variables are loaded.
+    <dt>BSS<dd>Area for uninitialized global variables, part of your free store.
+    <dt>Heap<dd>Area where memory allocators get their memory.
+    <dt>Stack<dd>Place were stack frames and local variables are allocated.
+    </dl>
+
+    <h2>Global Variable</h2>
+
+    We can look at how global variables are defined in assembly. They
+    are basically symbols which point into these memory areas and
+    never change. Sometimes the are exposed to LD, sometimes not. See
+    this <a href="global-variables.s">assembly</a> or this <a
+    href="global-variables.listing">listing</a> based on <a
+    href="global-variables.c">global-variables.c</a> for more detail.
+
+    <h2>Functions</h2>
+
+    Functions are chuncks of code that get called using the
+    <code>call</code> instruction. The basic idea is that we jump into
+    that location, run the code, and jump back to where we came from.
+    <p>
+    We use the stack to store where we came from, so that we can get
+    back. But since the code we call might trash the registers, we
+    also want to save some registers on the stack. And we need to pass
+    arguments, so we put those on the stack too, unless if they don't
+    fit in the registers.
+    <p>
+    We also pass return values back through a register,
+    <code>eax</code> on Intel.
+
+    <h2>Calling Convention</h2>
+
+    Calling convention just means identifying which registers the
+    caller saves, which registers the callee saves, where to put the
+    arguments and where to put the return value.
+    <p>
+    The example <a href="function.c">function.c</a> (<a
+    href="function.s">function.s</a>, <a
+    href="function.listing">function.listing</a>)
+
+    <h2>Control Structures</h2>
+
+    Control structures such as if/else, while and do-while are all
+    implemented in terms of conditional jumps in assembly. This is
+    fairly straightforward. Check out <a
+    href="if-then.c">if-then.c</a> (<a href="if-then.s">if-then.s</a>,
+    <a href="if-then.listing">if-then.listing</a>) for a simple
+    example.
+
+    <h2>Pointers</h2>
+
+    You may have noticed that assembly already deals with pointers a
+    great deal. So its obvious how pointers and pointer arithmatic are
+    dealt with when they are compiled.
+
+    <h2>Array</h2>
+
+    An array is just a pointer to the beginning of the array. To mess
+    with a value to it, you just calculate the offset.
+
+    <p>
+    TODO: Write a short example.
+
+    <h2>Structures</h2>
+
+    Like arrays, structures are just going to be pointers to the start
+    of a memory area. To access the contents, you just calculate the
+    offset.
+    <p>
+    Since they are of a fixed size, you can put them on the stack easily enough.
+
+    TODO: Write a short example.
+
+    <h2>Unions</h2>
+
+    And of course Unions are like structures, but with slightly more complex sorts of offsets.
+    <p>
+    TODO: Write a short example.
+
+    <hr>
+
+    That's it for our introduction to how C is compiled. As you can
+    see, C is very simple to compile, asssuming you aren't doing any
+    optimization.
+
+</div>
+
+<a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>

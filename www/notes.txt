@@ -1,0 +1,5 @@
+Notes as I'm going along.
+
+What is __stack_chk_guard?
+
+-fno-inline -fno-stackprotect
