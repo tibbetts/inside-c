@@ -1,0 +1,59 @@
+GAS LISTING /tmp/ccLvT9W1.s 			page 1
+
+
+   1              		.file	"hello-world.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata
+   5              	.LC0:
+   6 0000 48656C6C 		.string	"Hello World."
+   6      6F20576F 
+   6      726C642E 
+   6      00
+   7              		.text
+   8              		.globl	main
+  10              	main:
+  11              	.LFB0:
+  12              		.file 1 "hello-world.c"
+   1:hello-world.c **** #include <stdio.h>
+   2:hello-world.c **** 
+   3:hello-world.c **** int
+   4:hello-world.c **** main (int argc, char **argv)
+   5:hello-world.c **** {
+  13              		.loc 1 5 0
+  14              		.cfi_startproc
+  15 0000 55       		pushq	%rbp
+  16              		.cfi_def_cfa_offset 16
+  17              		.cfi_offset 6, -16
+  18 0001 4889E5   		movq	%rsp, %rbp
+  19              		.cfi_def_cfa_register 6
+  20 0004 4883EC10 		subq	$16, %rsp
+  21 0008 897DFC   		movl	%edi, -4(%rbp)
+  22 000b 488975F0 		movq	%rsi, -16(%rbp)
+   6:hello-world.c ****     printf("Hello World.\n");
+  23              		.loc 1 6 0
+  24 000f BF000000 		movl	$.LC0, %edi
+  24      00
+  25 0014 E8000000 		call	puts
+  25      00
+   7:hello-world.c ****     return 0;
+  26              		.loc 1 7 0
+  27 0019 B8000000 		movl	$0, %eax
+  27      00
+   8:hello-world.c **** }
+  28              		.loc 1 8 0
+  29 001e C9       		leave
+  30              		.cfi_def_cfa 7, 8
+  31 001f C3       		ret
+  32              		.cfi_endproc
+  33              	.LFE0:
+  35              	.Letext0:
+GAS LISTING /tmp/ccLvT9W1.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hello-world.c
+     /tmp/ccLvT9W1.s:10     .text:0000000000000000 main
+
+UNDEFINED SYMBOLS
+puts

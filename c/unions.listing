@@ -1,0 +1,108 @@
+GAS LISTING /tmp/ccQzU61g.s 			page 1
+
+
+   1              		.file	"unions.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata
+   5              	.LC1:
+   6 0000 74686972 		.string	"thirty-seven"
+   6      74792D73 
+   6      6576656E 
+   6      00
+   7              		.text
+   8              		.globl	main
+  10              	main:
+  11              	.LFB0:
+  12              		.file 1 "unions.c"
+   1:unions.c      **** #include <string.h>
+   2:unions.c      **** 
+   3:unions.c      **** #define LENGTH 20
+   4:unions.c      **** 
+   5:unions.c      **** union Data {
+   6:unions.c      ****   int i;
+   7:unions.c      ****   long l;
+   8:unions.c      ****   double d;
+   9:unions.c      ****   char str[LENGTH];
+  10:unions.c      **** };
+  11:unions.c      **** 
+  12:unions.c      **** int main (int argc, char **argv) {
+  13              		.loc 1 12 0
+  14              		.cfi_startproc
+  15 0000 55       		pushq	%rbp
+  16              		.cfi_def_cfa_offset 16
+  17              		.cfi_offset 6, -16
+  18 0001 4889E5   		movq	%rsp, %rbp
+  19              		.cfi_def_cfa_register 6
+  20 0004 4883EC40 		subq	$64, %rsp
+  21 0008 897DCC   		movl	%edi, -52(%rbp)
+  22 000b 488975C0 		movq	%rsi, -64(%rbp)
+  23              		.loc 1 12 0
+  24 000f 64488B04 		movq	%fs:40, %rax
+  24      25280000 
+  24      00
+  25 0018 488945F8 		movq	%rax, -8(%rbp)
+  26 001c 31C0     		xorl	%eax, %eax
+  13:unions.c      ****   union Data d1;
+  14:unions.c      ****   int x;
+  15:unions.c      ****   x = 37;
+  27              		.loc 1 15 0
+  28 001e C745DC25 		movl	$37, -36(%rbp)
+  28      000000
+  16:unions.c      ****   d1.i = x;
+  29              		.loc 1 16 0
+  30 0025 8B45DC   		movl	-36(%rbp), %eax
+  31 0028 8945E0   		movl	%eax, -32(%rbp)
+  17:unions.c      ****   d1.l = 137;
+  32              		.loc 1 17 0
+  33 002b 48C745E0 		movq	$137, -32(%rbp)
+  33      89000000 
+  18:unions.c      ****   d1.d = 3.7;
+GAS LISTING /tmp/ccQzU61g.s 			page 2
+
+
+  34              		.loc 1 18 0
+  35 0033 48B89A99 		movabsq	$4615514078110652826, %rax
+  35      99999999 
+  35      0D40
+  36 003d 488945E0 		movq	%rax, -32(%rbp)
+  19:unions.c      ****   strncpy(d1.str, "thirty-seven", LENGTH);
+  37              		.loc 1 19 0
+  38 0041 488D45E0 		leaq	-32(%rbp), %rax
+  39 0045 BA140000 		movl	$20, %edx
+  39      00
+  40 004a BE000000 		movl	$.LC1, %esi
+  40      00
+  41 004f 4889C7   		movq	%rax, %rdi
+  42 0052 E8000000 		call	strncpy
+  42      00
+  20:unions.c      ****   return 0;
+  43              		.loc 1 20 0
+  44 0057 B8000000 		movl	$0, %eax
+  44      00
+  21:unions.c      **** }
+  45              		.loc 1 21 0
+  46 005c 488B4DF8 		movq	-8(%rbp), %rcx
+  47 0060 6448330C 		xorq	%fs:40, %rcx
+  47      25280000 
+  47      00
+  48 0069 7405     		je	.L3
+  49 006b E8000000 		call	__stack_chk_fail
+  49      00
+  50              	.L3:
+  51 0070 C9       		leave
+  52              		.cfi_def_cfa 7, 8
+  53 0071 C3       		ret
+  54              		.cfi_endproc
+  55              	.LFE0:
+  57              	.Letext0:
+GAS LISTING /tmp/ccQzU61g.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 unions.c
+     /tmp/ccQzU61g.s:10     .text:0000000000000000 main
+
+UNDEFINED SYMBOLS
+strncpy
+__stack_chk_fail

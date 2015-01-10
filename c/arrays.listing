@@ -1,0 +1,89 @@
+GAS LISTING /tmp/cckKW0Xb.s 			page 1
+
+
+   1              		.file	"arrays.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	func
+   6              	func:
+   7              	.LFB0:
+   8              		.file 1 "arrays.c"
+   1:arrays.c      **** 
+   2:arrays.c      **** int func(int *array) {
+   9              		.loc 1 2 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+  16 0004 48897DF8 		movq	%rdi, -8(%rbp)
+   3:arrays.c      ****   return array[3];
+  17              		.loc 1 3 0
+  18 0008 488B45F8 		movq	-8(%rbp), %rax
+  19 000c 8B400C   		movl	12(%rax), %eax
+   4:arrays.c      **** }
+  20              		.loc 1 4 0
+  21 000f 5D       		popq	%rbp
+  22              		.cfi_def_cfa 7, 8
+  23 0010 C3       		ret
+  24              		.cfi_endproc
+  25              	.LFE0:
+  27              		.globl	main
+  29              	main:
+  30              	.LFB1:
+   5:arrays.c      **** 
+   6:arrays.c      **** int main (int argc, char **argv) {
+  31              		.loc 1 6 0
+  32              		.cfi_startproc
+  33 0011 55       		pushq	%rbp
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 6, -16
+  36 0012 4889E5   		movq	%rsp, %rbp
+  37              		.cfi_def_cfa_register 6
+  38 0015 4883EC70 		subq	$112, %rsp
+  39 0019 897D9C   		movl	%edi, -100(%rbp)
+  40 001c 48897590 		movq	%rsi, -112(%rbp)
+   7:arrays.c      ****   int foo[10];
+   8:arrays.c      ****   int bar[5];
+   9:arrays.c      ****   foo[7]=137;
+  41              		.loc 1 9 0
+  42 0020 C745EC89 		movl	$137, -20(%rbp)
+  42      000000
+  10:arrays.c      ****   bar[2]=3;
+  43              		.loc 1 10 0
+  44 0027 C745B803 		movl	$3, -72(%rbp)
+  44      000000
+  11:arrays.c      **** 
+  12:arrays.c      ****   int x = func(foo);
+  45              		.loc 1 12 0
+  46 002e 488D45D0 		leaq	-48(%rbp), %rax
+GAS LISTING /tmp/cckKW0Xb.s 			page 2
+
+
+  47 0032 4889C7   		movq	%rax, %rdi
+  48 0035 E8000000 		call	func
+  48      00
+  49 003a 8945AC   		movl	%eax, -84(%rbp)
+  13:arrays.c      **** 
+  14:arrays.c      ****   return 0;
+  50              		.loc 1 14 0
+  51 003d B8000000 		movl	$0, %eax
+  51      00
+  15:arrays.c      **** }
+  52              		.loc 1 15 0
+  53 0042 C9       		leave
+  54              		.cfi_def_cfa 7, 8
+  55 0043 C3       		ret
+  56              		.cfi_endproc
+  57              	.LFE1:
+  59              	.Letext0:
+GAS LISTING /tmp/cckKW0Xb.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 arrays.c
+     /tmp/cckKW0Xb.s:6      .text:0000000000000000 func
+     /tmp/cckKW0Xb.s:29     .text:0000000000000011 main
+
+NO UNDEFINED SYMBOLS
