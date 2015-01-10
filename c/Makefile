@@ -25,6 +25,9 @@ all: $(TARGETS)
 %-clang.s: %.c Makefile
 	cc $(CFLAGS) -S -o $@ $<
 
+%-gcc.s: %.c Makefile
+	cc $(CFLAGS) -S -o $@ $<
+
 %.ll: %.c Makefile
 	cc $(CFLAGS) -S -emit-llvm -o $@ $<
 

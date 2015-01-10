@@ -1,0 +1,58 @@
+GAS LISTING /tmp/ccpm7WI9.s 			page 1
+
+
+   1              		.file	"if-then.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	main
+   6              	main:
+   7              	.LFB0:
+   8              		.file 1 "if-then.c"
+   1:if-then.c     **** int
+   2:if-then.c     **** main (int argc, char **argv)
+   3:if-then.c     **** {
+   9              		.loc 1 3 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+  16 0004 897DEC   		movl	%edi, -20(%rbp)
+  17 0007 488975E0 		movq	%rsi, -32(%rbp)
+   4:if-then.c     ****     int foo;
+   5:if-then.c     ****     if (foo > 0) {
+  18              		.loc 1 5 0
+  19 000b 837DFC00 		cmpl	$0, -4(%rbp)
+  20 000f 7E06     		jle	.L2
+   6:if-then.c     ****         foo += 12;
+  21              		.loc 1 6 0
+  22 0011 8345FC0C 		addl	$12, -4(%rbp)
+  23 0015 EB04     		jmp	.L3
+  24              	.L2:
+   7:if-then.c     ****     } else {
+   8:if-then.c     ****         foo -= 12;
+  25              		.loc 1 8 0
+  26 0017 836DFC0C 		subl	$12, -4(%rbp)
+  27              	.L3:
+   9:if-then.c     ****     }
+  10:if-then.c     ****     return 0;
+  28              		.loc 1 10 0
+  29 001b B8000000 		movl	$0, %eax
+  29      00
+  11:if-then.c     **** }
+  30              		.loc 1 11 0
+  31 0020 5D       		popq	%rbp
+  32              		.cfi_def_cfa 7, 8
+  33 0021 C3       		ret
+  34              		.cfi_endproc
+  35              	.LFE0:
+  37              	.Letext0:
+GAS LISTING /tmp/ccpm7WI9.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 if-then.c
+     /tmp/ccpm7WI9.s:6      .text:0000000000000000 main
+
+NO UNDEFINED SYMBOLS

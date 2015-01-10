@@ -1,0 +1,135 @@
+GAS LISTING /tmp/ccZtpque.s 			page 1
+
+
+   1              		.file	"structs.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	byvalue
+   6              	byvalue:
+   7              	.LFB0:
+   8              		.file 1 "structs.c"
+   1:structs.c     **** struct Data {
+   2:structs.c     ****   int i;
+   3:structs.c     ****   long l;
+   4:structs.c     ****   double d;
+   5:structs.c     **** };
+   6:structs.c     **** 
+   7:structs.c     **** 
+   8:structs.c     **** int byvalue(struct Data d) {
+   9              		.loc 1 8 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+   9:structs.c     ****   return d.i;
+  16              		.loc 1 9 0
+  17 0004 8B4510   		movl	16(%rbp), %eax
+  10:structs.c     **** }
+  18              		.loc 1 10 0
+  19 0007 5D       		popq	%rbp
+  20              		.cfi_def_cfa 7, 8
+  21 0008 C3       		ret
+  22              		.cfi_endproc
+  23              	.LFE0:
+  25              		.globl	bypointer
+  27              	bypointer:
+  28              	.LFB1:
+  11:structs.c     **** 
+  12:structs.c     **** int bypointer(struct Data *d) {
+  29              		.loc 1 12 0
+  30              		.cfi_startproc
+  31 0009 55       		pushq	%rbp
+  32              		.cfi_def_cfa_offset 16
+  33              		.cfi_offset 6, -16
+  34 000a 4889E5   		movq	%rsp, %rbp
+  35              		.cfi_def_cfa_register 6
+  36 000d 48897DF8 		movq	%rdi, -8(%rbp)
+  13:structs.c     ****   return d->i;
+  37              		.loc 1 13 0
+  38 0011 488B45F8 		movq	-8(%rbp), %rax
+  39 0015 8B00     		movl	(%rax), %eax
+  14:structs.c     **** }
+  40              		.loc 1 14 0
+  41 0017 5D       		popq	%rbp
+  42              		.cfi_def_cfa 7, 8
+  43 0018 C3       		ret
+  44              		.cfi_endproc
+  45              	.LFE1:
+  47              		.globl	main
+GAS LISTING /tmp/ccZtpque.s 			page 2
+
+
+  49              	main:
+  50              	.LFB2:
+  15:structs.c     **** 
+  16:structs.c     **** int main (int argc, char **argv) {
+  51              		.loc 1 16 0
+  52              		.cfi_startproc
+  53 0019 55       		pushq	%rbp
+  54              		.cfi_def_cfa_offset 16
+  55              		.cfi_offset 6, -16
+  56 001a 4889E5   		movq	%rsp, %rbp
+  57              		.cfi_def_cfa_register 6
+  58 001d 4883EC48 		subq	$72, %rsp
+  59 0021 897DDC   		movl	%edi, -36(%rbp)
+  60 0024 488975D0 		movq	%rsi, -48(%rbp)
+  17:structs.c     ****   struct Data data;
+  18:structs.c     ****   data.i = 37;
+  61              		.loc 1 18 0
+  62 0028 C745E025 		movl	$37, -32(%rbp)
+  62      000000
+  19:structs.c     ****   data.l = 137;
+  63              		.loc 1 19 0
+  64 002f 48C745E8 		movq	$137, -24(%rbp)
+  64      89000000 
+  20:structs.c     ****   data.d = 3.7;
+  65              		.loc 1 20 0
+  66 0037 48B89A99 		movabsq	$4615514078110652826, %rax
+  66      99999999 
+  66      0D40
+  67 0041 488945F0 		movq	%rax, -16(%rbp)
+  21:structs.c     ****   byvalue(data);
+  68              		.loc 1 21 0
+  69 0045 488B45E0 		movq	-32(%rbp), %rax
+  70 0049 48890424 		movq	%rax, (%rsp)
+  71 004d 488B45E8 		movq	-24(%rbp), %rax
+  72 0051 48894424 		movq	%rax, 8(%rsp)
+  72      08
+  73 0056 488B45F0 		movq	-16(%rbp), %rax
+  74 005a 48894424 		movq	%rax, 16(%rsp)
+  74      10
+  75 005f E8000000 		call	byvalue
+  75      00
+  22:structs.c     ****   bypointer(&data);
+  76              		.loc 1 22 0
+  77 0064 488D45E0 		leaq	-32(%rbp), %rax
+  78 0068 4889C7   		movq	%rax, %rdi
+  79 006b E8000000 		call	bypointer
+  79      00
+  23:structs.c     ****   return 0;
+  80              		.loc 1 23 0
+  81 0070 B8000000 		movl	$0, %eax
+  81      00
+  24:structs.c     **** }
+  82              		.loc 1 24 0
+  83 0075 C9       		leave
+  84              		.cfi_def_cfa 7, 8
+  85 0076 C3       		ret
+  86              		.cfi_endproc
+GAS LISTING /tmp/ccZtpque.s 			page 3
+
+
+  87              	.LFE2:
+  89              	.Letext0:
+GAS LISTING /tmp/ccZtpque.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 structs.c
+     /tmp/ccZtpque.s:6      .text:0000000000000000 byvalue
+     /tmp/ccZtpque.s:27     .text:0000000000000009 bypointer
+     /tmp/ccZtpque.s:49     .text:0000000000000019 main
+
+NO UNDEFINED SYMBOLS
