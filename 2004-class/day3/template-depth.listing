@@ -1,0 +1,481 @@
+GAS LISTING /tmp/ccQQlx0Y.s 			page 1
+
+
+   1              		.file	"template-depth.cc"
+   2              		.file 1 "template-depth.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/_G_config.h"
+  16              		.file 7 "/usr/include/bits/types.h"
+  17              		.file 8 "/usr/include/time.h"
+  18              		.file 9 "/usr/include/bits/sched.h"
+  19              		.file 10 "/usr/include/xlocale.h"
+  20              		.file 11 "/usr/include/bits/pthreadtypes.h"
+  21              		.file 12 "/usr/include/pthread.h"
+  22              		.file 13 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++io.h"
+  23              		.file 14 "/usr/include/c++/3.2.2/bits/char_traits.h"
+  24              		.file 15 "/usr/include/c++/3.2.2/bits/fpos.h"
+  25              		.file 16 "/usr/include/locale.h"
+  26              		.file 17 "/usr/include/bits/waitstatus.h"
+  27              		.file 18 "/usr/include/bits/time.h"
+  28              		.file 19 "/usr/include/stdlib.h"
+  29              		.file 20 "/usr/include/sys/types.h"
+  30              		.file 21 "/usr/include/c++/3.2.2/new"
+  31              		.file 22 "/usr/include/c++/3.2.2/bits/type_traits.h"
+  32              		.file 23 "/usr/include/c++/3.2.2/bits/stl_iterator_base_types.h"
+  33              		.file 24 "/usr/include/c++/3.2.2/bits/stl_threads.h"
+  34              		.file 25 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/gthr-default.h"
+  35              		.file 26 "/usr/include/c++/3.2.2/bits/stl_alloc.h"
+  36              		.file 27 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/atomicity.h"
+  37              		.file 28 "/usr/include/c++/3.2.2/bits/stringfwd.h"
+  38              		.file 29 "/usr/include/c++/3.2.2/bits/basic_string.h"
+  39              		.file 30 "/usr/include/c++/3.2.2/bits/basic_string.tcc"
+  40              		.file 31 "/usr/include/c++/3.2.2/bits/localefwd.h"
+  41              		.file 32 "/usr/include/c++/3.2.2/bits/ios_base.h"
+  42              		.file 33 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/ctype_base.h"
+  43              		.file 34 "/usr/include/c++/3.2.2/bits/codecvt.h"
+  44              		.file 35 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/codecvt_specializations.h"
+  45              		.file 36 "/usr/include/iconv.h"
+  46              		.file 37 "/usr/include/c++/3.2.2/bits/locale_facets.h"
+  47              		.file 38 "/usr/include/math.h"
+  48              		.file 39 "/usr/include/c++/3.2.2/limits"
+  49              		.file 40 "/usr/include/c++/3.2.2/ostream"
+  50              		.file 41 "/usr/include/c++/3.2.2/bits/ostream.tcc"
+  51              		.file 42 "/usr/include/c++/3.2.2/istream"
+  52              		.file 43 "/usr/include/c++/3.2.2/bits/istream.tcc"
+  53              		.local	_ZSt8__ioinit
+  54              		.comm	_ZSt8__ioinit,1,1
+  55              		.section	.rodata
+  56              	.LC0:
+  57 0000 3E3A3A76 		.string	">::val="
+  57      616C3D00 
+  58              	.LC1:
+  59 0008 646F776E 		.string	"down_to_zero<"
+  59      5F746F5F 
+  59      7A65726F 
+  59      3C00
+  60              		.text
+GAS LISTING /tmp/ccQQlx0Y.s 			page 2
+
+
+  61              		.align 2
+  62              	.globl main
+  64              	main:
+  65              	.LFB1479:
+   1:template-depth.cc **** #include <iostream>
+   2:template-depth.cc **** 
+   3:template-depth.cc **** template <int n>
+   4:template-depth.cc **** struct down_to_zero {
+   5:template-depth.cc ****     static const int val = down_to_zero<(n-1)>::val + 1;
+   6:template-depth.cc **** };
+   7:template-depth.cc **** 
+   8:template-depth.cc **** template <>
+   9:template-depth.cc **** struct down_to_zero<0> {
+  10:template-depth.cc ****     static const int val = 0;
+  11:template-depth.cc **** };
+  12:template-depth.cc **** 
+  13:template-depth.cc **** const int depth = 500;
+  14:template-depth.cc **** 
+  15:template-depth.cc **** int
+  16:template-depth.cc **** main (int argc, char **argv) {
+  66              		.loc 1 16 0
+  67 0000 55       		pushl	%ebp
+  68              	.LCFI0:
+  69 0001 89E5     		movl	%esp, %ebp
+  70              	.LCFI1:
+  71 0003 83EC08   		subl	$8, %esp
+  72              	.LCFI2:
+  73 0006 83E4F0   		andl	$-16, %esp
+  74 0009 B8000000 		movl	$0, %eax
+  74      00
+  75 000e 29C4     		subl	%eax, %esp
+  76              	.LBB2:
+  17:template-depth.cc ****     std::cout << "down_to_zero<" << depth << ">::val="
+  77              		.loc 1 17 0
+  78 0010 83EC08   		subl	$8, %esp
+  79 0013 68000000 		pushl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+  79      00
+  80 0018 83EC0C   		subl	$12, %esp
+  81 001b 68F40100 		pushl	$500
+  81      00
+  82 0020 83EC0C   		subl	$12, %esp
+  83 0023 68000000 		pushl	$.LC0
+  83      00
+  84 0028 83EC0C   		subl	$12, %esp
+  85 002b 68F40100 		pushl	$500
+  85      00
+  86 0030 83EC0C   		subl	$12, %esp
+  87 0033 68080000 		pushl	$.LC1
+  87      00
+  88 0038 68000000 		pushl	$_ZSt4cout
+  88      00
+  89              	.LCFI3:
+  90 003d E8FCFFFF 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  90      FF
+  91 0042 83C414   		addl	$20, %esp
+  92 0045 50       		pushl	%eax
+  93 0046 E8FCFFFF 		call	_ZNSolsEi
+GAS LISTING /tmp/ccQQlx0Y.s 			page 3
+
+
+  93      FF
+  94 004b 83C414   		addl	$20, %esp
+  95 004e 50       		pushl	%eax
+  96 004f E8FCFFFF 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  96      FF
+  97 0054 83C414   		addl	$20, %esp
+  98 0057 50       		pushl	%eax
+  99 0058 E8FCFFFF 		call	_ZNSolsEi
+  99      FF
+ 100 005d 83C414   		addl	$20, %esp
+ 101 0060 50       		pushl	%eax
+ 102              	.LCFI4:
+ 103 0061 E8FCFFFF 		call	_ZNSolsEPFRSoS_E
+ 103      FF
+ 104 0066 83C410   		addl	$16, %esp
+  18:template-depth.cc ****          << down_to_zero<depth>::val << std::endl;
+  19:template-depth.cc ****     return 0;
+ 105              		.loc 1 19 0
+ 106 0069 B8000000 		movl	$0, %eax
+ 106      00
+ 107              	.LBE2:
+  20:template-depth.cc **** }
+ 108              		.loc 1 20 0
+ 109 006e C9       		leave
+ 110 006f C3       		ret
+ 111              	.LFE1479:
+ 112              	.Lfe1:
+ 114              		.align 2
+ 116              	_Z41__static_initialization_and_destruction_0ii:
+ 117              	.LFB1491:
+ 118              		.loc 1 18 0
+ 119 0070 55       		pushl	%ebp
+ 120              	.LCFI5:
+ 121 0071 89E5     		movl	%esp, %ebp
+ 122              	.LCFI6:
+ 123 0073 83EC08   		subl	$8, %esp
+ 124              	.LCFI7:
+ 125              		.file 44 "/usr/include/c++/3.2.2/iostream"
+   1:/usr/include/c++/3.2.2/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/3.2.2/iostream **** 
+   3:/usr/include/c++/3.2.2/iostream **** // Copyright (C) 1997, 1998, 1999, 2001, 2002 Free Software Foundation, Inc.
+   4:/usr/include/c++/3.2.2/iostream **** //
+   5:/usr/include/c++/3.2.2/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/3.2.2/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/3.2.2/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/3.2.2/iostream **** // Free Software Foundation; either version 2, or (at your option)
+   9:/usr/include/c++/3.2.2/iostream **** // any later version.
+  10:/usr/include/c++/3.2.2/iostream **** 
+  11:/usr/include/c++/3.2.2/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/3.2.2/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/3.2.2/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/3.2.2/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/3.2.2/iostream **** 
+  16:/usr/include/c++/3.2.2/iostream **** // You should have received a copy of the GNU General Public License along
+  17:/usr/include/c++/3.2.2/iostream **** // with this library; see the file COPYING.  If not, write to the Free
+  18:/usr/include/c++/3.2.2/iostream **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  19:/usr/include/c++/3.2.2/iostream **** // USA.
+GAS LISTING /tmp/ccQQlx0Y.s 			page 4
+
+
+  20:/usr/include/c++/3.2.2/iostream **** 
+  21:/usr/include/c++/3.2.2/iostream **** // As a special exception, you may use this file as part of a free software
+  22:/usr/include/c++/3.2.2/iostream **** // library without restriction.  Specifically, if other files instantiate
+  23:/usr/include/c++/3.2.2/iostream **** // templates or use macros or inline functions from this file, or you compile
+  24:/usr/include/c++/3.2.2/iostream **** // this file and link it with other files to produce an executable, this
+  25:/usr/include/c++/3.2.2/iostream **** // file does not by itself cause the resulting executable to be covered by
+  26:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.  This exception does not however
+  27:/usr/include/c++/3.2.2/iostream **** // invalidate any other reasons why the executable file might be covered by
+  28:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.
+  29:/usr/include/c++/3.2.2/iostream **** 
+  30:/usr/include/c++/3.2.2/iostream **** //
+  31:/usr/include/c++/3.2.2/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  32:/usr/include/c++/3.2.2/iostream **** //
+  33:/usr/include/c++/3.2.2/iostream **** 
+  34:/usr/include/c++/3.2.2/iostream **** /** @file iostream
+  35:/usr/include/c++/3.2.2/iostream ****  *  This is a Standard C++ Library header.  You should @c #include this header
+  36:/usr/include/c++/3.2.2/iostream ****  *  in your programs, rather than any of the "st[dl]_*.h" implementation files.
+  37:/usr/include/c++/3.2.2/iostream ****  */
+  38:/usr/include/c++/3.2.2/iostream **** 
+  39:/usr/include/c++/3.2.2/iostream **** #ifndef _CPP_IOSTREAM
+  40:/usr/include/c++/3.2.2/iostream **** #define _CPP_IOSTREAM	1
+  41:/usr/include/c++/3.2.2/iostream **** 
+  42:/usr/include/c++/3.2.2/iostream **** #pragma GCC system_header
+  43:/usr/include/c++/3.2.2/iostream **** 
+  44:/usr/include/c++/3.2.2/iostream **** #include <bits/c++config.h>
+  45:/usr/include/c++/3.2.2/iostream **** #include <ostream>
+  46:/usr/include/c++/3.2.2/iostream **** #include <istream>
+  47:/usr/include/c++/3.2.2/iostream **** 
+  48:/usr/include/c++/3.2.2/iostream **** namespace std 
+  49:/usr/include/c++/3.2.2/iostream **** {
+  50:/usr/include/c++/3.2.2/iostream ****   extern istream cin;
+  51:/usr/include/c++/3.2.2/iostream ****   extern ostream cout;
+  52:/usr/include/c++/3.2.2/iostream ****   extern ostream cerr;
+  53:/usr/include/c++/3.2.2/iostream ****   extern ostream clog;
+  54:/usr/include/c++/3.2.2/iostream **** 
+  55:/usr/include/c++/3.2.2/iostream **** #ifdef _GLIBCPP_USE_WCHAR_T
+  56:/usr/include/c++/3.2.2/iostream ****   extern wistream wcin;
+  57:/usr/include/c++/3.2.2/iostream ****   extern wostream wcout;
+  58:/usr/include/c++/3.2.2/iostream ****   extern wostream wcerr;
+  59:/usr/include/c++/3.2.2/iostream ****   extern wostream wclog;
+  60:/usr/include/c++/3.2.2/iostream **** #endif
+  61:/usr/include/c++/3.2.2/iostream **** 
+  62:/usr/include/c++/3.2.2/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  63:/usr/include/c++/3.2.2/iostream ****   static ios_base::Init __ioinit;
+ 126              		.loc 44 63 0
+ 127 0076 817D0CFF 		cmpl	$65535, 12(%ebp)
+ 127      FF0000
+ 128 007d 752D     		jne	.L2
+ 129 007f 837D0801 		cmpl	$1, 8(%ebp)
+ 130 0083 7527     		jne	.L2
+ 131 0085 83EC0C   		subl	$12, %esp
+ 132 0088 68000000 		pushl	$_ZSt8__ioinit
+ 132      00
+ 133              	.LCFI8:
+ 134 008d E8FCFFFF 		call	_ZNSt8ios_base4InitC1Ev
+ 134      FF
+ 135 0092 83C410   		addl	$16, %esp
+GAS LISTING /tmp/ccQQlx0Y.s 			page 5
+
+
+ 136 0095 83EC04   		subl	$4, %esp
+ 137 0098 68000000 		pushl	$__dso_handle
+ 137      00
+ 138 009d 6A00     		pushl	$0
+ 139 009f 68AE0000 		pushl	$__tcf_0
+ 139      00
+ 140 00a4 E8FCFFFF 		call	__cxa_atexit
+ 140      FF
+ 141 00a9 83C410   		addl	$16, %esp
+ 142              	.L2:
+ 143 00ac C9       		leave
+ 144 00ad C3       		ret
+ 145              	.LFE1491:
+ 146              	.Lfe2:
+ 148              		.align 2
+ 150              	__tcf_0:
+ 151              	.LFB1492:
+ 152              		.loc 44 63 0
+ 153 00ae 55       		pushl	%ebp
+ 154              	.LCFI9:
+ 155 00af 89E5     		movl	%esp, %ebp
+ 156              	.LCFI10:
+ 157 00b1 83EC08   		subl	$8, %esp
+ 158              	.LCFI11:
+ 159              		.loc 44 63 0
+ 160 00b4 83EC0C   		subl	$12, %esp
+ 161 00b7 68000000 		pushl	$_ZSt8__ioinit
+ 161      00
+ 162              	.LCFI12:
+ 163 00bc E8FCFFFF 		call	_ZNSt8ios_base4InitD1Ev
+ 163      FF
+ 164 00c1 83C410   		addl	$16, %esp
+ 165 00c4 C9       		leave
+ 166 00c5 C3       		ret
+ 167              	.LFE1492:
+ 168              	.Lfe3:
+ 170              		.section	.rodata
+ 171 0016 0000     		.align 4
+ 174              	depth:
+ 175 0018 F4010000 		.long	500
+ 176              		.text
+ 177              		.align 2
+ 179              	_GLOBAL__I_main:
+ 180              	.LFB1494:
+ 181              		.loc 1 18 0
+ 182 00c6 55       		pushl	%ebp
+ 183              	.LCFI13:
+ 184 00c7 89E5     		movl	%esp, %ebp
+ 185              	.LCFI14:
+ 186 00c9 83EC08   		subl	$8, %esp
+ 187              	.LCFI15:
+ 188              		.loc 1 18 0
+ 189 00cc 83EC08   		subl	$8, %esp
+ 190 00cf 68FFFF00 		pushl	$65535
+ 190      00
+ 191 00d4 6A01     		pushl	$1
+ 192              	.LCFI16:
+GAS LISTING /tmp/ccQQlx0Y.s 			page 6
+
+
+ 193 00d6 E895FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 193      FF
+ 194 00db 83C410   		addl	$16, %esp
+ 195 00de C9       		leave
+ 196 00df C3       		ret
+ 197              	.LFE1494:
+ 198              	.Lfe4:
+ 200              		.section	.ctors,"aw",@progbits
+ 201              		.align 4
+ 202 0000 C6000000 		.long	_GLOBAL__I_main
+ 203              		.file 45 "/usr/include/stdio.h"
+ 204              		.file 46 "/usr/include/c++/3.2.2/iosfwd"
+ 205              		.file 47 "/usr/include/c++/3.2.2/exception"
+ 206              		.file 48 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++locale.h"
+ 207              		.file 49 "/usr/include/c++/3.2.2/streambuf"
+ 208              		.file 50 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 209              		.file 51 "/usr/include/bits/sigset.h"
+ 210              		.file 52 "/usr/include/signal.h"
+ 211              		.file 53 "/usr/include/nl_types.h"
+ 212              		.file 54 "/usr/include/sys/select.h"
+ 213              		.file 55 "/usr/include/wctype.h"
+ 214              		.file 56 "/usr/include/errno.h"
+ 215              		.file 57 "/usr/include/bits/mathdef.h"
+ 216              		.weak	pthread_mutex_unlock
+ 217              		.weak	pthread_mutex_trylock
+ 218              		.weak	pthread_mutex_lock
+ 219              		.weak	pthread_create
+ 220              		.weak	pthread_setspecific
+ 221              		.weak	pthread_getspecific
+ 222              		.weak	pthread_key_delete
+ 223              		.weak	pthread_key_create
+ 224              		.weak	pthread_once
+ 335              	.Lframe1:
+ 336 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 337              	.LSCIE1:
+ 338 0004 00000000 		.long	0x0
+ 339 0008 01       		.byte	0x1
+ 340 0009 7A5000   		.string	"zP"
+ 341 000c 01       		.uleb128 0x1
+ 342 000d 7C       		.sleb128 -4
+ 343 000e 08       		.byte	0x8
+ 344 000f 05       		.uleb128 0x5
+ 345 0010 00       		.byte	0x0
+ 346 0011 00000000 		.long	__gxx_personality_v0
+ 347 0015 0C       		.byte	0xc
+ 348 0016 04       		.uleb128 0x4
+ 349 0017 04       		.uleb128 0x4
+ 350 0018 88       		.byte	0x88
+ 351 0019 01       		.uleb128 0x1
+ 352 001a 0000     		.align 4
+ 353              	.LECIE1:
+ 354              	.LSFDE1:
+ 355 001c 2C000000 		.long	.LEFDE1-.LASFDE1
+ 356              	.LASFDE1:
+ 357 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 358 0024 00000000 		.long	.LFB1479
+ 359 0028 70000000 		.long	.LFE1479-.LFB1479
+GAS LISTING /tmp/ccQQlx0Y.s 			page 7
+
+
+ 360 002c 00       		.uleb128 0x0
+ 361 002d 04       		.byte	0x4
+ 362 002e 01000000 		.long	.LCFI0-.LFB1479
+ 363 0032 0E       		.byte	0xe
+ 364 0033 08       		.uleb128 0x8
+ 365 0034 85       		.byte	0x85
+ 366 0035 02       		.uleb128 0x2
+ 367 0036 04       		.byte	0x4
+ 368 0037 02000000 		.long	.LCFI1-.LCFI0
+ 369 003b 0D       		.byte	0xd
+ 370 003c 05       		.uleb128 0x5
+ 371 003d 04       		.byte	0x4
+ 372 003e 3A000000 		.long	.LCFI3-.LCFI1
+ 373 0042 2E       		.byte	0x2e
+ 374 0043 14       		.uleb128 0x14
+ 375 0044 04       		.byte	0x4
+ 376 0045 24000000 		.long	.LCFI4-.LCFI3
+ 377 0049 2E       		.byte	0x2e
+ 378 004a 10       		.uleb128 0x10
+ 379 004b 00       		.align 4
+ 380              	.LEFDE1:
+ 381              	.LSFDE3:
+ 382 004c 24000000 		.long	.LEFDE3-.LASFDE3
+ 383              	.LASFDE3:
+ 384 0050 50000000 		.long	.LASFDE3-.Lframe1
+ 385 0054 70000000 		.long	.LFB1491
+ 386 0058 3E000000 		.long	.LFE1491-.LFB1491
+ 387 005c 00       		.uleb128 0x0
+ 388 005d 04       		.byte	0x4
+ 389 005e 01000000 		.long	.LCFI5-.LFB1491
+ 390 0062 0E       		.byte	0xe
+ 391 0063 08       		.uleb128 0x8
+ 392 0064 85       		.byte	0x85
+ 393 0065 02       		.uleb128 0x2
+ 394 0066 04       		.byte	0x4
+ 395 0067 02000000 		.long	.LCFI6-.LCFI5
+ 396 006b 0D       		.byte	0xd
+ 397 006c 05       		.uleb128 0x5
+ 398 006d 04       		.byte	0x4
+ 399 006e 1A000000 		.long	.LCFI8-.LCFI6
+ 400 0072 2E       		.byte	0x2e
+ 401 0073 10       		.uleb128 0x10
+ 402              		.align 4
+ 403              	.LEFDE3:
+ 404              	.LSFDE5:
+ 405 0074 24000000 		.long	.LEFDE5-.LASFDE5
+ 406              	.LASFDE5:
+ 407 0078 78000000 		.long	.LASFDE5-.Lframe1
+ 408 007c AE000000 		.long	.LFB1492
+ 409 0080 18000000 		.long	.LFE1492-.LFB1492
+ 410 0084 00       		.uleb128 0x0
+ 411 0085 04       		.byte	0x4
+ 412 0086 01000000 		.long	.LCFI9-.LFB1492
+ 413 008a 0E       		.byte	0xe
+ 414 008b 08       		.uleb128 0x8
+ 415 008c 85       		.byte	0x85
+ 416 008d 02       		.uleb128 0x2
+GAS LISTING /tmp/ccQQlx0Y.s 			page 8
+
+
+ 417 008e 04       		.byte	0x4
+ 418 008f 02000000 		.long	.LCFI10-.LCFI9
+ 419 0093 0D       		.byte	0xd
+ 420 0094 05       		.uleb128 0x5
+ 421 0095 04       		.byte	0x4
+ 422 0096 0B000000 		.long	.LCFI12-.LCFI10
+ 423 009a 2E       		.byte	0x2e
+ 424 009b 10       		.uleb128 0x10
+ 425              		.align 4
+ 426              	.LEFDE5:
+ 427              	.LSFDE7:
+ 428 009c 24000000 		.long	.LEFDE7-.LASFDE7
+ 429              	.LASFDE7:
+ 430 00a0 A0000000 		.long	.LASFDE7-.Lframe1
+ 431 00a4 C6000000 		.long	.LFB1494
+ 432 00a8 1A000000 		.long	.LFE1494-.LFB1494
+ 433 00ac 00       		.uleb128 0x0
+ 434 00ad 04       		.byte	0x4
+ 435 00ae 01000000 		.long	.LCFI13-.LFB1494
+ 436 00b2 0E       		.byte	0xe
+ 437 00b3 08       		.uleb128 0x8
+ 438 00b4 85       		.byte	0x85
+ 439 00b5 02       		.uleb128 0x2
+ 440 00b6 04       		.byte	0x4
+ 441 00b7 02000000 		.long	.LCFI14-.LCFI13
+ 442 00bb 0D       		.byte	0xd
+ 443 00bc 05       		.uleb128 0x5
+ 444 00bd 04       		.byte	0x4
+ 445 00be 0D000000 		.long	.LCFI16-.LCFI14
+ 446 00c2 2E       		.byte	0x2e
+ 447 00c3 10       		.uleb128 0x10
+ 448              		.align 4
+ 449              	.LEFDE7:
+ 450              		.text
+ 451              	.Letext0:
+GAS LISTING /tmp/ccQQlx0Y.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 template-depth.cc
+                             .bss:00000000 _ZSt8__ioinit
+     /tmp/ccQQlx0Y.s:64     .text:00000000 main
+     /tmp/ccQQlx0Y.s:116    .text:00000070 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccQQlx0Y.s:150    .text:000000ae __tcf_0
+     /tmp/ccQQlx0Y.s:174    .rodata:00000018 depth
+     /tmp/ccQQlx0Y.s:179    .text:000000c6 _GLOBAL__I_main
+
+UNDEFINED SYMBOLS
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZNSolsEPFRSoS_E
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+__cxa_atexit
+_ZNSt8ios_base4InitD1Ev
+__gxx_personality_v0

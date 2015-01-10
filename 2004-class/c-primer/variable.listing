@@ -1,0 +1,57 @@
+GAS LISTING /tmp/ccqWx0N8.s 			page 1
+
+
+   1              		.file	"variable.c"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+ 161              		.align 4
+ 165              	.globl main
+ 167              	main:
+ 168 0000 55       		pushl %ebp
+ 169 0001 89E5     		movl %esp,%ebp
+ 170 0003 83EC18   		subl $24,%esp
+   1:variable.c    **** #include <stdio.h>
+   2:variable.c    **** 
+   3:variable.c    **** int
+   4:variable.c    **** main (int argc, char **argv)
+   5:variable.c    **** {
+ 172              	.LM1:
+   6:variable.c    ****     int val;
+ 174              	.LM2:
+ 175              	.LBB2:
+   7:variable.c    ****     val = 13;
+ 177              	.LM3:
+ 178 0006 C745FC0D 		movl $13,-4(%ebp)
+ 178      000000
+   8:variable.c    ****     val += 37;
+ 180              	.LM4:
+ 181 000d 8345FC25 		addl $37,-4(%ebp)
+   9:variable.c    ****     return val;
+ 183              	.LM5:
+ 184 0011 8B55FC   		movl -4(%ebp),%edx
+ 185 0014 89D0     		movl %edx,%eax
+ 186 0016 EB00     		jmp .L2
+  10:variable.c    **** }
+ 188              	.LM6:
+ 189              	.LBE2:
+ 191              	.LM7:
+ 192              		.p2align 4,,7
+ 193              	.L2:
+ 194 0018 C9       		leave
+ 195 0019 C3       		ret
+ 196              	.Lfe1:
+ 201              	.Lscope0:
+ 203              		.text
+ 205              	Letext:
+ 206 001a 8DB60000 		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+ 206      0000
+GAS LISTING /tmp/ccqWx0N8.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 variable.c
+     /tmp/ccqWx0N8.s:167    .text:00000000 main
+     /tmp/ccqWx0N8.s:205    .text:0000001a Letext
+
+NO UNDEFINED SYMBOLS

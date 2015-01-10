@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 2: Virtual Methods</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 2: Virtual Methods</h1>
+
+    As we have seen, calling non-virtual methods with objects isn't
+    very complicated. Now lets talk about virtual methods and subclassing.
+
+    <h2>Virtual Methods - Call by Pointer/Reference</h2>
+
+    How do virtual methods work? With a vtable. What a vtable? Lets
+    look at an example:
+    <a href="basic-vtable.cc">basic-vtable.cc</a>,
+    <a href="basic-vtable.s">basic-vtable.s</a>,
+    <a href="basic-vtable.listing">basic-vtable.listing</a>.
+
+    <dl>
+
+    <dt>_ZTV8onefield<dd> A pointer to the VTable of the onefield object.
+    <dt>_ZTI8onefield<dd> A pointer to the typeinfo structure for onefield.
+
+    <dt>_ZTVN10__cxxabiv117__class_type_infoE+8 <dd> Pointer to the
+    VTable for the implementation object of class_type_info.
+
+    </dl>
+
+    <h2>Virtual Methods - Overriding</h2>
+
+    Lets do an example where we override a virtual method:
+    <a href="subclass-vtable.cc">subclass-vtable.cc</a>,
+    <a href="subclass-vtable.s">subclass-vtable.s</a>,
+    <a href="subclass-vtable.listing">subclass-vtable.listing</a>.
+    
+    <dl>
+    <dt>_ZTV17onefield_subclass<dd>This is the vtable for onefield_subclass.
+    </dl>
+
+    As we can see, the subclass vtable has the same entries as the
+    superclass, but where they are overridden we see the subclass
+    methods replacing the superclass methods where appropriate.
+
+    <h2>Virtual Methods - Call by "Value"</h2>
+
+    When you call a virtual method on a local or temporary variable,
+    the compiler really does know the type of the variable, and so it
+    doesn't have to go through the vtable. This is a useful
+    optimization. It can be seen in the basic-vtable example above.
+
+    <p>
+    It is also why you have to make sure to pass a
+    subclass into a method expecting a superclass by reference, not by
+    copyconstructing an instance of the superclass. Becuase the later
+    technique will cause the superclass functions to get called,
+    rather than the subclass ones, even if they are virtual.
+    <p>
+    
+    
+    <h2>Pure Virtual Methods</h2>
+
+    Pure virtual methods are just funny entries in the vtable.
+    Specifically pointers to __cxa_pure_virtual. An example:
+    <a href="vtable-null.cc">vtable-null.cc</a>,
+    <a href="vtable-null.s">vtable-null.s</a>,
+    <a href="vtable-null.listing">vtable-null.listing</a>.
+    
+
+    <h2>Virtual Destructors</h2>
+
+    You want a virtual destructor becuase otherwise someone might
+    delete your object when they have a pointer to a superclass, and
+    your destructor won't get run. Simple as that.
+
+
+    <h2>Subclasses</h2>
+
+    To see subclasses that add data values, we can look back at our
+    subclass-vtable example:
+
+    <a href="subclass-vtable.cc">subclass-vtable.cc</a>,
+    <a href="subclass-vtable.s">subclass-vtable.s</a>,
+    <a href="subclass-vtable.listing">subclass-vtable.listing</a>.
+
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 21 17:36:31 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

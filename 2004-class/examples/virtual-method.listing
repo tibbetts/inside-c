@@ -1,0 +1,661 @@
+GAS LISTING /tmp/ccOZn476.s 			page 1
+
+
+   1              		.file	"virtual-method.cc"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+  33              		.align 4
+  36              	.globl doMethods__FR6parent
+  38              	doMethods__FR6parent:
+  39              	.LFB1:
+  40 0000 55       		pushl %ebp
+  41              	.LCFI0:
+  42 0001 89E5     		movl %esp,%ebp
+  43              	.LCFI1:
+  44 0003 83EC14   		subl $20,%esp
+  45              	.LCFI2:
+  46 0006 53       		pushl %ebx
+  47              	.LCFI3:
+   1:virtual-method.cc **** struct parent {
+   2:virtual-method.cc ****     virtual int foo() { return 12; }
+   3:virtual-method.cc ****     virtual int bar() { return 15; }
+   4:virtual-method.cc **** };
+   5:virtual-method.cc **** 
+   6:virtual-method.cc **** struct child : public parent {
+   7:virtual-method.cc ****     virtual int foo() { return 37; }
+   8:virtual-method.cc **** };
+   9:virtual-method.cc **** 
+  10:virtual-method.cc **** void doMethods(parent &p) {
+  49              	.LM1:
+  51              	.LM2:
+  52              	.LBB2:
+  11:virtual-method.cc ****     p.foo();
+  54              	.LM3:
+  55 0007 83C4F4   		addl $-12,%esp
+  56 000a 8B5508   		movl 8(%ebp),%edx
+  57 000d 8B02     		movl (%edx),%eax
+  58 000f 83C008   		addl $8,%eax
+  59 0012 8B5508   		movl 8(%ebp),%edx
+  60 0015 52       		pushl %edx
+  61 0016 8B18     		movl (%eax),%ebx
+  62              	.LCFI4:
+  63 0018 FFD3     		call *%ebx
+  64 001a 83C410   		addl $16,%esp
+  12:virtual-method.cc ****     p.bar();
+  66              	.LM4:
+  67 001d 83C4F4   		addl $-12,%esp
+  68 0020 8B5508   		movl 8(%ebp),%edx
+  69 0023 8B02     		movl (%edx),%eax
+  70 0025 83C00C   		addl $12,%eax
+  71 0028 8B5508   		movl 8(%ebp),%edx
+  72 002b 52       		pushl %edx
+  73 002c 8B18     		movl (%eax),%ebx
+  74 002e FFD3     		call *%ebx
+  75 0030 83C410   		addl $16,%esp
+  76              	.LBE2:
+  77 0033 EB02     		jmp .L9
+  78 0035 EB00     		jmp .L8
+  79              		.p2align 4,,7
+  80              	.L9:
+GAS LISTING /tmp/ccOZn476.s 			page 2
+
+
+  13:virtual-method.cc **** }
+  82              	.LM5:
+  83              	.L8:
+  84 0037 8B5DE8   		movl -24(%ebp),%ebx
+  85 003a C9       		leave
+  86 003b C3       		ret
+  87              	.LFE1:
+  88              	.Lfe1:
+  92              	.Lscope0:
+  94              		.align 4
+  98              	.globl main
+ 100              	main:
+ 101              	.LFB2:
+ 102 003c 55       		pushl %ebp
+ 103              	.LCFI5:
+ 104 003d 89E5     		movl %esp,%ebp
+ 105              	.LCFI6:
+ 106 003f 83EC18   		subl $24,%esp
+ 107              	.LCFI7:
+  14:virtual-method.cc **** 
+  15:virtual-method.cc **** int main(int argc, char **argv) {
+ 109              	.LM6:
+ 111              	.LM7:
+ 112              	.LBB3:
+  16:virtual-method.cc ****     parent p;
+ 114              	.LM8:
+ 115 0042 83C4F4   		addl $-12,%esp
+ 116 0045 8D45FC   		leal -4(%ebp),%eax
+ 117 0048 50       		pushl %eax
+ 118              	.LCFI8:
+ 119 0049 E8FCFFFF 		call __6parent
+ 119      FF
+ 120 004e 83C410   		addl $16,%esp
+  17:virtual-method.cc ****     doMethods(p);
+ 122              	.LM9:
+ 123 0051 83C4F4   		addl $-12,%esp
+ 124 0054 8D45FC   		leal -4(%ebp),%eax
+ 125 0057 50       		pushl %eax
+ 126 0058 E8FCFFFF 		call doMethods__FR6parent
+ 126      FF
+ 127 005d 83C410   		addl $16,%esp
+  18:virtual-method.cc **** 
+  19:virtual-method.cc ****     child c;
+ 129              	.LM10:
+ 130 0060 83C4F4   		addl $-12,%esp
+ 131 0063 8D45F8   		leal -8(%ebp),%eax
+ 132 0066 50       		pushl %eax
+ 133 0067 E8FCFFFF 		call __5child
+ 133      FF
+ 134 006c 83C410   		addl $16,%esp
+  20:virtual-method.cc ****     doMethods(c);
+ 136              	.LM11:
+ 137 006f 83C4F4   		addl $-12,%esp
+ 138 0072 8D45F8   		leal -8(%ebp),%eax
+ 139 0075 50       		pushl %eax
+ 140 0076 E8FCFFFF 		call doMethods__FR6parent
+ 140      FF
+GAS LISTING /tmp/ccOZn476.s 			page 3
+
+
+ 141 007b 83C410   		addl $16,%esp
+ 142              	.LBE3:
+ 143 007e 31C0     		xorl %eax,%eax
+ 144 0080 EB00     		jmp .L10
+  21:virtual-method.cc **** }
+ 146              	.LM12:
+ 147              		.p2align 4,,7
+ 148              	.L10:
+ 149 0082 C9       		leave
+ 150 0083 C3       		ret
+ 151              	.LFE2:
+ 152              	.Lfe2:
+ 158              	.Lscope1:
+ 160              	.section	.gnu.linkonce.t.__6parent,"ax",@progbits
+ 161              		.align 4
+ 164              		.weak	__6parent
+ 166              	__6parent:
+ 167              	.LFB3:
+ 168 0000 55       		pushl %ebp
+ 169              	.LCFI9:
+ 170 0001 89E5     		movl %esp,%ebp
+ 171              	.LCFI10:
+ 173              	.LM13:
+ 174 0003 8B5508   		movl 8(%ebp),%edx
+ 176              	.LM14:
+ 177 0006 C7020000 		movl $__vt_6parent,(%edx)
+ 177      0000
+ 178              	.L12:
+ 179 000c 89D0     		movl %edx,%eax
+ 180 000e EB00     		jmp .L11
+ 182              	.LM15:
+ 183              	.L11:
+ 184 0010 C9       		leave
+ 185 0011 C3       		ret
+ 186              	.LFE3:
+ 187              	.Lfe3:
+ 190              	.Lscope2:
+ 192 0012 89F6     	.section	.gnu.linkonce.t.__5child,"ax",@progbits
+ 193              		.align 4
+ 196              		.weak	__5child
+ 198              	__5child:
+ 199              	.LFB4:
+ 200 0000 55       		pushl %ebp
+ 201              	.LCFI11:
+ 202 0001 89E5     		movl %esp,%ebp
+ 203              	.LCFI12:
+ 204 0003 83EC14   		subl $20,%esp
+ 205              	.LCFI13:
+ 206 0006 53       		pushl %ebx
+ 207              	.LCFI14:
+ 209              	.LM16:
+ 210 0007 8B5D08   		movl 8(%ebp),%ebx
+ 212              	.LM17:
+ 213 000a 83C4F4   		addl $-12,%esp
+ 214 000d 53       		pushl %ebx
+ 215              	.LCFI15:
+ 216 000e E8FCFFFF 		call __6parent
+GAS LISTING /tmp/ccOZn476.s 			page 4
+
+
+ 216      FF
+ 217 0013 83C410   		addl $16,%esp
+ 218 0016 C7030000 		movl $__vt_5child,(%ebx)
+ 218      0000
+ 219              	.L14:
+ 220 001c 89D8     		movl %ebx,%eax
+ 221 001e EB00     		jmp .L13
+ 223              	.LM18:
+ 224              	.L13:
+ 225 0020 8B5DE8   		movl -24(%ebp),%ebx
+ 226 0023 C9       		leave
+ 227 0024 C3       		ret
+ 228              	.LFE4:
+ 229              	.Lfe4:
+ 232              	.Lscope3:
+ 234              		.weak	__vt_5child
+ 235 0025 8D7600   	.section	.gnu.linkonce.d.__vt_5child,"aw",@progbits
+ 237              		.align 4
+ 240              	__vt_5child:
+ 241 0000 00000000 		.long 0
+ 242 0004 00000000 		.long __tf5child
+ 243 0008 00000000 		.long foo__5child
+ 244 000c 00000000 		.long bar__6parent
+ 245 0010 00000000 		.zero	4
+ 246              		.weak	__vt_6parent
+ 247              	.section	.gnu.linkonce.d.__vt_6parent,"aw",@progbits
+ 249              		.align 4
+ 252              	__vt_6parent:
+ 253 0000 00000000 		.long 0
+ 254 0004 00000000 		.long __tf6parent
+ 255 0008 00000000 		.long foo__6parent
+ 256 000c 00000000 		.long bar__6parent
+ 257 0010 00000000 		.zero	4
+ 259              		.comm	__ti6parent,8,4
+ 260              	.section	.rodata
+ 261              	.LC0:
+ 262 0000 36706172 		.string	"6parent"
+ 262      656E7400 
+ 263              	.section	.gnu.linkonce.t.__tf6parent,"ax",@progbits
+ 264              		.align 4
+ 266              		.weak	__tf6parent
+ 268              	__tf6parent:
+ 269              	.LFB5:
+ 270 0000 55       		pushl %ebp
+ 271              	.LCFI16:
+ 272 0001 89E5     		movl %esp,%ebp
+ 273              	.LCFI17:
+ 274 0003 83EC08   		subl $8,%esp
+ 275              	.LCFI18:
+  22:virtual-method.cc **** 
+ 277              	.LM19:
+ 278 0006 833D0000 		cmpl $0,__ti6parent
+ 278      000000
+ 279 000d 7515     		jne .L16
+ 280 000f 83C4F8   		addl $-8,%esp
+ 281 0012 68000000 		pushl $.LC0
+ 281      00
+GAS LISTING /tmp/ccOZn476.s 			page 5
+
+
+ 282 0017 68000000 		pushl $__ti6parent
+ 282      00
+ 283              	.LCFI19:
+ 284 001c E8FCFFFF 		call __rtti_user
+ 284      FF
+ 285 0021 83C410   		addl $16,%esp
+ 286              	.L16:
+ 287 0024 B8000000 		movl $__ti6parent,%eax
+ 287      00
+ 288 0029 EB05     		jmp .L15
+ 290              	.LM20:
+ 291 002b 908D7426 		.p2align 4,,7
+ 291      00
+ 292              	.L15:
+ 293 0030 C9       		leave
+ 294 0031 C3       		ret
+ 295              	.LFE5:
+ 296              	.Lfe5:
+ 298              	.Lscope4:
+ 301              		.comm	__ti5child,12,4
+ 302 0032 8DB42600 	.section	.rodata
+ 302      0000008D 
+ 302      BC270000 
+ 302      0000
+ 303              	.LC1:
+ 304 0008 35636869 		.string	"5child"
+ 304      6C6400
+ 305              	.section	.gnu.linkonce.t.__tf5child,"ax",@progbits
+ 306              		.align 4
+ 308              		.weak	__tf5child
+ 310              	__tf5child:
+ 311              	.LFB6:
+ 312 0000 55       		pushl %ebp
+ 313              	.LCFI20:
+ 314 0001 89E5     		movl %esp,%ebp
+ 315              	.LCFI21:
+ 316 0003 83EC08   		subl $8,%esp
+ 317              	.LCFI22:
+ 319              	.LM21:
+ 320 0006 833D0000 		cmpl $0,__ti5child
+ 320      000000
+ 321 000d 7521     		jne .L18
+ 322 000f E8FCFFFF 		call __tf6parent
+ 322      FF
+ 323 0014 89C0     		movl %eax,%eax
+ 324 0016 83C4FC   		addl $-4,%esp
+ 325 0019 68000000 		pushl $__ti6parent
+ 325      00
+ 326 001e 68080000 		pushl $.LC1
+ 326      00
+ 327 0023 68000000 		pushl $__ti5child
+ 327      00
+ 328              	.LCFI23:
+ 329 0028 E8FCFFFF 		call __rtti_si
+ 329      FF
+ 330 002d 83C410   		addl $16,%esp
+ 331              	.L18:
+GAS LISTING /tmp/ccOZn476.s 			page 6
+
+
+ 332 0030 B8000000 		movl $__ti5child,%eax
+ 332      00
+ 333 0035 EB00     		jmp .L17
+ 335              	.LM22:
+ 336              		.p2align 4,,7
+ 337              	.L17:
+ 338 0037 C9       		leave
+ 339 0038 C3       		ret
+ 340              	.LFE6:
+ 341              	.Lfe6:
+ 343              	.Lscope5:
+ 345 0039 8DB42600 	.section	.gnu.linkonce.t.foo__6parent,"ax",@progbits
+ 345      000000
+ 346              		.align 4
+ 349              		.weak	foo__6parent
+ 351              	foo__6parent:
+ 352              	.LFB7:
+ 353 0000 55       		pushl %ebp
+ 354              	.LCFI24:
+ 355 0001 89E5     		movl %esp,%ebp
+ 356              	.LCFI25:
+ 358              	.LM23:
+ 359 0003 8B5508   		movl 8(%ebp),%edx
+ 361              	.LM24:
+ 362              	.LBB4:
+ 363 0006 B80C0000 		movl $12,%eax
+ 363      00
+ 364 000b EB04     		jmp .L2
+ 365              	.LBE4:
+ 366 000d EB02     		jmp .L3
+ 367 000f EB00     		jmp .L2
+ 368              		.p2align 4,,7
+ 369              	.L3:
+ 371              	.LM25:
+ 372              	.L2:
+ 373 0011 C9       		leave
+ 374 0012 C3       		ret
+ 375              	.LFE7:
+ 376              	.Lfe7:
+ 381              	.Lscope6:
+ 383 0013 8DB60000 	.section	.gnu.linkonce.t.bar__6parent,"ax",@progbits
+ 383      00008DBC 
+ 383      27000000 
+ 383      00
+ 384              		.align 4
+ 387              		.weak	bar__6parent
+ 389              	bar__6parent:
+ 390              	.LFB8:
+ 391 0000 55       		pushl %ebp
+ 392              	.LCFI26:
+ 393 0001 89E5     		movl %esp,%ebp
+ 394              	.LCFI27:
+ 396              	.LM26:
+ 397 0003 8B5508   		movl 8(%ebp),%edx
+ 399              	.LM27:
+ 400              	.LBB5:
+ 401 0006 B80F0000 		movl $15,%eax
+GAS LISTING /tmp/ccOZn476.s 			page 7
+
+
+ 401      00
+ 402 000b EB04     		jmp .L4
+ 403              	.LBE5:
+ 404 000d EB02     		jmp .L5
+ 405 000f EB00     		jmp .L4
+ 406              		.p2align 4,,7
+ 407              	.L5:
+ 409              	.LM28:
+ 410              	.L4:
+ 411 0011 C9       		leave
+ 412 0012 C3       		ret
+ 413              	.LFE8:
+ 414              	.Lfe8:
+ 419              	.Lscope7:
+ 421 0013 8DB60000 	.section	.gnu.linkonce.t.foo__5child,"ax",@progbits
+ 421      00008DBC 
+ 421      27000000 
+ 421      00
+ 422              		.align 4
+ 425              		.weak	foo__5child
+ 427              	foo__5child:
+ 428              	.LFB9:
+ 429 0000 55       		pushl %ebp
+ 430              	.LCFI28:
+ 431 0001 89E5     		movl %esp,%ebp
+ 432              	.LCFI29:
+ 434              	.LM29:
+ 435 0003 8B5508   		movl 8(%ebp),%edx
+ 437              	.LM30:
+ 438              	.LBB6:
+ 439 0006 B8250000 		movl $37,%eax
+ 439      00
+ 440 000b EB04     		jmp .L6
+ 441              	.LBE6:
+ 442 000d EB02     		jmp .L7
+ 443 000f EB00     		jmp .L6
+ 444              		.p2align 4,,7
+ 445              	.L7:
+ 447              	.LM31:
+ 448              	.L6:
+ 449 0011 C9       		leave
+ 450 0012 C3       		ret
+ 451              	.LFE9:
+ 452              	.Lfe9:
+ 457              	.Lscope8:
+ 459 0013 8DB60000 		.text
+ 459      00008DBC 
+ 459      27000000 
+ 459      00
+ 461              	Letext:
+ 462              	
+ 463 0084 8DB60000 	.section	.eh_frame,"aw",@progbits
+ 463      00008DBF 
+ 463      00000000 
+ 464              	__FRAME_BEGIN__:
+ 465 0000 10000000 		.4byte	.LLCIE1
+ 466              	.LSCIE1:
+GAS LISTING /tmp/ccOZn476.s 			page 8
+
+
+ 467 0004 00000000 		.4byte	0x0
+ 468 0008 01       		.byte	0x1
+ 469 0009 00       		.byte	0x0
+ 470 000a 01       		.byte	0x1
+ 471 000b 7C       		.byte	0x7c
+ 472 000c 08       		.byte	0x8
+ 473 000d 0C       		.byte	0xc
+ 474 000e 04       		.byte	0x4
+ 475 000f 04       		.byte	0x4
+ 476 0010 88       		.byte	0x88
+ 477 0011 01       		.byte	0x1
+ 478 0012 0000     		.align 4
+ 479              	.LECIE1:
+ 480              		.set	.LLCIE1,.LECIE1-.LSCIE1
+ 481 0014 2C000000 		.4byte	.LLFDE1
+ 482              	.LSFDE1:
+ 483 0018 18000000 		.4byte	.LSFDE1-__FRAME_BEGIN__
+ 484 001c 00000000 		.4byte	.LFB1
+ 485 0020 3C000000 		.4byte	.LFE1-.LFB1
+ 486 0024 04       		.byte	0x4
+ 487 0025 01000000 		.4byte	.LCFI0-.LFB1
+ 488 0029 0E       		.byte	0xe
+ 489 002a 08       		.byte	0x8
+ 490 002b 85       		.byte	0x85
+ 491 002c 02       		.byte	0x2
+ 492 002d 04       		.byte	0x4
+ 493 002e 02000000 		.4byte	.LCFI1-.LCFI0
+ 494 0032 0D       		.byte	0xd
+ 495 0033 05       		.byte	0x5
+ 496 0034 04       		.byte	0x4
+ 497 0035 04000000 		.4byte	.LCFI3-.LCFI1
+ 498 0039 83       		.byte	0x83
+ 499 003a 08       		.byte	0x8
+ 500 003b 04       		.byte	0x4
+ 501 003c 11000000 		.4byte	.LCFI4-.LCFI3
+ 502 0040 2E       		.byte	0x2e
+ 503 0041 10       		.byte	0x10
+ 504 0042 0000     		.align 4
+ 505              	.LEFDE1:
+ 506              		.set	.LLFDE1,.LEFDE1-.LSFDE1
+ 507 0044 24000000 		.4byte	.LLFDE3
+ 508              	.LSFDE3:
+ 509 0048 48000000 		.4byte	.LSFDE3-__FRAME_BEGIN__
+ 510 004c 3C000000 		.4byte	.LFB2
+ 511 0050 48000000 		.4byte	.LFE2-.LFB2
+ 512 0054 04       		.byte	0x4
+ 513 0055 01000000 		.4byte	.LCFI5-.LFB2
+ 514 0059 0E       		.byte	0xe
+ 515 005a 08       		.byte	0x8
+ 516 005b 85       		.byte	0x85
+ 517 005c 02       		.byte	0x2
+ 518 005d 04       		.byte	0x4
+ 519 005e 02000000 		.4byte	.LCFI6-.LCFI5
+ 520 0062 0D       		.byte	0xd
+ 521 0063 05       		.byte	0x5
+ 522 0064 04       		.byte	0x4
+ 523 0065 0A000000 		.4byte	.LCFI8-.LCFI6
+GAS LISTING /tmp/ccOZn476.s 			page 9
+
+
+ 524 0069 2E       		.byte	0x2e
+ 525 006a 10       		.byte	0x10
+ 526 006b 00       		.align 4
+ 527              	.LEFDE3:
+ 528              		.set	.LLFDE3,.LEFDE3-.LSFDE3
+ 529 006c 1C000000 		.4byte	.LLFDE5
+ 530              	.LSFDE5:
+ 531 0070 70000000 		.4byte	.LSFDE5-__FRAME_BEGIN__
+ 532 0074 00000000 		.4byte	.LFB3
+ 533 0078 12000000 		.4byte	.LFE3-.LFB3
+ 534 007c 04       		.byte	0x4
+ 535 007d 01000000 		.4byte	.LCFI9-.LFB3
+ 536 0081 0E       		.byte	0xe
+ 537 0082 08       		.byte	0x8
+ 538 0083 85       		.byte	0x85
+ 539 0084 02       		.byte	0x2
+ 540 0085 04       		.byte	0x4
+ 541 0086 02000000 		.4byte	.LCFI10-.LCFI9
+ 542 008a 0D       		.byte	0xd
+ 543 008b 05       		.byte	0x5
+ 544              		.align 4
+ 545              	.LEFDE5:
+ 546              		.set	.LLFDE5,.LEFDE5-.LSFDE5
+ 547 008c 2C000000 		.4byte	.LLFDE7
+ 548              	.LSFDE7:
+ 549 0090 90000000 		.4byte	.LSFDE7-__FRAME_BEGIN__
+ 550 0094 00000000 		.4byte	.LFB4
+ 551 0098 25000000 		.4byte	.LFE4-.LFB4
+ 552 009c 04       		.byte	0x4
+ 553 009d 01000000 		.4byte	.LCFI11-.LFB4
+ 554 00a1 0E       		.byte	0xe
+ 555 00a2 08       		.byte	0x8
+ 556 00a3 85       		.byte	0x85
+ 557 00a4 02       		.byte	0x2
+ 558 00a5 04       		.byte	0x4
+ 559 00a6 02000000 		.4byte	.LCFI12-.LCFI11
+ 560 00aa 0D       		.byte	0xd
+ 561 00ab 05       		.byte	0x5
+ 562 00ac 04       		.byte	0x4
+ 563 00ad 04000000 		.4byte	.LCFI14-.LCFI12
+ 564 00b1 83       		.byte	0x83
+ 565 00b2 08       		.byte	0x8
+ 566 00b3 04       		.byte	0x4
+ 567 00b4 07000000 		.4byte	.LCFI15-.LCFI14
+ 568 00b8 2E       		.byte	0x2e
+ 569 00b9 10       		.byte	0x10
+ 570 00ba 0000     		.align 4
+ 571              	.LEFDE7:
+ 572              		.set	.LLFDE7,.LEFDE7-.LSFDE7
+ 573 00bc 24000000 		.4byte	.LLFDE9
+ 574              	.LSFDE9:
+ 575 00c0 C0000000 		.4byte	.LSFDE9-__FRAME_BEGIN__
+ 576 00c4 00000000 		.4byte	.LFB5
+ 577 00c8 32000000 		.4byte	.LFE5-.LFB5
+ 578 00cc 04       		.byte	0x4
+ 579 00cd 01000000 		.4byte	.LCFI16-.LFB5
+ 580 00d1 0E       		.byte	0xe
+GAS LISTING /tmp/ccOZn476.s 			page 10
+
+
+ 581 00d2 08       		.byte	0x8
+ 582 00d3 85       		.byte	0x85
+ 583 00d4 02       		.byte	0x2
+ 584 00d5 04       		.byte	0x4
+ 585 00d6 02000000 		.4byte	.LCFI17-.LCFI16
+ 586 00da 0D       		.byte	0xd
+ 587 00db 05       		.byte	0x5
+ 588 00dc 04       		.byte	0x4
+ 589 00dd 19000000 		.4byte	.LCFI19-.LCFI17
+ 590 00e1 2E       		.byte	0x2e
+ 591 00e2 10       		.byte	0x10
+ 592 00e3 00       		.align 4
+ 593              	.LEFDE9:
+ 594              		.set	.LLFDE9,.LEFDE9-.LSFDE9
+ 595 00e4 24000000 		.4byte	.LLFDE11
+ 596              	.LSFDE11:
+ 597 00e8 E8000000 		.4byte	.LSFDE11-__FRAME_BEGIN__
+ 598 00ec 00000000 		.4byte	.LFB6
+ 599 00f0 39000000 		.4byte	.LFE6-.LFB6
+ 600 00f4 04       		.byte	0x4
+ 601 00f5 01000000 		.4byte	.LCFI20-.LFB6
+ 602 00f9 0E       		.byte	0xe
+ 603 00fa 08       		.byte	0x8
+ 604 00fb 85       		.byte	0x85
+ 605 00fc 02       		.byte	0x2
+ 606 00fd 04       		.byte	0x4
+ 607 00fe 02000000 		.4byte	.LCFI21-.LCFI20
+ 608 0102 0D       		.byte	0xd
+ 609 0103 05       		.byte	0x5
+ 610 0104 04       		.byte	0x4
+ 611 0105 25000000 		.4byte	.LCFI23-.LCFI21
+ 612 0109 2E       		.byte	0x2e
+ 613 010a 10       		.byte	0x10
+ 614 010b 00       		.align 4
+ 615              	.LEFDE11:
+ 616              		.set	.LLFDE11,.LEFDE11-.LSFDE11
+ 617 010c 1C000000 		.4byte	.LLFDE13
+ 618              	.LSFDE13:
+ 619 0110 10010000 		.4byte	.LSFDE13-__FRAME_BEGIN__
+ 620 0114 00000000 		.4byte	.LFB7
+ 621 0118 13000000 		.4byte	.LFE7-.LFB7
+ 622 011c 04       		.byte	0x4
+ 623 011d 01000000 		.4byte	.LCFI24-.LFB7
+ 624 0121 0E       		.byte	0xe
+ 625 0122 08       		.byte	0x8
+ 626 0123 85       		.byte	0x85
+ 627 0124 02       		.byte	0x2
+ 628 0125 04       		.byte	0x4
+ 629 0126 02000000 		.4byte	.LCFI25-.LCFI24
+ 630 012a 0D       		.byte	0xd
+ 631 012b 05       		.byte	0x5
+ 632              		.align 4
+ 633              	.LEFDE13:
+ 634              		.set	.LLFDE13,.LEFDE13-.LSFDE13
+ 635 012c 1C000000 		.4byte	.LLFDE15
+ 636              	.LSFDE15:
+ 637 0130 30010000 		.4byte	.LSFDE15-__FRAME_BEGIN__
+GAS LISTING /tmp/ccOZn476.s 			page 11
+
+
+ 638 0134 00000000 		.4byte	.LFB8
+ 639 0138 13000000 		.4byte	.LFE8-.LFB8
+ 640 013c 04       		.byte	0x4
+ 641 013d 01000000 		.4byte	.LCFI26-.LFB8
+ 642 0141 0E       		.byte	0xe
+ 643 0142 08       		.byte	0x8
+ 644 0143 85       		.byte	0x85
+ 645 0144 02       		.byte	0x2
+ 646 0145 04       		.byte	0x4
+ 647 0146 02000000 		.4byte	.LCFI27-.LCFI26
+ 648 014a 0D       		.byte	0xd
+ 649 014b 05       		.byte	0x5
+ 650              		.align 4
+ 651              	.LEFDE15:
+ 652              		.set	.LLFDE15,.LEFDE15-.LSFDE15
+ 653 014c 1C000000 		.4byte	.LLFDE17
+ 654              	.LSFDE17:
+ 655 0150 50010000 		.4byte	.LSFDE17-__FRAME_BEGIN__
+ 656 0154 00000000 		.4byte	.LFB9
+ 657 0158 13000000 		.4byte	.LFE9-.LFB9
+ 658 015c 04       		.byte	0x4
+ 659 015d 01000000 		.4byte	.LCFI28-.LFB9
+ 660 0161 0E       		.byte	0xe
+ 661 0162 08       		.byte	0x8
+ 662 0163 85       		.byte	0x85
+ 663 0164 02       		.byte	0x2
+ 664 0165 04       		.byte	0x4
+ 665 0166 02000000 		.4byte	.LCFI29-.LCFI28
+ 666 016a 0D       		.byte	0xd
+ 667 016b 05       		.byte	0x5
+ 668              		.align 4
+ 669              	.LEFDE17:
+ 670              		.set	.LLFDE17,.LEFDE17-.LSFDE17
+ 671              		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+GAS LISTING /tmp/ccOZn476.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 virtual-method.cc
+     /tmp/ccOZn476.s:38     .text:00000000 doMethods__FR6parent
+     /tmp/ccOZn476.s:100    .text:0000003c main
+     /tmp/ccOZn476.s:166    .gnu.linkonce.t.__6parent:00000000 __6parent
+     /tmp/ccOZn476.s:198    .gnu.linkonce.t.__5child:00000000 __5child
+     /tmp/ccOZn476.s:252    .gnu.linkonce.d.__vt_6parent:00000000 __vt_6parent
+     /tmp/ccOZn476.s:240    .gnu.linkonce.d.__vt_5child:00000000 __vt_5child
+     /tmp/ccOZn476.s:310    .gnu.linkonce.t.__tf5child:00000000 __tf5child
+     /tmp/ccOZn476.s:427    .gnu.linkonce.t.foo__5child:00000000 foo__5child
+     /tmp/ccOZn476.s:389    .gnu.linkonce.t.bar__6parent:00000000 bar__6parent
+     /tmp/ccOZn476.s:268    .gnu.linkonce.t.__tf6parent:00000000 __tf6parent
+     /tmp/ccOZn476.s:351    .gnu.linkonce.t.foo__6parent:00000000 foo__6parent
+                            *COM*:00000008 __ti6parent
+                            *COM*:0000000c __ti5child
+     /tmp/ccOZn476.s:461    .text:00000084 Letext
+     /tmp/ccOZn476.s:464    .eh_frame:00000000 __FRAME_BEGIN__
+
+UNDEFINED SYMBOLS
+__rtti_user
+__rtti_si

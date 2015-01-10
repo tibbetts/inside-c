@@ -1,0 +1,24 @@
+Text mode syllabus fog C++ Internal class.
+
+Day 1: (Jan 20) Introduction
+    - Getting assembler out of your C++ compiler.
+    - Crash course in reading x86 assembler.
+    - The not-so-secret life of C.
+    - References.
+    - Name Mangling.
+
+Day 2: (Jan 21) C++ Objects
+    - Virtual and non-virtual subclasses.
+    - Virtual method dispatch.
+    - Construction and destruction.
+    - Copying and temporary values.
+
+Day 3: (Jan 28) Other C++ structures
+    - Templates
+    - Exceptions.
+
+Day 4: (Jan 29) How C++ is optmized.
+    - How well does your compiler optimize C++.
+
+
+$Id: syllabus.txt,v 1.2 2004/01/20 21:05:37 tibbetts Exp $

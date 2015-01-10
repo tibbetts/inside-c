@@ -1,0 +1,232 @@
+GAS LISTING /tmp/cc7vEFeq.s 			page 1
+
+
+   1              		.file	"reference.cc"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+  30              		.align 4
+  33              	.globl use_reference__FRi
+  35              	use_reference__FRi:
+  36              	.LFB1:
+  37 0000 55       		pushl %ebp
+  38              	.LCFI0:
+  39 0001 89E5     		movl %esp,%ebp
+  40              	.LCFI1:
+   1:reference.cc  **** void use_reference (int &arg) {
+  42              	.LM1:
+  44              	.LM2:
+  45              	.LBB2:
+   2:reference.cc  ****     arg += 37;
+  47              	.LM3:
+  48 0003 8B4508   		movl 8(%ebp),%eax
+  49 0006 8B5508   		movl 8(%ebp),%edx
+  50 0009 8B0A     		movl (%edx),%ecx
+  51 000b 83C125   		addl $37,%ecx
+  52 000e 8908     		movl %ecx,(%eax)
+  53              	.LBE2:
+  54 0010 EB02     		jmp .L3
+  55 0012 EB00     		jmp .L2
+  56              		.p2align 4,,7
+  57              	.L3:
+   3:reference.cc  **** }
+  59              	.LM4:
+  60              	.L2:
+  61 0014 C9       		leave
+  62 0015 C3       		ret
+  63              	.LFE1:
+  64              	.Lfe1:
+  68              	.Lscope0:
+  70 0016 89F6     		.align 4
+  73              	.globl use_pointer__FPi
+  75              	use_pointer__FPi:
+  76              	.LFB2:
+  77 0018 55       		pushl %ebp
+  78              	.LCFI2:
+  79 0019 89E5     		movl %esp,%ebp
+  80              	.LCFI3:
+   4:reference.cc  **** 
+   5:reference.cc  **** void use_pointer (int *arg) {
+  82              	.LM5:
+  84              	.LM6:
+  85              	.LBB3:
+   6:reference.cc  ****     (*arg) += 23;
+  87              	.LM7:
+  88 001b 8B4508   		movl 8(%ebp),%eax
+  89 001e 8B5508   		movl 8(%ebp),%edx
+  90 0021 8B0A     		movl (%edx),%ecx
+  91 0023 83C117   		addl $23,%ecx
+  92 0026 8908     		movl %ecx,(%eax)
+  93              	.LBE3:
+GAS LISTING /tmp/cc7vEFeq.s 			page 2
+
+
+  94 0028 EB06     		jmp .L5
+  95 002a EB04     		jmp .L4
+  96 002c 8D742600 		.p2align 4,,7
+  97              	.L5:
+   7:reference.cc  **** }
+  99              	.LM8:
+ 100              	.L4:
+ 101 0030 C9       		leave
+ 102 0031 C3       		ret
+ 103              	.LFE2:
+ 104              	.Lfe2:
+ 108              	.Lscope1:
+ 110 0032 89F6     		.align 4
+ 114              	.globl main
+ 116              	main:
+ 117              	.LFB3:
+ 118 0034 55       		pushl %ebp
+ 119              	.LCFI4:
+ 120 0035 89E5     		movl %esp,%ebp
+ 121              	.LCFI5:
+ 122 0037 83EC18   		subl $24,%esp
+ 123              	.LCFI6:
+   8:reference.cc  **** 
+   9:reference.cc  **** int
+  10:reference.cc  **** main (int argc, char **argv) {
+ 125              	.LM9:
+ 127              	.LM10:
+ 128              	.LBB4:
+  11:reference.cc  ****     int foo;
+  12:reference.cc  ****     foo = 12;
+ 130              	.LM11:
+ 131 003a C745FC0C 		movl $12,-4(%ebp)
+ 131      000000
+  13:reference.cc  ****     use_reference(foo);
+ 133              	.LM12:
+ 134 0041 83C4F4   		addl $-12,%esp
+ 135 0044 8D45FC   		leal -4(%ebp),%eax
+ 136 0047 50       		pushl %eax
+ 137              	.LCFI7:
+ 138 0048 E8FCFFFF 		call use_reference__FRi
+ 138      FF
+ 139 004d 83C410   		addl $16,%esp
+  14:reference.cc  ****     use_pointer(&foo);
+ 141              	.LM13:
+ 142 0050 83C4F4   		addl $-12,%esp
+ 143 0053 8D45FC   		leal -4(%ebp),%eax
+ 144 0056 50       		pushl %eax
+ 145 0057 E8FCFFFF 		call use_pointer__FPi
+ 145      FF
+ 146 005c 83C410   		addl $16,%esp
+  15:reference.cc  ****     return foo;
+ 148              	.LM14:
+ 149 005f 8B55FC   		movl -4(%ebp),%edx
+ 150 0062 89D0     		movl %edx,%eax
+ 151 0064 EB0A     		jmp .L6
+ 152              	.LBE4:
+ 153 0066 31C0     		xorl %eax,%eax
+GAS LISTING /tmp/cc7vEFeq.s 			page 3
+
+
+ 154 0068 EB06     		jmp .L6
+  16:reference.cc  **** }
+ 156              	.LM15:
+ 157 006a 8DB60000 		.p2align 4,,7
+ 157      0000
+ 158              	.L6:
+ 159 0070 C9       		leave
+ 160 0071 C3       		ret
+ 161              	.LFE3:
+ 162              	.Lfe3:
+ 167              	.Lscope2:
+ 169              		.text
+ 171              	Letext:
+ 172              	
+ 173 0072 8DB42600 	.section	.eh_frame,"aw",@progbits
+ 173      0000008D 
+ 173      BC270000 
+ 173      0000
+ 174              	__FRAME_BEGIN__:
+ 175 0000 10000000 		.4byte	.LLCIE1
+ 176              	.LSCIE1:
+ 177 0004 00000000 		.4byte	0x0
+ 178 0008 01       		.byte	0x1
+ 179 0009 00       		.byte	0x0
+ 180 000a 01       		.byte	0x1
+ 181 000b 7C       		.byte	0x7c
+ 182 000c 08       		.byte	0x8
+ 183 000d 0C       		.byte	0xc
+ 184 000e 04       		.byte	0x4
+ 185 000f 04       		.byte	0x4
+ 186 0010 88       		.byte	0x88
+ 187 0011 01       		.byte	0x1
+ 188 0012 0000     		.align 4
+ 189              	.LECIE1:
+ 190              		.set	.LLCIE1,.LECIE1-.LSCIE1
+ 191 0014 1C000000 		.4byte	.LLFDE1
+ 192              	.LSFDE1:
+ 193 0018 18000000 		.4byte	.LSFDE1-__FRAME_BEGIN__
+ 194 001c 00000000 		.4byte	.LFB1
+ 195 0020 16000000 		.4byte	.LFE1-.LFB1
+ 196 0024 04       		.byte	0x4
+ 197 0025 01000000 		.4byte	.LCFI0-.LFB1
+ 198 0029 0E       		.byte	0xe
+ 199 002a 08       		.byte	0x8
+ 200 002b 85       		.byte	0x85
+ 201 002c 02       		.byte	0x2
+ 202 002d 04       		.byte	0x4
+ 203 002e 02000000 		.4byte	.LCFI1-.LCFI0
+ 204 0032 0D       		.byte	0xd
+ 205 0033 05       		.byte	0x5
+ 206              		.align 4
+ 207              	.LEFDE1:
+ 208              		.set	.LLFDE1,.LEFDE1-.LSFDE1
+ 209 0034 1C000000 		.4byte	.LLFDE3
+ 210              	.LSFDE3:
+ 211 0038 38000000 		.4byte	.LSFDE3-__FRAME_BEGIN__
+ 212 003c 18000000 		.4byte	.LFB2
+GAS LISTING /tmp/cc7vEFeq.s 			page 4
+
+
+ 213 0040 1A000000 		.4byte	.LFE2-.LFB2
+ 214 0044 04       		.byte	0x4
+ 215 0045 01000000 		.4byte	.LCFI2-.LFB2
+ 216 0049 0E       		.byte	0xe
+ 217 004a 08       		.byte	0x8
+ 218 004b 85       		.byte	0x85
+ 219 004c 02       		.byte	0x2
+ 220 004d 04       		.byte	0x4
+ 221 004e 02000000 		.4byte	.LCFI3-.LCFI2
+ 222 0052 0D       		.byte	0xd
+ 223 0053 05       		.byte	0x5
+ 224              		.align 4
+ 225              	.LEFDE3:
+ 226              		.set	.LLFDE3,.LEFDE3-.LSFDE3
+ 227 0054 24000000 		.4byte	.LLFDE5
+ 228              	.LSFDE5:
+ 229 0058 58000000 		.4byte	.LSFDE5-__FRAME_BEGIN__
+ 230 005c 34000000 		.4byte	.LFB3
+ 231 0060 3E000000 		.4byte	.LFE3-.LFB3
+ 232 0064 04       		.byte	0x4
+ 233 0065 01000000 		.4byte	.LCFI4-.LFB3
+ 234 0069 0E       		.byte	0xe
+ 235 006a 08       		.byte	0x8
+ 236 006b 85       		.byte	0x85
+ 237 006c 02       		.byte	0x2
+ 238 006d 04       		.byte	0x4
+ 239 006e 02000000 		.4byte	.LCFI5-.LCFI4
+ 240 0072 0D       		.byte	0xd
+ 241 0073 05       		.byte	0x5
+ 242 0074 04       		.byte	0x4
+ 243 0075 11000000 		.4byte	.LCFI7-.LCFI5
+ 244 0079 2E       		.byte	0x2e
+ 245 007a 10       		.byte	0x10
+ 246 007b 00       		.align 4
+ 247              	.LEFDE5:
+ 248              		.set	.LLFDE5,.LEFDE5-.LSFDE5
+ 249              		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+GAS LISTING /tmp/cc7vEFeq.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 reference.cc
+     /tmp/cc7vEFeq.s:35     .text:00000000 use_reference__FRi
+     /tmp/cc7vEFeq.s:75     .text:00000018 use_pointer__FPi
+     /tmp/cc7vEFeq.s:116    .text:00000034 main
+     /tmp/cc7vEFeq.s:171    .text:00000072 Letext
+     /tmp/cc7vEFeq.s:174    .eh_frame:00000000 __FRAME_BEGIN__
+
+NO UNDEFINED SYMBOLS

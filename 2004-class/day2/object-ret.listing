@@ -1,0 +1,528 @@
+GAS LISTING /tmp/cckiXCvg.s 			page 1
+
+
+   1              		.file	"object-ret.cc"
+   2              		.file 1 "object-ret.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/bits/types.h"
+  16              		.align 2
+  17              	.globl _Z7frominti
+  19              	_Z7frominti:
+  20              	.LFB2:
+   1:object-ret.cc **** #include "stdio.h"
+   2:object-ret.cc **** 
+   3:object-ret.cc **** class twofield {
+   4:object-ret.cc ****   private:
+   5:object-ret.cc ****     int field1, field2;
+   6:object-ret.cc ****   public:
+   7:object-ret.cc ****     explicit twofield(int f);
+   8:object-ret.cc ****     // Copy constructor.
+   9:object-ret.cc ****     twofield(const twofield &of);
+  10:object-ret.cc ****     ~twofield();
+  11:object-ret.cc **** 
+  12:object-ret.cc ****     void setField(int f);
+  13:object-ret.cc ****     int getField() const;
+  14:object-ret.cc **** };
+  15:object-ret.cc **** 
+  16:object-ret.cc **** twofield fromint(int j) {
+  21              		.loc 1 16 0
+  22 0000 55       		pushl	%ebp
+  23              	.LCFI0:
+  24 0001 89E5     		movl	%esp, %ebp
+  25              	.LCFI1:
+  26 0003 53       		pushl	%ebx
+  27              	.LCFI2:
+  28 0004 83EC04   		subl	$4, %esp
+  29              	.LCFI3:
+  30 0007 8B5D08   		movl	8(%ebp), %ebx
+  31              	.LBB2:
+  17:object-ret.cc ****     twofield of(j);
+  32              		.loc 1 17 0
+  33 000a 83EC08   		subl	$8, %esp
+  34 000d FF750C   		pushl	12(%ebp)
+  35 0010 53       		pushl	%ebx
+  36              	.LCFI4:
+  37 0011 E8FCFFFF 		call	_ZN8twofieldC1Ei
+  37      FF
+  38 0016 83C410   		addl	$16, %esp
+  18:object-ret.cc ****     return of;
+  39              		.loc 1 18 0
+  40              	.LBE2:
+  19:object-ret.cc **** }
+  41              		.loc 1 19 0
+  42 0019 89D8     		movl	%ebx, %eax
+  43 001b 8B5DFC   		movl	-4(%ebp), %ebx
+  44 001e C9       		leave
+  45 001f C20400   		ret	$4
+GAS LISTING /tmp/cckiXCvg.s 			page 2
+
+
+  46              	.LFE2:
+  47              	.Lfe1:
+  49              	.globl _Unwind_Resume
+  50              		.align 2
+  51              	.globl main
+  53              	main:
+  54              	.LFB4:
+  20:object-ret.cc **** 
+  21:object-ret.cc **** int main(int argc, char **argv) {
+  55              		.loc 1 21 0
+  56 0022 55       		pushl	%ebp
+  57              	.LCFI5:
+  58 0023 89E5     		movl	%esp, %ebp
+  59              	.LCFI6:
+  60 0025 53       		pushl	%ebx
+  61              	.LCFI7:
+  62 0026 83EC34   		subl	$52, %esp
+  63              	.LCFI8:
+  64 0029 83E4F0   		andl	$-16, %esp
+  65 002c B8000000 		movl	$0, %eax
+  65      00
+  66 0031 29C4     		subl	%eax, %esp
+  67              	.LBB3:
+  22:object-ret.cc ****     int i = fromint(13).getField();
+  68              		.loc 1 22 0
+  69 0033 83EC0C   		subl	$12, %esp
+  70 0036 8D45D8   		leal	-40(%ebp), %eax
+  71 0039 83EC0C   		subl	$12, %esp
+  72 003c 6A0D     		pushl	$13
+  73 003e 50       		pushl	%eax
+  74              	.LEHB0:
+  75              	.LCFI9:
+  76 003f E8FCFFFF 		call	_Z7frominti
+  76      FF
+  77              	.LEHE0:
+  78 0044 83C410   		addl	$16, %esp
+  79 0047 8D45D8   		leal	-40(%ebp), %eax
+  80 004a 50       		pushl	%eax
+  81              	.LEHB1:
+  82              	.LCFI10:
+  83 004b E8FCFFFF 		call	_ZNK8twofield8getFieldEv
+  83      FF
+  84              	.LEHE1:
+  85 0050 83C410   		addl	$16, %esp
+  86 0053 8945F4   		movl	%eax, -12(%ebp)
+  87 0056 EB23     		jmp	.L8
+  88              	.L11:
+  89 0058 8945D4   		movl	%eax, -44(%ebp)
+  90 005b 8B5DD4   		movl	-44(%ebp), %ebx
+  91 005e 83EC0C   		subl	$12, %esp
+  92 0061 8D45D8   		leal	-40(%ebp), %eax
+  93 0064 50       		pushl	%eax
+  94 0065 E8FCFFFF 		call	_ZN8twofieldD1Ev
+  94      FF
+  95 006a 83C410   		addl	$16, %esp
+  96 006d 895DD4   		movl	%ebx, -44(%ebp)
+  97 0070 83EC0C   		subl	$12, %esp
+GAS LISTING /tmp/cckiXCvg.s 			page 3
+
+
+  98 0073 FF75D4   		pushl	-44(%ebp)
+  99              	.LEHB2:
+ 100 0076 E8FCFFFF 		call	_Unwind_Resume
+ 100      FF
+ 101              	.L8:
+ 102 007b 83EC0C   		subl	$12, %esp
+ 103 007e 8D45D8   		leal	-40(%ebp), %eax
+ 104 0081 50       		pushl	%eax
+ 105 0082 E8FCFFFF 		call	_ZN8twofieldD1Ev
+ 105      FF
+ 106              	.LEHE2:
+ 107 0087 83C410   		addl	$16, %esp
+  23:object-ret.cc ****     return i;
+ 108              		.loc 1 23 0
+ 109 008a 8B45F4   		movl	-12(%ebp), %eax
+ 110              	.LBE3:
+  24:object-ret.cc **** }
+ 111              		.loc 1 24 0
+ 112 008d 8B5DFC   		movl	-4(%ebp), %ebx
+ 113 0090 C9       		leave
+ 114 0091 C3       		ret
+ 115              	.LFE4:
+ 116              	.Lfe2:
+ 118              		.section	.gcc_except_table,"a",@progbits
+ 119              	.LLSDA4:
+ 120 0000 FF       		.byte	0xff
+ 121 0001 FF       		.byte	0xff
+ 122 0002 01       		.byte	0x1
+ 123 0003 0C       		.uleb128 .LLSDACSE4-.LLSDACSB4
+ 124              	.LLSDACSB4:
+ 125 0004 1D       		.uleb128 .LEHB0-.LFB4
+ 126 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 127 0006 00       		.uleb128 0x0
+ 128 0007 00       		.uleb128 0x0
+ 129 0008 29       		.uleb128 .LEHB1-.LFB4
+ 130 0009 05       		.uleb128 .LEHE1-.LEHB1
+ 131 000a 36       		.uleb128 .L11-.LFB4
+ 132 000b 00       		.uleb128 0x0
+ 133 000c 54       		.uleb128 .LEHB2-.LFB4
+ 134 000d 11       		.uleb128 .LEHE2-.LEHB2
+ 135 000e 00       		.uleb128 0x0
+ 136 000f 00       		.uleb128 0x0
+ 137              	.LLSDACSE4:
+ 138              		.text
+ 139              		.align 2
+ 140              	.globl _ZN8twofield8setFieldEi
+ 142              	_ZN8twofield8setFieldEi:
+ 143              	.LFB6:
+  25:object-ret.cc **** 
+  26:object-ret.cc **** void twofield::setField(int f) {
+ 144              		.loc 1 26 0
+ 145              	.LBB4:
+ 146 0092 55       		pushl	%ebp
+ 147              	.LCFI11:
+ 148 0093 89E5     		movl	%esp, %ebp
+ 149              	.LCFI12:
+  27:object-ret.cc ****     this->field1 = f;
+GAS LISTING /tmp/cckiXCvg.s 			page 4
+
+
+ 150              		.loc 1 27 0
+ 151 0095 8B5508   		movl	8(%ebp), %edx
+ 152 0098 8B450C   		movl	12(%ebp), %eax
+ 153 009b 8902     		movl	%eax, (%edx)
+  28:object-ret.cc **** }
+ 154              		.loc 1 28 0
+ 155 009d C9       		leave
+ 156 009e C3       		ret
+ 157              	.LBE4:
+ 158              	.LFE6:
+ 159              	.Lfe3:
+ 161 009f 90       		.align 2
+ 162              	.globl _ZNK8twofield8getFieldEv
+ 164              	_ZNK8twofield8getFieldEv:
+ 165              	.LFB8:
+  29:object-ret.cc **** int twofield::getField() const {
+ 166              		.loc 1 29 0
+ 167              	.LBB5:
+ 168 00a0 55       		pushl	%ebp
+ 169              	.LCFI13:
+ 170 00a1 89E5     		movl	%esp, %ebp
+ 171              	.LCFI14:
+  30:object-ret.cc ****     return this->field1;
+ 172              		.loc 1 30 0
+ 173 00a3 8B4508   		movl	8(%ebp), %eax
+ 174 00a6 8B00     		movl	(%eax), %eax
+ 175              	.LBE5:
+  31:object-ret.cc **** }
+ 176              		.loc 1 31 0
+ 177 00a8 C9       		leave
+ 178 00a9 C3       		ret
+ 179              	.LFE8:
+ 180              	.Lfe4:
+ 182              		.section	.rodata
+ 183              		.align 32
+ 184              	.LC0:
+ 185 0000 696E6974 		.string	"initial value of field was %d.\n"
+ 185      69616C20 
+ 185      76616C75 
+ 185      65206F66 
+ 185      20666965 
+ 186              		.text
+ 187              		.align 2
+ 188              	.globl _ZN8twofieldC2Ei
+ 190              	_ZN8twofieldC2Ei:
+ 191              	.LFB11:
+  32:object-ret.cc **** 
+  33:object-ret.cc **** twofield::twofield(int f) {
+ 192              		.loc 1 33 0
+ 193              	.LBB6:
+ 194 00aa 55       		pushl	%ebp
+ 195              	.LCFI15:
+ 196 00ab 89E5     		movl	%esp, %ebp
+ 197              	.LCFI16:
+ 198 00ad 83EC08   		subl	$8, %esp
+ 199              	.LCFI17:
+  34:object-ret.cc ****     field1 = f;
+GAS LISTING /tmp/cckiXCvg.s 			page 5
+
+
+ 200              		.loc 1 34 0
+ 201 00b0 8B4508   		movl	8(%ebp), %eax
+ 202 00b3 8B550C   		movl	12(%ebp), %edx
+ 203 00b6 8910     		movl	%edx, (%eax)
+  35:object-ret.cc ****     printf("initial value of field was %d.\n", field1);
+ 204              		.loc 1 35 0
+ 205 00b8 83EC08   		subl	$8, %esp
+ 206 00bb 8B4508   		movl	8(%ebp), %eax
+ 207 00be FF30     		pushl	(%eax)
+ 208 00c0 68000000 		pushl	$.LC0
+ 208      00
+ 209              	.LCFI18:
+ 210 00c5 E8FCFFFF 		call	printf
+ 210      FF
+ 211 00ca 83C410   		addl	$16, %esp
+  36:object-ret.cc **** }
+ 212              		.loc 1 36 0
+ 213 00cd C9       		leave
+ 214 00ce C3       		ret
+ 215              	.LBE6:
+ 216              	.LFE11:
+ 217              	.Lfe5:
+ 219 00cf 90       		.align 2
+ 220              	.globl _ZN8twofieldC1Ei
+ 222              	_ZN8twofieldC1Ei:
+ 223              	.LFB13:
+ 224              		.loc 1 33 0
+ 225              	.LBB7:
+ 226 00d0 55       		pushl	%ebp
+ 227              	.LCFI19:
+ 228 00d1 89E5     		movl	%esp, %ebp
+ 229              	.LCFI20:
+ 230 00d3 83EC08   		subl	$8, %esp
+ 231              	.LCFI21:
+ 232              		.loc 1 34 0
+ 233 00d6 8B4508   		movl	8(%ebp), %eax
+ 234 00d9 8B550C   		movl	12(%ebp), %edx
+ 235 00dc 8910     		movl	%edx, (%eax)
+ 236              		.loc 1 35 0
+ 237 00de 83EC08   		subl	$8, %esp
+ 238 00e1 8B4508   		movl	8(%ebp), %eax
+ 239 00e4 FF30     		pushl	(%eax)
+ 240 00e6 68000000 		pushl	$.LC0
+ 240      00
+ 241              	.LCFI22:
+ 242 00eb E8FCFFFF 		call	printf
+ 242      FF
+ 243 00f0 83C410   		addl	$16, %esp
+ 244              		.loc 1 36 0
+ 245 00f3 C9       		leave
+ 246 00f4 C3       		ret
+ 247              	.LBE7:
+ 248              	.LFE13:
+ 249              	.Lfe6:
+ 251 00f5 90       		.align 2
+ 252              	.globl _ZN8twofieldC2ERKS_
+ 254              	_ZN8twofieldC2ERKS_:
+GAS LISTING /tmp/cckiXCvg.s 			page 6
+
+
+ 255              	.LFB16:
+  37:object-ret.cc **** 
+  38:object-ret.cc **** twofield::twofield(const twofield &of) {
+ 256              		.loc 1 38 0
+ 257              	.LBB8:
+ 258 00f6 55       		pushl	%ebp
+ 259              	.LCFI23:
+ 260 00f7 89E5     		movl	%esp, %ebp
+ 261              	.LCFI24:
+  39:object-ret.cc ****     field1 = of.field1;
+ 262              		.loc 1 39 0
+ 263 00f9 8B4508   		movl	8(%ebp), %eax
+ 264 00fc 8B550C   		movl	12(%ebp), %edx
+ 265 00ff 8B12     		movl	(%edx), %edx
+ 266 0101 8910     		movl	%edx, (%eax)
+  40:object-ret.cc **** }
+ 267              		.loc 1 40 0
+ 268 0103 C9       		leave
+ 269 0104 C3       		ret
+ 270              	.LBE8:
+ 271              	.LFE16:
+ 272              	.Lfe7:
+ 274 0105 90       		.align 2
+ 275              	.globl _ZN8twofieldC1ERKS_
+ 277              	_ZN8twofieldC1ERKS_:
+ 278              	.LFB18:
+ 279              		.loc 1 38 0
+ 280              	.LBB9:
+ 281 0106 55       		pushl	%ebp
+ 282              	.LCFI25:
+ 283 0107 89E5     		movl	%esp, %ebp
+ 284              	.LCFI26:
+ 285              		.loc 1 39 0
+ 286 0109 8B4508   		movl	8(%ebp), %eax
+ 287 010c 8B550C   		movl	12(%ebp), %edx
+ 288 010f 8B12     		movl	(%edx), %edx
+ 289 0111 8910     		movl	%edx, (%eax)
+ 290              		.loc 1 40 0
+ 291 0113 C9       		leave
+ 292 0114 C3       		ret
+ 293              	.LBE9:
+ 294              	.LFE18:
+ 295              	.Lfe8:
+ 297              		.section	.rodata
+ 298              	.LC1:
+ 299 0020 4C617374 		.string	"Last value of field was %d.\n"
+ 299      2076616C 
+ 299      7565206F 
+ 299      66206669 
+ 299      656C6420 
+ 300              		.text
+ 301 0115 90       		.align 2
+ 302              	.globl _ZN8twofieldD2Ev
+ 304              	_ZN8twofieldD2Ev:
+ 305              	.LFB21:
+  41:object-ret.cc **** 
+  42:object-ret.cc **** twofield::~twofield() {
+GAS LISTING /tmp/cckiXCvg.s 			page 7
+
+
+ 306              		.loc 1 42 0
+ 307              	.LBB10:
+ 308 0116 55       		pushl	%ebp
+ 309              	.LCFI27:
+ 310 0117 89E5     		movl	%esp, %ebp
+ 311              	.LCFI28:
+ 312 0119 83EC08   		subl	$8, %esp
+ 313              	.LCFI29:
+  43:object-ret.cc ****     printf("Last value of field was %d.\n", field1);
+ 314              		.loc 1 43 0
+ 315 011c 83EC08   		subl	$8, %esp
+ 316 011f 8B4508   		movl	8(%ebp), %eax
+ 317 0122 FF30     		pushl	(%eax)
+ 318 0124 68200000 		pushl	$.LC1
+ 318      00
+ 319              	.LCFI30:
+ 320 0129 E8FCFFFF 		call	printf
+ 320      FF
+ 321 012e 83C410   		addl	$16, %esp
+  44:object-ret.cc **** }
+ 322              		.loc 1 44 0
+ 323 0131 C9       		leave
+ 324 0132 C3       		ret
+ 325              	.LBE10:
+ 326              	.LFE21:
+ 327              	.Lfe9:
+ 329 0133 90       		.align 2
+ 330              	.globl _ZN8twofieldD1Ev
+ 332              	_ZN8twofieldD1Ev:
+ 333              	.LFB23:
+ 334              		.loc 1 42 0
+ 335              	.LBB11:
+ 336 0134 55       		pushl	%ebp
+ 337              	.LCFI31:
+ 338 0135 89E5     		movl	%esp, %ebp
+ 339              	.LCFI32:
+ 340 0137 83EC08   		subl	$8, %esp
+ 341              	.LCFI33:
+ 342              		.loc 1 43 0
+ 343 013a 83EC08   		subl	$8, %esp
+ 344 013d 8B4508   		movl	8(%ebp), %eax
+ 345 0140 FF30     		pushl	(%eax)
+ 346 0142 68200000 		pushl	$.LC1
+ 346      00
+ 347              	.LCFI34:
+ 348 0147 E8FCFFFF 		call	printf
+ 348      FF
+ 349 014c 83C410   		addl	$16, %esp
+ 350              		.loc 1 44 0
+ 351 014f C9       		leave
+ 352 0150 C3       		ret
+ 353              	.LBE11:
+ 354              	.LFE23:
+ 355              	.Lfe10:
+ 357              		.file 7 "/usr/include/stdio.h"
+ 358              		.file 8 "/usr/include/_G_config.h"
+ 359              		.file 9 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+GAS LISTING /tmp/cckiXCvg.s 			page 8
+
+
+ 594              	.Lframe1:
+ 595 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 596              	.LSCIE1:
+ 597 0004 00000000 		.long	0x0
+ 598 0008 01       		.byte	0x1
+ 599 0009 7A504C00 		.string	"zPL"
+ 600 000d 01       		.uleb128 0x1
+ 601 000e 7C       		.sleb128 -4
+ 602 000f 08       		.byte	0x8
+ 603 0010 06       		.uleb128 0x6
+ 604 0011 00       		.byte	0x0
+ 605 0012 00000000 		.long	__gxx_personality_v0
+ 606 0016 00       		.byte	0x0
+ 607 0017 0C       		.byte	0xc
+ 608 0018 04       		.uleb128 0x4
+ 609 0019 04       		.uleb128 0x4
+ 610 001a 88       		.byte	0x88
+ 611 001b 01       		.uleb128 0x1
+ 612              		.align 4
+ 613              	.LECIE1:
+ 614              	.LSFDE1:
+ 615 001c 20000000 		.long	.LEFDE1-.LASFDE1
+ 616              	.LASFDE1:
+ 617 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 618 0024 00000000 		.long	.LFB2
+ 619 0028 22000000 		.long	.LFE2-.LFB2
+ 620 002c 04       		.uleb128 0x4
+ 621 002d 00000000 		.long	0x0
+ 622 0031 41       		.byte	0x4
+ 623              		.long	.LCFI0-.LFB2
+ 624 0032 0E       		.byte	0xe
+ 625 0033 08       		.uleb128 0x8
+ 626 0034 85       		.byte	0x85
+ 627 0035 02       		.uleb128 0x2
+ 628 0036 42       		.byte	0x4
+ 629              		.long	.LCFI1-.LCFI0
+ 630 0037 0D       		.byte	0xd
+ 631 0038 05       		.uleb128 0x5
+ 632 0039 44       		.byte	0x4
+ 633              		.long	.LCFI3-.LCFI1
+ 634 003a 83       		.byte	0x83
+ 635 003b 03       		.uleb128 0x3
+ 636 003c 4A       		.byte	0x4
+ 637              		.long	.LCFI4-.LCFI3
+ 638 003d 2E       		.byte	0x2e
+ 639 003e 10       		.uleb128 0x10
+ 640 003f 00       		.align 4
+ 641              	.LEFDE1:
+ 642              	.LSFDE3:
+ 643 0040 24000000 		.long	.LEFDE3-.LASFDE3
+ 644              	.LASFDE3:
+ 645 0044 44000000 		.long	.LASFDE3-.Lframe1
+ 646 0048 22000000 		.long	.LFB4
+ 647 004c 70000000 		.long	.LFE4-.LFB4
+ 648 0050 04       		.uleb128 0x4
+ 649 0051 00000000 		.long	.LLSDA4
+ 650 0055 41       		.byte	0x4
+GAS LISTING /tmp/cckiXCvg.s 			page 9
+
+
+ 651              		.long	.LCFI5-.LFB4
+ 652 0056 0E       		.byte	0xe
+ 653 0057 08       		.uleb128 0x8
+ 654 0058 85       		.byte	0x85
+ 655 0059 02       		.uleb128 0x2
+ 656 005a 42       		.byte	0x4
+ 657              		.long	.LCFI6-.LCFI5
+ 658 005b 0D       		.byte	0xd
+ 659 005c 05       		.uleb128 0x5
+ 660 005d 44       		.byte	0x4
+ 661              		.long	.LCFI8-.LCFI6
+ 662 005e 83       		.byte	0x83
+ 663 005f 03       		.uleb128 0x3
+ 664 0060 56       		.byte	0x4
+ 665              		.long	.LCFI9-.LCFI8
+ 666 0061 2E       		.byte	0x2e
+ 667 0062 14       		.uleb128 0x14
+ 668 0063 4C       		.byte	0x4
+ 669              		.long	.LCFI10-.LCFI9
+ 670 0064 2E       		.byte	0x2e
+ 671 0065 10       		.uleb128 0x10
+ 672 0066 0000     		.align 4
+ 673              	.LEFDE3:
+ 674              		.text
+ 675              	.Letext0:
+GAS LISTING /tmp/cckiXCvg.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 object-ret.cc
+     /tmp/cckiXCvg.s:19     .text:00000000 _Z7frominti
+     /tmp/cckiXCvg.s:222    .text:000000d0 _ZN8twofieldC1Ei
+     /tmp/cckiXCvg.s:53     .text:00000022 main
+     /tmp/cckiXCvg.s:164    .text:000000a0 _ZNK8twofield8getFieldEv
+     /tmp/cckiXCvg.s:332    .text:00000134 _ZN8twofieldD1Ev
+     /tmp/cckiXCvg.s:142    .text:00000092 _ZN8twofield8setFieldEi
+     /tmp/cckiXCvg.s:190    .text:000000aa _ZN8twofieldC2Ei
+     /tmp/cckiXCvg.s:254    .text:000000f6 _ZN8twofieldC2ERKS_
+     /tmp/cckiXCvg.s:277    .text:00000106 _ZN8twofieldC1ERKS_
+     /tmp/cckiXCvg.s:304    .text:00000116 _ZN8twofieldD2Ev
+
+UNDEFINED SYMBOLS
+_Unwind_Resume
+printf
+__gxx_personality_v0

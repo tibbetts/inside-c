@@ -1,0 +1,365 @@
+GAS LISTING /tmp/cc0ACf6c.s 			page 1
+
+
+   1              		.file	"dynamic-cast.cc"
+   2              		.file 1 "dynamic-cast.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl main
+  14              	main:
+  15              	.LFB8:
+   1:dynamic-cast.cc **** class onefield {
+   2:dynamic-cast.cc ****   private:
+   3:dynamic-cast.cc ****     int field;
+   4:dynamic-cast.cc ****   public:
+   5:dynamic-cast.cc ****     virtual void setField(int f);
+   6:dynamic-cast.cc ****     virtual int getField() const;
+   7:dynamic-cast.cc **** };
+   8:dynamic-cast.cc **** 
+   9:dynamic-cast.cc **** class onefield_subclass : public onefield {
+  10:dynamic-cast.cc ****   private:
+  11:dynamic-cast.cc ****     int otherfield;
+  12:dynamic-cast.cc ****   public:
+  13:dynamic-cast.cc ****     // Override setField, but not getField.
+  14:dynamic-cast.cc ****     virtual void setField(int f);
+  15:dynamic-cast.cc **** };
+  16:dynamic-cast.cc **** 
+  17:dynamic-cast.cc **** int main(int argc, char **argv) {
+  16              		.loc 1 17 0
+  17 0000 55       		pushl	%ebp
+  18              	.LCFI0:
+  19 0001 89E5     		movl	%esp, %ebp
+  20              	.LCFI1:
+  21 0003 83EC18   		subl	$24, %esp
+  22              	.LCFI2:
+  23 0006 83E4F0   		andl	$-16, %esp
+  24 0009 B8000000 		movl	$0, %eax
+  24      00
+  25 000e 29C4     		subl	%eax, %esp
+  26              	.LBB2:
+  18:dynamic-cast.cc ****     onefield *ofp = new onefield_subclass;
+  27              		.loc 1 18 0
+  28 0010 83EC0C   		subl	$12, %esp
+  29 0013 6A0C     		pushl	$12
+  30              	.LCFI3:
+  31 0015 E8FCFFFF 		call	_Znwj
+  31      FF
+  32 001a 83C410   		addl	$16, %esp
+  33 001d 8945F4   		movl	%eax, -12(%ebp)
+  34 0020 83EC0C   		subl	$12, %esp
+  35 0023 FF75F4   		pushl	-12(%ebp)
+  36 0026 E8FCFFFF 		call	_ZN17onefield_subclassC1Ev
+  36      FF
+  37 002b 83C410   		addl	$16, %esp
+  38 002e B200     		movb	$0, %dl
+  39 0030 8B45F4   		movl	-12(%ebp), %eax
+  40 0033 8945FC   		movl	%eax, -4(%ebp)
+  41 0036 84D2     		testb	%dl, %dl
+  42 0038 740E     		je	.L9
+  43 003a 83EC0C   		subl	$12, %esp
+  44 003d FF75F4   		pushl	-12(%ebp)
+GAS LISTING /tmp/cc0ACf6c.s 			page 2
+
+
+  45 0040 E8FCFFFF 		call	_ZdlPv
+  45      FF
+  46 0045 83C410   		addl	$16, %esp
+  47              	.L9:
+  19:dynamic-cast.cc **** 
+  20:dynamic-cast.cc ****     onefield_subclass *ofsp = dynamic_cast<onefield_subclass *>(ofp);
+  48              		.loc 1 20 0
+  49 0048 8B45FC   		movl	-4(%ebp), %eax
+  50 004b 8945EC   		movl	%eax, -20(%ebp)
+  51 004e 837DEC00 		cmpl	$0, -20(%ebp)
+  52 0052 7509     		jne	.L10
+  53 0054 C745F000 		movl	$0, -16(%ebp)
+  53      000000
+  54 005b EB1A     		jmp	.L11
+  55              	.L10:
+  56 005d 6A00     		pushl	$0
+  57 005f 68000000 		pushl	$_ZTI17onefield_subclass
+  57      00
+  58 0064 68000000 		pushl	$_ZTI8onefield
+  58      00
+  59 0069 FF75EC   		pushl	-20(%ebp)
+  60 006c E8FCFFFF 		call	__dynamic_cast
+  60      FF
+  61 0071 83C410   		addl	$16, %esp
+  62 0074 8945F0   		movl	%eax, -16(%ebp)
+  63              	.L11:
+  64 0077 8B45F0   		movl	-16(%ebp), %eax
+  65 007a 8945F8   		movl	%eax, -8(%ebp)
+  21:dynamic-cast.cc **** 
+  22:dynamic-cast.cc ****     delete ofsp;
+  66              		.loc 1 22 0
+  67 007d 83EC0C   		subl	$12, %esp
+  68 0080 FF75F8   		pushl	-8(%ebp)
+  69 0083 E8FCFFFF 		call	_ZdlPv
+  69      FF
+  70 0088 83C410   		addl	$16, %esp
+  23:dynamic-cast.cc **** 
+  24:dynamic-cast.cc ****     return 0;
+  71              		.loc 1 24 0
+  72 008b B8000000 		movl	$0, %eax
+  72      00
+  73              	.LBE2:
+  25:dynamic-cast.cc **** }
+  74              		.loc 1 25 0
+  75 0090 C9       		leave
+  76 0091 C3       		ret
+  77              	.LFE8:
+  78              	.Lfe1:
+  80              		.align 2
+  81              	.globl _ZN8onefield8setFieldEi
+  83              	_ZN8onefield8setFieldEi:
+  84              	.LFB10:
+  26:dynamic-cast.cc **** 
+  27:dynamic-cast.cc **** 
+  28:dynamic-cast.cc **** void onefield::setField(int f) {
+  85              		.loc 1 28 0
+  86              	.LBB3:
+GAS LISTING /tmp/cc0ACf6c.s 			page 3
+
+
+  87 0092 55       		pushl	%ebp
+  88              	.LCFI4:
+  89 0093 89E5     		movl	%esp, %ebp
+  90              	.LCFI5:
+  29:dynamic-cast.cc ****     this->field = f;
+  91              		.loc 1 29 0
+  92 0095 8B5508   		movl	8(%ebp), %edx
+  93 0098 8B450C   		movl	12(%ebp), %eax
+  94 009b 894204   		movl	%eax, 4(%edx)
+  30:dynamic-cast.cc **** }
+  95              		.loc 1 30 0
+  96 009e C9       		leave
+  97 009f C3       		ret
+  98              	.LBE3:
+  99              	.LFE10:
+ 100              	.Lfe2:
+ 102              		.align 2
+ 103              	.globl _ZNK8onefield8getFieldEv
+ 105              	_ZNK8onefield8getFieldEv:
+ 106              	.LFB12:
+  31:dynamic-cast.cc **** int onefield::getField() const {
+ 107              		.loc 1 31 0
+ 108              	.LBB4:
+ 109 00a0 55       		pushl	%ebp
+ 110              	.LCFI6:
+ 111 00a1 89E5     		movl	%esp, %ebp
+ 112              	.LCFI7:
+  32:dynamic-cast.cc ****     return this->field;
+ 113              		.loc 1 32 0
+ 114 00a3 8B4508   		movl	8(%ebp), %eax
+ 115 00a6 8B4004   		movl	4(%eax), %eax
+ 116              	.LBE4:
+  33:dynamic-cast.cc **** }
+ 117              		.loc 1 33 0
+ 118 00a9 C9       		leave
+ 119 00aa C3       		ret
+ 120              	.LFE12:
+ 121              	.Lfe3:
+ 123 00ab 90       		.align 2
+ 124              	.globl _ZN17onefield_subclass8setFieldEi
+ 126              	_ZN17onefield_subclass8setFieldEi:
+ 127              	.LFB14:
+  34:dynamic-cast.cc **** 
+  35:dynamic-cast.cc **** void onefield_subclass::setField(int f) {
+ 128              		.loc 1 35 0
+ 129              	.LBB5:
+ 130 00ac 55       		pushl	%ebp
+ 131              	.LCFI8:
+ 132 00ad 89E5     		movl	%esp, %ebp
+ 133              	.LCFI9:
+ 134 00af 83EC08   		subl	$8, %esp
+ 135              	.LCFI10:
+  36:dynamic-cast.cc ****     onefield::setField(f);
+ 136              		.loc 1 36 0
+ 137 00b2 83EC08   		subl	$8, %esp
+ 138 00b5 FF750C   		pushl	12(%ebp)
+ 139 00b8 FF7508   		pushl	8(%ebp)
+GAS LISTING /tmp/cc0ACf6c.s 			page 4
+
+
+ 140              	.LCFI11:
+ 141 00bb E8FCFFFF 		call	_ZN8onefield8setFieldEi
+ 141      FF
+ 142 00c0 83C410   		addl	$16, %esp
+  37:dynamic-cast.cc ****     otherfield = f;
+ 143              		.loc 1 37 0
+ 144 00c3 8B5508   		movl	8(%ebp), %edx
+ 145 00c6 8B450C   		movl	12(%ebp), %eax
+ 146 00c9 894208   		movl	%eax, 8(%edx)
+  38:dynamic-cast.cc **** }
+ 147              		.loc 1 38 0
+ 148 00cc C9       		leave
+ 149 00cd C3       		ret
+ 150              	.LBE5:
+ 151              	.LFE14:
+ 152              	.Lfe4:
+ 154              		.weak	_ZTV17onefield_subclass
+ 155              		.section	.gnu.linkonce.d._ZTV17onefield_subclass,"aw",@progbits
+ 156              		.align 8
+ 159              	_ZTV17onefield_subclass:
+ 160 0000 00000000 		.long	0
+ 161 0004 00000000 		.long	_ZTI17onefield_subclass
+ 162 0008 00000000 		.long	_ZN17onefield_subclass8setFieldEi
+ 163 000c 00000000 		.long	_ZNK8onefield8getFieldEv
+ 164              		.weak	_ZTV8onefield
+ 165              		.section	.gnu.linkonce.d._ZTV8onefield,"aw",@progbits
+ 166              		.align 8
+ 169              	_ZTV8onefield:
+ 170 0000 00000000 		.long	0
+ 171 0004 00000000 		.long	_ZTI8onefield
+ 172 0008 00000000 		.long	_ZN8onefield8setFieldEi
+ 173 000c 00000000 		.long	_ZNK8onefield8getFieldEv
+ 174              		.section	.gnu.linkonce.t._ZN17onefield_subclassC1Ev,"ax",@progbits
+ 175              		.align 2
+ 176              		.weak	_ZN17onefield_subclassC1Ev
+ 178              	_ZN17onefield_subclassC1Ev:
+ 179              	.LFB15:
+ 180              		.loc 1 18 0
+ 181              	.LBB6:
+ 182 0000 55       		pushl	%ebp
+ 183              	.LCFI12:
+ 184 0001 89E5     		movl	%esp, %ebp
+ 185              	.LCFI13:
+ 186 0003 83EC08   		subl	$8, %esp
+ 187              	.LCFI14:
+ 188              		.loc 1 18 0
+ 189 0006 83EC0C   		subl	$12, %esp
+ 190 0009 FF7508   		pushl	8(%ebp)
+ 191              	.LCFI15:
+ 192 000c E8FCFFFF 		call	_ZN8onefieldC2Ev
+ 192      FF
+ 193 0011 83C410   		addl	$16, %esp
+ 194 0014 8B4508   		movl	8(%ebp), %eax
+ 195 0017 C7000800 		movl	$_ZTV17onefield_subclass+8, (%eax)
+ 195      0000
+ 196 001d C9       		leave
+ 197 001e C3       		ret
+GAS LISTING /tmp/cc0ACf6c.s 			page 5
+
+
+ 198              	.LBE6:
+ 199              	.LFE15:
+ 200              	.Lfe5:
+ 202              		.weak	_ZTI8onefield
+ 203              		.section	.gnu.linkonce.d._ZTI8onefield,"aw",@progbits
+ 204              		.align 4
+ 207              	_ZTI8onefield:
+ 208 0000 08000000 		.long	_ZTVN10__cxxabiv117__class_type_infoE+8
+ 209 0004 00000000 		.long	_ZTS8onefield
+ 210              		.weak	_ZTI17onefield_subclass
+ 211              		.section	.gnu.linkonce.d._ZTI17onefield_subclass,"aw",@progbits
+ 212              		.align 4
+ 215              	_ZTI17onefield_subclass:
+ 216 0000 08000000 		.long	_ZTVN10__cxxabiv120__si_class_type_infoE+8
+ 217 0004 00000000 		.long	_ZTS17onefield_subclass
+ 218 0008 00000000 		.long	_ZTI8onefield
+ 219              		.weak	_ZTS17onefield_subclass
+ 220              		.section	.gnu.linkonce.r._ZTS17onefield_subclass,"a",@progbits
+ 223              	_ZTS17onefield_subclass:
+ 224 0000 31376F6E 		.string	"17onefield_subclass"
+ 224      65666965 
+ 224      6C645F73 
+ 224      7562636C 
+ 224      61737300 
+ 225              		.weak	_ZTS8onefield
+ 226              		.section	.gnu.linkonce.r._ZTS8onefield,"a",@progbits
+ 229              	_ZTS8onefield:
+ 230 0000 386F6E65 		.string	"8onefield"
+ 230      6669656C 
+ 230      6400
+ 231              		.section	.gnu.linkonce.t._ZN8onefieldC2Ev,"ax",@progbits
+ 232              		.align 2
+ 233              		.weak	_ZN8onefieldC2Ev
+ 235              	_ZN8onefieldC2Ev:
+ 236              	.LFB16:
+ 237              		.loc 1 18 0
+ 238              	.LBB7:
+ 239 0000 55       		pushl	%ebp
+ 240              	.LCFI16:
+ 241 0001 89E5     		movl	%esp, %ebp
+ 242              	.LCFI17:
+ 243              		.loc 1 18 0
+ 244 0003 8B4508   		movl	8(%ebp), %eax
+ 245 0006 C7000800 		movl	$_ZTV8onefield+8, (%eax)
+ 245      0000
+ 246 000c C9       		leave
+ 247 000d C3       		ret
+ 248              	.LBE7:
+ 249              	.LFE16:
+ 250              	.Lfe6:
+ 390              	.Lframe1:
+ 391 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 392              	.LSCIE1:
+ 393 0004 00000000 		.long	0x0
+ 394 0008 01       		.byte	0x1
+ 395 0009 7A5000   		.string	"zP"
+ 396 000c 01       		.uleb128 0x1
+GAS LISTING /tmp/cc0ACf6c.s 			page 6
+
+
+ 397 000d 7C       		.sleb128 -4
+ 398 000e 08       		.byte	0x8
+ 399 000f 05       		.uleb128 0x5
+ 400 0010 00       		.byte	0x0
+ 401 0011 00000000 		.long	__gxx_personality_v0
+ 402 0015 0C       		.byte	0xc
+ 403 0016 04       		.uleb128 0x4
+ 404 0017 04       		.uleb128 0x4
+ 405 0018 88       		.byte	0x88
+ 406 0019 01       		.uleb128 0x1
+ 407 001a 0000     		.align 4
+ 408              	.LECIE1:
+ 409              	.LSFDE1:
+ 410 001c 24000000 		.long	.LEFDE1-.LASFDE1
+ 411              	.LASFDE1:
+ 412 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 413 0024 00000000 		.long	.LFB8
+ 414 0028 92000000 		.long	.LFE8-.LFB8
+ 415 002c 00       		.uleb128 0x0
+ 416 002d 04       		.byte	0x4
+ 417 002e 01000000 		.long	.LCFI0-.LFB8
+ 418 0032 0E       		.byte	0xe
+ 419 0033 08       		.uleb128 0x8
+ 420 0034 85       		.byte	0x85
+ 421 0035 02       		.uleb128 0x2
+ 422 0036 04       		.byte	0x4
+ 423 0037 02000000 		.long	.LCFI1-.LCFI0
+ 424 003b 0D       		.byte	0xd
+ 425 003c 05       		.uleb128 0x5
+ 426 003d 04       		.byte	0x4
+ 427 003e 12000000 		.long	.LCFI3-.LCFI1
+ 428 0042 2E       		.byte	0x2e
+ 429 0043 10       		.uleb128 0x10
+ 430              		.align 4
+ 431              	.LEFDE1:
+ 432              		.text
+ 433              	.Letext0:
+GAS LISTING /tmp/cc0ACf6c.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 dynamic-cast.cc
+     /tmp/cc0ACf6c.s:14     .text:00000000 main
+     /tmp/cc0ACf6c.s:178    .gnu.linkonce.t._ZN17onefield_subclassC1Ev:00000000 _ZN17onefield_subclassC1Ev
+     /tmp/cc0ACf6c.s:215    .gnu.linkonce.d._ZTI17onefield_subclass:00000000 _ZTI17onefield_subclass
+     /tmp/cc0ACf6c.s:207    .gnu.linkonce.d._ZTI8onefield:00000000 _ZTI8onefield
+     /tmp/cc0ACf6c.s:83     .text:00000092 _ZN8onefield8setFieldEi
+     /tmp/cc0ACf6c.s:105    .text:000000a0 _ZNK8onefield8getFieldEv
+     /tmp/cc0ACf6c.s:126    .text:000000ac _ZN17onefield_subclass8setFieldEi
+     /tmp/cc0ACf6c.s:159    .gnu.linkonce.d._ZTV17onefield_subclass:00000000 _ZTV17onefield_subclass
+     /tmp/cc0ACf6c.s:169    .gnu.linkonce.d._ZTV8onefield:00000000 _ZTV8onefield
+     /tmp/cc0ACf6c.s:235    .gnu.linkonce.t._ZN8onefieldC2Ev:00000000 _ZN8onefieldC2Ev
+     /tmp/cc0ACf6c.s:229    .gnu.linkonce.r._ZTS8onefield:00000000 _ZTS8onefield
+     /tmp/cc0ACf6c.s:223    .gnu.linkonce.r._ZTS17onefield_subclass:00000000 _ZTS17onefield_subclass
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+__dynamic_cast
+_ZTVN10__cxxabiv117__class_type_infoE
+_ZTVN10__cxxabiv120__si_class_type_infoE
+__gxx_personality_v0

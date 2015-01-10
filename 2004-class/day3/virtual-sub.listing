@@ -1,0 +1,393 @@
+GAS LISTING /tmp/ccZYJcXq.s 			page 1
+
+
+   1              		.file	"virtual-sub.cc"
+   2              		.file 1 "virtual-sub.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/bits/types.h"
+  16              		.align 2
+  17              	.globl _ZNK10bottomBase11getBaseDataEv
+  19              	_ZNK10bottomBase11getBaseDataEv:
+  20              	.LFB2:
+   1:virtual-sub.cc **** #include <stdio.h>
+   2:virtual-sub.cc **** 
+   3:virtual-sub.cc **** class bottomBase {
+   4:virtual-sub.cc ****     int baseData;
+   5:virtual-sub.cc ****   public:
+   6:virtual-sub.cc ****     virtual int getBaseData() const;
+   7:virtual-sub.cc **** };
+   8:virtual-sub.cc **** 
+   9:virtual-sub.cc **** class baseA : public virtual bottomBase {
+  10:virtual-sub.cc ****     int dataA;
+  11:virtual-sub.cc ****   public:
+  12:virtual-sub.cc ****     void setDataA(int a);
+  13:virtual-sub.cc ****     virtual int getDataA() const;
+  14:virtual-sub.cc **** };
+  15:virtual-sub.cc **** 
+  16:virtual-sub.cc **** int bottomBase::getBaseData() const {
+  21              		.loc 1 16 0
+  22              	.LBB2:
+  23 0000 55       		pushl	%ebp
+  24              	.LCFI0:
+  25 0001 89E5     		movl	%esp, %ebp
+  26              	.LCFI1:
+  17:virtual-sub.cc ****     return baseData;
+  27              		.loc 1 17 0
+  28 0003 8B4508   		movl	8(%ebp), %eax
+  29 0006 8B4004   		movl	4(%eax), %eax
+  30              	.LBE2:
+  18:virtual-sub.cc **** }
+  31              		.loc 1 18 0
+  32 0009 C9       		leave
+  33 000a C3       		ret
+  34              	.LFE2:
+  35              	.Lfe1:
+  37 000b 90       		.align 2
+  38              	.globl _ZN5baseA8setDataAEi
+  40              	_ZN5baseA8setDataAEi:
+  41              	.LFB4:
+  19:virtual-sub.cc **** 
+  20:virtual-sub.cc **** void baseA::setDataA(int a) {
+  42              		.loc 1 20 0
+  43              	.LBB3:
+  44 000c 55       		pushl	%ebp
+  45              	.LCFI2:
+  46 000d 89E5     		movl	%esp, %ebp
+  47              	.LCFI3:
+GAS LISTING /tmp/ccZYJcXq.s 			page 2
+
+
+  21:virtual-sub.cc ****     dataA = a;
+  48              		.loc 1 21 0
+  49 000f 8B5508   		movl	8(%ebp), %edx
+  50 0012 8B450C   		movl	12(%ebp), %eax
+  51 0015 894204   		movl	%eax, 4(%edx)
+  22:virtual-sub.cc **** }
+  52              		.loc 1 22 0
+  53 0018 C9       		leave
+  54 0019 C3       		ret
+  55              	.LBE3:
+  56              	.LFE4:
+  57              	.Lfe2:
+  59              		.align 2
+  60              	.globl _ZNK5baseA8getDataAEv
+  62              	_ZNK5baseA8getDataAEv:
+  63              	.LFB6:
+  23:virtual-sub.cc **** int baseA::getDataA() const {
+  64              		.loc 1 23 0
+  65              	.LBB4:
+  66 001a 55       		pushl	%ebp
+  67              	.LCFI4:
+  68 001b 89E5     		movl	%esp, %ebp
+  69              	.LCFI5:
+  24:virtual-sub.cc ****     return dataA;
+  70              		.loc 1 24 0
+  71 001d 8B4508   		movl	8(%ebp), %eax
+  72 0020 8B4004   		movl	4(%eax), %eax
+  73              	.LBE4:
+  25:virtual-sub.cc **** }
+  74              		.loc 1 25 0
+  75 0023 C9       		leave
+  76 0024 C3       		ret
+  77              	.LFE6:
+  78              	.Lfe3:
+  80 0025 90       		.align 2
+  81              	.globl main
+  83              	main:
+  84              	.LFB14:
+  26:virtual-sub.cc **** 
+  27:virtual-sub.cc **** int main(int argc, char **argv) {
+  85              		.loc 1 27 0
+  86 0026 55       		pushl	%ebp
+  87              	.LCFI6:
+  88 0027 89E5     		movl	%esp, %ebp
+  89              	.LCFI7:
+  90 0029 83EC18   		subl	$24, %esp
+  91              	.LCFI8:
+  92 002c 83E4F0   		andl	$-16, %esp
+  93 002f B8000000 		movl	$0, %eax
+  93      00
+  94 0034 29C4     		subl	%eax, %esp
+  95              	.LBB5:
+  28:virtual-sub.cc **** 
+  29:virtual-sub.cc ****     baseA *ba = new baseA();
+  96              		.loc 1 29 0
+  97 0036 83EC0C   		subl	$12, %esp
+  98 0039 6A10     		pushl	$16
+GAS LISTING /tmp/ccZYJcXq.s 			page 3
+
+
+  99              	.LCFI9:
+ 100 003b E8FCFFFF 		call	_Znwj
+ 100      FF
+ 101 0040 83C410   		addl	$16, %esp
+ 102 0043 8945EC   		movl	%eax, -20(%ebp)
+ 103 0046 83EC0C   		subl	$12, %esp
+ 104 0049 FF75EC   		pushl	-20(%ebp)
+ 105 004c E8FCFFFF 		call	_ZN5baseAC1Ev
+ 105      FF
+ 106 0051 83C410   		addl	$16, %esp
+ 107 0054 B000     		movb	$0, %al
+ 108 0056 8B55EC   		movl	-20(%ebp), %edx
+ 109 0059 8955FC   		movl	%edx, -4(%ebp)
+ 110 005c 84C0     		testb	%al, %al
+ 111 005e 740E     		je	.L12
+ 112 0060 83EC0C   		subl	$12, %esp
+ 113 0063 FF75EC   		pushl	-20(%ebp)
+ 114 0066 E8FCFFFF 		call	_ZdlPv
+ 114      FF
+ 115 006b 83C410   		addl	$16, %esp
+ 116              	.L12:
+  30:virtual-sub.cc **** 
+  31:virtual-sub.cc ****     int i  = ba->getDataA();
+ 117              		.loc 1 31 0
+ 118 006e 83EC0C   		subl	$12, %esp
+ 119 0071 8B45FC   		movl	-4(%ebp), %eax
+ 120 0074 8B00     		movl	(%eax), %eax
+ 121 0076 FF75FC   		pushl	-4(%ebp)
+ 122 0079 8B00     		movl	(%eax), %eax
+ 123 007b FFD0     		call	*%eax
+ 124 007d 83C410   		addl	$16, %esp
+ 125 0080 8945F8   		movl	%eax, -8(%ebp)
+  32:virtual-sub.cc **** 
+  33:virtual-sub.cc ****     bottomBase *botb = ba;
+ 126              		.loc 1 33 0
+ 127 0083 837DFC00 		cmpl	$0, -4(%ebp)
+ 128 0087 7414     		je	.L13
+ 129 0089 8B45FC   		movl	-4(%ebp), %eax
+ 130 008c 8B00     		movl	(%eax), %eax
+ 131 008e 83E80C   		subl	$12, %eax
+ 132 0091 8B00     		movl	(%eax), %eax
+ 133 0093 8B55FC   		movl	-4(%ebp), %edx
+ 134 0096 01C2     		addl	%eax, %edx
+ 135 0098 8955E8   		movl	%edx, -24(%ebp)
+ 136 009b EB07     		jmp	.L14
+ 137              	.L13:
+ 138 009d C745E800 		movl	$0, -24(%ebp)
+ 138      000000
+ 139              	.L14:
+ 140 00a4 8B45E8   		movl	-24(%ebp), %eax
+ 141 00a7 8945F4   		movl	%eax, -12(%ebp)
+  34:virtual-sub.cc **** 
+  35:virtual-sub.cc ****     int j = botb->getBaseData();
+ 142              		.loc 1 35 0
+ 143 00aa 83EC0C   		subl	$12, %esp
+ 144 00ad 8B45F4   		movl	-12(%ebp), %eax
+ 145 00b0 8B00     		movl	(%eax), %eax
+GAS LISTING /tmp/ccZYJcXq.s 			page 4
+
+
+ 146 00b2 FF75F4   		pushl	-12(%ebp)
+ 147 00b5 8B00     		movl	(%eax), %eax
+ 148 00b7 FFD0     		call	*%eax
+ 149 00b9 83C410   		addl	$16, %esp
+ 150 00bc 8945F0   		movl	%eax, -16(%ebp)
+  36:virtual-sub.cc **** 
+  37:virtual-sub.cc ****     return 0;
+ 151              		.loc 1 37 0
+ 152 00bf B8000000 		movl	$0, %eax
+ 152      00
+ 153              	.LBE5:
+  38:virtual-sub.cc **** }
+ 154              		.loc 1 38 0
+ 155 00c4 C9       		leave
+ 156 00c5 C3       		ret
+ 157              	.LFE14:
+ 158              	.Lfe4:
+ 160              		.weak	_ZTT5baseA
+ 161              		.section	.gnu.linkonce.d._ZTT5baseA,"aw",@progbits
+ 162              		.align 4
+ 165              	_ZTT5baseA:
+ 166 0000 0C000000 		.long	_ZTV5baseA+12
+ 167 0004 1C000000 		.long	_ZTV5baseA+28
+ 168              		.weak	_ZTV5baseA
+ 169              		.section	.gnu.linkonce.d._ZTV5baseA,"aw",@progbits
+ 170              		.align 32
+ 173              	_ZTV5baseA:
+ 174 0000 08000000 		.long	8
+ 175 0004 00000000 		.long	0
+ 176 0008 00000000 		.long	_ZTI5baseA
+ 177 000c 00000000 		.long	_ZNK5baseA8getDataAEv
+ 178 0010 00000000 		.long	0
+ 179 0014 F8FFFFFF 		.long	-8
+ 180 0018 00000000 		.long	_ZTI5baseA
+ 181 001c 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 182              		.weak	_ZTV10bottomBase
+ 183              		.section	.gnu.linkonce.d._ZTV10bottomBase,"aw",@progbits
+ 184              		.align 8
+ 187              	_ZTV10bottomBase:
+ 188 0000 00000000 		.long	0
+ 189 0004 00000000 		.long	_ZTI10bottomBase
+ 190 0008 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 191              		.section	.gnu.linkonce.t._ZN5baseAC1Ev,"ax",@progbits
+ 192              		.align 2
+ 193              		.weak	_ZN5baseAC1Ev
+ 195              	_ZN5baseAC1Ev:
+ 196              	.LFB15:
+ 197              		.loc 1 29 0
+ 198              	.LBB6:
+ 199 0000 55       		pushl	%ebp
+ 200              	.LCFI10:
+ 201 0001 89E5     		movl	%esp, %ebp
+ 202              	.LCFI11:
+ 203 0003 83EC08   		subl	$8, %esp
+ 204              	.LCFI12:
+ 205              		.loc 1 29 0
+ 206 0006 83EC0C   		subl	$12, %esp
+GAS LISTING /tmp/ccZYJcXq.s 			page 5
+
+
+ 207 0009 8B4508   		movl	8(%ebp), %eax
+ 208 000c 83C008   		addl	$8, %eax
+ 209 000f 50       		pushl	%eax
+ 210              	.LCFI13:
+ 211 0010 E8FCFFFF 		call	_ZN10bottomBaseC2Ev
+ 211      FF
+ 212 0015 83C410   		addl	$16, %esp
+ 213 0018 8B5508   		movl	8(%ebp), %edx
+ 214 001b B80C0000 		movl	$_ZTV5baseA+12, %eax
+ 214      00
+ 215 0020 8902     		movl	%eax, (%edx)
+ 216 0022 B9080000 		movl	$8, %ecx
+ 216      00
+ 217 0027 8B5508   		movl	8(%ebp), %edx
+ 218 002a B81C0000 		movl	$_ZTV5baseA+28, %eax
+ 218      00
+ 219 002f 890411   		movl	%eax, (%ecx,%edx)
+ 220 0032 C9       		leave
+ 221 0033 C3       		ret
+ 222              	.LBE6:
+ 223              	.LFE15:
+ 224              	.Lfe5:
+ 226              		.weak	_ZTI10bottomBase
+ 227              		.section	.gnu.linkonce.d._ZTI10bottomBase,"aw",@progbits
+ 228              		.align 4
+ 231              	_ZTI10bottomBase:
+ 232 0000 08000000 		.long	_ZTVN10__cxxabiv117__class_type_infoE+8
+ 233 0004 00000000 		.long	_ZTS10bottomBase
+ 234              		.weak	_ZTI5baseA
+ 235              		.section	.gnu.linkonce.d._ZTI5baseA,"aw",@progbits
+ 236              		.align 32
+ 239              	_ZTI5baseA:
+ 240 0000 08000000 		.long	_ZTVN10__cxxabiv121__vmi_class_type_infoE+8
+ 241 0004 00000000 		.long	_ZTS5baseA
+ 242 0008 08000000 		.long	8
+ 243 000c 01000000 		.long	1
+ 244 0010 00000000 		.long	_ZTI10bottomBase
+ 245 0014 03F4FFFF 		.long	-3069
+ 246 0018 00000000 		.zero	8
+ 246      00000000 
+ 247              		.weak	_ZTS5baseA
+ 248              		.section	.gnu.linkonce.r._ZTS5baseA,"a",@progbits
+ 251              	_ZTS5baseA:
+ 252 0000 35626173 		.string	"5baseA"
+ 252      654100
+ 253              		.weak	_ZTS10bottomBase
+ 254              		.section	.gnu.linkonce.r._ZTS10bottomBase,"a",@progbits
+ 257              	_ZTS10bottomBase:
+ 258 0000 3130626F 		.string	"10bottomBase"
+ 258      74746F6D 
+ 258      42617365 
+ 258      00
+ 259              		.section	.gnu.linkonce.t._ZN10bottomBaseC2Ev,"ax",@progbits
+ 260              		.align 2
+ 261              		.weak	_ZN10bottomBaseC2Ev
+ 263              	_ZN10bottomBaseC2Ev:
+ 264              	.LFB16:
+GAS LISTING /tmp/ccZYJcXq.s 			page 6
+
+
+ 265              		.loc 1 29 0
+ 266              	.LBB7:
+ 267 0000 55       		pushl	%ebp
+ 268              	.LCFI14:
+ 269 0001 89E5     		movl	%esp, %ebp
+ 270              	.LCFI15:
+ 271              		.loc 1 29 0
+ 272 0003 8B4508   		movl	8(%ebp), %eax
+ 273 0006 C7000800 		movl	$_ZTV10bottomBase+8, (%eax)
+ 273      0000
+ 274 000c C9       		leave
+ 275 000d C3       		ret
+ 276              	.LBE7:
+ 277              	.LFE16:
+ 278              	.Lfe6:
+ 280              		.file 7 "/usr/include/stdio.h"
+ 281              		.file 8 "/usr/include/_G_config.h"
+ 282              		.file 9 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 417              	.Lframe1:
+ 418 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 419              	.LSCIE1:
+ 420 0004 00000000 		.long	0x0
+ 421 0008 01       		.byte	0x1
+ 422 0009 7A5000   		.string	"zP"
+ 423 000c 01       		.uleb128 0x1
+ 424 000d 7C       		.sleb128 -4
+ 425 000e 08       		.byte	0x8
+ 426 000f 05       		.uleb128 0x5
+ 427 0010 00       		.byte	0x0
+ 428 0011 00000000 		.long	__gxx_personality_v0
+ 429 0015 0C       		.byte	0xc
+ 430 0016 04       		.uleb128 0x4
+ 431 0017 04       		.uleb128 0x4
+ 432 0018 88       		.byte	0x88
+ 433 0019 01       		.uleb128 0x1
+ 434 001a 0000     		.align 4
+ 435              	.LECIE1:
+ 436              	.LSFDE7:
+ 437 001c 24000000 		.long	.LEFDE7-.LASFDE7
+ 438              	.LASFDE7:
+ 439 0020 20000000 		.long	.LASFDE7-.Lframe1
+ 440 0024 26000000 		.long	.LFB14
+ 441 0028 A0000000 		.long	.LFE14-.LFB14
+ 442 002c 00       		.uleb128 0x0
+ 443 002d 04       		.byte	0x4
+ 444 002e 01000000 		.long	.LCFI6-.LFB14
+ 445 0032 0E       		.byte	0xe
+ 446 0033 08       		.uleb128 0x8
+ 447 0034 85       		.byte	0x85
+ 448 0035 02       		.uleb128 0x2
+ 449 0036 04       		.byte	0x4
+ 450 0037 02000000 		.long	.LCFI7-.LCFI6
+ 451 003b 0D       		.byte	0xd
+ 452 003c 05       		.uleb128 0x5
+ 453 003d 04       		.byte	0x4
+ 454 003e 12000000 		.long	.LCFI9-.LCFI7
+ 455 0042 2E       		.byte	0x2e
+GAS LISTING /tmp/ccZYJcXq.s 			page 7
+
+
+ 456 0043 10       		.uleb128 0x10
+ 457              		.align 4
+ 458              	.LEFDE7:
+ 459              		.text
+ 460              	.Letext0:
+GAS LISTING /tmp/ccZYJcXq.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 virtual-sub.cc
+     /tmp/ccZYJcXq.s:19     .text:00000000 _ZNK10bottomBase11getBaseDataEv
+     /tmp/ccZYJcXq.s:40     .text:0000000c _ZN5baseA8setDataAEi
+     /tmp/ccZYJcXq.s:62     .text:0000001a _ZNK5baseA8getDataAEv
+     /tmp/ccZYJcXq.s:83     .text:00000026 main
+     /tmp/ccZYJcXq.s:195    .gnu.linkonce.t._ZN5baseAC1Ev:00000000 _ZN5baseAC1Ev
+     /tmp/ccZYJcXq.s:165    .gnu.linkonce.d._ZTT5baseA:00000000 _ZTT5baseA
+     /tmp/ccZYJcXq.s:173    .gnu.linkonce.d._ZTV5baseA:00000000 _ZTV5baseA
+     /tmp/ccZYJcXq.s:239    .gnu.linkonce.d._ZTI5baseA:00000000 _ZTI5baseA
+     /tmp/ccZYJcXq.s:187    .gnu.linkonce.d._ZTV10bottomBase:00000000 _ZTV10bottomBase
+     /tmp/ccZYJcXq.s:231    .gnu.linkonce.d._ZTI10bottomBase:00000000 _ZTI10bottomBase
+     /tmp/ccZYJcXq.s:263    .gnu.linkonce.t._ZN10bottomBaseC2Ev:00000000 _ZN10bottomBaseC2Ev
+     /tmp/ccZYJcXq.s:257    .gnu.linkonce.r._ZTS10bottomBase:00000000 _ZTS10bottomBase
+     /tmp/ccZYJcXq.s:251    .gnu.linkonce.r._ZTS5baseA:00000000 _ZTS5baseA
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+_ZTVN10__cxxabiv117__class_type_infoE
+_ZTVN10__cxxabiv121__vmi_class_type_infoE
+__gxx_personality_v0

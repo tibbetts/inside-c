@@ -1,0 +1,186 @@
+GAS LISTING /tmp/cc7DuSSC.s 			page 1
+
+
+   1              		.file	"simple-multiple.cc"
+   2              		.file 1 "simple-multiple.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl _ZN5baseA8setDataAEi
+  14              	_ZN5baseA8setDataAEi:
+  15              	.LFB2:
+   1:simple-multiple.cc **** class baseA {
+   2:simple-multiple.cc ****     int dataA;
+   3:simple-multiple.cc ****   public:
+   4:simple-multiple.cc ****     void setDataA(int a);
+   5:simple-multiple.cc ****     int getDataA() const;
+   6:simple-multiple.cc **** };
+   7:simple-multiple.cc **** 
+   8:simple-multiple.cc **** class baseB {
+   9:simple-multiple.cc ****     int dataB;
+  10:simple-multiple.cc ****   public:
+  11:simple-multiple.cc ****     void setDataB(int b);
+  12:simple-multiple.cc ****     int getDataB() const;
+  13:simple-multiple.cc **** };
+  14:simple-multiple.cc **** 
+  15:simple-multiple.cc **** class subBoth : public baseA, public baseB {
+  16:simple-multiple.cc ****   public:
+  17:simple-multiple.cc ****     int getSum() const;
+  18:simple-multiple.cc **** };
+  19:simple-multiple.cc **** 
+  20:simple-multiple.cc **** void baseA::setDataA(int a) {
+  16              		.loc 1 20 0
+  17              	.LBB2:
+  18 0000 55       		pushl	%ebp
+  19              	.LCFI0:
+  20 0001 89E5     		movl	%esp, %ebp
+  21              	.LCFI1:
+  21:simple-multiple.cc ****     dataA = a;
+  22              		.loc 1 21 0
+  23 0003 8B5508   		movl	8(%ebp), %edx
+  24 0006 8B450C   		movl	12(%ebp), %eax
+  25 0009 8902     		movl	%eax, (%edx)
+  22:simple-multiple.cc **** }
+  26              		.loc 1 22 0
+  27 000b C9       		leave
+  28 000c C3       		ret
+  29              	.LBE2:
+  30              	.LFE2:
+  31              	.Lfe1:
+  33 000d 90       		.align 2
+  34              	.globl _ZNK5baseA8getDataAEv
+  36              	_ZNK5baseA8getDataAEv:
+  37              	.LFB4:
+  23:simple-multiple.cc **** int baseA::getDataA() const {
+  38              		.loc 1 23 0
+  39              	.LBB3:
+  40 000e 55       		pushl	%ebp
+  41              	.LCFI2:
+  42 000f 89E5     		movl	%esp, %ebp
+  43              	.LCFI3:
+  24:simple-multiple.cc ****     return dataA;
+GAS LISTING /tmp/cc7DuSSC.s 			page 2
+
+
+  44              		.loc 1 24 0
+  45 0011 8B4508   		movl	8(%ebp), %eax
+  46 0014 8B00     		movl	(%eax), %eax
+  47              	.LBE3:
+  25:simple-multiple.cc **** }
+  48              		.loc 1 25 0
+  49 0016 C9       		leave
+  50 0017 C3       		ret
+  51              	.LFE4:
+  52              	.Lfe2:
+  54              		.align 2
+  55              	.globl _ZN5baseB8setDataBEi
+  57              	_ZN5baseB8setDataBEi:
+  58              	.LFB6:
+  26:simple-multiple.cc **** 
+  27:simple-multiple.cc **** void baseB::setDataB(int b) {
+  59              		.loc 1 27 0
+  60              	.LBB4:
+  61 0018 55       		pushl	%ebp
+  62              	.LCFI4:
+  63 0019 89E5     		movl	%esp, %ebp
+  64              	.LCFI5:
+  28:simple-multiple.cc ****     dataB = b;
+  65              		.loc 1 28 0
+  66 001b 8B5508   		movl	8(%ebp), %edx
+  67 001e 8B450C   		movl	12(%ebp), %eax
+  68 0021 8902     		movl	%eax, (%edx)
+  29:simple-multiple.cc **** }
+  69              		.loc 1 29 0
+  70 0023 C9       		leave
+  71 0024 C3       		ret
+  72              	.LBE4:
+  73              	.LFE6:
+  74              	.Lfe3:
+  76 0025 90       		.align 2
+  77              	.globl _ZNK5baseB8getDataBEv
+  79              	_ZNK5baseB8getDataBEv:
+  80              	.LFB8:
+  30:simple-multiple.cc **** int baseB::getDataB() const {
+  81              		.loc 1 30 0
+  82              	.LBB5:
+  83 0026 55       		pushl	%ebp
+  84              	.LCFI6:
+  85 0027 89E5     		movl	%esp, %ebp
+  86              	.LCFI7:
+  31:simple-multiple.cc ****     return dataB;
+  87              		.loc 1 31 0
+  88 0029 8B4508   		movl	8(%ebp), %eax
+  89 002c 8B00     		movl	(%eax), %eax
+  90              	.LBE5:
+  32:simple-multiple.cc **** }
+  91              		.loc 1 32 0
+  92 002e C9       		leave
+  93 002f C3       		ret
+  94              	.LFE8:
+  95              	.Lfe4:
+  97              		.align 2
+GAS LISTING /tmp/cc7DuSSC.s 			page 3
+
+
+  98              	.globl _ZNK7subBoth6getSumEv
+ 100              	_ZNK7subBoth6getSumEv:
+ 101              	.LFB10:
+  33:simple-multiple.cc **** 
+  34:simple-multiple.cc **** int subBoth::getSum() const {
+ 102              		.loc 1 34 0
+ 103              	.LBB6:
+ 104 0030 55       		pushl	%ebp
+ 105              	.LCFI8:
+ 106 0031 89E5     		movl	%esp, %ebp
+ 107              	.LCFI9:
+ 108 0033 83EC08   		subl	$8, %esp
+ 109              	.LCFI10:
+  35:simple-multiple.cc ****     int total = 0;
+ 110              		.loc 1 35 0
+ 111 0036 C745FC00 		movl	$0, -4(%ebp)
+ 111      000000
+  36:simple-multiple.cc ****     total += getDataA();
+ 112              		.loc 1 36 0
+ 113 003d 83EC0C   		subl	$12, %esp
+ 114 0040 FF7508   		pushl	8(%ebp)
+ 115              	.LCFI11:
+ 116 0043 E8FCFFFF 		call	_ZNK5baseA8getDataAEv
+ 116      FF
+ 117 0048 83C410   		addl	$16, %esp
+ 118 004b 89C2     		movl	%eax, %edx
+ 119 004d 8D45FC   		leal	-4(%ebp), %eax
+ 120 0050 0110     		addl	%edx, (%eax)
+  37:simple-multiple.cc ****     total += getDataB();
+ 121              		.loc 1 37 0
+ 122 0052 83EC0C   		subl	$12, %esp
+ 123 0055 8B4508   		movl	8(%ebp), %eax
+ 124 0058 83C004   		addl	$4, %eax
+ 125 005b 50       		pushl	%eax
+ 126 005c E8FCFFFF 		call	_ZNK5baseB8getDataBEv
+ 126      FF
+ 127 0061 83C410   		addl	$16, %esp
+ 128 0064 89C2     		movl	%eax, %edx
+ 129 0066 8D45FC   		leal	-4(%ebp), %eax
+ 130 0069 0110     		addl	%edx, (%eax)
+  38:simple-multiple.cc ****     return total;
+ 131              		.loc 1 38 0
+ 132 006b 8B45FC   		movl	-4(%ebp), %eax
+ 133              	.LBE6:
+  39:simple-multiple.cc **** }
+ 134              		.loc 1 39 0
+ 135 006e C9       		leave
+ 136 006f C3       		ret
+ 137              	.LFE10:
+ 138              	.Lfe5:
+ 252              	.Letext0:
+GAS LISTING /tmp/cc7DuSSC.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 simple-multiple.cc
+     /tmp/cc7DuSSC.s:14     .text:00000000 _ZN5baseA8setDataAEi
+     /tmp/cc7DuSSC.s:36     .text:0000000e _ZNK5baseA8getDataAEv
+     /tmp/cc7DuSSC.s:57     .text:00000018 _ZN5baseB8setDataBEi
+     /tmp/cc7DuSSC.s:79     .text:00000026 _ZNK5baseB8getDataBEv
+     /tmp/cc7DuSSC.s:100    .text:00000030 _ZNK7subBoth6getSumEv
+
+NO UNDEFINED SYMBOLS

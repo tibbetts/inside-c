@@ -1,0 +1,67 @@
+GAS LISTING /tmp/ccCmsQ5B.s 			page 1
+
+
+   1              		.file	"if-then.c"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+  27              		.align 4
+  31              	.globl main
+  33              	main:
+  34 0000 55       		pushl %ebp
+  35 0001 89E5     		movl %esp,%ebp
+  36 0003 83EC18   		subl $24,%esp
+   1:if-then.c     **** int
+   2:if-then.c     **** main (int argc, char **argv)
+   3:if-then.c     **** {
+  38              	.LM1:
+   4:if-then.c     ****     int foo;
+  40              	.LM2:
+  41              	.LBB2:
+   5:if-then.c     ****     if (foo > 0) {
+  43              	.LM3:
+  44 0006 837DFC00 		cmpl $0,-4(%ebp)
+  45 000a 7E06     		jle .L3
+   6:if-then.c     ****         foo += 12;
+  47              	.LM4:
+  48 000c 8345FC0C 		addl $12,-4(%ebp)
+   7:if-then.c     ****     } else {
+  50              	.LM5:
+  51 0010 EB04     		jmp .L4
+  52              		.p2align 4,,7
+  53              	.L3:
+   8:if-then.c     ****         foo -= 12;
+  55              	.LM6:
+  56 0012 8345FCF4 		addl $-12,-4(%ebp)
+  57              	.L4:
+   9:if-then.c     ****     }
+  10:if-then.c     ****     return 0;
+  59              	.LM7:
+  60 0016 31C0     		xorl %eax,%eax
+  61 0018 EB06     		jmp .L2
+  11:if-then.c     **** }
+  63              	.LM8:
+  64              	.LBE2:
+  66              	.LM9:
+  67 001a 8DB60000 		.p2align 4,,7
+  67      0000
+  68              	.L2:
+  69 0020 C9       		leave
+  70 0021 C3       		ret
+  71              	.Lfe1:
+  76              	.Lscope0:
+  78              		.text
+  80              	Letext:
+  81 0022 8DB42600 		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+  81      0000008D 
+  81      BC270000 
+  81      0000
+GAS LISTING /tmp/ccCmsQ5B.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 if-then.c
+     /tmp/ccCmsQ5B.s:33     .text:00000000 main
+     /tmp/ccCmsQ5B.s:80     .text:00000022 Letext
+
+NO UNDEFINED SYMBOLS

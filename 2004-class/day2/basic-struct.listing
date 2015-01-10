@@ -1,0 +1,127 @@
+GAS LISTING /tmp/ccqRxnzv.s 			page 1
+
+
+   1              		.file	"basic-struct.cc"
+   2              		.file 1 "basic-struct.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl main
+  14              	main:
+  15              	.LFB2:
+   1:basic-struct.cc **** struct onefield {
+   2:basic-struct.cc ****     int field;
+   3:basic-struct.cc **** };
+   4:basic-struct.cc **** 
+   5:basic-struct.cc **** int main(int argc, char **argv) {
+  16              		.loc 1 5 0
+  17 0000 55       		pushl	%ebp
+  18              	.LCFI0:
+  19 0001 89E5     		movl	%esp, %ebp
+  20              	.LCFI1:
+  21 0003 83EC08   		subl	$8, %esp
+  22              	.LCFI2:
+  23 0006 83E4F0   		andl	$-16, %esp
+  24 0009 B8000000 		movl	$0, %eax
+  24      00
+  25 000e 29C4     		subl	%eax, %esp
+  26              	.LBB2:
+   6:basic-struct.cc ****     onefield of;
+   7:basic-struct.cc **** 
+   8:basic-struct.cc ****     of.field = 13;
+  27              		.loc 1 8 0
+  28 0010 C745FC0D 		movl	$13, -4(%ebp)
+  28      000000
+   9:basic-struct.cc **** 
+  10:basic-struct.cc ****     onefield *ofp = new onefield;
+  29              		.loc 1 10 0
+  30 0017 83EC0C   		subl	$12, %esp
+  31 001a 6A04     		pushl	$4
+  32              	.LCFI3:
+  33 001c E8FCFFFF 		call	_Znwj
+  33      FF
+  34 0021 83C410   		addl	$16, %esp
+  35 0024 8945F8   		movl	%eax, -8(%ebp)
+  11:basic-struct.cc **** 
+  12:basic-struct.cc ****     ofp->field = 27;
+  36              		.loc 1 12 0
+  37 0027 8B45F8   		movl	-8(%ebp), %eax
+  38 002a C7001B00 		movl	$27, (%eax)
+  38      0000
+  13:basic-struct.cc **** 
+  14:basic-struct.cc ****     delete ofp;
+  39              		.loc 1 14 0
+  40 0030 83EC0C   		subl	$12, %esp
+  41 0033 FF75F8   		pushl	-8(%ebp)
+  42 0036 E8FCFFFF 		call	_ZdlPv
+  42      FF
+  43 003b 83C410   		addl	$16, %esp
+  15:basic-struct.cc **** 
+  16:basic-struct.cc ****     return 0;
+  44              		.loc 1 16 0
+GAS LISTING /tmp/ccqRxnzv.s 			page 2
+
+
+  45 003e B8000000 		movl	$0, %eax
+  45      00
+  46              	.LBE2:
+  17:basic-struct.cc **** }
+  47              		.loc 1 17 0
+  48 0043 C9       		leave
+  49 0044 C3       		ret
+  50              	.LFE2:
+  51              	.Lfe1:
+  93              	.Lframe1:
+  94 0000 18000000 		.long	.LECIE1-.LSCIE1
+  95              	.LSCIE1:
+  96 0004 00000000 		.long	0x0
+  97 0008 01       		.byte	0x1
+  98 0009 7A5000   		.string	"zP"
+  99 000c 01       		.uleb128 0x1
+ 100 000d 7C       		.sleb128 -4
+ 101 000e 08       		.byte	0x8
+ 102 000f 05       		.uleb128 0x5
+ 103 0010 00       		.byte	0x0
+ 104 0011 00000000 		.long	__gxx_personality_v0
+ 105 0015 0C       		.byte	0xc
+ 106 0016 04       		.uleb128 0x4
+ 107 0017 04       		.uleb128 0x4
+ 108 0018 88       		.byte	0x88
+ 109 0019 01       		.uleb128 0x1
+ 110 001a 0000     		.align 4
+ 111              	.LECIE1:
+ 112              	.LSFDE1:
+ 113 001c 24000000 		.long	.LEFDE1-.LASFDE1
+ 114              	.LASFDE1:
+ 115 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 116 0024 00000000 		.long	.LFB2
+ 117 0028 45000000 		.long	.LFE2-.LFB2
+ 118 002c 00       		.uleb128 0x0
+ 119 002d 04       		.byte	0x4
+ 120 002e 01000000 		.long	.LCFI0-.LFB2
+ 121 0032 0E       		.byte	0xe
+ 122 0033 08       		.uleb128 0x8
+ 123 0034 85       		.byte	0x85
+ 124 0035 02       		.uleb128 0x2
+ 125 0036 04       		.byte	0x4
+ 126 0037 02000000 		.long	.LCFI1-.LCFI0
+ 127 003b 0D       		.byte	0xd
+ 128 003c 05       		.uleb128 0x5
+ 129 003d 04       		.byte	0x4
+ 130 003e 19000000 		.long	.LCFI3-.LCFI1
+ 131 0042 2E       		.byte	0x2e
+ 132 0043 10       		.uleb128 0x10
+ 133              		.align 4
+ 134              	.LEFDE1:
+ 135              		.text
+ 136              	.Letext0:
+GAS LISTING /tmp/ccqRxnzv.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 basic-struct.cc
+     /tmp/ccqRxnzv.s:14     .text:00000000 main
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+__gxx_personality_v0

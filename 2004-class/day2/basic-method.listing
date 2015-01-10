@@ -1,0 +1,198 @@
+GAS LISTING /tmp/ccHkXmvV.s 			page 1
+
+
+   1              		.file	"basic-method.cc"
+   2              		.file 1 "basic-method.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl main
+  14              	main:
+  15              	.LFB2:
+   1:basic-method.cc **** class onefield {
+   2:basic-method.cc ****   private:
+   3:basic-method.cc ****     int field;
+   4:basic-method.cc ****   public:
+   5:basic-method.cc ****     void setField(int f);
+   6:basic-method.cc ****     int getField() const;
+   7:basic-method.cc **** };
+   8:basic-method.cc **** 
+   9:basic-method.cc **** int main(int argc, char **argv) {
+  16              		.loc 1 9 0
+  17 0000 55       		pushl	%ebp
+  18              	.LCFI0:
+  19 0001 89E5     		movl	%esp, %ebp
+  20              	.LCFI1:
+  21 0003 83EC08   		subl	$8, %esp
+  22              	.LCFI2:
+  23 0006 83E4F0   		andl	$-16, %esp
+  24 0009 B8000000 		movl	$0, %eax
+  24      00
+  25 000e 29C4     		subl	%eax, %esp
+  26              	.LBB2:
+  10:basic-method.cc ****     onefield of;
+  11:basic-method.cc **** 
+  12:basic-method.cc ****     of.setField(13);
+  27              		.loc 1 12 0
+  28 0010 83EC08   		subl	$8, %esp
+  29 0013 6A0D     		pushl	$13
+  30 0015 8D45FC   		leal	-4(%ebp), %eax
+  31 0018 50       		pushl	%eax
+  32              	.LCFI3:
+  33 0019 E8FCFFFF 		call	_ZN8onefield8setFieldEi
+  33      FF
+  34 001e 83C410   		addl	$16, %esp
+  13:basic-method.cc **** 
+  14:basic-method.cc ****     onefield *ofp = new onefield;
+  35              		.loc 1 14 0
+  36 0021 83EC0C   		subl	$12, %esp
+  37 0024 6A04     		pushl	$4
+  38 0026 E8FCFFFF 		call	_Znwj
+  38      FF
+  39 002b 83C410   		addl	$16, %esp
+  40 002e 8945F8   		movl	%eax, -8(%ebp)
+  15:basic-method.cc **** 
+  16:basic-method.cc ****     ofp->setField(27);
+  41              		.loc 1 16 0
+  42 0031 83EC08   		subl	$8, %esp
+  43 0034 6A1B     		pushl	$27
+  44 0036 FF75F8   		pushl	-8(%ebp)
+  45 0039 E8FCFFFF 		call	_ZN8onefield8setFieldEi
+  45      FF
+GAS LISTING /tmp/ccHkXmvV.s 			page 2
+
+
+  46 003e 83C410   		addl	$16, %esp
+  17:basic-method.cc **** 
+  18:basic-method.cc ****     delete ofp;
+  47              		.loc 1 18 0
+  48 0041 83EC0C   		subl	$12, %esp
+  49 0044 FF75F8   		pushl	-8(%ebp)
+  50 0047 E8FCFFFF 		call	_ZdlPv
+  50      FF
+  51 004c 83C410   		addl	$16, %esp
+  19:basic-method.cc **** 
+  20:basic-method.cc ****     return of.getField();
+  52              		.loc 1 20 0
+  53 004f 83EC0C   		subl	$12, %esp
+  54 0052 8D45FC   		leal	-4(%ebp), %eax
+  55 0055 50       		pushl	%eax
+  56 0056 E8FCFFFF 		call	_ZNK8onefield8getFieldEv
+  56      FF
+  57 005b 83C410   		addl	$16, %esp
+  58              	.LBE2:
+  21:basic-method.cc **** }
+  59              		.loc 1 21 0
+  60 005e C9       		leave
+  61 005f C3       		ret
+  62              	.LFE2:
+  63              	.Lfe1:
+  65              		.align 2
+  66              	.globl _ZN8onefield8setFieldEi
+  68              	_ZN8onefield8setFieldEi:
+  69              	.LFB4:
+  22:basic-method.cc **** 
+  23:basic-method.cc **** 
+  24:basic-method.cc **** void onefield::setField(int f) {
+  70              		.loc 1 24 0
+  71              	.LBB3:
+  72 0060 55       		pushl	%ebp
+  73              	.LCFI4:
+  74 0061 89E5     		movl	%esp, %ebp
+  75              	.LCFI5:
+  25:basic-method.cc ****     this->field = f;
+  76              		.loc 1 25 0
+  77 0063 8B5508   		movl	8(%ebp), %edx
+  78 0066 8B450C   		movl	12(%ebp), %eax
+  79 0069 8902     		movl	%eax, (%edx)
+  26:basic-method.cc **** }
+  80              		.loc 1 26 0
+  81 006b C9       		leave
+  82 006c C3       		ret
+  83              	.LBE3:
+  84              	.LFE4:
+  85              	.Lfe2:
+  87 006d 90       		.align 2
+  88              	.globl _ZNK8onefield8getFieldEv
+  90              	_ZNK8onefield8getFieldEv:
+  91              	.LFB6:
+  27:basic-method.cc **** int onefield::getField() const {
+  92              		.loc 1 27 0
+  93              	.LBB4:
+GAS LISTING /tmp/ccHkXmvV.s 			page 3
+
+
+  94 006e 55       		pushl	%ebp
+  95              	.LCFI6:
+  96 006f 89E5     		movl	%esp, %ebp
+  97              	.LCFI7:
+  28:basic-method.cc ****     return this->field;
+  98              		.loc 1 28 0
+  99 0071 8B4508   		movl	8(%ebp), %eax
+ 100 0074 8B00     		movl	(%eax), %eax
+ 101              	.LBE4:
+  29:basic-method.cc **** }
+ 102              		.loc 1 29 0
+ 103 0076 C9       		leave
+ 104 0077 C3       		ret
+ 105              	.LFE6:
+ 106              	.Lfe3:
+ 184              	.Lframe1:
+ 185 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 186              	.LSCIE1:
+ 187 0004 00000000 		.long	0x0
+ 188 0008 01       		.byte	0x1
+ 189 0009 7A5000   		.string	"zP"
+ 190 000c 01       		.uleb128 0x1
+ 191 000d 7C       		.sleb128 -4
+ 192 000e 08       		.byte	0x8
+ 193 000f 05       		.uleb128 0x5
+ 194 0010 00       		.byte	0x0
+ 195 0011 00000000 		.long	__gxx_personality_v0
+ 196 0015 0C       		.byte	0xc
+ 197 0016 04       		.uleb128 0x4
+ 198 0017 04       		.uleb128 0x4
+ 199 0018 88       		.byte	0x88
+ 200 0019 01       		.uleb128 0x1
+ 201 001a 0000     		.align 4
+ 202              	.LECIE1:
+ 203              	.LSFDE1:
+ 204 001c 24000000 		.long	.LEFDE1-.LASFDE1
+ 205              	.LASFDE1:
+ 206 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 207 0024 00000000 		.long	.LFB2
+ 208 0028 60000000 		.long	.LFE2-.LFB2
+ 209 002c 00       		.uleb128 0x0
+ 210 002d 04       		.byte	0x4
+ 211 002e 01000000 		.long	.LCFI0-.LFB2
+ 212 0032 0E       		.byte	0xe
+ 213 0033 08       		.uleb128 0x8
+ 214 0034 85       		.byte	0x85
+ 215 0035 02       		.uleb128 0x2
+ 216 0036 04       		.byte	0x4
+ 217 0037 02000000 		.long	.LCFI1-.LCFI0
+ 218 003b 0D       		.byte	0xd
+ 219 003c 05       		.uleb128 0x5
+ 220 003d 04       		.byte	0x4
+ 221 003e 16000000 		.long	.LCFI3-.LCFI1
+ 222 0042 2E       		.byte	0x2e
+ 223 0043 10       		.uleb128 0x10
+ 224              		.align 4
+ 225              	.LEFDE1:
+GAS LISTING /tmp/ccHkXmvV.s 			page 4
+
+
+ 226              		.text
+ 227              	.Letext0:
+GAS LISTING /tmp/ccHkXmvV.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 basic-method.cc
+     /tmp/ccHkXmvV.s:14     .text:00000000 main
+     /tmp/ccHkXmvV.s:68     .text:00000060 _ZN8onefield8setFieldEi
+     /tmp/ccHkXmvV.s:90     .text:0000006e _ZNK8onefield8getFieldEv
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+__gxx_personality_v0

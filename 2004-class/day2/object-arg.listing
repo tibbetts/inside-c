@@ -1,0 +1,590 @@
+GAS LISTING /tmp/ccvUl42h.s 			page 1
+
+
+   1              		.file	"object-arg.cc"
+   2              		.file 1 "object-arg.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/bits/types.h"
+  16              		.section	.rodata
+  17              		.align 32
+  18              	.LC0:
+  19 0000 54686520 		.string	"The value of the field is %d.\n"
+  19      76616C75 
+  19      65206F66 
+  19      20746865 
+  19      20666965 
+  20              		.text
+  21              		.align 2
+  22              	.globl _Z5print8onefield
+  24              	_Z5print8onefield:
+  25              	.LFB2:
+   1:object-arg.cc **** #include "stdio.h"
+   2:object-arg.cc **** 
+   3:object-arg.cc **** class onefield {
+   4:object-arg.cc ****   private:
+   5:object-arg.cc ****     int field;
+   6:object-arg.cc ****   public:
+   7:object-arg.cc ****     explicit onefield(int f);
+   8:object-arg.cc ****     // Copy constructor.
+   9:object-arg.cc ****     onefield(const onefield &of);
+  10:object-arg.cc ****     ~onefield();
+  11:object-arg.cc **** 
+  12:object-arg.cc ****     void setField(int f);
+  13:object-arg.cc ****     int getField() const;
+  14:object-arg.cc **** };
+  15:object-arg.cc **** 
+  16:object-arg.cc **** void print(onefield of) {
+  26              		.loc 1 16 0
+  27 0000 55       		pushl	%ebp
+  28              	.LCFI0:
+  29 0001 89E5     		movl	%esp, %ebp
+  30              	.LCFI1:
+  31 0003 83EC08   		subl	$8, %esp
+  32              	.LCFI2:
+  33 0006 8B4508   		movl	8(%ebp), %eax
+  34              	.LBB2:
+  17:object-arg.cc ****     printf("The value of the field is %d.\n", of.getField());
+  35              		.loc 1 17 0
+  36 0009 83EC08   		subl	$8, %esp
+  37 000c 83EC04   		subl	$4, %esp
+  38 000f 50       		pushl	%eax
+  39              	.LCFI3:
+  40 0010 E8FCFFFF 		call	_ZNK8onefield8getFieldEv
+  40      FF
+  41 0015 83C408   		addl	$8, %esp
+  42 0018 50       		pushl	%eax
+  43 0019 68000000 		pushl	$.LC0
+GAS LISTING /tmp/ccvUl42h.s 			page 2
+
+
+  43      00
+  44              	.LCFI4:
+  45 001e E8FCFFFF 		call	printf
+  45      FF
+  46 0023 83C410   		addl	$16, %esp
+  18:object-arg.cc **** }
+  47              		.loc 1 18 0
+  48 0026 C9       		leave
+  49 0027 C3       		ret
+  50              	.LBE2:
+  51              	.LFE2:
+  52              	.Lfe1:
+  54              	.globl _Unwind_Resume
+  55              		.align 2
+  56              	.globl main
+  58              	main:
+  59              	.LFB4:
+  19:object-arg.cc **** 
+  20:object-arg.cc **** 
+  21:object-arg.cc **** int main(int argc, char **argv) {
+  60              		.loc 1 21 0
+  61 0028 55       		pushl	%ebp
+  62              	.LCFI5:
+  63 0029 89E5     		movl	%esp, %ebp
+  64              	.LCFI6:
+  65 002b 53       		pushl	%ebx
+  66              	.LCFI7:
+  67 002c 83EC34   		subl	$52, %esp
+  68              	.LCFI8:
+  69 002f 83E4F0   		andl	$-16, %esp
+  70 0032 B8000000 		movl	$0, %eax
+  70      00
+  71 0037 29C4     		subl	%eax, %esp
+  72              	.LBB3:
+  22:object-arg.cc ****     onefield of(13);
+  73              		.loc 1 22 0
+  74 0039 83EC08   		subl	$8, %esp
+  75 003c 6A0D     		pushl	$13
+  76 003e 8D45E8   		leal	-24(%ebp), %eax
+  77 0041 50       		pushl	%eax
+  78              	.LEHB0:
+  79              	.LCFI9:
+  80 0042 E8FCFFFF 		call	_ZN8onefieldC1Ei
+  80      FF
+  81              	.LEHE0:
+  82 0047 83C410   		addl	$16, %esp
+  23:object-arg.cc **** 
+  24:object-arg.cc ****     print(of);
+  83              		.loc 1 24 0
+  84 004a 83EC0C   		subl	$12, %esp
+  85 004d 83EC0C   		subl	$12, %esp
+  86 0050 8D45E8   		leal	-24(%ebp), %eax
+  87 0053 50       		pushl	%eax
+  88 0054 8D45D8   		leal	-40(%ebp), %eax
+  89 0057 50       		pushl	%eax
+  90              	.LEHB1:
+  91              	.LCFI10:
+GAS LISTING /tmp/ccvUl42h.s 			page 3
+
+
+  92 0058 E8FCFFFF 		call	_ZN8onefieldC1ERKS_
+  92      FF
+  93              	.LEHE1:
+  94 005d 83C414   		addl	$20, %esp
+  95 0060 8D45D8   		leal	-40(%ebp), %eax
+  96 0063 50       		pushl	%eax
+  97              	.LEHB2:
+  98              	.LCFI11:
+  99 0064 E8FCFFFF 		call	_Z5print8onefield
+  99      FF
+ 100              	.LEHE2:
+ 101 0069 83C410   		addl	$16, %esp
+ 102 006c EB1A     		jmp	.L4
+ 103              	.L11:
+ 104 006e 8945D4   		movl	%eax, -44(%ebp)
+ 105 0071 8B5DD4   		movl	-44(%ebp), %ebx
+ 106 0074 83EC0C   		subl	$12, %esp
+ 107 0077 8D45D8   		leal	-40(%ebp), %eax
+ 108 007a 50       		pushl	%eax
+ 109 007b E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 109      FF
+ 110 0080 83C410   		addl	$16, %esp
+ 111 0083 895DD4   		movl	%ebx, -44(%ebp)
+ 112 0086 EB14     		jmp	.L7
+ 113              	.L4:
+ 114 0088 83EC0C   		subl	$12, %esp
+ 115 008b 8D45D8   		leal	-40(%ebp), %eax
+ 116 008e 50       		pushl	%eax
+ 117              	.LEHB3:
+ 118 008f E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 118      FF
+ 119              	.LEHE3:
+ 120 0094 83C410   		addl	$16, %esp
+ 121 0097 EB23     		jmp	.L8
+ 122              	.L12:
+ 123 0099 8945D4   		movl	%eax, -44(%ebp)
+ 124              	.L7:
+ 125 009c 8B5DD4   		movl	-44(%ebp), %ebx
+ 126 009f 83EC0C   		subl	$12, %esp
+ 127 00a2 8D45E8   		leal	-24(%ebp), %eax
+ 128 00a5 50       		pushl	%eax
+ 129 00a6 E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 129      FF
+ 130 00ab 83C410   		addl	$16, %esp
+ 131 00ae 895DD4   		movl	%ebx, -44(%ebp)
+ 132 00b1 83EC0C   		subl	$12, %esp
+ 133 00b4 FF75D4   		pushl	-44(%ebp)
+ 134              	.LEHB4:
+ 135 00b7 E8FCFFFF 		call	_Unwind_Resume
+ 135      FF
+ 136              	.L8:
+ 137 00bc 83EC0C   		subl	$12, %esp
+ 138 00bf 8D45E8   		leal	-24(%ebp), %eax
+ 139 00c2 50       		pushl	%eax
+ 140 00c3 E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 140      FF
+ 141              	.LEHE4:
+GAS LISTING /tmp/ccvUl42h.s 			page 4
+
+
+ 142 00c8 83C410   		addl	$16, %esp
+ 143              	.LBE3:
+  25:object-arg.cc **** }
+ 144              		.loc 1 25 0
+ 145 00cb B8000000 		movl	$0, %eax
+ 145      00
+ 146 00d0 8B5DFC   		movl	-4(%ebp), %ebx
+ 147 00d3 C9       		leave
+ 148 00d4 C3       		ret
+ 149              	.LFE4:
+ 150              	.Lfe2:
+ 152              		.section	.gcc_except_table,"a",@progbits
+ 153              	.LLSDA4:
+ 154 0000 FF       		.byte	0xff
+ 155 0001 FF       		.byte	0xff
+ 156 0002 01       		.byte	0x1
+ 157 0003 15       		.uleb128 .LLSDACSE4-.LLSDACSB4
+ 158              	.LLSDACSB4:
+ 159 0004 1A       		.uleb128 .LEHB0-.LFB4
+ 160 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 161 0006 00       		.uleb128 0x0
+ 162 0007 00       		.uleb128 0x0
+ 163 0008 30       		.uleb128 .LEHB1-.LFB4
+ 164 0009 05       		.uleb128 .LEHE1-.LEHB1
+ 165 000a 71       		.uleb128 .L12-.LFB4
+ 166 000b 00       		.uleb128 0x0
+ 167 000c 3C       		.uleb128 .LEHB2-.LFB4
+ 168 000d 05       		.uleb128 .LEHE2-.LEHB2
+ 169 000e 46       		.uleb128 .L11-.LFB4
+ 170 000f 00       		.uleb128 0x0
+ 171 0010 67       		.uleb128 .LEHB3-.LFB4
+ 172 0011 05       		.uleb128 .LEHE3-.LEHB3
+ 173 0012 71       		.uleb128 .L12-.LFB4
+ 174 0013 00       		.uleb128 0x0
+ 175 0014 8F01     		.uleb128 .LEHB4-.LFB4
+ 176 0016 11       		.uleb128 .LEHE4-.LEHB4
+ 177 0017 00       		.uleb128 0x0
+ 178 0018 00       		.uleb128 0x0
+ 179              	.LLSDACSE4:
+ 180              		.text
+ 181 00d5 90       		.align 2
+ 182              	.globl _ZN8onefield8setFieldEi
+ 184              	_ZN8onefield8setFieldEi:
+ 185              	.LFB6:
+  26:object-arg.cc **** 
+  27:object-arg.cc **** 
+  28:object-arg.cc **** void onefield::setField(int f) {
+ 186              		.loc 1 28 0
+ 187              	.LBB4:
+ 188 00d6 55       		pushl	%ebp
+ 189              	.LCFI12:
+ 190 00d7 89E5     		movl	%esp, %ebp
+ 191              	.LCFI13:
+  29:object-arg.cc ****     this->field = f;
+ 192              		.loc 1 29 0
+ 193 00d9 8B5508   		movl	8(%ebp), %edx
+ 194 00dc 8B450C   		movl	12(%ebp), %eax
+GAS LISTING /tmp/ccvUl42h.s 			page 5
+
+
+ 195 00df 8902     		movl	%eax, (%edx)
+  30:object-arg.cc **** }
+ 196              		.loc 1 30 0
+ 197 00e1 C9       		leave
+ 198 00e2 C3       		ret
+ 199              	.LBE4:
+ 200              	.LFE6:
+ 201              	.Lfe3:
+ 203 00e3 90       		.align 2
+ 204              	.globl _ZNK8onefield8getFieldEv
+ 206              	_ZNK8onefield8getFieldEv:
+ 207              	.LFB8:
+  31:object-arg.cc **** int onefield::getField() const {
+ 208              		.loc 1 31 0
+ 209              	.LBB5:
+ 210 00e4 55       		pushl	%ebp
+ 211              	.LCFI14:
+ 212 00e5 89E5     		movl	%esp, %ebp
+ 213              	.LCFI15:
+  32:object-arg.cc ****     return this->field;
+ 214              		.loc 1 32 0
+ 215 00e7 8B4508   		movl	8(%ebp), %eax
+ 216 00ea 8B00     		movl	(%eax), %eax
+ 217              	.LBE5:
+  33:object-arg.cc **** }
+ 218              		.loc 1 33 0
+ 219 00ec C9       		leave
+ 220 00ed C3       		ret
+ 221              	.LFE8:
+ 222              	.Lfe4:
+ 224              		.section	.rodata
+ 225 001f 00       		.align 32
+ 226              	.LC1:
+ 227 0020 696E6974 		.string	"initial value of field was %d.\n"
+ 227      69616C20 
+ 227      76616C75 
+ 227      65206F66 
+ 227      20666965 
+ 228              		.text
+ 229              		.align 2
+ 230              	.globl _ZN8onefieldC2Ei
+ 232              	_ZN8onefieldC2Ei:
+ 233              	.LFB11:
+  34:object-arg.cc **** 
+  35:object-arg.cc **** onefield::onefield(int f) {
+ 234              		.loc 1 35 0
+ 235              	.LBB6:
+ 236 00ee 55       		pushl	%ebp
+ 237              	.LCFI16:
+ 238 00ef 89E5     		movl	%esp, %ebp
+ 239              	.LCFI17:
+ 240 00f1 83EC08   		subl	$8, %esp
+ 241              	.LCFI18:
+  36:object-arg.cc ****     field = f;
+ 242              		.loc 1 36 0
+ 243 00f4 8B4508   		movl	8(%ebp), %eax
+ 244 00f7 8B550C   		movl	12(%ebp), %edx
+GAS LISTING /tmp/ccvUl42h.s 			page 6
+
+
+ 245 00fa 8910     		movl	%edx, (%eax)
+  37:object-arg.cc ****     printf("initial value of field was %d.\n", field);
+ 246              		.loc 1 37 0
+ 247 00fc 83EC08   		subl	$8, %esp
+ 248 00ff 8B4508   		movl	8(%ebp), %eax
+ 249 0102 FF30     		pushl	(%eax)
+ 250 0104 68200000 		pushl	$.LC1
+ 250      00
+ 251              	.LCFI19:
+ 252 0109 E8FCFFFF 		call	printf
+ 252      FF
+ 253 010e 83C410   		addl	$16, %esp
+  38:object-arg.cc **** }
+ 254              		.loc 1 38 0
+ 255 0111 C9       		leave
+ 256 0112 C3       		ret
+ 257              	.LBE6:
+ 258              	.LFE11:
+ 259              	.Lfe5:
+ 261 0113 90       		.align 2
+ 262              	.globl _ZN8onefieldC1Ei
+ 264              	_ZN8onefieldC1Ei:
+ 265              	.LFB13:
+ 266              		.loc 1 35 0
+ 267              	.LBB7:
+ 268 0114 55       		pushl	%ebp
+ 269              	.LCFI20:
+ 270 0115 89E5     		movl	%esp, %ebp
+ 271              	.LCFI21:
+ 272 0117 83EC08   		subl	$8, %esp
+ 273              	.LCFI22:
+ 274              		.loc 1 36 0
+ 275 011a 8B4508   		movl	8(%ebp), %eax
+ 276 011d 8B550C   		movl	12(%ebp), %edx
+ 277 0120 8910     		movl	%edx, (%eax)
+ 278              		.loc 1 37 0
+ 279 0122 83EC08   		subl	$8, %esp
+ 280 0125 8B4508   		movl	8(%ebp), %eax
+ 281 0128 FF30     		pushl	(%eax)
+ 282 012a 68200000 		pushl	$.LC1
+ 282      00
+ 283              	.LCFI23:
+ 284 012f E8FCFFFF 		call	printf
+ 284      FF
+ 285 0134 83C410   		addl	$16, %esp
+ 286              		.loc 1 38 0
+ 287 0137 C9       		leave
+ 288 0138 C3       		ret
+ 289              	.LBE7:
+ 290              	.LFE13:
+ 291              	.Lfe6:
+ 293 0139 90       		.align 2
+ 294              	.globl _ZN8onefieldC2ERKS_
+ 296              	_ZN8onefieldC2ERKS_:
+ 297              	.LFB16:
+  39:object-arg.cc **** 
+  40:object-arg.cc **** onefield::onefield(const onefield &of) {
+GAS LISTING /tmp/ccvUl42h.s 			page 7
+
+
+ 298              		.loc 1 40 0
+ 299              	.LBB8:
+ 300 013a 55       		pushl	%ebp
+ 301              	.LCFI24:
+ 302 013b 89E5     		movl	%esp, %ebp
+ 303              	.LCFI25:
+  41:object-arg.cc ****     field = of.field;
+ 304              		.loc 1 41 0
+ 305 013d 8B4508   		movl	8(%ebp), %eax
+ 306 0140 8B550C   		movl	12(%ebp), %edx
+ 307 0143 8B12     		movl	(%edx), %edx
+ 308 0145 8910     		movl	%edx, (%eax)
+  42:object-arg.cc **** }
+ 309              		.loc 1 42 0
+ 310 0147 C9       		leave
+ 311 0148 C3       		ret
+ 312              	.LBE8:
+ 313              	.LFE16:
+ 314              	.Lfe7:
+ 316 0149 90       		.align 2
+ 317              	.globl _ZN8onefieldC1ERKS_
+ 319              	_ZN8onefieldC1ERKS_:
+ 320              	.LFB18:
+ 321              		.loc 1 40 0
+ 322              	.LBB9:
+ 323 014a 55       		pushl	%ebp
+ 324              	.LCFI26:
+ 325 014b 89E5     		movl	%esp, %ebp
+ 326              	.LCFI27:
+ 327              		.loc 1 41 0
+ 328 014d 8B4508   		movl	8(%ebp), %eax
+ 329 0150 8B550C   		movl	12(%ebp), %edx
+ 330 0153 8B12     		movl	(%edx), %edx
+ 331 0155 8910     		movl	%edx, (%eax)
+ 332              		.loc 1 42 0
+ 333 0157 C9       		leave
+ 334 0158 C3       		ret
+ 335              	.LBE9:
+ 336              	.LFE18:
+ 337              	.Lfe8:
+ 339              		.section	.rodata
+ 340              	.LC2:
+ 341 0040 4C617374 		.string	"Last value of field was %d.\n"
+ 341      2076616C 
+ 341      7565206F 
+ 341      66206669 
+ 341      656C6420 
+ 342              		.text
+ 343 0159 90       		.align 2
+ 344              	.globl _ZN8onefieldD2Ev
+ 346              	_ZN8onefieldD2Ev:
+ 347              	.LFB21:
+  43:object-arg.cc **** 
+  44:object-arg.cc **** 
+  45:object-arg.cc **** onefield::~onefield() {
+ 348              		.loc 1 45 0
+ 349              	.LBB10:
+GAS LISTING /tmp/ccvUl42h.s 			page 8
+
+
+ 350 015a 55       		pushl	%ebp
+ 351              	.LCFI28:
+ 352 015b 89E5     		movl	%esp, %ebp
+ 353              	.LCFI29:
+ 354 015d 83EC08   		subl	$8, %esp
+ 355              	.LCFI30:
+  46:object-arg.cc ****     printf("Last value of field was %d.\n", field);
+ 356              		.loc 1 46 0
+ 357 0160 83EC08   		subl	$8, %esp
+ 358 0163 8B4508   		movl	8(%ebp), %eax
+ 359 0166 FF30     		pushl	(%eax)
+ 360 0168 68400000 		pushl	$.LC2
+ 360      00
+ 361              	.LCFI31:
+ 362 016d E8FCFFFF 		call	printf
+ 362      FF
+ 363 0172 83C410   		addl	$16, %esp
+  47:object-arg.cc **** }
+ 364              		.loc 1 47 0
+ 365 0175 C9       		leave
+ 366 0176 C3       		ret
+ 367              	.LBE10:
+ 368              	.LFE21:
+ 369              	.Lfe9:
+ 371 0177 90       		.align 2
+ 372              	.globl _ZN8onefieldD1Ev
+ 374              	_ZN8onefieldD1Ev:
+ 375              	.LFB23:
+ 376              		.loc 1 45 0
+ 377              	.LBB11:
+ 378 0178 55       		pushl	%ebp
+ 379              	.LCFI32:
+ 380 0179 89E5     		movl	%esp, %ebp
+ 381              	.LCFI33:
+ 382 017b 83EC08   		subl	$8, %esp
+ 383              	.LCFI34:
+ 384              		.loc 1 46 0
+ 385 017e 83EC08   		subl	$8, %esp
+ 386 0181 8B4508   		movl	8(%ebp), %eax
+ 387 0184 FF30     		pushl	(%eax)
+ 388 0186 68400000 		pushl	$.LC2
+ 388      00
+ 389              	.LCFI35:
+ 390 018b E8FCFFFF 		call	printf
+ 390      FF
+ 391 0190 83C410   		addl	$16, %esp
+ 392              		.loc 1 47 0
+ 393 0193 C9       		leave
+ 394 0194 C3       		ret
+ 395              	.LBE11:
+ 396              	.LFE23:
+ 397              	.Lfe10:
+ 399              		.file 7 "/usr/include/stdio.h"
+ 400              		.file 8 "/usr/include/_G_config.h"
+ 401              		.file 9 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 640              	.Lframe1:
+ 641 0000 18000000 		.long	.LECIE1-.LSCIE1
+GAS LISTING /tmp/ccvUl42h.s 			page 9
+
+
+ 642              	.LSCIE1:
+ 643 0004 00000000 		.long	0x0
+ 644 0008 01       		.byte	0x1
+ 645 0009 7A504C00 		.string	"zPL"
+ 646 000d 01       		.uleb128 0x1
+ 647 000e 7C       		.sleb128 -4
+ 648 000f 08       		.byte	0x8
+ 649 0010 06       		.uleb128 0x6
+ 650 0011 00       		.byte	0x0
+ 651 0012 00000000 		.long	__gxx_personality_v0
+ 652 0016 00       		.byte	0x0
+ 653 0017 0C       		.byte	0xc
+ 654 0018 04       		.uleb128 0x4
+ 655 0019 04       		.uleb128 0x4
+ 656 001a 88       		.byte	0x88
+ 657 001b 01       		.uleb128 0x1
+ 658              		.align 4
+ 659              	.LECIE1:
+ 660              	.LSFDE1:
+ 661 001c 20000000 		.long	.LEFDE1-.LASFDE1
+ 662              	.LASFDE1:
+ 663 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 664 0024 00000000 		.long	.LFB2
+ 665 0028 28000000 		.long	.LFE2-.LFB2
+ 666 002c 04       		.uleb128 0x4
+ 667 002d 00000000 		.long	0x0
+ 668 0031 41       		.byte	0x4
+ 669              		.long	.LCFI0-.LFB2
+ 670 0032 0E       		.byte	0xe
+ 671 0033 08       		.uleb128 0x8
+ 672 0034 85       		.byte	0x85
+ 673 0035 02       		.uleb128 0x2
+ 674 0036 42       		.byte	0x4
+ 675              		.long	.LCFI1-.LCFI0
+ 676 0037 0D       		.byte	0xd
+ 677 0038 05       		.uleb128 0x5
+ 678 0039 4D       		.byte	0x4
+ 679              		.long	.LCFI3-.LCFI1
+ 680 003a 2E       		.byte	0x2e
+ 681 003b 08       		.uleb128 0x8
+ 682 003c 4E       		.byte	0x4
+ 683              		.long	.LCFI4-.LCFI3
+ 684 003d 2E       		.byte	0x2e
+ 685 003e 10       		.uleb128 0x10
+ 686 003f 00       		.align 4
+ 687              	.LEFDE1:
+ 688              	.LSFDE3:
+ 689 0040 28000000 		.long	.LEFDE3-.LASFDE3
+ 690              	.LASFDE3:
+ 691 0044 44000000 		.long	.LASFDE3-.Lframe1
+ 692 0048 28000000 		.long	.LFB4
+ 693 004c AD000000 		.long	.LFE4-.LFB4
+ 694 0050 04       		.uleb128 0x4
+ 695 0051 00000000 		.long	.LLSDA4
+ 696 0055 41       		.byte	0x4
+ 697              		.long	.LCFI5-.LFB4
+ 698 0056 0E       		.byte	0xe
+GAS LISTING /tmp/ccvUl42h.s 			page 10
+
+
+ 699 0057 08       		.uleb128 0x8
+ 700 0058 85       		.byte	0x85
+ 701 0059 02       		.uleb128 0x2
+ 702 005a 42       		.byte	0x4
+ 703              		.long	.LCFI6-.LCFI5
+ 704 005b 0D       		.byte	0xd
+ 705 005c 05       		.uleb128 0x5
+ 706 005d 44       		.byte	0x4
+ 707              		.long	.LCFI8-.LCFI6
+ 708 005e 83       		.byte	0x83
+ 709 005f 03       		.uleb128 0x3
+ 710 0060 53       		.byte	0x4
+ 711              		.long	.LCFI9-.LCFI8
+ 712 0061 2E       		.byte	0x2e
+ 713 0062 10       		.uleb128 0x10
+ 714 0063 56       		.byte	0x4
+ 715              		.long	.LCFI10-.LCFI9
+ 716 0064 2E       		.byte	0x2e
+ 717 0065 14       		.uleb128 0x14
+ 718 0066 4C       		.byte	0x4
+ 719              		.long	.LCFI11-.LCFI10
+ 720 0067 2E       		.byte	0x2e
+ 721 0068 10       		.uleb128 0x10
+ 722 0069 000000   		.align 4
+ 723              	.LEFDE3:
+ 724              		.text
+ 725              	.Letext0:
+GAS LISTING /tmp/ccvUl42h.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 object-arg.cc
+     /tmp/ccvUl42h.s:24     .text:00000000 _Z5print8onefield
+     /tmp/ccvUl42h.s:206    .text:000000e4 _ZNK8onefield8getFieldEv
+     /tmp/ccvUl42h.s:58     .text:00000028 main
+     /tmp/ccvUl42h.s:264    .text:00000114 _ZN8onefieldC1Ei
+     /tmp/ccvUl42h.s:319    .text:0000014a _ZN8onefieldC1ERKS_
+     /tmp/ccvUl42h.s:374    .text:00000178 _ZN8onefieldD1Ev
+     /tmp/ccvUl42h.s:184    .text:000000d6 _ZN8onefield8setFieldEi
+     /tmp/ccvUl42h.s:232    .text:000000ee _ZN8onefieldC2Ei
+     /tmp/ccvUl42h.s:296    .text:0000013a _ZN8onefieldC2ERKS_
+     /tmp/ccvUl42h.s:346    .text:0000015a _ZN8onefieldD2Ev
+
+UNDEFINED SYMBOLS
+printf
+_Unwind_Resume
+__gxx_personality_v0

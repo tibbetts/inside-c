@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Not So Secret Life of C</title>
+  </head>
+
+  <body>
+    <h1>The Not So Secret Life of C</h1>
+
+    <p>
+      The idea of this class is to understand how C++ is translated
+      into assembly (how assembly is translated into object code is
+      left as an exercise for the student).
+
+    <p>
+      So first we will talk about how C is translated into assembly,
+      because C++ is mostly a superset of C, and because it a good way
+      to learn techniques for achieving this understanding.
+
+    <h2>Hello World</h2>
+
+    <p>
+      First lets look at what hello world looks like in assembly.
+    <p>
+      Our source code, as you might expect, looks like this (<a
+      href="hello-world.c">click here for the source in a file.</a>):
+      <blockquote><pre>
+#include <stdio.h>
+
+int
+main (int argc, char **argv)
+{
+    printf("Hello World.\n");
+    return 0;
+}
+      </pre></blockquote>
+
+      We turn that into assembly, and it looks like <a href="hello-world.s">hello-world.s</a>.
+      
+    <p>
+      How do we do that? We run <code>cc -s -o hello-world.s hello-world.c</code>
+    <p>
+      We can also see it with source interpolated by running
+      <code>cc -g -c -Wa,-adhls=hello-world.listing hello-world.c</code>
+      The output of that will look like <a href="hello-world.listing">hello-world.listing</a>
+
+    <h2>Some notes about memory</h2>
+
+    In a running process there are 5 parts to memory:
+    <dl>
+    <dt>Text<dd>The area where the program code is found.
+    <dt>Data<dd>Area where initialized global variables are loaded.
+    <dt>BSS<dd>Area for uninitialized global variables, part of your free store.
+    <dt>Heap<dd>Area where memory allocators get their memory.
+    <dt>Stack<dd>Place were stack frames and local variables are allocated.
+    </dl>
+
+    <h2>Global Variable</h2>
+
+    We can look at how global variables are defined in assembly. They
+    are basically symbols which point into these memory areas and
+    never change. Sometimes the are exposed to LD, sometimes not. See
+    this <a href="global-variables.s">assembly</a> or this <a
+    href="global-variables.listing">listing</a> based on <a
+    href="global-variables.c">global-variables.c</a> for more detail.
+
+    <h2>Functions</h2>
+
+    Functions are chuncks of code that get called using the
+    <code>call</code> instruction. The basic idea is that we jump into
+    that location, run the code, and jump back to where we came from.
+    <p>
+    We use the stack to store where we came from, so that we can get
+    back. But since the code we call might trash the registers, we
+    also want to save some registers on the stack. And we need to pass
+    arguments, so we put those on the stack too, unless if they don't
+    fit in the registers.
+    <p>
+    We also pass return values back through a register,
+    <code>eax</code> on Intel.
+
+    <h2>Calling Convention</h2>
+
+    Calling convention just means identifying which registers the
+    caller saves, which registers the callee saves, where to put the
+    arguments and where to put the return value.
+    <p>
+    The example <a href="function.c">function.c</a> (<a
+    href="function.s">function.s</a>, <a
+    href="function.listing">function.listing</a>)
+
+    <h2>Control Structures</h2>
+
+    Control structures such as if/else, while and do-while are all
+    implemented in terms of conditional jumps in assembly. This is
+    fairly straightforward. Check out <a
+    href="if-then.c">if-then.c</a> (<a href="if-then.s">if-then.s</a>,
+    <a href="if-then.listing">if-then.listing</a>) for a simple
+    example.
+
+    <h2>Pointers</h2>
+
+    You may have noticed that assembly already deals with pointers a
+    great deal. So its obvious how pointers and pointer arithmatic are
+    dealt with when they are compiled.
+
+    <h2>Array</h2>
+    
+    An array is just a pointer to the beginning of the array. To mess
+    with a value to it, you just calculate the offset.
+
+    <p>
+    TODO: Write a short example.
+
+    <h2>Structures</h2>
+
+    Like arrays, structures are just going to be pointers to the start
+    of a memory area. To access the contents, you just calculate the
+    offset.
+    <p>
+    Since they are of a fixed size, you can put them on the stack easily enough.
+
+    TODO: Write a short example.
+
+    <h2>Unions</h2>
+    
+    And of course Unions are like structures, but with slightly more complex sorts of offsets.
+    <p>
+    TODO: Write a short example.
+
+    <hr>
+
+    That's it for our introduction to how C is compiled. As you can
+    see, C is very simple to compile, asssuming you aren't doing any
+    optimization.
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 13 20:46:34 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Mon Jan 19 19:06:34 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,414 @@
+GAS LISTING /tmp/ccOnDuME.s 			page 1
+
+
+   1              		.file	"template-max.cc"
+   2              		.file 1 "template-max.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl _Z3maxIbET_S0_S0_
+  14              	_Z3maxIbET_S0_S0_:
+  15              	.LFB3:
+   1:template-max.cc **** template <typename T>
+   2:template-max.cc **** T max(T x, T y) {
+   3:template-max.cc ****     if (x > y)
+   4:template-max.cc ****         return x;
+   5:template-max.cc ****     else
+   6:template-max.cc ****         return y;
+   7:template-max.cc **** }
+   8:template-max.cc **** 
+   9:template-max.cc **** template <>
+  10:template-max.cc **** bool max<bool>(bool x, bool y) {
+  16              		.loc 1 10 0
+  17 0000 55       		pushl	%ebp
+  18              	.LCFI0:
+  19 0001 89E5     		movl	%esp, %ebp
+  20              	.LCFI1:
+  21 0003 83EC08   		subl	$8, %esp
+  22              	.LCFI2:
+  23 0006 8B4508   		movl	8(%ebp), %eax
+  24 0009 8B550C   		movl	12(%ebp), %edx
+  25 000c 8845FF   		movb	%al, -1(%ebp)
+  26 000f 8855FE   		movb	%dl, -2(%ebp)
+  27              	.LBB2:
+  11:template-max.cc ****     return (x || y);
+  28              		.loc 1 11 0
+  29 0012 C745F800 		movl	$0, -8(%ebp)
+  29      000000
+  30 0019 807DFF00 		cmpb	$0, -1(%ebp)
+  31 001d 7508     		jne	.L3
+  32 001f 807DFE00 		cmpb	$0, -2(%ebp)
+  33 0023 7502     		jne	.L3
+  34 0025 EB07     		jmp	.L2
+  35              	.L3:
+  36 0027 C745F801 		movl	$1, -8(%ebp)
+  36      000000
+  37              	.L2:
+  38 002e 8B45F8   		movl	-8(%ebp), %eax
+  39              	.LBE2:
+  12:template-max.cc **** }
+  40              		.loc 1 12 0
+  41 0031 C9       		leave
+  42 0032 C3       		ret
+  43              	.LFE3:
+  44              	.Lfe1:
+  46 0033 90       		.align 2
+  47              	.globl _ZNK9my_structgtERKS_
+  49              	_ZNK9my_structgtERKS_:
+  50              	.LFB8:
+  13:template-max.cc **** 
+  14:template-max.cc **** struct my_struct {
+  15:template-max.cc ****     int _field;
+GAS LISTING /tmp/ccOnDuME.s 			page 2
+
+
+  16:template-max.cc ****     my_struct(int field) : _field(field) {}
+  17:template-max.cc ****     bool operator>(const my_struct &rhs) const;
+  18:template-max.cc **** };
+  19:template-max.cc **** 
+  20:template-max.cc **** bool my_struct::operator>(const my_struct &rhs) const {
+  51              		.loc 1 20 0
+  52              	.LBB3:
+  53 0034 55       		pushl	%ebp
+  54              	.LCFI3:
+  55 0035 89E5     		movl	%esp, %ebp
+  56              	.LCFI4:
+  21:template-max.cc ****     return _field > rhs._field;
+  57              		.loc 1 21 0
+  58 0037 8B4508   		movl	8(%ebp), %eax
+  59 003a 8B550C   		movl	12(%ebp), %edx
+  60 003d 8B00     		movl	(%eax), %eax
+  61 003f 3B02     		cmpl	(%edx), %eax
+  62 0041 0F9FC0   		setg	%al
+  63 0044 0FB6C0   		movzbl	%al, %eax
+  64              	.LBE3:
+  22:template-max.cc **** }
+  65              		.loc 1 22 0
+  66 0047 C9       		leave
+  67 0048 C3       		ret
+  68              	.LFE8:
+  69              	.Lfe2:
+  71 0049 90       		.align 2
+  72              	.globl main
+  74              	main:
+  75              	.LFB10:
+  23:template-max.cc **** 
+  24:template-max.cc **** int
+  25:template-max.cc **** main (int argc, char **argv) {
+  76              		.loc 1 25 0
+  77 004a 55       		pushl	%ebp
+  78              	.LCFI5:
+  79 004b 89E5     		movl	%esp, %ebp
+  80              	.LCFI6:
+  81 004d 83EC28   		subl	$40, %esp
+  82              	.LCFI7:
+  83 0050 83E4F0   		andl	$-16, %esp
+  84 0053 B8000000 		movl	$0, %eax
+  84      00
+  85 0058 29C4     		subl	%eax, %esp
+  86              	.LBB4:
+  26:template-max.cc ****     // int
+  27:template-max.cc ****     int i = max(2, 3);
+  87              		.loc 1 27 0
+  88 005a 83EC08   		subl	$8, %esp
+  89 005d 6A03     		pushl	$3
+  90 005f 6A02     		pushl	$2
+  91              	.LCFI8:
+  92 0061 E8FCFFFF 		call	_Z3maxIiET_S0_S0_
+  92      FF
+  93 0066 83C410   		addl	$16, %esp
+  94 0069 8945FC   		movl	%eax, -4(%ebp)
+  28:template-max.cc **** 
+GAS LISTING /tmp/ccOnDuME.s 			page 3
+
+
+  29:template-max.cc ****     // double
+  30:template-max.cc ****     double d = max (2.3, 3.5);
+  95              		.loc 1 30 0
+  96 006c 6800000C 		pushl	$1074528256
+  96      40
+  97 0071 6A00     		pushl	$0
+  98 0073 68666602 		pushl	$1073899110
+  98      40
+  99 0078 68666666 		pushl	$1717986918
+  99      66
+ 100 007d E8FCFFFF 		call	_Z3maxIdET_S0_S0_
+ 100      FF
+ 101 0082 83C410   		addl	$16, %esp
+ 102 0085 DD5DF0   		fstpl	-16(%ebp)
+  31:template-max.cc **** 
+  32:template-max.cc ****     // my_struct
+  33:template-max.cc ****     my_struct x(37);
+ 103              		.loc 1 33 0
+ 104 0088 83EC08   		subl	$8, %esp
+ 105 008b 6A25     		pushl	$37
+ 106 008d 8D45EC   		leal	-20(%ebp), %eax
+ 107 0090 50       		pushl	%eax
+ 108 0091 E8FCFFFF 		call	_ZN9my_structC1Ei
+ 108      FF
+ 109 0096 83C410   		addl	$16, %esp
+  34:template-max.cc ****     my_struct y(12);
+ 110              		.loc 1 34 0
+ 111 0099 83EC08   		subl	$8, %esp
+ 112 009c 6A0C     		pushl	$12
+ 113 009e 8D45E8   		leal	-24(%ebp), %eax
+ 114 00a1 50       		pushl	%eax
+ 115 00a2 E8FCFFFF 		call	_ZN9my_structC1Ei
+ 115      FF
+ 116 00a7 83C410   		addl	$16, %esp
+  35:template-max.cc ****     my_struct m = max (x, y);
+ 117              		.loc 1 35 0
+ 118 00aa 8D55E4   		leal	-28(%ebp), %edx
+ 119 00ad 83EC04   		subl	$4, %esp
+ 120 00b0 8B45E8   		movl	-24(%ebp), %eax
+ 121 00b3 50       		pushl	%eax
+ 122 00b4 8B45EC   		movl	-20(%ebp), %eax
+ 123 00b7 50       		pushl	%eax
+ 124 00b8 52       		pushl	%edx
+ 125 00b9 E8FCFFFF 		call	_Z3maxI9my_structET_S1_S1_
+ 125      FF
+ 126 00be 83C40C   		addl	$12, %esp
+  36:template-max.cc **** 
+  37:template-max.cc ****     // bool
+  38:template-max.cc ****     bool bx = true;
+ 127              		.loc 1 38 0
+ 128 00c1 C645E301 		movb	$1, -29(%ebp)
+  39:template-max.cc ****     bool by = false;
+ 129              		.loc 1 39 0
+ 130 00c5 C645E200 		movb	$0, -30(%ebp)
+  40:template-max.cc ****     bool b = max(bx, by);
+ 131              		.loc 1 40 0
+ 132 00c9 83EC08   		subl	$8, %esp
+GAS LISTING /tmp/ccOnDuME.s 			page 4
+
+
+ 133 00cc 0FB645E2 		movzbl	-30(%ebp), %eax
+ 134 00d0 50       		pushl	%eax
+ 135 00d1 0FB645E3 		movzbl	-29(%ebp), %eax
+ 136 00d5 50       		pushl	%eax
+ 137 00d6 E8FCFFFF 		call	_Z3maxIbET_S0_S0_
+ 137      FF
+ 138 00db 83C410   		addl	$16, %esp
+ 139 00de 8845E1   		movb	%al, -31(%ebp)
+  41:template-max.cc **** 
+  42:template-max.cc ****     return i;
+ 140              		.loc 1 42 0
+ 141 00e1 8B45FC   		movl	-4(%ebp), %eax
+ 142              	.LBE4:
+  43:template-max.cc **** }
+ 143              		.loc 1 43 0
+ 144 00e4 C9       		leave
+ 145 00e5 C3       		ret
+ 146              	.LFE10:
+ 147              	.Lfe3:
+ 149              		.section	.gnu.linkonce.t._Z3maxIiET_S0_S0_,"ax",@progbits
+ 150              		.align 2
+ 151              		.weak	_Z3maxIiET_S0_S0_
+ 153              	_Z3maxIiET_S0_S0_:
+ 154              	.LFB12:
+ 155              		.loc 1 2 0
+ 156              	.LBB5:
+ 157 0000 55       		pushl	%ebp
+ 158              	.LCFI9:
+ 159 0001 89E5     		movl	%esp, %ebp
+ 160              	.LCFI10:
+ 161 0003 83EC04   		subl	$4, %esp
+ 162              	.LCFI11:
+ 163              		.loc 1 3 0
+ 164 0006 8B4508   		movl	8(%ebp), %eax
+ 165 0009 3B450C   		cmpl	12(%ebp), %eax
+ 166 000c 7E08     		jle	.L7
+ 167              		.loc 1 4 0
+ 168 000e 8B4508   		movl	8(%ebp), %eax
+ 169 0011 8945FC   		movl	%eax, -4(%ebp)
+ 170 0014 EB06     		jmp	.L6
+ 171              	.L7:
+ 172              		.loc 1 6 0
+ 173 0016 8B450C   		movl	12(%ebp), %eax
+ 174 0019 8945FC   		movl	%eax, -4(%ebp)
+ 175              	.LBE5:
+ 176              	.L6:
+ 177 001c 8B45FC   		movl	-4(%ebp), %eax
+ 178 001f C9       		leave
+ 179 0020 C3       		ret
+ 180              	.LFE12:
+ 181              	.Lfe4:
+ 183              		.section	.gnu.linkonce.t._Z3maxIdET_S0_S0_,"ax",@progbits
+ 184              		.align 2
+ 185              		.weak	_Z3maxIdET_S0_S0_
+ 187              	_Z3maxIdET_S0_S0_:
+ 188              	.LFB14:
+ 189              		.loc 1 2 0
+GAS LISTING /tmp/ccOnDuME.s 			page 5
+
+
+ 190 0000 55       		pushl	%ebp
+ 191              	.LCFI12:
+ 192 0001 89E5     		movl	%esp, %ebp
+ 193              	.LCFI13:
+ 194 0003 83EC18   		subl	$24, %esp
+ 195              	.LCFI14:
+ 196 0006 8B4508   		movl	8(%ebp), %eax
+ 197 0009 8B550C   		movl	12(%ebp), %edx
+ 198 000c 8945F8   		movl	%eax, -8(%ebp)
+ 199 000f 8955FC   		movl	%edx, -4(%ebp)
+ 200 0012 8B4510   		movl	16(%ebp), %eax
+ 201 0015 8B5514   		movl	20(%ebp), %edx
+ 202 0018 8945F0   		movl	%eax, -16(%ebp)
+ 203 001b 8955F4   		movl	%edx, -12(%ebp)
+ 204              	.LBB6:
+ 205              		.loc 1 3 0
+ 206 001e DD45F8   		fldl	-8(%ebp)
+ 207 0021 DD45F0   		fldl	-16(%ebp)
+ 208 0024 D9C9     		fxch	%st(1)
+ 209 0026 DAE9     		fucompp
+ 210 0028 DFE0     		fnstsw	%ax
+ 211 002a F6C445   		testb	$69, %ah
+ 212 002d 7402     		je	.L11
+ 213 002f EB0E     		jmp	.L10
+ 214              	.L11:
+ 215              		.loc 1 4 0
+ 216 0031 8B45F8   		movl	-8(%ebp), %eax
+ 217 0034 8B55FC   		movl	-4(%ebp), %edx
+ 218 0037 8945E8   		movl	%eax, -24(%ebp)
+ 219 003a 8955EC   		movl	%edx, -20(%ebp)
+ 220 003d EB0C     		jmp	.L9
+ 221              	.L10:
+ 222              		.loc 1 6 0
+ 223 003f 8B45F0   		movl	-16(%ebp), %eax
+ 224 0042 8B55F4   		movl	-12(%ebp), %edx
+ 225 0045 8945E8   		movl	%eax, -24(%ebp)
+ 226 0048 8955EC   		movl	%edx, -20(%ebp)
+ 227              	.LBE6:
+ 228              	.L9:
+ 229 004b DD45E8   		fldl	-24(%ebp)
+ 230 004e C9       		leave
+ 231 004f C3       		ret
+ 232              	.LFE14:
+ 233              	.Lfe5:
+ 235              		.section	.gnu.linkonce.t._Z3maxI9my_structET_S1_S1_,"ax",@progbits
+ 236              		.align 2
+ 237              		.weak	_Z3maxI9my_structET_S1_S1_
+ 239              	_Z3maxI9my_structET_S1_S1_:
+ 240              	.LFB16:
+ 241              		.loc 1 2 0
+ 242 0000 55       		pushl	%ebp
+ 243              	.LCFI15:
+ 244 0001 89E5     		movl	%esp, %ebp
+ 245              	.LCFI16:
+ 246 0003 83EC08   		subl	$8, %esp
+ 247              	.LCFI17:
+ 248              	.LBB7:
+GAS LISTING /tmp/ccOnDuME.s 			page 6
+
+
+ 249              		.loc 1 3 0
+ 250 0006 83EC08   		subl	$8, %esp
+ 251 0009 8D4510   		leal	16(%ebp), %eax
+ 252 000c 50       		pushl	%eax
+ 253 000d 8D450C   		leal	12(%ebp), %eax
+ 254 0010 50       		pushl	%eax
+ 255              	.LCFI18:
+ 256 0011 E8FCFFFF 		call	_ZNK9my_structgtERKS_
+ 256      FF
+ 257 0016 83C410   		addl	$16, %esp
+ 258 0019 84C0     		testb	%al, %al
+ 259 001b 740A     		je	.L14
+ 260              		.loc 1 4 0
+ 261 001d 8B450C   		movl	12(%ebp), %eax
+ 262 0020 8B5508   		movl	8(%ebp), %edx
+ 263 0023 8902     		movl	%eax, (%edx)
+ 264 0025 EB08     		jmp	.L13
+ 265              	.L14:
+ 266              		.loc 1 6 0
+ 267 0027 8B4510   		movl	16(%ebp), %eax
+ 268 002a 8B5508   		movl	8(%ebp), %edx
+ 269 002d 8902     		movl	%eax, (%edx)
+ 270              	.LBE7:
+ 271              	.L13:
+ 272 002f 8B4508   		movl	8(%ebp), %eax
+ 273 0032 C9       		leave
+ 274 0033 C20400   		ret	$4
+ 275              	.LFE16:
+ 276              	.Lfe6:
+ 278              		.section	.gnu.linkonce.t._ZN9my_structC1Ei,"ax",@progbits
+ 279              		.align 2
+ 280              		.weak	_ZN9my_structC1Ei
+ 282              	_ZN9my_structC1Ei:
+ 283              	.LFB17:
+ 284              		.loc 1 16 0
+ 285              	.LBB8:
+ 286 0000 55       		pushl	%ebp
+ 287              	.LCFI19:
+ 288 0001 89E5     		movl	%esp, %ebp
+ 289              	.LCFI20:
+ 290              		.loc 1 16 0
+ 291 0003 8B5508   		movl	8(%ebp), %edx
+ 292 0006 8B450C   		movl	12(%ebp), %eax
+ 293 0009 8902     		movl	%eax, (%edx)
+ 294 000b C9       		leave
+ 295 000c C3       		ret
+ 296              	.LBE8:
+ 297              	.LFE17:
+ 298              	.Lfe7:
+ 452              	.Lframe1:
+ 453 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 454              	.LSCIE1:
+ 455 0004 00000000 		.long	0x0
+ 456 0008 01       		.byte	0x1
+ 457 0009 7A5000   		.string	"zP"
+ 458 000c 01       		.uleb128 0x1
+ 459 000d 7C       		.sleb128 -4
+GAS LISTING /tmp/ccOnDuME.s 			page 7
+
+
+ 460 000e 08       		.byte	0x8
+ 461 000f 05       		.uleb128 0x5
+ 462 0010 00       		.byte	0x0
+ 463 0011 00000000 		.long	__gxx_personality_v0
+ 464 0015 0C       		.byte	0xc
+ 465 0016 04       		.uleb128 0x4
+ 466 0017 04       		.uleb128 0x4
+ 467 0018 88       		.byte	0x88
+ 468 0019 01       		.uleb128 0x1
+ 469 001a 0000     		.align 4
+ 470              	.LECIE1:
+ 471              	.LSFDE5:
+ 472 001c 24000000 		.long	.LEFDE5-.LASFDE5
+ 473              	.LASFDE5:
+ 474 0020 20000000 		.long	.LASFDE5-.Lframe1
+ 475 0024 4A000000 		.long	.LFB10
+ 476 0028 9C000000 		.long	.LFE10-.LFB10
+ 477 002c 00       		.uleb128 0x0
+ 478 002d 04       		.byte	0x4
+ 479 002e 01000000 		.long	.LCFI5-.LFB10
+ 480 0032 0E       		.byte	0xe
+ 481 0033 08       		.uleb128 0x8
+ 482 0034 85       		.byte	0x85
+ 483 0035 02       		.uleb128 0x2
+ 484 0036 04       		.byte	0x4
+ 485 0037 02000000 		.long	.LCFI6-.LCFI5
+ 486 003b 0D       		.byte	0xd
+ 487 003c 05       		.uleb128 0x5
+ 488 003d 04       		.byte	0x4
+ 489 003e 14000000 		.long	.LCFI8-.LCFI6
+ 490 0042 2E       		.byte	0x2e
+ 491 0043 10       		.uleb128 0x10
+ 492              		.align 4
+ 493              	.LEFDE5:
+ 494              		.text
+ 495              	.Letext0:
+GAS LISTING /tmp/ccOnDuME.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 template-max.cc
+     /tmp/ccOnDuME.s:14     .text:00000000 _Z3maxIbET_S0_S0_
+     /tmp/ccOnDuME.s:49     .text:00000034 _ZNK9my_structgtERKS_
+     /tmp/ccOnDuME.s:74     .text:0000004a main
+     /tmp/ccOnDuME.s:153    .gnu.linkonce.t._Z3maxIiET_S0_S0_:00000000 _Z3maxIiET_S0_S0_
+     /tmp/ccOnDuME.s:187    .gnu.linkonce.t._Z3maxIdET_S0_S0_:00000000 _Z3maxIdET_S0_S0_
+     /tmp/ccOnDuME.s:282    .gnu.linkonce.t._ZN9my_structC1Ei:00000000 _ZN9my_structC1Ei
+     /tmp/ccOnDuME.s:239    .gnu.linkonce.t._Z3maxI9my_structET_S1_S1_:00000000 _Z3maxI9my_structET_S1_S1_
+
+UNDEFINED SYMBOLS
+__gxx_personality_v0

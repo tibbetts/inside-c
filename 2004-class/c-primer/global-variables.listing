@@ -1,0 +1,97 @@
+GAS LISTING /tmp/ccsbV7Zs.s 			page 1
+
+
+   1              		.file	"global-variables.c"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+ 161              	.globl init_c
+ 162              	.section	.rodata
+ 163              	.LC0:
+ 164 0000 54455354 		.string	"TEST"
+ 164      00
+ 165              	.data
+ 167              		.align 4
+ 170              	init_c:
+ 171 0000 00000000 		.long .LC0
+ 172              	.globl initialized
+ 174              		.align 4
+ 177              	initialized:
+ 178 0004 05000000 		.long 5
+ 179              	.text
+ 180              		.align 4
+ 184              	.globl main
+ 186              	main:
+ 187 0000 55       		pushl %ebp
+ 188 0001 89E5     		movl %esp,%ebp
+ 189 0003 83EC08   		subl $8,%esp
+   1:global-variables.c **** #include <stdio.h>
+   2:global-variables.c **** 
+   3:global-variables.c **** const char *init_c = "TEST";
+   4:global-variables.c **** int initialized = 5;
+   5:global-variables.c **** int uninitialized;
+   6:global-variables.c **** const char *uninitialized_c;
+   7:global-variables.c **** 
+   8:global-variables.c **** int
+   9:global-variables.c **** main (int argc, char **argv)
+  10:global-variables.c **** {
+ 191              	.LM1:
+  11:global-variables.c ****     printf(init_c);
+ 193              	.LM2:
+ 194 0006 83C4F4   		addl $-12,%esp
+ 195 0009 A1000000 		movl init_c,%eax
+ 195      00
+ 196 000e 50       		pushl %eax
+ 197 000f E8FCFFFF 		call printf
+ 197      FF
+ 198 0014 83C410   		addl $16,%esp
+  12:global-variables.c ****     uninitialized_c = init_c;
+ 200              	.LM3:
+ 201 0017 A1000000 		movl init_c,%eax
+ 201      00
+ 202 001c A3000000 		movl %eax,uninitialized_c
+ 202      00
+  13:global-variables.c ****     uninitialized = 12 + initialized;
+ 204              	.LM4:
+ 205 0021 A1000000 		movl initialized,%eax
+ 205      00
+ 206 0026 83C00C   		addl $12,%eax
+ 207 0029 A3000000 		movl %eax,uninitialized
+ 207      00
+GAS LISTING /tmp/ccsbV7Zs.s 			page 2
+
+
+  14:global-variables.c ****     return uninitialized;
+ 209              	.LM5:
+ 210 002e 8B150000 		movl uninitialized,%edx
+ 210      0000
+ 211 0034 89D0     		movl %edx,%eax
+ 212 0036 EB00     		jmp .L2
+  15:global-variables.c **** }
+ 214              	.LM6:
+ 215              		.p2align 4,,7
+ 216              	.L2:
+ 217 0038 C9       		leave
+ 218 0039 C3       		ret
+ 219              	.Lfe1:
+ 221              	.Lscope0:
+ 224              		.comm	uninitialized,4,4
+ 226              		.comm	uninitialized_c,4,4
+ 227              		.text
+ 229              	Letext:
+ 230 003a 8DB60000 		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+ 230      0000
+GAS LISTING /tmp/ccsbV7Zs.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 global-variables.c
+     /tmp/ccsbV7Zs.s:170    .data:00000000 init_c
+     /tmp/ccsbV7Zs.s:177    .data:00000004 initialized
+     /tmp/ccsbV7Zs.s:186    .text:00000000 main
+                            *COM*:00000004 uninitialized_c
+                            *COM*:00000004 uninitialized
+     /tmp/ccsbV7Zs.s:229    .text:0000003a Letext
+
+UNDEFINED SYMBOLS
+printf

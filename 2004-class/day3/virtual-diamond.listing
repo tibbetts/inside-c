@@ -1,0 +1,986 @@
+GAS LISTING /tmp/ccJ3ptt8.s 			page 1
+
+
+   1              		.file	"virtual-diamond.cc"
+   2              		.file 1 "virtual-diamond.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/bits/types.h"
+  16              		.align 2
+  17              	.globl _ZNK10bottomBase11getBaseDataEv
+  19              	_ZNK10bottomBase11getBaseDataEv:
+  20              	.LFB2:
+   1:virtual-diamond.cc **** #include <stdio.h>
+   2:virtual-diamond.cc **** 
+   3:virtual-diamond.cc **** class bottomBase {
+   4:virtual-diamond.cc ****     int baseData;
+   5:virtual-diamond.cc ****   public:
+   6:virtual-diamond.cc ****     virtual int getBaseData() const;
+   7:virtual-diamond.cc **** };
+   8:virtual-diamond.cc **** 
+   9:virtual-diamond.cc **** class baseA : public virtual bottomBase {
+  10:virtual-diamond.cc ****     int dataA;
+  11:virtual-diamond.cc ****   public:
+  12:virtual-diamond.cc ****     void setDataA(int a);
+  13:virtual-diamond.cc ****     virtual int getDataA() const;
+  14:virtual-diamond.cc **** };
+  15:virtual-diamond.cc **** 
+  16:virtual-diamond.cc **** class baseB : public virtual bottomBase {
+  17:virtual-diamond.cc ****     int dataB;
+  18:virtual-diamond.cc ****   public:
+  19:virtual-diamond.cc ****     void setDataB(int b);
+  20:virtual-diamond.cc ****     virtual int getDataB() const;
+  21:virtual-diamond.cc **** };
+  22:virtual-diamond.cc **** 
+  23:virtual-diamond.cc **** class subBoth : public baseA, public baseB {
+  24:virtual-diamond.cc ****   public:
+  25:virtual-diamond.cc ****     virtual int getSum() const;
+  26:virtual-diamond.cc ****     // Overrise get data methods for fun.
+  27:virtual-diamond.cc ****     virtual int getDataA() const;
+  28:virtual-diamond.cc ****     virtual int getDataB() const;
+  29:virtual-diamond.cc **** 
+  30:virtual-diamond.cc ****     // Override getBaseData;
+  31:virtual-diamond.cc ****     virtual int getBaseData() const;
+  32:virtual-diamond.cc **** };
+  33:virtual-diamond.cc **** 
+  34:virtual-diamond.cc **** int bottomBase::getBaseData() const {
+  21              		.loc 1 34 0
+  22              	.LBB2:
+  23 0000 55       		pushl	%ebp
+  24              	.LCFI0:
+  25 0001 89E5     		movl	%esp, %ebp
+  26              	.LCFI1:
+  35:virtual-diamond.cc ****     return baseData;
+  27              		.loc 1 35 0
+  28 0003 8B4508   		movl	8(%ebp), %eax
+  29 0006 8B4004   		movl	4(%eax), %eax
+  30              	.LBE2:
+GAS LISTING /tmp/ccJ3ptt8.s 			page 2
+
+
+  36:virtual-diamond.cc **** }
+  31              		.loc 1 36 0
+  32 0009 C9       		leave
+  33 000a C3       		ret
+  34              	.LFE2:
+  35              	.Lfe1:
+  37 000b 90       		.align 2
+  38              	.globl _ZN5baseA8setDataAEi
+  40              	_ZN5baseA8setDataAEi:
+  41              	.LFB4:
+  37:virtual-diamond.cc **** 
+  38:virtual-diamond.cc **** void baseA::setDataA(int a) {
+  42              		.loc 1 38 0
+  43              	.LBB3:
+  44 000c 55       		pushl	%ebp
+  45              	.LCFI2:
+  46 000d 89E5     		movl	%esp, %ebp
+  47              	.LCFI3:
+  39:virtual-diamond.cc ****     dataA = a;
+  48              		.loc 1 39 0
+  49 000f 8B5508   		movl	8(%ebp), %edx
+  50 0012 8B450C   		movl	12(%ebp), %eax
+  51 0015 894204   		movl	%eax, 4(%edx)
+  40:virtual-diamond.cc **** }
+  52              		.loc 1 40 0
+  53 0018 C9       		leave
+  54 0019 C3       		ret
+  55              	.LBE3:
+  56              	.LFE4:
+  57              	.Lfe2:
+  59              		.align 2
+  60              	.globl _ZNK5baseA8getDataAEv
+  62              	_ZNK5baseA8getDataAEv:
+  63              	.LFB6:
+  41:virtual-diamond.cc **** int baseA::getDataA() const {
+  64              		.loc 1 41 0
+  65              	.LBB4:
+  66 001a 55       		pushl	%ebp
+  67              	.LCFI4:
+  68 001b 89E5     		movl	%esp, %ebp
+  69              	.LCFI5:
+  42:virtual-diamond.cc ****     return dataA;
+  70              		.loc 1 42 0
+  71 001d 8B4508   		movl	8(%ebp), %eax
+  72 0020 8B4004   		movl	4(%eax), %eax
+  73              	.LBE4:
+  43:virtual-diamond.cc **** }
+  74              		.loc 1 43 0
+  75 0023 C9       		leave
+  76 0024 C3       		ret
+  77              	.LFE6:
+  78              	.Lfe3:
+  80 0025 90       		.align 2
+  81              	.globl _ZN5baseB8setDataBEi
+  83              	_ZN5baseB8setDataBEi:
+  84              	.LFB8:
+  44:virtual-diamond.cc **** 
+GAS LISTING /tmp/ccJ3ptt8.s 			page 3
+
+
+  45:virtual-diamond.cc **** void baseB::setDataB(int b) {
+  85              		.loc 1 45 0
+  86              	.LBB5:
+  87 0026 55       		pushl	%ebp
+  88              	.LCFI6:
+  89 0027 89E5     		movl	%esp, %ebp
+  90              	.LCFI7:
+  46:virtual-diamond.cc ****     dataB = b;
+  91              		.loc 1 46 0
+  92 0029 8B5508   		movl	8(%ebp), %edx
+  93 002c 8B450C   		movl	12(%ebp), %eax
+  94 002f 894204   		movl	%eax, 4(%edx)
+  47:virtual-diamond.cc **** }
+  95              		.loc 1 47 0
+  96 0032 C9       		leave
+  97 0033 C3       		ret
+  98              	.LBE5:
+  99              	.LFE8:
+ 100              	.Lfe4:
+ 102              		.align 2
+ 103              	.globl _ZNK5baseB8getDataBEv
+ 105              	_ZNK5baseB8getDataBEv:
+ 106              	.LFB10:
+  48:virtual-diamond.cc **** int baseB::getDataB() const {
+ 107              		.loc 1 48 0
+ 108              	.LBB6:
+ 109 0034 55       		pushl	%ebp
+ 110              	.LCFI8:
+ 111 0035 89E5     		movl	%esp, %ebp
+ 112              	.LCFI9:
+  49:virtual-diamond.cc ****     return dataB;
+ 113              		.loc 1 49 0
+ 114 0037 8B4508   		movl	8(%ebp), %eax
+ 115 003a 8B4004   		movl	4(%eax), %eax
+ 116              	.LBE6:
+  50:virtual-diamond.cc **** }
+ 117              		.loc 1 50 0
+ 118 003d C9       		leave
+ 119 003e C3       		ret
+ 120              	.LFE10:
+ 121              	.Lfe5:
+ 123 003f 90       		.align 2
+ 124              	.globl _ZNK7subBoth6getSumEv
+ 126              	_ZNK7subBoth6getSumEv:
+ 127              	.LFB12:
+  51:virtual-diamond.cc **** 
+  52:virtual-diamond.cc **** int subBoth::getSum() const {
+ 128              		.loc 1 52 0
+ 129              	.LBB7:
+ 130 0040 55       		pushl	%ebp
+ 131              	.LCFI10:
+ 132 0041 89E5     		movl	%esp, %ebp
+ 133              	.LCFI11:
+ 134 0043 83EC08   		subl	$8, %esp
+ 135              	.LCFI12:
+  53:virtual-diamond.cc ****     int total = 0;
+ 136              		.loc 1 53 0
+GAS LISTING /tmp/ccJ3ptt8.s 			page 4
+
+
+ 137 0046 C745FC00 		movl	$0, -4(%ebp)
+ 137      000000
+  54:virtual-diamond.cc ****     total += getDataA();
+ 138              		.loc 1 54 0
+ 139 004d 83EC0C   		subl	$12, %esp
+ 140 0050 8B4508   		movl	8(%ebp), %eax
+ 141 0053 8B00     		movl	(%eax), %eax
+ 142 0055 FF7508   		pushl	8(%ebp)
+ 143 0058 8B00     		movl	(%eax), %eax
+ 144              	.LCFI13:
+ 145 005a FFD0     		call	*%eax
+ 146 005c 83C410   		addl	$16, %esp
+ 147 005f 89C2     		movl	%eax, %edx
+ 148 0061 8D45FC   		leal	-4(%ebp), %eax
+ 149 0064 0110     		addl	%edx, (%eax)
+  55:virtual-diamond.cc ****     total += getDataB();
+ 150              		.loc 1 55 0
+ 151 0066 83EC0C   		subl	$12, %esp
+ 152 0069 8B4508   		movl	8(%ebp), %eax
+ 153 006c 8B00     		movl	(%eax), %eax
+ 154 006e 83C008   		addl	$8, %eax
+ 155 0071 FF7508   		pushl	8(%ebp)
+ 156 0074 8B00     		movl	(%eax), %eax
+ 157 0076 FFD0     		call	*%eax
+ 158 0078 83C410   		addl	$16, %esp
+ 159 007b 89C2     		movl	%eax, %edx
+ 160 007d 8D45FC   		leal	-4(%ebp), %eax
+ 161 0080 0110     		addl	%edx, (%eax)
+  56:virtual-diamond.cc ****     return total;
+ 162              		.loc 1 56 0
+ 163 0082 8B45FC   		movl	-4(%ebp), %eax
+ 164              	.LBE7:
+  57:virtual-diamond.cc **** }
+ 165              		.loc 1 57 0
+ 166 0085 C9       		leave
+ 167 0086 C3       		ret
+ 168              	.LFE12:
+ 169              	.Lfe6:
+ 171              		.section	.rodata
+ 172              	.LC0:
+ 173 0000 63616C6C 		.string	"calling getDataA()\n"
+ 173      696E6720 
+ 173      67657444 
+ 173      61746141 
+ 173      28290A00 
+ 174              		.text
+ 175 0087 90       		.align 2
+ 176              	.globl _ZNK7subBoth8getDataAEv
+ 178              	_ZNK7subBoth8getDataAEv:
+ 179              	.LFB14:
+  58:virtual-diamond.cc **** 
+  59:virtual-diamond.cc **** int subBoth::getDataA() const {
+ 180              		.loc 1 59 0
+ 181              	.LBB8:
+ 182 0088 55       		pushl	%ebp
+ 183              	.LCFI14:
+ 184 0089 89E5     		movl	%esp, %ebp
+GAS LISTING /tmp/ccJ3ptt8.s 			page 5
+
+
+ 185              	.LCFI15:
+ 186 008b 83EC08   		subl	$8, %esp
+ 187              	.LCFI16:
+  60:virtual-diamond.cc ****     printf("calling getDataA()\n");
+ 188              		.loc 1 60 0
+ 189 008e 83EC0C   		subl	$12, %esp
+ 190 0091 68000000 		pushl	$.LC0
+ 190      00
+ 191              	.LCFI17:
+ 192 0096 E8FCFFFF 		call	printf
+ 192      FF
+ 193 009b 83C410   		addl	$16, %esp
+  61:virtual-diamond.cc ****     return baseA::getDataA();
+ 194              		.loc 1 61 0
+ 195 009e 83EC0C   		subl	$12, %esp
+ 196 00a1 FF7508   		pushl	8(%ebp)
+ 197 00a4 E8FCFFFF 		call	_ZNK5baseA8getDataAEv
+ 197      FF
+ 198 00a9 83C410   		addl	$16, %esp
+ 199              	.LBE8:
+  62:virtual-diamond.cc **** }
+ 200              		.loc 1 62 0
+ 201 00ac C9       		leave
+ 202 00ad C3       		ret
+ 203              	.LFE14:
+ 204              	.Lfe7:
+ 206              		.section	.rodata
+ 207              	.LC1:
+ 208 0014 63616C6C 		.string	"calling getDataB()\n"
+ 208      696E6720 
+ 208      67657444 
+ 208      61746142 
+ 208      28290A00 
+ 209              		.text
+ 210              		.align 2
+ 211              	.globl _ZNK7subBoth8getDataBEv
+ 213              	_ZNK7subBoth8getDataBEv:
+ 214              	.LFB16:
+  63:virtual-diamond.cc **** 
+  64:virtual-diamond.cc **** int subBoth::getDataB() const {
+ 215              		.loc 1 64 0
+ 216              	.LBB9:
+ 217 00ae 55       		pushl	%ebp
+ 218              	.LCFI18:
+ 219 00af 89E5     		movl	%esp, %ebp
+ 220              	.LCFI19:
+ 221 00b1 83EC08   		subl	$8, %esp
+ 222              	.LCFI20:
+  65:virtual-diamond.cc ****     printf("calling getDataB()\n");
+ 223              		.loc 1 65 0
+ 224 00b4 83EC0C   		subl	$12, %esp
+ 225 00b7 68140000 		pushl	$.LC1
+ 225      00
+ 226              	.LCFI21:
+ 227 00bc E8FCFFFF 		call	printf
+ 227      FF
+ 228 00c1 83C410   		addl	$16, %esp
+GAS LISTING /tmp/ccJ3ptt8.s 			page 6
+
+
+  66:virtual-diamond.cc ****     return baseB::getDataB();
+ 229              		.loc 1 66 0
+ 230 00c4 83EC0C   		subl	$12, %esp
+ 231 00c7 8B4508   		movl	8(%ebp), %eax
+ 232 00ca 83C008   		addl	$8, %eax
+ 233 00cd 50       		pushl	%eax
+ 234 00ce E8FCFFFF 		call	_ZNK5baseB8getDataBEv
+ 234      FF
+ 235 00d3 83C410   		addl	$16, %esp
+ 236              	.LBE9:
+  67:virtual-diamond.cc **** }
+ 237              		.loc 1 67 0
+ 238 00d6 C9       		leave
+ 239 00d7 C3       		ret
+ 240              	.LFE16:
+ 241              	.Lfe8:
+ 243              		.section	.gnu.linkonce.t._ZThn8_NK7subBoth8getDataBEv,"ax",@progbits
+ 244              		.align 2
+ 245              		.weak	_ZThn8_NK7subBoth8getDataBEv
+ 247              	_ZThn8_NK7subBoth8getDataBEv:
+ 248 0000 83442404 		addl $-8, 4(%esp)
+ 248      F8
+ 249 0005 E9FCFFFF 		jmp _ZNK7subBoth8getDataBEv
+ 249      FF
+ 250              	.Lfe9:
+ 252              		.section	.rodata
+ 253              	.LC2:
+ 254 0028 63616C6C 		.string	"calling getBaseData()\n"
+ 254      696E6720 
+ 254      67657442 
+ 254      61736544 
+ 254      61746128 
+ 255              		.text
+ 256              		.align 2
+ 257              	.globl _ZNK7subBoth11getBaseDataEv
+ 259              	_ZNK7subBoth11getBaseDataEv:
+ 260              	.LFB19:
+  68:virtual-diamond.cc **** 
+  69:virtual-diamond.cc **** int subBoth::getBaseData() const {
+ 261              		.loc 1 69 0
+ 262              	.LBB10:
+ 263 00d8 55       		pushl	%ebp
+ 264              	.LCFI22:
+ 265 00d9 89E5     		movl	%esp, %ebp
+ 266              	.LCFI23:
+ 267 00db 83EC08   		subl	$8, %esp
+ 268              	.LCFI24:
+  70:virtual-diamond.cc ****     printf("calling getBaseData()\n");
+ 269              		.loc 1 70 0
+ 270 00de 83EC0C   		subl	$12, %esp
+ 271 00e1 68280000 		pushl	$.LC2
+ 271      00
+ 272              	.LCFI25:
+ 273 00e6 E8FCFFFF 		call	printf
+ 273      FF
+ 274 00eb 83C410   		addl	$16, %esp
+  71:virtual-diamond.cc ****     return bottomBase::getBaseData();
+GAS LISTING /tmp/ccJ3ptt8.s 			page 7
+
+
+ 275              		.loc 1 71 0
+ 276 00ee 83EC0C   		subl	$12, %esp
+ 277 00f1 8B4508   		movl	8(%ebp), %eax
+ 278 00f4 8B00     		movl	(%eax), %eax
+ 279 00f6 83E80C   		subl	$12, %eax
+ 280 00f9 8B00     		movl	(%eax), %eax
+ 281 00fb 034508   		addl	8(%ebp), %eax
+ 282 00fe 50       		pushl	%eax
+ 283 00ff E8FCFFFF 		call	_ZNK10bottomBase11getBaseDataEv
+ 283      FF
+ 284 0104 83C410   		addl	$16, %esp
+ 285              	.LBE10:
+  72:virtual-diamond.cc **** }
+ 286              		.loc 1 72 0
+ 287 0107 C9       		leave
+ 288 0108 C3       		ret
+ 289              	.LFE19:
+ 290              	.Lfe10:
+ 292              		.section	.gnu.linkonce.t._ZTv0_n12_NK7subBoth11getBaseDataEv,"ax",@progbits
+ 293              		.align 2
+ 294              		.weak	_ZTv0_n12_NK7subBoth11getBaseDataEv
+ 296              	_ZTv0_n12_NK7subBoth11getBaseDataEv:
+ 297              	.LFB21:
+ 298              		.loc 1 23 0
+ 299 0000 55       		pushl	%ebp
+ 300              	.LCFI26:
+ 301 0001 89E5     		movl	%esp, %ebp
+ 302              	.LCFI27:
+ 303 0003 83EC08   		subl	$8, %esp
+ 304              	.LCFI28:
+ 305              		.loc 1 23 0
+ 306 0006 83EC0C   		subl	$12, %esp
+ 307 0009 8B4508   		movl	8(%ebp), %eax
+ 308 000c 8B00     		movl	(%eax), %eax
+ 309 000e 83E80C   		subl	$12, %eax
+ 310 0011 8B00     		movl	(%eax), %eax
+ 311 0013 034508   		addl	8(%ebp), %eax
+ 312 0016 50       		pushl	%eax
+ 313              	.LCFI29:
+ 314 0017 E8FCFFFF 		call	_ZNK7subBoth11getBaseDataEv
+ 314      FF
+ 315 001c 83C410   		addl	$16, %esp
+ 316              		.loc 1 72 0
+ 317 001f C9       		leave
+ 318 0020 C3       		ret
+ 319              	.LFE21:
+ 320              	.Lfe11:
+ 322              		.text
+ 323 0109 90       		.align 2
+ 324              	.globl main
+ 326              	main:
+ 327              	.LFB35:
+  73:virtual-diamond.cc **** 
+  74:virtual-diamond.cc **** 
+  75:virtual-diamond.cc **** int main(int argc, char **argv) {
+ 328              		.loc 1 75 0
+ 329 010a 55       		pushl	%ebp
+GAS LISTING /tmp/ccJ3ptt8.s 			page 8
+
+
+ 330              	.LCFI30:
+ 331 010b 89E5     		movl	%esp, %ebp
+ 332              	.LCFI31:
+ 333 010d 83EC18   		subl	$24, %esp
+ 334              	.LCFI32:
+ 335 0110 83E4F0   		andl	$-16, %esp
+ 336 0113 B8000000 		movl	$0, %eax
+ 336      00
+ 337 0118 29C4     		subl	%eax, %esp
+ 338              	.LBB11:
+  76:virtual-diamond.cc **** 
+  77:virtual-diamond.cc ****     subBoth *sb = new subBoth;
+ 339              		.loc 1 77 0
+ 340 011a 83EC0C   		subl	$12, %esp
+ 341 011d 6A18     		pushl	$24
+ 342              	.LCFI33:
+ 343 011f E8FCFFFF 		call	_Znwj
+ 343      FF
+ 344 0124 83C410   		addl	$16, %esp
+ 345 0127 8945EC   		movl	%eax, -20(%ebp)
+ 346 012a 83EC0C   		subl	$12, %esp
+ 347 012d FF75EC   		pushl	-20(%ebp)
+ 348 0130 E8FCFFFF 		call	_ZN7subBothC1Ev
+ 348      FF
+ 349 0135 83C410   		addl	$16, %esp
+ 350 0138 B000     		movb	$0, %al
+ 351 013a 8B55EC   		movl	-20(%ebp), %edx
+ 352 013d 8955FC   		movl	%edx, -4(%ebp)
+ 353 0140 84C0     		testb	%al, %al
+ 354 0142 740E     		je	.L19
+ 355 0144 83EC0C   		subl	$12, %esp
+ 356 0147 FF75EC   		pushl	-20(%ebp)
+ 357 014a E8FCFFFF 		call	_ZdlPv
+ 357      FF
+ 358 014f 83C410   		addl	$16, %esp
+ 359              	.L19:
+  78:virtual-diamond.cc **** 
+  79:virtual-diamond.cc ****     int i = sb->getSum();
+ 360              		.loc 1 79 0
+ 361 0152 83EC0C   		subl	$12, %esp
+ 362 0155 8B45FC   		movl	-4(%ebp), %eax
+ 363 0158 8B00     		movl	(%eax), %eax
+ 364 015a 83C004   		addl	$4, %eax
+ 365 015d FF75FC   		pushl	-4(%ebp)
+ 366 0160 8B00     		movl	(%eax), %eax
+ 367 0162 FFD0     		call	*%eax
+ 368 0164 83C410   		addl	$16, %esp
+ 369 0167 8945F8   		movl	%eax, -8(%ebp)
+  80:virtual-diamond.cc **** 
+  81:virtual-diamond.cc ****     baseA *ba = sb;
+ 370              		.loc 1 81 0
+ 371 016a 8B45FC   		movl	-4(%ebp), %eax
+ 372 016d 8945F4   		movl	%eax, -12(%ebp)
+  82:virtual-diamond.cc **** 
+  83:virtual-diamond.cc ****     ba->setDataA(12);
+ 373              		.loc 1 83 0
+ 374 0170 83EC08   		subl	$8, %esp
+GAS LISTING /tmp/ccJ3ptt8.s 			page 9
+
+
+ 375 0173 6A0C     		pushl	$12
+ 376 0175 FF75F4   		pushl	-12(%ebp)
+ 377 0178 E8FCFFFF 		call	_ZN5baseA8setDataAEi
+ 377      FF
+ 378 017d 83C410   		addl	$16, %esp
+  84:virtual-diamond.cc ****     ba->getDataA();
+ 379              		.loc 1 84 0
+ 380 0180 83EC0C   		subl	$12, %esp
+ 381 0183 8B45F4   		movl	-12(%ebp), %eax
+ 382 0186 8B00     		movl	(%eax), %eax
+ 383 0188 FF75F4   		pushl	-12(%ebp)
+ 384 018b 8B00     		movl	(%eax), %eax
+ 385 018d FFD0     		call	*%eax
+ 386 018f 83C410   		addl	$16, %esp
+  85:virtual-diamond.cc **** 
+  86:virtual-diamond.cc ****     baseB *bb = sb;
+ 387              		.loc 1 86 0
+ 388 0192 837DFC00 		cmpl	$0, -4(%ebp)
+ 389 0196 740B     		je	.L20
+ 390 0198 8B45FC   		movl	-4(%ebp), %eax
+ 391 019b 83C008   		addl	$8, %eax
+ 392 019e 8945E8   		movl	%eax, -24(%ebp)
+ 393 01a1 EB07     		jmp	.L21
+ 394              	.L20:
+ 395 01a3 C745E800 		movl	$0, -24(%ebp)
+ 395      000000
+ 396              	.L21:
+ 397 01aa 8B55E8   		movl	-24(%ebp), %edx
+ 398 01ad 8955F0   		movl	%edx, -16(%ebp)
+  87:virtual-diamond.cc **** 
+  88:virtual-diamond.cc ****     bb->setDataB(13);
+ 399              		.loc 1 88 0
+ 400 01b0 83EC08   		subl	$8, %esp
+ 401 01b3 6A0D     		pushl	$13
+ 402 01b5 FF75F0   		pushl	-16(%ebp)
+ 403 01b8 E8FCFFFF 		call	_ZN5baseB8setDataBEi
+ 403      FF
+ 404 01bd 83C410   		addl	$16, %esp
+  89:virtual-diamond.cc ****     bb->getDataB();
+ 405              		.loc 1 89 0
+ 406 01c0 83EC0C   		subl	$12, %esp
+ 407 01c3 8B45F0   		movl	-16(%ebp), %eax
+ 408 01c6 8B00     		movl	(%eax), %eax
+ 409 01c8 FF75F0   		pushl	-16(%ebp)
+ 410 01cb 8B00     		movl	(%eax), %eax
+ 411 01cd FFD0     		call	*%eax
+ 412 01cf 83C410   		addl	$16, %esp
+  90:virtual-diamond.cc **** 
+  91:virtual-diamond.cc ****     return 0;
+ 413              		.loc 1 91 0
+ 414 01d2 B8000000 		movl	$0, %eax
+ 414      00
+ 415              	.LBE11:
+  92:virtual-diamond.cc **** 
+  93:virtual-diamond.cc **** }
+ 416              		.loc 1 93 0
+ 417 01d7 C9       		leave
+GAS LISTING /tmp/ccJ3ptt8.s 			page 10
+
+
+ 418 01d8 C3       		ret
+ 419              	.LFE35:
+ 420              	.Lfe12:
+ 422              		.weak	_ZTT7subBoth
+ 423              		.section	.gnu.linkonce.d._ZTT7subBoth,"aw",@progbits
+ 424              		.align 4
+ 427              	_ZTT7subBoth:
+ 428 0000 0C000000 		.long	_ZTV7subBoth+12
+ 429 0004 0C000000 		.long	_ZTC7subBoth0_5baseA+12
+ 430 0008 1C000000 		.long	_ZTC7subBoth0_5baseA+28
+ 431 000c 0C000000 		.long	_ZTC7subBoth8_5baseB+12
+ 432 0010 1C000000 		.long	_ZTC7subBoth8_5baseB+28
+ 433 0014 38000000 		.long	_ZTV7subBoth+56
+ 434 0018 28000000 		.long	_ZTV7subBoth+40
+ 435              		.weak	_ZTC7subBoth8_5baseB
+ 436              		.section	.gnu.linkonce.d._ZTC7subBoth8_5baseB,"aw",@progbits
+ 437              		.align 32
+ 440              	_ZTC7subBoth8_5baseB:
+ 441 0000 08000000 		.long	8
+ 442 0004 00000000 		.long	0
+ 443 0008 00000000 		.long	_ZTI5baseB
+ 444 000c 00000000 		.long	_ZNK5baseB8getDataBEv
+ 445 0010 00000000 		.long	0
+ 446 0014 F8FFFFFF 		.long	-8
+ 447 0018 00000000 		.long	_ZTI5baseB
+ 448 001c 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 449              		.weak	_ZTC7subBoth0_5baseA
+ 450              		.section	.gnu.linkonce.d._ZTC7subBoth0_5baseA,"aw",@progbits
+ 451              		.align 32
+ 454              	_ZTC7subBoth0_5baseA:
+ 455 0000 10000000 		.long	16
+ 456 0004 00000000 		.long	0
+ 457 0008 00000000 		.long	_ZTI5baseA
+ 458 000c 00000000 		.long	_ZNK5baseA8getDataAEv
+ 459 0010 00000000 		.long	0
+ 460 0014 F0FFFFFF 		.long	-16
+ 461 0018 00000000 		.long	_ZTI5baseA
+ 462 001c 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 463              		.weak	_ZTV7subBoth
+ 464              		.section	.gnu.linkonce.d._ZTV7subBoth,"aw",@progbits
+ 465              		.align 32
+ 468              	_ZTV7subBoth:
+ 469 0000 10000000 		.long	16
+ 470 0004 00000000 		.long	0
+ 471 0008 00000000 		.long	_ZTI7subBoth
+ 472 000c 00000000 		.long	_ZNK7subBoth8getDataAEv
+ 473 0010 00000000 		.long	_ZNK7subBoth6getSumEv
+ 474 0014 00000000 		.long	_ZNK7subBoth8getDataBEv
+ 475 0018 00000000 		.long	_ZNK7subBoth11getBaseDataEv
+ 476 001c 08000000 		.long	8
+ 477 0020 F8FFFFFF 		.long	-8
+ 478 0024 00000000 		.long	_ZTI7subBoth
+ 479 0028 00000000 		.long	_ZThn8_NK7subBoth8getDataBEv
+ 480 002c F0FFFFFF 		.long	-16
+ 481 0030 F0FFFFFF 		.long	-16
+ 482 0034 00000000 		.long	_ZTI7subBoth
+ 483 0038 00000000 		.long	_ZTv0_n12_NK7subBoth11getBaseDataEv
+GAS LISTING /tmp/ccJ3ptt8.s 			page 11
+
+
+ 484              		.weak	_ZTT5baseB
+ 485              		.section	.gnu.linkonce.d._ZTT5baseB,"aw",@progbits
+ 486              		.align 4
+ 489              	_ZTT5baseB:
+ 490 0000 0C000000 		.long	_ZTV5baseB+12
+ 491 0004 1C000000 		.long	_ZTV5baseB+28
+ 492              		.weak	_ZTV5baseB
+ 493              		.section	.gnu.linkonce.d._ZTV5baseB,"aw",@progbits
+ 494              		.align 32
+ 497              	_ZTV5baseB:
+ 498 0000 08000000 		.long	8
+ 499 0004 00000000 		.long	0
+ 500 0008 00000000 		.long	_ZTI5baseB
+ 501 000c 00000000 		.long	_ZNK5baseB8getDataBEv
+ 502 0010 00000000 		.long	0
+ 503 0014 F8FFFFFF 		.long	-8
+ 504 0018 00000000 		.long	_ZTI5baseB
+ 505 001c 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 506              		.weak	_ZTT5baseA
+ 507              		.section	.gnu.linkonce.d._ZTT5baseA,"aw",@progbits
+ 508              		.align 4
+ 511              	_ZTT5baseA:
+ 512 0000 0C000000 		.long	_ZTV5baseA+12
+ 513 0004 1C000000 		.long	_ZTV5baseA+28
+ 514              		.weak	_ZTV5baseA
+ 515              		.section	.gnu.linkonce.d._ZTV5baseA,"aw",@progbits
+ 516              		.align 32
+ 519              	_ZTV5baseA:
+ 520 0000 08000000 		.long	8
+ 521 0004 00000000 		.long	0
+ 522 0008 00000000 		.long	_ZTI5baseA
+ 523 000c 00000000 		.long	_ZNK5baseA8getDataAEv
+ 524 0010 00000000 		.long	0
+ 525 0014 F8FFFFFF 		.long	-8
+ 526 0018 00000000 		.long	_ZTI5baseA
+ 527 001c 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 528              		.weak	_ZTV10bottomBase
+ 529              		.section	.gnu.linkonce.d._ZTV10bottomBase,"aw",@progbits
+ 530              		.align 8
+ 533              	_ZTV10bottomBase:
+ 534 0000 00000000 		.long	0
+ 535 0004 00000000 		.long	_ZTI10bottomBase
+ 536 0008 00000000 		.long	_ZNK10bottomBase11getBaseDataEv
+ 537              		.section	.gnu.linkonce.t._ZN7subBothC1Ev,"ax",@progbits
+ 538              		.align 2
+ 539              		.weak	_ZN7subBothC1Ev
+ 541              	_ZN7subBothC1Ev:
+ 542              	.LFB36:
+ 543              		.loc 1 77 0
+ 544              	.LBB12:
+ 545 0000 55       		pushl	%ebp
+ 546              	.LCFI34:
+ 547 0001 89E5     		movl	%esp, %ebp
+ 548              	.LCFI35:
+ 549 0003 83EC08   		subl	$8, %esp
+ 550              	.LCFI36:
+ 551              		.loc 1 77 0
+GAS LISTING /tmp/ccJ3ptt8.s 			page 12
+
+
+ 552 0006 83EC0C   		subl	$12, %esp
+ 553 0009 8B4508   		movl	8(%ebp), %eax
+ 554 000c 83C010   		addl	$16, %eax
+ 555 000f 50       		pushl	%eax
+ 556              	.LCFI37:
+ 557 0010 E8FCFFFF 		call	_ZN10bottomBaseC2Ev
+ 557      FF
+ 558 0015 83C410   		addl	$16, %esp
+ 559 0018 83EC08   		subl	$8, %esp
+ 560 001b B8000000 		movl	$_ZTT7subBoth, %eax
+ 560      00
+ 561 0020 83C004   		addl	$4, %eax
+ 562 0023 50       		pushl	%eax
+ 563 0024 FF7508   		pushl	8(%ebp)
+ 564 0027 E8FCFFFF 		call	_ZN5baseAC2Ev
+ 564      FF
+ 565 002c 83C410   		addl	$16, %esp
+ 566 002f 83EC08   		subl	$8, %esp
+ 567 0032 B8000000 		movl	$_ZTT7subBoth, %eax
+ 567      00
+ 568 0037 83C00C   		addl	$12, %eax
+ 569 003a 50       		pushl	%eax
+ 570 003b 8B4508   		movl	8(%ebp), %eax
+ 571 003e 83C008   		addl	$8, %eax
+ 572 0041 50       		pushl	%eax
+ 573 0042 E8FCFFFF 		call	_ZN5baseBC2Ev
+ 573      FF
+ 574 0047 83C410   		addl	$16, %esp
+ 575 004a 8B5508   		movl	8(%ebp), %edx
+ 576 004d B80C0000 		movl	$_ZTV7subBoth+12, %eax
+ 576      00
+ 577 0052 8902     		movl	%eax, (%edx)
+ 578 0054 B9100000 		movl	$16, %ecx
+ 578      00
+ 579 0059 8B5508   		movl	8(%ebp), %edx
+ 580 005c B8380000 		movl	$_ZTV7subBoth+56, %eax
+ 580      00
+ 581 0061 890411   		movl	%eax, (%ecx,%edx)
+ 582 0064 8B5508   		movl	8(%ebp), %edx
+ 583 0067 83C208   		addl	$8, %edx
+ 584 006a B8280000 		movl	$_ZTV7subBoth+40, %eax
+ 584      00
+ 585 006f 8902     		movl	%eax, (%edx)
+ 586 0071 C9       		leave
+ 587 0072 C3       		ret
+ 588              	.LBE12:
+ 589              	.LFE36:
+ 590              	.Lfe13:
+ 592              		.weak	_ZTI10bottomBase
+ 593              		.section	.gnu.linkonce.d._ZTI10bottomBase,"aw",@progbits
+ 594              		.align 4
+ 597              	_ZTI10bottomBase:
+ 598 0000 08000000 		.long	_ZTVN10__cxxabiv117__class_type_infoE+8
+ 599 0004 00000000 		.long	_ZTS10bottomBase
+ 600              		.weak	_ZTI5baseA
+ 601              		.section	.gnu.linkonce.d._ZTI5baseA,"aw",@progbits
+ 602              		.align 32
+GAS LISTING /tmp/ccJ3ptt8.s 			page 13
+
+
+ 605              	_ZTI5baseA:
+ 606 0000 08000000 		.long	_ZTVN10__cxxabiv121__vmi_class_type_infoE+8
+ 607 0004 00000000 		.long	_ZTS5baseA
+ 608 0008 08000000 		.long	8
+ 609 000c 01000000 		.long	1
+ 610 0010 00000000 		.long	_ZTI10bottomBase
+ 611 0014 03F4FFFF 		.long	-3069
+ 612 0018 00000000 		.zero	8
+ 612      00000000 
+ 613              		.weak	_ZTI5baseB
+ 614              		.section	.gnu.linkonce.d._ZTI5baseB,"aw",@progbits
+ 615              		.align 32
+ 618              	_ZTI5baseB:
+ 619 0000 08000000 		.long	_ZTVN10__cxxabiv121__vmi_class_type_infoE+8
+ 620 0004 00000000 		.long	_ZTS5baseB
+ 621 0008 08000000 		.long	8
+ 622 000c 01000000 		.long	1
+ 623 0010 00000000 		.long	_ZTI10bottomBase
+ 624 0014 03F4FFFF 		.long	-3069
+ 625 0018 00000000 		.zero	8
+ 625      00000000 
+ 626              		.weak	_ZTI7subBoth
+ 627              		.section	.gnu.linkonce.d._ZTI7subBoth,"aw",@progbits
+ 628              		.align 32
+ 631              	_ZTI7subBoth:
+ 632 0000 08000000 		.long	_ZTVN10__cxxabiv121__vmi_class_type_infoE+8
+ 633 0004 00000000 		.long	_ZTS7subBoth
+ 634 0008 0A000000 		.long	10
+ 635 000c 02000000 		.long	2
+ 636 0010 00000000 		.long	_ZTI5baseA
+ 637 0014 02000000 		.long	2
+ 638 0018 00000000 		.long	_ZTI5baseB
+ 639 001c 02080000 		.long	2050
+ 640 0020 00000000 		.zero	8
+ 640      00000000 
+ 641              		.weak	_ZTS7subBoth
+ 642              		.section	.gnu.linkonce.r._ZTS7subBoth,"a",@progbits
+ 645              	_ZTS7subBoth:
+ 646 0000 37737562 		.string	"7subBoth"
+ 646      426F7468 
+ 646      00
+ 647              		.weak	_ZTS5baseB
+ 648              		.section	.gnu.linkonce.r._ZTS5baseB,"a",@progbits
+ 651              	_ZTS5baseB:
+ 652 0000 35626173 		.string	"5baseB"
+ 652      654200
+ 653              		.weak	_ZTS5baseA
+ 654              		.section	.gnu.linkonce.r._ZTS5baseA,"a",@progbits
+ 657              	_ZTS5baseA:
+ 658 0000 35626173 		.string	"5baseA"
+ 658      654100
+ 659              		.weak	_ZTS10bottomBase
+ 660              		.section	.gnu.linkonce.r._ZTS10bottomBase,"a",@progbits
+ 663              	_ZTS10bottomBase:
+ 664 0000 3130626F 		.string	"10bottomBase"
+ 664      74746F6D 
+ 664      42617365 
+GAS LISTING /tmp/ccJ3ptt8.s 			page 14
+
+
+ 664      00
+ 665              		.section	.gnu.linkonce.t._ZN10bottomBaseC2Ev,"ax",@progbits
+ 666              		.align 2
+ 667              		.weak	_ZN10bottomBaseC2Ev
+ 669              	_ZN10bottomBaseC2Ev:
+ 670              	.LFB37:
+ 671              		.loc 1 77 0
+ 672              	.LBB13:
+ 673 0000 55       		pushl	%ebp
+ 674              	.LCFI38:
+ 675 0001 89E5     		movl	%esp, %ebp
+ 676              	.LCFI39:
+ 677              		.loc 1 77 0
+ 678 0003 8B4508   		movl	8(%ebp), %eax
+ 679 0006 C7000800 		movl	$_ZTV10bottomBase+8, (%eax)
+ 679      0000
+ 680 000c C9       		leave
+ 681 000d C3       		ret
+ 682              	.LBE13:
+ 683              	.LFE37:
+ 684              	.Lfe14:
+ 686              		.section	.gnu.linkonce.t._ZN5baseAC2Ev,"ax",@progbits
+ 687              		.align 2
+ 688              		.weak	_ZN5baseAC2Ev
+ 690              	_ZN5baseAC2Ev:
+ 691              	.LFB38:
+ 692              		.loc 1 77 0
+ 693              	.LBB14:
+ 694 0000 55       		pushl	%ebp
+ 695              	.LCFI40:
+ 696 0001 89E5     		movl	%esp, %ebp
+ 697              	.LCFI41:
+ 698              		.loc 1 77 0
+ 699 0003 8B5508   		movl	8(%ebp), %edx
+ 700 0006 8B450C   		movl	12(%ebp), %eax
+ 701 0009 8B00     		movl	(%eax), %eax
+ 702 000b 8902     		movl	%eax, (%edx)
+ 703 000d 8B4508   		movl	8(%ebp), %eax
+ 704 0010 8B00     		movl	(%eax), %eax
+ 705 0012 83E80C   		subl	$12, %eax
+ 706 0015 8B08     		movl	(%eax), %ecx
+ 707 0017 8B5508   		movl	8(%ebp), %edx
+ 708 001a 8B450C   		movl	12(%ebp), %eax
+ 709 001d 83C004   		addl	$4, %eax
+ 710 0020 8B00     		movl	(%eax), %eax
+ 711 0022 890411   		movl	%eax, (%ecx,%edx)
+ 712 0025 C9       		leave
+ 713 0026 C3       		ret
+ 714              	.LBE14:
+ 715              	.LFE38:
+ 716              	.Lfe15:
+ 718              		.section	.gnu.linkonce.t._ZN5baseBC2Ev,"ax",@progbits
+ 719              		.align 2
+ 720              		.weak	_ZN5baseBC2Ev
+ 722              	_ZN5baseBC2Ev:
+ 723              	.LFB39:
+ 724              		.loc 1 77 0
+GAS LISTING /tmp/ccJ3ptt8.s 			page 15
+
+
+ 725              	.LBB15:
+ 726 0000 55       		pushl	%ebp
+ 727              	.LCFI42:
+ 728 0001 89E5     		movl	%esp, %ebp
+ 729              	.LCFI43:
+ 730              		.loc 1 77 0
+ 731 0003 8B5508   		movl	8(%ebp), %edx
+ 732 0006 8B450C   		movl	12(%ebp), %eax
+ 733 0009 8B00     		movl	(%eax), %eax
+ 734 000b 8902     		movl	%eax, (%edx)
+ 735 000d 8B4508   		movl	8(%ebp), %eax
+ 736 0010 8B00     		movl	(%eax), %eax
+ 737 0012 83E80C   		subl	$12, %eax
+ 738 0015 8B08     		movl	(%eax), %ecx
+ 739 0017 8B5508   		movl	8(%ebp), %edx
+ 740 001a 8B450C   		movl	12(%ebp), %eax
+ 741 001d 83C004   		addl	$4, %eax
+ 742 0020 8B00     		movl	(%eax), %eax
+ 743 0022 890411   		movl	%eax, (%ecx,%edx)
+ 744 0025 C9       		leave
+ 745 0026 C3       		ret
+ 746              	.LBE15:
+ 747              	.LFE39:
+ 748              	.Lfe16:
+ 750              		.file 7 "/usr/include/stdio.h"
+ 751              		.file 8 "/usr/include/_G_config.h"
+ 752              		.file 9 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 1069              	.Lframe1:
+ 1070 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 1071              	.LSCIE1:
+ 1072 0004 00000000 		.long	0x0
+ 1073 0008 01       		.byte	0x1
+ 1074 0009 7A5000   		.string	"zP"
+ 1075 000c 01       		.uleb128 0x1
+ 1076 000d 7C       		.sleb128 -4
+ 1077 000e 08       		.byte	0x8
+ 1078 000f 05       		.uleb128 0x5
+ 1079 0010 00       		.byte	0x0
+ 1080 0011 00000000 		.long	__gxx_personality_v0
+ 1081 0015 0C       		.byte	0xc
+ 1082 0016 04       		.uleb128 0x4
+ 1083 0017 04       		.uleb128 0x4
+ 1084 0018 88       		.byte	0x88
+ 1085 0019 01       		.uleb128 0x1
+ 1086 001a 0000     		.align 4
+ 1087              	.LECIE1:
+ 1088              	.LSFDE11:
+ 1089 001c 24000000 		.long	.LEFDE11-.LASFDE11
+ 1090              	.LASFDE11:
+ 1091 0020 20000000 		.long	.LASFDE11-.Lframe1
+ 1092 0024 40000000 		.long	.LFB12
+ 1093 0028 47000000 		.long	.LFE12-.LFB12
+ 1094 002c 00       		.uleb128 0x0
+ 1095 002d 04       		.byte	0x4
+ 1096 002e 01000000 		.long	.LCFI10-.LFB12
+ 1097 0032 0E       		.byte	0xe
+ 1098 0033 08       		.uleb128 0x8
+GAS LISTING /tmp/ccJ3ptt8.s 			page 16
+
+
+ 1099 0034 85       		.byte	0x85
+ 1100 0035 02       		.uleb128 0x2
+ 1101 0036 04       		.byte	0x4
+ 1102 0037 02000000 		.long	.LCFI11-.LCFI10
+ 1103 003b 0D       		.byte	0xd
+ 1104 003c 05       		.uleb128 0x5
+ 1105 003d 04       		.byte	0x4
+ 1106 003e 17000000 		.long	.LCFI13-.LCFI11
+ 1107 0042 2E       		.byte	0x2e
+ 1108 0043 10       		.uleb128 0x10
+ 1109              		.align 4
+ 1110              	.LEFDE11:
+ 1111              	.LSFDE21:
+ 1112 0044 24000000 		.long	.LEFDE21-.LASFDE21
+ 1113              	.LASFDE21:
+ 1114 0048 48000000 		.long	.LASFDE21-.Lframe1
+ 1115 004c 0A010000 		.long	.LFB35
+ 1116 0050 CF000000 		.long	.LFE35-.LFB35
+ 1117 0054 00       		.uleb128 0x0
+ 1118 0055 04       		.byte	0x4
+ 1119 0056 01000000 		.long	.LCFI30-.LFB35
+ 1120 005a 0E       		.byte	0xe
+ 1121 005b 08       		.uleb128 0x8
+ 1122 005c 85       		.byte	0x85
+ 1123 005d 02       		.uleb128 0x2
+ 1124 005e 04       		.byte	0x4
+ 1125 005f 02000000 		.long	.LCFI31-.LCFI30
+ 1126 0063 0D       		.byte	0xd
+ 1127 0064 05       		.uleb128 0x5
+ 1128 0065 04       		.byte	0x4
+ 1129 0066 12000000 		.long	.LCFI33-.LCFI31
+ 1130 006a 2E       		.byte	0x2e
+ 1131 006b 10       		.uleb128 0x10
+ 1132              		.align 4
+ 1133              	.LEFDE21:
+ 1134              		.text
+ 1135              	.Letext0:
+GAS LISTING /tmp/ccJ3ptt8.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 virtual-diamond.cc
+     /tmp/ccJ3ptt8.s:19     .text:00000000 _ZNK10bottomBase11getBaseDataEv
+     /tmp/ccJ3ptt8.s:40     .text:0000000c _ZN5baseA8setDataAEi
+     /tmp/ccJ3ptt8.s:62     .text:0000001a _ZNK5baseA8getDataAEv
+     /tmp/ccJ3ptt8.s:83     .text:00000026 _ZN5baseB8setDataBEi
+     /tmp/ccJ3ptt8.s:105    .text:00000034 _ZNK5baseB8getDataBEv
+     /tmp/ccJ3ptt8.s:126    .text:00000040 _ZNK7subBoth6getSumEv
+     /tmp/ccJ3ptt8.s:178    .text:00000088 _ZNK7subBoth8getDataAEv
+     /tmp/ccJ3ptt8.s:213    .text:000000ae _ZNK7subBoth8getDataBEv
+     /tmp/ccJ3ptt8.s:247    .gnu.linkonce.t._ZThn8_NK7subBoth8getDataBEv:00000000 _ZThn8_NK7subBoth8getDataBEv
+     /tmp/ccJ3ptt8.s:259    .text:000000d8 _ZNK7subBoth11getBaseDataEv
+     /tmp/ccJ3ptt8.s:296    .gnu.linkonce.t._ZTv0_n12_NK7subBoth11getBaseDataEv:00000000 _ZTv0_n12_NK7subBoth11getBaseDataEv
+     /tmp/ccJ3ptt8.s:326    .text:0000010a main
+     /tmp/ccJ3ptt8.s:541    .gnu.linkonce.t._ZN7subBothC1Ev:00000000 _ZN7subBothC1Ev
+     /tmp/ccJ3ptt8.s:427    .gnu.linkonce.d._ZTT7subBoth:00000000 _ZTT7subBoth
+     /tmp/ccJ3ptt8.s:468    .gnu.linkonce.d._ZTV7subBoth:00000000 _ZTV7subBoth
+     /tmp/ccJ3ptt8.s:454    .gnu.linkonce.d._ZTC7subBoth0_5baseA:00000000 _ZTC7subBoth0_5baseA
+     /tmp/ccJ3ptt8.s:440    .gnu.linkonce.d._ZTC7subBoth8_5baseB:00000000 _ZTC7subBoth8_5baseB
+     /tmp/ccJ3ptt8.s:618    .gnu.linkonce.d._ZTI5baseB:00000000 _ZTI5baseB
+     /tmp/ccJ3ptt8.s:605    .gnu.linkonce.d._ZTI5baseA:00000000 _ZTI5baseA
+     /tmp/ccJ3ptt8.s:631    .gnu.linkonce.d._ZTI7subBoth:00000000 _ZTI7subBoth
+     /tmp/ccJ3ptt8.s:489    .gnu.linkonce.d._ZTT5baseB:00000000 _ZTT5baseB
+     /tmp/ccJ3ptt8.s:497    .gnu.linkonce.d._ZTV5baseB:00000000 _ZTV5baseB
+     /tmp/ccJ3ptt8.s:511    .gnu.linkonce.d._ZTT5baseA:00000000 _ZTT5baseA
+     /tmp/ccJ3ptt8.s:519    .gnu.linkonce.d._ZTV5baseA:00000000 _ZTV5baseA
+     /tmp/ccJ3ptt8.s:533    .gnu.linkonce.d._ZTV10bottomBase:00000000 _ZTV10bottomBase
+     /tmp/ccJ3ptt8.s:597    .gnu.linkonce.d._ZTI10bottomBase:00000000 _ZTI10bottomBase
+     /tmp/ccJ3ptt8.s:669    .gnu.linkonce.t._ZN10bottomBaseC2Ev:00000000 _ZN10bottomBaseC2Ev
+     /tmp/ccJ3ptt8.s:690    .gnu.linkonce.t._ZN5baseAC2Ev:00000000 _ZN5baseAC2Ev
+     /tmp/ccJ3ptt8.s:722    .gnu.linkonce.t._ZN5baseBC2Ev:00000000 _ZN5baseBC2Ev
+     /tmp/ccJ3ptt8.s:663    .gnu.linkonce.r._ZTS10bottomBase:00000000 _ZTS10bottomBase
+     /tmp/ccJ3ptt8.s:657    .gnu.linkonce.r._ZTS5baseA:00000000 _ZTS5baseA
+     /tmp/ccJ3ptt8.s:651    .gnu.linkonce.r._ZTS5baseB:00000000 _ZTS5baseB
+     /tmp/ccJ3ptt8.s:645    .gnu.linkonce.r._ZTS7subBoth:00000000 _ZTS7subBoth
+
+UNDEFINED SYMBOLS
+printf
+_Znwj
+_ZdlPv
+_ZTVN10__cxxabiv117__class_type_infoE
+_ZTVN10__cxxabiv121__vmi_class_type_infoE
+__gxx_personality_v0

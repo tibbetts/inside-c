@@ -1,0 +1,717 @@
+GAS LISTING /tmp/ccLKeB5F.s 			page 1
+
+
+   1              		.file	"templated-method.cc"
+   2              		.file 1 "templated-method.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/_G_config.h"
+  16              		.file 7 "/usr/include/bits/types.h"
+  17              		.file 8 "/usr/include/time.h"
+  18              		.file 9 "/usr/include/bits/sched.h"
+  19              		.file 10 "/usr/include/xlocale.h"
+  20              		.file 11 "/usr/include/bits/pthreadtypes.h"
+  21              		.file 12 "/usr/include/pthread.h"
+  22              		.file 13 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++io.h"
+  23              		.file 14 "/usr/include/c++/3.2.2/bits/char_traits.h"
+  24              		.file 15 "/usr/include/c++/3.2.2/bits/fpos.h"
+  25              		.file 16 "/usr/include/locale.h"
+  26              		.file 17 "/usr/include/bits/waitstatus.h"
+  27              		.file 18 "/usr/include/bits/time.h"
+  28              		.file 19 "/usr/include/stdlib.h"
+  29              		.file 20 "/usr/include/sys/types.h"
+  30              		.file 21 "/usr/include/c++/3.2.2/new"
+  31              		.file 22 "/usr/include/c++/3.2.2/bits/type_traits.h"
+  32              		.file 23 "/usr/include/c++/3.2.2/bits/stl_iterator_base_types.h"
+  33              		.file 24 "/usr/include/c++/3.2.2/bits/stl_threads.h"
+  34              		.file 25 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/gthr-default.h"
+  35              		.file 26 "/usr/include/c++/3.2.2/bits/stl_alloc.h"
+  36              		.file 27 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/atomicity.h"
+  37              		.file 28 "/usr/include/c++/3.2.2/bits/stringfwd.h"
+  38              		.file 29 "/usr/include/c++/3.2.2/bits/basic_string.h"
+  39              		.file 30 "/usr/include/c++/3.2.2/bits/basic_string.tcc"
+  40              		.file 31 "/usr/include/c++/3.2.2/bits/localefwd.h"
+  41              		.file 32 "/usr/include/c++/3.2.2/bits/ios_base.h"
+  42              		.file 33 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/ctype_base.h"
+  43              		.file 34 "/usr/include/c++/3.2.2/bits/codecvt.h"
+  44              		.file 35 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/codecvt_specializations.h"
+  45              		.file 36 "/usr/include/iconv.h"
+  46              		.file 37 "/usr/include/c++/3.2.2/bits/locale_facets.h"
+  47              		.file 38 "/usr/include/math.h"
+  48              		.file 39 "/usr/include/c++/3.2.2/limits"
+  49              		.file 40 "/usr/include/c++/3.2.2/ostream"
+  50              		.file 41 "/usr/include/c++/3.2.2/bits/ostream.tcc"
+  51              		.file 42 "/usr/include/c++/3.2.2/istream"
+  52              		.file 43 "/usr/include/c++/3.2.2/bits/istream.tcc"
+  53              		.local	_ZSt8__ioinit
+  54              		.comm	_ZSt8__ioinit,1,1
+  55              		.section	.rodata
+  56              	.LC0:
+  57 0000 66312E5F 		.string	"f1._field="
+  57      6669656C 
+  57      643D00
+  58              		.text
+  59              		.align 2
+  60              	.globl main
+  62              	main:
+  63              	.LFB1481:
+GAS LISTING /tmp/ccLKeB5F.s 			page 2
+
+
+   1:templated-method.cc **** #include <iostream>
+   2:templated-method.cc **** 
+   3:templated-method.cc **** using namespace std;
+   4:templated-method.cc **** 
+   5:templated-method.cc **** template <typename T1>
+   6:templated-method.cc **** struct my_struct {
+   7:templated-method.cc ****     T1 _field;
+   8:templated-method.cc **** 
+   9:templated-method.cc ****     my_struct(T1 field) : _field(field) {}
+  10:templated-method.cc **** 
+  11:templated-method.cc ****     template <typename T2>
+  12:templated-method.cc ****     void set_field_from (T2 value) {
+  13:templated-method.cc ****         _field = value;
+  14:templated-method.cc ****     }
+  15:templated-method.cc **** };
+  16:templated-method.cc **** 
+  17:templated-method.cc **** int
+  18:templated-method.cc **** main (int argc, char **argv) {
+  64              		.loc 1 18 0
+  65 0000 55       		pushl	%ebp
+  66              	.LCFI0:
+  67 0001 89E5     		movl	%esp, %ebp
+  68              	.LCFI1:
+  69 0003 83EC18   		subl	$24, %esp
+  70              	.LCFI2:
+  71 0006 83E4F0   		andl	$-16, %esp
+  72 0009 B8000000 		movl	$0, %eax
+  72      00
+  73 000e 29C4     		subl	%eax, %esp
+  74              	.LBB2:
+  19:templated-method.cc ****     my_struct<double> f1(3.3);
+  75              		.loc 1 19 0
+  76 0010 83EC04   		subl	$4, %esp
+  77 0013 6866660A 		pushl	$1074423398
+  77      40
+  78 0018 68666666 		pushl	$1717986918
+  78      66
+  79 001d 8D45F8   		leal	-8(%ebp), %eax
+  80 0020 50       		pushl	%eax
+  81              	.LCFI3:
+  82 0021 E8FCFFFF 		call	_ZN9my_structIdEC1Ed
+  82      FF
+  83 0026 83C410   		addl	$16, %esp
+  20:templated-method.cc **** 
+  21:templated-method.cc ****     cout << "f1._field=" << f1._field << endl;
+  84              		.loc 1 21 0
+  85 0029 83EC08   		subl	$8, %esp
+  86 002c 68000000 		pushl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+  86      00
+  87 0031 83EC08   		subl	$8, %esp
+  88 0034 FF75FC   		pushl	-4(%ebp)
+  89 0037 FF75F8   		pushl	-8(%ebp)
+  90 003a 83EC0C   		subl	$12, %esp
+  91 003d 68000000 		pushl	$.LC0
+  91      00
+  92 0042 68000000 		pushl	$_ZSt4cout
+  92      00
+GAS LISTING /tmp/ccLKeB5F.s 			page 3
+
+
+  93              	.LCFI4:
+  94 0047 E8FCFFFF 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  94      FF
+  95 004c 83C414   		addl	$20, %esp
+  96 004f 50       		pushl	%eax
+  97 0050 E8FCFFFF 		call	_ZNSolsEd
+  97      FF
+  98 0055 83C414   		addl	$20, %esp
+  99 0058 50       		pushl	%eax
+ 100              	.LCFI5:
+ 101 0059 E8FCFFFF 		call	_ZNSolsEPFRSoS_E
+ 101      FF
+ 102 005e 83C410   		addl	$16, %esp
+  22:templated-method.cc **** 
+  23:templated-method.cc ****     int i = 5;
+ 103              		.loc 1 23 0
+ 104 0061 C745F405 		movl	$5, -12(%ebp)
+ 104      000000
+  24:templated-method.cc ****     f1.set_field_from(5);
+ 105              		.loc 1 24 0
+ 106 0068 83EC08   		subl	$8, %esp
+ 107 006b 6A05     		pushl	$5
+ 108 006d 8D45F8   		leal	-8(%ebp), %eax
+ 109 0070 50       		pushl	%eax
+ 110 0071 E8FCFFFF 		call	_ZN9my_structIdE14set_field_fromIiEEvT_
+ 110      FF
+ 111 0076 83C410   		addl	$16, %esp
+  25:templated-method.cc **** 
+  26:templated-method.cc ****     cout << "f1._field=" << f1._field << endl;
+ 112              		.loc 1 26 0
+ 113 0079 83EC08   		subl	$8, %esp
+ 114 007c 68000000 		pushl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+ 114      00
+ 115 0081 83EC08   		subl	$8, %esp
+ 116 0084 FF75FC   		pushl	-4(%ebp)
+ 117 0087 FF75F8   		pushl	-8(%ebp)
+ 118 008a 83EC0C   		subl	$12, %esp
+ 119 008d 68000000 		pushl	$.LC0
+ 119      00
+ 120 0092 68000000 		pushl	$_ZSt4cout
+ 120      00
+ 121              	.LCFI6:
+ 122 0097 E8FCFFFF 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 122      FF
+ 123 009c 83C414   		addl	$20, %esp
+ 124 009f 50       		pushl	%eax
+ 125 00a0 E8FCFFFF 		call	_ZNSolsEd
+ 125      FF
+ 126 00a5 83C414   		addl	$20, %esp
+ 127 00a8 50       		pushl	%eax
+ 128              	.LCFI7:
+ 129 00a9 E8FCFFFF 		call	_ZNSolsEPFRSoS_E
+ 129      FF
+ 130 00ae 83C410   		addl	$16, %esp
+ 131              	.LBE2:
+  27:templated-method.cc **** }
+ 132              		.loc 1 27 0
+GAS LISTING /tmp/ccLKeB5F.s 			page 4
+
+
+ 133 00b1 B8000000 		movl	$0, %eax
+ 133      00
+ 134 00b6 C9       		leave
+ 135 00b7 C3       		ret
+ 136              	.LFE1481:
+ 137              	.Lfe1:
+ 139              		.section	.gnu.linkonce.t._ZN9my_structIdEC1Ed,"ax",@progbits
+ 140              		.align 2
+ 141              		.weak	_ZN9my_structIdEC1Ed
+ 143              	_ZN9my_structIdEC1Ed:
+ 144              	.LFB1490:
+ 145              		.loc 1 9 0
+ 146 0000 55       		pushl	%ebp
+ 147              	.LCFI8:
+ 148 0001 89E5     		movl	%esp, %ebp
+ 149              	.LCFI9:
+ 150 0003 83EC08   		subl	$8, %esp
+ 151              	.LCFI10:
+ 152 0006 8B450C   		movl	12(%ebp), %eax
+ 153 0009 8B5510   		movl	16(%ebp), %edx
+ 154 000c 8945F8   		movl	%eax, -8(%ebp)
+ 155 000f 8955FC   		movl	%edx, -4(%ebp)
+ 156              	.LBB3:
+ 157              		.loc 1 9 0
+ 158 0012 8B4D08   		movl	8(%ebp), %ecx
+ 159 0015 8B45F8   		movl	-8(%ebp), %eax
+ 160 0018 8B55FC   		movl	-4(%ebp), %edx
+ 161 001b 8901     		movl	%eax, (%ecx)
+ 162 001d 895104   		movl	%edx, 4(%ecx)
+ 163 0020 C9       		leave
+ 164 0021 C3       		ret
+ 165              	.LBE3:
+ 166              	.LFE1490:
+ 167              	.Lfe2:
+ 169              		.section	.gnu.linkonce.t._ZN9my_structIdE14set_field_fromIiEEvT_,"ax",@progbits
+ 170              		.align 2
+ 171              		.weak	_ZN9my_structIdE14set_field_fromIiEEvT_
+ 173              	_ZN9my_structIdE14set_field_fromIiEEvT_:
+ 174              	.LFB1492:
+ 175              		.loc 1 12 0
+ 176              	.LBB4:
+ 177 0000 55       		pushl	%ebp
+ 178              	.LCFI11:
+ 179 0001 89E5     		movl	%esp, %ebp
+ 180              	.LCFI12:
+ 181              		.loc 1 13 0
+ 182 0003 8B4508   		movl	8(%ebp), %eax
+ 183 0006 DB450C   		fildl	12(%ebp)
+ 184 0009 DD18     		fstpl	(%eax)
+ 185 000b C9       		leave
+ 186 000c C3       		ret
+ 187              	.LBE4:
+ 188              	.LFE1492:
+ 189              	.Lfe3:
+ 191              		.text
+ 192              		.align 2
+ 194              	_Z41__static_initialization_and_destruction_0ii:
+GAS LISTING /tmp/ccLKeB5F.s 			page 5
+
+
+ 195              	.LFB1498:
+ 196              		.file 44 "/usr/include/c++/3.2.2/streambuf"
+   1:/usr/include/c++/3.2.2/streambuf **** // Stream buffer classes -*- C++ -*-
+   2:/usr/include/c++/3.2.2/streambuf **** 
+   3:/usr/include/c++/3.2.2/streambuf **** // Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003
+   4:/usr/include/c++/3.2.2/streambuf **** // Free Software Foundation, Inc.
+   5:/usr/include/c++/3.2.2/streambuf **** //
+   6:/usr/include/c++/3.2.2/streambuf **** // This file is part of the GNU ISO C++ Library.  This library is free
+   7:/usr/include/c++/3.2.2/streambuf **** // software; you can redistribute it and/or modify it under the
+   8:/usr/include/c++/3.2.2/streambuf **** // terms of the GNU General Public License as published by the
+   9:/usr/include/c++/3.2.2/streambuf **** // Free Software Foundation; either version 2, or (at your option)
+  10:/usr/include/c++/3.2.2/streambuf **** // any later version.
+  11:/usr/include/c++/3.2.2/streambuf **** 
+  12:/usr/include/c++/3.2.2/streambuf **** // This library is distributed in the hope that it will be useful,
+  13:/usr/include/c++/3.2.2/streambuf **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  14:/usr/include/c++/3.2.2/streambuf **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  15:/usr/include/c++/3.2.2/streambuf **** // GNU General Public License for more details.
+  16:/usr/include/c++/3.2.2/streambuf **** 
+  17:/usr/include/c++/3.2.2/streambuf **** // You should have received a copy of the GNU General Public License along
+  18:/usr/include/c++/3.2.2/streambuf **** // with this library; see the file COPYING.  If not, write to the Free
+  19:/usr/include/c++/3.2.2/streambuf **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  20:/usr/include/c++/3.2.2/streambuf **** // USA.
+  21:/usr/include/c++/3.2.2/streambuf **** 
+  22:/usr/include/c++/3.2.2/streambuf **** // As a special exception, you may use this file as part of a free software
+  23:/usr/include/c++/3.2.2/streambuf **** // library without restriction.  Specifically, if other files instantiate
+  24:/usr/include/c++/3.2.2/streambuf **** // templates or use macros or inline functions from this file, or you compile
+  25:/usr/include/c++/3.2.2/streambuf **** // this file and link it with other files to produce an executable, this
+  26:/usr/include/c++/3.2.2/streambuf **** // file does not by itself cause the resulting executable to be covered by
+  27:/usr/include/c++/3.2.2/streambuf **** // the GNU General Public License.  This exception does not however
+  28:/usr/include/c++/3.2.2/streambuf **** // invalidate any other reasons why the executable file might be covered by
+  29:/usr/include/c++/3.2.2/streambuf **** // the GNU General Public License.
+  30:/usr/include/c++/3.2.2/streambuf **** 
+  31:/usr/include/c++/3.2.2/streambuf **** //
+  32:/usr/include/c++/3.2.2/streambuf **** // ISO C++ 14882: 27.5  Stream buffers
+  33:/usr/include/c++/3.2.2/streambuf **** //
+  34:/usr/include/c++/3.2.2/streambuf **** 
+  35:/usr/include/c++/3.2.2/streambuf **** /** @file streambuf
+  36:/usr/include/c++/3.2.2/streambuf ****  *  This is a Standard C++ Library header.  You should @c #include this header
+  37:/usr/include/c++/3.2.2/streambuf ****  *  in your programs, rather than any of the "st[dl]_*.h" implementation files.
+  38:/usr/include/c++/3.2.2/streambuf ****  */
+  39:/usr/include/c++/3.2.2/streambuf **** 
+  40:/usr/include/c++/3.2.2/streambuf **** #ifndef _CPP_STREAMBUF
+  41:/usr/include/c++/3.2.2/streambuf **** #define _CPP_STREAMBUF	1
+  42:/usr/include/c++/3.2.2/streambuf **** 
+  43:/usr/include/c++/3.2.2/streambuf **** #pragma GCC system_header
+  44:/usr/include/c++/3.2.2/streambuf **** 
+  45:/usr/include/c++/3.2.2/streambuf **** #include <bits/c++config.h>
+  46:/usr/include/c++/3.2.2/streambuf **** #include <iosfwd>
+  47:/usr/include/c++/3.2.2/streambuf **** #include <cstdio> 	// For SEEK_SET, SEEK_CUR, SEEK_END
+  48:/usr/include/c++/3.2.2/streambuf **** #include <bits/localefwd.h>
+  49:/usr/include/c++/3.2.2/streambuf **** #include <bits/ios_base.h>
+  50:/usr/include/c++/3.2.2/streambuf **** 
+  51:/usr/include/c++/3.2.2/streambuf **** namespace std
+  52:/usr/include/c++/3.2.2/streambuf **** {
+  53:/usr/include/c++/3.2.2/streambuf ****   template<typename _CharT, typename _Traits>
+  54:/usr/include/c++/3.2.2/streambuf ****     streamsize
+  55:/usr/include/c++/3.2.2/streambuf ****     __copy_streambufs(basic_ios<_CharT, _Traits>& _ios,
+GAS LISTING /tmp/ccLKeB5F.s 			page 6
+
+
+  56:/usr/include/c++/3.2.2/streambuf **** 		      basic_streambuf<_CharT, _Traits>* __sbin,
+  57:/usr/include/c++/3.2.2/streambuf **** 		      basic_streambuf<_CharT, _Traits>* __sbout);
+  58:/usr/include/c++/3.2.2/streambuf ****   
+  59:/usr/include/c++/3.2.2/streambuf ****   // 27.5.2 Template class basic_streambuf<_CharT, _Traits>
+  60:/usr/include/c++/3.2.2/streambuf ****   template<typename _CharT, typename _Traits>
+  61:/usr/include/c++/3.2.2/streambuf ****     class basic_streambuf 
+  62:/usr/include/c++/3.2.2/streambuf ****     {
+  63:/usr/include/c++/3.2.2/streambuf ****     public:
+  64:/usr/include/c++/3.2.2/streambuf ****       // Types:
+  65:/usr/include/c++/3.2.2/streambuf ****       typedef _CharT 					char_type;
+  66:/usr/include/c++/3.2.2/streambuf ****       typedef _Traits 					traits_type;
+  67:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::int_type 		int_type;
+  68:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::pos_type 		pos_type;
+  69:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::off_type 		off_type;
+  70:/usr/include/c++/3.2.2/streambuf **** 
+  71:/usr/include/c++/3.2.2/streambuf ****       // Non-standard Types:
+  72:/usr/include/c++/3.2.2/streambuf ****       typedef ctype<char_type>           		__ctype_type;
+  73:/usr/include/c++/3.2.2/streambuf ****       typedef basic_streambuf<char_type, traits_type>  	__streambuf_type;
+  74:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::state_type 		__state_type;
+  75:/usr/include/c++/3.2.2/streambuf ****       
+  76:/usr/include/c++/3.2.2/streambuf ****       friend class basic_ios<char_type, traits_type>;
+  77:/usr/include/c++/3.2.2/streambuf ****       friend class basic_istream<char_type, traits_type>;
+  78:/usr/include/c++/3.2.2/streambuf ****       friend class basic_ostream<char_type, traits_type>;
+  79:/usr/include/c++/3.2.2/streambuf ****       friend class istreambuf_iterator<char_type, traits_type>;
+  80:/usr/include/c++/3.2.2/streambuf ****       friend class ostreambuf_iterator<char_type, traits_type>;
+  81:/usr/include/c++/3.2.2/streambuf **** 
+  82:/usr/include/c++/3.2.2/streambuf ****       friend streamsize
+  83:/usr/include/c++/3.2.2/streambuf ****       __copy_streambufs<>(basic_ios<char_type, traits_type>& __ios,
+  84:/usr/include/c++/3.2.2/streambuf **** 			  __streambuf_type* __sbin,__streambuf_type* __sbout);
+  85:/usr/include/c++/3.2.2/streambuf ****       
+  86:/usr/include/c++/3.2.2/streambuf ****     protected:
+  87:/usr/include/c++/3.2.2/streambuf ****       // Pointer to the beginning of internally-allocated
+  88:/usr/include/c++/3.2.2/streambuf ****       // space. Filebuf manually allocates/deallocates this, whereas
+  89:/usr/include/c++/3.2.2/streambuf ****       // stringstreams attempt to use the built-in intelligence of the
+  90:/usr/include/c++/3.2.2/streambuf ****       // string class. If you are managing memory, set this. If not,
+  91:/usr/include/c++/3.2.2/streambuf ****       // leave it NULL.
+  92:/usr/include/c++/3.2.2/streambuf ****       char_type*		_M_buf; 	
+  93:/usr/include/c++/3.2.2/streambuf **** 
+  94:/usr/include/c++/3.2.2/streambuf ****       // Actual size of allocated internal buffer, in bytes.
+  95:/usr/include/c++/3.2.2/streambuf ****       size_t			_M_buf_size;
+  96:/usr/include/c++/3.2.2/streambuf **** 
+  97:/usr/include/c++/3.2.2/streambuf ****       // Optimal or preferred size of internal buffer, in bytes.
+  98:/usr/include/c++/3.2.2/streambuf ****       size_t			_M_buf_size_opt;
+  99:/usr/include/c++/3.2.2/streambuf **** 
+ 100:/usr/include/c++/3.2.2/streambuf ****       // True iff _M_in_* and _M_out_* buffers should always point to
+ 101:/usr/include/c++/3.2.2/streambuf ****       // the same place.  True for fstreams, false for sstreams.
+ 102:/usr/include/c++/3.2.2/streambuf ****       bool 			_M_buf_unified;	
+ 103:/usr/include/c++/3.2.2/streambuf **** 
+ 104:/usr/include/c++/3.2.2/streambuf ****       // This is based on _IO_FILE, just reordered to be more
+ 105:/usr/include/c++/3.2.2/streambuf ****       // consistent, and is intended to be the most minimal abstraction
+ 106:/usr/include/c++/3.2.2/streambuf ****       // for an internal buffer.
+ 107:/usr/include/c++/3.2.2/streambuf ****       // get == input == read
+ 108:/usr/include/c++/3.2.2/streambuf ****       // put == output == write
+ 109:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_beg;  	// Start of get area. 
+ 110:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_cur;	// Current read area. 
+ 111:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_end;	// End of get area. 
+ 112:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_beg; 	// Start of put area. 
+GAS LISTING /tmp/ccLKeB5F.s 			page 7
+
+
+ 113:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_cur;  	// Current put area. 
+ 114:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_end;  	// End of put area. 
+ 115:/usr/include/c++/3.2.2/streambuf **** 
+ 116:/usr/include/c++/3.2.2/streambuf ****       // Place to stash in || out || in | out settings for current streambuf.
+ 117:/usr/include/c++/3.2.2/streambuf ****       ios_base::openmode 	_M_mode;	
+ 118:/usr/include/c++/3.2.2/streambuf **** 
+ 119:/usr/include/c++/3.2.2/streambuf ****       // Current locale setting.
+ 120:/usr/include/c++/3.2.2/streambuf ****       locale 			_M_buf_locale;	
+ 121:/usr/include/c++/3.2.2/streambuf **** 
+ 122:/usr/include/c++/3.2.2/streambuf ****       // True iff locale is initialized.
+ 123:/usr/include/c++/3.2.2/streambuf ****       bool 			_M_buf_locale_init;
+ 124:/usr/include/c++/3.2.2/streambuf **** 
+ 125:/usr/include/c++/3.2.2/streambuf ****       // Necessary bits for putback buffer management. Only used in
+ 126:/usr/include/c++/3.2.2/streambuf ****       // the basic_filebuf class, as necessary for the standard
+ 127:/usr/include/c++/3.2.2/streambuf ****       // requirements. The only basic_streambuf member function that
+ 128:/usr/include/c++/3.2.2/streambuf ****       // needs access to these data members is in_avail...
+ 129:/usr/include/c++/3.2.2/streambuf ****       // NB: pbacks of over one character are not currently supported.
+ 130:/usr/include/c++/3.2.2/streambuf ****       static const size_t   	_S_pback_size = 1; 
+ 131:/usr/include/c++/3.2.2/streambuf ****       char_type			_M_pback[_S_pback_size]; 
+ 197              		.loc 44 131 0
+ 198 00b8 55       		pushl	%ebp
+ 199              	.LCFI13:
+ 200 00b9 89E5     		movl	%esp, %ebp
+ 201              	.LCFI14:
+ 202 00bb 83EC08   		subl	$8, %esp
+ 203              	.LCFI15:
+ 204              		.file 45 "/usr/include/c++/3.2.2/iostream"
+   1:/usr/include/c++/3.2.2/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/3.2.2/iostream **** 
+   3:/usr/include/c++/3.2.2/iostream **** // Copyright (C) 1997, 1998, 1999, 2001, 2002 Free Software Foundation, Inc.
+   4:/usr/include/c++/3.2.2/iostream **** //
+   5:/usr/include/c++/3.2.2/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/3.2.2/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/3.2.2/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/3.2.2/iostream **** // Free Software Foundation; either version 2, or (at your option)
+   9:/usr/include/c++/3.2.2/iostream **** // any later version.
+  10:/usr/include/c++/3.2.2/iostream **** 
+  11:/usr/include/c++/3.2.2/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/3.2.2/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/3.2.2/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/3.2.2/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/3.2.2/iostream **** 
+  16:/usr/include/c++/3.2.2/iostream **** // You should have received a copy of the GNU General Public License along
+  17:/usr/include/c++/3.2.2/iostream **** // with this library; see the file COPYING.  If not, write to the Free
+  18:/usr/include/c++/3.2.2/iostream **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  19:/usr/include/c++/3.2.2/iostream **** // USA.
+  20:/usr/include/c++/3.2.2/iostream **** 
+  21:/usr/include/c++/3.2.2/iostream **** // As a special exception, you may use this file as part of a free software
+  22:/usr/include/c++/3.2.2/iostream **** // library without restriction.  Specifically, if other files instantiate
+  23:/usr/include/c++/3.2.2/iostream **** // templates or use macros or inline functions from this file, or you compile
+  24:/usr/include/c++/3.2.2/iostream **** // this file and link it with other files to produce an executable, this
+  25:/usr/include/c++/3.2.2/iostream **** // file does not by itself cause the resulting executable to be covered by
+  26:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.  This exception does not however
+  27:/usr/include/c++/3.2.2/iostream **** // invalidate any other reasons why the executable file might be covered by
+  28:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.
+  29:/usr/include/c++/3.2.2/iostream **** 
+  30:/usr/include/c++/3.2.2/iostream **** //
+GAS LISTING /tmp/ccLKeB5F.s 			page 8
+
+
+  31:/usr/include/c++/3.2.2/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  32:/usr/include/c++/3.2.2/iostream **** //
+  33:/usr/include/c++/3.2.2/iostream **** 
+  34:/usr/include/c++/3.2.2/iostream **** /** @file iostream
+  35:/usr/include/c++/3.2.2/iostream ****  *  This is a Standard C++ Library header.  You should @c #include this header
+  36:/usr/include/c++/3.2.2/iostream ****  *  in your programs, rather than any of the "st[dl]_*.h" implementation files.
+  37:/usr/include/c++/3.2.2/iostream ****  */
+  38:/usr/include/c++/3.2.2/iostream **** 
+  39:/usr/include/c++/3.2.2/iostream **** #ifndef _CPP_IOSTREAM
+  40:/usr/include/c++/3.2.2/iostream **** #define _CPP_IOSTREAM	1
+  41:/usr/include/c++/3.2.2/iostream **** 
+  42:/usr/include/c++/3.2.2/iostream **** #pragma GCC system_header
+  43:/usr/include/c++/3.2.2/iostream **** 
+  44:/usr/include/c++/3.2.2/iostream **** #include <bits/c++config.h>
+  45:/usr/include/c++/3.2.2/iostream **** #include <ostream>
+  46:/usr/include/c++/3.2.2/iostream **** #include <istream>
+  47:/usr/include/c++/3.2.2/iostream **** 
+  48:/usr/include/c++/3.2.2/iostream **** namespace std 
+  49:/usr/include/c++/3.2.2/iostream **** {
+  50:/usr/include/c++/3.2.2/iostream ****   extern istream cin;
+  51:/usr/include/c++/3.2.2/iostream ****   extern ostream cout;
+  52:/usr/include/c++/3.2.2/iostream ****   extern ostream cerr;
+  53:/usr/include/c++/3.2.2/iostream ****   extern ostream clog;
+  54:/usr/include/c++/3.2.2/iostream **** 
+  55:/usr/include/c++/3.2.2/iostream **** #ifdef _GLIBCPP_USE_WCHAR_T
+  56:/usr/include/c++/3.2.2/iostream ****   extern wistream wcin;
+  57:/usr/include/c++/3.2.2/iostream ****   extern wostream wcout;
+  58:/usr/include/c++/3.2.2/iostream ****   extern wostream wcerr;
+  59:/usr/include/c++/3.2.2/iostream ****   extern wostream wclog;
+  60:/usr/include/c++/3.2.2/iostream **** #endif
+  61:/usr/include/c++/3.2.2/iostream **** 
+  62:/usr/include/c++/3.2.2/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  63:/usr/include/c++/3.2.2/iostream ****   static ios_base::Init __ioinit;
+ 205              		.loc 45 63 0
+ 206 00be 817D0CFF 		cmpl	$65535, 12(%ebp)
+ 206      FF0000
+ 207 00c5 752D     		jne	.L4
+ 208 00c7 837D0801 		cmpl	$1, 8(%ebp)
+ 209 00cb 7527     		jne	.L4
+ 210 00cd 83EC0C   		subl	$12, %esp
+ 211 00d0 68000000 		pushl	$_ZSt8__ioinit
+ 211      00
+ 212              	.LCFI16:
+ 213 00d5 E8FCFFFF 		call	_ZNSt8ios_base4InitC1Ev
+ 213      FF
+ 214 00da 83C410   		addl	$16, %esp
+ 215 00dd 83EC04   		subl	$4, %esp
+ 216 00e0 68000000 		pushl	$__dso_handle
+ 216      00
+ 217 00e5 6A00     		pushl	$0
+ 218 00e7 68F60000 		pushl	$__tcf_0
+ 218      00
+ 219 00ec E8FCFFFF 		call	__cxa_atexit
+ 219      FF
+ 220 00f1 83C410   		addl	$16, %esp
+ 221              	.L4:
+ 222 00f4 C9       		leave
+GAS LISTING /tmp/ccLKeB5F.s 			page 9
+
+
+ 223 00f5 C3       		ret
+ 224              	.LFE1498:
+ 225              	.Lfe4:
+ 227              		.align 2
+ 229              	__tcf_0:
+ 230              	.LFB1499:
+ 231              		.loc 45 63 0
+ 232 00f6 55       		pushl	%ebp
+ 233              	.LCFI17:
+ 234 00f7 89E5     		movl	%esp, %ebp
+ 235              	.LCFI18:
+ 236 00f9 83EC08   		subl	$8, %esp
+ 237              	.LCFI19:
+ 238              		.loc 45 63 0
+ 239 00fc 83EC0C   		subl	$12, %esp
+ 240 00ff 68000000 		pushl	$_ZSt8__ioinit
+ 240      00
+ 241              	.LCFI20:
+ 242 0104 E8FCFFFF 		call	_ZNSt8ios_base4InitD1Ev
+ 242      FF
+ 243 0109 83C410   		addl	$16, %esp
+ 244 010c C9       		leave
+ 245 010d C3       		ret
+ 246              	.LFE1499:
+ 247              	.Lfe5:
+ 249              		.align 2
+ 251              	_GLOBAL__I_main:
+ 252              	.LFB1501:
+ 253              		.loc 44 131 0
+ 254 010e 55       		pushl	%ebp
+ 255              	.LCFI21:
+ 256 010f 89E5     		movl	%esp, %ebp
+ 257              	.LCFI22:
+ 258 0111 83EC08   		subl	$8, %esp
+ 259              	.LCFI23:
+ 260              		.loc 44 131 0
+ 261 0114 83EC08   		subl	$8, %esp
+ 262 0117 68FFFF00 		pushl	$65535
+ 262      00
+ 263 011c 6A01     		pushl	$1
+ 264              	.LCFI24:
+ 265 011e E895FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 265      FF
+ 266 0123 83C410   		addl	$16, %esp
+ 267 0126 C9       		leave
+ 268 0127 C3       		ret
+ 269              	.LFE1501:
+ 270              	.Lfe6:
+ 272              		.section	.ctors,"aw",@progbits
+ 273              		.align 4
+ 274 0000 0E010000 		.long	_GLOBAL__I_main
+ 275              		.file 46 "/usr/include/stdio.h"
+ 276              		.file 47 "/usr/include/c++/3.2.2/iosfwd"
+ 277              		.file 48 "/usr/include/c++/3.2.2/exception"
+ 278              		.file 49 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++locale.h"
+ 279              		.file 50 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 280              		.file 51 "/usr/include/bits/sigset.h"
+GAS LISTING /tmp/ccLKeB5F.s 			page 10
+
+
+ 281              		.file 52 "/usr/include/signal.h"
+ 282              		.file 53 "/usr/include/nl_types.h"
+ 283              		.file 54 "/usr/include/sys/select.h"
+ 284              		.file 55 "/usr/include/wctype.h"
+ 285              		.file 56 "/usr/include/errno.h"
+ 286              		.file 57 "/usr/include/bits/mathdef.h"
+ 287              		.weak	pthread_mutex_unlock
+ 288              		.weak	pthread_mutex_trylock
+ 289              		.weak	pthread_mutex_lock
+ 290              		.weak	pthread_create
+ 291              		.weak	pthread_setspecific
+ 292              		.weak	pthread_getspecific
+ 293              		.weak	pthread_key_delete
+ 294              		.weak	pthread_key_create
+ 295              		.weak	pthread_once
+ 454              	.Lframe1:
+ 455 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 456              	.LSCIE1:
+ 457 0004 00000000 		.long	0x0
+ 458 0008 01       		.byte	0x1
+ 459 0009 7A5000   		.string	"zP"
+ 460 000c 01       		.uleb128 0x1
+ 461 000d 7C       		.sleb128 -4
+ 462 000e 08       		.byte	0x8
+ 463 000f 05       		.uleb128 0x5
+ 464 0010 00       		.byte	0x0
+ 465 0011 00000000 		.long	__gxx_personality_v0
+ 466 0015 0C       		.byte	0xc
+ 467 0016 04       		.uleb128 0x4
+ 468 0017 04       		.uleb128 0x4
+ 469 0018 88       		.byte	0x88
+ 470 0019 01       		.uleb128 0x1
+ 471 001a 0000     		.align 4
+ 472              	.LECIE1:
+ 473              	.LSFDE1:
+ 474 001c 40000000 		.long	.LEFDE1-.LASFDE1
+ 475              	.LASFDE1:
+ 476 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 477 0024 00000000 		.long	.LFB1481
+ 478 0028 B8000000 		.long	.LFE1481-.LFB1481
+ 479 002c 00       		.uleb128 0x0
+ 480 002d 04       		.byte	0x4
+ 481 002e 01000000 		.long	.LCFI0-.LFB1481
+ 482 0032 0E       		.byte	0xe
+ 483 0033 08       		.uleb128 0x8
+ 484 0034 85       		.byte	0x85
+ 485 0035 02       		.uleb128 0x2
+ 486 0036 04       		.byte	0x4
+ 487 0037 02000000 		.long	.LCFI1-.LCFI0
+ 488 003b 0D       		.byte	0xd
+ 489 003c 05       		.uleb128 0x5
+ 490 003d 04       		.byte	0x4
+ 491 003e 1E000000 		.long	.LCFI3-.LCFI1
+ 492 0042 2E       		.byte	0x2e
+ 493 0043 10       		.uleb128 0x10
+ 494 0044 04       		.byte	0x4
+ 495 0045 26000000 		.long	.LCFI4-.LCFI3
+GAS LISTING /tmp/ccLKeB5F.s 			page 11
+
+
+ 496 0049 2E       		.byte	0x2e
+ 497 004a 14       		.uleb128 0x14
+ 498 004b 04       		.byte	0x4
+ 499 004c 12000000 		.long	.LCFI5-.LCFI4
+ 500 0050 2E       		.byte	0x2e
+ 501 0051 10       		.uleb128 0x10
+ 502 0052 04       		.byte	0x4
+ 503 0053 3E000000 		.long	.LCFI6-.LCFI5
+ 504 0057 2E       		.byte	0x2e
+ 505 0058 14       		.uleb128 0x14
+ 506 0059 04       		.byte	0x4
+ 507 005a 12000000 		.long	.LCFI7-.LCFI6
+ 508 005e 2E       		.byte	0x2e
+ 509 005f 10       		.uleb128 0x10
+ 510              		.align 4
+ 511              	.LEFDE1:
+ 512              	.LSFDE7:
+ 513 0060 24000000 		.long	.LEFDE7-.LASFDE7
+ 514              	.LASFDE7:
+ 515 0064 64000000 		.long	.LASFDE7-.Lframe1
+ 516 0068 B8000000 		.long	.LFB1498
+ 517 006c 3E000000 		.long	.LFE1498-.LFB1498
+ 518 0070 00       		.uleb128 0x0
+ 519 0071 04       		.byte	0x4
+ 520 0072 01000000 		.long	.LCFI13-.LFB1498
+ 521 0076 0E       		.byte	0xe
+ 522 0077 08       		.uleb128 0x8
+ 523 0078 85       		.byte	0x85
+ 524 0079 02       		.uleb128 0x2
+ 525 007a 04       		.byte	0x4
+ 526 007b 02000000 		.long	.LCFI14-.LCFI13
+ 527 007f 0D       		.byte	0xd
+ 528 0080 05       		.uleb128 0x5
+ 529 0081 04       		.byte	0x4
+ 530 0082 1A000000 		.long	.LCFI16-.LCFI14
+ 531 0086 2E       		.byte	0x2e
+ 532 0087 10       		.uleb128 0x10
+ 533              		.align 4
+ 534              	.LEFDE7:
+ 535              	.LSFDE9:
+ 536 0088 24000000 		.long	.LEFDE9-.LASFDE9
+ 537              	.LASFDE9:
+ 538 008c 8C000000 		.long	.LASFDE9-.Lframe1
+ 539 0090 F6000000 		.long	.LFB1499
+ 540 0094 18000000 		.long	.LFE1499-.LFB1499
+ 541 0098 00       		.uleb128 0x0
+ 542 0099 04       		.byte	0x4
+ 543 009a 01000000 		.long	.LCFI17-.LFB1499
+ 544 009e 0E       		.byte	0xe
+ 545 009f 08       		.uleb128 0x8
+ 546 00a0 85       		.byte	0x85
+ 547 00a1 02       		.uleb128 0x2
+ 548 00a2 04       		.byte	0x4
+ 549 00a3 02000000 		.long	.LCFI18-.LCFI17
+ 550 00a7 0D       		.byte	0xd
+ 551 00a8 05       		.uleb128 0x5
+ 552 00a9 04       		.byte	0x4
+GAS LISTING /tmp/ccLKeB5F.s 			page 12
+
+
+ 553 00aa 0B000000 		.long	.LCFI20-.LCFI18
+ 554 00ae 2E       		.byte	0x2e
+ 555 00af 10       		.uleb128 0x10
+ 556              		.align 4
+ 557              	.LEFDE9:
+ 558              	.LSFDE11:
+ 559 00b0 24000000 		.long	.LEFDE11-.LASFDE11
+ 560              	.LASFDE11:
+ 561 00b4 B4000000 		.long	.LASFDE11-.Lframe1
+ 562 00b8 0E010000 		.long	.LFB1501
+ 563 00bc 1A000000 		.long	.LFE1501-.LFB1501
+ 564 00c0 00       		.uleb128 0x0
+ 565 00c1 04       		.byte	0x4
+ 566 00c2 01000000 		.long	.LCFI21-.LFB1501
+ 567 00c6 0E       		.byte	0xe
+ 568 00c7 08       		.uleb128 0x8
+ 569 00c8 85       		.byte	0x85
+ 570 00c9 02       		.uleb128 0x2
+ 571 00ca 04       		.byte	0x4
+ 572 00cb 02000000 		.long	.LCFI22-.LCFI21
+ 573 00cf 0D       		.byte	0xd
+ 574 00d0 05       		.uleb128 0x5
+ 575 00d1 04       		.byte	0x4
+ 576 00d2 0D000000 		.long	.LCFI24-.LCFI22
+ 577 00d6 2E       		.byte	0x2e
+ 578 00d7 10       		.uleb128 0x10
+ 579              		.align 4
+ 580              	.LEFDE11:
+ 581              		.text
+ 582              	.Letext0:
+GAS LISTING /tmp/ccLKeB5F.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 templated-method.cc
+                             .bss:00000000 _ZSt8__ioinit
+     /tmp/ccLKeB5F.s:62     .text:00000000 main
+     /tmp/ccLKeB5F.s:143    .gnu.linkonce.t._ZN9my_structIdEC1Ed:00000000 _ZN9my_structIdEC1Ed
+     /tmp/ccLKeB5F.s:173    .gnu.linkonce.t._ZN9my_structIdE14set_field_fromIiEEvT_:00000000 _ZN9my_structIdE14set_field_fromIiEEvT_
+     /tmp/ccLKeB5F.s:194    .text:000000b8 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccLKeB5F.s:229    .text:000000f6 __tcf_0
+     /tmp/ccLKeB5F.s:251    .text:0000010e _GLOBAL__I_main
+
+UNDEFINED SYMBOLS
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEd
+_ZNSolsEPFRSoS_E
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+__cxa_atexit
+_ZNSt8ios_base4InitD1Ev
+__gxx_personality_v0

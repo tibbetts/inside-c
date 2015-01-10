@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 2: Run Time Type Information</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 2: Run Time Type Information</h1>
+
+    Run time type information allows us to do complicated things at
+    runtime, like dynamic_cast<>.
+    <p>
+    As we saw in our VTable examples, there is a pointer to a type
+    info structure in every vtable of every class. This allows us to
+    look at this object at runtime and find out details about the
+    class we have. All we have to know is the vtable for an object,
+    and we can, for example, find the name of its type.
+    <p>
+    Lets look at a quick example that use dynamic_cast<>.
+    <a href="dynamic-cast.cc">dynamic-cast.cc</a>,
+    <a href="dynamic-cast.s">dynamic-cast.s</a>,
+    <a href="dynamic-cast.listing">dynamic-cast.listing</a>.
+    <p>
+    Its clear that the __dynamic_cast method does all of the work.
+    Lets see what its implementation looks like:
+    <a href="__dynamic_cast.cc">__dynamic_cast.cc</a>
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Tue Jan 20 23:53:13 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

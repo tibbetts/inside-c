@@ -1,0 +1,2361 @@
+GAS LISTING /tmp/ccCoVgtB.s 			page 1
+
+
+   1              		.file	"global.cc"
+   2              		.file 1 "global.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/_G_config.h"
+  16              		.file 7 "/usr/include/bits/types.h"
+  17              		.file 8 "/usr/include/time.h"
+  18              		.file 9 "/usr/include/bits/sched.h"
+  19              		.file 10 "/usr/include/xlocale.h"
+  20              		.file 11 "/usr/include/bits/pthreadtypes.h"
+  21              		.file 12 "/usr/include/pthread.h"
+  22              		.file 13 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++io.h"
+  23              		.file 14 "/usr/include/c++/3.2.2/bits/char_traits.h"
+  24              		.file 15 "/usr/include/c++/3.2.2/bits/fpos.h"
+  25              		.file 16 "/usr/include/locale.h"
+  26              		.file 17 "/usr/include/bits/waitstatus.h"
+  27              		.file 18 "/usr/include/bits/time.h"
+  28              		.file 19 "/usr/include/stdlib.h"
+  29              		.file 20 "/usr/include/sys/types.h"
+  30              		.file 21 "/usr/include/c++/3.2.2/new"
+  31              		.file 22 "/usr/include/c++/3.2.2/bits/type_traits.h"
+  32              		.file 23 "/usr/include/c++/3.2.2/bits/stl_iterator_base_types.h"
+  33              		.file 24 "/usr/include/c++/3.2.2/bits/stl_threads.h"
+  34              		.file 25 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/gthr-default.h"
+  35              		.file 26 "/usr/include/c++/3.2.2/bits/stl_alloc.h"
+  36              		.file 27 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/atomicity.h"
+  37              		.file 28 "/usr/include/c++/3.2.2/bits/stringfwd.h"
+  38              		.file 29 "/usr/include/c++/3.2.2/bits/basic_string.h"
+  39              		.file 30 "/usr/include/c++/3.2.2/bits/basic_string.tcc"
+  40              		.file 31 "/usr/include/c++/3.2.2/bits/localefwd.h"
+  41              		.file 32 "/usr/include/c++/3.2.2/bits/ios_base.h"
+  42              		.file 33 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/ctype_base.h"
+  43              		.file 34 "/usr/include/c++/3.2.2/bits/codecvt.h"
+  44              		.file 35 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/codecvt_specializations.h"
+  45              		.file 36 "/usr/include/iconv.h"
+  46              		.file 37 "/usr/include/c++/3.2.2/bits/locale_facets.h"
+  47              		.file 38 "/usr/include/math.h"
+  48              		.file 39 "/usr/include/c++/3.2.2/limits"
+  49              		.file 40 "/usr/include/c++/3.2.2/ostream"
+  50              		.file 41 "/usr/include/c++/3.2.2/bits/ostream.tcc"
+  51              		.file 42 "/usr/include/c++/3.2.2/istream"
+  52              		.file 43 "/usr/include/c++/3.2.2/bits/istream.tcc"
+  53              		.local	_ZSt8__ioinit
+  54              		.comm	_ZSt8__ioinit,1,1
+  55              		.align 2
+  56              	.globl _ZN9my_structC2ESsi
+  58              	_ZN9my_structC2ESsi:
+  59              	.LFB1480:
+   1:global.cc     **** #include <iostream>
+   2:global.cc     **** 
+   3:global.cc     **** using namespace std;
+   4:global.cc     **** 
+   5:global.cc     **** struct my_struct {
+   6:global.cc     ****     int _x, _y, _z;
+GAS LISTING /tmp/ccCoVgtB.s 			page 2
+
+
+   7:global.cc     ****     string _name;
+   8:global.cc     ****     my_struct(string name, int val);
+   9:global.cc     **** };
+  10:global.cc     **** 
+  11:global.cc     **** my_struct::my_struct(string name, int val) :
+  60              		.loc 1 11 0
+  61 0000 55       		pushl	%ebp
+  62              	.LCFI0:
+  63 0001 89E5     		movl	%esp, %ebp
+  64              	.LCFI1:
+  65 0003 83EC08   		subl	$8, %esp
+  66              	.LCFI2:
+  67 0006 8B4D0C   		movl	12(%ebp), %ecx
+  68              	.LBB2:
+  12:global.cc     ****     _x(val), _y(val), _z(val), _name(name)
+  13:global.cc     **** {}
+  69              		.loc 1 13 0
+  70 0009 8B5508   		movl	8(%ebp), %edx
+  71 000c 8B4510   		movl	16(%ebp), %eax
+  72 000f 8902     		movl	%eax, (%edx)
+  73 0011 8B5508   		movl	8(%ebp), %edx
+  74 0014 8B4510   		movl	16(%ebp), %eax
+  75 0017 894204   		movl	%eax, 4(%edx)
+  76 001a 8B5508   		movl	8(%ebp), %edx
+  77 001d 8B4510   		movl	16(%ebp), %eax
+  78 0020 894208   		movl	%eax, 8(%edx)
+  79 0023 83EC08   		subl	$8, %esp
+  80 0026 51       		pushl	%ecx
+  81 0027 8B4508   		movl	8(%ebp), %eax
+  82 002a 83C00C   		addl	$12, %eax
+  83 002d 50       		pushl	%eax
+  84              	.LCFI3:
+  85 002e E8FCFFFF 		call	_ZNSsC1ERKSs
+  85      FF
+  86 0033 83C410   		addl	$16, %esp
+  87 0036 C9       		leave
+  88 0037 C3       		ret
+  89              	.LBE2:
+  90              	.LFE1480:
+  91              	.Lfe1:
+  93              		.align 2
+  94              	.globl _ZN9my_structC1ESsi
+  96              	_ZN9my_structC1ESsi:
+  97              	.LFB1482:
+  98              		.loc 1 11 0
+  99 0038 55       		pushl	%ebp
+ 100              	.LCFI4:
+ 101 0039 89E5     		movl	%esp, %ebp
+ 102              	.LCFI5:
+ 103 003b 83EC08   		subl	$8, %esp
+ 104              	.LCFI6:
+ 105 003e 8B4D0C   		movl	12(%ebp), %ecx
+ 106              	.LBB3:
+ 107              		.loc 1 13 0
+ 108 0041 8B5508   		movl	8(%ebp), %edx
+ 109 0044 8B4510   		movl	16(%ebp), %eax
+ 110 0047 8902     		movl	%eax, (%edx)
+GAS LISTING /tmp/ccCoVgtB.s 			page 3
+
+
+ 111 0049 8B5508   		movl	8(%ebp), %edx
+ 112 004c 8B4510   		movl	16(%ebp), %eax
+ 113 004f 894204   		movl	%eax, 4(%edx)
+ 114 0052 8B5508   		movl	8(%ebp), %edx
+ 115 0055 8B4510   		movl	16(%ebp), %eax
+ 116 0058 894208   		movl	%eax, 8(%edx)
+ 117 005b 83EC08   		subl	$8, %esp
+ 118 005e 51       		pushl	%ecx
+ 119 005f 8B4508   		movl	8(%ebp), %eax
+ 120 0062 83C00C   		addl	$12, %eax
+ 121 0065 50       		pushl	%eax
+ 122              	.LCFI7:
+ 123 0066 E8FCFFFF 		call	_ZNSsC1ERKSs
+ 123      FF
+ 124 006b 83C410   		addl	$16, %esp
+ 125 006e C9       		leave
+ 126 006f C3       		ret
+ 127              	.LBE3:
+ 128              	.LFE1482:
+ 129              	.Lfe2:
+ 131              	.globl global_int
+ 132              		.data
+ 133              		.align 4
+ 136              	global_int:
+ 137 0000 04000000 		.long	4
+ 138              	.globl global_string
+ 139              		.bss
+ 140 0001 000000   		.align 4
+ 143              	global_string:
+ 144 0004 00000000 		.zero	4
+ 145              	.globl global_struct
+ 146              		.align 4
+ 149              	global_struct:
+ 150 0008 00000000 		.zero	16
+ 150      00000000 
+ 150      00000000 
+ 150      00000000 
+ 151              	.globl _Unwind_Resume
+ 152              		.text
+ 153              		.align 2
+ 154              	.globl main
+ 156              	main:
+ 157              	.LFB1490:
+  14:global.cc     **** 
+  15:global.cc     **** // Globals.
+  16:global.cc     **** int global_int = 4;
+  17:global.cc     **** string global_string = "test";
+  18:global.cc     **** my_struct global_struct(global_string + "bob", 37);
+  19:global.cc     **** 
+  20:global.cc     **** int
+  21:global.cc     **** main(int argc, char **argv) {
+ 158              		.loc 1 21 0
+ 159 0070 55       		pushl	%ebp
+ 160              	.LCFI8:
+ 161 0071 89E5     		movl	%esp, %ebp
+ 162              	.LCFI9:
+ 163 0073 53       		pushl	%ebx
+GAS LISTING /tmp/ccCoVgtB.s 			page 4
+
+
+ 164              	.LCFI10:
+ 165 0074 83EC44   		subl	$68, %esp
+ 166              	.LCFI11:
+ 167 0077 83E4F0   		andl	$-16, %esp
+ 168 007a B8000000 		movl	$0, %eax
+ 168      00
+ 169 007f 29C4     		subl	%eax, %esp
+ 170              	.LBB4:
+  22:global.cc     ****     int local_int = global_int;
+ 171              		.loc 1 22 0
+ 172 0081 A1000000 		movl	global_int, %eax
+ 172      00
+ 173 0086 8945F4   		movl	%eax, -12(%ebp)
+  23:global.cc     ****     string local_string(global_string);
+ 174              		.loc 1 23 0
+ 175 0089 83EC08   		subl	$8, %esp
+ 176 008c 68000000 		pushl	$global_string
+ 176      00
+ 177 0091 8D45D8   		leal	-40(%ebp), %eax
+ 178 0094 50       		pushl	%eax
+ 179              	.LEHB0:
+ 180              	.LCFI12:
+ 181 0095 E8FCFFFF 		call	_ZNSsC1ERKSs
+ 181      FF
+ 182              	.LEHE0:
+ 183 009a 83C410   		addl	$16, %esp
+  24:global.cc     ****     my_struct local_struct(global_struct);
+ 184              		.loc 1 24 0
+ 185 009d 83EC08   		subl	$8, %esp
+ 186 00a0 68000000 		pushl	$global_struct
+ 186      00
+ 187 00a5 8D45C8   		leal	-56(%ebp), %eax
+ 188 00a8 50       		pushl	%eax
+ 189              	.LEHB1:
+ 190 00a9 E8FCFFFF 		call	_ZN9my_structC1ERKS_
+ 190      FF
+ 191 00ae 83C410   		addl	$16, %esp
+  25:global.cc     ****     return 0;
+ 192              		.loc 1 25 0
+ 193              	.LBB5:
+ 194 00b1 83EC0C   		subl	$12, %esp
+ 195 00b4 8D45C8   		leal	-56(%ebp), %eax
+ 196 00b7 50       		pushl	%eax
+ 197 00b8 E8FCFFFF 		call	_ZN9my_structD1Ev
+ 197      FF
+ 198              	.LEHE1:
+ 199 00bd 83C410   		addl	$16, %esp
+ 200 00c0 83EC0C   		subl	$12, %esp
+ 201 00c3 8D45D8   		leal	-40(%ebp), %eax
+ 202 00c6 50       		pushl	%eax
+ 203              	.LEHB2:
+ 204 00c7 E8FCFFFF 		call	_ZNSsD1Ev
+ 204      FF
+ 205              	.LEHE2:
+ 206 00cc 83C410   		addl	$16, %esp
+ 207              	.LBE5:
+ 208 00cf EB23     		jmp	.L11
+GAS LISTING /tmp/ccCoVgtB.s 			page 5
+
+
+ 209              	.L20:
+ 210 00d1 8945C4   		movl	%eax, -60(%ebp)
+ 211 00d4 8B5DC4   		movl	-60(%ebp), %ebx
+ 212 00d7 83EC0C   		subl	$12, %esp
+ 213 00da 8D45D8   		leal	-40(%ebp), %eax
+ 214 00dd 50       		pushl	%eax
+ 215 00de E8FCFFFF 		call	_ZNSsD1Ev
+ 215      FF
+ 216 00e3 83C410   		addl	$16, %esp
+ 217 00e6 895DC4   		movl	%ebx, -60(%ebp)
+ 218 00e9 83EC0C   		subl	$12, %esp
+ 219 00ec FF75C4   		pushl	-60(%ebp)
+ 220              	.LEHB3:
+ 221 00ef E8FCFFFF 		call	_Unwind_Resume
+ 221      FF
+ 222              	.LEHE3:
+ 223              	.LBE4:
+  26:global.cc     **** }
+ 224              		.loc 1 26 0
+ 225              	.L11:
+ 226 00f4 B8000000 		movl	$0, %eax
+ 226      00
+ 227 00f9 8B5DFC   		movl	-4(%ebp), %ebx
+ 228 00fc C9       		leave
+ 229 00fd C3       		ret
+ 230              	.LFE1490:
+ 231              	.Lfe3:
+ 233              		.section	.gcc_except_table,"a",@progbits
+ 234              	.LLSDA1490:
+ 235 0000 FF       		.byte	0xff
+ 236 0001 FF       		.byte	0xff
+ 237 0002 01       		.byte	0x1
+ 238 0003 10       		.uleb128 .LLSDACSE1490-.LLSDACSB1490
+ 239              	.LLSDACSB1490:
+ 240 0004 25       		.uleb128 .LEHB0-.LFB1490
+ 241 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 242 0006 00       		.uleb128 0x0
+ 243 0007 00       		.uleb128 0x0
+ 244 0008 39       		.uleb128 .LEHB1-.LFB1490
+ 245 0009 14       		.uleb128 .LEHE1-.LEHB1
+ 246 000a 61       		.uleb128 .L20-.LFB1490
+ 247 000b 00       		.uleb128 0x0
+ 248 000c 57       		.uleb128 .LEHB2-.LFB1490
+ 249 000d 05       		.uleb128 .LEHE2-.LEHB2
+ 250 000e 00       		.uleb128 0x0
+ 251 000f 00       		.uleb128 0x0
+ 252 0010 7F       		.uleb128 .LEHB3-.LFB1490
+ 253 0011 05       		.uleb128 .LEHE3-.LEHB3
+ 254 0012 00       		.uleb128 0x0
+ 255 0013 00       		.uleb128 0x0
+ 256              	.LLSDACSE1490:
+ 257              		.text
+ 258              		.section	.rodata
+ 259              	.LC0:
+ 260 0000 74657374 		.string	"test"
+ 260      00
+ 261              	.LC1:
+GAS LISTING /tmp/ccCoVgtB.s 			page 6
+
+
+ 262 0005 626F6200 		.string	"bob"
+ 263              		.text
+ 264              		.align 2
+ 266              	_Z41__static_initialization_and_destruction_0ii:
+ 267              	.LFB1521:
+ 268              		.file 44 "/usr/include/c++/3.2.2/streambuf"
+   1:/usr/include/c++/3.2.2/streambuf **** // Stream buffer classes -*- C++ -*-
+   2:/usr/include/c++/3.2.2/streambuf **** 
+   3:/usr/include/c++/3.2.2/streambuf **** // Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003
+   4:/usr/include/c++/3.2.2/streambuf **** // Free Software Foundation, Inc.
+   5:/usr/include/c++/3.2.2/streambuf **** //
+   6:/usr/include/c++/3.2.2/streambuf **** // This file is part of the GNU ISO C++ Library.  This library is free
+   7:/usr/include/c++/3.2.2/streambuf **** // software; you can redistribute it and/or modify it under the
+   8:/usr/include/c++/3.2.2/streambuf **** // terms of the GNU General Public License as published by the
+   9:/usr/include/c++/3.2.2/streambuf **** // Free Software Foundation; either version 2, or (at your option)
+  10:/usr/include/c++/3.2.2/streambuf **** // any later version.
+  11:/usr/include/c++/3.2.2/streambuf **** 
+  12:/usr/include/c++/3.2.2/streambuf **** // This library is distributed in the hope that it will be useful,
+  13:/usr/include/c++/3.2.2/streambuf **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  14:/usr/include/c++/3.2.2/streambuf **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  15:/usr/include/c++/3.2.2/streambuf **** // GNU General Public License for more details.
+  16:/usr/include/c++/3.2.2/streambuf **** 
+  17:/usr/include/c++/3.2.2/streambuf **** // You should have received a copy of the GNU General Public License along
+  18:/usr/include/c++/3.2.2/streambuf **** // with this library; see the file COPYING.  If not, write to the Free
+  19:/usr/include/c++/3.2.2/streambuf **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  20:/usr/include/c++/3.2.2/streambuf **** // USA.
+  21:/usr/include/c++/3.2.2/streambuf **** 
+  22:/usr/include/c++/3.2.2/streambuf **** // As a special exception, you may use this file as part of a free software
+  23:/usr/include/c++/3.2.2/streambuf **** // library without restriction.  Specifically, if other files instantiate
+  24:/usr/include/c++/3.2.2/streambuf **** // templates or use macros or inline functions from this file, or you compile
+  25:/usr/include/c++/3.2.2/streambuf **** // this file and link it with other files to produce an executable, this
+  26:/usr/include/c++/3.2.2/streambuf **** // file does not by itself cause the resulting executable to be covered by
+  27:/usr/include/c++/3.2.2/streambuf **** // the GNU General Public License.  This exception does not however
+  28:/usr/include/c++/3.2.2/streambuf **** // invalidate any other reasons why the executable file might be covered by
+  29:/usr/include/c++/3.2.2/streambuf **** // the GNU General Public License.
+  30:/usr/include/c++/3.2.2/streambuf **** 
+  31:/usr/include/c++/3.2.2/streambuf **** //
+  32:/usr/include/c++/3.2.2/streambuf **** // ISO C++ 14882: 27.5  Stream buffers
+  33:/usr/include/c++/3.2.2/streambuf **** //
+  34:/usr/include/c++/3.2.2/streambuf **** 
+  35:/usr/include/c++/3.2.2/streambuf **** /** @file streambuf
+  36:/usr/include/c++/3.2.2/streambuf ****  *  This is a Standard C++ Library header.  You should @c #include this header
+  37:/usr/include/c++/3.2.2/streambuf ****  *  in your programs, rather than any of the "st[dl]_*.h" implementation files.
+  38:/usr/include/c++/3.2.2/streambuf ****  */
+  39:/usr/include/c++/3.2.2/streambuf **** 
+  40:/usr/include/c++/3.2.2/streambuf **** #ifndef _CPP_STREAMBUF
+  41:/usr/include/c++/3.2.2/streambuf **** #define _CPP_STREAMBUF	1
+  42:/usr/include/c++/3.2.2/streambuf **** 
+  43:/usr/include/c++/3.2.2/streambuf **** #pragma GCC system_header
+  44:/usr/include/c++/3.2.2/streambuf **** 
+  45:/usr/include/c++/3.2.2/streambuf **** #include <bits/c++config.h>
+  46:/usr/include/c++/3.2.2/streambuf **** #include <iosfwd>
+  47:/usr/include/c++/3.2.2/streambuf **** #include <cstdio> 	// For SEEK_SET, SEEK_CUR, SEEK_END
+  48:/usr/include/c++/3.2.2/streambuf **** #include <bits/localefwd.h>
+  49:/usr/include/c++/3.2.2/streambuf **** #include <bits/ios_base.h>
+  50:/usr/include/c++/3.2.2/streambuf **** 
+  51:/usr/include/c++/3.2.2/streambuf **** namespace std
+GAS LISTING /tmp/ccCoVgtB.s 			page 7
+
+
+  52:/usr/include/c++/3.2.2/streambuf **** {
+  53:/usr/include/c++/3.2.2/streambuf ****   template<typename _CharT, typename _Traits>
+  54:/usr/include/c++/3.2.2/streambuf ****     streamsize
+  55:/usr/include/c++/3.2.2/streambuf ****     __copy_streambufs(basic_ios<_CharT, _Traits>& _ios,
+  56:/usr/include/c++/3.2.2/streambuf **** 		      basic_streambuf<_CharT, _Traits>* __sbin,
+  57:/usr/include/c++/3.2.2/streambuf **** 		      basic_streambuf<_CharT, _Traits>* __sbout);
+  58:/usr/include/c++/3.2.2/streambuf ****   
+  59:/usr/include/c++/3.2.2/streambuf ****   // 27.5.2 Template class basic_streambuf<_CharT, _Traits>
+  60:/usr/include/c++/3.2.2/streambuf ****   template<typename _CharT, typename _Traits>
+  61:/usr/include/c++/3.2.2/streambuf ****     class basic_streambuf 
+  62:/usr/include/c++/3.2.2/streambuf ****     {
+  63:/usr/include/c++/3.2.2/streambuf ****     public:
+  64:/usr/include/c++/3.2.2/streambuf ****       // Types:
+  65:/usr/include/c++/3.2.2/streambuf ****       typedef _CharT 					char_type;
+  66:/usr/include/c++/3.2.2/streambuf ****       typedef _Traits 					traits_type;
+  67:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::int_type 		int_type;
+  68:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::pos_type 		pos_type;
+  69:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::off_type 		off_type;
+  70:/usr/include/c++/3.2.2/streambuf **** 
+  71:/usr/include/c++/3.2.2/streambuf ****       // Non-standard Types:
+  72:/usr/include/c++/3.2.2/streambuf ****       typedef ctype<char_type>           		__ctype_type;
+  73:/usr/include/c++/3.2.2/streambuf ****       typedef basic_streambuf<char_type, traits_type>  	__streambuf_type;
+  74:/usr/include/c++/3.2.2/streambuf ****       typedef typename traits_type::state_type 		__state_type;
+  75:/usr/include/c++/3.2.2/streambuf ****       
+  76:/usr/include/c++/3.2.2/streambuf ****       friend class basic_ios<char_type, traits_type>;
+  77:/usr/include/c++/3.2.2/streambuf ****       friend class basic_istream<char_type, traits_type>;
+  78:/usr/include/c++/3.2.2/streambuf ****       friend class basic_ostream<char_type, traits_type>;
+  79:/usr/include/c++/3.2.2/streambuf ****       friend class istreambuf_iterator<char_type, traits_type>;
+  80:/usr/include/c++/3.2.2/streambuf ****       friend class ostreambuf_iterator<char_type, traits_type>;
+  81:/usr/include/c++/3.2.2/streambuf **** 
+  82:/usr/include/c++/3.2.2/streambuf ****       friend streamsize
+  83:/usr/include/c++/3.2.2/streambuf ****       __copy_streambufs<>(basic_ios<char_type, traits_type>& __ios,
+  84:/usr/include/c++/3.2.2/streambuf **** 			  __streambuf_type* __sbin,__streambuf_type* __sbout);
+  85:/usr/include/c++/3.2.2/streambuf ****       
+  86:/usr/include/c++/3.2.2/streambuf ****     protected:
+  87:/usr/include/c++/3.2.2/streambuf ****       // Pointer to the beginning of internally-allocated
+  88:/usr/include/c++/3.2.2/streambuf ****       // space. Filebuf manually allocates/deallocates this, whereas
+  89:/usr/include/c++/3.2.2/streambuf ****       // stringstreams attempt to use the built-in intelligence of the
+  90:/usr/include/c++/3.2.2/streambuf ****       // string class. If you are managing memory, set this. If not,
+  91:/usr/include/c++/3.2.2/streambuf ****       // leave it NULL.
+  92:/usr/include/c++/3.2.2/streambuf ****       char_type*		_M_buf; 	
+  93:/usr/include/c++/3.2.2/streambuf **** 
+  94:/usr/include/c++/3.2.2/streambuf ****       // Actual size of allocated internal buffer, in bytes.
+  95:/usr/include/c++/3.2.2/streambuf ****       size_t			_M_buf_size;
+  96:/usr/include/c++/3.2.2/streambuf **** 
+  97:/usr/include/c++/3.2.2/streambuf ****       // Optimal or preferred size of internal buffer, in bytes.
+  98:/usr/include/c++/3.2.2/streambuf ****       size_t			_M_buf_size_opt;
+  99:/usr/include/c++/3.2.2/streambuf **** 
+ 100:/usr/include/c++/3.2.2/streambuf ****       // True iff _M_in_* and _M_out_* buffers should always point to
+ 101:/usr/include/c++/3.2.2/streambuf ****       // the same place.  True for fstreams, false for sstreams.
+ 102:/usr/include/c++/3.2.2/streambuf ****       bool 			_M_buf_unified;	
+ 103:/usr/include/c++/3.2.2/streambuf **** 
+ 104:/usr/include/c++/3.2.2/streambuf ****       // This is based on _IO_FILE, just reordered to be more
+ 105:/usr/include/c++/3.2.2/streambuf ****       // consistent, and is intended to be the most minimal abstraction
+ 106:/usr/include/c++/3.2.2/streambuf ****       // for an internal buffer.
+ 107:/usr/include/c++/3.2.2/streambuf ****       // get == input == read
+ 108:/usr/include/c++/3.2.2/streambuf ****       // put == output == write
+GAS LISTING /tmp/ccCoVgtB.s 			page 8
+
+
+ 109:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_beg;  	// Start of get area. 
+ 110:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_cur;	// Current read area. 
+ 111:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_in_end;	// End of get area. 
+ 112:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_beg; 	// Start of put area. 
+ 113:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_cur;  	// Current put area. 
+ 114:/usr/include/c++/3.2.2/streambuf ****       char_type* 		_M_out_end;  	// End of put area. 
+ 115:/usr/include/c++/3.2.2/streambuf **** 
+ 116:/usr/include/c++/3.2.2/streambuf ****       // Place to stash in || out || in | out settings for current streambuf.
+ 117:/usr/include/c++/3.2.2/streambuf ****       ios_base::openmode 	_M_mode;	
+ 118:/usr/include/c++/3.2.2/streambuf **** 
+ 119:/usr/include/c++/3.2.2/streambuf ****       // Current locale setting.
+ 120:/usr/include/c++/3.2.2/streambuf ****       locale 			_M_buf_locale;	
+ 121:/usr/include/c++/3.2.2/streambuf **** 
+ 122:/usr/include/c++/3.2.2/streambuf ****       // True iff locale is initialized.
+ 123:/usr/include/c++/3.2.2/streambuf ****       bool 			_M_buf_locale_init;
+ 124:/usr/include/c++/3.2.2/streambuf **** 
+ 125:/usr/include/c++/3.2.2/streambuf ****       // Necessary bits for putback buffer management. Only used in
+ 126:/usr/include/c++/3.2.2/streambuf ****       // the basic_filebuf class, as necessary for the standard
+ 127:/usr/include/c++/3.2.2/streambuf ****       // requirements. The only basic_streambuf member function that
+ 128:/usr/include/c++/3.2.2/streambuf ****       // needs access to these data members is in_avail...
+ 129:/usr/include/c++/3.2.2/streambuf ****       // NB: pbacks of over one character are not currently supported.
+ 130:/usr/include/c++/3.2.2/streambuf ****       static const size_t   	_S_pback_size = 1; 
+ 131:/usr/include/c++/3.2.2/streambuf ****       char_type			_M_pback[_S_pback_size]; 
+ 269              		.loc 44 131 0
+ 270 00fe 55       		pushl	%ebp
+ 271              	.LCFI13:
+ 272 00ff 89E5     		movl	%esp, %ebp
+ 273              	.LCFI14:
+ 274 0101 53       		pushl	%ebx
+ 275              	.LCFI15:
+ 276 0102 83EC24   		subl	$36, %esp
+ 277              	.LCFI16:
+ 278              		.file 45 "/usr/include/c++/3.2.2/iostream"
+   1:/usr/include/c++/3.2.2/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/3.2.2/iostream **** 
+   3:/usr/include/c++/3.2.2/iostream **** // Copyright (C) 1997, 1998, 1999, 2001, 2002 Free Software Foundation, Inc.
+   4:/usr/include/c++/3.2.2/iostream **** //
+   5:/usr/include/c++/3.2.2/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/3.2.2/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/3.2.2/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/3.2.2/iostream **** // Free Software Foundation; either version 2, or (at your option)
+   9:/usr/include/c++/3.2.2/iostream **** // any later version.
+  10:/usr/include/c++/3.2.2/iostream **** 
+  11:/usr/include/c++/3.2.2/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/3.2.2/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/3.2.2/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/3.2.2/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/3.2.2/iostream **** 
+  16:/usr/include/c++/3.2.2/iostream **** // You should have received a copy of the GNU General Public License along
+  17:/usr/include/c++/3.2.2/iostream **** // with this library; see the file COPYING.  If not, write to the Free
+  18:/usr/include/c++/3.2.2/iostream **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  19:/usr/include/c++/3.2.2/iostream **** // USA.
+  20:/usr/include/c++/3.2.2/iostream **** 
+  21:/usr/include/c++/3.2.2/iostream **** // As a special exception, you may use this file as part of a free software
+  22:/usr/include/c++/3.2.2/iostream **** // library without restriction.  Specifically, if other files instantiate
+  23:/usr/include/c++/3.2.2/iostream **** // templates or use macros or inline functions from this file, or you compile
+  24:/usr/include/c++/3.2.2/iostream **** // this file and link it with other files to produce an executable, this
+GAS LISTING /tmp/ccCoVgtB.s 			page 9
+
+
+  25:/usr/include/c++/3.2.2/iostream **** // file does not by itself cause the resulting executable to be covered by
+  26:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.  This exception does not however
+  27:/usr/include/c++/3.2.2/iostream **** // invalidate any other reasons why the executable file might be covered by
+  28:/usr/include/c++/3.2.2/iostream **** // the GNU General Public License.
+  29:/usr/include/c++/3.2.2/iostream **** 
+  30:/usr/include/c++/3.2.2/iostream **** //
+  31:/usr/include/c++/3.2.2/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  32:/usr/include/c++/3.2.2/iostream **** //
+  33:/usr/include/c++/3.2.2/iostream **** 
+  34:/usr/include/c++/3.2.2/iostream **** /** @file iostream
+  35:/usr/include/c++/3.2.2/iostream ****  *  This is a Standard C++ Library header.  You should @c #include this header
+  36:/usr/include/c++/3.2.2/iostream ****  *  in your programs, rather than any of the "st[dl]_*.h" implementation files.
+  37:/usr/include/c++/3.2.2/iostream ****  */
+  38:/usr/include/c++/3.2.2/iostream **** 
+  39:/usr/include/c++/3.2.2/iostream **** #ifndef _CPP_IOSTREAM
+  40:/usr/include/c++/3.2.2/iostream **** #define _CPP_IOSTREAM	1
+  41:/usr/include/c++/3.2.2/iostream **** 
+  42:/usr/include/c++/3.2.2/iostream **** #pragma GCC system_header
+  43:/usr/include/c++/3.2.2/iostream **** 
+  44:/usr/include/c++/3.2.2/iostream **** #include <bits/c++config.h>
+  45:/usr/include/c++/3.2.2/iostream **** #include <ostream>
+  46:/usr/include/c++/3.2.2/iostream **** #include <istream>
+  47:/usr/include/c++/3.2.2/iostream **** 
+  48:/usr/include/c++/3.2.2/iostream **** namespace std 
+  49:/usr/include/c++/3.2.2/iostream **** {
+  50:/usr/include/c++/3.2.2/iostream ****   extern istream cin;
+  51:/usr/include/c++/3.2.2/iostream ****   extern ostream cout;
+  52:/usr/include/c++/3.2.2/iostream ****   extern ostream cerr;
+  53:/usr/include/c++/3.2.2/iostream ****   extern ostream clog;
+  54:/usr/include/c++/3.2.2/iostream **** 
+  55:/usr/include/c++/3.2.2/iostream **** #ifdef _GLIBCPP_USE_WCHAR_T
+  56:/usr/include/c++/3.2.2/iostream ****   extern wistream wcin;
+  57:/usr/include/c++/3.2.2/iostream ****   extern wostream wcout;
+  58:/usr/include/c++/3.2.2/iostream ****   extern wostream wcerr;
+  59:/usr/include/c++/3.2.2/iostream ****   extern wostream wclog;
+  60:/usr/include/c++/3.2.2/iostream **** #endif
+  61:/usr/include/c++/3.2.2/iostream **** 
+  62:/usr/include/c++/3.2.2/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  63:/usr/include/c++/3.2.2/iostream ****   static ios_base::Init __ioinit;
+ 279              		.loc 45 63 0
+ 280 0105 817D0CFF 		cmpl	$65535, 12(%ebp)
+ 280      FF0000
+ 281 010c 752D     		jne	.L22
+ 282 010e 837D0801 		cmpl	$1, 8(%ebp)
+ 283 0112 7527     		jne	.L22
+ 284 0114 83EC0C   		subl	$12, %esp
+ 285 0117 68000000 		pushl	$_ZSt8__ioinit
+ 285      00
+ 286              	.LEHB4:
+ 287              	.LCFI17:
+ 288 011c E8FCFFFF 		call	_ZNSt8ios_base4InitC1Ev
+ 288      FF
+ 289              	.LEHE4:
+ 290 0121 83C410   		addl	$16, %esp
+ 291 0124 83EC04   		subl	$4, %esp
+ 292 0127 68000000 		pushl	$__dso_handle
+ 292      00
+GAS LISTING /tmp/ccCoVgtB.s 			page 10
+
+
+ 293 012c 6A00     		pushl	$0
+ 294 012e 68500200 		pushl	$__tcf_0
+ 294      00
+ 295 0133 E8FCFFFF 		call	__cxa_atexit
+ 295      FF
+ 296 0138 83C410   		addl	$16, %esp
+ 297              	.L22:
+ 298              		.loc 1 17 0
+ 299 013b 817D0CFF 		cmpl	$65535, 12(%ebp)
+ 299      FF0000
+ 300 0142 7579     		jne	.L23
+ 301 0144 837D0801 		cmpl	$1, 8(%ebp)
+ 302 0148 7573     		jne	.L23
+ 303 014a 83EC04   		subl	$4, %esp
+ 304 014d 83EC08   		subl	$8, %esp
+ 305 0150 8D45E8   		leal	-24(%ebp), %eax
+ 306 0153 50       		pushl	%eax
+ 307              	.LCFI18:
+ 308 0154 E8FCFFFF 		call	_ZNSaIcEC1Ev
+ 308      FF
+ 309 0159 83C40C   		addl	$12, %esp
+ 310 015c 8D45E8   		leal	-24(%ebp), %eax
+ 311 015f 50       		pushl	%eax
+ 312 0160 68000000 		pushl	$.LC0
+ 312      00
+ 313 0165 68000000 		pushl	$global_string
+ 313      00
+ 314              	.LEHB5:
+ 315              	.LCFI19:
+ 316 016a E8FCFFFF 		call	_ZNSsC1EPKcRKSaIcE
+ 316      FF
+ 317              	.LEHE5:
+ 318 016f 83C410   		addl	$16, %esp
+ 319 0172 EB23     		jmp	.L25
+ 320              	.L34:
+ 321 0174 8945E4   		movl	%eax, -28(%ebp)
+ 322 0177 8B5DE4   		movl	-28(%ebp), %ebx
+ 323 017a 83EC0C   		subl	$12, %esp
+ 324 017d 8D45E8   		leal	-24(%ebp), %eax
+ 325 0180 50       		pushl	%eax
+ 326 0181 E8FCFFFF 		call	_ZNSaIcED1Ev
+ 326      FF
+ 327 0186 83C410   		addl	$16, %esp
+ 328 0189 895DE4   		movl	%ebx, -28(%ebp)
+ 329 018c 83EC0C   		subl	$12, %esp
+ 330 018f FF75E4   		pushl	-28(%ebp)
+ 331              	.LEHB6:
+ 332 0192 E8FCFFFF 		call	_Unwind_Resume
+ 332      FF
+ 333              	.L25:
+ 334 0197 83EC0C   		subl	$12, %esp
+ 335 019a 8D45E8   		leal	-24(%ebp), %eax
+ 336 019d 50       		pushl	%eax
+ 337 019e E8FCFFFF 		call	_ZNSaIcED1Ev
+ 337      FF
+ 338 01a3 83C410   		addl	$16, %esp
+ 339 01a6 83EC04   		subl	$4, %esp
+GAS LISTING /tmp/ccCoVgtB.s 			page 11
+
+
+ 340 01a9 68000000 		pushl	$__dso_handle
+ 340      00
+ 341 01ae 6A00     		pushl	$0
+ 342 01b0 68680200 		pushl	$__tcf_1
+ 342      00
+ 343 01b5 E8FCFFFF 		call	__cxa_atexit
+ 343      FF
+ 344 01ba 83C410   		addl	$16, %esp
+ 345              	.L23:
+ 346              		.loc 1 18 0
+ 347 01bd 817D0CFF 		cmpl	$65535, 12(%ebp)
+ 347      FF0000
+ 348 01c4 0F858000 		jne	.L21
+ 348      0000
+ 349 01ca 837D0801 		cmpl	$1, 8(%ebp)
+ 350 01ce 757A     		jne	.L21
+ 351 01d0 83EC04   		subl	$4, %esp
+ 352 01d3 6A25     		pushl	$37
+ 353 01d5 8D45E8   		leal	-24(%ebp), %eax
+ 354 01d8 83EC0C   		subl	$12, %esp
+ 355 01db 68050000 		pushl	$.LC1
+ 355      00
+ 356 01e0 68000000 		pushl	$global_string
+ 356      00
+ 357 01e5 50       		pushl	%eax
+ 358              	.LCFI20:
+ 359 01e6 E8FCFFFF 		call	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+ 359      FF
+ 360              	.LEHE6:
+ 361 01eb 83C414   		addl	$20, %esp
+ 362 01ee 8D45E8   		leal	-24(%ebp), %eax
+ 363 01f1 50       		pushl	%eax
+ 364 01f2 68000000 		pushl	$global_struct
+ 364      00
+ 365              	.LEHB7:
+ 366              	.LCFI21:
+ 367 01f7 E8FCFFFF 		call	_ZN9my_structC1ESsi
+ 367      FF
+ 368              	.LEHE7:
+ 369 01fc 83C410   		addl	$16, %esp
+ 370 01ff EB23     		jmp	.L30
+ 371              	.L33:
+ 372 0201 8945E4   		movl	%eax, -28(%ebp)
+ 373 0204 8B5DE4   		movl	-28(%ebp), %ebx
+ 374 0207 83EC0C   		subl	$12, %esp
+ 375 020a 8D45E8   		leal	-24(%ebp), %eax
+ 376 020d 50       		pushl	%eax
+ 377 020e E8FCFFFF 		call	_ZNSsD1Ev
+ 377      FF
+ 378 0213 83C410   		addl	$16, %esp
+ 379 0216 895DE4   		movl	%ebx, -28(%ebp)
+ 380 0219 83EC0C   		subl	$12, %esp
+ 381 021c FF75E4   		pushl	-28(%ebp)
+ 382              	.LEHB8:
+ 383 021f E8FCFFFF 		call	_Unwind_Resume
+ 383      FF
+ 384              	.L30:
+GAS LISTING /tmp/ccCoVgtB.s 			page 12
+
+
+ 385 0224 83EC0C   		subl	$12, %esp
+ 386 0227 8D45E8   		leal	-24(%ebp), %eax
+ 387 022a 50       		pushl	%eax
+ 388 022b E8FCFFFF 		call	_ZNSsD1Ev
+ 388      FF
+ 389              	.LEHE8:
+ 390 0230 83C410   		addl	$16, %esp
+ 391 0233 83EC04   		subl	$4, %esp
+ 392 0236 68000000 		pushl	$__dso_handle
+ 392      00
+ 393 023b 6A00     		pushl	$0
+ 394 023d 68800200 		pushl	$__tcf_2
+ 394      00
+ 395 0242 E8FCFFFF 		call	__cxa_atexit
+ 395      FF
+ 396 0247 83C410   		addl	$16, %esp
+ 397              	.L21:
+ 398 024a 8B5DFC   		movl	-4(%ebp), %ebx
+ 399 024d C9       		leave
+ 400 024e C3       		ret
+ 401              	.LFE1521:
+ 402              	.Lfe4:
+ 404              		.section	.gcc_except_table
+ 405              	.LLSDA1521:
+ 406 0014 FF       		.byte	0xff
+ 407 0015 FF       		.byte	0xff
+ 408 0016 01       		.byte	0x1
+ 409 0017 18       		.uleb128 .LLSDACSE1521-.LLSDACSB1521
+ 410              	.LLSDACSB1521:
+ 411 0018 1E       		.uleb128 .LEHB4-.LFB1521
+ 412 0019 05       		.uleb128 .LEHE4-.LEHB4
+ 413 001a 00       		.uleb128 0x0
+ 414 001b 00       		.uleb128 0x0
+ 415 001c 6C       		.uleb128 .LEHB5-.LFB1521
+ 416 001d 05       		.uleb128 .LEHE5-.LEHB5
+ 417 001e 76       		.uleb128 .L34-.LFB1521
+ 418 001f 00       		.uleb128 0x0
+ 419 0020 9401     		.uleb128 .LEHB6-.LFB1521
+ 420 0022 59       		.uleb128 .LEHE6-.LEHB6
+ 421 0023 00       		.uleb128 0x0
+ 422 0024 00       		.uleb128 0x0
+ 423 0025 F901     		.uleb128 .LEHB7-.LFB1521
+ 424 0027 05       		.uleb128 .LEHE7-.LEHB7
+ 425 0028 8302     		.uleb128 .L33-.LFB1521
+ 426 002a 00       		.uleb128 0x0
+ 427 002b A102     		.uleb128 .LEHB8-.LFB1521
+ 428 002d 11       		.uleb128 .LEHE8-.LEHB8
+ 429 002e 00       		.uleb128 0x0
+ 430 002f 00       		.uleb128 0x0
+ 431              	.LLSDACSE1521:
+ 432              		.text
+ 433              		.section	.gnu.linkonce.t._ZN9my_structC1ERKS_,"ax",@progbits
+ 434              		.align 2
+ 435              		.weak	_ZN9my_structC1ERKS_
+ 437              	_ZN9my_structC1ERKS_:
+ 438              	.LFB1522:
+ 439              		.loc 1 24 0
+GAS LISTING /tmp/ccCoVgtB.s 			page 13
+
+
+ 440              	.LBB6:
+ 441 0000 55       		pushl	%ebp
+ 442              	.LCFI22:
+ 443 0001 89E5     		movl	%esp, %ebp
+ 444              	.LCFI23:
+ 445 0003 83EC08   		subl	$8, %esp
+ 446              	.LCFI24:
+ 447              		.loc 1 24 0
+ 448 0006 8B5508   		movl	8(%ebp), %edx
+ 449 0009 8B450C   		movl	12(%ebp), %eax
+ 450 000c 8B00     		movl	(%eax), %eax
+ 451 000e 8902     		movl	%eax, (%edx)
+ 452 0010 8B5508   		movl	8(%ebp), %edx
+ 453 0013 8B450C   		movl	12(%ebp), %eax
+ 454 0016 8B4004   		movl	4(%eax), %eax
+ 455 0019 894204   		movl	%eax, 4(%edx)
+ 456 001c 8B5508   		movl	8(%ebp), %edx
+ 457 001f 8B450C   		movl	12(%ebp), %eax
+ 458 0022 8B4008   		movl	8(%eax), %eax
+ 459 0025 894208   		movl	%eax, 8(%edx)
+ 460 0028 83EC08   		subl	$8, %esp
+ 461 002b 8B450C   		movl	12(%ebp), %eax
+ 462 002e 83C00C   		addl	$12, %eax
+ 463 0031 50       		pushl	%eax
+ 464 0032 8B4508   		movl	8(%ebp), %eax
+ 465 0035 83C00C   		addl	$12, %eax
+ 466 0038 50       		pushl	%eax
+ 467              	.LCFI25:
+ 468 0039 E8FCFFFF 		call	_ZNSsC1ERKSs
+ 468      FF
+ 469 003e 83C410   		addl	$16, %esp
+ 470 0041 C9       		leave
+ 471 0042 C3       		ret
+ 472              	.LBE6:
+ 473              	.LFE1522:
+ 474              	.Lfe5:
+ 476              		.section	.gnu.linkonce.t._ZN9my_structD1Ev,"ax",@progbits
+ 477              		.align 2
+ 478              		.weak	_ZN9my_structD1Ev
+ 480              	_ZN9my_structD1Ev:
+ 481              	.LFB1523:
+ 482              		.loc 1 24 0
+ 483              	.LBB7:
+ 484              	.LBE7:
+ 485 0000 55       		pushl	%ebp
+ 486              	.LCFI26:
+ 487 0001 89E5     		movl	%esp, %ebp
+ 488              	.LCFI27:
+ 489 0003 83EC08   		subl	$8, %esp
+ 490              	.LCFI28:
+ 491              		.loc 1 24 0
+ 492 0006 83EC0C   		subl	$12, %esp
+ 493 0009 8B4508   		movl	8(%ebp), %eax
+ 494 000c 83C00C   		addl	$12, %eax
+ 495 000f 50       		pushl	%eax
+ 496              	.LCFI29:
+ 497 0010 E8FCFFFF 		call	_ZNSsD1Ev
+GAS LISTING /tmp/ccCoVgtB.s 			page 14
+
+
+ 497      FF
+ 498 0015 83C410   		addl	$16, %esp
+ 499 0018 C9       		leave
+ 500 0019 C3       		ret
+ 501              	.LFE1523:
+ 502              	.Lfe6:
+ 504              		.section	.gnu.linkonce.t._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_,"ax",@progbits
+ 505              		.align 2
+ 506              		.weak	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+ 508              	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:
+ 509              	.LFB1524:
+   1:/usr/include/c++/3.2.2/bits/basic_string.h **** // Components for manipulating sequences of characters -*- C++ -*-
+   2:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+   3:/usr/include/c++/3.2.2/bits/basic_string.h **** // Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002
+   4:/usr/include/c++/3.2.2/bits/basic_string.h **** // Free Software Foundation, Inc.
+   5:/usr/include/c++/3.2.2/bits/basic_string.h **** //
+   6:/usr/include/c++/3.2.2/bits/basic_string.h **** // This file is part of the GNU ISO C++ Library.  This library is free
+   7:/usr/include/c++/3.2.2/bits/basic_string.h **** // software; you can redistribute it and/or modify it under the
+   8:/usr/include/c++/3.2.2/bits/basic_string.h **** // terms of the GNU General Public License as published by the
+   9:/usr/include/c++/3.2.2/bits/basic_string.h **** // Free Software Foundation; either version 2, or (at your option)
+  10:/usr/include/c++/3.2.2/bits/basic_string.h **** // any later version.
+  11:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  12:/usr/include/c++/3.2.2/bits/basic_string.h **** // This library is distributed in the hope that it will be useful,
+  13:/usr/include/c++/3.2.2/bits/basic_string.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  14:/usr/include/c++/3.2.2/bits/basic_string.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  15:/usr/include/c++/3.2.2/bits/basic_string.h **** // GNU General Public License for more details.
+  16:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  17:/usr/include/c++/3.2.2/bits/basic_string.h **** // You should have received a copy of the GNU General Public License along
+  18:/usr/include/c++/3.2.2/bits/basic_string.h **** // with this library; see the file COPYING.  If not, write to the Free
+  19:/usr/include/c++/3.2.2/bits/basic_string.h **** // Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+  20:/usr/include/c++/3.2.2/bits/basic_string.h **** // USA.
+  21:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  22:/usr/include/c++/3.2.2/bits/basic_string.h **** // As a special exception, you may use this file as part of a free software
+  23:/usr/include/c++/3.2.2/bits/basic_string.h **** // library without restriction.  Specifically, if other files instantiate
+  24:/usr/include/c++/3.2.2/bits/basic_string.h **** // templates or use macros or inline functions from this file, or you compile
+  25:/usr/include/c++/3.2.2/bits/basic_string.h **** // this file and link it with other files to produce an executable, this
+  26:/usr/include/c++/3.2.2/bits/basic_string.h **** // file does not by itself cause the resulting executable to be covered by
+  27:/usr/include/c++/3.2.2/bits/basic_string.h **** // the GNU General Public License.  This exception does not however
+  28:/usr/include/c++/3.2.2/bits/basic_string.h **** // invalidate any other reasons why the executable file might be covered by
+  29:/usr/include/c++/3.2.2/bits/basic_string.h **** // the GNU General Public License.
+  30:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  31:/usr/include/c++/3.2.2/bits/basic_string.h **** //
+  32:/usr/include/c++/3.2.2/bits/basic_string.h **** // ISO C++ 14882: 21 Strings library
+  33:/usr/include/c++/3.2.2/bits/basic_string.h **** //
+  34:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  35:/usr/include/c++/3.2.2/bits/basic_string.h **** /** @file basic_string.h
+  36:/usr/include/c++/3.2.2/bits/basic_string.h ****  *  This is an internal header file, included by other library headers.
+  37:/usr/include/c++/3.2.2/bits/basic_string.h ****  *  You should not attempt to use it directly.
+  38:/usr/include/c++/3.2.2/bits/basic_string.h ****  */
+  39:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  40:/usr/include/c++/3.2.2/bits/basic_string.h **** #ifndef _CPP_BITS_STRING_H
+  41:/usr/include/c++/3.2.2/bits/basic_string.h **** #define _CPP_BITS_STRING_H	1
+  42:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  43:/usr/include/c++/3.2.2/bits/basic_string.h **** #pragma GCC system_header
+  44:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+  45:/usr/include/c++/3.2.2/bits/basic_string.h **** #include <bits/atomicity.h>
+  46:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+GAS LISTING /tmp/ccCoVgtB.s 			page 15
+
+
+  47:/usr/include/c++/3.2.2/bits/basic_string.h **** namespace std
+  48:/usr/include/c++/3.2.2/bits/basic_string.h **** {
+  49:/usr/include/c++/3.2.2/bits/basic_string.h ****   // Documentation?  What's that? 
+  50:/usr/include/c++/3.2.2/bits/basic_string.h ****   // Nathan Myers <ncm@cantrip.org>.
+  51:/usr/include/c++/3.2.2/bits/basic_string.h ****   //
+  52:/usr/include/c++/3.2.2/bits/basic_string.h ****   // A string looks like this:
+  53:/usr/include/c++/3.2.2/bits/basic_string.h ****   //
+  54:/usr/include/c++/3.2.2/bits/basic_string.h ****   //                               	[_Rep]
+  55:/usr/include/c++/3.2.2/bits/basic_string.h ****   //                               	_M_length
+  56:/usr/include/c++/3.2.2/bits/basic_string.h ****   //  [basic_string<char_type>]		_M_capacity
+  57:/usr/include/c++/3.2.2/bits/basic_string.h ****   //  _M_dataplus                	_M_state
+  58:/usr/include/c++/3.2.2/bits/basic_string.h ****   //  _M_p ---------------->   		unnamed array of char_type
+  59:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  60:/usr/include/c++/3.2.2/bits/basic_string.h ****   // Where the _M_p points to the first character in the string, and
+  61:/usr/include/c++/3.2.2/bits/basic_string.h ****   // you cast it to a pointer-to-_Rep and subtract 1 to get a
+  62:/usr/include/c++/3.2.2/bits/basic_string.h ****   // pointer to the header.
+  63:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  64:/usr/include/c++/3.2.2/bits/basic_string.h ****   // This approach has the enormous advantage that a string object
+  65:/usr/include/c++/3.2.2/bits/basic_string.h ****   // requires only one allocation.  All the ugliness is confined
+  66:/usr/include/c++/3.2.2/bits/basic_string.h ****   // within a single pair of inline functions, which each compile to
+  67:/usr/include/c++/3.2.2/bits/basic_string.h ****   // a single "add" instruction: _Rep::_M_data(), and
+  68:/usr/include/c++/3.2.2/bits/basic_string.h ****   // string::_M_rep(); and the allocation function which gets a
+  69:/usr/include/c++/3.2.2/bits/basic_string.h ****   // block of raw bytes and with room enough and constructs a _Rep
+  70:/usr/include/c++/3.2.2/bits/basic_string.h ****   // object at the front.
+  71:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  72:/usr/include/c++/3.2.2/bits/basic_string.h ****   // The reason you want _M_data pointing to the character array and
+  73:/usr/include/c++/3.2.2/bits/basic_string.h ****   // not the _Rep is so that the debugger can see the string
+  74:/usr/include/c++/3.2.2/bits/basic_string.h ****   // contents. (Probably we should add a non-inline member to get
+  75:/usr/include/c++/3.2.2/bits/basic_string.h ****   // the _Rep for the debugger to use, so users can check the actual
+  76:/usr/include/c++/3.2.2/bits/basic_string.h ****   // string length.)
+  77:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  78:/usr/include/c++/3.2.2/bits/basic_string.h ****   // Note that the _Rep object is a POD so that you can have a
+  79:/usr/include/c++/3.2.2/bits/basic_string.h ****   // static "empty string" _Rep object already "constructed" before
+  80:/usr/include/c++/3.2.2/bits/basic_string.h ****   // static constructors have run.  The reference-count encoding is
+  81:/usr/include/c++/3.2.2/bits/basic_string.h ****   // chosen so that a 0 indicates one reference, so you never try to
+  82:/usr/include/c++/3.2.2/bits/basic_string.h ****   // destroy the empty-string _Rep object.
+  83:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  84:/usr/include/c++/3.2.2/bits/basic_string.h ****   // All but the last paragraph is considered pretty conventional
+  85:/usr/include/c++/3.2.2/bits/basic_string.h ****   // for a C++ string implementation.
+  86:/usr/include/c++/3.2.2/bits/basic_string.h ****   
+  87:/usr/include/c++/3.2.2/bits/basic_string.h ****   // 21.3  Template class basic_string
+  88:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+  89:/usr/include/c++/3.2.2/bits/basic_string.h ****     class basic_string
+  90:/usr/include/c++/3.2.2/bits/basic_string.h ****     {
+  91:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Types:
+  92:/usr/include/c++/3.2.2/bits/basic_string.h ****     public:
+  93:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef _Traits 					    traits_type;
+  94:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Traits::char_type 		    value_type;
+  95:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef _Alloc 					    allocator_type;
+  96:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::size_type 		    size_type;
+  97:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::difference_type 		    difference_type;
+  98:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::reference 		    reference;
+  99:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::const_reference 		    const_reference;
+ 100:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::pointer 			    pointer;
+ 101:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef typename _Alloc::const_pointer 	   	    const_pointer;
+ 102:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef __gnu_cxx::__normal_iterator<pointer, basic_string>  iterator;
+ 103:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef __gnu_cxx::__normal_iterator<const_pointer, basic_string>
+GAS LISTING /tmp/ccCoVgtB.s 			page 16
+
+
+ 104:/usr/include/c++/3.2.2/bits/basic_string.h ****                                                             const_iterator;
+ 105:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef reverse_iterator<const_iterator> 	const_reverse_iterator;
+ 106:/usr/include/c++/3.2.2/bits/basic_string.h ****       typedef reverse_iterator<iterator> 		    reverse_iterator;
+ 107:/usr/include/c++/3.2.2/bits/basic_string.h ****     
+ 108:/usr/include/c++/3.2.2/bits/basic_string.h ****     private:
+ 109:/usr/include/c++/3.2.2/bits/basic_string.h ****       // _Rep: string representation
+ 110:/usr/include/c++/3.2.2/bits/basic_string.h ****       //   Invariants:
+ 111:/usr/include/c++/3.2.2/bits/basic_string.h ****       //   1. String really contains _M_length + 1 characters; last is set
+ 112:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      to 0 only on call to c_str().  We avoid instantiating
+ 113:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      _CharT() where the interface does not require it.
+ 114:/usr/include/c++/3.2.2/bits/basic_string.h ****       //   2. _M_capacity >= _M_length
+ 115:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      Allocated memory is always _M_capacity + (1 * sizeof(_CharT)).
+ 116:/usr/include/c++/3.2.2/bits/basic_string.h ****       //   3. _M_references has three states:
+ 117:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      -1: leaked, one reference, no ref-copies allowed, non-const.
+ 118:/usr/include/c++/3.2.2/bits/basic_string.h ****       //       0: one reference, non-const.
+ 119:/usr/include/c++/3.2.2/bits/basic_string.h ****       //     n>0: n + 1 references, operations require a lock, const.
+ 120:/usr/include/c++/3.2.2/bits/basic_string.h ****       //   4. All fields==0 is an empty string, given the extra storage
+ 121:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      beyond-the-end for a null terminator; thus, the shared
+ 122:/usr/include/c++/3.2.2/bits/basic_string.h ****       //      empty string representation needs no constructor.
+ 123:/usr/include/c++/3.2.2/bits/basic_string.h ****       struct _Rep
+ 124:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 125:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// Types:
+ 126:/usr/include/c++/3.2.2/bits/basic_string.h **** 	typedef typename _Alloc::template rebind<char>::other _Raw_bytes_alloc;
+ 127:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 128:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// (Public) Data members: 
+ 129:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 130:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// The maximum number of individual char_type elements of an
+ 131:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// individual string is determined by _S_max_size. This is the
+ 132:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// value that will be returned by max_size().  (Whereas npos
+ 133:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// is the maximum number of bytes the allocator can allocate.)
+ 134:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// If one was to divvy up the theoretical largest size string,
+ 135:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// with a terminating character and m _CharT elements, it'd
+ 136:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// look like this: 
+ 137:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// npos = sizeof(_Rep) + (m * sizeof(_CharT)) + sizeof(_CharT)
+ 138:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// Solving for m:
+ 139:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// m = ((npos - sizeof(_Rep))/sizeof(CharT)) - 1 
+ 140:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// In addition, this implementation quarters this ammount.
+ 141:/usr/include/c++/3.2.2/bits/basic_string.h **** 	static const size_type 	_S_max_size;
+ 142:/usr/include/c++/3.2.2/bits/basic_string.h **** 	static const _CharT 	_S_terminal;
+ 143:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 144:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type 		_M_length;
+ 145:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type 		_M_capacity;
+ 146:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_Atomic_word		_M_references;
+ 147:/usr/include/c++/3.2.2/bits/basic_string.h **** 	
+ 148:/usr/include/c++/3.2.2/bits/basic_string.h ****         bool
+ 149:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_is_leaked() const
+ 150:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return _M_references < 0; }
+ 151:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 152:/usr/include/c++/3.2.2/bits/basic_string.h ****         bool
+ 153:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_is_shared() const
+ 154:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return _M_references > 0; }
+ 155:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 156:/usr/include/c++/3.2.2/bits/basic_string.h ****         void
+ 157:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_set_leaked() 
+ 158:/usr/include/c++/3.2.2/bits/basic_string.h ****         { _M_references = -1; }
+ 159:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 160:/usr/include/c++/3.2.2/bits/basic_string.h ****         void
+GAS LISTING /tmp/ccCoVgtB.s 			page 17
+
+
+ 161:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_set_sharable() 
+ 162:/usr/include/c++/3.2.2/bits/basic_string.h ****         { _M_references = 0; }
+ 163:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 164:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT* 
+ 165:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_refdata() throw()
+ 166:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{ return reinterpret_cast<_CharT*>(this + 1); }
+ 167:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 168:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT& 
+ 169:/usr/include/c++/3.2.2/bits/basic_string.h **** 	operator[](size_t __s) throw()
+ 170:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{ return _M_refdata() [__s]; }
+ 171:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 172:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT* 
+ 173:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_grab(const _Alloc& __alloc1, const _Alloc& __alloc2)
+ 174:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{ 
+ 175:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return (!_M_is_leaked() && __alloc1 == __alloc2) 
+ 176:/usr/include/c++/3.2.2/bits/basic_string.h **** 	          ? _M_refcopy() : _M_clone(__alloc1);  
+ 177:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 178:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 179:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// Create & Destroy
+ 180:/usr/include/c++/3.2.2/bits/basic_string.h **** 	static _Rep* 
+ 181:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_S_create(size_t, const _Alloc&);
+ 182:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 183:/usr/include/c++/3.2.2/bits/basic_string.h **** 	void 
+ 184:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_dispose(const _Alloc& __a)
+ 185:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{ 
+ 186:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  if (__exchange_and_add(&_M_references, -1) <= 0)  
+ 187:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    _M_destroy(__a); 
+ 188:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}  // XXX MT
+ 189:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 190:/usr/include/c++/3.2.2/bits/basic_string.h **** 	void 
+ 191:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_destroy(const _Alloc&) throw();
+ 192:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 193:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT* 
+ 194:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_refcopy() throw()
+ 195:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{ 
+ 196:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __atomic_add(&_M_references, 1); 
+ 197:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _M_refdata(); 
+ 198:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}  // XXX MT
+ 199:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 200:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT* 
+ 201:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_clone(const _Alloc&, size_type __res = 0);
+ 202:/usr/include/c++/3.2.2/bits/basic_string.h ****       };
+ 203:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 204:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Use empty-base optimization: http://www.cantrip.org/emptyopt.html
+ 205:/usr/include/c++/3.2.2/bits/basic_string.h ****       struct _Alloc_hider : _Alloc
+ 206:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 207:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_Alloc_hider(_CharT* __dat, const _Alloc& __a)
+ 208:/usr/include/c++/3.2.2/bits/basic_string.h **** 	: _Alloc(__a), _M_p(__dat) { }
+ 209:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 210:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_CharT* _M_p; // The actual data.
+ 211:/usr/include/c++/3.2.2/bits/basic_string.h ****       };
+ 212:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 213:/usr/include/c++/3.2.2/bits/basic_string.h ****     public:
+ 214:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Data Members (public):
+ 215:/usr/include/c++/3.2.2/bits/basic_string.h ****       // NB: This is an unsigned type, and thus represents the maximum
+ 216:/usr/include/c++/3.2.2/bits/basic_string.h ****       // size that the allocator can hold.
+ 217:/usr/include/c++/3.2.2/bits/basic_string.h ****       static const size_type 	npos = static_cast<size_type>(-1);
+GAS LISTING /tmp/ccCoVgtB.s 			page 18
+
+
+ 218:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 219:/usr/include/c++/3.2.2/bits/basic_string.h ****     private:
+ 220:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Data Members (private):
+ 221:/usr/include/c++/3.2.2/bits/basic_string.h ****       mutable _Alloc_hider 	_M_dataplus;
+ 222:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 223:/usr/include/c++/3.2.2/bits/basic_string.h ****       // The following storage is init'd to 0 by the linker, resulting
+ 224:/usr/include/c++/3.2.2/bits/basic_string.h ****       // (carefully) in an empty string with one reference.
+ 225:/usr/include/c++/3.2.2/bits/basic_string.h ****       static size_type _S_empty_rep_storage[(sizeof(_Rep) + sizeof(_CharT) + sizeof(size_type) - 1)
+ 226:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 227:/usr/include/c++/3.2.2/bits/basic_string.h ****       _CharT* 
+ 228:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_data() const 
+ 229:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return  _M_dataplus._M_p; }
+ 230:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 231:/usr/include/c++/3.2.2/bits/basic_string.h ****       _CharT* 
+ 232:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_data(_CharT* __p) 
+ 233:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return (_M_dataplus._M_p = __p); }
+ 234:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 235:/usr/include/c++/3.2.2/bits/basic_string.h ****       _Rep* 
+ 236:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_rep() const
+ 237:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return &((reinterpret_cast<_Rep*> (_M_data()))[-1]); }
+ 238:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 239:/usr/include/c++/3.2.2/bits/basic_string.h ****       // For the internal use we have functions similar to `begin'/`end'
+ 240:/usr/include/c++/3.2.2/bits/basic_string.h ****       // but they do not call _M_leak.
+ 241:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 242:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_ibegin() const { return iterator(_M_data()); }
+ 243:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 244:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 245:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_iend() const { return iterator(_M_data() + this->size()); }
+ 246:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 247:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 248:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_leak()    // for use in begin() & non-const op[]
+ 249:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 250:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (!_M_rep()->_M_is_leaked()) 
+ 251:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  _M_leak_hard(); 
+ 252:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 253:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 254:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 255:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_check(size_type __pos) const
+ 256:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 257:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__pos > this->size())
+ 258:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::_M_check"); 
+ 259:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return _M_ibegin() + __pos; 
+ 260:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 261:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 262:/usr/include/c++/3.2.2/bits/basic_string.h ****       // NB: _M_fold doesn't check for a bad __pos1 value.
+ 263:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 264:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_fold(size_type __pos, size_type __off) const
+ 265:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 266:/usr/include/c++/3.2.2/bits/basic_string.h **** 	bool __testoff =  __off < this->size() - __pos;
+ 267:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __newoff = __testoff ? __off : this->size() - __pos;
+ 268:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return (_M_ibegin() + __pos + __newoff);
+ 269:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 270:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 271:/usr/include/c++/3.2.2/bits/basic_string.h ****       // _S_copy_chars is a separate template to permit specialization
+ 272:/usr/include/c++/3.2.2/bits/basic_string.h ****       // to optimize for the common case of pointers as iterators.
+ 273:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _Iterator>
+ 274:/usr/include/c++/3.2.2/bits/basic_string.h ****         static void
+GAS LISTING /tmp/ccCoVgtB.s 			page 19
+
+
+ 275:/usr/include/c++/3.2.2/bits/basic_string.h ****         _S_copy_chars(_CharT* __p, _Iterator __k1, _Iterator __k2)
+ 276:/usr/include/c++/3.2.2/bits/basic_string.h ****         { 
+ 277:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  for (; __k1 != __k2; ++__k1, ++__p) 
+ 278:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    traits_type::assign(*__p, *__k1); // These types are off.
+ 279:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 280:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 281:/usr/include/c++/3.2.2/bits/basic_string.h ****       static void
+ 282:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_copy_chars(_CharT* __p, iterator __k1, iterator __k2)
+ 283:/usr/include/c++/3.2.2/bits/basic_string.h ****       { _S_copy_chars(__p, __k1.base(), __k2.base()); }
+ 284:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 285:/usr/include/c++/3.2.2/bits/basic_string.h ****       static void
+ 286:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_copy_chars(_CharT* __p, const_iterator __k1, const_iterator __k2)
+ 287:/usr/include/c++/3.2.2/bits/basic_string.h ****       { _S_copy_chars(__p, __k1.base(), __k2.base()); }
+ 288:/usr/include/c++/3.2.2/bits/basic_string.h ****  
+ 289:/usr/include/c++/3.2.2/bits/basic_string.h ****       static void
+ 290:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_copy_chars(_CharT* __p, _CharT* __k1, _CharT* __k2)
+ 291:/usr/include/c++/3.2.2/bits/basic_string.h ****       { traits_type::copy(__p, __k1, __k2 - __k1); }
+ 292:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 293:/usr/include/c++/3.2.2/bits/basic_string.h ****       static void
+ 294:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_copy_chars(_CharT* __p, const _CharT* __k1, const _CharT* __k2)
+ 295:/usr/include/c++/3.2.2/bits/basic_string.h ****       { traits_type::copy(__p, __k1, __k2 - __k1); }
+ 296:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 297:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 298:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_mutate(size_type __pos, size_type __len1, size_type __len2);
+ 299:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 300:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 301:/usr/include/c++/3.2.2/bits/basic_string.h ****       _M_leak_hard();
+ 302:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 303:/usr/include/c++/3.2.2/bits/basic_string.h ****       static _Rep& 
+ 304:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_empty_rep()
+ 305:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return *reinterpret_cast<_Rep*>(&_S_empty_rep_storage); }
+ 306:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 307:/usr/include/c++/3.2.2/bits/basic_string.h ****     public:
+ 308:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Construct/copy/destroy:
+ 309:/usr/include/c++/3.2.2/bits/basic_string.h ****       // NB: We overload ctors in some cases instead of using default
+ 310:/usr/include/c++/3.2.2/bits/basic_string.h ****       // arguments, per 17.4.4.4 para. 2 item 2.
+ 311:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 312:/usr/include/c++/3.2.2/bits/basic_string.h ****       inline 
+ 313:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string();
+ 314:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 315:/usr/include/c++/3.2.2/bits/basic_string.h ****       explicit 
+ 316:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const _Alloc& __a);
+ 317:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 318:/usr/include/c++/3.2.2/bits/basic_string.h ****       // NB: per LWG issue 42, semantics different from IS:
+ 319:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const basic_string& __str);
+ 320:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const basic_string& __str, size_type __pos,
+ 321:/usr/include/c++/3.2.2/bits/basic_string.h **** 		   size_type __n = npos);
+ 322:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const basic_string& __str, size_type __pos,
+ 323:/usr/include/c++/3.2.2/bits/basic_string.h **** 		   size_type __n, const _Alloc& __a);
+ 324:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 325:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const _CharT* __s, size_type __n,
+ 326:/usr/include/c++/3.2.2/bits/basic_string.h **** 		   const _Alloc& __a = _Alloc());
+ 327:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc());
+ 328:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string(size_type __n, _CharT __c, const _Alloc& __a = _Alloc());
+ 329:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 330:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 331:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string(_InputIterator __beg, _InputIterator __end,
+GAS LISTING /tmp/ccCoVgtB.s 			page 20
+
+
+ 332:/usr/include/c++/3.2.2/bits/basic_string.h **** 		     const _Alloc& __a = _Alloc());
+ 333:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 334:/usr/include/c++/3.2.2/bits/basic_string.h ****       ~basic_string() 
+ 335:/usr/include/c++/3.2.2/bits/basic_string.h ****       { _M_rep()->_M_dispose(this->get_allocator()); }
+ 336:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 337:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 338:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator=(const basic_string& __str) { return this->assign(__str); }
+ 339:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 340:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 341:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator=(const _CharT* __s) { return this->assign(__s); }
+ 342:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 343:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 344:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator=(_CharT __c) { return this->assign(1, __c); }
+ 345:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 346:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Iterators:
+ 347:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 348:/usr/include/c++/3.2.2/bits/basic_string.h ****       begin() 
+ 349:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 350:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_leak(); 
+ 351:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return iterator(_M_data());
+ 352:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 353:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 354:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_iterator 
+ 355:/usr/include/c++/3.2.2/bits/basic_string.h ****       begin() const 
+ 356:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return const_iterator(_M_data()); }
+ 357:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 358:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 359:/usr/include/c++/3.2.2/bits/basic_string.h ****       end()
+ 360:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 361:/usr/include/c++/3.2.2/bits/basic_string.h ****          _M_leak();
+ 362:/usr/include/c++/3.2.2/bits/basic_string.h **** 	 return iterator(_M_data() + this->size());
+ 363:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 364:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 365:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_iterator 
+ 366:/usr/include/c++/3.2.2/bits/basic_string.h ****       end() const
+ 367:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return const_iterator(_M_data() + this->size()); }
+ 368:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 369:/usr/include/c++/3.2.2/bits/basic_string.h ****       reverse_iterator 
+ 370:/usr/include/c++/3.2.2/bits/basic_string.h ****       rbegin() 
+ 371:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return reverse_iterator(this->end()); }
+ 372:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 373:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_reverse_iterator 
+ 374:/usr/include/c++/3.2.2/bits/basic_string.h ****       rbegin() const 
+ 375:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return const_reverse_iterator(this->end()); }
+ 376:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 377:/usr/include/c++/3.2.2/bits/basic_string.h ****       reverse_iterator 
+ 378:/usr/include/c++/3.2.2/bits/basic_string.h ****       rend() 
+ 379:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return reverse_iterator(this->begin()); }
+ 380:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 381:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_reverse_iterator 
+ 382:/usr/include/c++/3.2.2/bits/basic_string.h ****       rend() const 
+ 383:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return const_reverse_iterator(this->begin()); }
+ 384:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 385:/usr/include/c++/3.2.2/bits/basic_string.h ****     public:
+ 386:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Capacity:
+ 387:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 388:/usr/include/c++/3.2.2/bits/basic_string.h ****       size() const { return _M_rep()->_M_length; }
+GAS LISTING /tmp/ccCoVgtB.s 			page 21
+
+
+ 389:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 390:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 391:/usr/include/c++/3.2.2/bits/basic_string.h ****       length() const { return _M_rep()->_M_length; }
+ 392:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 393:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 394:/usr/include/c++/3.2.2/bits/basic_string.h ****       max_size() const { return _Rep::_S_max_size; }
+ 395:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 396:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 397:/usr/include/c++/3.2.2/bits/basic_string.h ****       resize(size_type __n, _CharT __c);
+ 398:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 399:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 400:/usr/include/c++/3.2.2/bits/basic_string.h ****       resize(size_type __n) { this->resize(__n, _CharT()); }
+ 401:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 402:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 403:/usr/include/c++/3.2.2/bits/basic_string.h ****       capacity() const { return _M_rep()->_M_capacity; }
+ 404:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 405:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 406:/usr/include/c++/3.2.2/bits/basic_string.h ****       reserve(size_type __res_arg = 0);
+ 407:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 408:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 409:/usr/include/c++/3.2.2/bits/basic_string.h ****       clear() { _M_mutate(0, this->size(), 0); }
+ 410:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 411:/usr/include/c++/3.2.2/bits/basic_string.h ****       bool 
+ 412:/usr/include/c++/3.2.2/bits/basic_string.h ****       empty() const { return this->size() == 0; }
+ 413:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 414:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Element access:
+ 415:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_reference 
+ 416:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator[] (size_type __pos) const 
+ 417:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return _M_data()[__pos]; }
+ 418:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 419:/usr/include/c++/3.2.2/bits/basic_string.h ****       reference 
+ 420:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator[](size_type __pos) 
+ 421:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 422:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_leak(); 
+ 423:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return _M_data()[__pos]; 
+ 424:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 425:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 426:/usr/include/c++/3.2.2/bits/basic_string.h ****       const_reference 
+ 427:/usr/include/c++/3.2.2/bits/basic_string.h ****       at(size_type __n) const
+ 428:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 429:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__n >= this->size())
+ 430:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::at");
+ 431:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return _M_data()[__n]; 
+ 432:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 433:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 434:/usr/include/c++/3.2.2/bits/basic_string.h ****       reference 
+ 435:/usr/include/c++/3.2.2/bits/basic_string.h ****       at(size_type __n)
+ 436:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 437:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__n >= size())
+ 438:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::at");
+ 439:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_leak(); 
+ 440:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return _M_data()[__n]; 
+ 441:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 442:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 443:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Modifiers:
+ 444:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 445:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator+=(const basic_string& __str) { return this->append(__str); }
+GAS LISTING /tmp/ccCoVgtB.s 			page 22
+
+
+ 446:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 447:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 448:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator+=(const _CharT* __s) { return this->append(__s); }
+ 449:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 450:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 451:/usr/include/c++/3.2.2/bits/basic_string.h ****       operator+=(_CharT __c) { return this->append(size_type(1), __c); }
+ 452:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 453:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 454:/usr/include/c++/3.2.2/bits/basic_string.h ****       append(const basic_string& __str);
+ 455:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 456:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 457:/usr/include/c++/3.2.2/bits/basic_string.h ****       append(const basic_string& __str, size_type __pos, size_type __n);
+ 458:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 459:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 460:/usr/include/c++/3.2.2/bits/basic_string.h ****       append(const _CharT* __s, size_type __n);
+ 461:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 462:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 463:/usr/include/c++/3.2.2/bits/basic_string.h ****       append(const _CharT* __s)
+ 464:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->append(__s, traits_type::length(__s)); }
+ 465:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 466:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 467:/usr/include/c++/3.2.2/bits/basic_string.h ****       append(size_type __n, _CharT __c);
+ 468:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 469:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 470:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string& 
+ 471:/usr/include/c++/3.2.2/bits/basic_string.h ****         append(_InputIterator __first, _InputIterator __last)
+ 472:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(_M_iend(), _M_iend(), __first, __last); }
+ 473:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 474:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 475:/usr/include/c++/3.2.2/bits/basic_string.h ****       push_back(_CharT __c)
+ 476:/usr/include/c++/3.2.2/bits/basic_string.h ****       { this->replace(_M_iend(), _M_iend(), 1, __c); }
+ 477:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 478:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 479:/usr/include/c++/3.2.2/bits/basic_string.h ****       assign(const basic_string& __str);
+ 480:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 481:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 482:/usr/include/c++/3.2.2/bits/basic_string.h ****       assign(const basic_string& __str, size_type __pos, size_type __n)
+ 483:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 484:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __strsize = __str.size();
+ 485:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__pos > __strsize)
+ 486:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::assign");
+ 487:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const bool __testn = __n < __strsize - __pos;
+ 488:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __newsize = __testn ? __n : __strsize - __pos;
+ 489:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return this->assign(__str._M_data() + __pos, __newsize);
+ 490:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 491:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 492:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 493:/usr/include/c++/3.2.2/bits/basic_string.h ****       assign(const _CharT* __s, size_type __n)
+ 494:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 495:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__n > this->max_size())
+ 496:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_length_error("basic_string::assign");
+ 497:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (_M_rep()->_M_is_shared() || less<const _CharT*>()(__s, _M_data())
+ 498:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    || less<const _CharT*>()(_M_data() + this->size(), __s))
+ 499:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _M_replace_safe(_M_ibegin(), _M_iend(), __s, __s + __n);
+ 500:/usr/include/c++/3.2.2/bits/basic_string.h **** 	else
+ 501:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  {
+ 502:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    // Work in-place
+GAS LISTING /tmp/ccCoVgtB.s 			page 23
+
+
+ 503:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    const size_type __pos = __s - _M_data();
+ 504:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    if (__pos >= __n)
+ 505:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      traits_type::copy(_M_data(), __s, __n);
+ 506:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    else if (__pos)
+ 507:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      traits_type::move(_M_data(), __s, __n);
+ 508:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    _M_rep()->_M_length = __n;
+ 509:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    _M_data()[__n] = _Rep::_S_terminal;
+ 510:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    return *this;
+ 511:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  }
+ 512:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 513:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 514:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 515:/usr/include/c++/3.2.2/bits/basic_string.h ****       assign(const _CharT* __s)
+ 516:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->assign(__s, traits_type::length(__s)); }
+ 517:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 518:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 519:/usr/include/c++/3.2.2/bits/basic_string.h ****       assign(size_type __n, _CharT __c)
+ 520:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(_M_ibegin(), _M_iend(), __n, __c); }
+ 521:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 522:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 523:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string& 
+ 524:/usr/include/c++/3.2.2/bits/basic_string.h ****         assign(_InputIterator __first, _InputIterator __last)
+ 525:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(_M_ibegin(), _M_iend(), __first, __last); }
+ 526:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 527:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 528:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(iterator __p, size_type __n, _CharT __c)
+ 529:/usr/include/c++/3.2.2/bits/basic_string.h ****       {	this->replace(__p, __p, __n, __c);  }
+ 530:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 531:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 532:/usr/include/c++/3.2.2/bits/basic_string.h ****         void insert(iterator __p, _InputIterator __beg, _InputIterator __end)
+ 533:/usr/include/c++/3.2.2/bits/basic_string.h ****         { this->replace(__p, __p, __beg, __end); }
+ 534:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 535:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 536:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(size_type __pos1, const basic_string& __str)
+ 537:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->insert(__pos1, __str, 0, __str.size()); }
+ 538:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 539:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 540:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(size_type __pos1, const basic_string& __str,
+ 541:/usr/include/c++/3.2.2/bits/basic_string.h **** 	     size_type __pos2, size_type __n)
+ 542:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 543:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __strsize = __str.size();
+ 544:/usr/include/c++/3.2.2/bits/basic_string.h ****  	if (__pos2 > __strsize)
+ 545:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::insert");
+ 546:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const bool __testn = __n < __strsize - __pos2;
+ 547:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __newsize = __testn ? __n : __strsize - __pos2;
+ 548:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return this->insert(__pos1, __str._M_data() + __pos2, __newsize); 
+ 549:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 550:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 551:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 552:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(size_type __pos, const _CharT* __s, size_type __n)
+ 553:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 554:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __size = this->size();
+ 555:/usr/include/c++/3.2.2/bits/basic_string.h ****  	if (__pos > __size)
+ 556:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::insert");
+ 557:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__size > this->max_size() - __n)
+ 558:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_length_error("basic_string::insert");
+ 559:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (_M_rep()->_M_is_shared() || less<const _CharT*>()(__s, _M_data())
+GAS LISTING /tmp/ccCoVgtB.s 			page 24
+
+
+ 560:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    || less<const _CharT*>()(_M_data() + __size, __s))
+ 561:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _M_replace_safe(_M_ibegin() + __pos, _M_ibegin() + __pos,
+ 562:/usr/include/c++/3.2.2/bits/basic_string.h **** 				 __s, __s + __n);
+ 563:/usr/include/c++/3.2.2/bits/basic_string.h **** 	else
+ 564:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  {
+ 565:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    // Work in-place. If _M_mutate reallocates the string, __s
+ 566:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    // does not point anymore to valid data, therefore we save its
+ 567:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    // offset, then we restore it.
+ 568:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    const size_type __off = __s - _M_data();
+ 569:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    _M_mutate(__pos, 0, __n);
+ 570:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    __s = _M_data() + __off;
+ 571:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    _CharT* __p = _M_data() + __pos;
+ 572:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    if (__s  + __n <= __p)
+ 573:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      traits_type::copy(__p, __s, __n);
+ 574:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    else if (__s >= __p)
+ 575:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      traits_type::copy(__p, __s + __n, __n);
+ 576:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    else
+ 577:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      {
+ 578:/usr/include/c++/3.2.2/bits/basic_string.h **** 		traits_type::copy(__p, __s, __p - __s);
+ 579:/usr/include/c++/3.2.2/bits/basic_string.h **** 		traits_type::copy(__p + (__p - __s), __p + __n, __n - (__p - __s));
+ 580:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      }
+ 581:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    return *this;
+ 582:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  }
+ 583:/usr/include/c++/3.2.2/bits/basic_string.h ****        }
+ 584:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 585:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string&  
+ 586:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(size_type __pos, const _CharT* __s)
+ 587:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->insert(__pos, __s, traits_type::length(__s)); }
+ 588:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 589:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 590:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(size_type __pos, size_type __n, _CharT __c)
+ 591:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 592:/usr/include/c++/3.2.2/bits/basic_string.h **** 	this->insert(_M_check(__pos), __n, __c); 
+ 593:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return *this; 
+ 594:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 595:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 596:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 597:/usr/include/c++/3.2.2/bits/basic_string.h ****       insert(iterator __p, _CharT __c = _CharT())
+ 598:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 599:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __pos = __p - _M_ibegin();
+ 600:/usr/include/c++/3.2.2/bits/basic_string.h **** 	this->insert(_M_check(__pos), size_type(1), __c);
+ 601:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_rep()->_M_set_leaked(); 
+ 602:/usr/include/c++/3.2.2/bits/basic_string.h ****  	return this->_M_ibegin() + __pos; 
+ 603:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 604:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 605:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 606:/usr/include/c++/3.2.2/bits/basic_string.h ****       erase(size_type __pos = 0, size_type __n = npos)
+ 607:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 608:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return this->replace(_M_check(__pos), _M_fold(__pos, __n),
+ 609:/usr/include/c++/3.2.2/bits/basic_string.h **** 			     _M_data(), _M_data()); 
+ 610:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 611:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 612:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 613:/usr/include/c++/3.2.2/bits/basic_string.h ****       erase(iterator __position)
+ 614:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 615:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __i = __position - _M_ibegin();
+ 616:/usr/include/c++/3.2.2/bits/basic_string.h ****         this->replace(__position, __position + 1, _M_data(), _M_data());
+GAS LISTING /tmp/ccCoVgtB.s 			page 25
+
+
+ 617:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_rep()->_M_set_leaked(); 
+ 618:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return _M_ibegin() + __i;
+ 619:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 620:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 621:/usr/include/c++/3.2.2/bits/basic_string.h ****       iterator 
+ 622:/usr/include/c++/3.2.2/bits/basic_string.h ****       erase(iterator __first, iterator __last)
+ 623:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 624:/usr/include/c++/3.2.2/bits/basic_string.h ****         size_type __i = __first - _M_ibegin();
+ 625:/usr/include/c++/3.2.2/bits/basic_string.h **** 	this->replace(__first, __last, _M_data(), _M_data());
+ 626:/usr/include/c++/3.2.2/bits/basic_string.h **** 	_M_rep()->_M_set_leaked();
+ 627:/usr/include/c++/3.2.2/bits/basic_string.h ****        return _M_ibegin() + __i;
+ 628:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 629:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 630:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 631:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(size_type __pos, size_type __n, const basic_string& __str)
+ 632:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(__pos, __n, __str._M_data(), __str.size()); }
+ 633:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 634:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 635:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(size_type __pos1, size_type __n1, const basic_string& __str,
+ 636:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      size_type __pos2, size_type __n2);
+ 637:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 638:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 639:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(size_type __pos, size_type __n1, const _CharT* __s,
+ 640:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      size_type __n2)
+ 641:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 642:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __size = this->size();
+ 643:/usr/include/c++/3.2.2/bits/basic_string.h ****  	if (__pos > __size)
+ 644:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::replace");
+ 645:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const bool __testn1 = __n1 < __size - __pos;
+ 646:/usr/include/c++/3.2.2/bits/basic_string.h **** 	const size_type __foldn1 = __testn1 ? __n1 : __size - __pos;
+ 647:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__size - __foldn1 > this->max_size() - __n2)
+ 648:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_length_error("basic_string::replace");
+ 649:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (_M_rep()->_M_is_shared() || less<const _CharT*>()(__s, _M_data())
+ 650:/usr/include/c++/3.2.2/bits/basic_string.h **** 	    || less<const _CharT*>()(_M_data() + __size, __s))
+ 651:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _M_replace_safe(_M_ibegin() + __pos,
+ 652:/usr/include/c++/3.2.2/bits/basic_string.h **** 				 _M_ibegin() + __pos + __foldn1, __s, __s + __n2);	
+ 653:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// Todo: optimized in-place replace.
+ 654:/usr/include/c++/3.2.2/bits/basic_string.h **** 	else return
+ 655:/usr/include/c++/3.2.2/bits/basic_string.h **** 	       _M_replace(_M_ibegin() + __pos, _M_ibegin() + __pos + __foldn1,
+ 656:/usr/include/c++/3.2.2/bits/basic_string.h **** 			  __s, __s + __n2,
+ 657:/usr/include/c++/3.2.2/bits/basic_string.h **** 			  typename iterator_traits<const _CharT*>::iterator_category());
+ 658:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 659:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 660:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 661:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(size_type __pos, size_type __n1, const _CharT* __s)
+ 662:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(__pos, __n1, __s, traits_type::length(__s)); }
+ 663:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 664:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 665:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(size_type __pos, size_type __n1, size_type __n2, _CharT __c)
+ 666:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(_M_check(__pos), _M_fold(__pos, __n1), __n2, __c); }
+ 667:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 668:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 669:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, const basic_string& __str)
+ 670:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(__i1, __i2, __str._M_data(), __str.size()); }
+ 671:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 672:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 673:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2,
+GAS LISTING /tmp/ccCoVgtB.s 			page 26
+
+
+ 674:/usr/include/c++/3.2.2/bits/basic_string.h ****                            const _CharT* __s, size_type __n)
+ 675:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(__i1 - _M_ibegin(), __i2 - __i1, __s, __n); }
+ 676:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 677:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 678:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, const _CharT* __s)
+ 679:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->replace(__i1, __i2, __s, traits_type::length(__s)); }
+ 680:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 681:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 682:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, size_type __n, _CharT __c);
+ 683:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 684:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 685:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string& 
+ 686:/usr/include/c++/3.2.2/bits/basic_string.h ****         replace(iterator __i1, iterator __i2,
+ 687:/usr/include/c++/3.2.2/bits/basic_string.h **** 		_InputIterator __k1, _InputIterator __k2)
+ 688:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return _M_replace(__i1, __i2, __k1, __k2,
+ 689:/usr/include/c++/3.2.2/bits/basic_string.h **** 	     typename iterator_traits<_InputIterator>::iterator_category()); }
+ 690:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 691:/usr/include/c++/3.2.2/bits/basic_string.h ****       // Specializations for the common case of pointer and iterator:
+ 692:/usr/include/c++/3.2.2/bits/basic_string.h ****       // useful to avoid the overhead of temporary buffering in _M_replace.
+ 693:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 694:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, _CharT* __k1, _CharT* __k2)
+ 695:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
+ 696:/usr/include/c++/3.2.2/bits/basic_string.h **** 			       __k1, __k2 - __k1); }
+ 697:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 698:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 699:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, const _CharT* __k1, const _CharT* __k2)
+ 700:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
+ 701:/usr/include/c++/3.2.2/bits/basic_string.h **** 			       __k1, __k2 - __k1); }
+ 702:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 703:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 704:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, iterator __k1, iterator __k2)
+ 705:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
+ 706:/usr/include/c++/3.2.2/bits/basic_string.h **** 			       __k1.base(), __k2 - __k1);
+ 707:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 708:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 709:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string& 
+ 710:/usr/include/c++/3.2.2/bits/basic_string.h ****       replace(iterator __i1, iterator __i2, const_iterator __k1, const_iterator __k2)
+ 711:/usr/include/c++/3.2.2/bits/basic_string.h ****         { return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
+ 712:/usr/include/c++/3.2.2/bits/basic_string.h **** 			       __k1.base(), __k2 - __k1);
+ 713:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 714:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 715:/usr/include/c++/3.2.2/bits/basic_string.h ****     private:
+ 716:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InputIterator>
+ 717:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string& 
+ 718:/usr/include/c++/3.2.2/bits/basic_string.h ****         _M_replace(iterator __i1, iterator __i2, _InputIterator __k1, 
+ 719:/usr/include/c++/3.2.2/bits/basic_string.h **** 		   _InputIterator __k2, input_iterator_tag);
+ 720:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 721:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _ForwardIterator>
+ 722:/usr/include/c++/3.2.2/bits/basic_string.h ****         basic_string& 
+ 723:/usr/include/c++/3.2.2/bits/basic_string.h ****         _M_replace_safe(iterator __i1, iterator __i2, _ForwardIterator __k1, 
+ 724:/usr/include/c++/3.2.2/bits/basic_string.h **** 		   _ForwardIterator __k2);
+ 725:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 726:/usr/include/c++/3.2.2/bits/basic_string.h ****       // _S_construct_aux is used to implement the 21.3.1 para 15 which
+ 727:/usr/include/c++/3.2.2/bits/basic_string.h ****       // requires special behaviour if _InIter is an integral type
+ 728:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InIter>
+ 729:/usr/include/c++/3.2.2/bits/basic_string.h ****         static _CharT*
+ 730:/usr/include/c++/3.2.2/bits/basic_string.h ****         _S_construct_aux(_InIter __beg, _InIter __end, const _Alloc& __a,
+GAS LISTING /tmp/ccCoVgtB.s 			page 27
+
+
+ 731:/usr/include/c++/3.2.2/bits/basic_string.h **** 			 __false_type)
+ 732:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{
+ 733:/usr/include/c++/3.2.2/bits/basic_string.h ****           typedef typename iterator_traits<_InIter>::iterator_category _Tag;
+ 734:/usr/include/c++/3.2.2/bits/basic_string.h ****           return _S_construct(__beg, __end, __a, _Tag());
+ 735:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 736:/usr/include/c++/3.2.2/bits/basic_string.h ****  
+ 737:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InIter>
+ 738:/usr/include/c++/3.2.2/bits/basic_string.h ****         static _CharT*
+ 739:/usr/include/c++/3.2.2/bits/basic_string.h ****         _S_construct_aux(_InIter __beg, _InIter __end, const _Alloc& __a,
+ 740:/usr/include/c++/3.2.2/bits/basic_string.h **** 			 __true_type)
+ 741:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{
+ 742:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _S_construct(static_cast<size_type>(__beg),
+ 743:/usr/include/c++/3.2.2/bits/basic_string.h **** 			      static_cast<value_type>(__end), __a);
+ 744:/usr/include/c++/3.2.2/bits/basic_string.h **** 	}
+ 745:/usr/include/c++/3.2.2/bits/basic_string.h ****  
+ 746:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InIter>
+ 747:/usr/include/c++/3.2.2/bits/basic_string.h ****         static _CharT*
+ 748:/usr/include/c++/3.2.2/bits/basic_string.h ****         _S_construct(_InIter __beg, _InIter __end, const _Alloc& __a)
+ 749:/usr/include/c++/3.2.2/bits/basic_string.h **** 	{
+ 750:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  typedef typename _Is_integer<_InIter>::_Integral _Integral;
+ 751:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  return _S_construct_aux(__beg, __end, __a, _Integral());
+ 752:/usr/include/c++/3.2.2/bits/basic_string.h ****         }
+ 753:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 754:/usr/include/c++/3.2.2/bits/basic_string.h ****       // For Input Iterators, used in istreambuf_iterators, etc.
+ 755:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _InIter>
+ 756:/usr/include/c++/3.2.2/bits/basic_string.h ****         static _CharT*
+ 757:/usr/include/c++/3.2.2/bits/basic_string.h ****          _S_construct(_InIter __beg, _InIter __end, const _Alloc& __a,
+ 758:/usr/include/c++/3.2.2/bits/basic_string.h **** 		      input_iterator_tag);
+ 759:/usr/include/c++/3.2.2/bits/basic_string.h ****       
+ 760:/usr/include/c++/3.2.2/bits/basic_string.h ****       // For forward_iterators up to random_access_iterators, used for
+ 761:/usr/include/c++/3.2.2/bits/basic_string.h ****       // string::iterator, _CharT*, etc.
+ 762:/usr/include/c++/3.2.2/bits/basic_string.h ****       template<class _FwdIter>
+ 763:/usr/include/c++/3.2.2/bits/basic_string.h ****         static _CharT*
+ 764:/usr/include/c++/3.2.2/bits/basic_string.h ****         _S_construct(_FwdIter __beg, _FwdIter __end, const _Alloc& __a,
+ 765:/usr/include/c++/3.2.2/bits/basic_string.h **** 		     forward_iterator_tag);
+ 766:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 767:/usr/include/c++/3.2.2/bits/basic_string.h ****       static _CharT* 
+ 768:/usr/include/c++/3.2.2/bits/basic_string.h ****       _S_construct(size_type __req, _CharT __c, const _Alloc& __a);
+ 769:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 770:/usr/include/c++/3.2.2/bits/basic_string.h ****     public:
+ 771:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 772:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 773:/usr/include/c++/3.2.2/bits/basic_string.h ****       copy(_CharT* __s, size_type __n, size_type __pos = 0) const;
+ 774:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 775:/usr/include/c++/3.2.2/bits/basic_string.h ****       void 
+ 776:/usr/include/c++/3.2.2/bits/basic_string.h ****       swap(basic_string<_CharT, _Traits, _Alloc>& __s);
+ 777:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 778:/usr/include/c++/3.2.2/bits/basic_string.h ****       // String operations:
+ 779:/usr/include/c++/3.2.2/bits/basic_string.h ****       const _CharT* 
+ 780:/usr/include/c++/3.2.2/bits/basic_string.h ****       c_str() const
+ 781:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 782:/usr/include/c++/3.2.2/bits/basic_string.h **** 	// MT: This assumes concurrent writes are OK.
+ 783:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __n = this->size();
+ 784:/usr/include/c++/3.2.2/bits/basic_string.h **** 	traits_type::assign(_M_data()[__n], _Rep::_S_terminal);
+ 785:/usr/include/c++/3.2.2/bits/basic_string.h ****         return _M_data();
+ 786:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 787:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+GAS LISTING /tmp/ccCoVgtB.s 			page 28
+
+
+ 788:/usr/include/c++/3.2.2/bits/basic_string.h ****       const _CharT* 
+ 789:/usr/include/c++/3.2.2/bits/basic_string.h ****       data() const { return _M_data(); }
+ 790:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 791:/usr/include/c++/3.2.2/bits/basic_string.h ****       allocator_type 
+ 792:/usr/include/c++/3.2.2/bits/basic_string.h ****       get_allocator() const { return _M_dataplus; }
+ 793:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 794:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 795:/usr/include/c++/3.2.2/bits/basic_string.h ****       find(const _CharT* __s, size_type __pos, size_type __n) const;
+ 796:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 797:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 798:/usr/include/c++/3.2.2/bits/basic_string.h ****       find(const basic_string& __str, size_type __pos = 0) const
+ 799:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find(__str.data(), __pos, __str.size()); }
+ 800:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 801:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 802:/usr/include/c++/3.2.2/bits/basic_string.h ****       find(const _CharT* __s, size_type __pos = 0) const
+ 803:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find(__s, __pos, traits_type::length(__s)); }
+ 804:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 805:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 806:/usr/include/c++/3.2.2/bits/basic_string.h ****       find(_CharT __c, size_type __pos = 0) const;
+ 807:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 808:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 809:/usr/include/c++/3.2.2/bits/basic_string.h ****       rfind(const basic_string& __str, size_type __pos = npos) const
+ 810:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->rfind(__str.data(), __pos, __str.size()); }
+ 811:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 812:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 813:/usr/include/c++/3.2.2/bits/basic_string.h ****       rfind(const _CharT* __s, size_type __pos, size_type __n) const;
+ 814:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 815:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 816:/usr/include/c++/3.2.2/bits/basic_string.h ****       rfind(const _CharT* __s, size_type __pos = npos) const
+ 817:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->rfind(__s, __pos, traits_type::length(__s)); }
+ 818:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 819:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 820:/usr/include/c++/3.2.2/bits/basic_string.h ****       rfind(_CharT __c, size_type __pos = npos) const;
+ 821:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 822:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 823:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_of(const basic_string& __str, size_type __pos = 0) const
+ 824:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_first_of(__str.data(), __pos, __str.size()); }
+ 825:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 826:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 827:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_of(const _CharT* __s, size_type __pos, size_type __n) const;
+ 828:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 829:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 830:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_of(const _CharT* __s, size_type __pos = 0) const
+ 831:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_first_of(__s, __pos, traits_type::length(__s)); }
+ 832:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 833:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 834:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_of(_CharT __c, size_type __pos = 0) const
+ 835:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find(__c, __pos); }
+ 836:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 837:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 838:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_of(const basic_string& __str, size_type __pos = npos) const
+ 839:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_last_of(__str.data(), __pos, __str.size()); }
+ 840:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 841:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 842:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_of(const _CharT* __s, size_type __pos, size_type __n) const;
+ 843:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 844:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+GAS LISTING /tmp/ccCoVgtB.s 			page 29
+
+
+ 845:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_of(const _CharT* __s, size_type __pos = npos) const
+ 846:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_last_of(__s, __pos, traits_type::length(__s)); }
+ 847:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 848:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 849:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_of(_CharT __c, size_type __pos = npos) const
+ 850:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->rfind(__c, __pos); }
+ 851:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 852:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 853:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_not_of(const basic_string& __str, size_type __pos = 0) const
+ 854:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_first_not_of(__str.data(), __pos, __str.size()); }
+ 855:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 856:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 857:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_not_of(const _CharT* __s, size_type __pos, 
+ 858:/usr/include/c++/3.2.2/bits/basic_string.h **** 			size_type __n) const;
+ 859:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 860:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 861:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_not_of(const _CharT* __s, size_type __pos = 0) const
+ 862:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_first_not_of(__s, __pos, traits_type::length(__s)); }
+ 863:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 864:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 865:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_first_not_of(_CharT __c, size_type __pos = 0) const;
+ 866:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 867:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 868:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_not_of(const basic_string& __str, size_type __pos = npos) const
+ 869:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_last_not_of(__str.data(), __pos, __str.size()); }
+ 870:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 871:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 872:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_not_of(const _CharT* __s, size_type __pos, 
+ 873:/usr/include/c++/3.2.2/bits/basic_string.h **** 		       size_type __n) const;
+ 874:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 875:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_not_of(const _CharT* __s, size_type __pos = npos) const
+ 876:/usr/include/c++/3.2.2/bits/basic_string.h ****       { return this->find_last_not_of(__s, __pos, traits_type::length(__s)); }
+ 877:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 878:/usr/include/c++/3.2.2/bits/basic_string.h ****       size_type 
+ 879:/usr/include/c++/3.2.2/bits/basic_string.h ****       find_last_not_of(_CharT __c, size_type __pos = npos) const;
+ 880:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 881:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string 
+ 882:/usr/include/c++/3.2.2/bits/basic_string.h ****       substr(size_type __pos = 0, size_type __n = npos) const
+ 883:/usr/include/c++/3.2.2/bits/basic_string.h ****       { 
+ 884:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (__pos > this->size())
+ 885:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __throw_out_of_range("basic_string::substr");
+ 886:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return basic_string(*this, __pos, __n); 
+ 887:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 888:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 889:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 890:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(const basic_string& __str) const
+ 891:/usr/include/c++/3.2.2/bits/basic_string.h ****       {
+ 892:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __size = this->size();
+ 893:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __osize = __str.size();
+ 894:/usr/include/c++/3.2.2/bits/basic_string.h **** 	size_type __len = min(__size, __osize);
+ 895:/usr/include/c++/3.2.2/bits/basic_string.h ****       
+ 896:/usr/include/c++/3.2.2/bits/basic_string.h **** 	int __r = traits_type::compare(_M_data(), __str.data(), __len);
+ 897:/usr/include/c++/3.2.2/bits/basic_string.h **** 	if (!__r)
+ 898:/usr/include/c++/3.2.2/bits/basic_string.h **** 	  __r =  __size - __osize;
+ 899:/usr/include/c++/3.2.2/bits/basic_string.h **** 	return __r;
+ 900:/usr/include/c++/3.2.2/bits/basic_string.h ****       }
+ 901:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+GAS LISTING /tmp/ccCoVgtB.s 			page 30
+
+
+ 902:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 903:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(size_type __pos, size_type __n, const basic_string& __str) const;
+ 904:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 905:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 906:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(size_type __pos1, size_type __n1, const basic_string& __str,
+ 907:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      size_type __pos2, size_type __n2) const;
+ 908:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 909:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 910:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(const _CharT* __s) const;
+ 911:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 912:/usr/include/c++/3.2.2/bits/basic_string.h ****       // _GLIBCPP_RESOLVE_LIB_DEFECTS
+ 913:/usr/include/c++/3.2.2/bits/basic_string.h ****       // 5. String::compare specification questionable
+ 914:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 915:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(size_type __pos, size_type __n1, const _CharT* __s) const;
+ 916:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 917:/usr/include/c++/3.2.2/bits/basic_string.h ****       int 
+ 918:/usr/include/c++/3.2.2/bits/basic_string.h ****       compare(size_type __pos, size_type __n1, const _CharT* __s, 
+ 919:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      size_type __n2) const;
+ 920:/usr/include/c++/3.2.2/bits/basic_string.h ****   };
+ 921:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 922:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 923:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+ 924:/usr/include/c++/3.2.2/bits/basic_string.h ****     inline basic_string<_CharT, _Traits, _Alloc>::
+ 925:/usr/include/c++/3.2.2/bits/basic_string.h ****     basic_string()
+ 926:/usr/include/c++/3.2.2/bits/basic_string.h ****     : _M_dataplus(_S_empty_rep()._M_refcopy(), _Alloc()) { }
+ 927:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 928:/usr/include/c++/3.2.2/bits/basic_string.h ****   // operator+
+ 929:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+ 930:/usr/include/c++/3.2.2/bits/basic_string.h ****     basic_string<_CharT, _Traits, _Alloc>
+ 931:/usr/include/c++/3.2.2/bits/basic_string.h ****     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+ 932:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+ 933:/usr/include/c++/3.2.2/bits/basic_string.h ****     {
+ 934:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string<_CharT, _Traits, _Alloc> __str(__lhs);
+ 935:/usr/include/c++/3.2.2/bits/basic_string.h ****       __str.append(__rhs);
+ 936:/usr/include/c++/3.2.2/bits/basic_string.h ****       return __str;
+ 937:/usr/include/c++/3.2.2/bits/basic_string.h ****     }
+ 938:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 939:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+ 940:/usr/include/c++/3.2.2/bits/basic_string.h ****     basic_string<_CharT,_Traits,_Alloc>
+ 941:/usr/include/c++/3.2.2/bits/basic_string.h ****     operator+(const _CharT* __lhs,
+ 942:/usr/include/c++/3.2.2/bits/basic_string.h **** 	      const basic_string<_CharT,_Traits,_Alloc>& __rhs);
+ 943:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 944:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+ 945:/usr/include/c++/3.2.2/bits/basic_string.h ****     basic_string<_CharT,_Traits,_Alloc>
+ 946:/usr/include/c++/3.2.2/bits/basic_string.h ****     operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Alloc>& __rhs);
+ 947:/usr/include/c++/3.2.2/bits/basic_string.h **** 
+ 948:/usr/include/c++/3.2.2/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
+ 949:/usr/include/c++/3.2.2/bits/basic_string.h ****     inline basic_string<_CharT, _Traits, _Alloc>
+ 950:/usr/include/c++/3.2.2/bits/basic_string.h ****     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+ 951:/usr/include/c++/3.2.2/bits/basic_string.h **** 	     const _CharT* __rhs)
+ 952:/usr/include/c++/3.2.2/bits/basic_string.h ****     {
+ 510              		.loc 29 952 0
+ 511 0000 55       		pushl	%ebp
+ 512              	.LCFI30:
+ 513 0001 89E5     		movl	%esp, %ebp
+ 514              	.LCFI31:
+ 515 0003 53       		pushl	%ebx
+GAS LISTING /tmp/ccCoVgtB.s 			page 31
+
+
+ 516              	.LCFI32:
+ 517 0004 83EC04   		subl	$4, %esp
+ 518              	.LCFI33:
+ 519              	.LBB8:
+ 953:/usr/include/c++/3.2.2/bits/basic_string.h ****       basic_string<_CharT, _Traits, _Alloc> __str(__lhs);
+ 520              		.loc 29 953 0
+ 521 0007 83EC08   		subl	$8, %esp
+ 522 000a FF750C   		pushl	12(%ebp)
+ 523 000d FF7508   		pushl	8(%ebp)
+ 524              	.LEHB9:
+ 525              	.LCFI34:
+ 526 0010 E8FCFFFF 		call	_ZNSsC1ERKSs
+ 526      FF
+ 527              	.LEHE9:
+ 528 0015 83C410   		addl	$16, %esp
+ 954:/usr/include/c++/3.2.2/bits/basic_string.h ****       __str.append(__rhs);
+ 529              		.loc 29 954 0
+ 530 0018 83EC08   		subl	$8, %esp
+ 531 001b FF7510   		pushl	16(%ebp)
+ 532 001e FF7508   		pushl	8(%ebp)
+ 533              	.LEHB10:
+ 534 0021 E8FCFFFF 		call	_ZNSs6appendEPKc
+ 534      FF
+ 535              	.LEHE10:
+ 536 0026 83C410   		addl	$16, %esp
+ 955:/usr/include/c++/3.2.2/bits/basic_string.h ****       return __str;
+ 537              		.loc 29 955 0
+ 538 0029 EB22     		jmp	.L43
+ 539              	.L48:
+ 540 002b 8945F8   		movl	%eax, -8(%ebp)
+ 541 002e 8B5DF8   		movl	-8(%ebp), %ebx
+ 542 0031 83EC0C   		subl	$12, %esp
+ 543 0034 FF7508   		pushl	8(%ebp)
+ 544 0037 E8FCFFFF 		call	_ZNSsD1Ev
+ 544      FF
+ 545 003c 83C410   		addl	$16, %esp
+ 546 003f 895DF8   		movl	%ebx, -8(%ebp)
+ 547 0042 83EC0C   		subl	$12, %esp
+ 548 0045 FF75F8   		pushl	-8(%ebp)
+ 549              	.LEHB11:
+ 550 0048 E8FCFFFF 		call	_Unwind_Resume
+ 550      FF
+ 551              	.LEHE11:
+ 552              	.LBE8:
+ 553              	.L43:
+ 554 004d 8B4508   		movl	8(%ebp), %eax
+ 555 0050 8B5DFC   		movl	-4(%ebp), %ebx
+ 556 0053 C9       		leave
+ 557 0054 C20400   		ret	$4
+ 558              	.LFE1524:
+ 559              	.Lfe7:
+ 561              		.section	.gcc_except_table
+ 562              	.LLSDA1524:
+ 563 0030 FF       		.byte	0xff
+ 564 0031 FF       		.byte	0xff
+ 565 0032 01       		.byte	0x1
+ 566 0033 0C       		.uleb128 .LLSDACSE1524-.LLSDACSB1524
+GAS LISTING /tmp/ccCoVgtB.s 			page 32
+
+
+ 567              	.LLSDACSB1524:
+ 568 0034 10       		.uleb128 .LEHB9-.LFB1524
+ 569 0035 05       		.uleb128 .LEHE9-.LEHB9
+ 570 0036 00       		.uleb128 0x0
+ 571 0037 00       		.uleb128 0x0
+ 572 0038 21       		.uleb128 .LEHB10-.LFB1524
+ 573 0039 05       		.uleb128 .LEHE10-.LEHB10
+ 574 003a 2B       		.uleb128 .L48-.LFB1524
+ 575 003b 00       		.uleb128 0x0
+ 576 003c 48       		.uleb128 .LEHB11-.LFB1524
+ 577 003d 05       		.uleb128 .LEHE11-.LEHB11
+ 578 003e 00       		.uleb128 0x0
+ 579 003f 00       		.uleb128 0x0
+ 580              	.LLSDACSE1524:
+ 581              		.section	.gnu.linkonce.t._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+ 582              		.text
+ 583 024f 90       		.align 2
+ 585              	__tcf_0:
+ 586              	.LFB1525:
+ 587              		.loc 45 63 0
+ 588 0250 55       		pushl	%ebp
+ 589              	.LCFI35:
+ 590 0251 89E5     		movl	%esp, %ebp
+ 591              	.LCFI36:
+ 592 0253 83EC08   		subl	$8, %esp
+ 593              	.LCFI37:
+ 594              		.loc 45 63 0
+ 595 0256 83EC0C   		subl	$12, %esp
+ 596 0259 68000000 		pushl	$_ZSt8__ioinit
+ 596      00
+ 597              	.LCFI38:
+ 598 025e E8FCFFFF 		call	_ZNSt8ios_base4InitD1Ev
+ 598      FF
+ 599 0263 83C410   		addl	$16, %esp
+ 600 0266 C9       		leave
+ 601 0267 C3       		ret
+ 602              	.LFE1525:
+ 603              	.Lfe8:
+ 605              		.align 2
+ 607              	__tcf_1:
+ 608              	.LFB1526:
+ 609              		.loc 1 17 0
+ 610 0268 55       		pushl	%ebp
+ 611              	.LCFI39:
+ 612 0269 89E5     		movl	%esp, %ebp
+ 613              	.LCFI40:
+ 614 026b 83EC08   		subl	$8, %esp
+ 615              	.LCFI41:
+ 616              		.loc 1 17 0
+ 617 026e 83EC0C   		subl	$12, %esp
+ 618 0271 68000000 		pushl	$global_string
+ 618      00
+ 619              	.LCFI42:
+ 620 0276 E8FCFFFF 		call	_ZNSsD1Ev
+ 620      FF
+ 621 027b 83C410   		addl	$16, %esp
+ 622 027e C9       		leave
+GAS LISTING /tmp/ccCoVgtB.s 			page 33
+
+
+ 623 027f C3       		ret
+ 624              	.LFE1526:
+ 625              	.Lfe9:
+ 627              		.align 2
+ 629              	__tcf_2:
+ 630              	.LFB1527:
+ 631              		.loc 1 18 0
+ 632 0280 55       		pushl	%ebp
+ 633              	.LCFI43:
+ 634 0281 89E5     		movl	%esp, %ebp
+ 635              	.LCFI44:
+ 636 0283 83EC08   		subl	$8, %esp
+ 637              	.LCFI45:
+ 638              		.loc 1 18 0
+ 639 0286 83EC0C   		subl	$12, %esp
+ 640 0289 68000000 		pushl	$global_struct
+ 640      00
+ 641              	.LCFI46:
+ 642 028e E8FCFFFF 		call	_ZN9my_structD1Ev
+ 642      FF
+ 643 0293 83C410   		addl	$16, %esp
+ 644 0296 C9       		leave
+ 645 0297 C3       		ret
+ 646              	.LFE1527:
+ 647              	.Lfe10:
+ 649              		.align 2
+ 651              	_GLOBAL__I__ZN9my_structC2ESsi:
+ 652              	.LFB1532:
+ 653              		.loc 44 131 0
+ 654 0298 55       		pushl	%ebp
+ 655              	.LCFI47:
+ 656 0299 89E5     		movl	%esp, %ebp
+ 657              	.LCFI48:
+ 658 029b 83EC08   		subl	$8, %esp
+ 659              	.LCFI49:
+ 660              		.loc 44 131 0
+ 661 029e 83EC08   		subl	$8, %esp
+ 662 02a1 68FFFF00 		pushl	$65535
+ 662      00
+ 663 02a6 6A01     		pushl	$1
+ 664              	.LCFI50:
+ 665 02a8 E851FEFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 665      FF
+ 666 02ad 83C410   		addl	$16, %esp
+ 667 02b0 C9       		leave
+ 668 02b1 C3       		ret
+ 669              	.LFE1532:
+ 670              	.Lfe11:
+ 672              		.section	.ctors,"aw",@progbits
+ 673              		.align 4
+ 674 0000 98020000 		.long	_GLOBAL__I__ZN9my_structC2ESsi
+ 675              		.file 46 "/usr/include/stdio.h"
+ 676              		.file 47 "/usr/include/c++/3.2.2/iosfwd"
+ 677              		.file 48 "/usr/include/c++/3.2.2/exception"
+ 678              		.file 49 "/usr/include/c++/3.2.2/i386-redhat-linux/bits/c++locale.h"
+ 679              		.file 50 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 680              		.file 51 "/usr/include/bits/sigset.h"
+GAS LISTING /tmp/ccCoVgtB.s 			page 34
+
+
+ 681              		.file 52 "/usr/include/signal.h"
+ 682              		.file 53 "/usr/include/nl_types.h"
+ 683              		.file 54 "/usr/include/sys/select.h"
+ 684              		.file 55 "/usr/include/wctype.h"
+ 685              		.file 56 "/usr/include/errno.h"
+ 686              		.file 57 "/usr/include/bits/mathdef.h"
+ 687              		.weak	pthread_mutex_unlock
+ 688              		.weak	pthread_mutex_trylock
+ 689              		.weak	pthread_mutex_lock
+ 690              		.weak	pthread_create
+ 691              		.weak	pthread_setspecific
+ 692              		.weak	pthread_getspecific
+ 693              		.weak	pthread_key_delete
+ 694              		.weak	pthread_key_create
+ 695              		.weak	pthread_once
+ 984              	.Lframe1:
+ 985 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 986              	.LSCIE1:
+ 987 0004 00000000 		.long	0x0
+ 988 0008 01       		.byte	0x1
+ 989 0009 7A504C00 		.string	"zPL"
+ 990 000d 01       		.uleb128 0x1
+ 991 000e 7C       		.sleb128 -4
+ 992 000f 08       		.byte	0x8
+ 993 0010 06       		.uleb128 0x6
+ 994 0011 00       		.byte	0x0
+ 995 0012 00000000 		.long	__gxx_personality_v0
+ 996 0016 00       		.byte	0x0
+ 997 0017 0C       		.byte	0xc
+ 998 0018 04       		.uleb128 0x4
+ 999 0019 04       		.uleb128 0x4
+ 1000 001a 88       		.byte	0x88
+ 1001 001b 01       		.uleb128 0x1
+ 1002              		.align 4
+ 1003              	.LECIE1:
+ 1004              	.LSFDE1:
+ 1005 001c 1C000000 		.long	.LEFDE1-.LASFDE1
+ 1006              	.LASFDE1:
+ 1007 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 1008 0024 00000000 		.long	.LFB1480
+ 1009 0028 38000000 		.long	.LFE1480-.LFB1480
+ 1010 002c 04       		.uleb128 0x4
+ 1011 002d 00000000 		.long	0x0
+ 1012 0031 41       		.byte	0x4
+ 1013              		.long	.LCFI0-.LFB1480
+ 1014 0032 0E       		.byte	0xe
+ 1015 0033 08       		.uleb128 0x8
+ 1016 0034 85       		.byte	0x85
+ 1017 0035 02       		.uleb128 0x2
+ 1018 0036 42       		.byte	0x4
+ 1019              		.long	.LCFI1-.LCFI0
+ 1020 0037 0D       		.byte	0xd
+ 1021 0038 05       		.uleb128 0x5
+ 1022 0039 6B       		.byte	0x4
+ 1023              		.long	.LCFI3-.LCFI1
+ 1024 003a 2E       		.byte	0x2e
+ 1025 003b 10       		.uleb128 0x10
+GAS LISTING /tmp/ccCoVgtB.s 			page 35
+
+
+ 1026              		.align 4
+ 1027              	.LEFDE1:
+ 1028              	.LSFDE3:
+ 1029 003c 1C000000 		.long	.LEFDE3-.LASFDE3
+ 1030              	.LASFDE3:
+ 1031 0040 40000000 		.long	.LASFDE3-.Lframe1
+ 1032 0044 38000000 		.long	.LFB1482
+ 1033 0048 38000000 		.long	.LFE1482-.LFB1482
+ 1034 004c 04       		.uleb128 0x4
+ 1035 004d 00000000 		.long	0x0
+ 1036 0051 41       		.byte	0x4
+ 1037              		.long	.LCFI4-.LFB1482
+ 1038 0052 0E       		.byte	0xe
+ 1039 0053 08       		.uleb128 0x8
+ 1040 0054 85       		.byte	0x85
+ 1041 0055 02       		.uleb128 0x2
+ 1042 0056 42       		.byte	0x4
+ 1043              		.long	.LCFI5-.LCFI4
+ 1044 0057 0D       		.byte	0xd
+ 1045 0058 05       		.uleb128 0x5
+ 1046 0059 6B       		.byte	0x4
+ 1047              		.long	.LCFI7-.LCFI5
+ 1048 005a 2E       		.byte	0x2e
+ 1049 005b 10       		.uleb128 0x10
+ 1050              		.align 4
+ 1051              	.LEFDE3:
+ 1052              	.LSFDE5:
+ 1053 005c 20000000 		.long	.LEFDE5-.LASFDE5
+ 1054              	.LASFDE5:
+ 1055 0060 60000000 		.long	.LASFDE5-.Lframe1
+ 1056 0064 70000000 		.long	.LFB1490
+ 1057 0068 8E000000 		.long	.LFE1490-.LFB1490
+ 1058 006c 04       		.uleb128 0x4
+ 1059 006d 00000000 		.long	.LLSDA1490
+ 1060 0071 41       		.byte	0x4
+ 1061              		.long	.LCFI8-.LFB1490
+ 1062 0072 0E       		.byte	0xe
+ 1063 0073 08       		.uleb128 0x8
+ 1064 0074 85       		.byte	0x85
+ 1065 0075 02       		.uleb128 0x2
+ 1066 0076 42       		.byte	0x4
+ 1067              		.long	.LCFI9-.LCFI8
+ 1068 0077 0D       		.byte	0xd
+ 1069 0078 05       		.uleb128 0x5
+ 1070 0079 44       		.byte	0x4
+ 1071              		.long	.LCFI11-.LCFI9
+ 1072 007a 83       		.byte	0x83
+ 1073 007b 03       		.uleb128 0x3
+ 1074 007c 5E       		.byte	0x4
+ 1075              		.long	.LCFI12-.LCFI11
+ 1076 007d 2E       		.byte	0x2e
+ 1077 007e 10       		.uleb128 0x10
+ 1078 007f 00       		.align 4
+ 1079              	.LEFDE5:
+ 1080              	.LSFDE7:
+ 1081 0080 2C000000 		.long	.LEFDE7-.LASFDE7
+ 1082              	.LASFDE7:
+GAS LISTING /tmp/ccCoVgtB.s 			page 36
+
+
+ 1083 0084 84000000 		.long	.LASFDE7-.Lframe1
+ 1084 0088 FE000000 		.long	.LFB1521
+ 1085 008c 51010000 		.long	.LFE1521-.LFB1521
+ 1086 0090 04       		.uleb128 0x4
+ 1087 0091 14000000 		.long	.LLSDA1521
+ 1088 0095 41       		.byte	0x4
+ 1089              		.long	.LCFI13-.LFB1521
+ 1090 0096 0E       		.byte	0xe
+ 1091 0097 08       		.uleb128 0x8
+ 1092 0098 85       		.byte	0x85
+ 1093 0099 02       		.uleb128 0x2
+ 1094 009a 42       		.byte	0x4
+ 1095              		.long	.LCFI14-.LCFI13
+ 1096 009b 0D       		.byte	0xd
+ 1097 009c 05       		.uleb128 0x5
+ 1098 009d 44       		.byte	0x4
+ 1099              		.long	.LCFI16-.LCFI14
+ 1100 009e 83       		.byte	0x83
+ 1101 009f 03       		.uleb128 0x3
+ 1102 00a0 57       		.byte	0x4
+ 1103              		.long	.LCFI17-.LCFI16
+ 1104 00a1 2E       		.byte	0x2e
+ 1105 00a2 10       		.uleb128 0x10
+ 1106 00a3 78       		.byte	0x4
+ 1107              		.long	.LCFI18-.LCFI17
+ 1108 00a4 2E       		.byte	0x2e
+ 1109 00a5 0C       		.uleb128 0xc
+ 1110 00a6 56       		.byte	0x4
+ 1111              		.long	.LCFI19-.LCFI18
+ 1112 00a7 2E       		.byte	0x2e
+ 1113 00a8 10       		.uleb128 0x10
+ 1114 00a9 02       		.byte	0x4
+ 1115 00aa 7C       		.long	.LCFI20-.LCFI19
+ 1116 00ab 2E       		.byte	0x2e
+ 1117 00ac 18       		.uleb128 0x18
+ 1118 00ad 51       		.byte	0x4
+ 1119              		.long	.LCFI21-.LCFI20
+ 1120 00ae 2E       		.byte	0x2e
+ 1121 00af 10       		.uleb128 0x10
+ 1122              		.align 4
+ 1123              	.LEFDE7:
+ 1124              	.LSFDE9:
+ 1125 00b0 1C000000 		.long	.LEFDE9-.LASFDE9
+ 1126              	.LASFDE9:
+ 1127 00b4 B4000000 		.long	.LASFDE9-.Lframe1
+ 1128 00b8 00000000 		.long	.LFB1522
+ 1129 00bc 43000000 		.long	.LFE1522-.LFB1522
+ 1130 00c0 04       		.uleb128 0x4
+ 1131 00c1 00000000 		.long	0x0
+ 1132 00c5 41       		.byte	0x4
+ 1133              		.long	.LCFI22-.LFB1522
+ 1134 00c6 0E       		.byte	0xe
+ 1135 00c7 08       		.uleb128 0x8
+ 1136 00c8 85       		.byte	0x85
+ 1137 00c9 02       		.uleb128 0x2
+ 1138 00ca 42       		.byte	0x4
+ 1139              		.long	.LCFI23-.LCFI22
+GAS LISTING /tmp/ccCoVgtB.s 			page 37
+
+
+ 1140 00cb 0D       		.byte	0xd
+ 1141 00cc 05       		.uleb128 0x5
+ 1142 00cd 76       		.byte	0x4
+ 1143              		.long	.LCFI25-.LCFI23
+ 1144 00ce 2E       		.byte	0x2e
+ 1145 00cf 10       		.uleb128 0x10
+ 1146              		.align 4
+ 1147              	.LEFDE9:
+ 1148              	.LSFDE11:
+ 1149 00d0 1C000000 		.long	.LEFDE11-.LASFDE11
+ 1150              	.LASFDE11:
+ 1151 00d4 D4000000 		.long	.LASFDE11-.Lframe1
+ 1152 00d8 00000000 		.long	.LFB1523
+ 1153 00dc 1A000000 		.long	.LFE1523-.LFB1523
+ 1154 00e0 04       		.uleb128 0x4
+ 1155 00e1 00000000 		.long	0x0
+ 1156 00e5 41       		.byte	0x4
+ 1157              		.long	.LCFI26-.LFB1523
+ 1158 00e6 0E       		.byte	0xe
+ 1159 00e7 08       		.uleb128 0x8
+ 1160 00e8 85       		.byte	0x85
+ 1161 00e9 02       		.uleb128 0x2
+ 1162 00ea 42       		.byte	0x4
+ 1163              		.long	.LCFI27-.LCFI26
+ 1164 00eb 0D       		.byte	0xd
+ 1165 00ec 05       		.uleb128 0x5
+ 1166 00ed 4D       		.byte	0x4
+ 1167              		.long	.LCFI29-.LCFI27
+ 1168 00ee 2E       		.byte	0x2e
+ 1169 00ef 10       		.uleb128 0x10
+ 1170              		.align 4
+ 1171              	.LEFDE11:
+ 1172              	.LSFDE13:
+ 1173 00f0 20000000 		.long	.LEFDE13-.LASFDE13
+ 1174              	.LASFDE13:
+ 1175 00f4 F4000000 		.long	.LASFDE13-.Lframe1
+ 1176 00f8 00000000 		.long	.LFB1524
+ 1177 00fc 57000000 		.long	.LFE1524-.LFB1524
+ 1178 0100 04       		.uleb128 0x4
+ 1179 0101 30000000 		.long	.LLSDA1524
+ 1180 0105 41       		.byte	0x4
+ 1181              		.long	.LCFI30-.LFB1524
+ 1182 0106 0E       		.byte	0xe
+ 1183 0107 08       		.uleb128 0x8
+ 1184 0108 85       		.byte	0x85
+ 1185 0109 02       		.uleb128 0x2
+ 1186 010a 42       		.byte	0x4
+ 1187              		.long	.LCFI31-.LCFI30
+ 1188 010b 0D       		.byte	0xd
+ 1189 010c 05       		.uleb128 0x5
+ 1190 010d 44       		.byte	0x4
+ 1191              		.long	.LCFI33-.LCFI31
+ 1192 010e 83       		.byte	0x83
+ 1193 010f 03       		.uleb128 0x3
+ 1194 0110 49       		.byte	0x4
+ 1195              		.long	.LCFI34-.LCFI33
+ 1196 0111 2E       		.byte	0x2e
+GAS LISTING /tmp/ccCoVgtB.s 			page 38
+
+
+ 1197 0112 10       		.uleb128 0x10
+ 1198 0113 00       		.align 4
+ 1199              	.LEFDE13:
+ 1200              	.LSFDE15:
+ 1201 0114 1C000000 		.long	.LEFDE15-.LASFDE15
+ 1202              	.LASFDE15:
+ 1203 0118 18010000 		.long	.LASFDE15-.Lframe1
+ 1204 011c 50020000 		.long	.LFB1525
+ 1205 0120 18000000 		.long	.LFE1525-.LFB1525
+ 1206 0124 04       		.uleb128 0x4
+ 1207 0125 00000000 		.long	0x0
+ 1208 0129 41       		.byte	0x4
+ 1209              		.long	.LCFI35-.LFB1525
+ 1210 012a 0E       		.byte	0xe
+ 1211 012b 08       		.uleb128 0x8
+ 1212 012c 85       		.byte	0x85
+ 1213 012d 02       		.uleb128 0x2
+ 1214 012e 42       		.byte	0x4
+ 1215              		.long	.LCFI36-.LCFI35
+ 1216 012f 0D       		.byte	0xd
+ 1217 0130 05       		.uleb128 0x5
+ 1218 0131 4B       		.byte	0x4
+ 1219              		.long	.LCFI38-.LCFI36
+ 1220 0132 2E       		.byte	0x2e
+ 1221 0133 10       		.uleb128 0x10
+ 1222              		.align 4
+ 1223              	.LEFDE15:
+ 1224              	.LSFDE17:
+ 1225 0134 1C000000 		.long	.LEFDE17-.LASFDE17
+ 1226              	.LASFDE17:
+ 1227 0138 38010000 		.long	.LASFDE17-.Lframe1
+ 1228 013c 68020000 		.long	.LFB1526
+ 1229 0140 18000000 		.long	.LFE1526-.LFB1526
+ 1230 0144 04       		.uleb128 0x4
+ 1231 0145 00000000 		.long	0x0
+ 1232 0149 41       		.byte	0x4
+ 1233              		.long	.LCFI39-.LFB1526
+ 1234 014a 0E       		.byte	0xe
+ 1235 014b 08       		.uleb128 0x8
+ 1236 014c 85       		.byte	0x85
+ 1237 014d 02       		.uleb128 0x2
+ 1238 014e 42       		.byte	0x4
+ 1239              		.long	.LCFI40-.LCFI39
+ 1240 014f 0D       		.byte	0xd
+ 1241 0150 05       		.uleb128 0x5
+ 1242 0151 4B       		.byte	0x4
+ 1243              		.long	.LCFI42-.LCFI40
+ 1244 0152 2E       		.byte	0x2e
+ 1245 0153 10       		.uleb128 0x10
+ 1246              		.align 4
+ 1247              	.LEFDE17:
+ 1248              	.LSFDE19:
+ 1249 0154 1C000000 		.long	.LEFDE19-.LASFDE19
+ 1250              	.LASFDE19:
+ 1251 0158 58010000 		.long	.LASFDE19-.Lframe1
+ 1252 015c 80020000 		.long	.LFB1527
+ 1253 0160 18000000 		.long	.LFE1527-.LFB1527
+GAS LISTING /tmp/ccCoVgtB.s 			page 39
+
+
+ 1254 0164 04       		.uleb128 0x4
+ 1255 0165 00000000 		.long	0x0
+ 1256 0169 41       		.byte	0x4
+ 1257              		.long	.LCFI43-.LFB1527
+ 1258 016a 0E       		.byte	0xe
+ 1259 016b 08       		.uleb128 0x8
+ 1260 016c 85       		.byte	0x85
+ 1261 016d 02       		.uleb128 0x2
+ 1262 016e 42       		.byte	0x4
+ 1263              		.long	.LCFI44-.LCFI43
+ 1264 016f 0D       		.byte	0xd
+ 1265 0170 05       		.uleb128 0x5
+ 1266 0171 4B       		.byte	0x4
+ 1267              		.long	.LCFI46-.LCFI44
+ 1268 0172 2E       		.byte	0x2e
+ 1269 0173 10       		.uleb128 0x10
+ 1270              		.align 4
+ 1271              	.LEFDE19:
+ 1272              	.LSFDE21:
+ 1273 0174 1C000000 		.long	.LEFDE21-.LASFDE21
+ 1274              	.LASFDE21:
+ 1275 0178 78010000 		.long	.LASFDE21-.Lframe1
+ 1276 017c 98020000 		.long	.LFB1532
+ 1277 0180 1A000000 		.long	.LFE1532-.LFB1532
+ 1278 0184 04       		.uleb128 0x4
+ 1279 0185 00000000 		.long	0x0
+ 1280 0189 41       		.byte	0x4
+ 1281              		.long	.LCFI47-.LFB1532
+ 1282 018a 0E       		.byte	0xe
+ 1283 018b 08       		.uleb128 0x8
+ 1284 018c 85       		.byte	0x85
+ 1285 018d 02       		.uleb128 0x2
+ 1286 018e 42       		.byte	0x4
+ 1287              		.long	.LCFI48-.LCFI47
+ 1288 018f 0D       		.byte	0xd
+ 1289 0190 05       		.uleb128 0x5
+ 1290 0191 4D       		.byte	0x4
+ 1291              		.long	.LCFI50-.LCFI48
+ 1292 0192 2E       		.byte	0x2e
+ 1293 0193 10       		.uleb128 0x10
+ 1294              		.align 4
+ 1295              	.LEFDE21:
+ 1296              		.text
+ 1297              	.Letext0:
+GAS LISTING /tmp/ccCoVgtB.s 			page 40
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 global.cc
+                             .bss:00000000 _ZSt8__ioinit
+     /tmp/ccCoVgtB.s:58     .text:00000000 _ZN9my_structC2ESsi
+     /tmp/ccCoVgtB.s:96     .text:00000038 _ZN9my_structC1ESsi
+     /tmp/ccCoVgtB.s:136    .data:00000000 global_int
+     /tmp/ccCoVgtB.s:143    .bss:00000004 global_string
+     /tmp/ccCoVgtB.s:149    .bss:00000008 global_struct
+     /tmp/ccCoVgtB.s:156    .text:00000070 main
+     /tmp/ccCoVgtB.s:437    .gnu.linkonce.t._ZN9my_structC1ERKS_:00000000 _ZN9my_structC1ERKS_
+     /tmp/ccCoVgtB.s:480    .gnu.linkonce.t._ZN9my_structD1Ev:00000000 _ZN9my_structD1Ev
+     /tmp/ccCoVgtB.s:266    .text:000000fe _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccCoVgtB.s:585    .text:00000250 __tcf_0
+     /tmp/ccCoVgtB.s:607    .text:00000268 __tcf_1
+     /tmp/ccCoVgtB.s:508    .gnu.linkonce.t._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:00000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+     /tmp/ccCoVgtB.s:629    .text:00000280 __tcf_2
+     /tmp/ccCoVgtB.s:651    .text:00000298 _GLOBAL__I__ZN9my_structC2ESsi
+
+UNDEFINED SYMBOLS
+_ZNSsC1ERKSs
+_Unwind_Resume
+_ZNSsD1Ev
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+__cxa_atexit
+_ZNSaIcEC1Ev
+_ZNSsC1EPKcRKSaIcE
+_ZNSaIcED1Ev
+_ZNSs6appendEPKc
+_ZNSt8ios_base4InitD1Ev
+__gxx_personality_v0

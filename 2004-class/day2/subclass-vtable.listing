@@ -1,0 +1,428 @@
+GAS LISTING /tmp/ccXUW271.s 			page 1
+
+
+   1              		.file	"subclass-vtable.cc"
+   2              		.file 1 "subclass-vtable.cc"
+  10              	.Ltext0:
+  11              		.align 2
+  12              	.globl main
+  14              	main:
+  15              	.LFB8:
+   1:subclass-vtable.cc **** class onefield {
+   2:subclass-vtable.cc ****   private:
+   3:subclass-vtable.cc ****     int field;
+   4:subclass-vtable.cc ****   public:
+   5:subclass-vtable.cc ****     virtual void setField(int f);
+   6:subclass-vtable.cc ****     virtual int getField() const;
+   7:subclass-vtable.cc **** };
+   8:subclass-vtable.cc **** 
+   9:subclass-vtable.cc **** class onefield_subclass : public onefield {
+  10:subclass-vtable.cc ****   private:
+  11:subclass-vtable.cc ****     int otherfield;
+  12:subclass-vtable.cc ****   public:
+  13:subclass-vtable.cc ****     // Override setField, but not getField.
+  14:subclass-vtable.cc ****     virtual void setField(int f);
+  15:subclass-vtable.cc **** };
+  16:subclass-vtable.cc **** 
+  17:subclass-vtable.cc **** int main(int argc, char **argv) {
+  16              		.loc 1 17 0
+  17 0000 55       		pushl	%ebp
+  18              	.LCFI0:
+  19 0001 89E5     		movl	%esp, %ebp
+  20              	.LCFI1:
+  21 0003 83EC38   		subl	$56, %esp
+  22              	.LCFI2:
+  23 0006 83E4F0   		andl	$-16, %esp
+  24 0009 B8000000 		movl	$0, %eax
+  24      00
+  25 000e 29C4     		subl	%eax, %esp
+  26              	.LBB2:
+  18:subclass-vtable.cc ****     onefield of;
+  27              		.loc 1 18 0
+  28 0010 83EC0C   		subl	$12, %esp
+  29 0013 8D45E8   		leal	-24(%ebp), %eax
+  30 0016 50       		pushl	%eax
+  31              	.LCFI3:
+  32 0017 E8FCFFFF 		call	_ZN8onefieldC1Ev
+  32      FF
+  33 001c 83C410   		addl	$16, %esp
+  19:subclass-vtable.cc ****     onefield_subclass ofs;
+  34              		.loc 1 19 0
+  35 001f 83EC0C   		subl	$12, %esp
+  36 0022 8D45D8   		leal	-40(%ebp), %eax
+  37 0025 50       		pushl	%eax
+  38 0026 E8FCFFFF 		call	_ZN17onefield_subclassC1Ev
+  38      FF
+  39 002b 83C410   		addl	$16, %esp
+  20:subclass-vtable.cc **** 
+  21:subclass-vtable.cc ****     of.setField(13);
+  40              		.loc 1 21 0
+  41 002e 83EC08   		subl	$8, %esp
+GAS LISTING /tmp/ccXUW271.s 			page 2
+
+
+  42 0031 6A0D     		pushl	$13
+  43 0033 8D45E8   		leal	-24(%ebp), %eax
+  44 0036 50       		pushl	%eax
+  45 0037 E8FCFFFF 		call	_ZN8onefield8setFieldEi
+  45      FF
+  46 003c 83C410   		addl	$16, %esp
+  22:subclass-vtable.cc ****     ofs.setField(17);
+  47              		.loc 1 22 0
+  48 003f 83EC08   		subl	$8, %esp
+  49 0042 6A11     		pushl	$17
+  50 0044 8D45D8   		leal	-40(%ebp), %eax
+  51 0047 50       		pushl	%eax
+  52 0048 E8FCFFFF 		call	_ZN17onefield_subclass8setFieldEi
+  52      FF
+  53 004d 83C410   		addl	$16, %esp
+  23:subclass-vtable.cc **** 
+  24:subclass-vtable.cc ****     onefield *ofp = new onefield_subclass;
+  54              		.loc 1 24 0
+  55 0050 83EC0C   		subl	$12, %esp
+  56 0053 6A0C     		pushl	$12
+  57 0055 E8FCFFFF 		call	_Znwj
+  57      FF
+  58 005a 83C410   		addl	$16, %esp
+  59 005d 8945CC   		movl	%eax, -52(%ebp)
+  60 0060 83EC0C   		subl	$12, %esp
+  61 0063 FF75CC   		pushl	-52(%ebp)
+  62 0066 E8FCFFFF 		call	_ZN17onefield_subclassC1Ev
+  62      FF
+  63 006b 83C410   		addl	$16, %esp
+  64 006e B200     		movb	$0, %dl
+  65 0070 8B45CC   		movl	-52(%ebp), %eax
+  66 0073 8945D4   		movl	%eax, -44(%ebp)
+  67 0076 84D2     		testb	%dl, %dl
+  68 0078 740E     		je	.L9
+  69 007a 83EC0C   		subl	$12, %esp
+  70 007d FF75CC   		pushl	-52(%ebp)
+  71 0080 E8FCFFFF 		call	_ZdlPv
+  71      FF
+  72 0085 83C410   		addl	$16, %esp
+  73              	.L9:
+  25:subclass-vtable.cc **** 
+  26:subclass-vtable.cc ****     ofp->setField(27);
+  74              		.loc 1 26 0
+  75 0088 83EC08   		subl	$8, %esp
+  76 008b 8B45D4   		movl	-44(%ebp), %eax
+  77 008e 8B00     		movl	(%eax), %eax
+  78 0090 6A1B     		pushl	$27
+  79 0092 FF75D4   		pushl	-44(%ebp)
+  80 0095 8B00     		movl	(%eax), %eax
+  81 0097 FFD0     		call	*%eax
+  82 0099 83C410   		addl	$16, %esp
+  27:subclass-vtable.cc **** 
+  28:subclass-vtable.cc ****     int i = ofp->getField();
+  83              		.loc 1 28 0
+  84 009c 83EC0C   		subl	$12, %esp
+  85 009f 8B45D4   		movl	-44(%ebp), %eax
+  86 00a2 8B00     		movl	(%eax), %eax
+GAS LISTING /tmp/ccXUW271.s 			page 3
+
+
+  87 00a4 83C004   		addl	$4, %eax
+  88 00a7 FF75D4   		pushl	-44(%ebp)
+  89 00aa 8B00     		movl	(%eax), %eax
+  90 00ac FFD0     		call	*%eax
+  91 00ae 83C410   		addl	$16, %esp
+  92 00b1 8945D0   		movl	%eax, -48(%ebp)
+  29:subclass-vtable.cc **** 
+  30:subclass-vtable.cc ****     delete ofp;
+  93              		.loc 1 30 0
+  94 00b4 83EC0C   		subl	$12, %esp
+  95 00b7 FF75D4   		pushl	-44(%ebp)
+  96 00ba E8FCFFFF 		call	_ZdlPv
+  96      FF
+  97 00bf 83C410   		addl	$16, %esp
+  31:subclass-vtable.cc **** 
+  32:subclass-vtable.cc ****     return i + of.getField();
+  98              		.loc 1 32 0
+  99 00c2 83EC0C   		subl	$12, %esp
+ 100 00c5 8D45E8   		leal	-24(%ebp), %eax
+ 101 00c8 50       		pushl	%eax
+ 102 00c9 E8FCFFFF 		call	_ZNK8onefield8getFieldEv
+ 102      FF
+ 103 00ce 83C410   		addl	$16, %esp
+ 104 00d1 0345D0   		addl	-48(%ebp), %eax
+ 105              	.LBE2:
+  33:subclass-vtable.cc **** }
+ 106              		.loc 1 33 0
+ 107 00d4 C9       		leave
+ 108 00d5 C3       		ret
+ 109              	.LFE8:
+ 110              	.Lfe1:
+ 112              		.align 2
+ 113              	.globl _ZN8onefield8setFieldEi
+ 115              	_ZN8onefield8setFieldEi:
+ 116              	.LFB10:
+  34:subclass-vtable.cc **** 
+  35:subclass-vtable.cc **** 
+  36:subclass-vtable.cc **** void onefield::setField(int f) {
+ 117              		.loc 1 36 0
+ 118              	.LBB3:
+ 119 00d6 55       		pushl	%ebp
+ 120              	.LCFI4:
+ 121 00d7 89E5     		movl	%esp, %ebp
+ 122              	.LCFI5:
+  37:subclass-vtable.cc ****     this->field = f;
+ 123              		.loc 1 37 0
+ 124 00d9 8B5508   		movl	8(%ebp), %edx
+ 125 00dc 8B450C   		movl	12(%ebp), %eax
+ 126 00df 894204   		movl	%eax, 4(%edx)
+  38:subclass-vtable.cc **** }
+ 127              		.loc 1 38 0
+ 128 00e2 C9       		leave
+ 129 00e3 C3       		ret
+ 130              	.LBE3:
+ 131              	.LFE10:
+ 132              	.Lfe2:
+ 134              		.align 2
+GAS LISTING /tmp/ccXUW271.s 			page 4
+
+
+ 135              	.globl _ZNK8onefield8getFieldEv
+ 137              	_ZNK8onefield8getFieldEv:
+ 138              	.LFB12:
+  39:subclass-vtable.cc **** int onefield::getField() const {
+ 139              		.loc 1 39 0
+ 140              	.LBB4:
+ 141 00e4 55       		pushl	%ebp
+ 142              	.LCFI6:
+ 143 00e5 89E5     		movl	%esp, %ebp
+ 144              	.LCFI7:
+  40:subclass-vtable.cc ****     return this->field;
+ 145              		.loc 1 40 0
+ 146 00e7 8B4508   		movl	8(%ebp), %eax
+ 147 00ea 8B4004   		movl	4(%eax), %eax
+ 148              	.LBE4:
+  41:subclass-vtable.cc **** }
+ 149              		.loc 1 41 0
+ 150 00ed C9       		leave
+ 151 00ee C3       		ret
+ 152              	.LFE12:
+ 153              	.Lfe3:
+ 155 00ef 90       		.align 2
+ 156              	.globl _ZN17onefield_subclass8setFieldEi
+ 158              	_ZN17onefield_subclass8setFieldEi:
+ 159              	.LFB14:
+  42:subclass-vtable.cc **** 
+  43:subclass-vtable.cc **** void onefield_subclass::setField(int f) {
+ 160              		.loc 1 43 0
+ 161              	.LBB5:
+ 162 00f0 55       		pushl	%ebp
+ 163              	.LCFI8:
+ 164 00f1 89E5     		movl	%esp, %ebp
+ 165              	.LCFI9:
+ 166 00f3 83EC08   		subl	$8, %esp
+ 167              	.LCFI10:
+  44:subclass-vtable.cc ****     onefield::setField(f);
+ 168              		.loc 1 44 0
+ 169 00f6 83EC08   		subl	$8, %esp
+ 170 00f9 FF750C   		pushl	12(%ebp)
+ 171 00fc FF7508   		pushl	8(%ebp)
+ 172              	.LCFI11:
+ 173 00ff E8FCFFFF 		call	_ZN8onefield8setFieldEi
+ 173      FF
+ 174 0104 83C410   		addl	$16, %esp
+  45:subclass-vtable.cc ****     otherfield = f;
+ 175              		.loc 1 45 0
+ 176 0107 8B5508   		movl	8(%ebp), %edx
+ 177 010a 8B450C   		movl	12(%ebp), %eax
+ 178 010d 894208   		movl	%eax, 8(%edx)
+  46:subclass-vtable.cc **** }
+ 179              		.loc 1 46 0
+ 180 0110 C9       		leave
+ 181 0111 C3       		ret
+ 182              	.LBE5:
+ 183              	.LFE14:
+ 184              	.Lfe4:
+ 186              		.weak	_ZTV17onefield_subclass
+GAS LISTING /tmp/ccXUW271.s 			page 5
+
+
+ 187              		.section	.gnu.linkonce.d._ZTV17onefield_subclass,"aw",@progbits
+ 188              		.align 8
+ 191              	_ZTV17onefield_subclass:
+ 192 0000 00000000 		.long	0
+ 193 0004 00000000 		.long	_ZTI17onefield_subclass
+ 194 0008 00000000 		.long	_ZN17onefield_subclass8setFieldEi
+ 195 000c 00000000 		.long	_ZNK8onefield8getFieldEv
+ 196              		.weak	_ZTV8onefield
+ 197              		.section	.gnu.linkonce.d._ZTV8onefield,"aw",@progbits
+ 198              		.align 8
+ 201              	_ZTV8onefield:
+ 202 0000 00000000 		.long	0
+ 203 0004 00000000 		.long	_ZTI8onefield
+ 204 0008 00000000 		.long	_ZN8onefield8setFieldEi
+ 205 000c 00000000 		.long	_ZNK8onefield8getFieldEv
+ 206              		.section	.gnu.linkonce.t._ZN8onefieldC1Ev,"ax",@progbits
+ 207              		.align 2
+ 208              		.weak	_ZN8onefieldC1Ev
+ 210              	_ZN8onefieldC1Ev:
+ 211              	.LFB15:
+ 212              		.loc 1 18 0
+ 213              	.LBB6:
+ 214 0000 55       		pushl	%ebp
+ 215              	.LCFI12:
+ 216 0001 89E5     		movl	%esp, %ebp
+ 217              	.LCFI13:
+ 218              		.loc 1 18 0
+ 219 0003 8B4508   		movl	8(%ebp), %eax
+ 220 0006 C7000800 		movl	$_ZTV8onefield+8, (%eax)
+ 220      0000
+ 221 000c C9       		leave
+ 222 000d C3       		ret
+ 223              	.LBE6:
+ 224              	.LFE15:
+ 225              	.Lfe5:
+ 227              		.section	.gnu.linkonce.t._ZN17onefield_subclassC1Ev,"ax",@progbits
+ 228              		.align 2
+ 229              		.weak	_ZN17onefield_subclassC1Ev
+ 231              	_ZN17onefield_subclassC1Ev:
+ 232              	.LFB16:
+ 233              		.loc 1 19 0
+ 234              	.LBB7:
+ 235 0000 55       		pushl	%ebp
+ 236              	.LCFI14:
+ 237 0001 89E5     		movl	%esp, %ebp
+ 238              	.LCFI15:
+ 239 0003 83EC08   		subl	$8, %esp
+ 240              	.LCFI16:
+ 241              		.loc 1 19 0
+ 242 0006 83EC0C   		subl	$12, %esp
+ 243 0009 FF7508   		pushl	8(%ebp)
+ 244              	.LCFI17:
+ 245 000c E8FCFFFF 		call	_ZN8onefieldC2Ev
+ 245      FF
+ 246 0011 83C410   		addl	$16, %esp
+ 247 0014 8B4508   		movl	8(%ebp), %eax
+ 248 0017 C7000800 		movl	$_ZTV17onefield_subclass+8, (%eax)
+GAS LISTING /tmp/ccXUW271.s 			page 6
+
+
+ 248      0000
+ 249 001d C9       		leave
+ 250 001e C3       		ret
+ 251              	.LBE7:
+ 252              	.LFE16:
+ 253              	.Lfe6:
+ 255              		.weak	_ZTI8onefield
+ 256              		.section	.gnu.linkonce.d._ZTI8onefield,"aw",@progbits
+ 257              		.align 4
+ 260              	_ZTI8onefield:
+ 261 0000 08000000 		.long	_ZTVN10__cxxabiv117__class_type_infoE+8
+ 262 0004 00000000 		.long	_ZTS8onefield
+ 263              		.weak	_ZTI17onefield_subclass
+ 264              		.section	.gnu.linkonce.d._ZTI17onefield_subclass,"aw",@progbits
+ 265              		.align 4
+ 268              	_ZTI17onefield_subclass:
+ 269 0000 08000000 		.long	_ZTVN10__cxxabiv120__si_class_type_infoE+8
+ 270 0004 00000000 		.long	_ZTS17onefield_subclass
+ 271 0008 00000000 		.long	_ZTI8onefield
+ 272              		.weak	_ZTS17onefield_subclass
+ 273              		.section	.gnu.linkonce.r._ZTS17onefield_subclass,"a",@progbits
+ 276              	_ZTS17onefield_subclass:
+ 277 0000 31376F6E 		.string	"17onefield_subclass"
+ 277      65666965 
+ 277      6C645F73 
+ 277      7562636C 
+ 277      61737300 
+ 278              		.weak	_ZTS8onefield
+ 279              		.section	.gnu.linkonce.r._ZTS8onefield,"a",@progbits
+ 282              	_ZTS8onefield:
+ 283 0000 386F6E65 		.string	"8onefield"
+ 283      6669656C 
+ 283      6400
+ 284              		.section	.gnu.linkonce.t._ZN8onefieldC2Ev,"ax",@progbits
+ 285              		.align 2
+ 286              		.weak	_ZN8onefieldC2Ev
+ 288              	_ZN8onefieldC2Ev:
+ 289              	.LFB17:
+ 290              		.loc 1 18 0
+ 291              	.LBB8:
+ 292 0000 55       		pushl	%ebp
+ 293              	.LCFI18:
+ 294 0001 89E5     		movl	%esp, %ebp
+ 295              	.LCFI19:
+ 296              		.loc 1 18 0
+ 297 0003 8B4508   		movl	8(%ebp), %eax
+ 298 0006 C7000800 		movl	$_ZTV8onefield+8, (%eax)
+ 298      0000
+ 299 000c C9       		leave
+ 300 000d C3       		ret
+ 301              	.LBE8:
+ 302              	.LFE17:
+ 303              	.Lfe7:
+ 461              	.Lframe1:
+ 462 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 463              	.LSCIE1:
+ 464 0004 00000000 		.long	0x0
+GAS LISTING /tmp/ccXUW271.s 			page 7
+
+
+ 465 0008 01       		.byte	0x1
+ 466 0009 7A5000   		.string	"zP"
+ 467 000c 01       		.uleb128 0x1
+ 468 000d 7C       		.sleb128 -4
+ 469 000e 08       		.byte	0x8
+ 470 000f 05       		.uleb128 0x5
+ 471 0010 00       		.byte	0x0
+ 472 0011 00000000 		.long	__gxx_personality_v0
+ 473 0015 0C       		.byte	0xc
+ 474 0016 04       		.uleb128 0x4
+ 475 0017 04       		.uleb128 0x4
+ 476 0018 88       		.byte	0x88
+ 477 0019 01       		.uleb128 0x1
+ 478 001a 0000     		.align 4
+ 479              	.LECIE1:
+ 480              	.LSFDE1:
+ 481 001c 24000000 		.long	.LEFDE1-.LASFDE1
+ 482              	.LASFDE1:
+ 483 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 484 0024 00000000 		.long	.LFB8
+ 485 0028 D6000000 		.long	.LFE8-.LFB8
+ 486 002c 00       		.uleb128 0x0
+ 487 002d 04       		.byte	0x4
+ 488 002e 01000000 		.long	.LCFI0-.LFB8
+ 489 0032 0E       		.byte	0xe
+ 490 0033 08       		.uleb128 0x8
+ 491 0034 85       		.byte	0x85
+ 492 0035 02       		.uleb128 0x2
+ 493 0036 04       		.byte	0x4
+ 494 0037 02000000 		.long	.LCFI1-.LCFI0
+ 495 003b 0D       		.byte	0xd
+ 496 003c 05       		.uleb128 0x5
+ 497 003d 04       		.byte	0x4
+ 498 003e 14000000 		.long	.LCFI3-.LCFI1
+ 499 0042 2E       		.byte	0x2e
+ 500 0043 10       		.uleb128 0x10
+ 501              		.align 4
+ 502              	.LEFDE1:
+ 503              		.text
+ 504              	.Letext0:
+GAS LISTING /tmp/ccXUW271.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 subclass-vtable.cc
+     /tmp/ccXUW271.s:14     .text:00000000 main
+     /tmp/ccXUW271.s:210    .gnu.linkonce.t._ZN8onefieldC1Ev:00000000 _ZN8onefieldC1Ev
+     /tmp/ccXUW271.s:231    .gnu.linkonce.t._ZN17onefield_subclassC1Ev:00000000 _ZN17onefield_subclassC1Ev
+     /tmp/ccXUW271.s:115    .text:000000d6 _ZN8onefield8setFieldEi
+     /tmp/ccXUW271.s:158    .text:000000f0 _ZN17onefield_subclass8setFieldEi
+     /tmp/ccXUW271.s:137    .text:000000e4 _ZNK8onefield8getFieldEv
+     /tmp/ccXUW271.s:191    .gnu.linkonce.d._ZTV17onefield_subclass:00000000 _ZTV17onefield_subclass
+     /tmp/ccXUW271.s:268    .gnu.linkonce.d._ZTI17onefield_subclass:00000000 _ZTI17onefield_subclass
+     /tmp/ccXUW271.s:201    .gnu.linkonce.d._ZTV8onefield:00000000 _ZTV8onefield
+     /tmp/ccXUW271.s:260    .gnu.linkonce.d._ZTI8onefield:00000000 _ZTI8onefield
+     /tmp/ccXUW271.s:288    .gnu.linkonce.t._ZN8onefieldC2Ev:00000000 _ZN8onefieldC2Ev
+     /tmp/ccXUW271.s:282    .gnu.linkonce.r._ZTS8onefield:00000000 _ZTS8onefield
+     /tmp/ccXUW271.s:276    .gnu.linkonce.r._ZTS17onefield_subclass:00000000 _ZTS17onefield_subclass
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+_ZTVN10__cxxabiv117__class_type_infoE
+_ZTVN10__cxxabiv120__si_class_type_infoE
+__gxx_personality_v0

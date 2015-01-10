@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 3: Basic Templates</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 3: Basic Templates</h1>
+
+    Template code basically just tells the compiler to generate
+    multiple copies of the code, one for each set of arguments.
+
+    <h2>Simple template</h2>
+
+    Here is a simple template for the max function, and an instantiation of it:
+    <a href="template-max.cc">template-max.cc</a>,
+    <a href="template-max.s">template-max.s</a>,
+    <a href="template-max.listing">template-max.listing</a>.
+
+    Symbol list:
+    <dl>
+
+    <dt>_Z3maxIiET_S0_S0_<dd> max&lt;int&gt; instantiation.
+    <dt>_Z3maxIdET_S0_S0_<dd> max&lt;double&gt; instantiation.
+    <dt>_Z3maxI9my_structET_S1_S1_<dd> max&lt;my_struct&gt; instantiation.
+    <dt>_Z3maxIbET_S0_S0_<dd> max over bool.
+    </dl>
+
+    <h2>Specialization</h2>
+
+    Template specialization is just a clarification to the compiler.
+    Of course, if you instantiate a specialization of a template, you
+    get the specialized code.
+
+    <h2>Templated Class Methods</h2>
+
+    Lets look at how templated class methods work:
+
+    <a href="templated-method.cc">templated-method.cc</a>,
+    <a href="templated-method.s">templated-method.s</a>,
+    <a href="templated-method.listing">templated-method.listing</a>.
+    
+    <p>
+
+    Pretty straight forward. You end up with a mangled symbol that
+    includes both types, something like:
+    <dl>
+    <dt>_ZN9my_structIdE14set_field_fromIiEEvT_<dd>
+    my_struct&lt;double&gt;::set_field_from&lt;int&gt;(void)
+    </dl>
+
+    And of course there is no way to have a templated virtual method,
+    which is mildly annoying but somewhat understandable.
+
+
+    <h2>Recursive Templating</h2>
+
+    So templating is just pattern matching. We can use this to do
+    strange tricks. The standard trick is computing Fibonacci numbers
+    at compile time:
+    <a href="fibonacci.cc">fibonacci.cc</a>,
+    <a href="fibonacci.s">fibonacci.s</a>,
+    <a href="fibonacci.listing">fibonacci.listing</a>.
+
+    <p>
+    As we can see from this example, the computation is done at
+    compile time, and the result (2584) is placed in the binary
+    directly.
+
+    <p>
+
+    More information about cute template tricks is available at <a
+    href="http://boost.org">boost.org</a>. I highly recommend reading
+    through their stuff. Some of it is over the top (eg, Lambda), but
+    much of it is useful and educational.
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 21 17:36:31 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,63 @@
+GAS LISTING /tmp/ccTNlSQq.s 			page 1
+
+
+   1              		.file	"hello-world.c"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+ 161              	.section	.rodata
+ 162              	.LC0:
+ 163 0000 48656C6C 		.string	"Hello World.\n"
+ 163      6F20576F 
+ 163      726C642E 
+ 163      0A00
+ 164              	.text
+ 165              		.align 4
+ 169              	.globl main
+ 171              	main:
+ 172 0000 55       		pushl %ebp
+ 173 0001 89E5     		movl %esp,%ebp
+ 174 0003 83EC08   		subl $8,%esp
+   1:hello-world.c **** #include <stdio.h>
+   2:hello-world.c **** 
+   3:hello-world.c **** int
+   4:hello-world.c **** main (int argc, char **argv)
+   5:hello-world.c **** {
+ 176              	.LM1:
+   6:hello-world.c ****     printf("Hello World.\n");
+ 178              	.LM2:
+ 179 0006 83C4F4   		addl $-12,%esp
+ 180 0009 68000000 		pushl $.LC0
+ 180      00
+ 181 000e E8FCFFFF 		call printf
+ 181      FF
+ 182 0013 83C410   		addl $16,%esp
+   7:hello-world.c ****     return 0;
+ 184              	.LM3:
+ 185 0016 31C0     		xorl %eax,%eax
+ 186 0018 EB06     		jmp .L2
+   8:hello-world.c **** }
+ 188              	.LM4:
+ 189 001a 8DB60000 		.p2align 4,,7
+ 189      0000
+ 190              	.L2:
+ 191 0020 C9       		leave
+ 192 0021 C3       		ret
+ 193              	.Lfe1:
+ 195              	.Lscope0:
+ 197              		.text
+ 199              	Letext:
+ 200 0022 8DB42600 		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+ 200      0000008D 
+ 200      BC270000 
+ 200      0000
+GAS LISTING /tmp/ccTNlSQq.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hello-world.c
+     /tmp/ccTNlSQq.s:171    .text:00000000 main
+     /tmp/ccTNlSQq.s:199    .text:00000022 Letext
+
+UNDEFINED SYMBOLS
+printf

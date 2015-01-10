@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 3: Exceptions</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 3: Exceptions</h1>
+
+    Exceptions are wonderful things. They let you report error
+    conditions in vaguely correct ways. But C++ exceptions have to
+    live in a highly hostile environment. No virtual machine to coddle
+    them, they have to leap over large blocks of legacy C code
+    unharmed. TODO: More flavortext.
+
+    <p>
+
+    For more detail about exception handling, check out <a
+    href="http://www.codesourcery.com/cxx-abi/abi-eh.html">the Itanium
+    Exception handling ABI</a>.
+
+    <h2>How Exceptions Work</h2>
+
+    Exceptions are basically a non-local-goto. They allow a program to
+    transfer control up the stack, in cases when the code at the
+    bottom of the stack doesn't know what else to do. They are even
+    more flexible then this becuase there is a registry system, so
+    that an exception is thrown up the stack until it hits the first
+    stack frame where some expressed interest in dealing with it (ie,
+    a catch () handler).
+    <p>
+    But this is C++, and nothing is easy. So on our way up the stack,
+    it is important that we properly destroy our stack frames. In C,
+    we could just ignore them, becuase there is no such thing as a
+    destructor. Of course, this simplicity makes it very hard to make
+    C programs that properly handle non-local gotos. But we are
+    talking about C++ and complexity.
+    <p>
+    So the basic way in which we handle exceptions is to walk up the
+    stack, calling the cleanup code as we go, until we find someone
+    who wants to handle our exception.
+    <p>
+    Exceptions are also objects, and the fact that they can use
+    inheritance is important. They have an object lifecycle, they get
+    created and destroyed. We will look at this in more detail.
+
+    <h2>Hello World-ish example.</h2>
+
+    A Hello Worldish example of exceptions:
+    <a href="hello-exceptions.cc">hello-exceptions.cc</a>,
+    <a href="hello-exceptions.s">hello-exceptions.s</a>,
+    <a href="hello-exceptions.listing">hello-exceptions.listing</a>.
+
+    <p>
+    Time for our good old list of symbols:
+    <dl>
+    <dt>_ZNSaIcEC1E<dd>std::allocator&lt;char&gt;::allocator
+    <dt>_ZNSsC1EPKcRKSaIcE<dd>string(const char *)
+    <dt>_ZNSsD1Ev<dd>~string()
+
+    <dt>__cxa_allocate_exception<dd>Allocate memory for an exception.
+    Generally on the heap. Has access to a last-resort piece of memory
+    for this purpose, so we can throw out of memory exceptions.
+
+    <dt>__cxa_throw<dd>External interface to throw in the C++ support
+    library. Takes three arguments: an exception object, a typeinfo
+    for that object, and a pointer to the destructor to call when we
+    are done with that object.
+
+    <dt>_Unwind_RaiseException<dd>Function called by __cxa_throw.
+    
+    <dt>_Unwind_Resume<dd>Resume the unwind process, called at the end
+    of cleanup code that didn't return to the normal thread of
+    execution (ie, not a catch).
+
+    <dt>__cxa_begin_catch<dd>Keeps track of which exceptions are being
+    caught in which order, pushes this exceptoin on the stack of
+    exceptions that are being handled.
+
+    <dt>__cxa_end_catch<dd>Take the exception we are processing off
+    the stack and free it. When it returns, we should be in our normal
+    execution thread.
+
+    </dl>
+
+    <h2>Unwinding the Stack</h2>
+
+    How does unwinding the stack really work? It happens in two passes.
+    <p>
+    On the first pass (Phase One), we walk up the stack until we find
+    an exception handler that wants to handle our exception. it is
+    even possible to find a handler up the stack that tells us to
+    ignore the exception. I'm told this functionality is used in
+    Common Lisp implementations.
+    <p>
+    The second pass (Phase Two) walks up the stack, executing the
+    cleanup code, until we get to the frame which is going to do the
+    catch.
+    <p>
+    There are two specific methods:
+
+    <h3>SjLj stack unwinding</h3>
+
+    In SjLj (Setjmp, Longjmp) stack unwinding, we do a setjmp-ish call
+    each time we enter a function. As we go up the stack, we just
+    longjmp to each setjmp point in succession.
+
+    <p>
+    An example of SjLj exceptions:
+    <a href="hello-exceptions.cc">hello-exceptions.cc</a>,
+    <a href="hello-exceptions.listing.sjlj">hello-exceptions.listing.sjlj</a>,
+
+    <h3>Dwarf2 stack unwinding</h3>
+
+    In Dwarf2 stack unwinding we don't have to do any work as long as
+    there are no exceptions, but complexity is increased. We create a
+    symbol table similar to debugging symbols that lets us find out
+    the right places to walk up the stack to.
+    
+    <h2>Forced Unwind versus Regular</h2>
+
+    There is the concept of a Forced unwind of the stack. A Forced
+    unwind is not caused by an exception being thrown. A forced unwind
+    is when the exception handlers on the call stack aren't allowed to
+    catch an exception, and some other code takes care of knowing when
+    to stop. Two examples of forced unwind are longjmp() and
+    pthread_cancel().
+
+    <h2>Rethrowing</h2>
+    
+    An example of rethrowing a caught exception:
+    <a href="rethrow.cc">rethrow.cc</a>,
+    <a href="rethrow.s">rethrow.s</a>,
+    <a href="rethrow.listing">rethrow.listing</a>,
+    <a href="rethrow.listing.sjlj">rethrow.listing.sjlj</a>.
+
+    <h2>Catching and Throwing a Different Exception</h2>
+
+    See the above example. Pretty straightforward. unless we want to
+    throw and catch an exception <i>while</i> handling an exception.
+
+    <h2>throw() specification on a function</h2>
+
+    The throw() specification will cause the unwind Phase One to fail
+    with unexepected exception.
+
+    <h2>Passing through code that doesn't know about exceptions</h2>
+
+    THis works out, partly because code that doesn't know about
+    exceptions can't have destructors to be called. More succinctly,
+    longjmp just works in native C code, stack frames can just be
+    discarded.
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 21 17:36:31 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

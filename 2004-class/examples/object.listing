@@ -1,0 +1,177 @@
+GAS LISTING /tmp/ccksw82X.s 			page 1
+
+
+   1              		.file	"object.cc"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+  32              		.align 4
+  36              	.globl main
+  38              	main:
+  39              	.LFB1:
+  40 0000 55       		pushl %ebp
+  41              	.LCFI0:
+  42 0001 89E5     		movl %esp,%ebp
+  43              	.LCFI1:
+  44 0003 83EC18   		subl $24,%esp
+  45              	.LCFI2:
+   1:object.cc     **** struct onefield_struct {
+   2:object.cc     ****     int field;
+   3:object.cc     **** public:
+   4:object.cc     ****     onefield_struct(int f) {
+   5:object.cc     ****         field = f;
+   6:object.cc     ****     }
+   7:object.cc     **** };
+   8:object.cc     **** 
+   9:object.cc     **** /*
+  10:object.cc     **** class onefield_class {
+  11:object.cc     ****     int field;
+  12:object.cc     **** public:
+  13:object.cc     ****     onefield_class(int f) : field(f) { }
+  14:object.cc     **** };
+  15:object.cc     **** */
+  16:object.cc     **** 
+  17:object.cc     **** int main(int argc, char **argv) {
+  47              	.LM1:
+  49              	.LM2:
+  50              	.LBB2:
+  18:object.cc     ****     onefield_struct os(13);
+  52              	.LM3:
+  53 0006 83C4F8   		addl $-8,%esp
+  54 0009 6A0D     		pushl $13
+  55 000b 8D45FC   		leal -4(%ebp),%eax
+  56 000e 50       		pushl %eax
+  57              	.LCFI3:
+  58 000f E8FCFFFF 		call __15onefield_structi
+  58      FF
+  59 0014 83C410   		addl $16,%esp
+  19:object.cc     ****     //    onefield_class oc(9);
+  20:object.cc     **** 
+  21:object.cc     ****     //    onefield_struct *osp = new onefield_struct(17);
+  22:object.cc     ****     //    onefield_class *ocp = new onefield_class(23);
+  23:object.cc     **** 
+  24:object.cc     ****     return 0;
+  61              	.LM4:
+  62 0017 31C0     		xorl %eax,%eax
+  63 0019 EB05     		jmp .L4
+  64              	.LBE2:
+  65 001b 31C0     		xorl %eax,%eax
+  66 001d EB01     		jmp .L4
+  25:object.cc     **** }
+GAS LISTING /tmp/ccksw82X.s 			page 2
+
+
+  68              	.LM5:
+  69 001f 90       		.p2align 4,,7
+  70              	.L4:
+  71 0020 C9       		leave
+  72 0021 C3       		ret
+  73              	.LFE1:
+  74              	.Lfe1:
+  79              	.Lscope0:
+  81              	.section	.gnu.linkonce.t.__15onefield_structi,"ax",@progbits
+  82              		.align 4
+  86              		.weak	__15onefield_structi
+  88              	__15onefield_structi:
+  89              	.LFB2:
+  90 0000 55       		pushl %ebp
+  91              	.LCFI4:
+  92 0001 89E5     		movl %esp,%ebp
+  93              	.LCFI5:
+  95              	.LM6:
+  96 0003 8B4D08   		movl 8(%ebp),%ecx
+  97 0006 8B550C   		movl 12(%ebp),%edx
+  99              	.LM7:
+ 100              	.LBB3:
+ 102              	.LM8:
+ 103 0009 8911     		movl %edx,(%ecx)
+ 104              	.LBE3:
+ 105              	.L3:
+ 106 000b 89C8     		movl %ecx,%eax
+ 107 000d EB00     		jmp .L2
+ 109              	.LM9:
+ 110              	.L2:
+ 111 000f C9       		leave
+ 112 0010 C3       		ret
+ 113              	.LFE2:
+ 114              	.Lfe2:
+ 120              	.Lscope1:
+ 122 0011 8D7600   		.text
+ 124              	Letext:
+ 125              	
+ 126 0022 8DB42600 	.section	.eh_frame,"aw",@progbits
+ 126      0000008D 
+ 126      BC270000 
+ 126      0000
+ 127              	__FRAME_BEGIN__:
+ 128 0000 10000000 		.4byte	.LLCIE1
+ 129              	.LSCIE1:
+ 130 0004 00000000 		.4byte	0x0
+ 131 0008 01       		.byte	0x1
+ 132 0009 00       		.byte	0x0
+ 133 000a 01       		.byte	0x1
+ 134 000b 7C       		.byte	0x7c
+ 135 000c 08       		.byte	0x8
+ 136 000d 0C       		.byte	0xc
+ 137 000e 04       		.byte	0x4
+ 138 000f 04       		.byte	0x4
+ 139 0010 88       		.byte	0x88
+ 140 0011 01       		.byte	0x1
+ 141 0012 0000     		.align 4
+GAS LISTING /tmp/ccksw82X.s 			page 3
+
+
+ 142              	.LECIE1:
+ 143              		.set	.LLCIE1,.LECIE1-.LSCIE1
+ 144 0014 24000000 		.4byte	.LLFDE1
+ 145              	.LSFDE1:
+ 146 0018 18000000 		.4byte	.LSFDE1-__FRAME_BEGIN__
+ 147 001c 00000000 		.4byte	.LFB1
+ 148 0020 22000000 		.4byte	.LFE1-.LFB1
+ 149 0024 04       		.byte	0x4
+ 150 0025 01000000 		.4byte	.LCFI0-.LFB1
+ 151 0029 0E       		.byte	0xe
+ 152 002a 08       		.byte	0x8
+ 153 002b 85       		.byte	0x85
+ 154 002c 02       		.byte	0x2
+ 155 002d 04       		.byte	0x4
+ 156 002e 02000000 		.4byte	.LCFI1-.LCFI0
+ 157 0032 0D       		.byte	0xd
+ 158 0033 05       		.byte	0x5
+ 159 0034 04       		.byte	0x4
+ 160 0035 0C000000 		.4byte	.LCFI3-.LCFI1
+ 161 0039 2E       		.byte	0x2e
+ 162 003a 10       		.byte	0x10
+ 163 003b 00       		.align 4
+ 164              	.LEFDE1:
+ 165              		.set	.LLFDE1,.LEFDE1-.LSFDE1
+ 166 003c 1C000000 		.4byte	.LLFDE3
+ 167              	.LSFDE3:
+ 168 0040 40000000 		.4byte	.LSFDE3-__FRAME_BEGIN__
+ 169 0044 00000000 		.4byte	.LFB2
+ 170 0048 11000000 		.4byte	.LFE2-.LFB2
+ 171 004c 04       		.byte	0x4
+ 172 004d 01000000 		.4byte	.LCFI4-.LFB2
+ 173 0051 0E       		.byte	0xe
+ 174 0052 08       		.byte	0x8
+ 175 0053 85       		.byte	0x85
+ 176 0054 02       		.byte	0x2
+ 177 0055 04       		.byte	0x4
+ 178 0056 02000000 		.4byte	.LCFI5-.LCFI4
+ 179 005a 0D       		.byte	0xd
+ 180 005b 05       		.byte	0x5
+ 181              		.align 4
+ 182              	.LEFDE3:
+ 183              		.set	.LLFDE3,.LEFDE3-.LSFDE3
+ 184              		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+GAS LISTING /tmp/ccksw82X.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 object.cc
+     /tmp/ccksw82X.s:38     .text:00000000 main
+     /tmp/ccksw82X.s:88     .gnu.linkonce.t.__15onefield_structi:00000000 __15onefield_structi
+     /tmp/ccksw82X.s:124    .text:00000022 Letext
+     /tmp/ccksw82X.s:127    .eh_frame:00000000 __FRAME_BEGIN__
+
+NO UNDEFINED SYMBOLS

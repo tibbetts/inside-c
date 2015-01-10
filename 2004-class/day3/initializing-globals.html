@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 3: Initializing Globals</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 3: Initializing Globals</h1>
+
+    Global variables are tricky in C++, since they can have
+    constructors and destructors.
+
+    <h2>Simple Global Objects</h2>
+
+    Lets look at a simple example of initializing a global object:
+    <a href="global.cc">global.cc</a>,
+    <a href="global.s">global.s</a>,
+    <a href="global.listing">global.listing</a>.
+    <p>
+    Basically, global constructors and destructors get "registered"
+    and called at program start and shutdown, using the _init and
+    _fini sections of the executable. Precisely how they get there is
+    linker magic. TODO: Figure out linker magic.
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 21 17:36:31 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,514 @@
+GAS LISTING /tmp/cchXyeOQ.s 			page 1
+
+
+   1              		.file	"basic-constructor.cc"
+   2              		.file 1 "basic-constructor.cc"
+  10              	.Ltext0:
+  11              		.file 2 "/usr/include/gconv.h"
+  12              		.file 3 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stddef.h"
+  13              		.file 4 "/usr/include/wchar.h"
+  14              		.file 5 "/usr/include/libio.h"
+  15              		.file 6 "/usr/include/bits/types.h"
+  16              	.globl _Unwind_Resume
+  17              		.align 2
+  18              	.globl main
+  20              	main:
+  21              	.LFB2:
+   1:basic-constructor.cc **** #include "stdio.h"
+   2:basic-constructor.cc **** 
+   3:basic-constructor.cc **** class onefield {
+   4:basic-constructor.cc ****   private:
+   5:basic-constructor.cc ****     int field;
+   6:basic-constructor.cc ****   public:
+   7:basic-constructor.cc ****     explicit onefield(int f);
+   8:basic-constructor.cc ****     ~onefield();
+   9:basic-constructor.cc **** 
+  10:basic-constructor.cc ****     void setField(int f);
+  11:basic-constructor.cc ****     int getField() const;
+  12:basic-constructor.cc **** };
+  13:basic-constructor.cc **** 
+  14:basic-constructor.cc **** int main(int argc, char **argv) {
+  22              		.loc 1 14 0
+  23 0000 55       		pushl	%ebp
+  24              	.LCFI0:
+  25 0001 89E5     		movl	%esp, %ebp
+  26              	.LCFI1:
+  27 0003 53       		pushl	%ebx
+  28              	.LCFI2:
+  29 0004 83EC34   		subl	$52, %esp
+  30              	.LCFI3:
+  31 0007 83E4F0   		andl	$-16, %esp
+  32 000a B8000000 		movl	$0, %eax
+  32      00
+  33 000f 29C4     		subl	%eax, %esp
+  34              	.LBB2:
+  15:basic-constructor.cc ****     onefield of(13);
+  35              		.loc 1 15 0
+  36 0011 83EC08   		subl	$8, %esp
+  37 0014 6A0D     		pushl	$13
+  38 0016 8D45E8   		leal	-24(%ebp), %eax
+  39 0019 50       		pushl	%eax
+  40              	.LEHB0:
+  41              	.LCFI4:
+  42 001a E8FCFFFF 		call	_ZN8onefieldC1Ei
+  42      FF
+  43              	.LEHE0:
+  44 001f 83C410   		addl	$16, %esp
+  16:basic-constructor.cc **** 
+  17:basic-constructor.cc ****     of.setField(12);
+  45              		.loc 1 17 0
+  46 0022 83EC08   		subl	$8, %esp
+GAS LISTING /tmp/cchXyeOQ.s 			page 2
+
+
+  47 0025 6A0C     		pushl	$12
+  48 0027 8D45E8   		leal	-24(%ebp), %eax
+  49 002a 50       		pushl	%eax
+  50              	.LEHB1:
+  51 002b E8FCFFFF 		call	_ZN8onefield8setFieldEi
+  51      FF
+  52 0030 83C410   		addl	$16, %esp
+  18:basic-constructor.cc **** 
+  19:basic-constructor.cc ****     onefield *ofp = new onefield(23);
+  53              		.loc 1 19 0
+  54 0033 83EC0C   		subl	$12, %esp
+  55 0036 6A04     		pushl	$4
+  56 0038 E8FCFFFF 		call	_Znwj
+  56      FF
+  57              	.LEHE1:
+  58 003d 83C410   		addl	$16, %esp
+  59 0040 8945DC   		movl	%eax, -36(%ebp)
+  60 0043 C645DB01 		movb	$1, -37(%ebp)
+  61 0047 83EC08   		subl	$8, %esp
+  62 004a 6A17     		pushl	$23
+  63 004c FF75DC   		pushl	-36(%ebp)
+  64              	.LEHB2:
+  65 004f E8FCFFFF 		call	_ZN8onefieldC1Ei
+  65      FF
+  66              	.LEHE2:
+  67 0054 83C410   		addl	$16, %esp
+  68 0057 C645DB00 		movb	$0, -37(%ebp)
+  69 005b 8B45DC   		movl	-36(%ebp), %eax
+  70 005e 8945E4   		movl	%eax, -28(%ebp)
+  71 0061 EB25     		jmp	.L3
+  72              	.L16:
+  73 0063 8945D0   		movl	%eax, -48(%ebp)
+  74 0066 8B45D0   		movl	-48(%ebp), %eax
+  75 0069 8945D4   		movl	%eax, -44(%ebp)
+  76 006c 807DDB00 		cmpb	$0, -37(%ebp)
+  77 0070 740E     		je	.L5
+  78 0072 83EC0C   		subl	$12, %esp
+  79 0075 FF75DC   		pushl	-36(%ebp)
+  80 0078 E8FCFFFF 		call	_ZdlPv
+  80      FF
+  81 007d 83C410   		addl	$16, %esp
+  82              	.L5:
+  83 0080 8B45D4   		movl	-44(%ebp), %eax
+  84 0083 8945D0   		movl	%eax, -48(%ebp)
+  85 0086 EB74     		jmp	.L12
+  86              	.L3:
+  87 0088 807DDB00 		cmpb	$0, -37(%ebp)
+  88 008c 740E     		je	.L9
+  89 008e 83EC0C   		subl	$12, %esp
+  90 0091 FF75DC   		pushl	-36(%ebp)
+  91 0094 E8FCFFFF 		call	_ZdlPv
+  91      FF
+  92 0099 83C410   		addl	$16, %esp
+  93              	.L9:
+  20:basic-constructor.cc **** 
+  21:basic-constructor.cc ****     ofp->setField(27);
+  94              		.loc 1 21 0
+GAS LISTING /tmp/cchXyeOQ.s 			page 3
+
+
+  95 009c 83EC08   		subl	$8, %esp
+  96 009f 6A1B     		pushl	$27
+  97 00a1 FF75E4   		pushl	-28(%ebp)
+  98              	.LEHB3:
+  99 00a4 E8FCFFFF 		call	_ZN8onefield8setFieldEi
+  99      FF
+ 100 00a9 83C410   		addl	$16, %esp
+  22:basic-constructor.cc **** 
+  23:basic-constructor.cc ****     delete ofp;
+ 101              		.loc 1 23 0
+ 102 00ac 8B45E4   		movl	-28(%ebp), %eax
+ 103 00af 8945CC   		movl	%eax, -52(%ebp)
+ 104 00b2 837DCC00 		cmpl	$0, -52(%ebp)
+ 105 00b6 741C     		je	.L11
+ 106 00b8 83EC0C   		subl	$12, %esp
+ 107 00bb FF75CC   		pushl	-52(%ebp)
+ 108 00be E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 108      FF
+ 109 00c3 83C410   		addl	$16, %esp
+ 110 00c6 83EC0C   		subl	$12, %esp
+ 111 00c9 FF75CC   		pushl	-52(%ebp)
+ 112 00cc E8FCFFFF 		call	_ZdlPv
+ 112      FF
+ 113 00d1 83C410   		addl	$16, %esp
+ 114              	.L11:
+  24:basic-constructor.cc **** 
+  25:basic-constructor.cc ****     return of.getField();
+ 115              		.loc 1 25 0
+ 116 00d4 83EC0C   		subl	$12, %esp
+ 117 00d7 8D45E8   		leal	-24(%ebp), %eax
+ 118 00da 50       		pushl	%eax
+ 119 00db E8FCFFFF 		call	_ZNK8onefield8getFieldEv
+ 119      FF
+ 120              	.LEHE3:
+ 121 00e0 83C410   		addl	$16, %esp
+ 122 00e3 89C3     		movl	%eax, %ebx
+ 123              	.LBB3:
+ 124 00e5 83EC0C   		subl	$12, %esp
+ 125 00e8 8D45E8   		leal	-24(%ebp), %eax
+ 126 00eb 50       		pushl	%eax
+ 127              	.LEHB4:
+ 128 00ec E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 128      FF
+ 129              	.LEHE4:
+ 130 00f1 83C410   		addl	$16, %esp
+ 131              	.LBE3:
+ 132 00f4 895DE0   		movl	%ebx, -32(%ebp)
+ 133 00f7 EB23     		jmp	.L1
+ 134              	.L17:
+ 135 00f9 8945D0   		movl	%eax, -48(%ebp)
+ 136              	.L12:
+ 137 00fc 8B5DD0   		movl	-48(%ebp), %ebx
+ 138 00ff 83EC0C   		subl	$12, %esp
+ 139 0102 8D45E8   		leal	-24(%ebp), %eax
+ 140 0105 50       		pushl	%eax
+ 141 0106 E8FCFFFF 		call	_ZN8onefieldD1Ev
+ 141      FF
+GAS LISTING /tmp/cchXyeOQ.s 			page 4
+
+
+ 142 010b 83C410   		addl	$16, %esp
+ 143 010e 895DD0   		movl	%ebx, -48(%ebp)
+ 144 0111 83EC0C   		subl	$12, %esp
+ 145 0114 FF75D0   		pushl	-48(%ebp)
+ 146              	.LEHB5:
+ 147 0117 E8FCFFFF 		call	_Unwind_Resume
+ 147      FF
+ 148              	.LEHE5:
+ 149              	.LBE2:
+  26:basic-constructor.cc **** }
+ 150              		.loc 1 26 0
+ 151              	.L1:
+ 152 011c 8B45E0   		movl	-32(%ebp), %eax
+ 153 011f 8B5DFC   		movl	-4(%ebp), %ebx
+ 154 0122 C9       		leave
+ 155 0123 C3       		ret
+ 156              	.LFE2:
+ 157              	.Lfe1:
+ 159              		.section	.gcc_except_table,"a",@progbits
+ 160              	.LLSDA2:
+ 161 0000 FF       		.byte	0xff
+ 162 0001 FF       		.byte	0xff
+ 163 0002 01       		.byte	0x1
+ 164 0003 1D       		.uleb128 .LLSDACSE2-.LLSDACSB2
+ 165              	.LLSDACSB2:
+ 166 0004 1A       		.uleb128 .LEHB0-.LFB2
+ 167 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 168 0006 00       		.uleb128 0x0
+ 169 0007 00       		.uleb128 0x0
+ 170 0008 2B       		.uleb128 .LEHB1-.LFB2
+ 171 0009 12       		.uleb128 .LEHE1-.LEHB1
+ 172 000a F901     		.uleb128 .L17-.LFB2
+ 173 000c 00       		.uleb128 0x0
+ 174 000d 4F       		.uleb128 .LEHB2-.LFB2
+ 175 000e 05       		.uleb128 .LEHE2-.LEHB2
+ 176 000f 63       		.uleb128 .L16-.LFB2
+ 177 0010 00       		.uleb128 0x0
+ 178 0011 A401     		.uleb128 .LEHB3-.LFB2
+ 179 0013 3C       		.uleb128 .LEHE3-.LEHB3
+ 180 0014 F901     		.uleb128 .L17-.LFB2
+ 181 0016 00       		.uleb128 0x0
+ 182 0017 EC01     		.uleb128 .LEHB4-.LFB2
+ 183 0019 05       		.uleb128 .LEHE4-.LEHB4
+ 184 001a 00       		.uleb128 0x0
+ 185 001b 00       		.uleb128 0x0
+ 186 001c 9702     		.uleb128 .LEHB5-.LFB2
+ 187 001e 05       		.uleb128 .LEHE5-.LEHB5
+ 188 001f 00       		.uleb128 0x0
+ 189 0020 00       		.uleb128 0x0
+ 190              	.LLSDACSE2:
+ 191              		.text
+ 192              		.align 2
+ 193              	.globl _ZN8onefield8setFieldEi
+ 195              	_ZN8onefield8setFieldEi:
+ 196              	.LFB4:
+  27:basic-constructor.cc **** 
+  28:basic-constructor.cc **** 
+GAS LISTING /tmp/cchXyeOQ.s 			page 5
+
+
+  29:basic-constructor.cc **** void onefield::setField(int f) {
+ 197              		.loc 1 29 0
+ 198              	.LBB4:
+ 199 0124 55       		pushl	%ebp
+ 200              	.LCFI5:
+ 201 0125 89E5     		movl	%esp, %ebp
+ 202              	.LCFI6:
+  30:basic-constructor.cc ****     this->field = f;
+ 203              		.loc 1 30 0
+ 204 0127 8B5508   		movl	8(%ebp), %edx
+ 205 012a 8B450C   		movl	12(%ebp), %eax
+ 206 012d 8902     		movl	%eax, (%edx)
+  31:basic-constructor.cc **** }
+ 207              		.loc 1 31 0
+ 208 012f C9       		leave
+ 209 0130 C3       		ret
+ 210              	.LBE4:
+ 211              	.LFE4:
+ 212              	.Lfe2:
+ 214 0131 90       		.align 2
+ 215              	.globl _ZNK8onefield8getFieldEv
+ 217              	_ZNK8onefield8getFieldEv:
+ 218              	.LFB6:
+  32:basic-constructor.cc **** int onefield::getField() const {
+ 219              		.loc 1 32 0
+ 220              	.LBB5:
+ 221 0132 55       		pushl	%ebp
+ 222              	.LCFI7:
+ 223 0133 89E5     		movl	%esp, %ebp
+ 224              	.LCFI8:
+  33:basic-constructor.cc ****     return this->field;
+ 225              		.loc 1 33 0
+ 226 0135 8B4508   		movl	8(%ebp), %eax
+ 227 0138 8B00     		movl	(%eax), %eax
+ 228              	.LBE5:
+  34:basic-constructor.cc **** }
+ 229              		.loc 1 34 0
+ 230 013a C9       		leave
+ 231 013b C3       		ret
+ 232              	.LFE6:
+ 233              	.Lfe3:
+ 235              		.section	.rodata
+ 236              		.align 32
+ 237              	.LC0:
+ 238 0000 696E6974 		.string	"initial value of field was %d.\n"
+ 238      69616C20 
+ 238      76616C75 
+ 238      65206F66 
+ 238      20666965 
+ 239              		.text
+ 240              		.align 2
+ 241              	.globl _ZN8onefieldC2Ei
+ 243              	_ZN8onefieldC2Ei:
+ 244              	.LFB9:
+  35:basic-constructor.cc **** 
+  36:basic-constructor.cc **** onefield::onefield(int f) {
+ 245              		.loc 1 36 0
+GAS LISTING /tmp/cchXyeOQ.s 			page 6
+
+
+ 246              	.LBB6:
+ 247 013c 55       		pushl	%ebp
+ 248              	.LCFI9:
+ 249 013d 89E5     		movl	%esp, %ebp
+ 250              	.LCFI10:
+ 251 013f 83EC08   		subl	$8, %esp
+ 252              	.LCFI11:
+  37:basic-constructor.cc ****     field = f;
+ 253              		.loc 1 37 0
+ 254 0142 8B4508   		movl	8(%ebp), %eax
+ 255 0145 8B550C   		movl	12(%ebp), %edx
+ 256 0148 8910     		movl	%edx, (%eax)
+  38:basic-constructor.cc ****     printf("initial value of field was %d.\n", field);
+ 257              		.loc 1 38 0
+ 258 014a 83EC08   		subl	$8, %esp
+ 259 014d 8B4508   		movl	8(%ebp), %eax
+ 260 0150 FF30     		pushl	(%eax)
+ 261 0152 68000000 		pushl	$.LC0
+ 261      00
+ 262              	.LCFI12:
+ 263 0157 E8FCFFFF 		call	printf
+ 263      FF
+ 264 015c 83C410   		addl	$16, %esp
+  39:basic-constructor.cc **** }
+ 265              		.loc 1 39 0
+ 266 015f C9       		leave
+ 267 0160 C3       		ret
+ 268              	.LBE6:
+ 269              	.LFE9:
+ 270              	.Lfe4:
+ 272 0161 90       		.align 2
+ 273              	.globl _ZN8onefieldC1Ei
+ 275              	_ZN8onefieldC1Ei:
+ 276              	.LFB11:
+ 277              		.loc 1 36 0
+ 278              	.LBB7:
+ 279 0162 55       		pushl	%ebp
+ 280              	.LCFI13:
+ 281 0163 89E5     		movl	%esp, %ebp
+ 282              	.LCFI14:
+ 283 0165 83EC08   		subl	$8, %esp
+ 284              	.LCFI15:
+ 285              		.loc 1 37 0
+ 286 0168 8B4508   		movl	8(%ebp), %eax
+ 287 016b 8B550C   		movl	12(%ebp), %edx
+ 288 016e 8910     		movl	%edx, (%eax)
+ 289              		.loc 1 38 0
+ 290 0170 83EC08   		subl	$8, %esp
+ 291 0173 8B4508   		movl	8(%ebp), %eax
+ 292 0176 FF30     		pushl	(%eax)
+ 293 0178 68000000 		pushl	$.LC0
+ 293      00
+ 294              	.LCFI16:
+ 295 017d E8FCFFFF 		call	printf
+ 295      FF
+ 296 0182 83C410   		addl	$16, %esp
+ 297              		.loc 1 39 0
+GAS LISTING /tmp/cchXyeOQ.s 			page 7
+
+
+ 298 0185 C9       		leave
+ 299 0186 C3       		ret
+ 300              	.LBE7:
+ 301              	.LFE11:
+ 302              	.Lfe5:
+ 304              		.section	.rodata
+ 305              	.LC1:
+ 306 0020 4C617374 		.string	"Last value of field was %d.\n"
+ 306      2076616C 
+ 306      7565206F 
+ 306      66206669 
+ 306      656C6420 
+ 307              		.text
+ 308 0187 90       		.align 2
+ 309              	.globl _ZN8onefieldD2Ev
+ 311              	_ZN8onefieldD2Ev:
+ 312              	.LFB14:
+  40:basic-constructor.cc **** 
+  41:basic-constructor.cc **** onefield::~onefield() {
+ 313              		.loc 1 41 0
+ 314              	.LBB8:
+ 315 0188 55       		pushl	%ebp
+ 316              	.LCFI17:
+ 317 0189 89E5     		movl	%esp, %ebp
+ 318              	.LCFI18:
+ 319 018b 83EC08   		subl	$8, %esp
+ 320              	.LCFI19:
+  42:basic-constructor.cc ****     printf("Last value of field was %d.\n", field);
+ 321              		.loc 1 42 0
+ 322 018e 83EC08   		subl	$8, %esp
+ 323 0191 8B4508   		movl	8(%ebp), %eax
+ 324 0194 FF30     		pushl	(%eax)
+ 325 0196 68200000 		pushl	$.LC1
+ 325      00
+ 326              	.LCFI20:
+ 327 019b E8FCFFFF 		call	printf
+ 327      FF
+ 328 01a0 83C410   		addl	$16, %esp
+  43:basic-constructor.cc **** }
+ 329              		.loc 1 43 0
+ 330 01a3 C9       		leave
+ 331 01a4 C3       		ret
+ 332              	.LBE8:
+ 333              	.LFE14:
+ 334              	.Lfe6:
+ 336 01a5 90       		.align 2
+ 337              	.globl _ZN8onefieldD1Ev
+ 339              	_ZN8onefieldD1Ev:
+ 340              	.LFB16:
+ 341              		.loc 1 41 0
+ 342              	.LBB9:
+ 343 01a6 55       		pushl	%ebp
+ 344              	.LCFI21:
+ 345 01a7 89E5     		movl	%esp, %ebp
+ 346              	.LCFI22:
+ 347 01a9 83EC08   		subl	$8, %esp
+ 348              	.LCFI23:
+GAS LISTING /tmp/cchXyeOQ.s 			page 8
+
+
+ 349              		.loc 1 42 0
+ 350 01ac 83EC08   		subl	$8, %esp
+ 351 01af 8B4508   		movl	8(%ebp), %eax
+ 352 01b2 FF30     		pushl	(%eax)
+ 353 01b4 68200000 		pushl	$.LC1
+ 353      00
+ 354              	.LCFI24:
+ 355 01b9 E8FCFFFF 		call	printf
+ 355      FF
+ 356 01be 83C410   		addl	$16, %esp
+ 357              		.loc 1 43 0
+ 358 01c1 C9       		leave
+ 359 01c2 C3       		ret
+ 360              	.LBE9:
+ 361              	.LFE16:
+ 362              	.Lfe7:
+ 364              		.file 7 "/usr/include/stdio.h"
+ 365              		.file 8 "/usr/include/_G_config.h"
+ 366              		.file 9 "/usr/lib/gcc-lib/i386-redhat-linux/3.2.2/include/stdarg.h"
+ 535              	.Lframe1:
+ 536 0000 18000000 		.long	.LECIE1-.LSCIE1
+ 537              	.LSCIE1:
+ 538 0004 00000000 		.long	0x0
+ 539 0008 01       		.byte	0x1
+ 540 0009 7A504C00 		.string	"zPL"
+ 541 000d 01       		.uleb128 0x1
+ 542 000e 7C       		.sleb128 -4
+ 543 000f 08       		.byte	0x8
+ 544 0010 06       		.uleb128 0x6
+ 545 0011 00       		.byte	0x0
+ 546 0012 00000000 		.long	__gxx_personality_v0
+ 547 0016 00       		.byte	0x0
+ 548 0017 0C       		.byte	0xc
+ 549 0018 04       		.uleb128 0x4
+ 550 0019 04       		.uleb128 0x4
+ 551 001a 88       		.byte	0x88
+ 552 001b 01       		.uleb128 0x1
+ 553              		.align 4
+ 554              	.LECIE1:
+ 555              	.LSFDE1:
+ 556 001c 20000000 		.long	.LEFDE1-.LASFDE1
+ 557              	.LASFDE1:
+ 558 0020 20000000 		.long	.LASFDE1-.Lframe1
+ 559 0024 00000000 		.long	.LFB2
+ 560 0028 24010000 		.long	.LFE2-.LFB2
+ 561 002c 04       		.uleb128 0x4
+ 562 002d 00000000 		.long	.LLSDA2
+ 563 0031 41       		.byte	0x4
+ 564              		.long	.LCFI0-.LFB2
+ 565 0032 0E       		.byte	0xe
+ 566 0033 08       		.uleb128 0x8
+ 567 0034 85       		.byte	0x85
+ 568 0035 02       		.uleb128 0x2
+ 569 0036 42       		.byte	0x4
+ 570              		.long	.LCFI1-.LCFI0
+ 571 0037 0D       		.byte	0xd
+ 572 0038 05       		.uleb128 0x5
+GAS LISTING /tmp/cchXyeOQ.s 			page 9
+
+
+ 573 0039 44       		.byte	0x4
+ 574              		.long	.LCFI3-.LCFI1
+ 575 003a 83       		.byte	0x83
+ 576 003b 03       		.uleb128 0x3
+ 577 003c 53       		.byte	0x4
+ 578              		.long	.LCFI4-.LCFI3
+ 579 003d 2E       		.byte	0x2e
+ 580 003e 10       		.uleb128 0x10
+ 581 003f 00       		.align 4
+ 582              	.LEFDE1:
+ 583              		.text
+ 584              	.Letext0:
+GAS LISTING /tmp/cchXyeOQ.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 basic-constructor.cc
+     /tmp/cchXyeOQ.s:20     .text:00000000 main
+     /tmp/cchXyeOQ.s:275    .text:00000162 _ZN8onefieldC1Ei
+     /tmp/cchXyeOQ.s:195    .text:00000124 _ZN8onefield8setFieldEi
+     /tmp/cchXyeOQ.s:339    .text:000001a6 _ZN8onefieldD1Ev
+     /tmp/cchXyeOQ.s:217    .text:00000132 _ZNK8onefield8getFieldEv
+     /tmp/cchXyeOQ.s:243    .text:0000013c _ZN8onefieldC2Ei
+     /tmp/cchXyeOQ.s:311    .text:00000188 _ZN8onefieldD2Ev
+
+UNDEFINED SYMBOLS
+_Unwind_Resume
+_Znwj
+_ZdlPv
+printf
+__gxx_personality_v0

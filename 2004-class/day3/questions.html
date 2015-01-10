@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Secret Life of C++: Day 3: Questions from last session</title>
+  </head>
+
+  <body>
+    <h1>The Secret Life of C++: Day 3: Questions from last session</h1>
+
+    Lets answer some questions from last session:
+
+    <h2>What does _Unwind_Resume do?</h2>
+
+    This we will cover in <a href="exceptions.html">Exceptions</a> today.
+
+    <h2>If you pass something const, why copy?</h2>
+
+    Because if you didn't mean to copy, then you would have passed a
+    const reference to the object.
+
+    <h2>Can't you get away without the return value pointer by looking
+    up the stack and expecting it to be there?</h2>
+
+    I don't have a solid answer for this one, but one thought I had is
+    cases where you only want to move the stack pointer once in a
+    function body, but you want to call many different functions with
+    return values on the stack, so you want to be able to tell them
+    more complicated places for it than just right at the bottom of
+    the stack.
+
+
+    <hr>
+    <address><a href="mailto:tibbetts@innocuous.mit.edu">Richard Tibbetts</a></address>
+<!-- Created: Tue Jan 20 16:00:02 EST 2004 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 21 17:36:31 EST 2004
+<!-- hhmts end -->
+  </body>
+</html>

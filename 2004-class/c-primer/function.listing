@@ -1,0 +1,95 @@
+GAS LISTING /tmp/ccMLCXvW.s 			page 1
+
+
+   1              		.file	"function.c"
+   2              		.version	"01.01"
+   5              	.text
+   6              	.Ltext0:
+ 161              		.align 4
+ 164              	.globl foo
+ 166              	foo:
+ 167 0000 55       		pushl %ebp
+ 168 0001 89E5     		movl %esp,%ebp
+ 169 0003 83EC18   		subl $24,%esp
+   1:function.c    **** #include <stdio.h>
+   2:function.c    **** 
+   3:function.c    **** int foo(int arg) {
+ 171              	.LM1:
+   4:function.c    ****     int ret;
+ 173              	.LM2:
+ 174              	.LBB2:
+   5:function.c    ****     ret = arg + 37;
+ 176              	.LM3:
+ 177 0006 8B4508   		movl 8(%ebp),%eax
+ 178 0009 83C025   		addl $37,%eax
+ 179 000c 8945FC   		movl %eax,-4(%ebp)
+   6:function.c    ****     return ret;
+ 181              	.LM4:
+ 182 000f 8B55FC   		movl -4(%ebp),%edx
+ 183 0012 89D0     		movl %edx,%eax
+ 184 0014 EB00     		jmp .L2
+   7:function.c    **** }
+ 186              	.LM5:
+ 187              	.LBE2:
+ 189              	.LM6:
+ 190              		.p2align 4,,7
+ 191              	.L2:
+ 192 0016 C9       		leave
+ 193 0017 C3       		ret
+ 194              	.Lfe1:
+ 199              	.Lscope0:
+ 201              		.align 4
+ 205              	.globl main
+ 207              	main:
+ 208 0018 55       		pushl %ebp
+ 209 0019 89E5     		movl %esp,%ebp
+ 210 001b 83EC18   		subl $24,%esp
+   8:function.c    **** 
+   9:function.c    **** int
+  10:function.c    **** main (int argc, char **argv)
+  11:function.c    **** {
+ 212              	.LM7:
+  12:function.c    ****     int val;
+ 214              	.LM8:
+ 215              	.LBB3:
+  13:function.c    ****     val = foo(13);
+ 217              	.LM9:
+ 218 001e 83C4F4   		addl $-12,%esp
+ 219 0021 6A0D     		pushl $13
+ 220 0023 E8FCFFFF 		call foo
+ 220      FF
+GAS LISTING /tmp/ccMLCXvW.s 			page 2
+
+
+ 221 0028 83C410   		addl $16,%esp
+ 222 002b 89C0     		movl %eax,%eax
+ 223 002d 8945FC   		movl %eax,-4(%ebp)
+  14:function.c    ****     return val;
+ 225              	.LM10:
+ 226 0030 8B55FC   		movl -4(%ebp),%edx
+ 227 0033 89D0     		movl %edx,%eax
+ 228 0035 EB00     		jmp .L3
+  15:function.c    **** }
+ 230              	.LM11:
+ 231              	.LBE3:
+ 233              	.LM12:
+ 234              		.p2align 4,,7
+ 235              	.L3:
+ 236 0037 C9       		leave
+ 237 0038 C3       		ret
+ 238              	.Lfe2:
+ 243              	.Lscope1:
+ 245              		.text
+ 247              	Letext:
+ 248 0039 8DB42600 		.ident	"GCC: (GNU) 2.95.4 20011002 (Debian prerelease)"
+ 248      000000
+GAS LISTING /tmp/ccMLCXvW.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 function.c
+     /tmp/ccMLCXvW.s:166    .text:00000000 foo
+     /tmp/ccMLCXvW.s:207    .text:00000018 main
+     /tmp/ccMLCXvW.s:247    .text:00000039 Letext
+
+NO UNDEFINED SYMBOLS
