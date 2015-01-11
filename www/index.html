@@ -22,6 +22,42 @@
     <![endif]-->
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://innocuous.org">innocuous.org</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="./">The Secret Life of C++</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Outline <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="inside-c.html">The Not So Secret Life of C</a></li>
+                <li class="divider"></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="mangling.html">Symbol Mangling</a></li>
+                <li class="active"><a href="objects.html">Objects</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
     <div class="container">
       <h1>The Secret Life of C++: What Your Compiler Doesn't Want You To Know</h1>
       <i>Richard Tibbetts</i><br>
@@ -33,7 +69,12 @@
 
       <ul>
         <li><a href="c-primer.html">Hour One: The Not So Secret Life of C, and crash course in x86_64 assembly</a>
-        <li><a href="objects.html">Hour Two: Objects, Methods, Inheritance, Copying, References, Methods, Runtime Time Type Information</a>
+        <li>Hour Two
+          <ul>
+            <li><a href="references.html">References</a>
+            <li><a href="mangling.html">Symbol Mangling</a>
+            <li><a href="objects.html">Objects, Methods, Inheritance, Copying, References, Methods, Runtime Time Type Information</a>
+          </ul>
         <li><a href="exceptions.html">Hour Three: Exceptions and Templates</a>
         <li><a href="closures.html">Hour Four: Functions, Anonymous Functions, Captures</a>
       </ul>

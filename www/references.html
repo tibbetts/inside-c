@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Secret Life of C++: References</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/inside-c.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+    <h1>The Secret Life of C++: References</h1>
+
+    <h2>References are Just Pointers</h2>
+
+    <p>
+    Let's start with something simple, references. References are just pointers. Really.
+    </p>
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#reference-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#reference-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#reference-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#reference-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#reference-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="reference-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/reference.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/reference.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="reference-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/reference-clang.s">reference-clang.s</a>.
+          <pre data-src="../examples/reference-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="reference-ll">
+          <pre data-src="../examples/reference.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="reference-gcc-s">
+          <pre data-src="../examples/reference-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="reference-listing">
+          <pre data-src="../examples/reference.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Conventions are good</h2>
+
+    <p>
+      The google coding standard says that you should only use const
+      references, for the efficiency of not copying method arguments,
+      and you should use pointers for non-const arguments that will be
+      changed. This is good because at call sites you can see which
+      arguments are being modified and which are not.
+    </p>
+
+<a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>

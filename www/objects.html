@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Secret Life of C++: Objects</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/inside-c.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+    <h1>The Secret Life of C++: Objects</h1>
+
+    We talked about structs in C. Lets take a look at C++ structs and classes.
+
+    <h2>Just Fields</h2>
+    First, a basic struct with no constructor:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/basic-struct.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/basic-struct.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/basic-struct-clang.s">basic-struct-clang.s</a>.
+          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
+          <pre data-src="../examples/basic-struct.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
+          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
+          <pre data-src="../examples/basic-struct.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <a href="basic-struct.cc">basic-struct.cc</a>,
+    <a href="basic-struct.s">basic-struct.s</a>,
+    <a href="basic-struct.listing">basic-struct.listing</a>.
+    Some of the symbols we see here bear explaining:
+    <dl>
+    <dt>_Znwj<dd>Translates into the new operator over the type <code>unsigned int</code>
+    <dt>_ZdlPv<dd>delete a pointer to a void.
+    </dl>
+
+    <h2>Simple Methods</h2>
+    Next, a basic class this time (really no difference), still no
+    constructor, this time we call some simple get/set methods:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#basic-method.cc-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#basic-method.cc-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#basic-method.cc-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#basic-method.cc-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#basic-method.cc-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="basic-method.cc-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/basic-method.cc.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/basic-method.cc.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-method.cc-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/basic-method.cc-clang.s">basic-method.cc-clang.s</a>.
+          <pre data-src="../examples/basic-method.cc-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-method.cc-ll">
+          <pre data-src="../examples/basic-method.cc.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-method.cc-gcc-s">
+          <pre data-src="../examples/basic-method.cc-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-method.cc-listing">
+          <pre data-src="../examples/basic-method.cc.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <a href="basic-method.cc">basic-method.cc</a>,
+    <a href="basic-method.s">basic-method.s</a>,
+    <a href="basic-method.listing">basic-method.listing</a>.
+    Some symbols again:
+    <dl>
+    <dt>_ZN8onefield8setFieldEi<dd>method onefield::setField(int)
+    <dt>_ZNK8onefield8getFieldEv<dd><b>K</b>onst method onefield::getField(<b>v</b>oid)
+    </dl>
+    <p>
+    Notice that the <code>this</code> pointer gets passed as the first
+    argument to both functions, as you might expect.
+
+    <h2>Constructors</h2>
+
+    Lets give our simple object a constructor and a destructor, and
+    see how that goes:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#basic-constructor-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#basic-constructor-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#basic-constructor-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#basic-constructor-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#basic-constructor-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="basic-constructor-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/basic-constructor.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/basic-constructor.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-constructor-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/basic-constructor-clang.s">basic-constructor-clang.s</a>.
+          <pre data-src="../examples/basic-constructor-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-constructor-ll">
+          <pre data-src="../examples/basic-constructor.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-constructor-gcc-s">
+          <pre data-src="../examples/basic-constructor-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-constructor-listing">
+          <pre data-src="../examples/basic-constructor.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <a href="basic-constructor.cc">basic-constructor.cc</a>,
+    <a href="basic-constructor.s">basic-constructor.s</a>,
+    <a href="basic-constructor.listing">basic-constructor.listing</a>.
+    And we get more symbols to decode:
+    <dl>
+
+    <dt>_ZN8onefieldC1Ei<dd>onefield <b>C</b>onstructor (C1 means it a
+    is complete object constructor) that takes an int parameter.
+
+    <dt>_ZN8onefieldD1Ev<dd>onefield complete object desctructor, no parameters.
+    </dl>
+
+    <h2>Temporary Objects</h2>
+
+    When you call a function with an object, and you don't pass a
+    pointer/reference, the function gets a copy of the object.
+    Similarly when you return an object, there is a temporary one
+    created for the return.
+    <p>
+
+    <h2>Temporary Objects as Arguments</h2>
+    When passing a temporary object as an argument, the caller must
+    make space on the stack, call the constructor, pass a
+    reference/pointer to the object, and then call the destructor when
+    the life of the object is over. It could also be allocated on the
+    heap.
+
+    <p>
+    Lets look at the first case, using our onefield object again:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#object-arg-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#object-arg-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#object-arg-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#object-arg-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#object-arg-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="object-arg-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/object-arg.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/object-arg.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-arg-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/object-arg-clang.s">object-arg-clang.s</a>.
+          <pre data-src="../examples/object-arg-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-arg-ll">
+          <pre data-src="../examples/object-arg.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-arg-gcc-s">
+          <pre data-src="../examples/object-arg-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-arg-listing">
+          <pre data-src="../examples/object-arg.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <a href="object-arg.cc">object-arg.cc</a>,
+    <a href="object-arg.s">object-arg.s</a>,
+    <a href="object-arg.listing">object-arg.listing</a>.
+    And some more symbols:
+    <dl>
+
+    <dt>_ZN8onefieldC1ERKS_<dd>onefield constructor that takes a
+    <b>R</b>eference to a <b>K</b>onst onefield. <code>S_</code> is
+    shorthand. In this case for onefield.
+
+    <dt>_Z5print8onefield_Z5print8onefield<dd>This is our
+    print(onefield) function.
+    </dl>
+
+
+    <h2>Temporary Objects as Return Values</h2>
+    When returning an object from a function, if the object is
+    non-trivial, than the caller allocates temporary space and passes
+    a pointer to the space as a first argument to the function. The
+    function calls the constructor. The caller is responsible for
+    calling the destructor when the object is no longer needed.
+
+    <p>
+      Examples, using a twofield object:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#object-ret-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#object-ret-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#object-ret-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#object-ret-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#object-ret-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="object-ret-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/object-ret.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/object-ret.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-ret-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/object-ret-clang.s">object-ret-clang.s</a>.
+          <pre data-src="../examples/object-ret-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-ret-ll">
+          <pre data-src="../examples/object-ret.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-ret-gcc-s">
+          <pre data-src="../examples/object-ret-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="object-ret-listing">
+          <pre data-src="../examples/object-ret.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <a href="object-ret.cc">object-ret.cc</a>,
+    <a href="object-ret.s">object-ret.s</a>,
+    <a href="object-ret.listing">object-ret.listing</a>.
+
+
+
+<a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>
