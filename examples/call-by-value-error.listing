@@ -1,0 +1,242 @@
+GAS LISTING /tmp/cchghPRs.s 			page 1
+
+
+   1              		.file	"call-by-value-error.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.text._ZN8onefieldC2Ev,"axG",@progbits,_ZN8onefieldC5Ev,comdat
+   5              		.align 2
+   6              		.weak	_ZN8onefieldC2Ev
+   8              	_ZN8onefieldC2Ev:
+   9              	.LFB2:
+  10              		.file 1 "call-by-value-error.cpp"
+   1:call-by-value-error.cpp **** class onefield {
+  11              		.loc 1 1 0
+  12              		.cfi_startproc
+  13 0000 55       		pushq	%rbp
+  14              		.cfi_def_cfa_offset 16
+  15              		.cfi_offset 6, -16
+  16 0001 4889E5   		movq	%rsp, %rbp
+  17              		.cfi_def_cfa_register 6
+  18 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  19              	.LBB2:
+  20              		.loc 1 1 0
+  21 0008 488B45F8 		movq	-8(%rbp), %rax
+  22 000c 48C70000 		movq	$_ZTV8onefield+16, (%rax)
+  22      000000
+  23              	.LBE2:
+  24 0013 5D       		popq	%rbp
+  25              		.cfi_def_cfa 7, 8
+  26 0014 C3       		ret
+  27              		.cfi_endproc
+  28              	.LFE2:
+  30              		.weak	_ZN8onefieldC1Ev
+  31              		.set	_ZN8onefieldC1Ev,_ZN8onefieldC2Ev
+  32              		.text
+  33              		.globl	main
+  35              	main:
+  36              	.LFB0:
+   2:call-by-value-error.cpp ****   private:
+   3:call-by-value-error.cpp ****     int field;
+   4:call-by-value-error.cpp ****   public:
+   5:call-by-value-error.cpp ****     virtual void setField(int f);
+   6:call-by-value-error.cpp ****     virtual int getField() const;
+   7:call-by-value-error.cpp **** };
+   8:call-by-value-error.cpp **** 
+   9:call-by-value-error.cpp **** int main(int argc, char **argv) {
+  37              		.loc 1 9 0
+  38              		.cfi_startproc
+  39 0000 55       		pushq	%rbp
+  40              		.cfi_def_cfa_offset 16
+  41              		.cfi_offset 6, -16
+  42 0001 4889E5   		movq	%rsp, %rbp
+  43              		.cfi_def_cfa_register 6
+  44 0004 53       		pushq	%rbx
+  45 0005 4883EC38 		subq	$56, %rsp
+  46              		.cfi_offset 3, -24
+  47 0009 897DCC   		movl	%edi, -52(%rbp)
+  48 000c 488975C0 		movq	%rsi, -64(%rbp)
+  49              	.LBB3:
+  10:call-by-value-error.cpp ****     onefield of;
+GAS LISTING /tmp/cchghPRs.s 			page 2
+
+
+  50              		.loc 1 10 0
+  51 0010 488D45E0 		leaq	-32(%rbp), %rax
+  52 0014 4889C7   		movq	%rax, %rdi
+  53 0017 E8000000 		call	_ZN8onefieldC1Ev
+  53      00
+  11:call-by-value-error.cpp **** 
+  12:call-by-value-error.cpp ****     of.setField(13);
+  54              		.loc 1 12 0
+  55 001c 488D45E0 		leaq	-32(%rbp), %rax
+  56 0020 BE0D0000 		movl	$13, %esi
+  56      00
+  57 0025 4889C7   		movq	%rax, %rdi
+  58 0028 E8000000 		call	_ZN8onefield8setFieldEi
+  58      00
+  13:call-by-value-error.cpp **** 
+  14:call-by-value-error.cpp ****     onefield *ofp = new onefield;
+  59              		.loc 1 14 0
+  60 002d BF100000 		movl	$16, %edi
+  60      00
+  61 0032 E8000000 		call	_Znwm
+  61      00
+  62 0037 4889C3   		movq	%rax, %rbx
+  63 003a 4889DF   		movq	%rbx, %rdi
+  64 003d E8000000 		call	_ZN8onefieldC1Ev
+  64      00
+  65 0042 48895DD8 		movq	%rbx, -40(%rbp)
+  15:call-by-value-error.cpp **** 
+  16:call-by-value-error.cpp ****     ofp->setField(27);
+  66              		.loc 1 16 0
+  67 0046 488B45D8 		movq	-40(%rbp), %rax
+  68 004a 488B00   		movq	(%rax), %rax
+  69 004d 488B00   		movq	(%rax), %rax
+  70 0050 488B55D8 		movq	-40(%rbp), %rdx
+  71 0054 BE1B0000 		movl	$27, %esi
+  71      00
+  72 0059 4889D7   		movq	%rdx, %rdi
+  73 005c FFD0     		call	*%rax
+  17:call-by-value-error.cpp **** 
+  18:call-by-value-error.cpp ****     int i = ofp->getField();
+  74              		.loc 1 18 0
+  75 005e 488B45D8 		movq	-40(%rbp), %rax
+  76 0062 488B00   		movq	(%rax), %rax
+  77 0065 4883C008 		addq	$8, %rax
+  78 0069 488B00   		movq	(%rax), %rax
+  79 006c 488B55D8 		movq	-40(%rbp), %rdx
+  80 0070 4889D7   		movq	%rdx, %rdi
+  81 0073 FFD0     		call	*%rax
+  82 0075 8945D4   		movl	%eax, -44(%rbp)
+  19:call-by-value-error.cpp **** 
+  20:call-by-value-error.cpp ****     delete ofp;
+  83              		.loc 1 20 0
+  84 0078 488B45D8 		movq	-40(%rbp), %rax
+  85 007c 4889C7   		movq	%rax, %rdi
+  86 007f E8000000 		call	_ZdlPv
+  86      00
+  21:call-by-value-error.cpp **** 
+  22:call-by-value-error.cpp ****     return i + of.getField();
+GAS LISTING /tmp/cchghPRs.s 			page 3
+
+
+  87              		.loc 1 22 0
+  88 0084 488D45E0 		leaq	-32(%rbp), %rax
+  89 0088 4889C7   		movq	%rax, %rdi
+  90 008b E8000000 		call	_ZNK8onefield8getFieldEv
+  90      00
+  91 0090 8B55D4   		movl	-44(%rbp), %edx
+  92 0093 01D0     		addl	%edx, %eax
+  93              	.LBE3:
+  23:call-by-value-error.cpp **** }
+  94              		.loc 1 23 0
+  95 0095 4883C438 		addq	$56, %rsp
+  96 0099 5B       		popq	%rbx
+  97 009a 5D       		popq	%rbp
+  98              		.cfi_def_cfa 7, 8
+  99 009b C3       		ret
+ 100              		.cfi_endproc
+ 101              	.LFE0:
+ 103              		.align 2
+ 104              		.globl	_ZN8onefield8setFieldEi
+ 106              	_ZN8onefield8setFieldEi:
+ 107              	.LFB4:
+  24:call-by-value-error.cpp **** 
+  25:call-by-value-error.cpp **** 
+  26:call-by-value-error.cpp **** void onefield::setField(int f) {
+ 108              		.loc 1 26 0
+ 109              		.cfi_startproc
+ 110 009c 55       		pushq	%rbp
+ 111              		.cfi_def_cfa_offset 16
+ 112              		.cfi_offset 6, -16
+ 113 009d 4889E5   		movq	%rsp, %rbp
+ 114              		.cfi_def_cfa_register 6
+ 115 00a0 48897DF8 		movq	%rdi, -8(%rbp)
+ 116 00a4 8975F4   		movl	%esi, -12(%rbp)
+  27:call-by-value-error.cpp ****     this->field = f;
+ 117              		.loc 1 27 0
+ 118 00a7 488B45F8 		movq	-8(%rbp), %rax
+ 119 00ab 8B55F4   		movl	-12(%rbp), %edx
+ 120 00ae 895008   		movl	%edx, 8(%rax)
+  28:call-by-value-error.cpp **** }
+ 121              		.loc 1 28 0
+ 122 00b1 5D       		popq	%rbp
+ 123              		.cfi_def_cfa 7, 8
+ 124 00b2 C3       		ret
+ 125              		.cfi_endproc
+ 126              	.LFE4:
+ 128 00b3 90       		.align 2
+ 129              		.globl	_ZNK8onefield8getFieldEv
+ 131              	_ZNK8onefield8getFieldEv:
+ 132              	.LFB5:
+  29:call-by-value-error.cpp **** int onefield::getField() const {
+ 133              		.loc 1 29 0
+ 134              		.cfi_startproc
+ 135 00b4 55       		pushq	%rbp
+ 136              		.cfi_def_cfa_offset 16
+ 137              		.cfi_offset 6, -16
+ 138 00b5 4889E5   		movq	%rsp, %rbp
+ 139              		.cfi_def_cfa_register 6
+GAS LISTING /tmp/cchghPRs.s 			page 4
+
+
+ 140 00b8 48897DF8 		movq	%rdi, -8(%rbp)
+  30:call-by-value-error.cpp ****     return this->field;
+ 141              		.loc 1 30 0
+ 142 00bc 488B45F8 		movq	-8(%rbp), %rax
+ 143 00c0 8B4008   		movl	8(%rax), %eax
+  31:call-by-value-error.cpp **** }
+ 144              		.loc 1 31 0
+ 145 00c3 5D       		popq	%rbp
+ 146              		.cfi_def_cfa 7, 8
+ 147 00c4 C3       		ret
+ 148              		.cfi_endproc
+ 149              	.LFE5:
+ 151              		.weak	_ZTV8onefield
+ 152              		.section	.rodata._ZTV8onefield,"aG",@progbits,_ZTV8onefield,comdat
+ 153              		.align 32
+ 156              	_ZTV8onefield:
+ 157 0000 00000000 		.quad	0
+ 157      00000000 
+ 158 0008 00000000 		.quad	_ZTI8onefield
+ 158      00000000 
+ 159 0010 00000000 		.quad	_ZN8onefield8setFieldEi
+ 159      00000000 
+ 160 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 160      00000000 
+ 161              		.weak	_ZTI8onefield
+ 162              		.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
+ 163              		.align 16
+ 166              	_ZTI8onefield:
+ 167 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 167      00000000 
+ 168 0008 00000000 		.quad	_ZTS8onefield
+ 168      00000000 
+ 169              		.weak	_ZTS8onefield
+ 170              		.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
+ 173              	_ZTS8onefield:
+ 174 0000 386F6E65 		.string	"8onefield"
+ 174      6669656C 
+ 174      6400
+ 175              		.text
+ 176              	.Letext0:
+GAS LISTING /tmp/cchghPRs.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 call-by-value-error.cpp
+     /tmp/cchghPRs.s:8      .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC2Ev
+     /tmp/cchghPRs.s:156    .rodata._ZTV8onefield:0000000000000000 _ZTV8onefield
+     /tmp/cchghPRs.s:8      .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC1Ev
+     /tmp/cchghPRs.s:35     .text:0000000000000000 main
+     /tmp/cchghPRs.s:106    .text:000000000000009c _ZN8onefield8setFieldEi
+     /tmp/cchghPRs.s:131    .text:00000000000000b4 _ZNK8onefield8getFieldEv
+     /tmp/cchghPRs.s:166    .rodata._ZTI8onefield:0000000000000000 _ZTI8onefield
+     /tmp/cchghPRs.s:173    .rodata._ZTS8onefield:0000000000000000 _ZTS8onefield
+                           .group:0000000000000000 _ZN8onefieldC5Ev
+
+UNDEFINED SYMBOLS
+_Znwm
+_ZdlPv
+_ZTVN10__cxxabiv117__class_type_infoE

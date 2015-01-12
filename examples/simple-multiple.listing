@@ -1,0 +1,195 @@
+GAS LISTING /tmp/cc70JXGy.s 			page 1
+
+
+   1              		.file	"simple-multiple.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.align 2
+   5              		.globl	_ZN5baseA8setDataAEi
+   7              	_ZN5baseA8setDataAEi:
+   8              	.LFB0:
+   9              		.file 1 "simple-multiple.cpp"
+   1:simple-multiple.cpp **** class baseA {
+   2:simple-multiple.cpp ****     int dataA;
+   3:simple-multiple.cpp ****   public:
+   4:simple-multiple.cpp ****     void setDataA(int a);
+   5:simple-multiple.cpp ****     int getDataA() const;
+   6:simple-multiple.cpp **** };
+   7:simple-multiple.cpp **** 
+   8:simple-multiple.cpp **** class baseB {
+   9:simple-multiple.cpp ****     int dataB;
+  10:simple-multiple.cpp ****   public:
+  11:simple-multiple.cpp ****     void setDataB(int b);
+  12:simple-multiple.cpp ****     int getDataB() const;
+  13:simple-multiple.cpp **** };
+  14:simple-multiple.cpp **** 
+  15:simple-multiple.cpp **** class subBoth : public baseA, public baseB {
+  16:simple-multiple.cpp ****   public:
+  17:simple-multiple.cpp ****     int getSum() const;
+  18:simple-multiple.cpp **** };
+  19:simple-multiple.cpp **** 
+  20:simple-multiple.cpp **** void baseA::setDataA(int a) {
+  10              		.loc 1 20 0
+  11              		.cfi_startproc
+  12 0000 55       		pushq	%rbp
+  13              		.cfi_def_cfa_offset 16
+  14              		.cfi_offset 6, -16
+  15 0001 4889E5   		movq	%rsp, %rbp
+  16              		.cfi_def_cfa_register 6
+  17 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  18 0008 8975F4   		movl	%esi, -12(%rbp)
+  21:simple-multiple.cpp ****     dataA = a;
+  19              		.loc 1 21 0
+  20 000b 488B45F8 		movq	-8(%rbp), %rax
+  21 000f 8B55F4   		movl	-12(%rbp), %edx
+  22 0012 8910     		movl	%edx, (%rax)
+  22:simple-multiple.cpp **** }
+  23              		.loc 1 22 0
+  24 0014 5D       		popq	%rbp
+  25              		.cfi_def_cfa 7, 8
+  26 0015 C3       		ret
+  27              		.cfi_endproc
+  28              	.LFE0:
+  30              		.align 2
+  31              		.globl	_ZNK5baseA8getDataAEv
+  33              	_ZNK5baseA8getDataAEv:
+  34              	.LFB1:
+  23:simple-multiple.cpp **** int baseA::getDataA() const {
+  35              		.loc 1 23 0
+  36              		.cfi_startproc
+  37 0016 55       		pushq	%rbp
+GAS LISTING /tmp/cc70JXGy.s 			page 2
+
+
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 6, -16
+  40 0017 4889E5   		movq	%rsp, %rbp
+  41              		.cfi_def_cfa_register 6
+  42 001a 48897DF8 		movq	%rdi, -8(%rbp)
+  24:simple-multiple.cpp ****     return dataA;
+  43              		.loc 1 24 0
+  44 001e 488B45F8 		movq	-8(%rbp), %rax
+  45 0022 8B00     		movl	(%rax), %eax
+  25:simple-multiple.cpp **** }
+  46              		.loc 1 25 0
+  47 0024 5D       		popq	%rbp
+  48              		.cfi_def_cfa 7, 8
+  49 0025 C3       		ret
+  50              		.cfi_endproc
+  51              	.LFE1:
+  53              		.align 2
+  54              		.globl	_ZN5baseB8setDataBEi
+  56              	_ZN5baseB8setDataBEi:
+  57              	.LFB2:
+  26:simple-multiple.cpp **** 
+  27:simple-multiple.cpp **** void baseB::setDataB(int b) {
+  58              		.loc 1 27 0
+  59              		.cfi_startproc
+  60 0026 55       		pushq	%rbp
+  61              		.cfi_def_cfa_offset 16
+  62              		.cfi_offset 6, -16
+  63 0027 4889E5   		movq	%rsp, %rbp
+  64              		.cfi_def_cfa_register 6
+  65 002a 48897DF8 		movq	%rdi, -8(%rbp)
+  66 002e 8975F4   		movl	%esi, -12(%rbp)
+  28:simple-multiple.cpp ****     dataB = b;
+  67              		.loc 1 28 0
+  68 0031 488B45F8 		movq	-8(%rbp), %rax
+  69 0035 8B55F4   		movl	-12(%rbp), %edx
+  70 0038 8910     		movl	%edx, (%rax)
+  29:simple-multiple.cpp **** }
+  71              		.loc 1 29 0
+  72 003a 5D       		popq	%rbp
+  73              		.cfi_def_cfa 7, 8
+  74 003b C3       		ret
+  75              		.cfi_endproc
+  76              	.LFE2:
+  78              		.align 2
+  79              		.globl	_ZNK5baseB8getDataBEv
+  81              	_ZNK5baseB8getDataBEv:
+  82              	.LFB3:
+  30:simple-multiple.cpp **** int baseB::getDataB() const {
+  83              		.loc 1 30 0
+  84              		.cfi_startproc
+  85 003c 55       		pushq	%rbp
+  86              		.cfi_def_cfa_offset 16
+  87              		.cfi_offset 6, -16
+  88 003d 4889E5   		movq	%rsp, %rbp
+  89              		.cfi_def_cfa_register 6
+  90 0040 48897DF8 		movq	%rdi, -8(%rbp)
+  31:simple-multiple.cpp ****     return dataB;
+GAS LISTING /tmp/cc70JXGy.s 			page 3
+
+
+  91              		.loc 1 31 0
+  92 0044 488B45F8 		movq	-8(%rbp), %rax
+  93 0048 8B00     		movl	(%rax), %eax
+  32:simple-multiple.cpp **** }
+  94              		.loc 1 32 0
+  95 004a 5D       		popq	%rbp
+  96              		.cfi_def_cfa 7, 8
+  97 004b C3       		ret
+  98              		.cfi_endproc
+  99              	.LFE3:
+ 101              		.align 2
+ 102              		.globl	_ZNK7subBoth6getSumEv
+ 104              	_ZNK7subBoth6getSumEv:
+ 105              	.LFB4:
+  33:simple-multiple.cpp **** 
+  34:simple-multiple.cpp **** int subBoth::getSum() const {
+ 106              		.loc 1 34 0
+ 107              		.cfi_startproc
+ 108 004c 55       		pushq	%rbp
+ 109              		.cfi_def_cfa_offset 16
+ 110              		.cfi_offset 6, -16
+ 111 004d 4889E5   		movq	%rsp, %rbp
+ 112              		.cfi_def_cfa_register 6
+ 113 0050 4883EC18 		subq	$24, %rsp
+ 114 0054 48897DE8 		movq	%rdi, -24(%rbp)
+ 115              	.LBB2:
+  35:simple-multiple.cpp ****     int total = 0;
+ 116              		.loc 1 35 0
+ 117 0058 C745FC00 		movl	$0, -4(%rbp)
+ 117      000000
+  36:simple-multiple.cpp ****     total += getDataA();
+ 118              		.loc 1 36 0
+ 119 005f 488B45E8 		movq	-24(%rbp), %rax
+ 120 0063 4889C7   		movq	%rax, %rdi
+ 121 0066 E8000000 		call	_ZNK5baseA8getDataAEv
+ 121      00
+ 122 006b 0145FC   		addl	%eax, -4(%rbp)
+  37:simple-multiple.cpp ****     total += getDataB();
+ 123              		.loc 1 37 0
+ 124 006e 488B45E8 		movq	-24(%rbp), %rax
+ 125 0072 4883C004 		addq	$4, %rax
+ 126 0076 4889C7   		movq	%rax, %rdi
+ 127 0079 E8000000 		call	_ZNK5baseB8getDataBEv
+ 127      00
+ 128 007e 0145FC   		addl	%eax, -4(%rbp)
+  38:simple-multiple.cpp ****     return total;
+ 129              		.loc 1 38 0
+ 130 0081 8B45FC   		movl	-4(%rbp), %eax
+ 131              	.LBE2:
+  39:simple-multiple.cpp **** }
+ 132              		.loc 1 39 0
+ 133 0084 C9       		leave
+ 134              		.cfi_def_cfa 7, 8
+ 135 0085 C3       		ret
+ 136              		.cfi_endproc
+ 137              	.LFE4:
+ 139              	.Letext0:
+GAS LISTING /tmp/cc70JXGy.s 			page 4
+
+
+GAS LISTING /tmp/cc70JXGy.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 simple-multiple.cpp
+     /tmp/cc70JXGy.s:7      .text:0000000000000000 _ZN5baseA8setDataAEi
+     /tmp/cc70JXGy.s:33     .text:0000000000000016 _ZNK5baseA8getDataAEv
+     /tmp/cc70JXGy.s:56     .text:0000000000000026 _ZN5baseB8setDataBEi
+     /tmp/cc70JXGy.s:81     .text:000000000000003c _ZNK5baseB8getDataBEv
+     /tmp/cc70JXGy.s:104    .text:000000000000004c _ZNK7subBoth6getSumEv
+
+NO UNDEFINED SYMBOLS

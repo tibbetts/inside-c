@@ -1,0 +1,322 @@
+GAS LISTING /tmp/ccO8plYd.s 			page 1
+
+
+   1              		.file	"virtual-method.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.text._ZN6parent3fooEv,"axG",@progbits,_ZN6parent3fooEv,comdat
+   5              		.align 2
+   6              		.weak	_ZN6parent3fooEv
+   8              	_ZN6parent3fooEv:
+   9              	.LFB0:
+  10              		.file 1 "virtual-method.cpp"
+   1:virtual-method.cpp **** struct parent {
+   2:virtual-method.cpp ****     virtual int foo() { return 12; }
+  11              		.loc 1 2 0
+  12              		.cfi_startproc
+  13 0000 55       		pushq	%rbp
+  14              		.cfi_def_cfa_offset 16
+  15              		.cfi_offset 6, -16
+  16 0001 4889E5   		movq	%rsp, %rbp
+  17              		.cfi_def_cfa_register 6
+  18 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  19              		.loc 1 2 0
+  20 0008 B80C0000 		movl	$12, %eax
+  20      00
+  21 000d 5D       		popq	%rbp
+  22              		.cfi_def_cfa 7, 8
+  23 000e C3       		ret
+  24              		.cfi_endproc
+  25              	.LFE0:
+  27              		.section	.text._ZN6parent3barEv,"axG",@progbits,_ZN6parent3barEv,comdat
+  28              		.align 2
+  29              		.weak	_ZN6parent3barEv
+  31              	_ZN6parent3barEv:
+  32              	.LFB1:
+   3:virtual-method.cpp ****     virtual int bar() { return 15; }
+  33              		.loc 1 3 0
+  34              		.cfi_startproc
+  35 0000 55       		pushq	%rbp
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 6, -16
+  38 0001 4889E5   		movq	%rsp, %rbp
+  39              		.cfi_def_cfa_register 6
+  40 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  41              		.loc 1 3 0
+  42 0008 B80F0000 		movl	$15, %eax
+  42      00
+  43 000d 5D       		popq	%rbp
+  44              		.cfi_def_cfa 7, 8
+  45 000e C3       		ret
+  46              		.cfi_endproc
+  47              	.LFE1:
+  49              		.section	.text._ZN5child3fooEv,"axG",@progbits,_ZN5child3fooEv,comdat
+  50              		.align 2
+  51              		.weak	_ZN5child3fooEv
+  53              	_ZN5child3fooEv:
+  54              	.LFB2:
+   4:virtual-method.cpp **** };
+   5:virtual-method.cpp **** 
+   6:virtual-method.cpp **** struct child : public parent {
+GAS LISTING /tmp/ccO8plYd.s 			page 2
+
+
+   7:virtual-method.cpp ****     virtual int foo() { return 37; }
+  55              		.loc 1 7 0
+  56              		.cfi_startproc
+  57 0000 55       		pushq	%rbp
+  58              		.cfi_def_cfa_offset 16
+  59              		.cfi_offset 6, -16
+  60 0001 4889E5   		movq	%rsp, %rbp
+  61              		.cfi_def_cfa_register 6
+  62 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  63              		.loc 1 7 0
+  64 0008 B8250000 		movl	$37, %eax
+  64      00
+  65 000d 5D       		popq	%rbp
+  66              		.cfi_def_cfa 7, 8
+  67 000e C3       		ret
+  68              		.cfi_endproc
+  69              	.LFE2:
+  71              		.text
+  72              		.globl	_Z9doMethodsR6parent
+  74              	_Z9doMethodsR6parent:
+  75              	.LFB3:
+   8:virtual-method.cpp **** };
+   9:virtual-method.cpp **** 
+  10:virtual-method.cpp **** void doMethods(parent &p) {
+  76              		.loc 1 10 0
+  77              		.cfi_startproc
+  78 0000 55       		pushq	%rbp
+  79              		.cfi_def_cfa_offset 16
+  80              		.cfi_offset 6, -16
+  81 0001 4889E5   		movq	%rsp, %rbp
+  82              		.cfi_def_cfa_register 6
+  83 0004 4883EC10 		subq	$16, %rsp
+  84 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  11:virtual-method.cpp ****     p.foo();
+  85              		.loc 1 11 0
+  86 000c 488B45F8 		movq	-8(%rbp), %rax
+  87 0010 488B00   		movq	(%rax), %rax
+  88 0013 488B00   		movq	(%rax), %rax
+  89 0016 488B55F8 		movq	-8(%rbp), %rdx
+  90 001a 4889D7   		movq	%rdx, %rdi
+  91 001d FFD0     		call	*%rax
+  12:virtual-method.cpp ****     p.bar();
+  92              		.loc 1 12 0
+  93 001f 488B45F8 		movq	-8(%rbp), %rax
+  94 0023 488B00   		movq	(%rax), %rax
+  95 0026 4883C008 		addq	$8, %rax
+  96 002a 488B00   		movq	(%rax), %rax
+  97 002d 488B55F8 		movq	-8(%rbp), %rdx
+  98 0031 4889D7   		movq	%rdx, %rdi
+  99 0034 FFD0     		call	*%rax
+  13:virtual-method.cpp **** }
+ 100              		.loc 1 13 0
+ 101 0036 C9       		leave
+ 102              		.cfi_def_cfa 7, 8
+ 103 0037 C3       		ret
+ 104              		.cfi_endproc
+ 105              	.LFE3:
+GAS LISTING /tmp/ccO8plYd.s 			page 3
+
+
+ 107              		.section	.text._ZN6parentC2Ev,"axG",@progbits,_ZN6parentC5Ev,comdat
+ 108              		.align 2
+ 109              		.weak	_ZN6parentC2Ev
+ 111              	_ZN6parentC2Ev:
+ 112              	.LFB6:
+   1:virtual-method.cpp **** struct child : public parent {
+ 113              		.loc 1 1 0
+ 114              		.cfi_startproc
+ 115 0000 55       		pushq	%rbp
+ 116              		.cfi_def_cfa_offset 16
+ 117              		.cfi_offset 6, -16
+ 118 0001 4889E5   		movq	%rsp, %rbp
+ 119              		.cfi_def_cfa_register 6
+ 120 0004 48897DF8 		movq	%rdi, -8(%rbp)
+ 121              	.LBB2:
+   1:virtual-method.cpp **** struct child : public parent {
+ 122              		.loc 1 1 0
+ 123 0008 488B45F8 		movq	-8(%rbp), %rax
+ 124 000c 48C70000 		movq	$_ZTV6parent+16, (%rax)
+ 124      000000
+ 125              	.LBE2:
+ 126 0013 5D       		popq	%rbp
+ 127              		.cfi_def_cfa 7, 8
+ 128 0014 C3       		ret
+ 129              		.cfi_endproc
+ 130              	.LFE6:
+ 132              		.weak	_ZN6parentC1Ev
+ 133              		.set	_ZN6parentC1Ev,_ZN6parentC2Ev
+ 134              		.section	.text._ZN5childC2Ev,"axG",@progbits,_ZN5childC5Ev,comdat
+ 135              		.align 2
+ 136              		.weak	_ZN5childC2Ev
+ 138              	_ZN5childC2Ev:
+ 139              	.LFB9:
+   6:virtual-method.cpp ****     virtual int foo() { return 37; }
+ 140              		.loc 1 6 0
+ 141              		.cfi_startproc
+ 142 0000 55       		pushq	%rbp
+ 143              		.cfi_def_cfa_offset 16
+ 144              		.cfi_offset 6, -16
+ 145 0001 4889E5   		movq	%rsp, %rbp
+ 146              		.cfi_def_cfa_register 6
+ 147 0004 4883EC10 		subq	$16, %rsp
+ 148 0008 48897DF8 		movq	%rdi, -8(%rbp)
+ 149              	.LBB3:
+   6:virtual-method.cpp ****     virtual int foo() { return 37; }
+ 150              		.loc 1 6 0
+ 151 000c 488B45F8 		movq	-8(%rbp), %rax
+ 152 0010 4889C7   		movq	%rax, %rdi
+ 153 0013 E8000000 		call	_ZN6parentC2Ev
+ 153      00
+ 154 0018 488B45F8 		movq	-8(%rbp), %rax
+ 155 001c 48C70000 		movq	$_ZTV5child+16, (%rax)
+ 155      000000
+ 156              	.LBE3:
+ 157 0023 C9       		leave
+ 158              		.cfi_def_cfa 7, 8
+ 159 0024 C3       		ret
+GAS LISTING /tmp/ccO8plYd.s 			page 4
+
+
+ 160              		.cfi_endproc
+ 161              	.LFE9:
+ 163              		.weak	_ZN5childC1Ev
+ 164              		.set	_ZN5childC1Ev,_ZN5childC2Ev
+ 165              		.text
+ 166              		.globl	main
+ 168              	main:
+ 169              	.LFB4:
+  14:virtual-method.cpp **** 
+  15:virtual-method.cpp **** int main(int argc, char **argv) {
+ 170              		.loc 1 15 0
+ 171              		.cfi_startproc
+ 172 0038 55       		pushq	%rbp
+ 173              		.cfi_def_cfa_offset 16
+ 174              		.cfi_offset 6, -16
+ 175 0039 4889E5   		movq	%rsp, %rbp
+ 176              		.cfi_def_cfa_register 6
+ 177 003c 4883EC30 		subq	$48, %rsp
+ 178 0040 897DDC   		movl	%edi, -36(%rbp)
+ 179 0043 488975D0 		movq	%rsi, -48(%rbp)
+ 180              	.LBB4:
+  16:virtual-method.cpp ****     parent p;
+ 181              		.loc 1 16 0
+ 182 0047 488D45E0 		leaq	-32(%rbp), %rax
+ 183 004b 4889C7   		movq	%rax, %rdi
+ 184 004e E8000000 		call	_ZN6parentC1Ev
+ 184      00
+  17:virtual-method.cpp ****     doMethods(p);
+ 185              		.loc 1 17 0
+ 186 0053 488D45E0 		leaq	-32(%rbp), %rax
+ 187 0057 4889C7   		movq	%rax, %rdi
+ 188 005a E8000000 		call	_Z9doMethodsR6parent
+ 188      00
+  18:virtual-method.cpp **** 
+  19:virtual-method.cpp ****     child c;
+ 189              		.loc 1 19 0
+ 190 005f 488D45F0 		leaq	-16(%rbp), %rax
+ 191 0063 4889C7   		movq	%rax, %rdi
+ 192 0066 E8000000 		call	_ZN5childC1Ev
+ 192      00
+  20:virtual-method.cpp ****     doMethods(c);
+ 193              		.loc 1 20 0
+ 194 006b 488D45F0 		leaq	-16(%rbp), %rax
+ 195 006f 4889C7   		movq	%rax, %rdi
+ 196 0072 E8000000 		call	_Z9doMethodsR6parent
+ 196      00
+ 197              	.LBE4:
+  21:virtual-method.cpp **** }
+ 198              		.loc 1 21 0
+ 199 0077 B8000000 		movl	$0, %eax
+ 199      00
+ 200 007c C9       		leave
+ 201              		.cfi_def_cfa 7, 8
+ 202 007d C3       		ret
+ 203              		.cfi_endproc
+ 204              	.LFE4:
+ 206              		.weak	_ZTV5child
+GAS LISTING /tmp/ccO8plYd.s 			page 5
+
+
+ 207              		.section	.rodata._ZTV5child,"aG",@progbits,_ZTV5child,comdat
+ 208              		.align 32
+ 211              	_ZTV5child:
+ 212 0000 00000000 		.quad	0
+ 212      00000000 
+ 213 0008 00000000 		.quad	_ZTI5child
+ 213      00000000 
+ 214 0010 00000000 		.quad	_ZN5child3fooEv
+ 214      00000000 
+ 215 0018 00000000 		.quad	_ZN6parent3barEv
+ 215      00000000 
+ 216              		.weak	_ZTV6parent
+ 217              		.section	.rodata._ZTV6parent,"aG",@progbits,_ZTV6parent,comdat
+ 218              		.align 32
+ 221              	_ZTV6parent:
+ 222 0000 00000000 		.quad	0
+ 222      00000000 
+ 223 0008 00000000 		.quad	_ZTI6parent
+ 223      00000000 
+ 224 0010 00000000 		.quad	_ZN6parent3fooEv
+ 224      00000000 
+ 225 0018 00000000 		.quad	_ZN6parent3barEv
+ 225      00000000 
+ 226              		.weak	_ZTS5child
+ 227              		.section	.rodata._ZTS5child,"aG",@progbits,_ZTS5child,comdat
+ 230              	_ZTS5child:
+ 231 0000 35636869 		.string	"5child"
+ 231      6C6400
+ 232              		.weak	_ZTI5child
+ 233              		.section	.rodata._ZTI5child,"aG",@progbits,_ZTI5child,comdat
+ 234              		.align 16
+ 237              	_ZTI5child:
+ 238 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 238      00000000 
+ 239 0008 00000000 		.quad	_ZTS5child
+ 239      00000000 
+ 240 0010 00000000 		.quad	_ZTI6parent
+ 240      00000000 
+ 241              		.weak	_ZTS6parent
+ 242              		.section	.rodata._ZTS6parent,"aG",@progbits,_ZTS6parent,comdat
+ 245              	_ZTS6parent:
+ 246 0000 36706172 		.string	"6parent"
+ 246      656E7400 
+ 247              		.weak	_ZTI6parent
+ 248              		.section	.rodata._ZTI6parent,"aG",@progbits,_ZTI6parent,comdat
+ 249              		.align 16
+ 252              	_ZTI6parent:
+ 253 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 253      00000000 
+ 254 0008 00000000 		.quad	_ZTS6parent
+ 254      00000000 
+ 255              		.text
+ 256              	.Letext0:
+GAS LISTING /tmp/ccO8plYd.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 virtual-method.cpp
+     /tmp/ccO8plYd.s:8      .text._ZN6parent3fooEv:0000000000000000 _ZN6parent3fooEv
+     /tmp/ccO8plYd.s:31     .text._ZN6parent3barEv:0000000000000000 _ZN6parent3barEv
+     /tmp/ccO8plYd.s:53     .text._ZN5child3fooEv:0000000000000000 _ZN5child3fooEv
+     /tmp/ccO8plYd.s:74     .text:0000000000000000 _Z9doMethodsR6parent
+     /tmp/ccO8plYd.s:111    .text._ZN6parentC2Ev:0000000000000000 _ZN6parentC2Ev
+     /tmp/ccO8plYd.s:221    .rodata._ZTV6parent:0000000000000000 _ZTV6parent
+     /tmp/ccO8plYd.s:111    .text._ZN6parentC2Ev:0000000000000000 _ZN6parentC1Ev
+     /tmp/ccO8plYd.s:138    .text._ZN5childC2Ev:0000000000000000 _ZN5childC2Ev
+     /tmp/ccO8plYd.s:211    .rodata._ZTV5child:0000000000000000 _ZTV5child
+     /tmp/ccO8plYd.s:138    .text._ZN5childC2Ev:0000000000000000 _ZN5childC1Ev
+     /tmp/ccO8plYd.s:168    .text:0000000000000038 main
+     /tmp/ccO8plYd.s:237    .rodata._ZTI5child:0000000000000000 _ZTI5child
+     /tmp/ccO8plYd.s:252    .rodata._ZTI6parent:0000000000000000 _ZTI6parent
+     /tmp/ccO8plYd.s:230    .rodata._ZTS5child:0000000000000000 _ZTS5child
+     /tmp/ccO8plYd.s:245    .rodata._ZTS6parent:0000000000000000 _ZTS6parent
+                           .group:0000000000000000 _ZN6parentC5Ev
+                           .group:0000000000000000 _ZN5childC5Ev
+
+UNDEFINED SYMBOLS
+_ZTVN10__cxxabiv120__si_class_type_infoE
+_ZTVN10__cxxabiv117__class_type_infoE

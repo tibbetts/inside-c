@@ -1,0 +1,413 @@
+GAS LISTING /tmp/ccojVNeD.s 			page 1
+
+
+   1              		.file	"object-arg.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata
+   5              		.align 8
+   6              	.LC0:
+   7 0000 54686520 		.string	"The value of the field is %d.\n"
+   7      76616C75 
+   7      65206F66 
+   7      20746865 
+   7      20666965 
+   8              		.text
+   9              		.globl	_Z5print8onefield
+  11              	_Z5print8onefield:
+  12              	.LFB0:
+  13              		.file 1 "object-arg.cpp"
+   1:object-arg.cpp **** #include "stdio.h"
+   2:object-arg.cpp **** 
+   3:object-arg.cpp **** class onefield {
+   4:object-arg.cpp ****   private:
+   5:object-arg.cpp ****     int field;
+   6:object-arg.cpp ****   public:
+   7:object-arg.cpp ****     explicit onefield(int f);
+   8:object-arg.cpp ****     // Copy constructor.
+   9:object-arg.cpp ****     onefield(const onefield &of);
+  10:object-arg.cpp ****     ~onefield();
+  11:object-arg.cpp **** 
+  12:object-arg.cpp ****     void setField(int f);
+  13:object-arg.cpp ****     int getField() const;
+  14:object-arg.cpp **** };
+  15:object-arg.cpp **** 
+  16:object-arg.cpp **** void print(onefield of) {
+  14              		.loc 1 16 0
+  15              		.cfi_startproc
+  16 0000 55       		pushq	%rbp
+  17              		.cfi_def_cfa_offset 16
+  18              		.cfi_offset 6, -16
+  19 0001 4889E5   		movq	%rsp, %rbp
+  20              		.cfi_def_cfa_register 6
+  21 0004 4883EC10 		subq	$16, %rsp
+  22 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  17:object-arg.cpp ****     printf("The value of the field is %d.\n", of.getField());
+  23              		.loc 1 17 0
+  24 000c 488B45F8 		movq	-8(%rbp), %rax
+  25 0010 4889C7   		movq	%rax, %rdi
+  26 0013 E8000000 		call	_ZNK8onefield8getFieldEv
+  26      00
+  27 0018 89C6     		movl	%eax, %esi
+  28 001a BF000000 		movl	$.LC0, %edi
+  28      00
+  29 001f B8000000 		movl	$0, %eax
+  29      00
+  30 0024 E8000000 		call	printf
+  30      00
+  18:object-arg.cpp **** }
+  31              		.loc 1 18 0
+  32 0029 C9       		leave
+GAS LISTING /tmp/ccojVNeD.s 			page 2
+
+
+  33              		.cfi_def_cfa 7, 8
+  34 002a C3       		ret
+  35              		.cfi_endproc
+  36              	.LFE0:
+  38              		.globl	main
+  40              	main:
+  41              	.LFB1:
+  19:object-arg.cpp **** 
+  20:object-arg.cpp **** 
+  21:object-arg.cpp **** int main(int argc, char **argv) {
+  42              		.loc 1 21 0
+  43              		.cfi_startproc
+  44              		.cfi_personality 0x3,__gxx_personality_v0
+  45              		.cfi_lsda 0x3,.LLSDA1
+  46 002b 55       		pushq	%rbp
+  47              		.cfi_def_cfa_offset 16
+  48              		.cfi_offset 6, -16
+  49 002c 4889E5   		movq	%rsp, %rbp
+  50              		.cfi_def_cfa_register 6
+  51 002f 53       		pushq	%rbx
+  52 0030 4883EC38 		subq	$56, %rsp
+  53              		.cfi_offset 3, -24
+  54 0034 897DCC   		movl	%edi, -52(%rbp)
+  55 0037 488975C0 		movq	%rsi, -64(%rbp)
+  56              	.LBB2:
+  22:object-arg.cpp ****     onefield of(13);
+  57              		.loc 1 22 0
+  58 003b 488D45D0 		leaq	-48(%rbp), %rax
+  59 003f BE0D0000 		movl	$13, %esi
+  59      00
+  60 0044 4889C7   		movq	%rax, %rdi
+  61              	.LEHB0:
+  62 0047 E8000000 		call	_ZN8onefieldC1Ei
+  62      00
+  63              	.LEHE0:
+  23:object-arg.cpp **** 
+  24:object-arg.cpp ****     print(of);
+  64              		.loc 1 24 0
+  65 004c 488D55D0 		leaq	-48(%rbp), %rdx
+  66 0050 488D45E0 		leaq	-32(%rbp), %rax
+  67 0054 4889D6   		movq	%rdx, %rsi
+  68 0057 4889C7   		movq	%rax, %rdi
+  69 005a E8000000 		call	_ZN8onefieldC1ERKS_
+  69      00
+  70 005f 488D45E0 		leaq	-32(%rbp), %rax
+  71 0063 4889C7   		movq	%rax, %rdi
+  72              	.LEHB1:
+  73 0066 E8000000 		call	_Z5print8onefield
+  73      00
+  74              	.LEHE1:
+  75              		.loc 1 24 0 is_stmt 0 discriminator 1
+  76 006b 488D45E0 		leaq	-32(%rbp), %rax
+  77 006f 4889C7   		movq	%rax, %rdi
+  78              	.LEHB2:
+  79 0072 E8000000 		call	_ZN8onefieldD1Ev
+  79      00
+  80              	.LEHE2:
+GAS LISTING /tmp/ccojVNeD.s 			page 3
+
+
+  81 0077 488D45D0 		leaq	-48(%rbp), %rax
+  82 007b 4889C7   		movq	%rax, %rdi
+  83              	.LEHB3:
+  84 007e E8000000 		call	_ZN8onefieldD1Ev
+  84      00
+  85              	.LEHE3:
+  86              	.LBE2:
+  25:object-arg.cpp **** }
+  87              		.loc 1 25 0 is_stmt 1 discriminator 1
+  88 0083 B8000000 		movl	$0, %eax
+  88      00
+  89 0088 EB2B     		jmp	.L8
+  90              	.L6:
+  91 008a 4889C3   		movq	%rax, %rbx
+  92              	.LBB3:
+  24:object-arg.cpp **** }
+  93              		.loc 1 24 0
+  94 008d 488D45E0 		leaq	-32(%rbp), %rax
+  95 0091 4889C7   		movq	%rax, %rdi
+  96 0094 E8000000 		call	_ZN8onefieldD1Ev
+  96      00
+  97 0099 EB03     		jmp	.L5
+  98              	.L7:
+  99 009b 4889C3   		movq	%rax, %rbx
+ 100              	.L5:
+ 101 009e 488D45D0 		leaq	-48(%rbp), %rax
+ 102 00a2 4889C7   		movq	%rax, %rdi
+ 103 00a5 E8000000 		call	_ZN8onefieldD1Ev
+ 103      00
+ 104 00aa 4889D8   		movq	%rbx, %rax
+ 105 00ad 4889C7   		movq	%rax, %rdi
+ 106              	.LEHB4:
+ 107 00b0 E8000000 		call	_Unwind_Resume
+ 107      00
+ 108              	.LEHE4:
+ 109              	.L8:
+ 110              	.LBE3:
+ 111              		.loc 1 25 0
+ 112 00b5 4883C438 		addq	$56, %rsp
+ 113 00b9 5B       		popq	%rbx
+ 114 00ba 5D       		popq	%rbp
+ 115              		.cfi_def_cfa 7, 8
+ 116 00bb C3       		ret
+ 117              		.cfi_endproc
+ 118              	.LFE1:
+ 119              		.globl	__gxx_personality_v0
+ 120              		.section	.gcc_except_table,"a",@progbits
+ 121              	.LLSDA1:
+ 122 0000 FF       		.byte	0xff
+ 123 0001 FF       		.byte	0xff
+ 124 0002 01       		.byte	0x1
+ 125 0003 15       		.uleb128 .LLSDACSE1-.LLSDACSB1
+ 126              	.LLSDACSB1:
+ 127 0004 1C       		.uleb128 .LEHB0-.LFB1
+ 128 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 129 0006 00       		.uleb128 0
+ 130 0007 00       		.uleb128 0
+GAS LISTING /tmp/ccojVNeD.s 			page 4
+
+
+ 131 0008 3B       		.uleb128 .LEHB1-.LFB1
+ 132 0009 05       		.uleb128 .LEHE1-.LEHB1
+ 133 000a 5F       		.uleb128 .L6-.LFB1
+ 134 000b 00       		.uleb128 0
+ 135 000c 47       		.uleb128 .LEHB2-.LFB1
+ 136 000d 05       		.uleb128 .LEHE2-.LEHB2
+ 137 000e 70       		.uleb128 .L7-.LFB1
+ 138 000f 00       		.uleb128 0
+ 139 0010 53       		.uleb128 .LEHB3-.LFB1
+ 140 0011 05       		.uleb128 .LEHE3-.LEHB3
+ 141 0012 00       		.uleb128 0
+ 142 0013 00       		.uleb128 0
+ 143 0014 8501     		.uleb128 .LEHB4-.LFB1
+ 144 0016 05       		.uleb128 .LEHE4-.LEHB4
+ 145 0017 00       		.uleb128 0
+ 146 0018 00       		.uleb128 0
+ 147              	.LLSDACSE1:
+ 148              		.text
+ 150              		.align 2
+ 151              		.globl	_ZN8onefield8setFieldEi
+ 153              	_ZN8onefield8setFieldEi:
+ 154              	.LFB2:
+  26:object-arg.cpp **** 
+  27:object-arg.cpp **** 
+  28:object-arg.cpp **** void onefield::setField(int f) {
+ 155              		.loc 1 28 0
+ 156              		.cfi_startproc
+ 157 00bc 55       		pushq	%rbp
+ 158              		.cfi_def_cfa_offset 16
+ 159              		.cfi_offset 6, -16
+ 160 00bd 4889E5   		movq	%rsp, %rbp
+ 161              		.cfi_def_cfa_register 6
+ 162 00c0 48897DF8 		movq	%rdi, -8(%rbp)
+ 163 00c4 8975F4   		movl	%esi, -12(%rbp)
+  29:object-arg.cpp ****     this->field = f;
+ 164              		.loc 1 29 0
+ 165 00c7 488B45F8 		movq	-8(%rbp), %rax
+ 166 00cb 8B55F4   		movl	-12(%rbp), %edx
+ 167 00ce 8910     		movl	%edx, (%rax)
+  30:object-arg.cpp **** }
+ 168              		.loc 1 30 0
+ 169 00d0 5D       		popq	%rbp
+ 170              		.cfi_def_cfa 7, 8
+ 171 00d1 C3       		ret
+ 172              		.cfi_endproc
+ 173              	.LFE2:
+ 175              		.align 2
+ 176              		.globl	_ZNK8onefield8getFieldEv
+ 178              	_ZNK8onefield8getFieldEv:
+ 179              	.LFB3:
+  31:object-arg.cpp **** int onefield::getField() const {
+ 180              		.loc 1 31 0
+ 181              		.cfi_startproc
+ 182 00d2 55       		pushq	%rbp
+ 183              		.cfi_def_cfa_offset 16
+ 184              		.cfi_offset 6, -16
+ 185 00d3 4889E5   		movq	%rsp, %rbp
+GAS LISTING /tmp/ccojVNeD.s 			page 5
+
+
+ 186              		.cfi_def_cfa_register 6
+ 187 00d6 48897DF8 		movq	%rdi, -8(%rbp)
+  32:object-arg.cpp ****     return this->field;
+ 188              		.loc 1 32 0
+ 189 00da 488B45F8 		movq	-8(%rbp), %rax
+ 190 00de 8B00     		movl	(%rax), %eax
+  33:object-arg.cpp **** }
+ 191              		.loc 1 33 0
+ 192 00e0 5D       		popq	%rbp
+ 193              		.cfi_def_cfa 7, 8
+ 194 00e1 C3       		ret
+ 195              		.cfi_endproc
+ 196              	.LFE3:
+ 198              		.section	.rodata
+ 199 001f 00       		.align 8
+ 200              	.LC1:
+ 201 0020 696E6974 		.string	"initial value of field was %d.\n"
+ 201      69616C20 
+ 201      76616C75 
+ 201      65206F66 
+ 201      20666965 
+ 202              		.text
+ 203              		.align 2
+ 204              		.globl	_ZN8onefieldC2Ei
+ 206              	_ZN8onefieldC2Ei:
+ 207              	.LFB5:
+  34:object-arg.cpp **** 
+  35:object-arg.cpp **** onefield::onefield(int f) {
+ 208              		.loc 1 35 0
+ 209              		.cfi_startproc
+ 210 00e2 55       		pushq	%rbp
+ 211              		.cfi_def_cfa_offset 16
+ 212              		.cfi_offset 6, -16
+ 213 00e3 4889E5   		movq	%rsp, %rbp
+ 214              		.cfi_def_cfa_register 6
+ 215 00e6 4883EC10 		subq	$16, %rsp
+ 216 00ea 48897DF8 		movq	%rdi, -8(%rbp)
+ 217 00ee 8975F4   		movl	%esi, -12(%rbp)
+ 218              	.LBB4:
+  36:object-arg.cpp ****     field = f;
+ 219              		.loc 1 36 0
+ 220 00f1 488B45F8 		movq	-8(%rbp), %rax
+ 221 00f5 8B55F4   		movl	-12(%rbp), %edx
+ 222 00f8 8910     		movl	%edx, (%rax)
+  37:object-arg.cpp ****     printf("initial value of field was %d.\n", field);
+ 223              		.loc 1 37 0
+ 224 00fa 488B45F8 		movq	-8(%rbp), %rax
+ 225 00fe 8B00     		movl	(%rax), %eax
+ 226 0100 89C6     		movl	%eax, %esi
+ 227 0102 BF000000 		movl	$.LC1, %edi
+ 227      00
+ 228 0107 B8000000 		movl	$0, %eax
+ 228      00
+ 229 010c E8000000 		call	printf
+ 229      00
+ 230              	.LBE4:
+  38:object-arg.cpp **** }
+GAS LISTING /tmp/ccojVNeD.s 			page 6
+
+
+ 231              		.loc 1 38 0
+ 232 0111 C9       		leave
+ 233              		.cfi_def_cfa 7, 8
+ 234 0112 C3       		ret
+ 235              		.cfi_endproc
+ 236              	.LFE5:
+ 238              		.globl	_ZN8onefieldC1Ei
+ 239              		.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
+ 240 0113 90       		.align 2
+ 241              		.globl	_ZN8onefieldC2ERKS_
+ 243              	_ZN8onefieldC2ERKS_:
+ 244              	.LFB8:
+  39:object-arg.cpp **** 
+  40:object-arg.cpp **** onefield::onefield(const onefield &of) {
+ 245              		.loc 1 40 0
+ 246              		.cfi_startproc
+ 247 0114 55       		pushq	%rbp
+ 248              		.cfi_def_cfa_offset 16
+ 249              		.cfi_offset 6, -16
+ 250 0115 4889E5   		movq	%rsp, %rbp
+ 251              		.cfi_def_cfa_register 6
+ 252 0118 48897DF8 		movq	%rdi, -8(%rbp)
+ 253 011c 488975F0 		movq	%rsi, -16(%rbp)
+ 254              	.LBB5:
+  41:object-arg.cpp ****     field = of.field;
+ 255              		.loc 1 41 0
+ 256 0120 488B45F0 		movq	-16(%rbp), %rax
+ 257 0124 8B10     		movl	(%rax), %edx
+ 258 0126 488B45F8 		movq	-8(%rbp), %rax
+ 259 012a 8910     		movl	%edx, (%rax)
+ 260              	.LBE5:
+  42:object-arg.cpp **** }
+ 261              		.loc 1 42 0
+ 262 012c 5D       		popq	%rbp
+ 263              		.cfi_def_cfa 7, 8
+ 264 012d C3       		ret
+ 265              		.cfi_endproc
+ 266              	.LFE8:
+ 268              		.globl	_ZN8onefieldC1ERKS_
+ 269              		.set	_ZN8onefieldC1ERKS_,_ZN8onefieldC2ERKS_
+ 270              		.section	.rodata
+ 271              	.LC2:
+ 272 0040 4C617374 		.string	"Last value of field was %d.\n"
+ 272      2076616C 
+ 272      7565206F 
+ 272      66206669 
+ 272      656C6420 
+ 273              		.text
+ 274              		.align 2
+ 275              		.globl	_ZN8onefieldD2Ev
+ 277              	_ZN8onefieldD2Ev:
+ 278              	.LFB11:
+  43:object-arg.cpp **** 
+  44:object-arg.cpp **** 
+  45:object-arg.cpp **** onefield::~onefield() {
+ 279              		.loc 1 45 0
+ 280              		.cfi_startproc
+GAS LISTING /tmp/ccojVNeD.s 			page 7
+
+
+ 281 012e 55       		pushq	%rbp
+ 282              		.cfi_def_cfa_offset 16
+ 283              		.cfi_offset 6, -16
+ 284 012f 4889E5   		movq	%rsp, %rbp
+ 285              		.cfi_def_cfa_register 6
+ 286 0132 4883EC10 		subq	$16, %rsp
+ 287 0136 48897DF8 		movq	%rdi, -8(%rbp)
+ 288              	.LBB6:
+  46:object-arg.cpp ****     printf("Last value of field was %d.\n", field);
+ 289              		.loc 1 46 0
+ 290 013a 488B45F8 		movq	-8(%rbp), %rax
+ 291 013e 8B00     		movl	(%rax), %eax
+ 292 0140 89C6     		movl	%eax, %esi
+ 293 0142 BF000000 		movl	$.LC2, %edi
+ 293      00
+ 294 0147 B8000000 		movl	$0, %eax
+ 294      00
+ 295 014c E8000000 		call	printf
+ 295      00
+ 296              	.LBE6:
+  47:object-arg.cpp **** }
+ 297              		.loc 1 47 0
+ 298 0151 C9       		leave
+ 299              		.cfi_def_cfa 7, 8
+ 300 0152 C3       		ret
+ 301              		.cfi_endproc
+ 302              	.LFE11:
+ 304              		.globl	_ZN8onefieldD1Ev
+ 305              		.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
+ 306              	.Letext0:
+GAS LISTING /tmp/ccojVNeD.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 object-arg.cpp
+     /tmp/ccojVNeD.s:11     .text:0000000000000000 _Z5print8onefield
+     /tmp/ccojVNeD.s:178    .text:00000000000000d2 _ZNK8onefield8getFieldEv
+     /tmp/ccojVNeD.s:40     .text:000000000000002b main
+     /tmp/ccojVNeD.s:206    .text:00000000000000e2 _ZN8onefieldC1Ei
+     /tmp/ccojVNeD.s:243    .text:0000000000000114 _ZN8onefieldC1ERKS_
+     /tmp/ccojVNeD.s:277    .text:000000000000012e _ZN8onefieldD1Ev
+     /tmp/ccojVNeD.s:153    .text:00000000000000bc _ZN8onefield8setFieldEi
+     /tmp/ccojVNeD.s:206    .text:00000000000000e2 _ZN8onefieldC2Ei
+     /tmp/ccojVNeD.s:243    .text:0000000000000114 _ZN8onefieldC2ERKS_
+     /tmp/ccojVNeD.s:277    .text:000000000000012e _ZN8onefieldD2Ev
+
+UNDEFINED SYMBOLS
+printf
+__gxx_personality_v0
+_Unwind_Resume

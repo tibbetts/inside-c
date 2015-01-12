@@ -1,0 +1,107 @@
+GAS LISTING /tmp/ccZN4pvb.s 			page 1
+
+
+   1              		.file	"object.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.text._ZN15onefield_structC2Ei,"axG",@progbits,_ZN15onefield_structC5Ei,comdat
+   5              		.align 2
+   6              		.weak	_ZN15onefield_structC2Ei
+   8              	_ZN15onefield_structC2Ei:
+   9              	.LFB1:
+  10              		.file 1 "object.cpp"
+   1:object.cpp    **** struct onefield_struct {
+   2:object.cpp    ****     int field;
+   3:object.cpp    **** public:
+   4:object.cpp    ****     onefield_struct(int f) {
+  11              		.loc 1 4 0
+  12              		.cfi_startproc
+  13 0000 55       		pushq	%rbp
+  14              		.cfi_def_cfa_offset 16
+  15              		.cfi_offset 6, -16
+  16 0001 4889E5   		movq	%rsp, %rbp
+  17              		.cfi_def_cfa_register 6
+  18 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  19 0008 8975F4   		movl	%esi, -12(%rbp)
+  20              	.LBB2:
+   5:object.cpp    ****         field = f;
+  21              		.loc 1 5 0
+  22 000b 488B45F8 		movq	-8(%rbp), %rax
+  23 000f 8B55F4   		movl	-12(%rbp), %edx
+  24 0012 8910     		movl	%edx, (%rax)
+  25              	.LBE2:
+   6:object.cpp    ****     }
+  26              		.loc 1 6 0
+  27 0014 5D       		popq	%rbp
+  28              		.cfi_def_cfa 7, 8
+  29 0015 C3       		ret
+  30              		.cfi_endproc
+  31              	.LFE1:
+  33              		.weak	_ZN15onefield_structC1Ei
+  34              		.set	_ZN15onefield_structC1Ei,_ZN15onefield_structC2Ei
+  35              		.text
+  36              		.globl	main
+  38              	main:
+  39              	.LFB3:
+   7:object.cpp    **** };
+   8:object.cpp    **** 
+   9:object.cpp    **** /*
+  10:object.cpp    **** class onefield_class {
+  11:object.cpp    ****     int field;
+  12:object.cpp    **** public:
+  13:object.cpp    ****     onefield_class(int f) : field(f) { }
+  14:object.cpp    **** };
+  15:object.cpp    **** */
+  16:object.cpp    **** 
+  17:object.cpp    **** int main(int argc, char **argv) {
+  40              		.loc 1 17 0
+  41              		.cfi_startproc
+  42 0000 55       		pushq	%rbp
+  43              		.cfi_def_cfa_offset 16
+GAS LISTING /tmp/ccZN4pvb.s 			page 2
+
+
+  44              		.cfi_offset 6, -16
+  45 0001 4889E5   		movq	%rsp, %rbp
+  46              		.cfi_def_cfa_register 6
+  47 0004 4883EC20 		subq	$32, %rsp
+  48 0008 897DEC   		movl	%edi, -20(%rbp)
+  49 000b 488975E0 		movq	%rsi, -32(%rbp)
+  50              	.LBB3:
+  18:object.cpp    ****     onefield_struct os(13);
+  51              		.loc 1 18 0
+  52 000f 488D45F0 		leaq	-16(%rbp), %rax
+  53 0013 BE0D0000 		movl	$13, %esi
+  53      00
+  54 0018 4889C7   		movq	%rax, %rdi
+  55 001b E8000000 		call	_ZN15onefield_structC1Ei
+  55      00
+  19:object.cpp    ****     //    onefield_class oc(9);
+  20:object.cpp    **** 
+  21:object.cpp    ****     //    onefield_struct *osp = new onefield_struct(17);
+  22:object.cpp    ****     //    onefield_class *ocp = new onefield_class(23);
+  23:object.cpp    **** 
+  24:object.cpp    ****     return 0;
+  56              		.loc 1 24 0
+  57 0020 B8000000 		movl	$0, %eax
+  57      00
+  58              	.LBE3:
+  25:object.cpp    **** }
+  59              		.loc 1 25 0
+  60 0025 C9       		leave
+  61              		.cfi_def_cfa 7, 8
+  62 0026 C3       		ret
+  63              		.cfi_endproc
+  64              	.LFE3:
+  66              	.Letext0:
+GAS LISTING /tmp/ccZN4pvb.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 object.cpp
+     /tmp/ccZN4pvb.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC2Ei
+     /tmp/ccZN4pvb.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC1Ei
+     /tmp/ccZN4pvb.s:38     .text:0000000000000000 main
+                           .group:0000000000000000 _ZN15onefield_structC5Ei
+
+NO UNDEFINED SYMBOLS

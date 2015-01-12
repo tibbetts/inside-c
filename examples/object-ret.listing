@@ -1,0 +1,312 @@
+GAS LISTING /tmp/ccwxSlYw.s 			page 1
+
+
+   1              		.file	"object-ret.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	_Z7frominti
+   6              	_Z7frominti:
+   7              	.LFB0:
+   8              		.file 1 "object-ret.cpp"
+   1:object-ret.cpp **** #include "stdio.h"
+   2:object-ret.cpp **** 
+   3:object-ret.cpp **** class twofield {
+   4:object-ret.cpp ****   private:
+   5:object-ret.cpp ****     int field1, field2;
+   6:object-ret.cpp ****   public:
+   7:object-ret.cpp ****     explicit twofield(int f);
+   8:object-ret.cpp ****     // Copy constructor.
+   9:object-ret.cpp ****     twofield(const twofield &of);
+  10:object-ret.cpp ****     ~twofield();
+  11:object-ret.cpp **** 
+  12:object-ret.cpp ****     void setField(int f);
+  13:object-ret.cpp ****     int getField() const;
+  14:object-ret.cpp **** };
+  15:object-ret.cpp **** 
+  16:object-ret.cpp **** twofield fromint(int j) {
+   9              		.loc 1 16 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+  16 0004 4883EC10 		subq	$16, %rsp
+  17 0008 48897DF8 		movq	%rdi, -8(%rbp)
+  18 000c 8975F4   		movl	%esi, -12(%rbp)
+  19              	.LBB2:
+  17:object-ret.cpp ****     twofield of(j);
+  20              		.loc 1 17 0
+  21 000f 8B55F4   		movl	-12(%rbp), %edx
+  22 0012 488B45F8 		movq	-8(%rbp), %rax
+  23 0016 89D6     		movl	%edx, %esi
+  24 0018 4889C7   		movq	%rax, %rdi
+  25 001b E8000000 		call	_ZN8twofieldC1Ei
+  25      00
+  18:object-ret.cpp ****     return of;
+  26              		.loc 1 18 0
+  27 0020 90       		nop
+  28              	.LBE2:
+  19:object-ret.cpp **** }
+  29              		.loc 1 19 0
+  30 0021 488B45F8 		movq	-8(%rbp), %rax
+  31 0025 C9       		leave
+  32              		.cfi_def_cfa 7, 8
+  33 0026 C3       		ret
+  34              		.cfi_endproc
+  35              	.LFE0:
+  37              		.globl	main
+  39              	main:
+  40              	.LFB1:
+GAS LISTING /tmp/ccwxSlYw.s 			page 2
+
+
+  20:object-ret.cpp **** 
+  21:object-ret.cpp **** int main(int argc, char **argv) {
+  41              		.loc 1 21 0
+  42              		.cfi_startproc
+  43 0027 55       		pushq	%rbp
+  44              		.cfi_def_cfa_offset 16
+  45              		.cfi_offset 6, -16
+  46 0028 4889E5   		movq	%rsp, %rbp
+  47              		.cfi_def_cfa_register 6
+  48 002b 4883EC30 		subq	$48, %rsp
+  49 002f 897DDC   		movl	%edi, -36(%rbp)
+  50 0032 488975D0 		movq	%rsi, -48(%rbp)
+  51              	.LBB3:
+  22:object-ret.cpp ****     int i = fromint(13).getField();
+  52              		.loc 1 22 0
+  53 0036 488D45F0 		leaq	-16(%rbp), %rax
+  54 003a BE0D0000 		movl	$13, %esi
+  54      00
+  55 003f 4889C7   		movq	%rax, %rdi
+  56 0042 E8000000 		call	_Z7frominti
+  56      00
+  57 0047 488D45F0 		leaq	-16(%rbp), %rax
+  58 004b 4889C7   		movq	%rax, %rdi
+  59 004e E8000000 		call	_ZNK8twofield8getFieldEv
+  59      00
+  60 0053 8945EC   		movl	%eax, -20(%rbp)
+  61 0056 488D45F0 		leaq	-16(%rbp), %rax
+  62 005a 4889C7   		movq	%rax, %rdi
+  63 005d E8000000 		call	_ZN8twofieldD1Ev
+  63      00
+  23:object-ret.cpp ****     return i;
+  64              		.loc 1 23 0
+  65 0062 8B45EC   		movl	-20(%rbp), %eax
+  66              	.LBE3:
+  24:object-ret.cpp **** }
+  67              		.loc 1 24 0
+  68 0065 C9       		leave
+  69              		.cfi_def_cfa 7, 8
+  70 0066 C3       		ret
+  71              		.cfi_endproc
+  72              	.LFE1:
+  74 0067 90       		.align 2
+  75              		.globl	_ZN8twofield8setFieldEi
+  77              	_ZN8twofield8setFieldEi:
+  78              	.LFB2:
+  25:object-ret.cpp **** 
+  26:object-ret.cpp **** void twofield::setField(int f) {
+  79              		.loc 1 26 0
+  80              		.cfi_startproc
+  81 0068 55       		pushq	%rbp
+  82              		.cfi_def_cfa_offset 16
+  83              		.cfi_offset 6, -16
+  84 0069 4889E5   		movq	%rsp, %rbp
+  85              		.cfi_def_cfa_register 6
+  86 006c 48897DF8 		movq	%rdi, -8(%rbp)
+  87 0070 8975F4   		movl	%esi, -12(%rbp)
+  27:object-ret.cpp ****     this->field1 = f;
+GAS LISTING /tmp/ccwxSlYw.s 			page 3
+
+
+  88              		.loc 1 27 0
+  89 0073 488B45F8 		movq	-8(%rbp), %rax
+  90 0077 8B55F4   		movl	-12(%rbp), %edx
+  91 007a 8910     		movl	%edx, (%rax)
+  28:object-ret.cpp **** }
+  92              		.loc 1 28 0
+  93 007c 5D       		popq	%rbp
+  94              		.cfi_def_cfa 7, 8
+  95 007d C3       		ret
+  96              		.cfi_endproc
+  97              	.LFE2:
+  99              		.align 2
+ 100              		.globl	_ZNK8twofield8getFieldEv
+ 102              	_ZNK8twofield8getFieldEv:
+ 103              	.LFB3:
+  29:object-ret.cpp **** int twofield::getField() const {
+ 104              		.loc 1 29 0
+ 105              		.cfi_startproc
+ 106 007e 55       		pushq	%rbp
+ 107              		.cfi_def_cfa_offset 16
+ 108              		.cfi_offset 6, -16
+ 109 007f 4889E5   		movq	%rsp, %rbp
+ 110              		.cfi_def_cfa_register 6
+ 111 0082 48897DF8 		movq	%rdi, -8(%rbp)
+  30:object-ret.cpp ****     return this->field1;
+ 112              		.loc 1 30 0
+ 113 0086 488B45F8 		movq	-8(%rbp), %rax
+ 114 008a 8B00     		movl	(%rax), %eax
+  31:object-ret.cpp **** }
+ 115              		.loc 1 31 0
+ 116 008c 5D       		popq	%rbp
+ 117              		.cfi_def_cfa 7, 8
+ 118 008d C3       		ret
+ 119              		.cfi_endproc
+ 120              	.LFE3:
+ 122              		.section	.rodata
+ 123              		.align 8
+ 124              	.LC0:
+ 125 0000 696E6974 		.string	"initial value of field was %d.\n"
+ 125      69616C20 
+ 125      76616C75 
+ 125      65206F66 
+ 125      20666965 
+ 126              		.text
+ 127              		.align 2
+ 128              		.globl	_ZN8twofieldC2Ei
+ 130              	_ZN8twofieldC2Ei:
+ 131              	.LFB5:
+  32:object-ret.cpp **** 
+  33:object-ret.cpp **** twofield::twofield(int f) {
+ 132              		.loc 1 33 0
+ 133              		.cfi_startproc
+ 134 008e 55       		pushq	%rbp
+ 135              		.cfi_def_cfa_offset 16
+ 136              		.cfi_offset 6, -16
+ 137 008f 4889E5   		movq	%rsp, %rbp
+ 138              		.cfi_def_cfa_register 6
+GAS LISTING /tmp/ccwxSlYw.s 			page 4
+
+
+ 139 0092 4883EC10 		subq	$16, %rsp
+ 140 0096 48897DF8 		movq	%rdi, -8(%rbp)
+ 141 009a 8975F4   		movl	%esi, -12(%rbp)
+ 142              	.LBB4:
+  34:object-ret.cpp ****     field1 = f;
+ 143              		.loc 1 34 0
+ 144 009d 488B45F8 		movq	-8(%rbp), %rax
+ 145 00a1 8B55F4   		movl	-12(%rbp), %edx
+ 146 00a4 8910     		movl	%edx, (%rax)
+  35:object-ret.cpp ****     printf("initial value of field was %d.\n", field1);
+ 147              		.loc 1 35 0
+ 148 00a6 488B45F8 		movq	-8(%rbp), %rax
+ 149 00aa 8B00     		movl	(%rax), %eax
+ 150 00ac 89C6     		movl	%eax, %esi
+ 151 00ae BF000000 		movl	$.LC0, %edi
+ 151      00
+ 152 00b3 B8000000 		movl	$0, %eax
+ 152      00
+ 153 00b8 E8000000 		call	printf
+ 153      00
+ 154              	.LBE4:
+  36:object-ret.cpp **** }
+ 155              		.loc 1 36 0
+ 156 00bd C9       		leave
+ 157              		.cfi_def_cfa 7, 8
+ 158 00be C3       		ret
+ 159              		.cfi_endproc
+ 160              	.LFE5:
+ 162              		.globl	_ZN8twofieldC1Ei
+ 163              		.set	_ZN8twofieldC1Ei,_ZN8twofieldC2Ei
+ 164 00bf 90       		.align 2
+ 165              		.globl	_ZN8twofieldC2ERKS_
+ 167              	_ZN8twofieldC2ERKS_:
+ 168              	.LFB8:
+  37:object-ret.cpp **** 
+  38:object-ret.cpp **** twofield::twofield(const twofield &of) {
+ 169              		.loc 1 38 0
+ 170              		.cfi_startproc
+ 171 00c0 55       		pushq	%rbp
+ 172              		.cfi_def_cfa_offset 16
+ 173              		.cfi_offset 6, -16
+ 174 00c1 4889E5   		movq	%rsp, %rbp
+ 175              		.cfi_def_cfa_register 6
+ 176 00c4 48897DF8 		movq	%rdi, -8(%rbp)
+ 177 00c8 488975F0 		movq	%rsi, -16(%rbp)
+ 178              	.LBB5:
+  39:object-ret.cpp ****     field1 = of.field1;
+ 179              		.loc 1 39 0
+ 180 00cc 488B45F0 		movq	-16(%rbp), %rax
+ 181 00d0 8B10     		movl	(%rax), %edx
+ 182 00d2 488B45F8 		movq	-8(%rbp), %rax
+ 183 00d6 8910     		movl	%edx, (%rax)
+ 184              	.LBE5:
+  40:object-ret.cpp **** }
+ 185              		.loc 1 40 0
+ 186 00d8 5D       		popq	%rbp
+ 187              		.cfi_def_cfa 7, 8
+GAS LISTING /tmp/ccwxSlYw.s 			page 5
+
+
+ 188 00d9 C3       		ret
+ 189              		.cfi_endproc
+ 190              	.LFE8:
+ 192              		.globl	_ZN8twofieldC1ERKS_
+ 193              		.set	_ZN8twofieldC1ERKS_,_ZN8twofieldC2ERKS_
+ 194              		.section	.rodata
+ 195              	.LC1:
+ 196 0020 4C617374 		.string	"Last value of field was %d.\n"
+ 196      2076616C 
+ 196      7565206F 
+ 196      66206669 
+ 196      656C6420 
+ 197              		.text
+ 198              		.align 2
+ 199              		.globl	_ZN8twofieldD2Ev
+ 201              	_ZN8twofieldD2Ev:
+ 202              	.LFB11:
+  41:object-ret.cpp **** 
+  42:object-ret.cpp **** twofield::~twofield() {
+ 203              		.loc 1 42 0
+ 204              		.cfi_startproc
+ 205 00da 55       		pushq	%rbp
+ 206              		.cfi_def_cfa_offset 16
+ 207              		.cfi_offset 6, -16
+ 208 00db 4889E5   		movq	%rsp, %rbp
+ 209              		.cfi_def_cfa_register 6
+ 210 00de 4883EC10 		subq	$16, %rsp
+ 211 00e2 48897DF8 		movq	%rdi, -8(%rbp)
+ 212              	.LBB6:
+  43:object-ret.cpp ****     printf("Last value of field was %d.\n", field1);
+ 213              		.loc 1 43 0
+ 214 00e6 488B45F8 		movq	-8(%rbp), %rax
+ 215 00ea 8B00     		movl	(%rax), %eax
+ 216 00ec 89C6     		movl	%eax, %esi
+ 217 00ee BF000000 		movl	$.LC1, %edi
+ 217      00
+ 218 00f3 B8000000 		movl	$0, %eax
+ 218      00
+ 219 00f8 E8000000 		call	printf
+ 219      00
+ 220              	.LBE6:
+  44:object-ret.cpp **** }
+ 221              		.loc 1 44 0
+ 222 00fd C9       		leave
+ 223              		.cfi_def_cfa 7, 8
+ 224 00fe C3       		ret
+ 225              		.cfi_endproc
+ 226              	.LFE11:
+ 228              		.globl	_ZN8twofieldD1Ev
+ 229              		.set	_ZN8twofieldD1Ev,_ZN8twofieldD2Ev
+ 230              	.Letext0:
+GAS LISTING /tmp/ccwxSlYw.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 object-ret.cpp
+     /tmp/ccwxSlYw.s:6      .text:0000000000000000 _Z7frominti
+     /tmp/ccwxSlYw.s:130    .text:000000000000008e _ZN8twofieldC1Ei
+     /tmp/ccwxSlYw.s:39     .text:0000000000000027 main
+     /tmp/ccwxSlYw.s:102    .text:000000000000007e _ZNK8twofield8getFieldEv
+     /tmp/ccwxSlYw.s:201    .text:00000000000000da _ZN8twofieldD1Ev
+     /tmp/ccwxSlYw.s:77     .text:0000000000000068 _ZN8twofield8setFieldEi
+     /tmp/ccwxSlYw.s:130    .text:000000000000008e _ZN8twofieldC2Ei
+     /tmp/ccwxSlYw.s:167    .text:00000000000000c0 _ZN8twofieldC2ERKS_
+     /tmp/ccwxSlYw.s:167    .text:00000000000000c0 _ZN8twofieldC1ERKS_
+     /tmp/ccwxSlYw.s:201    .text:00000000000000da _ZN8twofieldD2Ev
+
+UNDEFINED SYMBOLS
+printf
