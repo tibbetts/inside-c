@@ -117,6 +117,23 @@
       <tr><td>%r15</td><td>%r15d</td><td>%r15w</td><td></td><td>%r15b</td><td>Callee saved</td></tr>
     </table>
     <h3>Operations</h3>
+    <table class="table">
+      <tr><th>Operation prefix</th><th>Arguments</th><th>Suffixes</th><th>Description</th><th>Examples</th></tr>
+      <tr><td><code>mov</code></td><td>Source, Dest</td><td>Sign or Zero extend (s/z),Size(q/l/b)</td><td>Move</td><td></td></tr>
+      <tr><td><code>push</code>/<code>pop</code></td><td>Source</td><td>Size</td><td>Push to stack %rsp</td><td></td></tr>
+      <tr><td><code>lea</code></td><td>Address, Dest</td><td>Size</td><td>Load effective address</td><td></td></tr>
+      <tr><td><code>inc</code>/<code>dec</code></td><td>Dest</td><td>Size</td><td>Increment/Decrement</td><td></td></tr>
+      <tr><td><code>neg</code>/<code>not</code></td><td>Dest</td><td>Size</td><td>Negate, Complement</td><td></td></tr>
+      <tr><td><code>add</code>/<code>sub</code>/<code>imul</code></td><td>Accumulator, Argument</td><td>Size</td><td>Add/Substract/Multiply</td><td></td></tr>
+      <tr><td><code>and</code>/<code>or</code>/<code>xor</code></td><td>Accumulator, Argument</td><td>Size</td><td>Bitwise And/Or/Xor</td><td></td></tr>
+      <tr><td><code>sal</code>/<code>shl</code>/<code>sar</code>/<code>shr</code></td><td>Argument, Accumulator</td><td>Size</td><td>Shift Left/Right, Arith/Logical<br>(only different for right)</td><td></td></tr>
+      <tr><td><code>cmp</code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code>test</code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code>cmov</code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code>jmp</code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code>call/ret</code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code></code></td><td></td><td></td><td></td><td></td></tr>
+    </table>
     <h3>Types</h3>
     <table class="table">
       <tr><th>C declaration</th><th>Intel data type</th><th>GAS suffix x86-64</th><th>Size (Bytes)</th></tr>
