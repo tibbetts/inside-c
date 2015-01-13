@@ -1,13 +1,14 @@
-GAS LISTING /tmp/ccUWmYci.s 			page 1
+GAS LISTING /tmp/cc7CXeXT.s 			page 1
 
 
    1              		.file	"basic-method.cpp"
    2              		.text
    3              	.Ltext0:
-   4              		.globl	main
-   6              	main:
-   7              	.LFB0:
-   8              		.file 1 "basic-method.cpp"
+   4              		.align 2
+   5              		.globl	_ZN8onefield8setFieldEi
+   7              	_ZN8onefield8setFieldEi:
+   8              	.LFB1:
+   9              		.file 1 "basic-method.cpp"
    1:basic-method.cpp **** class onefield {
    2:basic-method.cpp ****   private:
    3:basic-method.cpp ****     int field;
@@ -17,133 +18,125 @@ GAS LISTING /tmp/ccUWmYci.s 			page 1
    7:basic-method.cpp **** };
    8:basic-method.cpp **** 
    9:basic-method.cpp **** int main(int argc, char **argv) {
-   9              		.loc 1 9 0
-  10              		.cfi_startproc
-  11 0000 55       		pushq	%rbp
-  12              		.cfi_def_cfa_offset 16
-  13              		.cfi_offset 6, -16
-  14 0001 4889E5   		movq	%rsp, %rbp
-  15              		.cfi_def_cfa_register 6
-  16 0004 4883EC20 		subq	$32, %rsp
-  17 0008 897DEC   		movl	%edi, -20(%rbp)
-  18 000b 488975E0 		movq	%rsi, -32(%rbp)
-  19              	.LBB2:
   10:basic-method.cpp ****     onefield of;
   11:basic-method.cpp **** 
   12:basic-method.cpp ****     of.setField(13);
-  20              		.loc 1 12 0
-  21 000f 488D45F0 		leaq	-16(%rbp), %rax
-  22 0013 BE0D0000 		movl	$13, %esi
-  22      00
-  23 0018 4889C7   		movq	%rax, %rdi
-  24 001b E8000000 		call	_ZN8onefield8setFieldEi
-  24      00
   13:basic-method.cpp **** 
   14:basic-method.cpp ****     onefield *ofp = new onefield;
-  25              		.loc 1 14 0
-  26 0020 BF040000 		movl	$4, %edi
-  26      00
-  27 0025 E8000000 		call	_Znwm
-  27      00
-  28 002a 488945F8 		movq	%rax, -8(%rbp)
   15:basic-method.cpp **** 
   16:basic-method.cpp ****     ofp->setField(27);
-  29              		.loc 1 16 0
-  30 002e 488B45F8 		movq	-8(%rbp), %rax
-  31 0032 BE1B0000 		movl	$27, %esi
-  31      00
-  32 0037 4889C7   		movq	%rax, %rdi
-  33 003a E8000000 		call	_ZN8onefield8setFieldEi
-  33      00
   17:basic-method.cpp **** 
   18:basic-method.cpp ****     delete ofp;
-  34              		.loc 1 18 0
-GAS LISTING /tmp/ccUWmYci.s 			page 2
-
-
-  35 003f 488B45F8 		movq	-8(%rbp), %rax
-  36 0043 4889C7   		movq	%rax, %rdi
-  37 0046 E8000000 		call	_ZdlPv
-  37      00
   19:basic-method.cpp **** 
   20:basic-method.cpp ****     return of.getField();
-  38              		.loc 1 20 0
-  39 004b 488D45F0 		leaq	-16(%rbp), %rax
-  40 004f 4889C7   		movq	%rax, %rdi
-  41 0052 E8000000 		call	_ZNK8onefield8getFieldEv
-  41      00
-  42              	.LBE2:
   21:basic-method.cpp **** }
-  43              		.loc 1 21 0
-  44 0057 C9       		leave
-  45              		.cfi_def_cfa 7, 8
-  46 0058 C3       		ret
-  47              		.cfi_endproc
-  48              	.LFE0:
-  50 0059 90       		.align 2
-  51              		.globl	_ZN8onefield8setFieldEi
-  53              	_ZN8onefield8setFieldEi:
-  54              	.LFB1:
   22:basic-method.cpp **** 
   23:basic-method.cpp **** 
   24:basic-method.cpp **** void onefield::setField(int f) {
-  55              		.loc 1 24 0
-  56              		.cfi_startproc
-  57 005a 55       		pushq	%rbp
-  58              		.cfi_def_cfa_offset 16
-  59              		.cfi_offset 6, -16
-  60 005b 4889E5   		movq	%rsp, %rbp
-  61              		.cfi_def_cfa_register 6
-  62 005e 48897DF8 		movq	%rdi, -8(%rbp)
-  63 0062 8975F4   		movl	%esi, -12(%rbp)
+  10              		.loc 1 24 0
+  11              		.cfi_startproc
+  12              	.LVL0:
   25:basic-method.cpp ****     this->field = f;
-  64              		.loc 1 25 0
-  65 0065 488B45F8 		movq	-8(%rbp), %rax
-  66 0069 8B55F4   		movl	-12(%rbp), %edx
-  67 006c 8910     		movl	%edx, (%rax)
+  13              		.loc 1 25 0
+  14 0000 8937     		movl	%esi, (%rdi)
+  15 0002 C3       		ret
+  16              		.cfi_endproc
+  17              	.LFE1:
+  19 0003 90       		.align 2
+  20              		.globl	_ZNK8onefield8getFieldEv
+  22              	_ZNK8onefield8getFieldEv:
+  23              	.LFB2:
   26:basic-method.cpp **** }
-  68              		.loc 1 26 0
-  69 006e 5D       		popq	%rbp
-  70              		.cfi_def_cfa 7, 8
-  71 006f C3       		ret
-  72              		.cfi_endproc
-  73              	.LFE1:
-  75              		.align 2
-  76              		.globl	_ZNK8onefield8getFieldEv
-  78              	_ZNK8onefield8getFieldEv:
-  79              	.LFB2:
   27:basic-method.cpp **** int onefield::getField() const {
-  80              		.loc 1 27 0
-  81              		.cfi_startproc
-  82 0070 55       		pushq	%rbp
-  83              		.cfi_def_cfa_offset 16
-  84              		.cfi_offset 6, -16
-GAS LISTING /tmp/ccUWmYci.s 			page 3
-
-
-  85 0071 4889E5   		movq	%rsp, %rbp
-  86              		.cfi_def_cfa_register 6
-  87 0074 48897DF8 		movq	%rdi, -8(%rbp)
+  24              		.loc 1 27 0
+  25              		.cfi_startproc
+  26              	.LVL1:
   28:basic-method.cpp ****     return this->field;
-  88              		.loc 1 28 0
-  89 0078 488B45F8 		movq	-8(%rbp), %rax
-  90 007c 8B00     		movl	(%rax), %eax
+  27              		.loc 1 28 0
+  28 0004 8B07     		movl	(%rdi), %eax
   29:basic-method.cpp **** }
-  91              		.loc 1 29 0
-  92 007e 5D       		popq	%rbp
-  93              		.cfi_def_cfa 7, 8
-  94 007f C3       		ret
-  95              		.cfi_endproc
-  96              	.LFE2:
-  98              	.Letext0:
-GAS LISTING /tmp/ccUWmYci.s 			page 4
+  29              		.loc 1 29 0
+  30 0006 C3       		ret
+  31              		.cfi_endproc
+GAS LISTING /tmp/cc7CXeXT.s 			page 2
+
+
+  32              	.LFE2:
+  34              		.globl	main
+  36              	main:
+  37              	.LFB0:
+   9:basic-method.cpp ****     onefield of;
+  38              		.loc 1 9 0
+  39              		.cfi_startproc
+  40              	.LVL2:
+  41 0007 53       		pushq	%rbx
+  42              		.cfi_def_cfa_offset 16
+  43              		.cfi_offset 3, -16
+  44 0008 4883EC10 		subq	$16, %rsp
+  45              		.cfi_def_cfa_offset 32
+  46              	.LBB2:
+  12:basic-method.cpp **** 
+  47              		.loc 1 12 0
+  48 000c BE0D0000 		movl	$13, %esi
+  48      00
+  49              	.LVL3:
+  50 0011 4889E7   		movq	%rsp, %rdi
+  51              	.LVL4:
+  52 0014 E8000000 		call	_ZN8onefield8setFieldEi
+  52      00
+  53              	.LVL5:
+  14:basic-method.cpp **** 
+  54              		.loc 1 14 0
+  55 0019 BF040000 		movl	$4, %edi
+  55      00
+  56 001e E8000000 		call	_Znwm
+  56      00
+  57              	.LVL6:
+  58 0023 4889C3   		movq	%rax, %rbx
+  59              	.LVL7:
+  16:basic-method.cpp **** 
+  60              		.loc 1 16 0
+  61 0026 BE1B0000 		movl	$27, %esi
+  61      00
+  62 002b 4889C7   		movq	%rax, %rdi
+  63 002e E8000000 		call	_ZN8onefield8setFieldEi
+  63      00
+  64              	.LVL8:
+  18:basic-method.cpp **** 
+  65              		.loc 1 18 0
+  66 0033 4889DF   		movq	%rbx, %rdi
+  67 0036 E8000000 		call	_ZdlPv
+  67      00
+  68              	.LVL9:
+  20:basic-method.cpp **** }
+  69              		.loc 1 20 0
+  70 003b 4889E7   		movq	%rsp, %rdi
+  71 003e E8000000 		call	_ZNK8onefield8getFieldEv
+  71      00
+  72              	.LVL10:
+  73              	.LBE2:
+  21:basic-method.cpp **** 
+  74              		.loc 1 21 0
+  75 0043 4883C410 		addq	$16, %rsp
+GAS LISTING /tmp/cc7CXeXT.s 			page 3
+
+
+  76              		.cfi_def_cfa_offset 16
+  77 0047 5B       		popq	%rbx
+  78              		.cfi_def_cfa_offset 8
+  79              	.LVL11:
+  80 0048 C3       		ret
+  81              		.cfi_endproc
+  82              	.LFE0:
+  84              	.Letext0:
+GAS LISTING /tmp/cc7CXeXT.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-method.cpp
-     /tmp/ccUWmYci.s:6      .text:0000000000000000 main
-     /tmp/ccUWmYci.s:53     .text:000000000000005a _ZN8onefield8setFieldEi
-     /tmp/ccUWmYci.s:78     .text:0000000000000070 _ZNK8onefield8getFieldEv
+     /tmp/cc7CXeXT.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
+     /tmp/cc7CXeXT.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
+     /tmp/cc7CXeXT.s:36     .text:0000000000000007 main
 
 UNDEFINED SYMBOLS
 _Znwm

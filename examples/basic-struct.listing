@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccRzUCXn.s 			page 1
+GAS LISTING /tmp/ccgUS8SW.s 			page 1
 
 
    1              		.file	"basic-struct.cpp"
@@ -15,65 +15,54 @@ GAS LISTING /tmp/ccRzUCXn.s 			page 1
    5:basic-struct.cpp **** int main(int argc, char **argv) {
    9              		.loc 1 5 0
   10              		.cfi_startproc
-  11 0000 55       		pushq	%rbp
-  12              		.cfi_def_cfa_offset 16
-  13              		.cfi_offset 6, -16
-  14 0001 4889E5   		movq	%rsp, %rbp
-  15              		.cfi_def_cfa_register 6
-  16 0004 4883EC20 		subq	$32, %rsp
-  17 0008 897DEC   		movl	%edi, -20(%rbp)
-  18 000b 488975E0 		movq	%rsi, -32(%rbp)
-  19              	.LBB2:
+  11              	.LVL0:
+  12 0000 4883EC08 		subq	$8, %rsp
+  13              		.cfi_def_cfa_offset 16
+  14              	.LVL1:
+  15              	.LBB2:
    6:basic-struct.cpp ****     onefield of;
    7:basic-struct.cpp **** 
    8:basic-struct.cpp ****     of.field = 13;
-  20              		.loc 1 8 0
-  21 000f C745F00D 		movl	$13, -16(%rbp)
-  21      000000
    9:basic-struct.cpp **** 
   10:basic-struct.cpp ****     onefield *ofp = new onefield;
-  22              		.loc 1 10 0
-  23 0016 BF040000 		movl	$4, %edi
-  23      00
-  24 001b E8000000 		call	_Znwm
-  24      00
-  25 0020 488945F8 		movq	%rax, -8(%rbp)
+  16              		.loc 1 10 0
+  17 0004 BF040000 		movl	$4, %edi
+  17      00
+  18              	.LVL2:
+  19 0009 E8000000 		call	_Znwm
+  19      00
+  20              	.LVL3:
   11:basic-struct.cpp **** 
   12:basic-struct.cpp ****     ofp->field = 27;
-  26              		.loc 1 12 0
-  27 0024 488B45F8 		movq	-8(%rbp), %rax
-  28 0028 C7001B00 		movl	$27, (%rax)
-  28      0000
+  21              		.loc 1 12 0
+  22 000e C7001B00 		movl	$27, (%rax)
+  22      0000
   13:basic-struct.cpp **** 
   14:basic-struct.cpp ****     delete ofp;
-  29              		.loc 1 14 0
-  30 002e 488B45F8 		movq	-8(%rbp), %rax
-  31 0032 4889C7   		movq	%rax, %rdi
-  32 0035 E8000000 		call	_ZdlPv
-  32      00
+  23              		.loc 1 14 0
+  24 0014 4889C7   		movq	%rax, %rdi
+  25 0017 E8000000 		call	_ZdlPv
+  25      00
+  26              	.LVL4:
+  27              	.LBE2:
   15:basic-struct.cpp **** 
   16:basic-struct.cpp ****     return 0;
-  33              		.loc 1 16 0
-  34 003a B8000000 		movl	$0, %eax
-  34      00
-  35              	.LBE2:
   17:basic-struct.cpp **** }
-GAS LISTING /tmp/ccRzUCXn.s 			page 2
-
-
-  36              		.loc 1 17 0
-  37 003f C9       		leave
-  38              		.cfi_def_cfa 7, 8
-  39 0040 C3       		ret
-  40              		.cfi_endproc
-  41              	.LFE0:
-  43              	.Letext0:
-GAS LISTING /tmp/ccRzUCXn.s 			page 3
+  28              		.loc 1 17 0
+  29 001c B8000000 		movl	$0, %eax
+  29      00
+  30 0021 4883C408 		addq	$8, %rsp
+  31              		.cfi_def_cfa_offset 8
+  32 0025 C3       		ret
+  33              		.cfi_endproc
+  34              	.LFE0:
+  36              	.Letext0:
+GAS LISTING /tmp/ccgUS8SW.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-struct.cpp
-     /tmp/ccRzUCXn.s:6      .text:0000000000000000 main
+     /tmp/ccgUS8SW.s:6      .text:0000000000000000 main
 
 UNDEFINED SYMBOLS
 _Znwm

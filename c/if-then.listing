@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccpm7WI9.s 			page 1
+GAS LISTING /tmp/cc5EI1Ch.s 			page 1
 
 
    1              		.file	"if-then.c"
@@ -48,11 +48,11 @@ GAS LISTING /tmp/ccpm7WI9.s 			page 1
   34              		.cfi_endproc
   35              	.LFE0:
   37              	.Letext0:
-GAS LISTING /tmp/ccpm7WI9.s 			page 2
+GAS LISTING /tmp/cc5EI1Ch.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 if-then.c
-     /tmp/ccpm7WI9.s:6      .text:0000000000000000 main
+     /tmp/cc5EI1Ch.s:6      .text:0000000000000000 main
 
 NO UNDEFINED SYMBOLS

@@ -1,0 +1,117 @@
+GAS LISTING /tmp/ccemCDOj.s 			page 1
+
+
+   1              		.file	"pointers.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.globl	function
+   6              	function:
+   7              	.LFB0:
+   8              		.file 1 "pointers.c"
+   1:pointers.c    **** #include <stdio.h>
+   2:pointers.c    **** 
+   3:pointers.c    **** void function(int foo, int *fp, int **fpp) {
+   9              		.loc 1 3 0
+  10              		.cfi_startproc
+  11 0000 55       		pushq	%rbp
+  12              		.cfi_def_cfa_offset 16
+  13              		.cfi_offset 6, -16
+  14 0001 4889E5   		movq	%rsp, %rbp
+  15              		.cfi_def_cfa_register 6
+  16 0004 897DEC   		movl	%edi, -20(%rbp)
+  17 0007 488975E0 		movq	%rsi, -32(%rbp)
+  18 000b 488955D8 		movq	%rdx, -40(%rbp)
+   4:pointers.c    ****   foo = 3;
+  19              		.loc 1 4 0
+  20 000f C745FC03 		movl	$3, -4(%rbp)
+  20      000000
+   5:pointers.c    ****   *fp = 5;
+  21              		.loc 1 5 0
+  22 0016 488B45E0 		movq	-32(%rbp), %rax
+  23 001a C7000500 		movl	$5, (%rax)
+  23      0000
+   6:pointers.c    ****   **fpp = 7;
+  24              		.loc 1 6 0
+  25 0020 488B45D8 		movq	-40(%rbp), %rax
+  26 0024 488B00   		movq	(%rax), %rax
+  27 0027 C7000700 		movl	$7, (%rax)
+  27      0000
+   7:pointers.c    **** }
+  28              		.loc 1 7 0
+  29 002d 5D       		popq	%rbp
+  30              		.cfi_def_cfa 7, 8
+  31 002e C3       		ret
+  32              		.cfi_endproc
+  33              	.LFE0:
+  35              		.section	.rodata
+  36              	.LC0:
+  37 0000 666F6F20 		.string	"foo = %d"
+  37      3D202564 
+  37      00
+  38              		.text
+  39              		.globl	pointers
+  41              	pointers:
+  42              	.LFB1:
+   8:pointers.c    **** 
+   9:pointers.c    **** void pointers () {
+  43              		.loc 1 9 0
+  44              		.cfi_startproc
+  45 002f 55       		pushq	%rbp
+  46              		.cfi_def_cfa_offset 16
+GAS LISTING /tmp/ccemCDOj.s 			page 2
+
+
+  47              		.cfi_offset 6, -16
+  48 0030 4889E5   		movq	%rsp, %rbp
+  49              		.cfi_def_cfa_register 6
+  50 0033 4883EC20 		subq	$32, %rsp
+  10:pointers.c    ****     int foo = 3;
+  51              		.loc 1 10 0
+  52 0037 C745EC03 		movl	$3, -20(%rbp)
+  52      000000
+  11:pointers.c    ****     int *fp = &foo;
+  53              		.loc 1 11 0
+  54 003e 488D45EC 		leaq	-20(%rbp), %rax
+  55 0042 488945F0 		movq	%rax, -16(%rbp)
+  12:pointers.c    ****     int **fpp = &fp;
+  56              		.loc 1 12 0
+  57 0046 488D45F0 		leaq	-16(%rbp), %rax
+  58 004a 488945F8 		movq	%rax, -8(%rbp)
+  13:pointers.c    **** 
+  14:pointers.c    ****     function(foo, &foo, &fp);
+  59              		.loc 1 14 0
+  60 004e 8B45EC   		movl	-20(%rbp), %eax
+  61 0051 488D55F0 		leaq	-16(%rbp), %rdx
+  62 0055 488D4DEC 		leaq	-20(%rbp), %rcx
+  63 0059 4889CE   		movq	%rcx, %rsi
+  64 005c 89C7     		movl	%eax, %edi
+  65 005e E8000000 		call	function
+  65      00
+  15:pointers.c    ****     printf("foo = %d", foo);
+  66              		.loc 1 15 0
+  67 0063 8B45EC   		movl	-20(%rbp), %eax
+  68 0066 89C6     		movl	%eax, %esi
+  69 0068 BF000000 		movl	$.LC0, %edi
+  69      00
+  70 006d B8000000 		movl	$0, %eax
+  70      00
+  71 0072 E8000000 		call	printf
+  71      00
+  16:pointers.c    **** }
+  72              		.loc 1 16 0
+  73 0077 C9       		leave
+  74              		.cfi_def_cfa 7, 8
+  75 0078 C3       		ret
+  76              		.cfi_endproc
+  77              	.LFE1:
+  79              	.Letext0:
+GAS LISTING /tmp/ccemCDOj.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 pointers.c
+     /tmp/ccemCDOj.s:6      .text:0000000000000000 function
+     /tmp/ccemCDOj.s:41     .text:000000000000002f pointers
+
+UNDEFINED SYMBOLS
+printf

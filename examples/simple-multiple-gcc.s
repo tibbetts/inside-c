@@ -6,18 +6,7 @@
 _ZN5baseA8setDataAEi:
 .LFB0:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movl	%esi, (%rdi)
 	ret
 	.cfi_endproc
 .LFE0:
@@ -28,16 +17,7 @@ _ZN5baseA8setDataAEi:
 _ZNK5baseA8getDataAEv:
 .LFB1:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movl	(%rax), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movl	(%rdi), %eax
 	ret
 	.cfi_endproc
 .LFE1:
@@ -48,18 +28,7 @@ _ZNK5baseA8getDataAEv:
 _ZN5baseB8setDataBEi:
 .LFB2:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movl	%esi, (%rdi)
 	ret
 	.cfi_endproc
 .LFE2:
@@ -70,16 +39,7 @@ _ZN5baseB8setDataBEi:
 _ZNK5baseB8getDataBEv:
 .LFB3:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movl	(%rax), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movl	(%rdi), %eax
 	ret
 	.cfi_endproc
 .LFE3:
@@ -93,23 +53,19 @@ _ZNK7subBoth6getSumEv:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$24, %rsp
-	movq	%rdi, -24(%rbp)
-	movl	$0, -4(%rbp)
-	movq	-24(%rbp), %rax
-	movq	%rax, %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movq	%rdi, %rbx
 	call	_ZNK5baseA8getDataAEv
-	addl	%eax, -4(%rbp)
-	movq	-24(%rbp), %rax
-	addq	$4, %rax
-	movq	%rax, %rdi
+	movl	%eax, %ebp
+	leaq	4(%rbx), %rdi
 	call	_ZNK5baseB8getDataBEv
-	addl	%eax, -4(%rbp)
-	movl	-4(%rbp), %eax
-	leave
-	.cfi_def_cfa 7, 8
+	addl	%ebp, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE4:

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccraUSa5.s 			page 1
+GAS LISTING /tmp/ccROmEc8.s 			page 1
 
 
    1              		.file	"variable.c"
@@ -41,11 +41,11 @@ GAS LISTING /tmp/ccraUSa5.s 			page 1
   28              		.cfi_endproc
   29              	.LFE0:
   31              	.Letext0:
-GAS LISTING /tmp/ccraUSa5.s 			page 2
+GAS LISTING /tmp/ccROmEc8.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 variable.c
-     /tmp/ccraUSa5.s:6      .text:0000000000000000 main
+     /tmp/ccROmEc8.s:6      .text:0000000000000000 main
 
 NO UNDEFINED SYMBOLS

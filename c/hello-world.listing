@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccLvT9W1.s 			page 1
+GAS LISTING /tmp/ccfqKfA2.s 			page 1
 
 
    1              		.file	"hello-world.c"
@@ -48,12 +48,12 @@ GAS LISTING /tmp/ccLvT9W1.s 			page 1
   32              		.cfi_endproc
   33              	.LFE0:
   35              	.Letext0:
-GAS LISTING /tmp/ccLvT9W1.s 			page 2
+GAS LISTING /tmp/ccfqKfA2.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 hello-world.c
-     /tmp/ccLvT9W1.s:10     .text:0000000000000000 main
+     /tmp/ccfqKfA2.s:10     .text:0000000000000000 main
 
 UNDEFINED SYMBOLS
 puts

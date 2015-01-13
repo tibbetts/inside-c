@@ -1,0 +1,445 @@
+GAS LISTING /tmp/cctYsXca.s 			page 1
+
+
+   1              		.file	"extern-c.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.rodata.str1.1,"aMS",@progbits,1
+   5              	.LC0:
+   6 0000 736F6D65 		.string	"some string"
+   6      20737472 
+   6      696E6700 
+   7              	.LC1:
+   8 000c 736F6D65 		.string	"some other string"
+   8      206F7468 
+   8      65722073 
+   8      7472696E 
+   8      6700
+   9              		.text
+  11              	_Z41__static_initialization_and_destruction_0ii:
+  12              	.LFB1400:
+  13              		.file 1 "extern-c.cpp"
+   1:extern-c.cpp  **** #include <iostream>
+   2:extern-c.cpp  **** 
+   3:extern-c.cpp  **** int regularVar;
+   4:extern-c.cpp  **** extern const int regularConst = 7;
+   5:extern-c.cpp  **** const int implicitlyStaticConst = 15;
+   6:extern-c.cpp  **** const std::string implicitlyStaticConstWithInit("some string");
+   7:extern-c.cpp  **** std::string implicitlyStaticWithInit("some other string");
+   8:extern-c.cpp  **** 
+   9:extern-c.cpp  **** void regularMethod() {
+  10:extern-c.cpp  ****   std::cout << "regularMethod" << std::endl;
+  11:extern-c.cpp  **** }
+  12:extern-c.cpp  **** 
+  13:extern-c.cpp  **** extern "C" {
+  14:extern-c.cpp  ****   int externVar;
+  15:extern-c.cpp  ****   const int externConst = 12;
+  16:extern-c.cpp  ****   void externMethod() {
+  17:extern-c.cpp  ****     std::cout << "externMethod" << std::endl;
+  18:extern-c.cpp  ****   }
+  19:extern-c.cpp  **** }
+  20:extern-c.cpp  **** 
+  21:extern-c.cpp  **** void externC() {
+  22:extern-c.cpp  ****   regularVar = 12;
+  23:extern-c.cpp  ****   externVar = 13;
+  24:extern-c.cpp  **** 
+  25:extern-c.cpp  ****   int x = regularVar + externVar + regularConst + externConst + implicitlyStaticConst;
+  26:extern-c.cpp  **** 
+  27:extern-c.cpp  ****   regularMethod();
+  28:extern-c.cpp  ****   externMethod();
+  29:extern-c.cpp  **** }
+  14              		.loc 1 29 0
+  15              		.cfi_startproc
+  16              	.LVL0:
+  17 0000 83FF01   		cmpl	$1, %edi
+  18 0003 757E     		jne	.L5
+  19              		.loc 1 29 0 discriminator 1
+  20 0005 81FEFFFF 		cmpl	$65535, %esi
+  20      0000
+  21 000b 7576     		jne	.L5
+  22              		.loc 1 29 0 is_stmt 0
+GAS LISTING /tmp/cctYsXca.s 			page 2
+
+
+  23 000d 4883EC18 		subq	$24, %rsp
+  24              		.cfi_def_cfa_offset 32
+  25              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  45:/usr/include/c++/4.8/iostream **** 
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+GAS LISTING /tmp/cctYsXca.s 			page 3
+
+
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  26              		.loc 2 74 0 is_stmt 1
+  27 0011 BF000000 		movl	$_ZStL8__ioinit, %edi
+  27      00
+  28              	.LVL1:
+  29 0016 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  29      00
+  30              	.LVL2:
+  31 001b BA000000 		movl	$__dso_handle, %edx
+  31      00
+  32 0020 BE000000 		movl	$_ZStL8__ioinit, %esi
+  32      00
+  33 0025 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  33      00
+  34 002a E8000000 		call	__cxa_atexit
+  34      00
+  35              	.LVL3:
+   6:extern-c.cpp  **** std::string implicitlyStaticWithInit("some other string");
+  36              		.loc 1 6 0
+  37 002f 488D5424 		leaq	15(%rsp), %rdx
+  37      0F
+  38 0034 BE000000 		movl	$.LC0, %esi
+  38      00
+  39 0039 BF000000 		movl	$_ZL29implicitlyStaticConstWithInit, %edi
+  39      00
+  40 003e E8000000 		call	_ZNSsC1EPKcRKSaIcE
+  40      00
+  41              	.LVL4:
+  42 0043 BA000000 		movl	$__dso_handle, %edx
+  42      00
+  43 0048 BE000000 		movl	$_ZL29implicitlyStaticConstWithInit, %esi
+  43      00
+  44 004d BF000000 		movl	$_ZNSsD1Ev, %edi
+  44      00
+  45 0052 E8000000 		call	__cxa_atexit
+  45      00
+  46              	.LVL5:
+   7:extern-c.cpp  **** 
+GAS LISTING /tmp/cctYsXca.s 			page 4
+
+
+  47              		.loc 1 7 0
+  48 0057 488D5424 		leaq	15(%rsp), %rdx
+  48      0F
+  49 005c BE000000 		movl	$.LC1, %esi
+  49      00
+  50 0061 BF000000 		movl	$implicitlyStaticWithInit, %edi
+  50      00
+  51 0066 E8000000 		call	_ZNSsC1EPKcRKSaIcE
+  51      00
+  52              	.LVL6:
+  53 006b BA000000 		movl	$__dso_handle, %edx
+  53      00
+  54 0070 BE000000 		movl	$implicitlyStaticWithInit, %esi
+  54      00
+  55 0075 BF000000 		movl	$_ZNSsD1Ev, %edi
+  55      00
+  56 007a E8000000 		call	__cxa_atexit
+  56      00
+  57              	.LVL7:
+  58              		.loc 1 29 0
+  59 007f 4883C418 		addq	$24, %rsp
+  60              		.cfi_def_cfa_offset 8
+  61              	.L5:
+  62 0083 C3       		ret
+  63              		.cfi_endproc
+  64              	.LFE1400:
+  66              		.section	.rodata.str1.1
+  67              	.LC2:
+  68 001e 72656775 		.string	"regularMethod"
+  68      6C61724D 
+  68      6574686F 
+  68      6400
+  69              		.text
+  70              		.globl	_Z13regularMethodv
+  72              	_Z13regularMethodv:
+  73              	.LFB1243:
+   9:extern-c.cpp  ****   std::cout << "regularMethod" << std::endl;
+  74              		.loc 1 9 0
+  75              		.cfi_startproc
+  76 0084 4883EC08 		subq	$8, %rsp
+  77              		.cfi_def_cfa_offset 16
+  10:extern-c.cpp  **** }
+  78              		.loc 1 10 0
+  79 0088 BE000000 		movl	$.LC2, %esi
+  79      00
+  80 008d BF000000 		movl	$_ZSt4cout, %edi
+  80      00
+  81 0092 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  81      00
+  82              	.LVL8:
+  83 0097 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+  83      00
+  84 009c 4889C7   		movq	%rax, %rdi
+  85 009f E8000000 		call	_ZNSolsEPFRSoS_E
+  85      00
+  86              	.LVL9:
+  11:extern-c.cpp  **** 
+GAS LISTING /tmp/cctYsXca.s 			page 5
+
+
+  87              		.loc 1 11 0
+  88 00a4 4883C408 		addq	$8, %rsp
+  89              		.cfi_def_cfa_offset 8
+  90 00a8 C3       		ret
+  91              		.cfi_endproc
+  92              	.LFE1243:
+  94              		.section	.rodata.str1.1
+  95              	.LC3:
+  96 002c 65787465 		.string	"externMethod"
+  96      726E4D65 
+  96      74686F64 
+  96      00
+  97              		.text
+  98              		.globl	externMethod
+ 100              	externMethod:
+ 101              	.LFB1244:
+  16:extern-c.cpp  ****     std::cout << "externMethod" << std::endl;
+ 102              		.loc 1 16 0
+ 103              		.cfi_startproc
+ 104 00a9 4883EC08 		subq	$8, %rsp
+ 105              		.cfi_def_cfa_offset 16
+  17:extern-c.cpp  ****   }
+ 106              		.loc 1 17 0
+ 107 00ad BE000000 		movl	$.LC3, %esi
+ 107      00
+ 108 00b2 BF000000 		movl	$_ZSt4cout, %edi
+ 108      00
+ 109 00b7 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 109      00
+ 110              	.LVL10:
+ 111 00bc BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 111      00
+ 112 00c1 4889C7   		movq	%rax, %rdi
+ 113 00c4 E8000000 		call	_ZNSolsEPFRSoS_E
+ 113      00
+ 114              	.LVL11:
+  18:extern-c.cpp  **** }
+ 115              		.loc 1 18 0
+ 116 00c9 4883C408 		addq	$8, %rsp
+ 117              		.cfi_def_cfa_offset 8
+ 118 00cd C3       		ret
+ 119              		.cfi_endproc
+ 120              	.LFE1244:
+ 122              		.globl	_Z7externCv
+ 124              	_Z7externCv:
+ 125              	.LFB1245:
+  21:extern-c.cpp  ****   regularVar = 12;
+ 126              		.loc 1 21 0
+ 127              		.cfi_startproc
+ 128 00ce 4883EC08 		subq	$8, %rsp
+ 129              		.cfi_def_cfa_offset 16
+ 130              	.LBB2:
+  22:extern-c.cpp  ****   externVar = 13;
+ 131              		.loc 1 22 0
+ 132 00d2 C7050000 		movl	$12, regularVar(%rip)
+ 132      00000C00 
+ 132      0000
+GAS LISTING /tmp/cctYsXca.s 			page 6
+
+
+  23:extern-c.cpp  **** 
+ 133              		.loc 1 23 0
+ 134 00dc C7050000 		movl	$13, externVar(%rip)
+ 134      00000D00 
+ 134      0000
+ 135              	.LVL12:
+  27:extern-c.cpp  ****   externMethod();
+ 136              		.loc 1 27 0
+ 137 00e6 E8000000 		call	_Z13regularMethodv
+ 137      00
+ 138              	.LVL13:
+  28:extern-c.cpp  **** }
+ 139              		.loc 1 28 0
+ 140 00eb E8000000 		call	externMethod
+ 140      00
+ 141              	.LVL14:
+ 142              	.LBE2:
+ 143              		.loc 1 29 0
+ 144 00f0 4883C408 		addq	$8, %rsp
+ 145              		.cfi_def_cfa_offset 8
+ 146 00f4 C3       		ret
+ 147              		.cfi_endproc
+ 148              	.LFE1245:
+ 151              	_GLOBAL__sub_I_regularVar:
+ 152              	.LFB1401:
+ 153              		.loc 1 29 0
+ 154              		.cfi_startproc
+ 155 00f5 4883EC08 		subq	$8, %rsp
+ 156              		.cfi_def_cfa_offset 16
+ 157              		.loc 1 29 0
+ 158 00f9 BEFFFF00 		movl	$65535, %esi
+ 158      00
+ 159 00fe BF010000 		movl	$1, %edi
+ 159      00
+ 160 0103 E8F8FEFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 160      FF
+ 161              	.LVL15:
+ 162 0108 4883C408 		addq	$8, %rsp
+ 163              		.cfi_def_cfa_offset 8
+ 164 010c C3       		ret
+ 165              		.cfi_endproc
+ 166              	.LFE1401:
+ 168              		.section	.init_array,"aw"
+ 169              		.align 8
+ 170 0000 00000000 		.quad	_GLOBAL__sub_I_regularVar
+ 170      00000000 
+ 171              		.globl	externVar
+ 172              		.bss
+ 173              		.align 4
+ 176              	externVar:
+ 177 0000 00000000 		.zero	4
+ 178              		.globl	implicitlyStaticWithInit
+ 179 0004 00000000 		.align 8
+ 182              	implicitlyStaticWithInit:
+ 183 0008 00000000 		.zero	8
+ 183      00000000 
+ 184              		.local	_ZL29implicitlyStaticConstWithInit
+GAS LISTING /tmp/cctYsXca.s 			page 7
+
+
+ 185              		.comm	_ZL29implicitlyStaticConstWithInit,8,8
+ 186              		.globl	regularConst
+ 187              		.section	.rodata
+ 188              		.align 4
+ 191              	regularConst:
+ 192 0000 07000000 		.long	7
+ 193              		.globl	regularVar
+ 194              		.bss
+ 195              		.align 4
+ 198              	regularVar:
+ 199 0010 00000000 		.zero	4
+ 200              		.local	_ZStL8__ioinit
+ 201              		.comm	_ZStL8__ioinit,1,1
+ 202              		.text
+ 203              	.Letext0:
+ 204              		.file 3 "/usr/include/libio.h"
+ 205              		.file 4 "/usr/include/stdio.h"
+ 206              		.file 5 "<built-in>"
+ 207              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 208              		.file 7 "/usr/include/wchar.h"
+ 209              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 210              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 211              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 212              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 213              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 214              		.file 13 "/usr/include/c++/4.8/clocale"
+ 215              		.file 14 "/usr/include/c++/4.8/bits/allocator.h"
+ 216              		.file 15 "/usr/include/c++/4.8/cstdlib"
+ 217              		.file 16 "/usr/include/c++/4.8/cstdio"
+ 218              		.file 17 "/usr/include/c++/4.8/bits/basic_string.h"
+ 219              		.file 18 "/usr/include/c++/4.8/bits/basic_string.tcc"
+ 220              		.file 19 "/usr/include/c++/4.8/initializer_list"
+ 221              		.file 20 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 222              		.file 21 "/usr/include/c++/4.8/bits/ios_base.h"
+ 223              		.file 22 "/usr/include/c++/4.8/cwctype"
+ 224              		.file 23 "/usr/include/c++/4.8/ostream"
+ 225              		.file 24 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 226              		.file 25 "/usr/include/c++/4.8/iosfwd"
+ 227              		.file 26 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 228              		.file 27 "/usr/include/time.h"
+ 229              		.file 28 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 230              		.file 29 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 231              		.file 30 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 232              		.file 31 "/usr/include/c++/4.8/debug/debug.h"
+ 233              		.file 32 "/usr/include/stdint.h"
+ 234              		.file 33 "/usr/include/locale.h"
+ 235              		.file 34 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 236              		.file 35 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 237              		.file 36 "/usr/include/stdlib.h"
+ 238              		.file 37 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 239              		.file 38 "/usr/include/_G_config.h"
+ 240              		.file 39 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 241              		.file 40 "/usr/include/wctype.h"
+ 242              		.file 41 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/cctYsXca.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 extern-c.cpp
+     /tmp/cctYsXca.s:11     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/cctYsXca.s:185    .bss:0000000000000020 _ZStL8__ioinit
+     /tmp/cctYsXca.s:185    .bss:0000000000000018 _ZL29implicitlyStaticConstWithInit
+     /tmp/cctYsXca.s:182    .bss:0000000000000008 implicitlyStaticWithInit
+     /tmp/cctYsXca.s:72     .text:0000000000000084 _Z13regularMethodv
+     /tmp/cctYsXca.s:100    .text:00000000000000a9 externMethod
+     /tmp/cctYsXca.s:124    .text:00000000000000ce _Z7externCv
+     /tmp/cctYsXca.s:198    .bss:0000000000000010 regularVar
+     /tmp/cctYsXca.s:176    .bss:0000000000000000 externVar
+     /tmp/cctYsXca.s:151    .text:00000000000000f5 _GLOBAL__sub_I_regularVar
+     /tmp/cctYsXca.s:191    .rodata:0000000000000000 regularConst
+
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+_ZNSsC1EPKcRKSaIcE
+_ZNSsD1Ev
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E

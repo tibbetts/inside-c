@@ -1,4 +1,51 @@
 	.file	"subclass-vtable.cpp"
+	.text
+	.align 2
+	.globl	_ZN8onefield8setFieldEi
+	.type	_ZN8onefield8setFieldEi, @function
+_ZN8onefield8setFieldEi:
+.LFB7:
+	.cfi_startproc
+	movl	%esi, 8(%rdi)
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	_ZN8onefield8setFieldEi, .-_ZN8onefield8setFieldEi
+	.align 2
+	.globl	_ZNK8onefield8getFieldEv
+	.type	_ZNK8onefield8getFieldEv, @function
+_ZNK8onefield8getFieldEv:
+.LFB8:
+	.cfi_startproc
+	movl	8(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	_ZNK8onefield8getFieldEv, .-_ZNK8onefield8getFieldEv
+	.align 2
+	.globl	_ZN17onefield_subclass8setFieldEi
+	.type	_ZN17onefield_subclass8setFieldEi, @function
+_ZN17onefield_subclass8setFieldEi:
+.LFB9:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movq	%rdi, %rbx
+	movl	%esi, %ebp
+	call	_ZN8onefield8setFieldEi
+	movl	%ebp, 12(%rbx)
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	_ZN17onefield_subclass8setFieldEi, .-_ZN17onefield_subclass8setFieldEi
 	.section	.text._ZN8onefieldC2Ev,"axG",@progbits,_ZN8onefieldC5Ev,comdat
 	.align 2
 	.weak	_ZN8onefieldC2Ev
@@ -6,16 +53,7 @@
 _ZN8onefieldC2Ev:
 .LFB2:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movq	$_ZTV8onefield+16, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movq	$_ZTV8onefield+16, (%rdi)
 	ret
 	.cfi_endproc
 .LFE2:
@@ -29,20 +67,14 @@ _ZN8onefieldC2Ev:
 _ZN17onefield_subclassC2Ev:
 .LFB5:
 	.cfi_startproc
-	pushq	%rbp
+	pushq	%rbx
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movq	%rax, %rdi
+	.cfi_offset 3, -16
+	movq	%rdi, %rbx
 	call	_ZN8onefieldC2Ev
-	movq	-8(%rbp), %rax
-	movq	$_ZTV17onefield_subclass+16, (%rax)
-	leave
-	.cfi_def_cfa 7, 8
+	movq	$_ZTV17onefield_subclass+16, (%rbx)
+	popq	%rbx
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE5:
@@ -58,144 +90,79 @@ main:
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
 	pushq	%rbx
-	subq	$72, %rsp
+	.cfi_def_cfa_offset 24
 	.cfi_offset 3, -24
-	movl	%edi, -68(%rbp)
-	movq	%rsi, -80(%rbp)
-	leaq	-48(%rbp), %rax
-	movq	%rax, %rdi
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%rsp, %rdi
 	call	_ZN8onefieldC1Ev
-	leaq	-32(%rbp), %rax
-	movq	%rax, %rdi
+	leaq	16(%rsp), %rdi
 	call	_ZN17onefield_subclassC1Ev
-	leaq	-48(%rbp), %rax
 	movl	$13, %esi
-	movq	%rax, %rdi
+	movq	%rsp, %rdi
 	call	_ZN8onefield8setFieldEi
-	leaq	-32(%rbp), %rax
 	movl	$17, %esi
-	movq	%rax, %rdi
+	leaq	16(%rsp), %rdi
 	call	_ZN17onefield_subclass8setFieldEi
 	movl	$16, %edi
 	call	_Znwm
 	movq	%rax, %rbx
-	movq	%rbx, %rdi
+	movq	%rax, %rdi
 	call	_ZN17onefield_subclassC1Ev
-	movq	%rbx, -56(%rbp)
-	movq	-56(%rbp), %rax
-	movq	(%rax), %rax
-	movq	(%rax), %rax
-	movq	-56(%rbp), %rdx
+	movq	(%rbx), %rax
 	movl	$27, %esi
-	movq	%rdx, %rdi
-	call	*%rax
-	movq	-56(%rbp), %rax
-	movq	(%rax), %rax
-	addq	$8, %rax
-	movq	(%rax), %rax
-	movq	-56(%rbp), %rdx
-	movq	%rdx, %rdi
-	call	*%rax
-	movl	%eax, -60(%rbp)
-	movq	-56(%rbp), %rax
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
+	call	*(%rax)
+	movq	(%rbx), %rax
+	movq	%rbx, %rdi
+	call	*8(%rax)
+	movl	%eax, %ebp
+	movq	%rbx, %rdi
 	call	_ZdlPv
-	leaq	-48(%rbp), %rax
-	movq	%rax, %rdi
+	movq	%rsp, %rdi
 	call	_ZNK8onefield8getFieldEv
-	movl	-60(%rbp), %edx
-	addl	%edx, %eax
-	addq	$72, %rsp
+	addl	%ebp, %eax
+	addq	$40, %rsp
+	.cfi_def_cfa_offset 24
 	popq	%rbx
+	.cfi_def_cfa_offset 16
 	popq	%rbp
-	.cfi_def_cfa 7, 8
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE0:
 	.size	main, .-main
-	.align 2
-	.globl	_ZN8onefield8setFieldEi
-	.type	_ZN8onefield8setFieldEi, @function
-_ZN8onefield8setFieldEi:
-.LFB7:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, 8(%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
-.LFE7:
-	.size	_ZN8onefield8setFieldEi, .-_ZN8onefield8setFieldEi
-	.align 2
-	.globl	_ZNK8onefield8getFieldEv
-	.type	_ZNK8onefield8getFieldEv, @function
-_ZNK8onefield8getFieldEv:
-.LFB8:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movl	8(%rax), %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
-.LFE8:
-	.size	_ZNK8onefield8getFieldEv, .-_ZNK8onefield8getFieldEv
-	.align 2
-	.globl	_ZN17onefield_subclass8setFieldEi
-	.type	_ZN17onefield_subclass8setFieldEi, @function
-_ZN17onefield_subclass8setFieldEi:
-.LFB9:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, %esi
-	movq	%rax, %rdi
-	call	_ZN8onefield8setFieldEi
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, 12(%rax)
-	leave
-	.cfi_def_cfa 7, 8
-	ret
-	.cfi_endproc
-.LFE9:
-	.size	_ZN17onefield_subclass8setFieldEi, .-_ZN17onefield_subclass8setFieldEi
-	.weak	_ZTV17onefield_subclass
-	.section	.rodata._ZTV17onefield_subclass,"aG",@progbits,_ZTV17onefield_subclass,comdat
-	.align 32
-	.type	_ZTV17onefield_subclass, @object
-	.size	_ZTV17onefield_subclass, 32
-_ZTV17onefield_subclass:
-	.quad	0
-	.quad	_ZTI17onefield_subclass
-	.quad	_ZN17onefield_subclass8setFieldEi
-	.quad	_ZNK8onefield8getFieldEv
+	.weak	_ZTS8onefield
+	.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
+	.type	_ZTS8onefield, @object
+	.size	_ZTS8onefield, 10
+_ZTS8onefield:
+	.string	"8onefield"
+	.weak	_ZTI8onefield
+	.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
+	.align 16
+	.type	_ZTI8onefield, @object
+	.size	_ZTI8onefield, 16
+_ZTI8onefield:
+	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+	.quad	_ZTS8onefield
+	.weak	_ZTS17onefield_subclass
+	.section	.rodata._ZTS17onefield_subclass,"aG",@progbits,_ZTS17onefield_subclass,comdat
+	.align 16
+	.type	_ZTS17onefield_subclass, @object
+	.size	_ZTS17onefield_subclass, 20
+_ZTS17onefield_subclass:
+	.string	"17onefield_subclass"
+	.weak	_ZTI17onefield_subclass
+	.section	.rodata._ZTI17onefield_subclass,"aG",@progbits,_ZTI17onefield_subclass,comdat
+	.align 16
+	.type	_ZTI17onefield_subclass, @object
+	.size	_ZTI17onefield_subclass, 24
+_ZTI17onefield_subclass:
+	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+	.quad	_ZTS17onefield_subclass
+	.quad	_ZTI8onefield
 	.weak	_ZTV8onefield
 	.section	.rodata._ZTV8onefield,"aG",@progbits,_ZTV8onefield,comdat
 	.align 32
@@ -206,35 +173,15 @@ _ZTV8onefield:
 	.quad	_ZTI8onefield
 	.quad	_ZN8onefield8setFieldEi
 	.quad	_ZNK8onefield8getFieldEv
-	.weak	_ZTI17onefield_subclass
-	.section	.rodata._ZTI17onefield_subclass,"aG",@progbits,_ZTI17onefield_subclass,comdat
-	.align 16
-	.type	_ZTI17onefield_subclass, @object
-	.size	_ZTI17onefield_subclass, 24
-_ZTI17onefield_subclass:
-	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS17onefield_subclass
-	.quad	_ZTI8onefield
-	.weak	_ZTS17onefield_subclass
-	.section	.rodata._ZTS17onefield_subclass,"aG",@progbits,_ZTS17onefield_subclass,comdat
-	.align 16
-	.type	_ZTS17onefield_subclass, @object
-	.size	_ZTS17onefield_subclass, 20
-_ZTS17onefield_subclass:
-	.string	"17onefield_subclass"
-	.weak	_ZTI8onefield
-	.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
-	.align 16
-	.type	_ZTI8onefield, @object
-	.size	_ZTI8onefield, 16
-_ZTI8onefield:
-	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
-	.quad	_ZTS8onefield
-	.weak	_ZTS8onefield
-	.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
-	.type	_ZTS8onefield, @object
-	.size	_ZTS8onefield, 10
-_ZTS8onefield:
-	.string	"8onefield"
+	.weak	_ZTV17onefield_subclass
+	.section	.rodata._ZTV17onefield_subclass,"aG",@progbits,_ZTV17onefield_subclass,comdat
+	.align 32
+	.type	_ZTV17onefield_subclass, @object
+	.size	_ZTV17onefield_subclass, 32
+_ZTV17onefield_subclass:
+	.quad	0
+	.quad	_ZTI17onefield_subclass
+	.quad	_ZN17onefield_subclass8setFieldEi
+	.quad	_ZNK8onefield8getFieldEv
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

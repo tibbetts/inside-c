@@ -6,18 +6,7 @@
 _ZN15onefield_structC2Ei:
 .LFB1:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rax
-	movl	-12(%rbp), %edx
-	movl	%edx, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	movl	%esi, (%rdi)
 	ret
 	.cfi_endproc
 .LFE1:
@@ -30,21 +19,14 @@ _ZN15onefield_structC2Ei:
 main:
 .LFB3:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$32, %rsp
-	movl	%edi, -20(%rbp)
-	movq	%rsi, -32(%rbp)
-	leaq	-16(%rbp), %rax
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
 	movl	$13, %esi
-	movq	%rax, %rdi
+	movq	%rsp, %rdi
 	call	_ZN15onefield_structC1Ei
 	movl	$0, %eax
-	leave
-	.cfi_def_cfa 7, 8
+	addq	$24, %rsp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE3:

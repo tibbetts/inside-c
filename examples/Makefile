@@ -8,6 +8,8 @@ ifeq ($(UNAME), Linux)
 LISTINGS=$(addsuffix .listing, $(NAMES))
 ASSEMBLIES=$(addsuffix -gcc.s, $(NAMES))
 TARGETS=$(LISTINGS) $(ASSEMBLIES)
+
+CFLAGS=-fno-inline -O1 -std=c++11
 endif
 ifeq ($(UNAME), Darwin)
 LLVM=$(addsuffix .ll, $(NAMES))

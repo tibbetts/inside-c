@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccZtpque.s 			page 1
+GAS LISTING /tmp/ccEUlhOn.s 			page 1
 
 
    1              		.file	"structs.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccZtpque.s 			page 1
   44              		.cfi_endproc
   45              	.LFE1:
   47              		.globl	main
-GAS LISTING /tmp/ccZtpque.s 			page 2
+GAS LISTING /tmp/ccEUlhOn.s 			page 2
 
 
   49              	main:
@@ -118,18 +118,18 @@ GAS LISTING /tmp/ccZtpque.s 			page 1
   84              		.cfi_def_cfa 7, 8
   85 0076 C3       		ret
   86              		.cfi_endproc
-GAS LISTING /tmp/ccZtpque.s 			page 3
+GAS LISTING /tmp/ccEUlhOn.s 			page 3
 
 
   87              	.LFE2:
   89              	.Letext0:
-GAS LISTING /tmp/ccZtpque.s 			page 4
+GAS LISTING /tmp/ccEUlhOn.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 structs.c
-     /tmp/ccZtpque.s:6      .text:0000000000000000 byvalue
-     /tmp/ccZtpque.s:27     .text:0000000000000009 bypointer
-     /tmp/ccZtpque.s:49     .text:0000000000000019 main
+     /tmp/ccEUlhOn.s:6      .text:0000000000000000 byvalue
+     /tmp/ccEUlhOn.s:27     .text:0000000000000009 bypointer
+     /tmp/ccEUlhOn.s:49     .text:0000000000000019 main
 
 NO UNDEFINED SYMBOLS

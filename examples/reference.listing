@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cce5hLv7.s 			page 1
+GAS LISTING /tmp/cc5J52hE.s 			page 1
 
 
    1              		.file	"reference.cpp"
@@ -11,109 +11,82 @@ GAS LISTING /tmp/cce5hLv7.s 			page 1
    1:reference.cpp **** void use_reference (int &arg) {
    9              		.loc 1 1 0
   10              		.cfi_startproc
-  11 0000 55       		pushq	%rbp
-  12              		.cfi_def_cfa_offset 16
-  13              		.cfi_offset 6, -16
-  14 0001 4889E5   		movq	%rsp, %rbp
-  15              		.cfi_def_cfa_register 6
-  16 0004 48897DF8 		movq	%rdi, -8(%rbp)
+  11              	.LVL0:
    2:reference.cpp ****     arg += 37;
-  17              		.loc 1 2 0
-  18 0008 488B45F8 		movq	-8(%rbp), %rax
-  19 000c 8B00     		movl	(%rax), %eax
-  20 000e 8D5025   		leal	37(%rax), %edx
-  21 0011 488B45F8 		movq	-8(%rbp), %rax
-  22 0015 8910     		movl	%edx, (%rax)
+  12              		.loc 1 2 0
+  13 0000 830725   		addl	$37, (%rdi)
+  14 0003 C3       		ret
+  15              		.cfi_endproc
+  16              	.LFE0:
+  18              		.globl	_Z11use_pointerPi
+  20              	_Z11use_pointerPi:
+  21              	.LFB1:
    3:reference.cpp **** }
-  23              		.loc 1 3 0
-  24 0017 5D       		popq	%rbp
-  25              		.cfi_def_cfa 7, 8
-  26 0018 C3       		ret
-  27              		.cfi_endproc
-  28              	.LFE0:
-  30              		.globl	_Z11use_pointerPi
-  32              	_Z11use_pointerPi:
-  33              	.LFB1:
    4:reference.cpp **** 
    5:reference.cpp **** void use_pointer (int *arg) {
-  34              		.loc 1 5 0
-  35              		.cfi_startproc
-  36 0019 55       		pushq	%rbp
-  37              		.cfi_def_cfa_offset 16
-  38              		.cfi_offset 6, -16
-  39 001a 4889E5   		movq	%rsp, %rbp
-  40              		.cfi_def_cfa_register 6
-  41 001d 48897DF8 		movq	%rdi, -8(%rbp)
+  22              		.loc 1 5 0
+  23              		.cfi_startproc
+  24              	.LVL1:
    6:reference.cpp ****     (*arg) += 23;
-  42              		.loc 1 6 0
-  43 0021 488B45F8 		movq	-8(%rbp), %rax
-  44 0025 8B00     		movl	(%rax), %eax
-  45 0027 8D5017   		leal	23(%rax), %edx
-  46 002a 488B45F8 		movq	-8(%rbp), %rax
-  47 002e 8910     		movl	%edx, (%rax)
+  25              		.loc 1 6 0
+  26 0004 830717   		addl	$23, (%rdi)
+  27 0007 C3       		ret
+  28              		.cfi_endproc
+  29              	.LFE1:
+  31              		.globl	main
+  33              	main:
+  34              	.LFB2:
    7:reference.cpp **** }
-  48              		.loc 1 7 0
-  49 0030 5D       		popq	%rbp
-  50              		.cfi_def_cfa 7, 8
-  51 0031 C3       		ret
-  52              		.cfi_endproc
-  53              	.LFE1:
-GAS LISTING /tmp/cce5hLv7.s 			page 2
-
-
-  55              		.globl	main
-  57              	main:
-  58              	.LFB2:
    8:reference.cpp **** 
    9:reference.cpp **** int
   10:reference.cpp **** main (int argc, char **argv) {
-  59              		.loc 1 10 0
-  60              		.cfi_startproc
-  61 0032 55       		pushq	%rbp
-  62              		.cfi_def_cfa_offset 16
-  63              		.cfi_offset 6, -16
-  64 0033 4889E5   		movq	%rsp, %rbp
-  65              		.cfi_def_cfa_register 6
-  66 0036 4883EC20 		subq	$32, %rsp
-  67 003a 897DEC   		movl	%edi, -20(%rbp)
-  68 003d 488975E0 		movq	%rsi, -32(%rbp)
-  69              	.LBB2:
+  35              		.loc 1 10 0
+  36              		.cfi_startproc
+  37              	.LVL2:
+  38 0008 4883EC10 		subq	$16, %rsp
+  39              		.cfi_def_cfa_offset 24
+  40              	.LBB2:
   11:reference.cpp ****     int foo;
   12:reference.cpp ****     foo = 12;
-  70              		.loc 1 12 0
-  71 0041 C745FC0C 		movl	$12, -4(%rbp)
-  71      000000
+  41              		.loc 1 12 0
+  42 000c C744240C 		movl	$12, 12(%rsp)
+  42      0C000000 
   13:reference.cpp ****     use_reference(foo);
-  72              		.loc 1 13 0
-  73 0048 488D45FC 		leaq	-4(%rbp), %rax
-  74 004c 4889C7   		movq	%rax, %rdi
-  75 004f E8000000 		call	_Z13use_referenceRi
-  75      00
+  43              		.loc 1 13 0
+  44 0014 488D7C24 		leaq	12(%rsp), %rdi
+  44      0C
+  45              	.LVL3:
+  46 0019 E8000000 		call	_Z13use_referenceRi
+  46      00
+GAS LISTING /tmp/cc5J52hE.s 			page 2
+
+
+  47              	.LVL4:
   14:reference.cpp ****     use_pointer(&foo);
-  76              		.loc 1 14 0
-  77 0054 488D45FC 		leaq	-4(%rbp), %rax
-  78 0058 4889C7   		movq	%rax, %rdi
-  79 005b E8000000 		call	_Z11use_pointerPi
-  79      00
+  48              		.loc 1 14 0
+  49 001e 488D7C24 		leaq	12(%rsp), %rdi
+  49      0C
+  50 0023 E8000000 		call	_Z11use_pointerPi
+  50      00
+  51              	.LVL5:
+  52              	.LBE2:
   15:reference.cpp ****     return foo;
-  80              		.loc 1 15 0
-  81 0060 8B45FC   		movl	-4(%rbp), %eax
-  82              	.LBE2:
   16:reference.cpp **** }
-  83              		.loc 1 16 0
-  84 0063 C9       		leave
-  85              		.cfi_def_cfa 7, 8
-  86 0064 C3       		ret
-  87              		.cfi_endproc
-  88              	.LFE2:
-  90              	.Letext0:
-GAS LISTING /tmp/cce5hLv7.s 			page 3
+  53              		.loc 1 16 0
+  54 0028 8B44240C 		movl	12(%rsp), %eax
+  55 002c 4883C410 		addq	$16, %rsp
+  56              		.cfi_def_cfa_offset 8
+  57 0030 C3       		ret
+  58              		.cfi_endproc
+  59              	.LFE2:
+  61              	.Letext0:
+GAS LISTING /tmp/cc5J52hE.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 reference.cpp
-     /tmp/cce5hLv7.s:6      .text:0000000000000000 _Z13use_referenceRi
-     /tmp/cce5hLv7.s:32     .text:0000000000000019 _Z11use_pointerPi
-     /tmp/cce5hLv7.s:57     .text:0000000000000032 main
+     /tmp/cc5J52hE.s:6      .text:0000000000000000 _Z13use_referenceRi
+     /tmp/cc5J52hE.s:20     .text:0000000000000004 _Z11use_pointerPi
+     /tmp/cc5J52hE.s:33     .text:0000000000000008 main
 
 NO UNDEFINED SYMBOLS

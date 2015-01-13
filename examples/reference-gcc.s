@@ -5,19 +5,7 @@
 _Z13use_referenceRi:
 .LFB0:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movl	(%rax), %eax
-	leal	37(%rax), %edx
-	movq	-8(%rbp), %rax
-	movl	%edx, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	addl	$37, (%rdi)
 	ret
 	.cfi_endproc
 .LFE0:
@@ -27,19 +15,7 @@ _Z13use_referenceRi:
 _Z11use_pointerPi:
 .LFB1:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rax
-	movl	(%rax), %eax
-	leal	23(%rax), %edx
-	movq	-8(%rbp), %rax
-	movl	%edx, (%rax)
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	addl	$23, (%rdi)
 	ret
 	.cfi_endproc
 .LFE1:
@@ -49,24 +25,16 @@ _Z11use_pointerPi:
 main:
 .LFB2:
 	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$32, %rsp
-	movl	%edi, -20(%rbp)
-	movq	%rsi, -32(%rbp)
-	movl	$12, -4(%rbp)
-	leaq	-4(%rbp), %rax
-	movq	%rax, %rdi
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 24
+	movl	$12, 12(%rsp)
+	leaq	12(%rsp), %rdi
 	call	_Z13use_referenceRi
-	leaq	-4(%rbp), %rax
-	movq	%rax, %rdi
+	leaq	12(%rsp), %rdi
 	call	_Z11use_pointerPi
-	movl	-4(%rbp), %eax
-	leave
-	.cfi_def_cfa 7, 8
+	movl	12(%rsp), %eax
+	addq	$16, %rsp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE2:

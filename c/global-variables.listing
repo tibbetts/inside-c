@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccSqCey7.s 			page 1
+GAS LISTING /tmp/ccifxgib.s 			page 1
 
 
    1              		.file	"global-variables.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccSqCey7.s 			page 1
   43              		.loc 1 12 0
   44 0023 488B0500 		movq	init_c(%rip), %rax
   44      000000
-GAS LISTING /tmp/ccSqCey7.s 			page 2
+GAS LISTING /tmp/ccifxgib.s 			page 2
 
 
   45 002a 48890500 		movq	%rax, uninitialized_c(%rip)
@@ -82,16 +82,16 @@ GAS LISTING /tmp/ccSqCey7.s 			page 1
   56              		.cfi_endproc
   57              	.LFE0:
   59              	.Letext0:
-GAS LISTING /tmp/ccSqCey7.s 			page 3
+GAS LISTING /tmp/ccifxgib.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 global-variables.c
-     /tmp/ccSqCey7.s:12     .data:0000000000000000 init_c
-     /tmp/ccSqCey7.s:18     .data:0000000000000008 initialized
+     /tmp/ccifxgib.s:12     .data:0000000000000000 init_c
+     /tmp/ccifxgib.s:18     .data:0000000000000008 initialized
                             *COM*:0000000000000004 uninitialized
                             *COM*:0000000000000008 uninitialized_c
-     /tmp/ccSqCey7.s:25     .text:0000000000000000 main
+     /tmp/ccifxgib.s:25     .text:0000000000000000 main
 
 UNDEFINED SYMBOLS
 printf

@@ -1,13 +1,14 @@
-GAS LISTING /tmp/cc5rnT6g.s 			page 1
+GAS LISTING /tmp/cc8OUvOO.s 			page 1
 
 
    1              		.file	"basic-constructor.cpp"
    2              		.text
    3              	.Ltext0:
-   4              		.globl	main
-   6              	main:
-   7              	.LFB0:
-   8              		.file 1 "basic-constructor.cpp"
+   4              		.align 2
+   5              		.globl	_ZN8onefield8setFieldEi
+   7              	_ZN8onefield8setFieldEi:
+   8              	.LFB20:
+   9              		.file 1 "basic-constructor.cpp"
    1:basic-constructor.cpp **** #include "stdio.h"
    2:basic-constructor.cpp **** 
    3:basic-constructor.cpp **** class onefield {
@@ -22,352 +23,457 @@ GAS LISTING /tmp/cc5rnT6g.s 			page 1
   12:basic-constructor.cpp **** };
   13:basic-constructor.cpp **** 
   14:basic-constructor.cpp **** int main(int argc, char **argv) {
-   9              		.loc 1 14 0
-  10              		.cfi_startproc
-  11              		.cfi_personality 0x3,__gxx_personality_v0
-  12              		.cfi_lsda 0x3,.LLSDA0
-  13 0000 55       		pushq	%rbp
-  14              		.cfi_def_cfa_offset 16
-  15              		.cfi_offset 6, -16
-  16 0001 4889E5   		movq	%rsp, %rbp
-  17              		.cfi_def_cfa_register 6
-  18 0004 4154     		pushq	%r12
-  19 0006 53       		pushq	%rbx
-  20 0007 4883EC20 		subq	$32, %rsp
-  21              		.cfi_offset 12, -24
-  22              		.cfi_offset 3, -32
-  23 000b 897DDC   		movl	%edi, -36(%rbp)
-  24 000e 488975D0 		movq	%rsi, -48(%rbp)
-  25              	.LBB2:
   15:basic-constructor.cpp ****     onefield of(13);
-  26              		.loc 1 15 0
-  27 0012 488D45E0 		leaq	-32(%rbp), %rax
-  28 0016 BE0D0000 		movl	$13, %esi
-  28      00
-  29 001b 4889C7   		movq	%rax, %rdi
-  30              	.LEHB0:
-  31 001e E8000000 		call	_ZN8onefieldC1Ei
-  31      00
-  32              	.LEHE0:
   16:basic-constructor.cpp **** 
   17:basic-constructor.cpp ****     of.setField(12);
-  33              		.loc 1 17 0
-  34 0023 488D45E0 		leaq	-32(%rbp), %rax
-  35 0027 BE0C0000 		movl	$12, %esi
-  35      00
-  36 002c 4889C7   		movq	%rax, %rdi
-  37 002f E8000000 		call	_ZN8onefield8setFieldEi
-  37      00
-GAS LISTING /tmp/cc5rnT6g.s 			page 2
-
-
   18:basic-constructor.cpp **** 
   19:basic-constructor.cpp ****     onefield *ofp = new onefield(23);
-  38              		.loc 1 19 0
-  39 0034 BF040000 		movl	$4, %edi
-  39      00
-  40              	.LEHB1:
-  41 0039 E8000000 		call	_Znwm
-  41      00
-  42              	.LEHE1:
-  43 003e 4889C3   		movq	%rax, %rbx
-  44 0041 BE170000 		movl	$23, %esi
-  44      00
-  45 0046 4889DF   		movq	%rbx, %rdi
-  46              	.LEHB2:
-  47 0049 E8000000 		call	_ZN8onefieldC1Ei
-  47      00
-  48              	.LEHE2:
-  49              		.loc 1 19 0 is_stmt 0 discriminator 2
-  50 004e 48895DE8 		movq	%rbx, -24(%rbp)
   20:basic-constructor.cpp **** 
   21:basic-constructor.cpp ****     ofp->setField(27);
-  51              		.loc 1 21 0 is_stmt 1 discriminator 2
-  52 0052 488B45E8 		movq	-24(%rbp), %rax
-  53 0056 BE1B0000 		movl	$27, %esi
-  53      00
-  54 005b 4889C7   		movq	%rax, %rdi
-  55 005e E8000000 		call	_ZN8onefield8setFieldEi
-  55      00
   22:basic-constructor.cpp **** 
   23:basic-constructor.cpp ****     delete ofp;
-  56              		.loc 1 23 0 discriminator 2
-  57 0063 488B5DE8 		movq	-24(%rbp), %rbx
-  58 0067 4885DB   		testq	%rbx, %rbx
-  59 006a 7410     		je	.L2
-  60              		.loc 1 23 0 is_stmt 0 discriminator 1
-  61 006c 4889DF   		movq	%rbx, %rdi
-  62              	.LEHB3:
-  63 006f E8000000 		call	_ZN8onefieldD1Ev
-  63      00
-  64              	.LEHE3:
-  65 0074 4889DF   		movq	%rbx, %rdi
-  66 0077 E8000000 		call	_ZdlPv
-  66      00
-  67              	.L2:
   24:basic-constructor.cpp **** 
   25:basic-constructor.cpp ****     return of.getField();
-  68              		.loc 1 25 0 is_stmt 1
-  69 007c 488D45E0 		leaq	-32(%rbp), %rax
-  70 0080 4889C7   		movq	%rax, %rdi
-  71 0083 E8000000 		call	_ZNK8onefield8getFieldEv
-  71      00
-  72 0088 89C3     		movl	%eax, %ebx
-  73 008a 488D45E0 		leaq	-32(%rbp), %rax
-  74 008e 4889C7   		movq	%rax, %rdi
-  75              	.LEHB4:
-  76 0091 E8000000 		call	_ZN8onefieldD1Ev
-  76      00
-GAS LISTING /tmp/cc5rnT6g.s 			page 3
-
-
-  77              	.LEHE4:
-  78 0096 89D8     		movl	%ebx, %eax
-  79 0098 EB2A     		jmp	.L8
-  80              	.L7:
-  81 009a 4989C4   		movq	%rax, %r12
-  19:basic-constructor.cpp **** 
-  82              		.loc 1 19 0
-  83 009d 4889DF   		movq	%rbx, %rdi
-  84 00a0 E8000000 		call	_ZdlPv
-  84      00
-  85 00a5 4C89E3   		movq	%r12, %rbx
-  86 00a8 EB03     		jmp	.L5
-  87              	.L6:
-  88 00aa 4889C3   		movq	%rax, %rbx
-  89              	.L5:
-  90              		.loc 1 25 0
-  91 00ad 488D45E0 		leaq	-32(%rbp), %rax
-  92 00b1 4889C7   		movq	%rax, %rdi
-  93 00b4 E8000000 		call	_ZN8onefieldD1Ev
-  93      00
-  94 00b9 4889D8   		movq	%rbx, %rax
-  95 00bc 4889C7   		movq	%rax, %rdi
-  96              	.LEHB5:
-  97 00bf E8000000 		call	_Unwind_Resume
-  97      00
-  98              	.LEHE5:
-  99              	.L8:
- 100              	.LBE2:
   26:basic-constructor.cpp **** }
- 101              		.loc 1 26 0
- 102 00c4 4883C420 		addq	$32, %rsp
- 103 00c8 5B       		popq	%rbx
- 104 00c9 415C     		popq	%r12
- 105 00cb 5D       		popq	%rbp
- 106              		.cfi_def_cfa 7, 8
- 107 00cc C3       		ret
- 108              		.cfi_endproc
- 109              	.LFE0:
- 110              		.globl	__gxx_personality_v0
- 111              		.section	.gcc_except_table,"a",@progbits
- 112              	.LLSDA0:
- 113 0000 FF       		.byte	0xff
- 114 0001 FF       		.byte	0xff
- 115 0002 01       		.byte	0x1
- 116 0003 1D       		.uleb128 .LLSDACSE0-.LLSDACSB0
- 117              	.LLSDACSB0:
- 118 0004 1E       		.uleb128 .LEHB0-.LFB0
- 119 0005 05       		.uleb128 .LEHE0-.LEHB0
- 120 0006 00       		.uleb128 0
- 121 0007 00       		.uleb128 0
- 122 0008 39       		.uleb128 .LEHB1-.LFB0
- 123 0009 05       		.uleb128 .LEHE1-.LEHB1
- 124 000a AA01     		.uleb128 .L6-.LFB0
- 125 000c 00       		.uleb128 0
- 126 000d 49       		.uleb128 .LEHB2-.LFB0
- 127 000e 05       		.uleb128 .LEHE2-.LEHB2
- 128 000f 9A01     		.uleb128 .L7-.LFB0
-GAS LISTING /tmp/cc5rnT6g.s 			page 4
-
-
- 129 0011 00       		.uleb128 0
- 130 0012 6F       		.uleb128 .LEHB3-.LFB0
- 131 0013 05       		.uleb128 .LEHE3-.LEHB3
- 132 0014 AA01     		.uleb128 .L6-.LFB0
- 133 0016 00       		.uleb128 0
- 134 0017 9101     		.uleb128 .LEHB4-.LFB0
- 135 0019 05       		.uleb128 .LEHE4-.LEHB4
- 136 001a 00       		.uleb128 0
- 137 001b 00       		.uleb128 0
- 138 001c BF01     		.uleb128 .LEHB5-.LFB0
- 139 001e 05       		.uleb128 .LEHE5-.LEHB5
- 140 001f 00       		.uleb128 0
- 141 0020 00       		.uleb128 0
- 142              	.LLSDACSE0:
- 143              		.text
- 145 00cd 90       		.align 2
- 146              		.globl	_ZN8onefield8setFieldEi
- 148              	_ZN8onefield8setFieldEi:
- 149              	.LFB1:
   27:basic-constructor.cpp **** 
   28:basic-constructor.cpp **** 
   29:basic-constructor.cpp **** void onefield::setField(int f) {
- 150              		.loc 1 29 0
- 151              		.cfi_startproc
- 152 00ce 55       		pushq	%rbp
- 153              		.cfi_def_cfa_offset 16
- 154              		.cfi_offset 6, -16
- 155 00cf 4889E5   		movq	%rsp, %rbp
- 156              		.cfi_def_cfa_register 6
- 157 00d2 48897DF8 		movq	%rdi, -8(%rbp)
- 158 00d6 8975F4   		movl	%esi, -12(%rbp)
+  10              		.loc 1 29 0
+  11              		.cfi_startproc
+  12              	.LVL0:
   30:basic-constructor.cpp ****     this->field = f;
- 159              		.loc 1 30 0
- 160 00d9 488B45F8 		movq	-8(%rbp), %rax
- 161 00dd 8B55F4   		movl	-12(%rbp), %edx
- 162 00e0 8910     		movl	%edx, (%rax)
+  13              		.loc 1 30 0
+  14 0000 8937     		movl	%esi, (%rdi)
+  15 0002 C3       		ret
+  16              		.cfi_endproc
+  17              	.LFE20:
+  19 0003 90       		.align 2
+  20              		.globl	_ZNK8onefield8getFieldEv
+  22              	_ZNK8onefield8getFieldEv:
+  23              	.LFB21:
   31:basic-constructor.cpp **** }
- 163              		.loc 1 31 0
- 164 00e2 5D       		popq	%rbp
- 165              		.cfi_def_cfa 7, 8
- 166 00e3 C3       		ret
- 167              		.cfi_endproc
- 168              	.LFE1:
- 170              		.align 2
- 171              		.globl	_ZNK8onefield8getFieldEv
- 173              	_ZNK8onefield8getFieldEv:
- 174              	.LFB2:
   32:basic-constructor.cpp **** int onefield::getField() const {
- 175              		.loc 1 32 0
- 176              		.cfi_startproc
- 177 00e4 55       		pushq	%rbp
- 178              		.cfi_def_cfa_offset 16
- 179              		.cfi_offset 6, -16
- 180 00e5 4889E5   		movq	%rsp, %rbp
- 181              		.cfi_def_cfa_register 6
- 182 00e8 48897DF8 		movq	%rdi, -8(%rbp)
+  24              		.loc 1 32 0
+  25              		.cfi_startproc
+  26              	.LVL1:
   33:basic-constructor.cpp ****     return this->field;
-GAS LISTING /tmp/cc5rnT6g.s 			page 5
+  27              		.loc 1 33 0
+GAS LISTING /tmp/cc8OUvOO.s 			page 2
 
 
- 183              		.loc 1 33 0
- 184 00ec 488B45F8 		movq	-8(%rbp), %rax
- 185 00f0 8B00     		movl	(%rax), %eax
+  28 0004 8B07     		movl	(%rdi), %eax
   34:basic-constructor.cpp **** }
- 186              		.loc 1 34 0
- 187 00f2 5D       		popq	%rbp
- 188              		.cfi_def_cfa 7, 8
- 189 00f3 C3       		ret
- 190              		.cfi_endproc
- 191              	.LFE2:
- 193              		.section	.rodata
- 194              		.align 8
- 195              	.LC0:
- 196 0000 696E6974 		.string	"initial value of field was %d.\n"
- 196      69616C20 
- 196      76616C75 
- 196      65206F66 
- 196      20666965 
- 197              		.text
- 198              		.align 2
- 199              		.globl	_ZN8onefieldC2Ei
- 201              	_ZN8onefieldC2Ei:
- 202              	.LFB4:
+  29              		.loc 1 34 0
+  30 0006 C3       		ret
+  31              		.cfi_endproc
+  32              	.LFE21:
+  34              		.section	.rodata.str1.8,"aMS",@progbits,1
+  35              		.align 8
+  36              	.LC0:
+  37 0000 696E6974 		.string	"initial value of field was %d.\n"
+  37      69616C20 
+  37      76616C75 
+  37      65206F66 
+  37      20666965 
+  38              		.text
+  39 0007 90       		.align 2
+  40              		.globl	_ZN8onefieldC2Ei
+  42              	_ZN8onefieldC2Ei:
+  43              	.LFB23:
   35:basic-constructor.cpp **** 
   36:basic-constructor.cpp **** onefield::onefield(int f) {
- 203              		.loc 1 36 0
- 204              		.cfi_startproc
- 205 00f4 55       		pushq	%rbp
- 206              		.cfi_def_cfa_offset 16
- 207              		.cfi_offset 6, -16
- 208 00f5 4889E5   		movq	%rsp, %rbp
- 209              		.cfi_def_cfa_register 6
- 210 00f8 4883EC10 		subq	$16, %rsp
- 211 00fc 48897DF8 		movq	%rdi, -8(%rbp)
- 212 0100 8975F4   		movl	%esi, -12(%rbp)
- 213              	.LBB3:
+  44              		.loc 1 36 0
+  45              		.cfi_startproc
+  46              	.LVL2:
+  47 0008 4883EC08 		subq	$8, %rsp
+  48              		.cfi_def_cfa_offset 16
+  49 000c 89F2     		movl	%esi, %edx
+  50              	.LBB8:
   37:basic-constructor.cpp ****     field = f;
- 214              		.loc 1 37 0
- 215 0103 488B45F8 		movq	-8(%rbp), %rax
- 216 0107 8B55F4   		movl	-12(%rbp), %edx
- 217 010a 8910     		movl	%edx, (%rax)
+  51              		.loc 1 37 0
+  52 000e 8937     		movl	%esi, (%rdi)
+  53              	.LVL3:
+  54              	.LBB9:
+  55              	.LBB10:
+  56              		.file 2 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+   1:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** /* Checking macros for stdio functions.
+   2:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Copyright (C) 2004-2014 Free Software Foundation, Inc.
+   3:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    This file is part of the GNU C Library.
+   4:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+   5:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is free software; you can redistribute it and/or
+   6:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    modify it under the terms of the GNU Lesser General Public
+   7:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License as published by the Free Software Foundation; either
+   8:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    version 2.1 of the License, or (at your option) any later version.
+   9:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  10:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is distributed in the hope that it will be useful,
+  11:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    but WITHOUT ANY WARRANTY; without even the implied warranty of
+  12:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  13:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Lesser General Public License for more details.
+  14:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  15:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    You should have received a copy of the GNU Lesser General Public
+  16:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License along with the GNU C Library; if not, see
+  17:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    <http://www.gnu.org/licenses/>.  */
+  18:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  19:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifndef _STDIO_H
+  20:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # error "Never include <bits/stdio2.h> directly; use <stdio.h> instead."
+  21:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  22:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+GAS LISTING /tmp/cc8OUvOO.s 			page 3
+
+
+  23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+  24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
+  25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+  26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
+  27:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   _G_va_list __ap) __THROW;
+  28:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  29:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifdef __va_arg_pack
+  30:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  31:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
+  32:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  33:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+  34:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				  __bos (__s), __fmt, __va_arg_pack ());
+  35:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  36:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #elif !defined __cplusplus
+  37:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # define sprintf(str, ...) \
+  38:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___sprintf_chk (str, __USE_FORTIFY_LEVEL - 1, __bos (str), \
+  39:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   __VA_ARGS__)
+  40:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  41:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  42:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  43:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsprintf (char *__restrict __s, const char *__restrict __fmt,
+  44:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 _G_va_list __ap))
+  45:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  46:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+  47:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __ap);
+  48:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  49:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  50:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if defined __USE_BSD || defined __USE_ISOC99 || defined __USE_UNIX98
+  51:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  52:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __snprintf_chk (char *__restrict __s, size_t __n, int __flag,
+  53:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   size_t __slen, const char *__restrict __format,
+  54:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   ...) __THROW;
+  55:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsnprintf_chk (char *__restrict __s, size_t __n, int __flag,
+  56:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    size_t __slen, const char *__restrict __format,
+  57:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    _G_va_list __ap) __THROW;
+  58:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  59:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
+  60:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  61:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (snprintf (char *__restrict __s, size_t __n,
+  62:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 const char *__restrict __fmt, ...))
+  63:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  64:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+  65:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __va_arg_pack ());
+  66:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+  67:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # elif !defined __cplusplus
+  68:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #  define snprintf(str, len, ...) \
+  69:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___snprintf_chk (str, len, __USE_FORTIFY_LEVEL - 1, __bos (str), \
+  70:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    __VA_ARGS__)
+  71:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # endif
+  72:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  73:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  74:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsnprintf (char *__restrict __s, size_t __n,
+  75:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		  const char *__restrict __fmt, _G_va_list __ap))
+  76:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  77:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsnprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+  78:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				    __bos (__s), __fmt, __ap);
+  79:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+GAS LISTING /tmp/cc8OUvOO.s 			page 4
+
+
+  80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
+  82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
+  84:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  85:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __fprintf_chk (FILE *__restrict __stream, int __flag,
+  86:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...);
+  87:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __printf_chk (int __flag, const char *__restrict __format, ...);
+  88:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vfprintf_chk (FILE *__restrict __stream, int __flag,
+  89:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format, _G_va_list __ap);
+  90:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vprintf_chk (int __flag, const char *__restrict __format,
+  91:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  _G_va_list __ap);
+  92:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+  93:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
+  94:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+  95:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
+  96:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+  97:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
+  98:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			__va_arg_pack ());
+  99:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
+ 100:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+ 101:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
+ 102:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** printf (const char *__restrict __fmt, ...)
+ 103:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
+ 104:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
+  57              		.loc 2 104 0
+  58 0010 BE000000 		movl	$.LC0, %esi
+  58      00
+  59              	.LVL4:
+  60 0015 BF010000 		movl	$1, %edi
+  60      00
+  61              	.LVL5:
+  62 001a B8000000 		movl	$0, %eax
+  62      00
+  63 001f E8000000 		call	__printf_chk
+  63      00
+  64              	.LVL6:
+  65              	.LBE10:
+  66              	.LBE9:
+  67              	.LBE8:
   38:basic-constructor.cpp ****     printf("initial value of field was %d.\n", field);
- 218              		.loc 1 38 0
- 219 010c 488B45F8 		movq	-8(%rbp), %rax
- 220 0110 8B00     		movl	(%rax), %eax
- 221 0112 89C6     		movl	%eax, %esi
- 222 0114 BF000000 		movl	$.LC0, %edi
- 222      00
- 223 0119 B8000000 		movl	$0, %eax
- 223      00
- 224 011e E8000000 		call	printf
- 224      00
- 225              	.LBE3:
   39:basic-constructor.cpp **** }
- 226              		.loc 1 39 0
- 227 0123 C9       		leave
- 228              		.cfi_def_cfa 7, 8
-GAS LISTING /tmp/cc5rnT6g.s 			page 6
+  68              		.loc 1 39 0
+  69 0024 4883C408 		addq	$8, %rsp
+  70              		.cfi_def_cfa_offset 8
+  71 0028 C3       		ret
+  72              		.cfi_endproc
+  73              	.LFE23:
+  75              		.globl	_ZN8onefieldC1Ei
+  76              		.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
+  77              		.section	.rodata.str1.1,"aMS",@progbits,1
+  78              	.LC1:
+  79 0000 4C617374 		.string	"Last value of field was %d.\n"
+  79      2076616C 
+  79      7565206F 
+  79      66206669 
+  79      656C6420 
+GAS LISTING /tmp/cc8OUvOO.s 			page 5
 
 
- 229 0124 C3       		ret
- 230              		.cfi_endproc
- 231              	.LFE4:
- 233              		.globl	_ZN8onefieldC1Ei
- 234              		.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
- 235              		.section	.rodata
- 236              	.LC1:
- 237 0020 4C617374 		.string	"Last value of field was %d.\n"
- 237      2076616C 
- 237      7565206F 
- 237      66206669 
- 237      656C6420 
- 238              		.text
- 239 0125 90       		.align 2
- 240              		.globl	_ZN8onefieldD2Ev
- 242              	_ZN8onefieldD2Ev:
- 243              	.LFB7:
+  80              		.text
+  81 0029 90       		.align 2
+  82              		.globl	_ZN8onefieldD2Ev
+  84              	_ZN8onefieldD2Ev:
+  85              	.LFB26:
   40:basic-constructor.cpp **** 
   41:basic-constructor.cpp **** onefield::~onefield() {
- 244              		.loc 1 41 0
- 245              		.cfi_startproc
- 246 0126 55       		pushq	%rbp
- 247              		.cfi_def_cfa_offset 16
- 248              		.cfi_offset 6, -16
- 249 0127 4889E5   		movq	%rsp, %rbp
- 250              		.cfi_def_cfa_register 6
- 251 012a 4883EC10 		subq	$16, %rsp
- 252 012e 48897DF8 		movq	%rdi, -8(%rbp)
- 253              	.LBB4:
+  86              		.loc 1 41 0
+  87              		.cfi_startproc
+  88              		.cfi_personality 0x3,__gxx_personality_v0
+  89              		.cfi_lsda 0x3,.LLSDA26
+  90              	.LVL7:
+  91 002a 4883EC08 		subq	$8, %rsp
+  92              		.cfi_def_cfa_offset 16
+  93              	.LVL8:
+  94              	.LBB11:
+  95              	.LBB12:
+  96              	.LBB13:
+  97              		.loc 2 104 0
+  98 002e 8B17     		movl	(%rdi), %edx
+  99 0030 BE000000 		movl	$.LC1, %esi
+  99      00
+ 100 0035 BF010000 		movl	$1, %edi
+ 100      00
+ 101              	.LVL9:
+ 102 003a B8000000 		movl	$0, %eax
+ 102      00
+ 103 003f E8000000 		call	__printf_chk
+ 103      00
+ 104              	.LVL10:
+ 105              	.LBE13:
+ 106              	.LBE12:
+ 107              	.LBE11:
   42:basic-constructor.cpp ****     printf("Last value of field was %d.\n", field);
- 254              		.loc 1 42 0
- 255 0132 488B45F8 		movq	-8(%rbp), %rax
- 256 0136 8B00     		movl	(%rax), %eax
- 257 0138 89C6     		movl	%eax, %esi
- 258 013a BF000000 		movl	$.LC1, %edi
- 258      00
- 259 013f B8000000 		movl	$0, %eax
- 259      00
- 260 0144 E8000000 		call	printf
- 260      00
- 261              	.LBE4:
   43:basic-constructor.cpp **** }
- 262              		.loc 1 43 0
- 263 0149 C9       		leave
- 264              		.cfi_def_cfa 7, 8
- 265 014a C3       		ret
- 266              		.cfi_endproc
- 267              	.LFE7:
- 269              		.globl	_ZN8onefieldD1Ev
- 270              		.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
- 271              	.Letext0:
-GAS LISTING /tmp/cc5rnT6g.s 			page 7
+ 108              		.loc 1 43 0
+ 109 0044 4883C408 		addq	$8, %rsp
+ 110              		.cfi_def_cfa_offset 8
+ 111 0048 C3       		ret
+ 112              		.cfi_endproc
+ 113              	.LFE26:
+ 114              		.globl	__gxx_personality_v0
+ 115              		.section	.gcc_except_table,"a",@progbits
+ 116              	.LLSDA26:
+ 117 0000 FF       		.byte	0xff
+ 118 0001 FF       		.byte	0xff
+ 119 0002 01       		.byte	0x1
+ 120 0003 00       		.uleb128 .LLSDACSE26-.LLSDACSB26
+ 121              	.LLSDACSB26:
+ 122              	.LLSDACSE26:
+ 123              		.text
+ 125              		.globl	_ZN8onefieldD1Ev
+ 126              		.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
+ 127              		.globl	main
+ 129              	main:
+ 130              	.LFB19:
+  14:basic-constructor.cpp ****     onefield of(13);
+GAS LISTING /tmp/cc8OUvOO.s 			page 6
+
+
+ 131              		.loc 1 14 0
+ 132              		.cfi_startproc
+ 133              		.cfi_personality 0x3,__gxx_personality_v0
+ 134              		.cfi_lsda 0x3,.LLSDA19
+ 135              	.LVL11:
+ 136 0049 55       		pushq	%rbp
+ 137              		.cfi_def_cfa_offset 16
+ 138              		.cfi_offset 6, -16
+ 139 004a 53       		pushq	%rbx
+ 140              		.cfi_def_cfa_offset 24
+ 141              		.cfi_offset 3, -24
+ 142 004b 4883EC18 		subq	$24, %rsp
+ 143              		.cfi_def_cfa_offset 48
+ 144              	.LBB14:
+  15:basic-constructor.cpp **** 
+ 145              		.loc 1 15 0
+ 146 004f BE0D0000 		movl	$13, %esi
+ 146      00
+ 147              	.LVL12:
+ 148 0054 4889E7   		movq	%rsp, %rdi
+ 149              	.LVL13:
+ 150              	.LEHB0:
+ 151 0057 E8000000 		call	_ZN8onefieldC1Ei
+ 151      00
+ 152              	.LEHE0:
+ 153              	.LVL14:
+  17:basic-constructor.cpp **** 
+ 154              		.loc 1 17 0
+ 155 005c BE0C0000 		movl	$12, %esi
+ 155      00
+ 156 0061 4889E7   		movq	%rsp, %rdi
+ 157 0064 E8000000 		call	_ZN8onefield8setFieldEi
+ 157      00
+ 158              	.LVL15:
+  19:basic-constructor.cpp **** 
+ 159              		.loc 1 19 0
+ 160 0069 BF040000 		movl	$4, %edi
+ 160      00
+ 161              	.LEHB1:
+ 162 006e E8000000 		call	_Znwm
+ 162      00
+ 163              	.LEHE1:
+ 164              	.LVL16:
+ 165 0073 4889C3   		movq	%rax, %rbx
+ 166 0076 BE170000 		movl	$23, %esi
+ 166      00
+ 167 007b 4889C7   		movq	%rax, %rdi
+ 168              	.LEHB2:
+ 169 007e E8000000 		call	_ZN8onefieldC1Ei
+ 169      00
+ 170              	.LEHE2:
+ 171              	.LVL17:
+  21:basic-constructor.cpp **** 
+ 172              		.loc 1 21 0 discriminator 2
+ 173 0083 BE1B0000 		movl	$27, %esi
+ 173      00
+ 174 0088 4889DF   		movq	%rbx, %rdi
+GAS LISTING /tmp/cc8OUvOO.s 			page 7
+
+
+ 175 008b E8000000 		call	_ZN8onefield8setFieldEi
+ 175      00
+ 176              	.LVL18:
+  23:basic-constructor.cpp **** 
+ 177              		.loc 1 23 0 discriminator 2
+ 178 0090 4885DB   		testq	%rbx, %rbx
+ 179 0093 7435     		je	.L8
+  23:basic-constructor.cpp **** 
+ 180              		.loc 1 23 0 is_stmt 0 discriminator 1
+ 181 0095 4889DF   		movq	%rbx, %rdi
+ 182 0098 E8000000 		call	_ZN8onefieldD1Ev
+ 182      00
+ 183              	.LVL19:
+ 184 009d 4889DF   		movq	%rbx, %rdi
+ 185 00a0 E8000000 		call	_ZdlPv
+ 185      00
+ 186              	.LVL20:
+ 187 00a5 EB23     		jmp	.L8
+ 188              	.LVL21:
+ 189              	.L12:
+ 190 00a7 4889C5   		movq	%rax, %rbp
+  19:basic-constructor.cpp **** 
+ 191              		.loc 1 19 0 is_stmt 1
+ 192 00aa 4889DF   		movq	%rbx, %rdi
+ 193 00ad E8000000 		call	_ZdlPv
+ 193      00
+ 194              	.LVL22:
+ 195 00b2 4889EB   		movq	%rbp, %rbx
+ 196 00b5 EB03     		jmp	.L10
+ 197              	.L11:
+ 198 00b7 4889C3   		movq	%rax, %rbx
+ 199              	.L10:
+  25:basic-constructor.cpp **** }
+ 200              		.loc 1 25 0
+ 201 00ba 4889E7   		movq	%rsp, %rdi
+ 202 00bd E8000000 		call	_ZN8onefieldD1Ev
+ 202      00
+ 203              	.LVL23:
+ 204 00c2 4889DF   		movq	%rbx, %rdi
+ 205              	.LEHB3:
+ 206 00c5 E8000000 		call	_Unwind_Resume
+ 206      00
+ 207              	.LEHE3:
+ 208              	.LVL24:
+ 209              	.L8:
+ 210 00ca 4889E7   		movq	%rsp, %rdi
+ 211 00cd E8000000 		call	_ZNK8onefield8getFieldEv
+ 211      00
+ 212              	.LVL25:
+ 213 00d2 89C3     		movl	%eax, %ebx
+ 214              	.LVL26:
+ 215 00d4 4889E7   		movq	%rsp, %rdi
+ 216 00d7 E8000000 		call	_ZN8onefieldD1Ev
+ 216      00
+ 217              	.LVL27:
+ 218              	.LBE14:
+  26:basic-constructor.cpp **** 
+GAS LISTING /tmp/cc8OUvOO.s 			page 8
+
+
+ 219              		.loc 1 26 0
+ 220 00dc 89D8     		movl	%ebx, %eax
+ 221 00de 4883C418 		addq	$24, %rsp
+ 222              		.cfi_def_cfa_offset 24
+ 223 00e2 5B       		popq	%rbx
+ 224              		.cfi_def_cfa_offset 16
+ 225 00e3 5D       		popq	%rbp
+ 226              		.cfi_def_cfa_offset 8
+ 227 00e4 C3       		ret
+ 228              		.cfi_endproc
+ 229              	.LFE19:
+ 230              		.section	.gcc_except_table
+ 231              	.LLSDA19:
+ 232 0004 FF       		.byte	0xff
+ 233 0005 FF       		.byte	0xff
+ 234 0006 01       		.byte	0x1
+ 235 0007 10       		.uleb128 .LLSDACSE19-.LLSDACSB19
+ 236              	.LLSDACSB19:
+ 237 0008 0E       		.uleb128 .LEHB0-.LFB19
+ 238 0009 05       		.uleb128 .LEHE0-.LEHB0
+ 239 000a 00       		.uleb128 0
+ 240 000b 00       		.uleb128 0
+ 241 000c 25       		.uleb128 .LEHB1-.LFB19
+ 242 000d 05       		.uleb128 .LEHE1-.LEHB1
+ 243 000e 6E       		.uleb128 .L11-.LFB19
+ 244 000f 00       		.uleb128 0
+ 245 0010 35       		.uleb128 .LEHB2-.LFB19
+ 246 0011 05       		.uleb128 .LEHE2-.LEHB2
+ 247 0012 5E       		.uleb128 .L12-.LFB19
+ 248 0013 00       		.uleb128 0
+ 249 0014 7C       		.uleb128 .LEHB3-.LFB19
+ 250 0015 05       		.uleb128 .LEHE3-.LEHB3
+ 251 0016 00       		.uleb128 0
+ 252 0017 00       		.uleb128 0
+ 253              	.LLSDACSE19:
+ 254              		.text
+ 256              	.Letext0:
+GAS LISTING /tmp/cc8OUvOO.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-constructor.cpp
-     /tmp/cc5rnT6g.s:6      .text:0000000000000000 main
-     /tmp/cc5rnT6g.s:201    .text:00000000000000f4 _ZN8onefieldC1Ei
-     /tmp/cc5rnT6g.s:148    .text:00000000000000ce _ZN8onefield8setFieldEi
-     /tmp/cc5rnT6g.s:242    .text:0000000000000126 _ZN8onefieldD1Ev
-     /tmp/cc5rnT6g.s:173    .text:00000000000000e4 _ZNK8onefield8getFieldEv
-     /tmp/cc5rnT6g.s:201    .text:00000000000000f4 _ZN8onefieldC2Ei
-     /tmp/cc5rnT6g.s:242    .text:0000000000000126 _ZN8onefieldD2Ev
+     /tmp/cc8OUvOO.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
+     /tmp/cc8OUvOO.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
+     /tmp/cc8OUvOO.s:42     .text:0000000000000008 _ZN8onefieldC2Ei
+     /tmp/cc8OUvOO.s:42     .text:0000000000000008 _ZN8onefieldC1Ei
+     /tmp/cc8OUvOO.s:84     .text:000000000000002a _ZN8onefieldD2Ev
+     /tmp/cc8OUvOO.s:84     .text:000000000000002a _ZN8onefieldD1Ev
+     /tmp/cc8OUvOO.s:129    .text:0000000000000049 main
 
 UNDEFINED SYMBOLS
+__printf_chk
 __gxx_personality_v0
 _Znwm
 _ZdlPv
 _Unwind_Resume
-printf

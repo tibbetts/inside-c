@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cckKW0Xb.s 			page 1
+GAS LISTING /tmp/ccrLqPpk.s 			page 1
 
 
    1              		.file	"arrays.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cckKW0Xb.s 			page 1
   12:arrays.c      ****   int x = func(foo);
   45              		.loc 1 12 0
   46 002e 488D45D0 		leaq	-48(%rbp), %rax
-GAS LISTING /tmp/cckKW0Xb.s 			page 2
+GAS LISTING /tmp/ccrLqPpk.s 			page 2
 
 
   47 0032 4889C7   		movq	%rax, %rdi
@@ -78,12 +78,12 @@ GAS LISTING /tmp/cckKW0Xb.s 			page 1
   56              		.cfi_endproc
   57              	.LFE1:
   59              	.Letext0:
-GAS LISTING /tmp/cckKW0Xb.s 			page 3
+GAS LISTING /tmp/ccrLqPpk.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 arrays.c
-     /tmp/cckKW0Xb.s:6      .text:0000000000000000 func
-     /tmp/cckKW0Xb.s:29     .text:0000000000000011 main
+     /tmp/ccrLqPpk.s:6      .text:0000000000000000 func
+     /tmp/ccrLqPpk.s:29     .text:0000000000000011 main
 
 NO UNDEFINED SYMBOLS

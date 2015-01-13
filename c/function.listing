@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccIGPme4.s 			page 1
+GAS LISTING /tmp/ccUHTby7.s 			page 1
 
 
    1              		.file	"function.c"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccIGPme4.s 			page 1
   45 0024 BF0D0000 		movl	$13, %edi
   45      00
   46 0029 E8000000 		call	foo
-GAS LISTING /tmp/ccIGPme4.s 			page 2
+GAS LISTING /tmp/ccUHTby7.s 			page 2
 
 
   46      00
@@ -74,12 +74,12 @@ GAS LISTING /tmp/ccIGPme4.s 			page 1
   54              		.cfi_endproc
   55              	.LFE1:
   57              	.Letext0:
-GAS LISTING /tmp/ccIGPme4.s 			page 3
+GAS LISTING /tmp/ccUHTby7.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 function.c
-     /tmp/ccIGPme4.s:6      .text:0000000000000000 foo
-     /tmp/ccIGPme4.s:32     .text:0000000000000015 main
+     /tmp/ccUHTby7.s:6      .text:0000000000000000 foo
+     /tmp/ccUHTby7.s:32     .text:0000000000000015 main
 
 NO UNDEFINED SYMBOLS
