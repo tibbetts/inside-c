@@ -34,6 +34,18 @@ _ZnwmPv:
 	.cfi_endproc
 .LFE401:
 	.size	_ZnwmPv, .-_ZnwmPv
+	.section	.text._ZN9Something6Inside6Deeper10deepMethodEv,"axG",@progbits,_ZN9Something6Inside6Deeper10deepMethodEv,comdat
+	.align 2
+	.weak	_ZN9Something6Inside6Deeper10deepMethodEv
+	.type	_ZN9Something6Inside6Deeper10deepMethodEv, @function
+_ZN9Something6Inside6Deeper10deepMethodEv:
+.LFB1601:
+	.cfi_startproc
+	movl	(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE1601:
+	.size	_ZN9Something6Inside6Deeper10deepMethodEv, .-_ZN9Something6Inside6Deeper10deepMethodEv
 	.section	.text._ZN9Something6Inside6Deeper10deepMethodEi,"axG",@progbits,_ZN9Something6Inside6Deeper10deepMethodEi,comdat
 	.align 2
 	.weak	_ZN9Something6Inside6Deeper10deepMethodEi
@@ -270,13 +282,13 @@ _ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm:
 .LFB1788:
 	.cfi_startproc
 	testq	%rsi, %rsi
-	je	.L30
+	je	.L31
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
 	call	_ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
-.L30:
+.L31:
 	rep ret
 	.cfi_endproc
 .LFE1788:
@@ -404,9 +416,9 @@ _ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv:
 	movq	%rsi, %rbx
 	call	_ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv
 	cmpq	%rbx, %rax
-	jae	.L43
+	jae	.L44
 	call	_ZSt17__throw_bad_allocv
-.L43:
+.L44:
 	leaq	0(,%rbx,8), %rdi
 	call	_Znwm
 	popq	%rbx
@@ -424,14 +436,14 @@ _ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm:
 	.cfi_startproc
 	movl	$0, %eax
 	testq	%rsi, %rsi
-	je	.L50
+	je	.L51
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
 	movl	$0, %edx
 	call	_ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
-.L50:
+.L51:
 	rep ret
 	.cfi_endproc
 .LFE1790:
@@ -545,16 +557,16 @@ _ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_:
 	movq	%rdi, %rbx
 	movq	%rsi, %rbp
 	cmpq	%rsi, %rdi
-	je	.L58
-.L60:
+	je	.L59
+.L61:
 	movq	%rbx, %rdi
 	call	_ZSt11__addressofISsEPT_RS0_
 	movq	%rax, %rdi
 	call	_ZSt8_DestroyISsEvPT_
 	addq	$8, %rbx
 	cmpq	%rbx, %rbp
-	jne	.L60
-.L58:
+	jne	.L61
+.L59:
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -679,11 +691,11 @@ _ZSt10_ConstructISsIRKSsEEvPT_DpOT0_:
 	movl	$8, %edi
 	call	_ZnwmPv
 	testq	%rax, %rax
-	je	.L71
+	je	.L72
 	movq	%rbp, %rsi
 	movq	%rax, %rdi
 	call	_ZNSsC1ERKSs
-.L71:
+.L72:
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -722,9 +734,9 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 	movq	%rsi, %r12
 	movq	%rdx, %r13
 	cmpq	%rsi, %rdi
-	je	.L79
+	je	.L80
 	movq	%rdx, %rbp
-.L76:
+.L77:
 	movq	%rbp, %rdi
 	call	_ZSt11__addressofISsEPT_RS0_
 	movq	%rbx, %rsi
@@ -735,12 +747,12 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 	addq	$8, %rbx
 	addq	$8, %rbp
 	cmpq	%rbx, %r12
-	jne	.L76
-	jmp	.L82
-.L79:
+	jne	.L77
+	jmp	.L83
+.L80:
 	movq	%rdx, %rbp
-	jmp	.L82
-.L81:
+	jmp	.L83
+.L82:
 	movq	%rax, %rbx
 	.p2align 4,,5
 	call	__cxa_end_catch
@@ -748,7 +760,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 .LEHB1:
 	call	_Unwind_Resume
 .LEHE1:
-.L80:
+.L81:
 	movq	%rax, %rdi
 	call	__cxa_begin_catch
 	movq	%rbp, %rsi
@@ -757,7 +769,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 .LEHB2:
 	call	__cxa_rethrow
 .LEHE2:
-.L82:
+.L83:
 	movq	%rbp, %rax
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 40
@@ -785,7 +797,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 .LLSDACSB1819:
 	.uleb128 .LEHB0-.LFB1819
 	.uleb128 .LEHE0-.LEHB0
-	.uleb128 .L80-.LFB1819
+	.uleb128 .L81-.LFB1819
 	.uleb128 0x1
 	.uleb128 .LEHB1-.LFB1819
 	.uleb128 .LEHE1-.LEHB1
@@ -793,7 +805,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:
 	.uleb128 0
 	.uleb128 .LEHB2-.LFB1819
 	.uleb128 .LEHE2-.LEHB2
-	.uleb128 .L81-.LFB1819
+	.uleb128 .L82-.LFB1819
 	.uleb128 0
 .LLSDACSE1819:
 	.byte	0x1
@@ -926,8 +938,8 @@ _ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:
 .LEHB3:
 	call	_ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag
 .LEHE3:
-	jmp	.L93
-.L92:
+	jmp	.L94
+.L93:
 	movq	%rax, %rbp
 	movq	%rbx, %rdi
 	call	_ZNSt12_Vector_baseISsSaISsEED2Ev
@@ -935,7 +947,7 @@ _ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:
 .LEHB4:
 	call	_Unwind_Resume
 .LEHE4:
-.L93:
+.L94:
 	addq	$40, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
@@ -954,7 +966,7 @@ _ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:
 .LLSDACSB1681:
 	.uleb128 .LEHB3-.LFB1681
 	.uleb128 .LEHE3-.LEHB3
-	.uleb128 .L92-.LFB1681
+	.uleb128 .L93-.LFB1681
 	.uleb128 0
 	.uleb128 .LEHB4-.LFB1681
 	.uleb128 .LEHE4-.LEHB4
@@ -1032,8 +1044,8 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 	movq	%rsi, (%rsp)
 	movq	%rdx, %r12
 	movq	%rdx, %rbx
-	jmp	.L99
-.L100:
+	jmp	.L100
+.L101:
 	leaq	16(%rsp), %rdi
 	call	_ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEdeEv
 	movq	%rax, %rbp
@@ -1047,14 +1059,14 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 	leaq	16(%rsp), %rdi
 	call	_ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEppEv
 	addq	$8, %rbx
-.L99:
+.L100:
 	movq	%rsp, %rsi
 	leaq	16(%rsp), %rdi
 	call	_ZN9__gnu_cxxneIPKSsSt6vectorISsSaISsEEEEbRKNS_17__normal_iteratorIT_T0_EESB_
 	testb	%al, %al
-	jne	.L100
-	jmp	.L105
-.L104:
+	jne	.L101
+	jmp	.L106
+.L105:
 	movq	%rax, %rbx
 	.p2align 4,,6
 	call	__cxa_end_catch
@@ -1062,7 +1074,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 .LEHB6:
 	call	_Unwind_Resume
 .LEHE6:
-.L103:
+.L104:
 	movq	%rax, %rdi
 	call	__cxa_begin_catch
 	movq	%rbx, %rsi
@@ -1071,7 +1083,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 .LEHB7:
 	call	__cxa_rethrow
 .LEHE7:
-.L105:
+.L106:
 	movq	%rbx, %rax
 	addq	$32, %rsp
 	.cfi_def_cfa_offset 32
@@ -1096,7 +1108,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 .LLSDACSB1815:
 	.uleb128 .LEHB5-.LFB1815
 	.uleb128 .LEHE5-.LEHB5
-	.uleb128 .L103-.LFB1815
+	.uleb128 .L104-.LFB1815
 	.uleb128 0x1
 	.uleb128 .LEHB6-.LFB1815
 	.uleb128 .LEHE6-.LEHB6
@@ -1104,7 +1116,7 @@ _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorI
 	.uleb128 0
 	.uleb128 .LEHB7-.LFB1815
 	.uleb128 .LEHE7-.LEHB7
-	.uleb128 .L104-.LFB1815
+	.uleb128 .L105-.LFB1815
 	.uleb128 0
 .LLSDACSE1815:
 	.byte	0x1
@@ -1203,8 +1215,8 @@ _ZNSt6vectorISsSaISsEEC2ERKS1_:
 	call	_ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET0_T_SA_S9_RSaIT1_E
 .LEHE9:
 	movq	%rax, 8(%rbx)
-	jmp	.L114
-.L113:
+	jmp	.L115
+.L114:
 	movq	%rax, %rbp
 	movq	%rbx, %rdi
 	call	_ZNSt12_Vector_baseISsSaISsEED2Ev
@@ -1212,7 +1224,7 @@ _ZNSt6vectorISsSaISsEEC2ERKS1_:
 .LEHB10:
 	call	_Unwind_Resume
 .LEHE10:
-.L114:
+.L115:
 	addq	$16, %rsp
 	.cfi_def_cfa_offset 48
 	popq	%rbx
@@ -1241,7 +1253,7 @@ _ZNSt6vectorISsSaISsEEC2ERKS1_:
 	.uleb128 0
 	.uleb128 .LEHB9-.LFB1687
 	.uleb128 .LEHE9-.LEHB9
-	.uleb128 .L113-.LFB1687
+	.uleb128 .L114-.LFB1687
 	.uleb128 0
 	.uleb128 .LEHB10-.LFB1687
 	.uleb128 .LEHE10-.LEHB10
@@ -1264,18 +1276,21 @@ _ZNSt6vectorISsSaISsEEC2ERKS1_:
 .LC4:
 	.string	" and "
 	.text
-	.globl	_Z8manglingv
-	.type	_Z8manglingv, @function
-_Z8manglingv:
+	.globl	_Z8manglingiPPKc
+	.type	_Z8manglingiPPKc, @function
+_Z8manglingiPPKc:
 .LFB1609:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
 	.cfi_lsda 0x3,.LLSDA1609
-	pushq	%rbx
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	subq	$112, %rsp
-	.cfi_def_cfa_offset 128
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$120, %rsp
+	.cfi_def_cfa_offset 144
 	movl	$11, _ZN9Something6Inside13anotherStaticE(%rip)
 	movl	$23, %esi
 	leaq	16(%rsp), %rdi
@@ -1307,8 +1322,8 @@ _Z8manglingv:
 .LEHB12:
 	call	_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_
 .LEHE12:
-	jmp	.L122
-.L120:
+	jmp	.L123
+.L121:
 	movq	%rax, %rbx
 	leaq	96(%rsp), %rdi
 	call	_ZNSsD1Ev
@@ -1320,7 +1335,7 @@ _Z8manglingv:
 .LEHB13:
 	call	_Unwind_Resume
 .LEHE13:
-.L122:
+.L123:
 	leaq	96(%rsp), %rdi
 	call	_ZNSsD1Ev
 	leaq	88(%rsp), %rdi
@@ -1333,12 +1348,21 @@ _Z8manglingv:
 	call	_ZNSt6vectorISsSaISsEEC1ERKS1_
 	leaq	80(%rsp), %rdi
 	call	_ZNSt6vectorISsSaISsEED1Ev
+	leaq	16(%rsp), %rdi
+	call	_ZN9Something6Inside6Deeper10deepMethodEv
+	movl	%eax, %ebx
 	movl	$37, %esi
 	leaq	32(%rsp), %rdi
 	call	_ZN7OutsideC1Ei
-	movl	32(%rsp), %ebx
+	movl	32(%rsp), %ebp
 	movl	$12, %esi
 	movl	$_ZSt4cout, %edi
+	call	_ZNSolsEi
+	movl	$.LC4, %esi
+	movq	%rax, %rdi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+	movl	%ebp, %esi
+	movq	%rax, %rdi
 	call	_ZNSolsEi
 	movl	$.LC4, %esi
 	movq	%rax, %rdi
@@ -1347,10 +1371,8 @@ _Z8manglingv:
 	movq	%rax, %rdi
 	call	_ZNSolsEi
 .LEHE14:
-	leaq	48(%rsp), %rdi
-	call	_ZNSt6vectorISsSaISsEED1Ev
-	jmp	.L123
-.L121:
+	jmp	.L125
+.L122:
 	movq	%rax, %rbx
 	leaq	48(%rsp), %rdi
 	call	_ZNSt6vectorISsSaISsEED1Ev
@@ -1358,10 +1380,15 @@ _Z8manglingv:
 .LEHB15:
 	call	_Unwind_Resume
 .LEHE15:
-.L123:
-	addq	$112, %rsp
-	.cfi_def_cfa_offset 16
+.L125:
+	leaq	48(%rsp), %rdi
+	call	_ZNSt6vectorISsSaISsEED1Ev
+	movl	$0, %eax
+	addq	$120, %rsp
+	.cfi_def_cfa_offset 24
 	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
@@ -1379,7 +1406,7 @@ _Z8manglingv:
 	.uleb128 0
 	.uleb128 .LEHB12-.LFB1609
 	.uleb128 .LEHE12-.LEHB12
-	.uleb128 .L120-.LFB1609
+	.uleb128 .L121-.LFB1609
 	.uleb128 0
 	.uleb128 .LEHB13-.LFB1609
 	.uleb128 .LEHE13-.LEHB13
@@ -1387,7 +1414,7 @@ _Z8manglingv:
 	.uleb128 0
 	.uleb128 .LEHB14-.LFB1609
 	.uleb128 .LEHE14-.LEHB14
-	.uleb128 .L121-.LFB1609
+	.uleb128 .L122-.LFB1609
 	.uleb128 0
 	.uleb128 .LEHB15-.LFB1609
 	.uleb128 .LEHE15-.LEHB15
@@ -1395,9 +1422,9 @@ _Z8manglingv:
 	.uleb128 0
 .LLSDACSE1609:
 	.text
-	.size	_Z8manglingv, .-_Z8manglingv
-	.type	_GLOBAL__sub_I__Z8manglingv, @function
-_GLOBAL__sub_I__Z8manglingv:
+	.size	_Z8manglingiPPKc, .-_Z8manglingiPPKc
+	.type	_GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE, @function
+_GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE:
 .LFB1847:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -1410,10 +1437,17 @@ _GLOBAL__sub_I__Z8manglingv:
 	ret
 	.cfi_endproc
 .LFE1847:
-	.size	_GLOBAL__sub_I__Z8manglingv, .-_GLOBAL__sub_I__Z8manglingv
+	.size	_GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE, .-_GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE
 	.section	.init_array,"aw"
 	.align 8
-	.quad	_GLOBAL__sub_I__Z8manglingv
+	.quad	_GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE
+	.globl	_ZN9Something6Inside13anotherStaticE
+	.data
+	.align 4
+	.type	_ZN9Something6Inside13anotherStaticE, @object
+	.size	_ZN9Something6Inside13anotherStaticE, 4
+_ZN9Something6Inside13anotherStaticE:
+	.long	137
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
 	.hidden	__dso_handle

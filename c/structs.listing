@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccEUlhOn.s 			page 1
+GAS LISTING /tmp/cconUisl.s 			page 1
 
 
    1              		.file	"structs.c"
@@ -57,14 +57,14 @@ GAS LISTING /tmp/ccEUlhOn.s 			page 1
   43 0018 C3       		ret
   44              		.cfi_endproc
   45              	.LFE1:
-  47              		.globl	main
-GAS LISTING /tmp/ccEUlhOn.s 			page 2
+  47              		.globl	structTest
+GAS LISTING /tmp/cconUisl.s 			page 2
 
 
-  49              	main:
+  49              	structTest:
   50              	.LFB2:
   15:structs.c     **** 
-  16:structs.c     **** int main (int argc, char **argv) {
+  16:structs.c     **** int structTest (int argc, char **argv) {
   51              		.loc 1 16 0
   52              		.cfi_startproc
   53 0019 55       		pushq	%rbp
@@ -118,18 +118,18 @@ GAS LISTING /tmp/ccEUlhOn.s 			page 1
   84              		.cfi_def_cfa 7, 8
   85 0076 C3       		ret
   86              		.cfi_endproc
-GAS LISTING /tmp/ccEUlhOn.s 			page 3
+GAS LISTING /tmp/cconUisl.s 			page 3
 
 
   87              	.LFE2:
   89              	.Letext0:
-GAS LISTING /tmp/ccEUlhOn.s 			page 4
+GAS LISTING /tmp/cconUisl.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 structs.c
-     /tmp/ccEUlhOn.s:6      .text:0000000000000000 byvalue
-     /tmp/ccEUlhOn.s:27     .text:0000000000000009 bypointer
-     /tmp/ccEUlhOn.s:49     .text:0000000000000019 main
+     /tmp/cconUisl.s:6      .text:0000000000000000 byvalue
+     /tmp/cconUisl.s:27     .text:0000000000000009 bypointer
+     /tmp/cconUisl.s:49     .text:0000000000000019 structTest
 
 NO UNDEFINED SYMBOLS

@@ -56,9 +56,9 @@ _Z9doMethodsR6parent:
 	.cfi_endproc
 .LFE3:
 	.size	_Z9doMethodsR6parent, .-_Z9doMethodsR6parent
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z13virtualMethodiPPKc
+	.type	_Z13virtualMethodiPPKc, @function
+_Z13virtualMethodiPPKc:
 .LFB4:
 	.cfi_startproc
 	subq	$40, %rsp
@@ -75,7 +75,7 @@ main:
 	ret
 	.cfi_endproc
 .LFE4:
-	.size	main, .-main
+	.size	_Z13virtualMethodiPPKc, .-_Z13virtualMethodiPPKc
 	.weak	_ZTI6parent
 	.section	.rodata._ZTI6parent,"aG",@progbits,_ZTI6parent,comdat
 	.align 16

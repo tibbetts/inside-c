@@ -4,29 +4,29 @@
 	.globl	_ZNK5baseA8getDataAEv
 	.type	_ZNK5baseA8getDataAEv, @function
 _ZNK5baseA8getDataAEv:
-.LFB20:
+.LFB21:
 	.cfi_startproc
 	movl	8(%rdi), %eax
 	ret
 	.cfi_endproc
-.LFE20:
+.LFE21:
 	.size	_ZNK5baseA8getDataAEv, .-_ZNK5baseA8getDataAEv
 	.align 2
 	.globl	_ZNK5baseB8getDataBEv
 	.type	_ZNK5baseB8getDataBEv, @function
 _ZNK5baseB8getDataBEv:
-.LFB22:
+.LFB23:
 	.cfi_startproc
 	movl	8(%rdi), %eax
 	ret
 	.cfi_endproc
-.LFE22:
+.LFE23:
 	.size	_ZNK5baseB8getDataBEv, .-_ZNK5baseB8getDataBEv
 	.align 2
 	.globl	_ZNK7subBoth6getSumEv
 	.type	_ZNK7subBoth6getSumEv, @function
 _ZNK7subBoth6getSumEv:
-.LFB23:
+.LFB24:
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -52,42 +52,40 @@ _ZNK7subBoth6getSumEv:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE23:
+.LFE24:
 	.size	_ZNK7subBoth6getSumEv, .-_ZNK7subBoth6getSumEv
-	.section	.rodata.str1.1,"aMS",@progbits,1
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align 8
 .LC0:
+	.string	"Calling bottomBase::getBaseData()\n"
+	.text
+	.align 2
+	.globl	_ZNK10bottomBase11getBaseDataEv
+	.type	_ZNK10bottomBase11getBaseDataEv, @function
+_ZNK10bottomBase11getBaseDataEv:
+.LFB19:
+	.cfi_startproc
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 16
+	movl	$.LC0, %esi
+	movl	$1, %edi
+	movl	$0, %eax
+	call	__printf_chk
+	movl	$37, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE19:
+	.size	_ZNK10bottomBase11getBaseDataEv, .-_ZNK10bottomBase11getBaseDataEv
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC1:
 	.string	"calling getDataA()\n"
 	.text
 	.align 2
 	.globl	_ZNK7subBoth8getDataAEv
 	.type	_ZNK7subBoth8getDataAEv, @function
 _ZNK7subBoth8getDataAEv:
-.LFB24:
-	.cfi_startproc
-	pushq	%rbx
-	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	movq	%rdi, %rbx
-	movl	$.LC0, %esi
-	movl	$1, %edi
-	movl	$0, %eax
-	call	__printf_chk
-	movq	%rbx, %rdi
-	call	_ZNK5baseA8getDataAEv
-	popq	%rbx
-	.cfi_def_cfa_offset 8
-	ret
-	.cfi_endproc
-.LFE24:
-	.size	_ZNK7subBoth8getDataAEv, .-_ZNK7subBoth8getDataAEv
-	.section	.rodata.str1.1
-.LC1:
-	.string	"calling getDataB()\n"
-	.text
-	.align 2
-	.globl	_ZNK7subBoth8getDataBEv
-	.type	_ZNK7subBoth8getDataBEv, @function
-_ZNK7subBoth8getDataBEv:
 .LFB25:
 	.cfi_startproc
 	pushq	%rbx
@@ -98,33 +96,22 @@ _ZNK7subBoth8getDataBEv:
 	movl	$1, %edi
 	movl	$0, %eax
 	call	__printf_chk
-	leaq	16(%rbx), %rdi
-	call	_ZNK5baseB8getDataBEv
+	movq	%rbx, %rdi
+	call	_ZNK5baseA8getDataAEv
 	popq	%rbx
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE25:
-	.size	_ZNK7subBoth8getDataBEv, .-_ZNK7subBoth8getDataBEv
-	.set	.LTHUNK0,_ZNK7subBoth8getDataBEv
-	.globl	_ZThn16_NK7subBoth8getDataBEv
-	.type	_ZThn16_NK7subBoth8getDataBEv, @function
-_ZThn16_NK7subBoth8getDataBEv:
-.LFB40:
-	.cfi_startproc
-	subq	$16, %rdi
-	jmp	.LTHUNK0
-	.cfi_endproc
-.LFE40:
-	.size	_ZThn16_NK7subBoth8getDataBEv, .-_ZThn16_NK7subBoth8getDataBEv
+	.size	_ZNK7subBoth8getDataAEv, .-_ZNK7subBoth8getDataAEv
 	.section	.rodata.str1.1
 .LC2:
-	.string	"calling getBaseData()\n"
+	.string	"calling getDataB()\n"
 	.text
 	.align 2
-	.globl	_ZNK7subBoth11getBaseDataEv
-	.type	_ZNK7subBoth11getBaseDataEv, @function
-_ZNK7subBoth11getBaseDataEv:
+	.globl	_ZNK7subBoth8getDataBEv
+	.type	_ZNK7subBoth8getDataBEv, @function
+_ZNK7subBoth8getDataBEv:
 .LFB26:
 	.cfi_startproc
 	pushq	%rbx
@@ -132,6 +119,43 @@ _ZNK7subBoth11getBaseDataEv:
 	.cfi_offset 3, -16
 	movq	%rdi, %rbx
 	movl	$.LC2, %esi
+	movl	$1, %edi
+	movl	$0, %eax
+	call	__printf_chk
+	leaq	16(%rbx), %rdi
+	call	_ZNK5baseB8getDataBEv
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE26:
+	.size	_ZNK7subBoth8getDataBEv, .-_ZNK7subBoth8getDataBEv
+	.set	.LTHUNK0,_ZNK7subBoth8getDataBEv
+	.globl	_ZThn16_NK7subBoth8getDataBEv
+	.type	_ZThn16_NK7subBoth8getDataBEv, @function
+_ZThn16_NK7subBoth8getDataBEv:
+.LFB41:
+	.cfi_startproc
+	subq	$16, %rdi
+	jmp	.LTHUNK0
+	.cfi_endproc
+.LFE41:
+	.size	_ZThn16_NK7subBoth8getDataBEv, .-_ZThn16_NK7subBoth8getDataBEv
+	.section	.rodata.str1.1
+.LC3:
+	.string	"calling getBaseData()\n"
+	.text
+	.align 2
+	.globl	_ZNK7subBoth11getBaseDataEv
+	.type	_ZNK7subBoth11getBaseDataEv, @function
+_ZNK7subBoth11getBaseDataEv:
+.LFB27:
+	.cfi_startproc
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	movq	%rdi, %rbx
+	movl	$.LC3, %esi
 	movl	$1, %edi
 	movl	$0, %eax
 	call	__printf_chk
@@ -143,53 +167,53 @@ _ZNK7subBoth11getBaseDataEv:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE26:
+.LFE27:
 	.size	_ZNK7subBoth11getBaseDataEv, .-_ZNK7subBoth11getBaseDataEv
 	.set	.LTHUNK1,_ZNK7subBoth11getBaseDataEv
 	.globl	_ZTv0_n24_NK7subBoth11getBaseDataEv
 	.type	_ZTv0_n24_NK7subBoth11getBaseDataEv, @function
 _ZTv0_n24_NK7subBoth11getBaseDataEv:
-.LFB41:
+.LFB42:
 	.cfi_startproc
 	movq	(%rdi), %r10
 	addq	-24(%r10), %rdi
 	jmp	.LTHUNK1
 	.cfi_endproc
-.LFE41:
+.LFE42:
 	.size	_ZTv0_n24_NK7subBoth11getBaseDataEv, .-_ZTv0_n24_NK7subBoth11getBaseDataEv
 	.align 2
 	.globl	_ZN5baseA8setDataAEi
 	.type	_ZN5baseA8setDataAEi, @function
 _ZN5baseA8setDataAEi:
-.LFB19:
+.LFB20:
 	.cfi_startproc
 	movl	%esi, 8(%rdi)
 	ret
 	.cfi_endproc
-.LFE19:
+.LFE20:
 	.size	_ZN5baseA8setDataAEi, .-_ZN5baseA8setDataAEi
 	.align 2
 	.globl	_ZN5baseB8setDataBEi
 	.type	_ZN5baseB8setDataBEi, @function
 _ZN5baseB8setDataBEi:
-.LFB21:
+.LFB22:
 	.cfi_startproc
 	movl	%esi, 8(%rdi)
 	ret
 	.cfi_endproc
-.LFE21:
+.LFE22:
 	.size	_ZN5baseB8setDataBEi, .-_ZN5baseB8setDataBEi
 	.section	.text._ZN10bottomBaseC2Ev,"axG",@progbits,_ZN10bottomBaseC5Ev,comdat
 	.align 2
 	.weak	_ZN10bottomBaseC2Ev
 	.type	_ZN10bottomBaseC2Ev, @function
 _ZN10bottomBaseC2Ev:
-.LFB30:
+.LFB31:
 	.cfi_startproc
 	movq	$_ZTV10bottomBase+16, (%rdi)
 	ret
 	.cfi_endproc
-.LFE30:
+.LFE31:
 	.size	_ZN10bottomBaseC2Ev, .-_ZN10bottomBaseC2Ev
 	.weak	_ZN10bottomBaseC1Ev
 	.set	_ZN10bottomBaseC1Ev,_ZN10bottomBaseC2Ev
@@ -198,7 +222,7 @@ _ZN10bottomBaseC2Ev:
 	.weak	_ZN5baseAC2Ev
 	.type	_ZN5baseAC2Ev, @function
 _ZN5baseAC2Ev:
-.LFB33:
+.LFB34:
 	.cfi_startproc
 	movq	(%rsi), %rax
 	movq	%rax, (%rdi)
@@ -207,14 +231,14 @@ _ZN5baseAC2Ev:
 	movq	%rdx, (%rdi,%rax)
 	ret
 	.cfi_endproc
-.LFE33:
+.LFE34:
 	.size	_ZN5baseAC2Ev, .-_ZN5baseAC2Ev
 	.section	.text._ZN5baseBC2Ev,"axG",@progbits,_ZN5baseBC2Ev,comdat
 	.align 2
 	.weak	_ZN5baseBC2Ev
 	.type	_ZN5baseBC2Ev, @function
 _ZN5baseBC2Ev:
-.LFB36:
+.LFB37:
 	.cfi_startproc
 	movq	(%rsi), %rax
 	movq	%rax, (%rdi)
@@ -223,14 +247,14 @@ _ZN5baseBC2Ev:
 	movq	%rdx, (%rdi,%rax)
 	ret
 	.cfi_endproc
-.LFE36:
+.LFE37:
 	.size	_ZN5baseBC2Ev, .-_ZN5baseBC2Ev
 	.section	.text._ZN7subBothC1Ev,"axG",@progbits,_ZN7subBothC1Ev,comdat
 	.align 2
 	.weak	_ZN7subBothC1Ev
 	.type	_ZN7subBothC1Ev, @function
 _ZN7subBothC1Ev:
-.LFB39:
+.LFB40:
 	.cfi_startproc
 	pushq	%rbx
 	.cfi_def_cfa_offset 16
@@ -251,17 +275,25 @@ _ZN7subBothC1Ev:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE39:
+.LFE40:
 	.size	_ZN7subBothC1Ev, .-_ZN7subBothC1Ev
+	.section	.rodata.str1.1
+.LC4:
+	.string	"sb->getSum()=%d"
 	.text
-	.globl	main
-	.type	main, @function
-main:
-.LFB27:
+	.globl	_Z10virtualSubiPPKc
+	.type	_Z10virtualSubiPPKc, @function
+_Z10virtualSubiPPKc:
+.LFB28:
 	.cfi_startproc
-	pushq	%rbx
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 32
 	movl	$48, %edi
 	call	_Znwm
 	movq	%rax, %rbx
@@ -276,24 +308,49 @@ main:
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	call	*(%rax)
-	leaq	16(%rbx), %rdx
+	leaq	16(%rbx), %rbp
 	testq	%rbx, %rbx
 	movl	$0, %eax
-	cmovne	%rdx, %rax
-	movq	%rax, %rbx
+	cmove	%rax, %rbp
 	movl	$13, %esi
-	movq	%rax, %rdi
+	movq	%rbp, %rdi
 	call	_ZN5baseB8setDataBEi
+	movq	0(%rbp), %rax
+	movq	%rbp, %rdi
+	call	*(%rax)
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
-	call	*(%rax)
+	call	*8(%rax)
+	movl	%eax, %edx
+	movl	$.LC4, %esi
+	movl	$1, %edi
 	movl	$0, %eax
+	call	__printf_chk
+	movl	$0, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 24
 	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE27:
-	.size	main, .-main
+.LFE28:
+	.size	_Z10virtualSubiPPKc, .-_Z10virtualSubiPPKc
+	.weak	_ZTS10bottomBase
+	.section	.rodata._ZTS10bottomBase,"aG",@progbits,_ZTS10bottomBase,comdat
+	.type	_ZTS10bottomBase, @object
+	.size	_ZTS10bottomBase, 13
+_ZTS10bottomBase:
+	.string	"10bottomBase"
+	.weak	_ZTI10bottomBase
+	.section	.rodata._ZTI10bottomBase,"aG",@progbits,_ZTI10bottomBase,comdat
+	.align 16
+	.type	_ZTI10bottomBase, @object
+	.size	_ZTI10bottomBase, 16
+_ZTI10bottomBase:
+	.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+	.quad	_ZTS10bottomBase
 	.weak	_ZTS5baseA
 	.section	.rodata._ZTS5baseA,"aG",@progbits,_ZTS5baseA,comdat
 	.type	_ZTS5baseA, @object
@@ -350,6 +407,15 @@ _ZTI7subBoth:
 	.quad	2
 	.quad	_ZTI5baseB
 	.quad	4098
+	.weak	_ZTV10bottomBase
+	.section	.rodata._ZTV10bottomBase,"aG",@progbits,_ZTV10bottomBase,comdat
+	.align 16
+	.type	_ZTV10bottomBase, @object
+	.size	_ZTV10bottomBase, 24
+_ZTV10bottomBase:
+	.quad	0
+	.quad	_ZTI10bottomBase
+	.quad	_ZNK10bottomBase11getBaseDataEv
 	.weak	_ZTT5baseA
 	.section	.rodata._ZTT5baseA,"aG",@progbits,_ZTV5baseA,comdat
 	.align 16

@@ -1,36 +1,36 @@
 	.file	"basic-constructor.cpp"
 	.text
 	.align 2
-	.globl	_ZN8onefield8setFieldEi
-	.type	_ZN8onefield8setFieldEi, @function
-_ZN8onefield8setFieldEi:
+	.globl	_ZN9onefield18setFieldEi
+	.type	_ZN9onefield18setFieldEi, @function
+_ZN9onefield18setFieldEi:
 .LFB20:
 	.cfi_startproc
 	movl	%esi, (%rdi)
 	ret
 	.cfi_endproc
 .LFE20:
-	.size	_ZN8onefield8setFieldEi, .-_ZN8onefield8setFieldEi
+	.size	_ZN9onefield18setFieldEi, .-_ZN9onefield18setFieldEi
 	.align 2
-	.globl	_ZNK8onefield8getFieldEv
-	.type	_ZNK8onefield8getFieldEv, @function
-_ZNK8onefield8getFieldEv:
+	.globl	_ZNK9onefield18getFieldEv
+	.type	_ZNK9onefield18getFieldEv, @function
+_ZNK9onefield18getFieldEv:
 .LFB21:
 	.cfi_startproc
 	movl	(%rdi), %eax
 	ret
 	.cfi_endproc
 .LFE21:
-	.size	_ZNK8onefield8getFieldEv, .-_ZNK8onefield8getFieldEv
+	.size	_ZNK9onefield18getFieldEv, .-_ZNK9onefield18getFieldEv
 	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC0:
 	.string	"initial value of field was %d.\n"
 	.text
 	.align 2
-	.globl	_ZN8onefieldC2Ei
-	.type	_ZN8onefieldC2Ei, @function
-_ZN8onefieldC2Ei:
+	.globl	_ZN9onefield1C2Ei
+	.type	_ZN9onefield1C2Ei, @function
+_ZN9onefield1C2Ei:
 .LFB23:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -46,17 +46,17 @@ _ZN8onefieldC2Ei:
 	ret
 	.cfi_endproc
 .LFE23:
-	.size	_ZN8onefieldC2Ei, .-_ZN8onefieldC2Ei
-	.globl	_ZN8onefieldC1Ei
-	.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
+	.size	_ZN9onefield1C2Ei, .-_ZN9onefield1C2Ei
+	.globl	_ZN9onefield1C1Ei
+	.set	_ZN9onefield1C1Ei,_ZN9onefield1C2Ei
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC1:
 	.string	"Last value of field was %d.\n"
 	.text
 	.align 2
-	.globl	_ZN8onefieldD2Ev
-	.type	_ZN8onefieldD2Ev, @function
-_ZN8onefieldD2Ev:
+	.globl	_ZN9onefield1D2Ev
+	.type	_ZN9onefield1D2Ev, @function
+_ZN9onefield1D2Ev:
 .LFB26:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -83,12 +83,12 @@ _ZN8onefieldD2Ev:
 .LLSDACSB26:
 .LLSDACSE26:
 	.text
-	.size	_ZN8onefieldD2Ev, .-_ZN8onefieldD2Ev
-	.globl	_ZN8onefieldD1Ev
-	.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
-	.globl	main
-	.type	main, @function
-main:
+	.size	_ZN9onefield1D2Ev, .-_ZN9onefield1D2Ev
+	.globl	_ZN9onefield1D1Ev
+	.set	_ZN9onefield1D1Ev,_ZN9onefield1D2Ev
+	.globl	_Z16basicConstructoriPPKc
+	.type	_Z16basicConstructoriPPKc, @function
+_Z16basicConstructoriPPKc:
 .LFB19:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -104,11 +104,11 @@ main:
 	movl	$13, %esi
 	movq	%rsp, %rdi
 .LEHB0:
-	call	_ZN8onefieldC1Ei
+	call	_ZN9onefield1C1Ei
 .LEHE0:
 	movl	$12, %esi
 	movq	%rsp, %rdi
-	call	_ZN8onefield8setFieldEi
+	call	_ZN9onefield18setFieldEi
 	movl	$4, %edi
 .LEHB1:
 	call	_Znwm
@@ -117,15 +117,15 @@ main:
 	movl	$23, %esi
 	movq	%rax, %rdi
 .LEHB2:
-	call	_ZN8onefieldC1Ei
+	call	_ZN9onefield1C1Ei
 .LEHE2:
 	movl	$27, %esi
 	movq	%rbx, %rdi
-	call	_ZN8onefield8setFieldEi
+	call	_ZN9onefield18setFieldEi
 	testq	%rbx, %rbx
 	je	.L8
 	movq	%rbx, %rdi
-	call	_ZN8onefieldD1Ev
+	call	_ZN9onefield1D1Ev
 	movq	%rbx, %rdi
 	call	_ZdlPv
 	jmp	.L8
@@ -139,17 +139,17 @@ main:
 	movq	%rax, %rbx
 .L10:
 	movq	%rsp, %rdi
-	call	_ZN8onefieldD1Ev
+	call	_ZN9onefield1D1Ev
 	movq	%rbx, %rdi
 .LEHB3:
 	call	_Unwind_Resume
 .LEHE3:
 .L8:
 	movq	%rsp, %rdi
-	call	_ZNK8onefield8getFieldEv
+	call	_ZNK9onefield18getFieldEv
 	movl	%eax, %ebx
 	movq	%rsp, %rdi
-	call	_ZN8onefieldD1Ev
+	call	_ZN9onefield1D1Ev
 	movl	%ebx, %eax
 	addq	$24, %rsp
 	.cfi_def_cfa_offset 24
@@ -185,6 +185,6 @@ main:
 	.uleb128 0
 .LLSDACSE19:
 	.text
-	.size	main, .-main
+	.size	_Z16basicConstructoriPPKc, .-_Z16basicConstructoriPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

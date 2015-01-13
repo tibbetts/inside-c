@@ -20,9 +20,9 @@ _Z11use_pointerPi:
 	.cfi_endproc
 .LFE1:
 	.size	_Z11use_pointerPi, .-_Z11use_pointerPi
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z9referenceiPPKc
+	.type	_Z9referenceiPPKc, @function
+_Z9referenceiPPKc:
 .LFB2:
 	.cfi_startproc
 	subq	$16, %rsp
@@ -38,6 +38,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE2:
-	.size	main, .-main
+	.size	_Z9referenceiPPKc, .-_Z9referenceiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

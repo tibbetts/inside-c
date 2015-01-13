@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc5J52hE.s 			page 1
+GAS LISTING /tmp/ccBRIZ2d.s 			page 1
 
 
    1              		.file	"reference.cpp"
@@ -33,46 +33,45 @@ GAS LISTING /tmp/cc5J52hE.s 			page 1
   27 0007 C3       		ret
   28              		.cfi_endproc
   29              	.LFE1:
-  31              		.globl	main
-  33              	main:
+  31              		.globl	_Z9referenceiPPKc
+  33              	_Z9referenceiPPKc:
   34              	.LFB2:
    7:reference.cpp **** }
    8:reference.cpp **** 
-   9:reference.cpp **** int
-  10:reference.cpp **** main (int argc, char **argv) {
-  35              		.loc 1 10 0
+   9:reference.cpp **** int reference(int argc, const char **argv) {
+  35              		.loc 1 9 0
   36              		.cfi_startproc
   37              	.LVL2:
   38 0008 4883EC10 		subq	$16, %rsp
   39              		.cfi_def_cfa_offset 24
   40              	.LBB2:
-  11:reference.cpp ****     int foo;
-  12:reference.cpp ****     foo = 12;
-  41              		.loc 1 12 0
+  10:reference.cpp ****     int foo;
+  11:reference.cpp ****     foo = 12;
+  41              		.loc 1 11 0
   42 000c C744240C 		movl	$12, 12(%rsp)
   42      0C000000 
-  13:reference.cpp ****     use_reference(foo);
-  43              		.loc 1 13 0
+  12:reference.cpp ****     use_reference(foo);
+  43              		.loc 1 12 0
   44 0014 488D7C24 		leaq	12(%rsp), %rdi
   44      0C
   45              	.LVL3:
   46 0019 E8000000 		call	_Z13use_referenceRi
   46      00
-GAS LISTING /tmp/cc5J52hE.s 			page 2
-
-
   47              	.LVL4:
-  14:reference.cpp ****     use_pointer(&foo);
-  48              		.loc 1 14 0
+GAS LISTING /tmp/ccBRIZ2d.s 			page 2
+
+
+  13:reference.cpp ****     use_pointer(&foo);
+  48              		.loc 1 13 0
   49 001e 488D7C24 		leaq	12(%rsp), %rdi
   49      0C
   50 0023 E8000000 		call	_Z11use_pointerPi
   50      00
   51              	.LVL5:
   52              	.LBE2:
-  15:reference.cpp ****     return foo;
-  16:reference.cpp **** }
-  53              		.loc 1 16 0
+  14:reference.cpp ****     return foo;
+  15:reference.cpp **** }
+  53              		.loc 1 15 0
   54 0028 8B44240C 		movl	12(%rsp), %eax
   55 002c 4883C410 		addq	$16, %rsp
   56              		.cfi_def_cfa_offset 8
@@ -80,13 +79,13 @@ GAS LISTING /tmp/cc5J52hE.s 			page 1
   58              		.cfi_endproc
   59              	.LFE2:
   61              	.Letext0:
-GAS LISTING /tmp/cc5J52hE.s 			page 3
+GAS LISTING /tmp/ccBRIZ2d.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 reference.cpp
-     /tmp/cc5J52hE.s:6      .text:0000000000000000 _Z13use_referenceRi
-     /tmp/cc5J52hE.s:20     .text:0000000000000004 _Z11use_pointerPi
-     /tmp/cc5J52hE.s:33     .text:0000000000000008 main
+     /tmp/ccBRIZ2d.s:6      .text:0000000000000000 _Z13use_referenceRi
+     /tmp/ccBRIZ2d.s:20     .text:0000000000000004 _Z11use_pointerPi
+     /tmp/ccBRIZ2d.s:33     .text:0000000000000008 _Z9referenceiPPKc
 
 NO UNDEFINED SYMBOLS

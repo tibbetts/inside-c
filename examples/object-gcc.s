@@ -14,9 +14,9 @@ _ZN15onefield_structC2Ei:
 	.weak	_ZN15onefield_structC1Ei
 	.set	_ZN15onefield_structC1Ei,_ZN15onefield_structC2Ei
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z6objectiPPKc
+	.type	_Z6objectiPPKc, @function
+_Z6objectiPPKc:
 .LFB3:
 	.cfi_startproc
 	subq	$24, %rsp
@@ -30,6 +30,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE3:
-	.size	main, .-main
+	.size	_Z6objectiPPKc, .-_Z6objectiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

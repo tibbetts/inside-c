@@ -1,8 +1,8 @@
 	.file	"pointers.c"
 	.text
-	.globl	function
-	.type	function, @function
-function:
+	.globl	functionToCall
+	.type	functionToCall, @function
+functionToCall:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -24,14 +24,14 @@ function:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	function, .-function
+	.size	functionToCall, .-functionToCall
 	.section	.rodata
 .LC0:
 	.string	"foo = %d"
 	.text
-	.globl	pointers
-	.type	pointers, @function
-pointers:
+	.globl	pointer
+	.type	pointer, @function
+pointer:
 .LFB1:
 	.cfi_startproc
 	pushq	%rbp
@@ -39,7 +39,9 @@ pointers:
 	.cfi_offset 6, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq	$32, %rsp
+	subq	$48, %rsp
+	movl	%edi, -36(%rbp)
+	movq	%rsi, -48(%rbp)
 	movl	$3, -20(%rbp)
 	leaq	-20(%rbp), %rax
 	movq	%rax, -16(%rbp)
@@ -50,7 +52,7 @@ pointers:
 	leaq	-20(%rbp), %rcx
 	movq	%rcx, %rsi
 	movl	%eax, %edi
-	call	function
+	call	functionToCall
 	movl	-20(%rbp), %eax
 	movl	%eax, %esi
 	movl	$.LC0, %edi
@@ -61,6 +63,6 @@ pointers:
 	ret
 	.cfi_endproc
 .LFE1:
-	.size	pointers, .-pointers
+	.size	pointer, .-pointer
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

@@ -1,8 +1,8 @@
 	.file	"basic-struct.cpp"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z11basicStructiPPc
+	.type	_Z11basicStructiPPc, @function
+_Z11basicStructiPPc:
 .LFB0:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -18,6 +18,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	_Z11basicStructiPPc, .-_Z11basicStructiPPc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

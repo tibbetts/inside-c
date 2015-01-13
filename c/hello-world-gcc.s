@@ -3,9 +3,9 @@
 .LC0:
 	.string	"Hello World."
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	helloWorld
+	.type	helloWorld, @function
+helloWorld:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -24,6 +24,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	helloWorld, .-helloWorld
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

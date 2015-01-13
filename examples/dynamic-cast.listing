@@ -1,15 +1,15 @@
-GAS LISTING /tmp/cce7yyfb.s 			page 1
+GAS LISTING /tmp/ccmbRfdJ.s 			page 1
 
 
    1              		.file	"dynamic-cast.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZN8onefield8setFieldEi
-   7              	_ZN8onefield8setFieldEi:
+   5              		.globl	_ZN9onefield38setFieldEi
+   7              	_ZN9onefield38setFieldEi:
    8              	.LFB7:
    9              		.file 1 "dynamic-cast.cpp"
-   1:dynamic-cast.cpp **** class onefield {
+   1:dynamic-cast.cpp **** class onefield3 {
    2:dynamic-cast.cpp ****   private:
    3:dynamic-cast.cpp ****     int field;
    4:dynamic-cast.cpp ****   public:
@@ -17,7 +17,7 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
    6:dynamic-cast.cpp ****     virtual int getField() const;
    7:dynamic-cast.cpp **** };
    8:dynamic-cast.cpp **** 
-   9:dynamic-cast.cpp **** class onefield_subclass : public onefield {
+   9:dynamic-cast.cpp **** class onefield3_subclass : public onefield3 {
   10:dynamic-cast.cpp ****   private:
   11:dynamic-cast.cpp ****     int otherfield;
   12:dynamic-cast.cpp ****   public:
@@ -25,10 +25,10 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   14:dynamic-cast.cpp ****     virtual void setField(int f);
   15:dynamic-cast.cpp **** };
   16:dynamic-cast.cpp **** 
-  17:dynamic-cast.cpp **** int main(int argc, char **argv) {
-  18:dynamic-cast.cpp ****     onefield *ofp = new onefield_subclass;
+  17:dynamic-cast.cpp **** int dynamicCast(int argc, char **argv) {
+  18:dynamic-cast.cpp ****     onefield3 *ofp = new onefield3_subclass;
   19:dynamic-cast.cpp **** 
-  20:dynamic-cast.cpp ****     onefield_subclass *ofsp = dynamic_cast<onefield_subclass *>(ofp);
+  20:dynamic-cast.cpp ****     onefield3_subclass *ofsp = dynamic_cast<onefield3_subclass *>(ofp);
   21:dynamic-cast.cpp **** 
   22:dynamic-cast.cpp ****     delete ofsp;
   23:dynamic-cast.cpp **** 
@@ -36,7 +36,7 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   25:dynamic-cast.cpp **** }
   26:dynamic-cast.cpp **** 
   27:dynamic-cast.cpp **** 
-  28:dynamic-cast.cpp **** void onefield::setField(int f) {
+  28:dynamic-cast.cpp **** void onefield3::setField(int f) {
   10              		.loc 1 28 0
   11              		.cfi_startproc
   12              	.LVL0:
@@ -47,18 +47,18 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   16              		.cfi_endproc
   17              	.LFE7:
   19              		.align 2
-  20              		.globl	_ZNK8onefield8getFieldEv
-  22              	_ZNK8onefield8getFieldEv:
+  20              		.globl	_ZNK9onefield38getFieldEv
+  22              	_ZNK9onefield38getFieldEv:
   23              	.LFB8:
   30:dynamic-cast.cpp **** }
-  31:dynamic-cast.cpp **** int onefield::getField() const {
+  31:dynamic-cast.cpp **** int onefield3::getField() const {
   24              		.loc 1 31 0
   25              		.cfi_startproc
   26              	.LVL1:
   32:dynamic-cast.cpp ****     return this->field;
   27              		.loc 1 32 0
   28 0004 8B4708   		movl	8(%rdi), %eax
-GAS LISTING /tmp/cce7yyfb.s 			page 2
+GAS LISTING /tmp/ccmbRfdJ.s 			page 2
 
 
   33:dynamic-cast.cpp **** }
@@ -67,11 +67,11 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   31              		.cfi_endproc
   32              	.LFE8:
   34              		.align 2
-  35              		.globl	_ZN17onefield_subclass8setFieldEi
-  37              	_ZN17onefield_subclass8setFieldEi:
+  35              		.globl	_ZN18onefield3_subclass8setFieldEi
+  37              	_ZN18onefield3_subclass8setFieldEi:
   38              	.LFB9:
   34:dynamic-cast.cpp **** 
-  35:dynamic-cast.cpp **** void onefield_subclass::setField(int f) {
+  35:dynamic-cast.cpp **** void onefield3_subclass::setField(int f) {
   39              		.loc 1 35 0
   40              		.cfi_startproc
   41              	.LVL2:
@@ -83,9 +83,9 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   47              		.cfi_offset 3, -24
   48 000a 4889FB   		movq	%rdi, %rbx
   49 000d 89F5     		movl	%esi, %ebp
-  36:dynamic-cast.cpp ****     onefield::setField(f);
+  36:dynamic-cast.cpp ****     onefield3::setField(f);
   50              		.loc 1 36 0
-  51 000f E8000000 		call	_ZN8onefield8setFieldEi
+  51 000f E8000000 		call	_ZN9onefield38setFieldEi
   51      00
   52              	.LVL3:
   37:dynamic-cast.cpp ****     otherfield = f;
@@ -102,10 +102,10 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   62 0019 C3       		ret
   63              		.cfi_endproc
   64              	.LFE9:
-  66              		.section	.text._ZN8onefieldC2Ev,"axG",@progbits,_ZN8onefieldC5Ev,comdat
+  66              		.section	.text._ZN9onefield3C2Ev,"axG",@progbits,_ZN9onefield3C5Ev,comdat
   67              		.align 2
-  68              		.weak	_ZN8onefieldC2Ev
-  70              	_ZN8onefieldC2Ev:
+  68              		.weak	_ZN9onefield3C2Ev
+  70              	_ZN9onefield3C2Ev:
   71              	.LFB3:
    1:dynamic-cast.cpp ****   private:
   72              		.loc 1 1 0
@@ -114,21 +114,21 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   75              	.LBB2:
    1:dynamic-cast.cpp ****   private:
   76              		.loc 1 1 0
-  77 0000 48C70700 		movq	$_ZTV8onefield+16, (%rdi)
+  77 0000 48C70700 		movq	$_ZTV9onefield3+16, (%rdi)
   77      000000
   78 0007 C3       		ret
   79              	.LBE2:
-GAS LISTING /tmp/cce7yyfb.s 			page 3
+GAS LISTING /tmp/ccmbRfdJ.s 			page 3
 
 
   80              		.cfi_endproc
   81              	.LFE3:
-  83              		.weak	_ZN8onefieldC1Ev
-  84              		.set	_ZN8onefieldC1Ev,_ZN8onefieldC2Ev
-  85              		.section	.text._ZN17onefield_subclassC2Ev,"axG",@progbits,_ZN17onefield_subclassC5Ev,comdat
+  83              		.weak	_ZN9onefield3C1Ev
+  84              		.set	_ZN9onefield3C1Ev,_ZN9onefield3C2Ev
+  85              		.section	.text._ZN18onefield3_subclassC2Ev,"axG",@progbits,_ZN18onefield3_subclassC5Ev,comdat
   86              		.align 2
-  87              		.weak	_ZN17onefield_subclassC2Ev
-  89              	_ZN17onefield_subclassC2Ev:
+  87              		.weak	_ZN18onefield3_subclassC2Ev
+  89              	_ZN18onefield3_subclassC2Ev:
   90              	.LFB5:
    9:dynamic-cast.cpp ****   private:
   91              		.loc 1 9 0
@@ -141,10 +141,10 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
   98              	.LBB3:
    9:dynamic-cast.cpp ****   private:
   99              		.loc 1 9 0
- 100 0004 E8000000 		call	_ZN8onefieldC2Ev
+ 100 0004 E8000000 		call	_ZN9onefield3C2Ev
  100      00
  101              	.LVL8:
- 102 0009 48C70300 		movq	$_ZTV17onefield_subclass+16, (%rbx)
+ 102 0009 48C70300 		movq	$_ZTV18onefield3_subclass+16, (%rbx)
  102      000000
  103              	.LBE3:
  104 0010 5B       		popq	%rbx
@@ -153,13 +153,13 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
  107 0011 C3       		ret
  108              		.cfi_endproc
  109              	.LFE5:
- 111              		.weak	_ZN17onefield_subclassC1Ev
- 112              		.set	_ZN17onefield_subclassC1Ev,_ZN17onefield_subclassC2Ev
+ 111              		.weak	_ZN18onefield3_subclassC1Ev
+ 112              		.set	_ZN18onefield3_subclassC1Ev,_ZN18onefield3_subclassC2Ev
  113              		.text
- 114              		.globl	main
- 116              	main:
+ 114              		.globl	_Z11dynamicCastiPPc
+ 116              	_Z11dynamicCastiPPc:
  117              	.LFB0:
-  17:dynamic-cast.cpp ****     onefield *ofp = new onefield_subclass;
+  17:dynamic-cast.cpp ****     onefield3 *ofp = new onefield3_subclass;
  118              		.loc 1 17 0
  119              		.cfi_startproc
  120              	.LVL10:
@@ -177,8 +177,8 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
  129              	.LVL12:
  130 0025 4889C3   		movq	%rax, %rbx
  131 0028 4889C7   		movq	%rax, %rdi
- 132 002b E8000000 		call	_ZN17onefield_subclassC1Ev
-GAS LISTING /tmp/cce7yyfb.s 			page 4
+ 132 002b E8000000 		call	_ZN18onefield3_subclassC1Ev
+GAS LISTING /tmp/ccmbRfdJ.s 			page 4
 
 
  132      00
@@ -191,9 +191,9 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
  137              		.loc 1 20 0 is_stmt 0 discriminator 2
  138 0035 B9000000 		movl	$0, %ecx
  138      00
- 139 003a BA000000 		movl	$_ZTI17onefield_subclass, %edx
+ 139 003a BA000000 		movl	$_ZTI18onefield3_subclass, %edx
  139      00
- 140 003f BE000000 		movl	$_ZTI8onefield, %esi
+ 140 003f BE000000 		movl	$_ZTI9onefield3, %esi
  140      00
  141 0044 4889DF   		movq	%rbx, %rdi
  142 0047 E8000000 		call	__dynamic_cast
@@ -224,90 +224,90 @@ GAS LISTING /tmp/cce7yyfb.s 			page 1
  160 0061 C3       		ret
  161              		.cfi_endproc
  162              	.LFE0:
- 164              		.weak	_ZTS8onefield
- 165              		.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
- 168              	_ZTS8onefield:
- 169 0000 386F6E65 		.string	"8onefield"
+ 164              		.weak	_ZTS9onefield3
+ 165              		.section	.rodata._ZTS9onefield3,"aG",@progbits,_ZTS9onefield3,comdat
+ 168              	_ZTS9onefield3:
+ 169 0000 396F6E65 		.string	"9onefield3"
  169      6669656C 
- 169      6400
- 170              		.weak	_ZTI8onefield
- 171              		.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
+ 169      643300
+ 170              		.weak	_ZTI9onefield3
+ 171              		.section	.rodata._ZTI9onefield3,"aG",@progbits,_ZTI9onefield3,comdat
  172              		.align 16
- 175              	_ZTI8onefield:
+ 175              	_ZTI9onefield3:
  176 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
  176      00000000 
- 177 0008 00000000 		.quad	_ZTS8onefield
+ 177 0008 00000000 		.quad	_ZTS9onefield3
  177      00000000 
-GAS LISTING /tmp/cce7yyfb.s 			page 5
+GAS LISTING /tmp/ccmbRfdJ.s 			page 5
 
 
- 178              		.weak	_ZTS17onefield_subclass
- 179              		.section	.rodata._ZTS17onefield_subclass,"aG",@progbits,_ZTS17onefield_subclass,comdat
+ 178              		.weak	_ZTS18onefield3_subclass
+ 179              		.section	.rodata._ZTS18onefield3_subclass,"aG",@progbits,_ZTS18onefield3_subclass,comdat
  180              		.align 16
- 183              	_ZTS17onefield_subclass:
- 184 0000 31376F6E 		.string	"17onefield_subclass"
+ 183              	_ZTS18onefield3_subclass:
+ 184 0000 31386F6E 		.string	"18onefield3_subclass"
  184      65666965 
- 184      6C645F73 
- 184      7562636C 
- 184      61737300 
- 185              		.weak	_ZTI17onefield_subclass
- 186              		.section	.rodata._ZTI17onefield_subclass,"aG",@progbits,_ZTI17onefield_subclass,comdat
+ 184      6C64335F 
+ 184      73756263 
+ 184      6C617373 
+ 185              		.weak	_ZTI18onefield3_subclass
+ 186              		.section	.rodata._ZTI18onefield3_subclass,"aG",@progbits,_ZTI18onefield3_subclass,comdat
  187              		.align 16
- 190              	_ZTI17onefield_subclass:
+ 190              	_ZTI18onefield3_subclass:
  191 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
  191      00000000 
- 192 0008 00000000 		.quad	_ZTS17onefield_subclass
+ 192 0008 00000000 		.quad	_ZTS18onefield3_subclass
  192      00000000 
- 193 0010 00000000 		.quad	_ZTI8onefield
+ 193 0010 00000000 		.quad	_ZTI9onefield3
  193      00000000 
- 194              		.weak	_ZTV8onefield
- 195              		.section	.rodata._ZTV8onefield,"aG",@progbits,_ZTV8onefield,comdat
+ 194              		.weak	_ZTV9onefield3
+ 195              		.section	.rodata._ZTV9onefield3,"aG",@progbits,_ZTV9onefield3,comdat
  196              		.align 32
- 199              	_ZTV8onefield:
+ 199              	_ZTV9onefield3:
  200 0000 00000000 		.quad	0
  200      00000000 
- 201 0008 00000000 		.quad	_ZTI8onefield
+ 201 0008 00000000 		.quad	_ZTI9onefield3
  201      00000000 
- 202 0010 00000000 		.quad	_ZN8onefield8setFieldEi
+ 202 0010 00000000 		.quad	_ZN9onefield38setFieldEi
  202      00000000 
- 203 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 203 0018 00000000 		.quad	_ZNK9onefield38getFieldEv
  203      00000000 
- 204              		.weak	_ZTV17onefield_subclass
- 205              		.section	.rodata._ZTV17onefield_subclass,"aG",@progbits,_ZTV17onefield_subclass,comdat
+ 204              		.weak	_ZTV18onefield3_subclass
+ 205              		.section	.rodata._ZTV18onefield3_subclass,"aG",@progbits,_ZTV18onefield3_subclass,comdat
  206              		.align 32
- 209              	_ZTV17onefield_subclass:
+ 209              	_ZTV18onefield3_subclass:
  210 0000 00000000 		.quad	0
  210      00000000 
- 211 0008 00000000 		.quad	_ZTI17onefield_subclass
+ 211 0008 00000000 		.quad	_ZTI18onefield3_subclass
  211      00000000 
- 212 0010 00000000 		.quad	_ZN17onefield_subclass8setFieldEi
+ 212 0010 00000000 		.quad	_ZN18onefield3_subclass8setFieldEi
  212      00000000 
- 213 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 213 0018 00000000 		.quad	_ZNK9onefield38getFieldEv
  213      00000000 
  214              		.text
  215              	.Letext0:
  216              		.file 2 "<built-in>"
-GAS LISTING /tmp/cce7yyfb.s 			page 6
+GAS LISTING /tmp/ccmbRfdJ.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 dynamic-cast.cpp
-     /tmp/cce7yyfb.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
-     /tmp/cce7yyfb.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
-     /tmp/cce7yyfb.s:37     .text:0000000000000008 _ZN17onefield_subclass8setFieldEi
-     /tmp/cce7yyfb.s:70     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC2Ev
-     /tmp/cce7yyfb.s:199    .rodata._ZTV8onefield:0000000000000000 _ZTV8onefield
-     /tmp/cce7yyfb.s:70     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC1Ev
-     /tmp/cce7yyfb.s:89     .text._ZN17onefield_subclassC2Ev:0000000000000000 _ZN17onefield_subclassC2Ev
-     /tmp/cce7yyfb.s:209    .rodata._ZTV17onefield_subclass:0000000000000000 _ZTV17onefield_subclass
-     /tmp/cce7yyfb.s:89     .text._ZN17onefield_subclassC2Ev:0000000000000000 _ZN17onefield_subclassC1Ev
-     /tmp/cce7yyfb.s:116    .text:000000000000001a main
-     /tmp/cce7yyfb.s:190    .rodata._ZTI17onefield_subclass:0000000000000000 _ZTI17onefield_subclass
-     /tmp/cce7yyfb.s:175    .rodata._ZTI8onefield:0000000000000000 _ZTI8onefield
-     /tmp/cce7yyfb.s:168    .rodata._ZTS8onefield:0000000000000000 _ZTS8onefield
-     /tmp/cce7yyfb.s:183    .rodata._ZTS17onefield_subclass:0000000000000000 _ZTS17onefield_subclass
-                           .group:0000000000000000 _ZN8onefieldC5Ev
-                           .group:0000000000000000 _ZN17onefield_subclassC5Ev
+     /tmp/ccmbRfdJ.s:7      .text:0000000000000000 _ZN9onefield38setFieldEi
+     /tmp/ccmbRfdJ.s:22     .text:0000000000000004 _ZNK9onefield38getFieldEv
+     /tmp/ccmbRfdJ.s:37     .text:0000000000000008 _ZN18onefield3_subclass8setFieldEi
+     /tmp/ccmbRfdJ.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C2Ev
+     /tmp/ccmbRfdJ.s:199    .rodata._ZTV9onefield3:0000000000000000 _ZTV9onefield3
+     /tmp/ccmbRfdJ.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C1Ev
+     /tmp/ccmbRfdJ.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC2Ev
+     /tmp/ccmbRfdJ.s:209    .rodata._ZTV18onefield3_subclass:0000000000000000 _ZTV18onefield3_subclass
+     /tmp/ccmbRfdJ.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC1Ev
+     /tmp/ccmbRfdJ.s:116    .text:000000000000001a _Z11dynamicCastiPPc
+     /tmp/ccmbRfdJ.s:190    .rodata._ZTI18onefield3_subclass:0000000000000000 _ZTI18onefield3_subclass
+     /tmp/ccmbRfdJ.s:175    .rodata._ZTI9onefield3:0000000000000000 _ZTI9onefield3
+     /tmp/ccmbRfdJ.s:168    .rodata._ZTS9onefield3:0000000000000000 _ZTS9onefield3
+     /tmp/ccmbRfdJ.s:183    .rodata._ZTS18onefield3_subclass:0000000000000000 _ZTS18onefield3_subclass
+                           .group:0000000000000000 _ZN9onefield3C5Ev
+                           .group:0000000000000000 _ZN18onefield3_subclassC5Ev
 
 UNDEFINED SYMBOLS
 _Znwm

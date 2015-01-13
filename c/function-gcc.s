@@ -21,9 +21,9 @@ foo:
 	.cfi_endproc
 .LFE0:
 	.size	foo, .-foo
-	.globl	main
-	.type	main, @function
-main:
+	.globl	function
+	.type	function, @function
+function:
 .LFB1:
 	.cfi_startproc
 	pushq	%rbp
@@ -43,6 +43,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE1:
-	.size	main, .-main
+	.size	function, .-function
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

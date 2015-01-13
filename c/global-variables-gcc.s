@@ -17,10 +17,13 @@ initialized:
 	.long	5
 	.comm	uninitialized,4,4
 	.comm	uninitialized_c,8,8
+	.section	.rodata
+.LC1:
+	.string	"%s"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	globalVariables
+	.type	globalVariables, @function
+globalVariables:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -32,7 +35,8 @@ main:
 	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
 	movq	init_c(%rip), %rax
-	movq	%rax, %rdi
+	movq	%rax, %rsi
+	movl	$.LC1, %edi
 	movl	$0, %eax
 	call	printf
 	movq	init_c(%rip), %rax
@@ -46,6 +50,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	globalVariables, .-globalVariables
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

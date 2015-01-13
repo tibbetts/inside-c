@@ -1,33 +1,33 @@
-GAS LISTING /tmp/cc8OUvOO.s 			page 1
+GAS LISTING /tmp/ccKft2qn.s 			page 1
 
 
    1              		.file	"basic-constructor.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZN8onefield8setFieldEi
-   7              	_ZN8onefield8setFieldEi:
+   5              		.globl	_ZN9onefield18setFieldEi
+   7              	_ZN9onefield18setFieldEi:
    8              	.LFB20:
    9              		.file 1 "basic-constructor.cpp"
    1:basic-constructor.cpp **** #include "stdio.h"
    2:basic-constructor.cpp **** 
-   3:basic-constructor.cpp **** class onefield {
+   3:basic-constructor.cpp **** class onefield1 {
    4:basic-constructor.cpp ****   private:
    5:basic-constructor.cpp ****     int field;
    6:basic-constructor.cpp ****   public:
-   7:basic-constructor.cpp ****     explicit onefield(int f);
-   8:basic-constructor.cpp ****     ~onefield();
+   7:basic-constructor.cpp ****     explicit onefield1(int f);
+   8:basic-constructor.cpp ****     ~onefield1();
    9:basic-constructor.cpp **** 
   10:basic-constructor.cpp ****     void setField(int f);
   11:basic-constructor.cpp ****     int getField() const;
   12:basic-constructor.cpp **** };
   13:basic-constructor.cpp **** 
-  14:basic-constructor.cpp **** int main(int argc, char **argv) {
-  15:basic-constructor.cpp ****     onefield of(13);
+  14:basic-constructor.cpp **** int basicConstructor(int argc, const char **argv) {
+  15:basic-constructor.cpp ****     onefield1 of(13);
   16:basic-constructor.cpp **** 
   17:basic-constructor.cpp ****     of.setField(12);
   18:basic-constructor.cpp **** 
-  19:basic-constructor.cpp ****     onefield *ofp = new onefield(23);
+  19:basic-constructor.cpp ****     onefield1 *ofp = new onefield1(23);
   20:basic-constructor.cpp **** 
   21:basic-constructor.cpp ****     ofp->setField(27);
   22:basic-constructor.cpp **** 
@@ -37,7 +37,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   26:basic-constructor.cpp **** }
   27:basic-constructor.cpp **** 
   28:basic-constructor.cpp **** 
-  29:basic-constructor.cpp **** void onefield::setField(int f) {
+  29:basic-constructor.cpp **** void onefield1::setField(int f) {
   10              		.loc 1 29 0
   11              		.cfi_startproc
   12              	.LVL0:
@@ -48,17 +48,17 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   16              		.cfi_endproc
   17              	.LFE20:
   19 0003 90       		.align 2
-  20              		.globl	_ZNK8onefield8getFieldEv
-  22              	_ZNK8onefield8getFieldEv:
+  20              		.globl	_ZNK9onefield18getFieldEv
+  22              	_ZNK9onefield18getFieldEv:
   23              	.LFB21:
   31:basic-constructor.cpp **** }
-  32:basic-constructor.cpp **** int onefield::getField() const {
+  32:basic-constructor.cpp **** int onefield1::getField() const {
   24              		.loc 1 32 0
   25              		.cfi_startproc
   26              	.LVL1:
   33:basic-constructor.cpp ****     return this->field;
   27              		.loc 1 33 0
-GAS LISTING /tmp/cc8OUvOO.s 			page 2
+GAS LISTING /tmp/ccKft2qn.s 			page 2
 
 
   28 0004 8B07     		movl	(%rdi), %eax
@@ -77,11 +77,11 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   37      20666965 
   38              		.text
   39 0007 90       		.align 2
-  40              		.globl	_ZN8onefieldC2Ei
-  42              	_ZN8onefieldC2Ei:
+  40              		.globl	_ZN9onefield1C2Ei
+  42              	_ZN9onefield1C2Ei:
   43              	.LFB23:
   35:basic-constructor.cpp **** 
-  36:basic-constructor.cpp **** onefield::onefield(int f) {
+  36:basic-constructor.cpp **** onefield1::onefield1(int f) {
   44              		.loc 1 36 0
   45              		.cfi_startproc
   46              	.LVL2:
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   20:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # error "Never include <bits/stdio2.h> directly; use <stdio.h> instead."
   21:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
   22:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-GAS LISTING /tmp/cc8OUvOO.s 			page 3
+GAS LISTING /tmp/ccKft2qn.s 			page 3
 
 
   23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   77:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsnprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
   78:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				    __bos (__s), __fmt, __ap);
   79:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-GAS LISTING /tmp/cc8OUvOO.s 			page 4
+GAS LISTING /tmp/ccKft2qn.s 			page 4
 
 
   80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
@@ -229,8 +229,8 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   71 0028 C3       		ret
   72              		.cfi_endproc
   73              	.LFE23:
-  75              		.globl	_ZN8onefieldC1Ei
-  76              		.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
+  75              		.globl	_ZN9onefield1C1Ei
+  76              		.set	_ZN9onefield1C1Ei,_ZN9onefield1C2Ei
   77              		.section	.rodata.str1.1,"aMS",@progbits,1
   78              	.LC1:
   79 0000 4C617374 		.string	"Last value of field was %d.\n"
@@ -238,16 +238,16 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   79      7565206F 
   79      66206669 
   79      656C6420 
-GAS LISTING /tmp/cc8OUvOO.s 			page 5
+GAS LISTING /tmp/ccKft2qn.s 			page 5
 
 
   80              		.text
   81 0029 90       		.align 2
-  82              		.globl	_ZN8onefieldD2Ev
-  84              	_ZN8onefieldD2Ev:
+  82              		.globl	_ZN9onefield1D2Ev
+  84              	_ZN9onefield1D2Ev:
   85              	.LFB26:
   40:basic-constructor.cpp **** 
-  41:basic-constructor.cpp **** onefield::~onefield() {
+  41:basic-constructor.cpp **** onefield1::~onefield1() {
   86              		.loc 1 41 0
   87              		.cfi_startproc
   88              		.cfi_personality 0x3,__gxx_personality_v0
@@ -292,13 +292,13 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  121              	.LLSDACSB26:
  122              	.LLSDACSE26:
  123              		.text
- 125              		.globl	_ZN8onefieldD1Ev
- 126              		.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
- 127              		.globl	main
- 129              	main:
+ 125              		.globl	_ZN9onefield1D1Ev
+ 126              		.set	_ZN9onefield1D1Ev,_ZN9onefield1D2Ev
+ 127              		.globl	_Z16basicConstructoriPPKc
+ 129              	_Z16basicConstructoriPPKc:
  130              	.LFB19:
-  14:basic-constructor.cpp ****     onefield of(13);
-GAS LISTING /tmp/cc8OUvOO.s 			page 6
+  14:basic-constructor.cpp ****     onefield1 of(13);
+GAS LISTING /tmp/ccKft2qn.s 			page 6
 
 
  131              		.loc 1 14 0
@@ -323,7 +323,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  148 0054 4889E7   		movq	%rsp, %rdi
  149              	.LVL13:
  150              	.LEHB0:
- 151 0057 E8000000 		call	_ZN8onefieldC1Ei
+ 151 0057 E8000000 		call	_ZN9onefield1C1Ei
  151      00
  152              	.LEHE0:
  153              	.LVL14:
@@ -332,7 +332,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  155 005c BE0C0000 		movl	$12, %esi
  155      00
  156 0061 4889E7   		movq	%rsp, %rdi
- 157 0064 E8000000 		call	_ZN8onefield8setFieldEi
+ 157 0064 E8000000 		call	_ZN9onefield18setFieldEi
  157      00
  158              	.LVL15:
   19:basic-constructor.cpp **** 
@@ -349,7 +349,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  166      00
  167 007b 4889C7   		movq	%rax, %rdi
  168              	.LEHB2:
- 169 007e E8000000 		call	_ZN8onefieldC1Ei
+ 169 007e E8000000 		call	_ZN9onefield1C1Ei
  169      00
  170              	.LEHE2:
  171              	.LVL17:
@@ -358,10 +358,10 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  173 0083 BE1B0000 		movl	$27, %esi
  173      00
  174 0088 4889DF   		movq	%rbx, %rdi
-GAS LISTING /tmp/cc8OUvOO.s 			page 7
+GAS LISTING /tmp/ccKft2qn.s 			page 7
 
 
- 175 008b E8000000 		call	_ZN8onefield8setFieldEi
+ 175 008b E8000000 		call	_ZN9onefield18setFieldEi
  175      00
  176              	.LVL18:
   23:basic-constructor.cpp **** 
@@ -371,7 +371,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   23:basic-constructor.cpp **** 
  180              		.loc 1 23 0 is_stmt 0 discriminator 1
  181 0095 4889DF   		movq	%rbx, %rdi
- 182 0098 E8000000 		call	_ZN8onefieldD1Ev
+ 182 0098 E8000000 		call	_ZN9onefield1D1Ev
  182      00
  183              	.LVL19:
  184 009d 4889DF   		movq	%rbx, %rdi
@@ -396,7 +396,7 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
   25:basic-constructor.cpp **** }
  200              		.loc 1 25 0
  201 00ba 4889E7   		movq	%rsp, %rdi
- 202 00bd E8000000 		call	_ZN8onefieldD1Ev
+ 202 00bd E8000000 		call	_ZN9onefield1D1Ev
  202      00
  203              	.LVL23:
  204 00c2 4889DF   		movq	%rbx, %rdi
@@ -407,18 +407,18 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  208              	.LVL24:
  209              	.L8:
  210 00ca 4889E7   		movq	%rsp, %rdi
- 211 00cd E8000000 		call	_ZNK8onefield8getFieldEv
+ 211 00cd E8000000 		call	_ZNK9onefield18getFieldEv
  211      00
  212              	.LVL25:
  213 00d2 89C3     		movl	%eax, %ebx
  214              	.LVL26:
  215 00d4 4889E7   		movq	%rsp, %rdi
- 216 00d7 E8000000 		call	_ZN8onefieldD1Ev
+ 216 00d7 E8000000 		call	_ZN9onefield1D1Ev
  216      00
  217              	.LVL27:
  218              	.LBE14:
   26:basic-constructor.cpp **** 
-GAS LISTING /tmp/cc8OUvOO.s 			page 8
+GAS LISTING /tmp/ccKft2qn.s 			page 8
 
 
  219              		.loc 1 26 0
@@ -458,18 +458,18 @@ GAS LISTING /tmp/cc8OUvOO.s 			page 1
  253              	.LLSDACSE19:
  254              		.text
  256              	.Letext0:
-GAS LISTING /tmp/cc8OUvOO.s 			page 9
+GAS LISTING /tmp/ccKft2qn.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-constructor.cpp
-     /tmp/cc8OUvOO.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
-     /tmp/cc8OUvOO.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
-     /tmp/cc8OUvOO.s:42     .text:0000000000000008 _ZN8onefieldC2Ei
-     /tmp/cc8OUvOO.s:42     .text:0000000000000008 _ZN8onefieldC1Ei
-     /tmp/cc8OUvOO.s:84     .text:000000000000002a _ZN8onefieldD2Ev
-     /tmp/cc8OUvOO.s:84     .text:000000000000002a _ZN8onefieldD1Ev
-     /tmp/cc8OUvOO.s:129    .text:0000000000000049 main
+     /tmp/ccKft2qn.s:7      .text:0000000000000000 _ZN9onefield18setFieldEi
+     /tmp/ccKft2qn.s:22     .text:0000000000000004 _ZNK9onefield18getFieldEv
+     /tmp/ccKft2qn.s:42     .text:0000000000000008 _ZN9onefield1C2Ei
+     /tmp/ccKft2qn.s:42     .text:0000000000000008 _ZN9onefield1C1Ei
+     /tmp/ccKft2qn.s:84     .text:000000000000002a _ZN9onefield1D2Ev
+     /tmp/ccKft2qn.s:84     .text:000000000000002a _ZN9onefield1D1Ev
+     /tmp/ccKft2qn.s:129    .text:0000000000000049 _Z16basicConstructoriPPKc
 
 UNDEFINED SYMBOLS
 __printf_chk

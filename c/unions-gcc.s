@@ -3,9 +3,9 @@
 .LC1:
 	.string	"thirty-seven"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	unionTest
+	.type	unionTest, @function
+unionTest:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -41,6 +41,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	unionTest, .-unionTest
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

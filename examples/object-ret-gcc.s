@@ -117,9 +117,9 @@ _ZN8twofieldD2Ev:
 	.size	_ZN8twofieldD2Ev, .-_ZN8twofieldD2Ev
 	.globl	_ZN8twofieldD1Ev
 	.set	_ZN8twofieldD1Ev,_ZN8twofieldD2Ev
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z9objectRetiPPKc
+	.type	_Z9objectRetiPPKc, @function
+_Z9objectRetiPPKc:
 .LFB20:
 	.cfi_startproc
 	pushq	%rbx
@@ -143,6 +143,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE20:
-	.size	main, .-main
+	.size	_Z9objectRetiPPKc, .-_Z9objectRetiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

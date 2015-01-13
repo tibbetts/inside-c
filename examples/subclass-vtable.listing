@@ -1,15 +1,15 @@
-GAS LISTING /tmp/cc99WvWf.s 			page 1
+GAS LISTING /tmp/ccif6qId.s 			page 1
 
 
    1              		.file	"subclass-vtable.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZN8onefield8setFieldEi
-   7              	_ZN8onefield8setFieldEi:
+   5              		.globl	_ZN10onefieldSV8setFieldEi
+   7              	_ZN10onefieldSV8setFieldEi:
    8              	.LFB7:
    9              		.file 1 "subclass-vtable.cpp"
-   1:subclass-vtable.cpp **** class onefield {
+   1:subclass-vtable.cpp **** class onefieldSV {
    2:subclass-vtable.cpp ****   private:
    3:subclass-vtable.cpp ****     int field;
    4:subclass-vtable.cpp ****   public:
@@ -17,7 +17,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
    6:subclass-vtable.cpp ****     virtual int getField() const;
    7:subclass-vtable.cpp **** };
    8:subclass-vtable.cpp **** 
-   9:subclass-vtable.cpp **** class onefield_subclass : public onefield {
+   9:subclass-vtable.cpp **** class onefieldSV_subclass : public onefieldSV {
   10:subclass-vtable.cpp ****   private:
   11:subclass-vtable.cpp ****     int otherfield;
   12:subclass-vtable.cpp ****   public:
@@ -25,14 +25,14 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   14:subclass-vtable.cpp ****     virtual void setField(int f);
   15:subclass-vtable.cpp **** };
   16:subclass-vtable.cpp **** 
-  17:subclass-vtable.cpp **** int main(int argc, char **argv) {
-  18:subclass-vtable.cpp ****     onefield of;
-  19:subclass-vtable.cpp ****     onefield_subclass ofs;
+  17:subclass-vtable.cpp **** int subclassVtable(int argc, const char **argv) {
+  18:subclass-vtable.cpp ****     onefieldSV of;
+  19:subclass-vtable.cpp ****     onefieldSV_subclass ofs;
   20:subclass-vtable.cpp **** 
   21:subclass-vtable.cpp ****     of.setField(13);
   22:subclass-vtable.cpp ****     ofs.setField(17);
   23:subclass-vtable.cpp **** 
-  24:subclass-vtable.cpp ****     onefield *ofp = new onefield_subclass;
+  24:subclass-vtable.cpp ****     onefieldSV *ofp = new onefieldSV_subclass;
   25:subclass-vtable.cpp **** 
   26:subclass-vtable.cpp ****     ofp->setField(27);
   27:subclass-vtable.cpp **** 
@@ -44,7 +44,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   33:subclass-vtable.cpp **** }
   34:subclass-vtable.cpp **** 
   35:subclass-vtable.cpp **** 
-  36:subclass-vtable.cpp **** void onefield::setField(int f) {
+  36:subclass-vtable.cpp **** void onefieldSV::setField(int f) {
   10              		.loc 1 36 0
   11              		.cfi_startproc
   12              	.LVL0:
@@ -55,14 +55,14 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   16              		.cfi_endproc
   17              	.LFE7:
   19              		.align 2
-  20              		.globl	_ZNK8onefield8getFieldEv
-  22              	_ZNK8onefield8getFieldEv:
+  20              		.globl	_ZNK10onefieldSV8getFieldEv
+  22              	_ZNK10onefieldSV8getFieldEv:
   23              	.LFB8:
-GAS LISTING /tmp/cc99WvWf.s 			page 2
+GAS LISTING /tmp/ccif6qId.s 			page 2
 
 
   38:subclass-vtable.cpp **** }
-  39:subclass-vtable.cpp **** int onefield::getField() const {
+  39:subclass-vtable.cpp **** int onefieldSV::getField() const {
   24              		.loc 1 39 0
   25              		.cfi_startproc
   26              	.LVL1:
@@ -75,11 +75,11 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   31              		.cfi_endproc
   32              	.LFE8:
   34              		.align 2
-  35              		.globl	_ZN17onefield_subclass8setFieldEi
-  37              	_ZN17onefield_subclass8setFieldEi:
+  35              		.globl	_ZN19onefieldSV_subclass8setFieldEi
+  37              	_ZN19onefieldSV_subclass8setFieldEi:
   38              	.LFB9:
   42:subclass-vtable.cpp **** 
-  43:subclass-vtable.cpp **** void onefield_subclass::setField(int f) {
+  43:subclass-vtable.cpp **** void onefieldSV_subclass::setField(int f) {
   39              		.loc 1 43 0
   40              		.cfi_startproc
   41              	.LVL2:
@@ -91,9 +91,9 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   47              		.cfi_offset 3, -24
   48 000a 4889FB   		movq	%rdi, %rbx
   49 000d 89F5     		movl	%esi, %ebp
-  44:subclass-vtable.cpp ****     onefield::setField(f);
+  44:subclass-vtable.cpp ****     onefieldSV::setField(f);
   50              		.loc 1 44 0
-  51 000f E8000000 		call	_ZN8onefield8setFieldEi
+  51 000f E8000000 		call	_ZN10onefieldSV8setFieldEi
   51      00
   52              	.LVL3:
   45:subclass-vtable.cpp ****     otherfield = f;
@@ -110,33 +110,33 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   62 0019 C3       		ret
   63              		.cfi_endproc
   64              	.LFE9:
-  66              		.section	.text._ZN8onefieldC2Ev,"axG",@progbits,_ZN8onefieldC5Ev,comdat
+  66              		.section	.text._ZN10onefieldSVC2Ev,"axG",@progbits,_ZN10onefieldSVC5Ev,comdat
   67              		.align 2
-  68              		.weak	_ZN8onefieldC2Ev
-  70              	_ZN8onefieldC2Ev:
+  68              		.weak	_ZN10onefieldSVC2Ev
+  70              	_ZN10onefieldSVC2Ev:
   71              	.LFB2:
-   1:subclass-vtable.cpp ****     int field;
+   1:subclass-vtable.cpp ****   private:
   72              		.loc 1 1 0
   73              		.cfi_startproc
-GAS LISTING /tmp/cc99WvWf.s 			page 3
+GAS LISTING /tmp/ccif6qId.s 			page 3
 
 
   74              	.LVL6:
   75              	.LBB2:
-   1:subclass-vtable.cpp ****     int field;
+   1:subclass-vtable.cpp ****   private:
   76              		.loc 1 1 0
-  77 0000 48C70700 		movq	$_ZTV8onefield+16, (%rdi)
+  77 0000 48C70700 		movq	$_ZTV10onefieldSV+16, (%rdi)
   77      000000
   78 0007 C3       		ret
   79              	.LBE2:
   80              		.cfi_endproc
   81              	.LFE2:
-  83              		.weak	_ZN8onefieldC1Ev
-  84              		.set	_ZN8onefieldC1Ev,_ZN8onefieldC2Ev
-  85              		.section	.text._ZN17onefield_subclassC2Ev,"axG",@progbits,_ZN17onefield_subclassC5Ev,comdat
+  83              		.weak	_ZN10onefieldSVC1Ev
+  84              		.set	_ZN10onefieldSVC1Ev,_ZN10onefieldSVC2Ev
+  85              		.section	.text._ZN19onefieldSV_subclassC2Ev,"axG",@progbits,_ZN19onefieldSV_subclassC5Ev,comdat
   86              		.align 2
-  87              		.weak	_ZN17onefield_subclassC2Ev
-  89              	_ZN17onefield_subclassC2Ev:
+  87              		.weak	_ZN19onefieldSV_subclassC2Ev
+  89              	_ZN19onefieldSV_subclassC2Ev:
   90              	.LFB5:
    9:subclass-vtable.cpp ****   private:
   91              		.loc 1 9 0
@@ -149,10 +149,10 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   98              	.LBB3:
    9:subclass-vtable.cpp ****   private:
   99              		.loc 1 9 0
- 100 0004 E8000000 		call	_ZN8onefieldC2Ev
+ 100 0004 E8000000 		call	_ZN10onefieldSVC2Ev
  100      00
  101              	.LVL8:
- 102 0009 48C70300 		movq	$_ZTV17onefield_subclass+16, (%rbx)
+ 102 0009 48C70300 		movq	$_ZTV19onefieldSV_subclass+16, (%rbx)
  102      000000
  103              	.LBE3:
  104 0010 5B       		popq	%rbx
@@ -161,13 +161,13 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  107 0011 C3       		ret
  108              		.cfi_endproc
  109              	.LFE5:
- 111              		.weak	_ZN17onefield_subclassC1Ev
- 112              		.set	_ZN17onefield_subclassC1Ev,_ZN17onefield_subclassC2Ev
+ 111              		.weak	_ZN19onefieldSV_subclassC1Ev
+ 112              		.set	_ZN19onefieldSV_subclassC1Ev,_ZN19onefieldSV_subclassC2Ev
  113              		.text
- 114              		.globl	main
- 116              	main:
+ 114              		.globl	_Z14subclassVtableiPPKc
+ 116              	_Z14subclassVtableiPPKc:
  117              	.LFB0:
-  17:subclass-vtable.cpp ****     onefield of;
+  17:subclass-vtable.cpp ****     onefieldSV of;
  118              		.loc 1 17 0
  119              		.cfi_startproc
  120              	.LVL10:
@@ -178,23 +178,23 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  125              		.cfi_def_cfa_offset 24
  126              		.cfi_offset 3, -24
  127 001c 4883EC28 		subq	$40, %rsp
-GAS LISTING /tmp/cc99WvWf.s 			page 4
+GAS LISTING /tmp/ccif6qId.s 			page 4
 
 
  128              		.cfi_def_cfa_offset 64
  129              	.LBB4:
-  18:subclass-vtable.cpp ****     onefield_subclass ofs;
+  18:subclass-vtable.cpp ****     onefieldSV_subclass ofs;
  130              		.loc 1 18 0
  131 0020 4889E7   		movq	%rsp, %rdi
  132              	.LVL11:
- 133 0023 E8000000 		call	_ZN8onefieldC1Ev
+ 133 0023 E8000000 		call	_ZN10onefieldSVC1Ev
  133      00
  134              	.LVL12:
   19:subclass-vtable.cpp **** 
  135              		.loc 1 19 0
  136 0028 488D7C24 		leaq	16(%rsp), %rdi
  136      10
- 137 002d E8000000 		call	_ZN17onefield_subclassC1Ev
+ 137 002d E8000000 		call	_ZN19onefieldSV_subclassC1Ev
  137      00
  138              	.LVL13:
   21:subclass-vtable.cpp ****     ofs.setField(17);
@@ -202,7 +202,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  140 0032 BE0D0000 		movl	$13, %esi
  140      00
  141 0037 4889E7   		movq	%rsp, %rdi
- 142 003a E8000000 		call	_ZN8onefield8setFieldEi
+ 142 003a E8000000 		call	_ZN10onefieldSV8setFieldEi
  142      00
  143              	.LVL14:
   22:subclass-vtable.cpp **** 
@@ -211,7 +211,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  145      00
  146 0044 488D7C24 		leaq	16(%rsp), %rdi
  146      10
- 147 0049 E8000000 		call	_ZN17onefield_subclass8setFieldEi
+ 147 0049 E8000000 		call	_ZN19onefieldSV_subclass8setFieldEi
  147      00
  148              	.LVL15:
   24:subclass-vtable.cpp **** 
@@ -223,7 +223,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  152              	.LVL16:
  153 0058 4889C3   		movq	%rax, %rbx
  154 005b 4889C7   		movq	%rax, %rdi
- 155 005e E8000000 		call	_ZN17onefield_subclassC1Ev
+ 155 005e E8000000 		call	_ZN19onefieldSV_subclassC1Ev
  155      00
  156              	.LVL17:
   26:subclass-vtable.cpp **** 
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  163              		.loc 1 28 0
  164 0070 488B03   		movq	(%rbx), %rax
  165 0073 4889DF   		movq	%rbx, %rdi
-GAS LISTING /tmp/cc99WvWf.s 			page 5
+GAS LISTING /tmp/ccif6qId.s 			page 5
 
 
  166 0076 FF5008   		call	*8(%rax)
@@ -254,7 +254,7 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
   32:subclass-vtable.cpp **** }
  174              		.loc 1 32 0
  175 0083 4889E7   		movq	%rsp, %rdi
- 176 0086 E8000000 		call	_ZNK8onefield8getFieldEv
+ 176 0086 E8000000 		call	_ZNK10onefieldSV8getFieldEv
  176      00
  177              	.LVL22:
  178 008b 01E8     		addl	%ebp, %eax
@@ -272,89 +272,90 @@ GAS LISTING /tmp/cc99WvWf.s 			page 1
  189 0093 C3       		ret
  190              		.cfi_endproc
  191              	.LFE0:
- 193              		.weak	_ZTS8onefield
- 194              		.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
- 197              	_ZTS8onefield:
- 198 0000 386F6E65 		.string	"8onefield"
- 198      6669656C 
- 198      6400
- 199              		.weak	_ZTI8onefield
- 200              		.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
+ 193              		.weak	_ZTS10onefieldSV
+ 194              		.section	.rodata._ZTS10onefieldSV,"aG",@progbits,_ZTS10onefieldSV,comdat
+ 197              	_ZTS10onefieldSV:
+ 198 0000 31306F6E 		.string	"10onefieldSV"
+ 198      65666965 
+ 198      6C645356 
+ 198      00
+ 199              		.weak	_ZTI10onefieldSV
+ 200              		.section	.rodata._ZTI10onefieldSV,"aG",@progbits,_ZTI10onefieldSV,comdat
  201              		.align 16
- 204              	_ZTI8onefield:
+ 204              	_ZTI10onefieldSV:
  205 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
  205      00000000 
- 206 0008 00000000 		.quad	_ZTS8onefield
+ 206 0008 00000000 		.quad	_ZTS10onefieldSV
  206      00000000 
- 207              		.weak	_ZTS17onefield_subclass
- 208              		.section	.rodata._ZTS17onefield_subclass,"aG",@progbits,_ZTS17onefield_subclass,comdat
+ 207              		.weak	_ZTS19onefieldSV_subclass
+ 208              		.section	.rodata._ZTS19onefieldSV_subclass,"aG",@progbits,_ZTS19onefieldSV_subclass,comdat
  209              		.align 16
- 212              	_ZTS17onefield_subclass:
- 213 0000 31376F6E 		.string	"17onefield_subclass"
+ 212              	_ZTS19onefieldSV_subclass:
+ 213 0000 31396F6E 		.string	"19onefieldSV_subclass"
  213      65666965 
- 213      6C645F73 
- 213      7562636C 
- 213      61737300 
- 214              		.weak	_ZTI17onefield_subclass
- 215              		.section	.rodata._ZTI17onefield_subclass,"aG",@progbits,_ZTI17onefield_subclass,comdat
+ 213      6C645356 
+ 213      5F737562 
+ 213      636C6173 
+ 214              		.weak	_ZTI19onefieldSV_subclass
+ 215              		.section	.rodata._ZTI19onefieldSV_subclass,"aG",@progbits,_ZTI19onefieldSV_subclass,comdat
+GAS LISTING /tmp/ccif6qId.s 			page 6
+
+
  216              		.align 16
-GAS LISTING /tmp/cc99WvWf.s 			page 6
-
-
- 219              	_ZTI17onefield_subclass:
+ 219              	_ZTI19onefieldSV_subclass:
  220 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
  220      00000000 
- 221 0008 00000000 		.quad	_ZTS17onefield_subclass
+ 221 0008 00000000 		.quad	_ZTS19onefieldSV_subclass
  221      00000000 
- 222 0010 00000000 		.quad	_ZTI8onefield
+ 222 0010 00000000 		.quad	_ZTI10onefieldSV
  222      00000000 
- 223              		.weak	_ZTV8onefield
- 224              		.section	.rodata._ZTV8onefield,"aG",@progbits,_ZTV8onefield,comdat
+ 223              		.weak	_ZTV10onefieldSV
+ 224              		.section	.rodata._ZTV10onefieldSV,"aG",@progbits,_ZTV10onefieldSV,comdat
  225              		.align 32
- 228              	_ZTV8onefield:
+ 228              	_ZTV10onefieldSV:
  229 0000 00000000 		.quad	0
  229      00000000 
- 230 0008 00000000 		.quad	_ZTI8onefield
+ 230 0008 00000000 		.quad	_ZTI10onefieldSV
  230      00000000 
- 231 0010 00000000 		.quad	_ZN8onefield8setFieldEi
+ 231 0010 00000000 		.quad	_ZN10onefieldSV8setFieldEi
  231      00000000 
- 232 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 232 0018 00000000 		.quad	_ZNK10onefieldSV8getFieldEv
  232      00000000 
- 233              		.weak	_ZTV17onefield_subclass
- 234              		.section	.rodata._ZTV17onefield_subclass,"aG",@progbits,_ZTV17onefield_subclass,comdat
+ 233              		.weak	_ZTV19onefieldSV_subclass
+ 234              		.section	.rodata._ZTV19onefieldSV_subclass,"aG",@progbits,_ZTV19onefieldSV_subclass,comdat
  235              		.align 32
- 238              	_ZTV17onefield_subclass:
+ 238              	_ZTV19onefieldSV_subclass:
  239 0000 00000000 		.quad	0
  239      00000000 
- 240 0008 00000000 		.quad	_ZTI17onefield_subclass
+ 240 0008 00000000 		.quad	_ZTI19onefieldSV_subclass
  240      00000000 
- 241 0010 00000000 		.quad	_ZN17onefield_subclass8setFieldEi
+ 241 0010 00000000 		.quad	_ZN19onefieldSV_subclass8setFieldEi
  241      00000000 
- 242 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 242 0018 00000000 		.quad	_ZNK10onefieldSV8getFieldEv
  242      00000000 
  243              		.text
  244              	.Letext0:
-GAS LISTING /tmp/cc99WvWf.s 			page 7
+GAS LISTING /tmp/ccif6qId.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 subclass-vtable.cpp
-     /tmp/cc99WvWf.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
-     /tmp/cc99WvWf.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
-     /tmp/cc99WvWf.s:37     .text:0000000000000008 _ZN17onefield_subclass8setFieldEi
-     /tmp/cc99WvWf.s:70     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC2Ev
-     /tmp/cc99WvWf.s:228    .rodata._ZTV8onefield:0000000000000000 _ZTV8onefield
-     /tmp/cc99WvWf.s:70     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC1Ev
-     /tmp/cc99WvWf.s:89     .text._ZN17onefield_subclassC2Ev:0000000000000000 _ZN17onefield_subclassC2Ev
-     /tmp/cc99WvWf.s:238    .rodata._ZTV17onefield_subclass:0000000000000000 _ZTV17onefield_subclass
-     /tmp/cc99WvWf.s:89     .text._ZN17onefield_subclassC2Ev:0000000000000000 _ZN17onefield_subclassC1Ev
-     /tmp/cc99WvWf.s:116    .text:000000000000001a main
-     /tmp/cc99WvWf.s:197    .rodata._ZTS8onefield:0000000000000000 _ZTS8onefield
-     /tmp/cc99WvWf.s:204    .rodata._ZTI8onefield:0000000000000000 _ZTI8onefield
-     /tmp/cc99WvWf.s:212    .rodata._ZTS17onefield_subclass:0000000000000000 _ZTS17onefield_subclass
-     /tmp/cc99WvWf.s:219    .rodata._ZTI17onefield_subclass:0000000000000000 _ZTI17onefield_subclass
-                           .group:0000000000000000 _ZN8onefieldC5Ev
-                           .group:0000000000000000 _ZN17onefield_subclassC5Ev
+     /tmp/ccif6qId.s:7      .text:0000000000000000 _ZN10onefieldSV8setFieldEi
+     /tmp/ccif6qId.s:22     .text:0000000000000004 _ZNK10onefieldSV8getFieldEv
+     /tmp/ccif6qId.s:37     .text:0000000000000008 _ZN19onefieldSV_subclass8setFieldEi
+     /tmp/ccif6qId.s:70     .text._ZN10onefieldSVC2Ev:0000000000000000 _ZN10onefieldSVC2Ev
+     /tmp/ccif6qId.s:228    .rodata._ZTV10onefieldSV:0000000000000000 _ZTV10onefieldSV
+     /tmp/ccif6qId.s:70     .text._ZN10onefieldSVC2Ev:0000000000000000 _ZN10onefieldSVC1Ev
+     /tmp/ccif6qId.s:89     .text._ZN19onefieldSV_subclassC2Ev:0000000000000000 _ZN19onefieldSV_subclassC2Ev
+     /tmp/ccif6qId.s:238    .rodata._ZTV19onefieldSV_subclass:0000000000000000 _ZTV19onefieldSV_subclass
+     /tmp/ccif6qId.s:89     .text._ZN19onefieldSV_subclassC2Ev:0000000000000000 _ZN19onefieldSV_subclassC1Ev
+     /tmp/ccif6qId.s:116    .text:000000000000001a _Z14subclassVtableiPPKc
+     /tmp/ccif6qId.s:197    .rodata._ZTS10onefieldSV:0000000000000000 _ZTS10onefieldSV
+     /tmp/ccif6qId.s:204    .rodata._ZTI10onefieldSV:0000000000000000 _ZTI10onefieldSV
+     /tmp/ccif6qId.s:212    .rodata._ZTS19onefieldSV_subclass:0000000000000000 _ZTS19onefieldSV_subclass
+     /tmp/ccif6qId.s:219    .rodata._ZTI19onefieldSV_subclass:0000000000000000 _ZTI19onefieldSV_subclass
+                           .group:0000000000000000 _ZN10onefieldSVC5Ev
+                           .group:0000000000000000 _ZN19onefieldSV_subclassC5Ev
 
 UNDEFINED SYMBOLS
 _Znwm

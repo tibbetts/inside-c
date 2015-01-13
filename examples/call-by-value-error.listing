@@ -1,15 +1,15 @@
-GAS LISTING /tmp/cc84ZVC0.s 			page 1
+GAS LISTING /tmp/cc8ycfoD.s 			page 1
 
 
    1              		.file	"call-by-value-error.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZN8onefield8setFieldEi
-   7              	_ZN8onefield8setFieldEi:
+   5              		.globl	_ZN9onefield28setFieldEi
+   7              	_ZN9onefield28setFieldEi:
    8              	.LFB4:
    9              		.file 1 "call-by-value-error.cpp"
-   1:call-by-value-error.cpp **** class onefield {
+   1:call-by-value-error.cpp **** class onefield2 {
    2:call-by-value-error.cpp ****   private:
    3:call-by-value-error.cpp ****     int field;
    4:call-by-value-error.cpp ****   public:
@@ -17,12 +17,12 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
    6:call-by-value-error.cpp ****     virtual int getField() const;
    7:call-by-value-error.cpp **** };
    8:call-by-value-error.cpp **** 
-   9:call-by-value-error.cpp **** int main(int argc, char **argv) {
-  10:call-by-value-error.cpp ****     onefield of;
+   9:call-by-value-error.cpp **** int callByValueError(int argc, char **argv) {
+  10:call-by-value-error.cpp ****     onefield2 of;
   11:call-by-value-error.cpp **** 
   12:call-by-value-error.cpp ****     of.setField(13);
   13:call-by-value-error.cpp **** 
-  14:call-by-value-error.cpp ****     onefield *ofp = new onefield;
+  14:call-by-value-error.cpp ****     onefield2 *ofp = new onefield2;
   15:call-by-value-error.cpp **** 
   16:call-by-value-error.cpp ****     ofp->setField(27);
   17:call-by-value-error.cpp **** 
@@ -34,7 +34,7 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   23:call-by-value-error.cpp **** }
   24:call-by-value-error.cpp **** 
   25:call-by-value-error.cpp **** 
-  26:call-by-value-error.cpp **** void onefield::setField(int f) {
+  26:call-by-value-error.cpp **** void onefield2::setField(int f) {
   10              		.loc 1 26 0
   11              		.cfi_startproc
   12              	.LVL0:
@@ -45,11 +45,11 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   16              		.cfi_endproc
   17              	.LFE4:
   19              		.align 2
-  20              		.globl	_ZNK8onefield8getFieldEv
-  22              	_ZNK8onefield8getFieldEv:
+  20              		.globl	_ZNK9onefield28getFieldEv
+  22              	_ZNK9onefield28getFieldEv:
   23              	.LFB5:
   28:call-by-value-error.cpp **** }
-  29:call-by-value-error.cpp **** int onefield::getField() const {
+  29:call-by-value-error.cpp **** int onefield2::getField() const {
   24              		.loc 1 29 0
   25              		.cfi_startproc
   26              	.LVL1:
@@ -58,16 +58,16 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   28 0004 8B4708   		movl	8(%rdi), %eax
   31:call-by-value-error.cpp **** }
   29              		.loc 1 31 0
-GAS LISTING /tmp/cc84ZVC0.s 			page 2
+GAS LISTING /tmp/cc8ycfoD.s 			page 2
 
 
   30 0007 C3       		ret
   31              		.cfi_endproc
   32              	.LFE5:
-  34              		.section	.text._ZN8onefieldC2Ev,"axG",@progbits,_ZN8onefieldC5Ev,comdat
+  34              		.section	.text._ZN9onefield2C2Ev,"axG",@progbits,_ZN9onefield2C5Ev,comdat
   35              		.align 2
-  36              		.weak	_ZN8onefieldC2Ev
-  38              	_ZN8onefieldC2Ev:
+  36              		.weak	_ZN9onefield2C2Ev
+  38              	_ZN9onefield2C2Ev:
   39              	.LFB2:
    1:call-by-value-error.cpp ****     int field;
   40              		.loc 1 1 0
@@ -76,19 +76,19 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   43              	.LBB2:
    1:call-by-value-error.cpp ****     int field;
   44              		.loc 1 1 0
-  45 0000 48C70700 		movq	$_ZTV8onefield+16, (%rdi)
+  45 0000 48C70700 		movq	$_ZTV9onefield2+16, (%rdi)
   45      000000
   46 0007 C3       		ret
   47              	.LBE2:
   48              		.cfi_endproc
   49              	.LFE2:
-  51              		.weak	_ZN8onefieldC1Ev
-  52              		.set	_ZN8onefieldC1Ev,_ZN8onefieldC2Ev
+  51              		.weak	_ZN9onefield2C1Ev
+  52              		.set	_ZN9onefield2C1Ev,_ZN9onefield2C2Ev
   53              		.text
-  54              		.globl	main
-  56              	main:
+  54              		.globl	_Z16callByValueErroriPPc
+  56              	_Z16callByValueErroriPPc:
   57              	.LFB0:
-   9:call-by-value-error.cpp ****     onefield of;
+   9:call-by-value-error.cpp ****     onefield2 of;
   58              		.loc 1 9 0
   59              		.cfi_startproc
   60              	.LVL3:
@@ -105,7 +105,7 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   70              		.loc 1 10 0
   71 000e 4889E7   		movq	%rsp, %rdi
   72              	.LVL4:
-  73 0011 E8000000 		call	_ZN8onefieldC1Ev
+  73 0011 E8000000 		call	_ZN9onefield2C1Ev
   73      00
   74              	.LVL5:
   12:call-by-value-error.cpp **** 
@@ -113,12 +113,12 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   76 0016 BE0D0000 		movl	$13, %esi
   76      00
   77 001b 4889E7   		movq	%rsp, %rdi
-  78 001e E8000000 		call	_ZN8onefield8setFieldEi
+  78 001e E8000000 		call	_ZN9onefield28setFieldEi
   78      00
   79              	.LVL6:
   14:call-by-value-error.cpp **** 
   80              		.loc 1 14 0
-GAS LISTING /tmp/cc84ZVC0.s 			page 3
+GAS LISTING /tmp/cc8ycfoD.s 			page 3
 
 
   81 0023 BF100000 		movl	$16, %edi
@@ -128,7 +128,7 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   83              	.LVL7:
   84 002d 4889C3   		movq	%rax, %rbx
   85 0030 4889C7   		movq	%rax, %rdi
-  86 0033 E8000000 		call	_ZN8onefieldC1Ev
+  86 0033 E8000000 		call	_ZN9onefield2C1Ev
   86      00
   87              	.LVL8:
   16:call-by-value-error.cpp **** 
@@ -156,7 +156,7 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
   22:call-by-value-error.cpp **** }
  105              		.loc 1 22 0
  106 0058 4889E7   		movq	%rsp, %rdi
- 107 005b E8000000 		call	_ZNK8onefield8getFieldEv
+ 107 005b E8000000 		call	_ZNK9onefield28getFieldEv
  107      00
  108              	.LVL13:
  109 0060 01E8     		addl	%ebp, %eax
@@ -174,51 +174,51 @@ GAS LISTING /tmp/cc84ZVC0.s 			page 1
  120 0068 C3       		ret
  121              		.cfi_endproc
  122              	.LFE0:
- 124              		.weak	_ZTS8onefield
- 125              		.section	.rodata._ZTS8onefield,"aG",@progbits,_ZTS8onefield,comdat
- 128              	_ZTS8onefield:
- 129 0000 386F6E65 		.string	"8onefield"
-GAS LISTING /tmp/cc84ZVC0.s 			page 4
+ 124              		.weak	_ZTS9onefield2
+ 125              		.section	.rodata._ZTS9onefield2,"aG",@progbits,_ZTS9onefield2,comdat
+ 128              	_ZTS9onefield2:
+ 129 0000 396F6E65 		.string	"9onefield2"
+GAS LISTING /tmp/cc8ycfoD.s 			page 4
 
 
  129      6669656C 
- 129      6400
- 130              		.weak	_ZTI8onefield
- 131              		.section	.rodata._ZTI8onefield,"aG",@progbits,_ZTI8onefield,comdat
+ 129      643200
+ 130              		.weak	_ZTI9onefield2
+ 131              		.section	.rodata._ZTI9onefield2,"aG",@progbits,_ZTI9onefield2,comdat
  132              		.align 16
- 135              	_ZTI8onefield:
+ 135              	_ZTI9onefield2:
  136 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
  136      00000000 
- 137 0008 00000000 		.quad	_ZTS8onefield
+ 137 0008 00000000 		.quad	_ZTS9onefield2
  137      00000000 
- 138              		.weak	_ZTV8onefield
- 139              		.section	.rodata._ZTV8onefield,"aG",@progbits,_ZTV8onefield,comdat
+ 138              		.weak	_ZTV9onefield2
+ 139              		.section	.rodata._ZTV9onefield2,"aG",@progbits,_ZTV9onefield2,comdat
  140              		.align 32
- 143              	_ZTV8onefield:
+ 143              	_ZTV9onefield2:
  144 0000 00000000 		.quad	0
  144      00000000 
- 145 0008 00000000 		.quad	_ZTI8onefield
+ 145 0008 00000000 		.quad	_ZTI9onefield2
  145      00000000 
- 146 0010 00000000 		.quad	_ZN8onefield8setFieldEi
+ 146 0010 00000000 		.quad	_ZN9onefield28setFieldEi
  146      00000000 
- 147 0018 00000000 		.quad	_ZNK8onefield8getFieldEv
+ 147 0018 00000000 		.quad	_ZNK9onefield28getFieldEv
  147      00000000 
  148              		.text
  149              	.Letext0:
-GAS LISTING /tmp/cc84ZVC0.s 			page 5
+GAS LISTING /tmp/cc8ycfoD.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 call-by-value-error.cpp
-     /tmp/cc84ZVC0.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
-     /tmp/cc84ZVC0.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
-     /tmp/cc84ZVC0.s:38     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC2Ev
-     /tmp/cc84ZVC0.s:143    .rodata._ZTV8onefield:0000000000000000 _ZTV8onefield
-     /tmp/cc84ZVC0.s:38     .text._ZN8onefieldC2Ev:0000000000000000 _ZN8onefieldC1Ev
-     /tmp/cc84ZVC0.s:56     .text:0000000000000008 main
-     /tmp/cc84ZVC0.s:128    .rodata._ZTS8onefield:0000000000000000 _ZTS8onefield
-     /tmp/cc84ZVC0.s:135    .rodata._ZTI8onefield:0000000000000000 _ZTI8onefield
-                           .group:0000000000000000 _ZN8onefieldC5Ev
+     /tmp/cc8ycfoD.s:7      .text:0000000000000000 _ZN9onefield28setFieldEi
+     /tmp/cc8ycfoD.s:22     .text:0000000000000004 _ZNK9onefield28getFieldEv
+     /tmp/cc8ycfoD.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C2Ev
+     /tmp/cc8ycfoD.s:143    .rodata._ZTV9onefield2:0000000000000000 _ZTV9onefield2
+     /tmp/cc8ycfoD.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C1Ev
+     /tmp/cc8ycfoD.s:56     .text:0000000000000008 _Z16callByValueErroriPPc
+     /tmp/cc8ycfoD.s:128    .rodata._ZTS9onefield2:0000000000000000 _ZTS9onefield2
+     /tmp/cc8ycfoD.s:135    .rodata._ZTI9onefield2:0000000000000000 _ZTI9onefield2
+                           .group:0000000000000000 _ZN9onefield2C5Ev
 
 UNDEFINED SYMBOLS
 _Znwm

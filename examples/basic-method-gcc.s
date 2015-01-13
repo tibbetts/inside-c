@@ -1,30 +1,30 @@
 	.file	"basic-method.cpp"
 	.text
 	.align 2
-	.globl	_ZN8onefield8setFieldEi
-	.type	_ZN8onefield8setFieldEi, @function
-_ZN8onefield8setFieldEi:
+	.globl	_ZN9onefield48setFieldEi
+	.type	_ZN9onefield48setFieldEi, @function
+_ZN9onefield48setFieldEi:
 .LFB1:
 	.cfi_startproc
 	movl	%esi, (%rdi)
 	ret
 	.cfi_endproc
 .LFE1:
-	.size	_ZN8onefield8setFieldEi, .-_ZN8onefield8setFieldEi
+	.size	_ZN9onefield48setFieldEi, .-_ZN9onefield48setFieldEi
 	.align 2
-	.globl	_ZNK8onefield8getFieldEv
-	.type	_ZNK8onefield8getFieldEv, @function
-_ZNK8onefield8getFieldEv:
+	.globl	_ZNK9onefield48getFieldEv
+	.type	_ZNK9onefield48getFieldEv, @function
+_ZNK9onefield48getFieldEv:
 .LFB2:
 	.cfi_startproc
 	movl	(%rdi), %eax
 	ret
 	.cfi_endproc
 .LFE2:
-	.size	_ZNK8onefield8getFieldEv, .-_ZNK8onefield8getFieldEv
-	.globl	main
-	.type	main, @function
-main:
+	.size	_ZNK9onefield48getFieldEv, .-_ZNK9onefield48getFieldEv
+	.globl	_Z11basicMethodiPPc
+	.type	_Z11basicMethodiPPc, @function
+_Z11basicMethodiPPc:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbx
@@ -34,17 +34,17 @@ main:
 	.cfi_def_cfa_offset 32
 	movl	$13, %esi
 	movq	%rsp, %rdi
-	call	_ZN8onefield8setFieldEi
+	call	_ZN9onefield48setFieldEi
 	movl	$4, %edi
 	call	_Znwm
 	movq	%rax, %rbx
 	movl	$27, %esi
 	movq	%rax, %rdi
-	call	_ZN8onefield8setFieldEi
+	call	_ZN9onefield48setFieldEi
 	movq	%rbx, %rdi
 	call	_ZdlPv
 	movq	%rsp, %rdi
-	call	_ZNK8onefield8getFieldEv
+	call	_ZNK9onefield48getFieldEv
 	addq	$16, %rsp
 	.cfi_def_cfa_offset 16
 	popq	%rbx
@@ -52,6 +52,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	main, .-main
+	.size	_Z11basicMethodiPPc, .-_Z11basicMethodiPPc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

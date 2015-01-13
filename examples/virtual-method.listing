@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc7XI1gJ.s 			page 1
+GAS LISTING /tmp/ccZaArdk.s 			page 1
 
 
    1              		.file	"virtual-method.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
   51              		.globl	_Z9doMethodsR6parent
   53              	_Z9doMethodsR6parent:
   54              	.LFB3:
-GAS LISTING /tmp/cc7XI1gJ.s 			page 2
+GAS LISTING /tmp/ccZaArdk.s 			page 2
 
 
    8:virtual-method.cpp **** };
@@ -90,11 +90,11 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
   75 0013 C3       		ret
   76              		.cfi_endproc
   77              	.LFE3:
-  79              		.globl	main
-  81              	main:
+  79              		.globl	_Z13virtualMethodiPPKc
+  81              	_Z13virtualMethodiPPKc:
   82              	.LFB4:
   14:virtual-method.cpp **** 
-  15:virtual-method.cpp **** int main(int argc, char **argv) {
+  15:virtual-method.cpp **** int virtualMethod(int argc, const char **argv) {
   83              		.loc 1 15 0
   84              		.cfi_startproc
   85              	.LVL7:
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
   97 0028 48C74424 		movq	$_ZTV5child+16, 16(%rsp)
   97      10000000 
   97      00
-GAS LISTING /tmp/cc7XI1gJ.s 			page 3
+GAS LISTING /tmp/ccZaArdk.s 			page 3
 
 
   20:virtual-method.cpp ****     doMethods(c);
@@ -129,8 +129,9 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
  100      00
  101              	.LVL10:
  102              	.LBE2:
-  21:virtual-method.cpp **** }
- 103              		.loc 1 21 0
+  21:virtual-method.cpp ****     return 0;
+  22:virtual-method.cpp **** }
+ 103              		.loc 1 22 0
  104 003b B8000000 		movl	$0, %eax
  104      00
  105 0040 4883C428 		addq	$40, %rsp
@@ -177,10 +178,10 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
  148 0010 00000000 		.quad	_ZN6parent3fooEv
  148      00000000 
  149 0018 00000000 		.quad	_ZN6parent3barEv
+GAS LISTING /tmp/ccZaArdk.s 			page 4
+
+
  149      00000000 
-GAS LISTING /tmp/cc7XI1gJ.s 			page 4
-
-
  150              		.weak	_ZTV5child
  151              		.section	.rodata._ZTV5child,"aG",@progbits,_ZTV5child,comdat
  152              		.align 32
@@ -195,22 +196,22 @@ GAS LISTING /tmp/cc7XI1gJ.s 			page 1
  159      00000000 
  160              		.text
  161              	.Letext0:
-GAS LISTING /tmp/cc7XI1gJ.s 			page 5
+GAS LISTING /tmp/ccZaArdk.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 virtual-method.cpp
-     /tmp/cc7XI1gJ.s:8      .text._ZN6parent3fooEv:0000000000000000 _ZN6parent3fooEv
-     /tmp/cc7XI1gJ.s:24     .text._ZN6parent3barEv:0000000000000000 _ZN6parent3barEv
-     /tmp/cc7XI1gJ.s:39     .text._ZN5child3fooEv:0000000000000000 _ZN5child3fooEv
-     /tmp/cc7XI1gJ.s:53     .text:0000000000000000 _Z9doMethodsR6parent
-     /tmp/cc7XI1gJ.s:81     .text:0000000000000014 main
-     /tmp/cc7XI1gJ.s:145    .rodata._ZTV6parent:0000000000000000 _ZTV6parent
-     /tmp/cc7XI1gJ.s:155    .rodata._ZTV5child:0000000000000000 _ZTV5child
-     /tmp/cc7XI1gJ.s:116    .rodata._ZTI6parent:0000000000000000 _ZTI6parent
-     /tmp/cc7XI1gJ.s:123    .rodata._ZTS6parent:0000000000000000 _ZTS6parent
-     /tmp/cc7XI1gJ.s:130    .rodata._ZTI5child:0000000000000000 _ZTI5child
-     /tmp/cc7XI1gJ.s:138    .rodata._ZTS5child:0000000000000000 _ZTS5child
+     /tmp/ccZaArdk.s:8      .text._ZN6parent3fooEv:0000000000000000 _ZN6parent3fooEv
+     /tmp/ccZaArdk.s:24     .text._ZN6parent3barEv:0000000000000000 _ZN6parent3barEv
+     /tmp/ccZaArdk.s:39     .text._ZN5child3fooEv:0000000000000000 _ZN5child3fooEv
+     /tmp/ccZaArdk.s:53     .text:0000000000000000 _Z9doMethodsR6parent
+     /tmp/ccZaArdk.s:81     .text:0000000000000014 _Z13virtualMethodiPPKc
+     /tmp/ccZaArdk.s:145    .rodata._ZTV6parent:0000000000000000 _ZTV6parent
+     /tmp/ccZaArdk.s:155    .rodata._ZTV5child:0000000000000000 _ZTV5child
+     /tmp/ccZaArdk.s:116    .rodata._ZTI6parent:0000000000000000 _ZTI6parent
+     /tmp/ccZaArdk.s:123    .rodata._ZTS6parent:0000000000000000 _ZTS6parent
+     /tmp/ccZaArdk.s:130    .rodata._ZTI5child:0000000000000000 _ZTI5child
+     /tmp/ccZaArdk.s:138    .rodata._ZTS5child:0000000000000000 _ZTS5child
 
 UNDEFINED SYMBOLS
 _ZTVN10__cxxabiv117__class_type_infoE

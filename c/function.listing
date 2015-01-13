@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccUHTby7.s 			page 1
+GAS LISTING /tmp/ccQaSrf8.s 			page 1
 
 
    1              		.file	"function.c"
@@ -35,14 +35,12 @@ GAS LISTING /tmp/ccUHTby7.s 			page 1
   26 0014 C3       		ret
   27              		.cfi_endproc
   28              	.LFE0:
-  30              		.globl	main
-  32              	main:
+  30              		.globl	function
+  32              	function:
   33              	.LFB1:
    8:function.c    **** 
-   9:function.c    **** int
-  10:function.c    **** main (int argc, char **argv)
-  11:function.c    **** {
-  34              		.loc 1 11 0
+   9:function.c    **** int function(int argc, char **argv) {
+  34              		.loc 1 9 0
   35              		.cfi_startproc
   36 0015 55       		pushq	%rbp
   37              		.cfi_def_cfa_offset 16
@@ -52,34 +50,34 @@ GAS LISTING /tmp/ccUHTby7.s 			page 1
   41 0019 4883EC20 		subq	$32, %rsp
   42 001d 897DEC   		movl	%edi, -20(%rbp)
   43 0020 488975E0 		movq	%rsi, -32(%rbp)
-  12:function.c    ****     int val;
-  13:function.c    ****     val = foo(13);
-  44              		.loc 1 13 0
+  10:function.c    ****     int val;
+  11:function.c    ****     val = foo(13);
+  44              		.loc 1 11 0
   45 0024 BF0D0000 		movl	$13, %edi
   45      00
   46 0029 E8000000 		call	foo
-GAS LISTING /tmp/ccUHTby7.s 			page 2
-
-
   46      00
   47 002e 8945FC   		movl	%eax, -4(%rbp)
-  14:function.c    ****     return val;
-  48              		.loc 1 14 0
+GAS LISTING /tmp/ccQaSrf8.s 			page 2
+
+
+  12:function.c    ****     return val;
+  48              		.loc 1 12 0
   49 0031 8B45FC   		movl	-4(%rbp), %eax
-  15:function.c    **** }
-  50              		.loc 1 15 0
+  13:function.c    **** }
+  50              		.loc 1 13 0
   51 0034 C9       		leave
   52              		.cfi_def_cfa 7, 8
   53 0035 C3       		ret
   54              		.cfi_endproc
   55              	.LFE1:
   57              	.Letext0:
-GAS LISTING /tmp/ccUHTby7.s 			page 3
+GAS LISTING /tmp/ccQaSrf8.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 function.c
-     /tmp/ccUHTby7.s:6      .text:0000000000000000 foo
-     /tmp/ccUHTby7.s:32     .text:0000000000000015 main
+     /tmp/ccQaSrf8.s:6      .text:0000000000000000 foo
+     /tmp/ccQaSrf8.s:32     .text:0000000000000015 function
 
 NO UNDEFINED SYMBOLS

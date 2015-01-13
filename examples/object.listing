@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccc27VaH.s 			page 1
+GAS LISTING /tmp/ccKYiK6h.s 			page 1
 
 
    1              		.file	"object.cpp"
@@ -28,8 +28,8 @@ GAS LISTING /tmp/ccc27VaH.s 			page 1
   22              		.weak	_ZN15onefield_structC1Ei
   23              		.set	_ZN15onefield_structC1Ei,_ZN15onefield_structC2Ei
   24              		.text
-  25              		.globl	main
-  27              	main:
+  25              		.globl	_Z6objectiPPKc
+  27              	_Z6objectiPPKc:
   28              	.LFB3:
    6:object.cpp    ****     }
    7:object.cpp    **** };
@@ -42,7 +42,7 @@ GAS LISTING /tmp/ccc27VaH.s 			page 1
   14:object.cpp    **** };
   15:object.cpp    **** */
   16:object.cpp    **** 
-  17:object.cpp    **** int main(int argc, char **argv) {
+  17:object.cpp    **** int object(int argc, const char **argv) {
   29              		.loc 1 17 0
   30              		.cfi_startproc
   31              	.LVL1:
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccc27VaH.s 			page 1
   39              	.LVL3:
   40 000c E8000000 		call	_ZN15onefield_structC1Ei
   40      00
-GAS LISTING /tmp/ccc27VaH.s 			page 2
+GAS LISTING /tmp/ccKYiK6h.s 			page 2
 
 
   41              	.LVL4:
@@ -79,14 +79,14 @@ GAS LISTING /tmp/ccc27VaH.s 			page 1
   48              		.cfi_endproc
   49              	.LFE3:
   51              	.Letext0:
-GAS LISTING /tmp/ccc27VaH.s 			page 3
+GAS LISTING /tmp/ccKYiK6h.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 object.cpp
-     /tmp/ccc27VaH.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC2Ei
-     /tmp/ccc27VaH.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC1Ei
-     /tmp/ccc27VaH.s:27     .text:0000000000000000 main
+     /tmp/ccKYiK6h.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC2Ei
+     /tmp/ccKYiK6h.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC1Ei
+     /tmp/ccKYiK6h.s:27     .text:0000000000000000 _Z6objectiPPKc
                            .group:0000000000000000 _ZN15onefield_structC5Ei
 
 NO UNDEFINED SYMBOLS

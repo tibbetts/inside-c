@@ -1,154 +1,458 @@
-GAS LISTING /tmp/ccQLZm1e.s 			page 1
+GAS LISTING /tmp/ccuLiDeX.s 			page 1
 
 
    1              		.file	"simple-multiple.cpp"
    2              		.text
    3              	.Ltext0:
-   4              		.align 2
-   5              		.globl	_ZN5baseA8setDataAEi
-   7              	_ZN5baseA8setDataAEi:
-   8              	.LFB0:
-   9              		.file 1 "simple-multiple.cpp"
-   1:simple-multiple.cpp **** class baseA {
-   2:simple-multiple.cpp ****     int dataA;
-   3:simple-multiple.cpp ****   public:
-   4:simple-multiple.cpp ****     void setDataA(int a);
-   5:simple-multiple.cpp ****     int getDataA() const;
-   6:simple-multiple.cpp **** };
-   7:simple-multiple.cpp **** 
-   8:simple-multiple.cpp **** class baseB {
-   9:simple-multiple.cpp ****     int dataB;
-  10:simple-multiple.cpp ****   public:
-  11:simple-multiple.cpp ****     void setDataB(int b);
-  12:simple-multiple.cpp ****     int getDataB() const;
-  13:simple-multiple.cpp **** };
-  14:simple-multiple.cpp **** 
-  15:simple-multiple.cpp **** class subBoth : public baseA, public baseB {
-  16:simple-multiple.cpp ****   public:
-  17:simple-multiple.cpp ****     int getSum() const;
-  18:simple-multiple.cpp **** };
-  19:simple-multiple.cpp **** 
-  20:simple-multiple.cpp **** void baseA::setDataA(int a) {
-  10              		.loc 1 20 0
-  11              		.cfi_startproc
-  12              	.LVL0:
-  21:simple-multiple.cpp ****     dataA = a;
-  13              		.loc 1 21 0
-  14 0000 8937     		movl	%esi, (%rdi)
-  15 0002 C3       		ret
-  16              		.cfi_endproc
-  17              	.LFE0:
-  19 0003 90       		.align 2
-  20              		.globl	_ZNK5baseA8getDataAEv
-  22              	_ZNK5baseA8getDataAEv:
-  23              	.LFB1:
-  22:simple-multiple.cpp **** }
-  23:simple-multiple.cpp **** int baseA::getDataA() const {
-  24              		.loc 1 23 0
-  25              		.cfi_startproc
-  26              	.LVL1:
-  24:simple-multiple.cpp ****     return dataA;
-  27              		.loc 1 24 0
-  28 0004 8B07     		movl	(%rdi), %eax
-  25:simple-multiple.cpp **** }
-  29              		.loc 1 25 0
-  30 0006 C3       		ret
-  31              		.cfi_endproc
-  32              	.LFE1:
-  34 0007 90       		.align 2
-  35              		.globl	_ZN5baseB8setDataBEi
-  37              	_ZN5baseB8setDataBEi:
-GAS LISTING /tmp/ccQLZm1e.s 			page 2
+   5              	_Z41__static_initialization_and_destruction_0ii:
+   6              	.LFB1403:
+   7              		.file 1 "simple-multiple.cpp"
+   1:simple-multiple.cpp **** #include <iostream>
+   2:simple-multiple.cpp **** 
+   3:simple-multiple.cpp **** class baseA1 {
+   4:simple-multiple.cpp ****     int dataA;
+   5:simple-multiple.cpp ****   public:
+   6:simple-multiple.cpp ****     void setDataA(int a);
+   7:simple-multiple.cpp ****     int getDataA() const;
+   8:simple-multiple.cpp **** };
+   9:simple-multiple.cpp **** 
+  10:simple-multiple.cpp **** class baseB1 {
+  11:simple-multiple.cpp ****     int dataB;
+  12:simple-multiple.cpp ****   public:
+  13:simple-multiple.cpp ****     void setDataB(int b);
+  14:simple-multiple.cpp ****     int getDataB() const;
+  15:simple-multiple.cpp **** };
+  16:simple-multiple.cpp **** 
+  17:simple-multiple.cpp **** class subBoth1 : public baseA1, public baseB1 {
+  18:simple-multiple.cpp ****   public:
+  19:simple-multiple.cpp ****     int getSum() const;
+  20:simple-multiple.cpp **** };
+  21:simple-multiple.cpp **** 
+  22:simple-multiple.cpp **** void baseA1::setDataA(int a) {
+  23:simple-multiple.cpp ****     dataA = a;
+  24:simple-multiple.cpp **** }
+  25:simple-multiple.cpp **** int baseA1::getDataA() const {
+  26:simple-multiple.cpp ****     return dataA;
+  27:simple-multiple.cpp **** }
+  28:simple-multiple.cpp **** 
+  29:simple-multiple.cpp **** void baseB1::setDataB(int b) {
+  30:simple-multiple.cpp ****     dataB = b;
+  31:simple-multiple.cpp **** }
+  32:simple-multiple.cpp **** int baseB1::getDataB() const {
+  33:simple-multiple.cpp ****     return dataB;
+  34:simple-multiple.cpp **** }
+  35:simple-multiple.cpp **** 
+  36:simple-multiple.cpp **** int subBoth1::getSum() const {
+  37:simple-multiple.cpp ****     int total = 0;
+  38:simple-multiple.cpp ****     total += getDataA();
+  39:simple-multiple.cpp ****     total += getDataB();
+  40:simple-multiple.cpp ****     return total;
+  41:simple-multiple.cpp **** }
+  42:simple-multiple.cpp **** 
+  43:simple-multiple.cpp **** int simpleMultiple(int argc, const char **argv) {
+  44:simple-multiple.cpp ****     subBoth1 s;
+  45:simple-multiple.cpp ****     s.setDataA(5);
+  46:simple-multiple.cpp ****     s.setDataB(7);
+  47:simple-multiple.cpp ****     int ret = s.getSum();
+  48:simple-multiple.cpp ****     std::cout << "subBoth1::getSum()=" << ret << std::endl;
+  49:simple-multiple.cpp ****     return 0;
+  50:simple-multiple.cpp **** }...
+   8              		.loc 1 50 0
+GAS LISTING /tmp/ccuLiDeX.s 			page 2
 
 
-  38              	.LFB2:
-  26:simple-multiple.cpp **** 
-  27:simple-multiple.cpp **** void baseB::setDataB(int b) {
-  39              		.loc 1 27 0
-  40              		.cfi_startproc
-  41              	.LVL2:
-  28:simple-multiple.cpp ****     dataB = b;
-  42              		.loc 1 28 0
-  43 0008 8937     		movl	%esi, (%rdi)
-  44 000a C3       		ret
-  45              		.cfi_endproc
-  46              	.LFE2:
-  48 000b 90       		.align 2
-  49              		.globl	_ZNK5baseB8getDataBEv
-  51              	_ZNK5baseB8getDataBEv:
-  52              	.LFB3:
-  29:simple-multiple.cpp **** }
-  30:simple-multiple.cpp **** int baseB::getDataB() const {
-  53              		.loc 1 30 0
-  54              		.cfi_startproc
-  55              	.LVL3:
-  31:simple-multiple.cpp ****     return dataB;
-  56              		.loc 1 31 0
-  57 000c 8B07     		movl	(%rdi), %eax
-  32:simple-multiple.cpp **** }
-  58              		.loc 1 32 0
-  59 000e C3       		ret
-  60              		.cfi_endproc
-  61              	.LFE3:
-  63 000f 90       		.align 2
-  64              		.globl	_ZNK7subBoth6getSumEv
-  66              	_ZNK7subBoth6getSumEv:
-  67              	.LFB4:
-  33:simple-multiple.cpp **** 
-  34:simple-multiple.cpp **** int subBoth::getSum() const {
-  68              		.loc 1 34 0
-  69              		.cfi_startproc
-  70              	.LVL4:
-  71 0010 55       		pushq	%rbp
-  72              		.cfi_def_cfa_offset 16
-  73              		.cfi_offset 6, -16
-  74 0011 53       		pushq	%rbx
-  75              		.cfi_def_cfa_offset 24
-  76              		.cfi_offset 3, -24
-  77 0012 4889FB   		movq	%rdi, %rbx
-  78              	.LVL5:
-  79              	.LBB2:
-  35:simple-multiple.cpp ****     int total = 0;
-  36:simple-multiple.cpp ****     total += getDataA();
-  80              		.loc 1 36 0
-  81 0015 E8000000 		call	_ZNK5baseA8getDataAEv
-  81      00
-  82              	.LVL6:
-  83 001a 89C5     		movl	%eax, %ebp
-  84              	.LVL7:
-  37:simple-multiple.cpp ****     total += getDataB();
-  85              		.loc 1 37 0
-GAS LISTING /tmp/ccQLZm1e.s 			page 3
+   9              		.cfi_startproc
+  10              	.LVL0:
+  11 0000 83FF01   		cmpl	$1, %edi
+  12 0003 752E     		jne	.L5
+  13              		.loc 1 50 0 discriminator 1
+  14 0005 81FEFFFF 		cmpl	$65535, %esi
+  14      0000
+  15 000b 7526     		jne	.L5
+  16              		.loc 1 50 0 is_stmt 0
+  17 000d 4883EC08 		subq	$8, %rsp
+  18              		.cfi_def_cfa_offset 16
+  19              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  45:/usr/include/c++/4.8/iostream **** 
+GAS LISTING /tmp/ccuLiDeX.s 			page 3
 
 
-  86 001c 488D7B04 		leaq	4(%rbx), %rdi
-  87 0020 E8000000 		call	_ZNK5baseB8getDataBEv
-  87      00
-  88              	.LVL8:
-  89 0025 01E8     		addl	%ebp, %eax
-  90              	.LVL9:
-  91              	.LBE2:
-  38:simple-multiple.cpp ****     return total;
-  39:simple-multiple.cpp **** }
-  92              		.loc 1 39 0
-  93 0027 5B       		popq	%rbx
-  94              		.cfi_def_cfa_offset 16
-  95              	.LVL10:
-  96 0028 5D       		popq	%rbp
-  97              		.cfi_def_cfa_offset 8
-  98 0029 C3       		ret
-  99              		.cfi_endproc
- 100              	.LFE4:
- 102              	.Letext0:
-GAS LISTING /tmp/ccQLZm1e.s 			page 4
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  20              		.loc 2 74 0 is_stmt 1
+  21 0011 BF000000 		movl	$_ZStL8__ioinit, %edi
+  21      00
+  22              	.LVL1:
+  23 0016 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  23      00
+  24              	.LVL2:
+  25 001b BA000000 		movl	$__dso_handle, %edx
+  25      00
+  26 0020 BE000000 		movl	$_ZStL8__ioinit, %esi
+  26      00
+  27 0025 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  27      00
+  28 002a E8000000 		call	__cxa_atexit
+  28      00
+  29              	.LVL3:
+  30              		.loc 1 50 0
+  31 002f 4883C408 		addq	$8, %rsp
+  32              		.cfi_def_cfa_offset 8
+  33              	.L5:
+  34 0033 C3       		ret
+  35              		.cfi_endproc
+  36              	.LFE1403:
+  38              		.align 2
+  39              		.globl	_ZN6baseA18setDataAEi
+  41              	_ZN6baseA18setDataAEi:
+  42              	.LFB1243:
+  22:simple-multiple.cpp **** void baseA1::setDataA(int a) {
+GAS LISTING /tmp/ccuLiDeX.s 			page 4
+
+
+  43              		.loc 1 22 0
+  44              		.cfi_startproc
+  45              	.LVL4:
+  23:simple-multiple.cpp ****     dataA = a;
+  46              		.loc 1 23 0
+  47 0034 8937     		movl	%esi, (%rdi)
+  48 0036 C3       		ret
+  49              		.cfi_endproc
+  50              	.LFE1243:
+  52 0037 90       		.align 2
+  53              		.globl	_ZNK6baseA18getDataAEv
+  55              	_ZNK6baseA18getDataAEv:
+  56              	.LFB1244:
+  25:simple-multiple.cpp **** int baseA1::getDataA() const {
+  57              		.loc 1 25 0
+  58              		.cfi_startproc
+  59              	.LVL5:
+  26:simple-multiple.cpp ****     return dataA;
+  60              		.loc 1 26 0
+  61 0038 8B07     		movl	(%rdi), %eax
+  27:simple-multiple.cpp **** }
+  62              		.loc 1 27 0
+  63 003a C3       		ret
+  64              		.cfi_endproc
+  65              	.LFE1244:
+  67 003b 90       		.align 2
+  68              		.globl	_ZN6baseB18setDataBEi
+  70              	_ZN6baseB18setDataBEi:
+  71              	.LFB1245:
+  29:simple-multiple.cpp **** void baseB1::setDataB(int b) {
+  72              		.loc 1 29 0
+  73              		.cfi_startproc
+  74              	.LVL6:
+  30:simple-multiple.cpp ****     dataB = b;
+  75              		.loc 1 30 0
+  76 003c 8937     		movl	%esi, (%rdi)
+  77 003e C3       		ret
+  78              		.cfi_endproc
+  79              	.LFE1245:
+  81 003f 90       		.align 2
+  82              		.globl	_ZNK6baseB18getDataBEv
+  84              	_ZNK6baseB18getDataBEv:
+  85              	.LFB1246:
+  32:simple-multiple.cpp **** int baseB1::getDataB() const {
+  86              		.loc 1 32 0
+  87              		.cfi_startproc
+  88              	.LVL7:
+  33:simple-multiple.cpp ****     return dataB;
+  89              		.loc 1 33 0
+  90 0040 8B07     		movl	(%rdi), %eax
+  34:simple-multiple.cpp **** }
+  91              		.loc 1 34 0
+  92 0042 C3       		ret
+  93              		.cfi_endproc
+  94              	.LFE1246:
+  96 0043 90       		.align 2
+  97              		.globl	_ZNK8subBoth16getSumEv
+GAS LISTING /tmp/ccuLiDeX.s 			page 5
+
+
+  99              	_ZNK8subBoth16getSumEv:
+ 100              	.LFB1247:
+  36:simple-multiple.cpp **** int subBoth1::getSum() const {
+ 101              		.loc 1 36 0
+ 102              		.cfi_startproc
+ 103              	.LVL8:
+ 104 0044 55       		pushq	%rbp
+ 105              		.cfi_def_cfa_offset 16
+ 106              		.cfi_offset 6, -16
+ 107 0045 53       		pushq	%rbx
+ 108              		.cfi_def_cfa_offset 24
+ 109              		.cfi_offset 3, -24
+ 110 0046 4889FB   		movq	%rdi, %rbx
+ 111              	.LVL9:
+ 112              	.LBB2:
+  38:simple-multiple.cpp ****     total += getDataA();
+ 113              		.loc 1 38 0
+ 114 0049 E8000000 		call	_ZNK6baseA18getDataAEv
+ 114      00
+ 115              	.LVL10:
+ 116 004e 89C5     		movl	%eax, %ebp
+ 117              	.LVL11:
+  39:simple-multiple.cpp ****     total += getDataB();
+ 118              		.loc 1 39 0
+ 119 0050 488D7B04 		leaq	4(%rbx), %rdi
+ 120 0054 E8000000 		call	_ZNK6baseB18getDataBEv
+ 120      00
+ 121              	.LVL12:
+ 122 0059 01E8     		addl	%ebp, %eax
+ 123              	.LVL13:
+ 124              	.LBE2:
+  41:simple-multiple.cpp **** }
+ 125              		.loc 1 41 0
+ 126 005b 5B       		popq	%rbx
+ 127              		.cfi_def_cfa_offset 16
+ 128              	.LVL14:
+ 129 005c 5D       		popq	%rbp
+ 130              		.cfi_def_cfa_offset 8
+ 131 005d C3       		ret
+ 132              		.cfi_endproc
+ 133              	.LFE1247:
+ 135              		.section	.rodata.str1.1,"aMS",@progbits,1
+ 136              	.LC0:
+ 137 0000 73756242 		.string	"subBoth1::getSum()="
+ 137      6F746831 
+ 137      3A3A6765 
+ 137      7453756D 
+ 137      28293D00 
+ 138              		.text
+ 139              		.globl	_Z14simpleMultipleiPPKc
+ 141              	_Z14simpleMultipleiPPKc:
+ 142              	.LFB1248:
+  43:simple-multiple.cpp **** int simpleMultiple(int argc, const char **argv) {
+ 143              		.loc 1 43 0
+ 144              		.cfi_startproc
+ 145              	.LVL15:
+ 146 005e 53       		pushq	%rbx
+GAS LISTING /tmp/ccuLiDeX.s 			page 6
+
+
+ 147              		.cfi_def_cfa_offset 16
+ 148              		.cfi_offset 3, -16
+ 149 005f 4883EC10 		subq	$16, %rsp
+ 150              		.cfi_def_cfa_offset 32
+ 151              	.LBB3:
+  45:simple-multiple.cpp ****     s.setDataA(5);
+ 152              		.loc 1 45 0
+ 153 0063 BE050000 		movl	$5, %esi
+ 153      00
+ 154              	.LVL16:
+ 155 0068 4889E7   		movq	%rsp, %rdi
+ 156              	.LVL17:
+ 157 006b E8000000 		call	_ZN6baseA18setDataAEi
+ 157      00
+ 158              	.LVL18:
+  46:simple-multiple.cpp ****     s.setDataB(7);
+ 159              		.loc 1 46 0
+ 160 0070 488D7C24 		leaq	4(%rsp), %rdi
+ 160      04
+ 161 0075 BE070000 		movl	$7, %esi
+ 161      00
+ 162 007a E8000000 		call	_ZN6baseB18setDataBEi
+ 162      00
+ 163              	.LVL19:
+  47:simple-multiple.cpp ****     int ret = s.getSum();
+ 164              		.loc 1 47 0
+ 165 007f 4889E7   		movq	%rsp, %rdi
+ 166 0082 E8000000 		call	_ZNK8subBoth16getSumEv
+ 166      00
+ 167              	.LVL20:
+ 168 0087 89C3     		movl	%eax, %ebx
+ 169              	.LVL21:
+  48:simple-multiple.cpp ****     std::cout << "subBoth1::getSum()=" << ret << std::endl;
+ 170              		.loc 1 48 0
+ 171 0089 BE000000 		movl	$.LC0, %esi
+ 171      00
+ 172 008e BF000000 		movl	$_ZSt4cout, %edi
+ 172      00
+ 173 0093 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 173      00
+ 174              	.LVL22:
+ 175 0098 89DE     		movl	%ebx, %esi
+ 176 009a 4889C7   		movq	%rax, %rdi
+ 177 009d E8000000 		call	_ZNSolsEi
+ 177      00
+ 178              	.LVL23:
+ 179 00a2 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 179      00
+ 180 00a7 4889C7   		movq	%rax, %rdi
+ 181 00aa E8000000 		call	_ZNSolsEPFRSoS_E
+ 181      00
+ 182              	.LVL24:
+ 183              	.LBE3:
+ 184              		.loc 1 50 0
+ 185 00af B8000000 		movl	$0, %eax
+ 185      00
+ 186 00b4 4883C410 		addq	$16, %rsp
+GAS LISTING /tmp/ccuLiDeX.s 			page 7
+
+
+ 187              		.cfi_def_cfa_offset 16
+ 188 00b8 5B       		popq	%rbx
+ 189              		.cfi_def_cfa_offset 8
+ 190              	.LVL25:
+ 191 00b9 C3       		ret
+ 192              		.cfi_endproc
+ 193              	.LFE1248:
+ 196              	_GLOBAL__sub_I__ZN6baseA18setDataAEi:
+ 197              	.LFB1404:
+ 198              		.loc 1 50 0
+ 199              		.cfi_startproc
+ 200 00ba 4883EC08 		subq	$8, %rsp
+ 201              		.cfi_def_cfa_offset 16
+ 202              		.loc 1 50 0
+ 203 00be BEFFFF00 		movl	$65535, %esi
+ 203      00
+ 204 00c3 BF010000 		movl	$1, %edi
+ 204      00
+ 205 00c8 E833FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 205      FF
+ 206              	.LVL26:
+ 207 00cd 4883C408 		addq	$8, %rsp
+ 208              		.cfi_def_cfa_offset 8
+ 209 00d1 C3       		ret
+ 210              		.cfi_endproc
+ 211              	.LFE1404:
+ 213              		.section	.init_array,"aw"
+ 214              		.align 8
+ 215 0000 00000000 		.quad	_GLOBAL__sub_I__ZN6baseA18setDataAEi
+ 215      00000000 
+ 216              		.local	_ZStL8__ioinit
+ 217              		.comm	_ZStL8__ioinit,1,1
+ 218              		.text
+ 219              	.Letext0:
+ 220              		.file 3 "/usr/include/libio.h"
+ 221              		.file 4 "/usr/include/stdio.h"
+ 222              		.file 5 "<built-in>"
+ 223              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 224              		.file 7 "/usr/include/wchar.h"
+ 225              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 226              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 227              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 228              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 229              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 230              		.file 13 "/usr/include/c++/4.8/clocale"
+ 231              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 232              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 233              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 234              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 235              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 236              		.file 19 "/usr/include/c++/4.8/ostream"
+ 237              		.file 20 "/usr/include/c++/4.8/iosfwd"
+ 238              		.file 21 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 239              		.file 22 "/usr/include/time.h"
+ 240              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 241              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 242              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
+GAS LISTING /tmp/ccuLiDeX.s 			page 8
+
+
+ 243              		.file 26 "/usr/include/stdint.h"
+ 244              		.file 27 "/usr/include/locale.h"
+ 245              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 246              		.file 29 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 247              		.file 30 "/usr/include/stdlib.h"
+ 248              		.file 31 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 249              		.file 32 "/usr/include/_G_config.h"
+ 250              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 251              		.file 34 "/usr/include/wctype.h"
+ 252              		.file 35 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccuLiDeX.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 simple-multiple.cpp
-     /tmp/ccQLZm1e.s:7      .text:0000000000000000 _ZN5baseA8setDataAEi
-     /tmp/ccQLZm1e.s:22     .text:0000000000000004 _ZNK5baseA8getDataAEv
-     /tmp/ccQLZm1e.s:37     .text:0000000000000008 _ZN5baseB8setDataBEi
-     /tmp/ccQLZm1e.s:51     .text:000000000000000c _ZNK5baseB8getDataBEv
-     /tmp/ccQLZm1e.s:66     .text:0000000000000010 _ZNK7subBoth6getSumEv
+     /tmp/ccuLiDeX.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+                             .bss:0000000000000000 _ZStL8__ioinit
+     /tmp/ccuLiDeX.s:41     .text:0000000000000034 _ZN6baseA18setDataAEi
+     /tmp/ccuLiDeX.s:55     .text:0000000000000038 _ZNK6baseA18getDataAEv
+     /tmp/ccuLiDeX.s:70     .text:000000000000003c _ZN6baseB18setDataBEi
+     /tmp/ccuLiDeX.s:84     .text:0000000000000040 _ZNK6baseB18getDataBEv
+     /tmp/ccuLiDeX.s:99     .text:0000000000000044 _ZNK8subBoth16getSumEv
+     /tmp/ccuLiDeX.s:141    .text:000000000000005e _Z14simpleMultipleiPPKc
+     /tmp/ccuLiDeX.s:196    .text:00000000000000ba _GLOBAL__sub_I__ZN6baseA18setDataAEi
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E

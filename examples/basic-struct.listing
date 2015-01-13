@@ -1,18 +1,18 @@
-GAS LISTING /tmp/ccgUS8SW.s 			page 1
+GAS LISTING /tmp/ccnslZWx.s 			page 1
 
 
    1              		.file	"basic-struct.cpp"
    2              		.text
    3              	.Ltext0:
-   4              		.globl	main
-   6              	main:
+   4              		.globl	_Z11basicStructiPPc
+   6              	_Z11basicStructiPPc:
    7              	.LFB0:
    8              		.file 1 "basic-struct.cpp"
    1:basic-struct.cpp **** struct onefield {
    2:basic-struct.cpp ****     int field;
    3:basic-struct.cpp **** };
    4:basic-struct.cpp **** 
-   5:basic-struct.cpp **** int main(int argc, char **argv) {
+   5:basic-struct.cpp **** int basicStruct(int argc, char **argv) {
    9              		.loc 1 5 0
   10              		.cfi_startproc
   11              	.LVL0:
@@ -57,12 +57,12 @@ GAS LISTING /tmp/ccgUS8SW.s 			page 1
   33              		.cfi_endproc
   34              	.LFE0:
   36              	.Letext0:
-GAS LISTING /tmp/ccgUS8SW.s 			page 2
+GAS LISTING /tmp/ccnslZWx.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-struct.cpp
-     /tmp/ccgUS8SW.s:6      .text:0000000000000000 main
+     /tmp/ccnslZWx.s:6      .text:0000000000000000 _Z11basicStructiPPc
 
 UNDEFINED SYMBOLS
 _Znwm

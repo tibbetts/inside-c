@@ -1,68 +1,69 @@
-GAS LISTING /tmp/cchdn7Ac.s 			page 1
+GAS LISTING /tmp/ccv4KZbP.s 			page 1
 
 
    1              		.file	"object-arg.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZN8onefield8setFieldEi
-   7              	_ZN8onefield8setFieldEi:
+   5              		.globl	_ZN10onefieldOA8setFieldEi
+   7              	_ZN10onefieldOA8setFieldEi:
    8              	.LFB21:
    9              		.file 1 "object-arg.cpp"
    1:object-arg.cpp **** #include "stdio.h"
    2:object-arg.cpp **** 
-   3:object-arg.cpp **** class onefield {
+   3:object-arg.cpp **** class onefieldOA {
    4:object-arg.cpp ****   private:
    5:object-arg.cpp ****     int field;
    6:object-arg.cpp ****   public:
-   7:object-arg.cpp ****     explicit onefield(int f);
+   7:object-arg.cpp ****     explicit onefieldOA(int f);
    8:object-arg.cpp ****     // Copy constructor.
-   9:object-arg.cpp ****     onefield(const onefield &of);
-  10:object-arg.cpp ****     ~onefield();
+   9:object-arg.cpp ****     onefieldOA(const onefieldOA &of);
+  10:object-arg.cpp ****     ~onefieldOA();
   11:object-arg.cpp **** 
   12:object-arg.cpp ****     void setField(int f);
   13:object-arg.cpp ****     int getField() const;
   14:object-arg.cpp **** };
   15:object-arg.cpp **** 
-  16:object-arg.cpp **** void print(onefield of) {
+  16:object-arg.cpp **** void print(onefieldOA of) {
   17:object-arg.cpp ****     printf("The value of the field is %d.\n", of.getField());
   18:object-arg.cpp **** }
   19:object-arg.cpp **** 
   20:object-arg.cpp **** 
-  21:object-arg.cpp **** int main(int argc, char **argv) {
-  22:object-arg.cpp ****     onefield of(13);
+  21:object-arg.cpp **** int objectArg(int argc, char **argv) {
+  22:object-arg.cpp ****     onefieldOA of(13);
   23:object-arg.cpp **** 
   24:object-arg.cpp ****     print(of);
-  25:object-arg.cpp **** }
-  26:object-arg.cpp **** 
+  25:object-arg.cpp ****     return 0;
+  26:object-arg.cpp **** }
   27:object-arg.cpp **** 
-  28:object-arg.cpp **** void onefield::setField(int f) {
-  10              		.loc 1 28 0
+  28:object-arg.cpp **** 
+  29:object-arg.cpp **** void onefieldOA::setField(int f) {
+  10              		.loc 1 29 0
   11              		.cfi_startproc
   12              	.LVL0:
-  29:object-arg.cpp ****     this->field = f;
-  13              		.loc 1 29 0
+  30:object-arg.cpp ****     this->field = f;
+  13              		.loc 1 30 0
   14 0000 8937     		movl	%esi, (%rdi)
   15 0002 C3       		ret
   16              		.cfi_endproc
   17              	.LFE21:
   19 0003 90       		.align 2
-  20              		.globl	_ZNK8onefield8getFieldEv
-  22              	_ZNK8onefield8getFieldEv:
+  20              		.globl	_ZNK10onefieldOA8getFieldEv
+  22              	_ZNK10onefieldOA8getFieldEv:
   23              	.LFB22:
-  30:object-arg.cpp **** }
-  31:object-arg.cpp **** int onefield::getField() const {
-  24              		.loc 1 31 0
+  31:object-arg.cpp **** }
+  32:object-arg.cpp **** int onefieldOA::getField() const {
+  24              		.loc 1 32 0
   25              		.cfi_startproc
   26              	.LVL1:
-  32:object-arg.cpp ****     return this->field;
-  27              		.loc 1 32 0
+  33:object-arg.cpp ****     return this->field;
+  27              		.loc 1 33 0
+GAS LISTING /tmp/ccv4KZbP.s 			page 2
+
+
   28 0004 8B07     		movl	(%rdi), %eax
-GAS LISTING /tmp/cchdn7Ac.s 			page 2
-
-
-  33:object-arg.cpp **** }
-  29              		.loc 1 33 0
+  34:object-arg.cpp **** }
+  29              		.loc 1 34 0
   30 0006 C3       		ret
   31              		.cfi_endproc
   32              	.LFE22:
@@ -75,8 +76,8 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
   37      20746865 
   37      20666965 
   38              		.text
-  39              		.globl	_Z5print8onefield
-  41              	_Z5print8onefield:
+  39              		.globl	_Z5print10onefieldOA
+  41              	_Z5print10onefieldOA:
   42              	.LFB19:
   16:object-arg.cpp ****     printf("The value of the field is %d.\n", of.getField());
   43              		.loc 1 16 0
@@ -86,7 +87,7 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
   47              		.cfi_def_cfa_offset 16
   17:object-arg.cpp **** }
   48              		.loc 1 17 0
-  49 000b E8000000 		call	_ZNK8onefield8getFieldEv
+  49 000b E8000000 		call	_ZNK10onefieldOA8getFieldEv
   49      00
   50              	.LVL3:
   51              	.LBB10:
@@ -117,10 +118,10 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
   23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
   24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
   25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
+GAS LISTING /tmp/ccv4KZbP.s 			page 3
+
+
   26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
-GAS LISTING /tmp/cchdn7Ac.s 			page 3
-
-
   27:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   _G_va_list __ap) __THROW;
   28:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
   29:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifdef __va_arg_pack
@@ -177,10 +178,10 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
   80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
   81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
   82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
+GAS LISTING /tmp/ccv4KZbP.s 			page 4
+
+
   83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
-GAS LISTING /tmp/cchdn7Ac.s 			page 4
-
-
   84:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
   85:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __fprintf_chk (FILE *__restrict __stream, int __flag,
   86:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...);
@@ -232,23 +233,23 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
   73      20666965 
   74              		.text
   75 002b 90       		.align 2
-  76              		.globl	_ZN8onefieldC2Ei
-  78              	_ZN8onefieldC2Ei:
+  76              		.globl	_ZN10onefieldOAC2Ei
+  78              	_ZN10onefieldOAC2Ei:
   79              	.LFB24:
-  34:object-arg.cpp **** 
-  35:object-arg.cpp **** onefield::onefield(int f) {
-  80              		.loc 1 35 0
-GAS LISTING /tmp/cchdn7Ac.s 			page 5
+  35:object-arg.cpp **** 
+  36:object-arg.cpp **** onefieldOA::onefieldOA(int f) {
+GAS LISTING /tmp/ccv4KZbP.s 			page 5
 
 
+  80              		.loc 1 36 0
   81              		.cfi_startproc
   82              	.LVL5:
   83 002c 4883EC08 		subq	$8, %rsp
   84              		.cfi_def_cfa_offset 16
   85 0030 89F2     		movl	%esi, %edx
   86              	.LBB12:
-  36:object-arg.cpp ****     field = f;
-  87              		.loc 1 36 0
+  37:object-arg.cpp ****     field = f;
+  87              		.loc 1 37 0
   88 0032 8937     		movl	%esi, (%rdi)
   89              	.LVL6:
   90              	.LBB13:
@@ -268,39 +269,39 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  100              	.LBE14:
  101              	.LBE13:
  102              	.LBE12:
-  37:object-arg.cpp ****     printf("initial value of field was %d.\n", field);
-  38:object-arg.cpp **** }
- 103              		.loc 1 38 0
+  38:object-arg.cpp ****     printf("initial value of field was %d.\n", field);
+  39:object-arg.cpp **** }
+ 103              		.loc 1 39 0
  104 0048 4883C408 		addq	$8, %rsp
  105              		.cfi_def_cfa_offset 8
  106 004c C3       		ret
  107              		.cfi_endproc
  108              	.LFE24:
- 110              		.globl	_ZN8onefieldC1Ei
- 111              		.set	_ZN8onefieldC1Ei,_ZN8onefieldC2Ei
+ 110              		.globl	_ZN10onefieldOAC1Ei
+ 111              		.set	_ZN10onefieldOAC1Ei,_ZN10onefieldOAC2Ei
  112 004d 90       		.align 2
- 113              		.globl	_ZN8onefieldC2ERKS_
- 115              	_ZN8onefieldC2ERKS_:
+ 113              		.globl	_ZN10onefieldOAC2ERKS_
+ 115              	_ZN10onefieldOAC2ERKS_:
  116              	.LFB27:
-  39:object-arg.cpp **** 
-  40:object-arg.cpp **** onefield::onefield(const onefield &of) {
- 117              		.loc 1 40 0
+  40:object-arg.cpp **** 
+  41:object-arg.cpp **** onefieldOA::onefieldOA(const onefieldOA &of) {
+ 117              		.loc 1 41 0
  118              		.cfi_startproc
  119              	.LVL10:
  120              	.LBB15:
-  41:object-arg.cpp ****     field = of.field;
- 121              		.loc 1 41 0
+  42:object-arg.cpp ****     field = of.field;
+ 121              		.loc 1 42 0
  122 004e 8B06     		movl	(%rsi), %eax
  123 0050 8907     		movl	%eax, (%rdi)
  124 0052 C3       		ret
  125              	.LBE15:
  126              		.cfi_endproc
  127              	.LFE27:
- 129              		.globl	_ZN8onefieldC1ERKS_
- 130              		.set	_ZN8onefieldC1ERKS_,_ZN8onefieldC2ERKS_
-GAS LISTING /tmp/cchdn7Ac.s 			page 6
+ 129              		.globl	_ZN10onefieldOAC1ERKS_
+GAS LISTING /tmp/ccv4KZbP.s 			page 6
 
 
+ 130              		.set	_ZN10onefieldOAC1ERKS_,_ZN10onefieldOAC2ERKS_
  131              		.section	.rodata.str1.1,"aMS",@progbits,1
  132              	.LC2:
  133 0000 4C617374 		.string	"Last value of field was %d.\n"
@@ -310,14 +311,14 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  133      656C6420 
  134              		.text
  135 0053 90       		.align 2
- 136              		.globl	_ZN8onefieldD2Ev
- 138              	_ZN8onefieldD2Ev:
+ 136              		.globl	_ZN10onefieldOAD2Ev
+ 138              	_ZN10onefieldOAD2Ev:
  139              	.LFB30:
-  42:object-arg.cpp **** }
-  43:object-arg.cpp **** 
+  43:object-arg.cpp **** }
   44:object-arg.cpp **** 
-  45:object-arg.cpp **** onefield::~onefield() {
- 140              		.loc 1 45 0
+  45:object-arg.cpp **** 
+  46:object-arg.cpp **** onefieldOA::~onefieldOA() {
+ 140              		.loc 1 46 0
  141              		.cfi_startproc
  142              		.cfi_personality 0x3,__gxx_personality_v0
  143              		.cfi_lsda 0x3,.LLSDA30
@@ -343,9 +344,9 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  159              	.LBE18:
  160              	.LBE17:
  161              	.LBE16:
-  46:object-arg.cpp ****     printf("Last value of field was %d.\n", field);
-  47:object-arg.cpp **** }
- 162              		.loc 1 47 0
+  47:object-arg.cpp ****     printf("Last value of field was %d.\n", field);
+  48:object-arg.cpp **** }
+ 162              		.loc 1 48 0
  163 006e 4883C408 		addq	$8, %rsp
  164              		.cfi_def_cfa_offset 8
  165 0072 C3       		ret
@@ -357,19 +358,19 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  171 0000 FF       		.byte	0xff
  172 0001 FF       		.byte	0xff
  173 0002 01       		.byte	0x1
+GAS LISTING /tmp/ccv4KZbP.s 			page 7
+
+
  174 0003 00       		.uleb128 .LLSDACSE30-.LLSDACSB30
-GAS LISTING /tmp/cchdn7Ac.s 			page 7
-
-
  175              	.LLSDACSB30:
  176              	.LLSDACSE30:
  177              		.text
- 179              		.globl	_ZN8onefieldD1Ev
- 180              		.set	_ZN8onefieldD1Ev,_ZN8onefieldD2Ev
- 181              		.globl	main
- 183              	main:
+ 179              		.globl	_ZN10onefieldOAD1Ev
+ 180              		.set	_ZN10onefieldOAD1Ev,_ZN10onefieldOAD2Ev
+ 181              		.globl	_Z9objectArgiPPc
+ 183              	_Z9objectArgiPPc:
  184              	.LFB20:
-  21:object-arg.cpp ****     onefield of(13);
+  21:object-arg.cpp ****     onefieldOA of(13);
  185              		.loc 1 21 0
  186              		.cfi_startproc
  187              		.cfi_personality 0x3,__gxx_personality_v0
@@ -389,22 +390,22 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  199 007d 4889E7   		movq	%rsp, %rdi
  200              	.LVL17:
  201              	.LEHB0:
- 202 0080 E8000000 		call	_ZN8onefieldC1Ei
+ 202 0080 E8000000 		call	_ZN10onefieldOAC1Ei
  202      00
  203              	.LEHE0:
  204              	.LVL18:
-  24:object-arg.cpp **** }
+  24:object-arg.cpp ****     return 0;
  205              		.loc 1 24 0
  206 0085 4889E6   		movq	%rsp, %rsi
  207 0088 488D7C24 		leaq	16(%rsp), %rdi
  207      10
- 208 008d E8000000 		call	_ZN8onefieldC1ERKS_
+ 208 008d E8000000 		call	_ZN10onefieldOAC1ERKS_
  208      00
  209              	.LVL19:
  210 0092 488D7C24 		leaq	16(%rsp), %rdi
  210      10
  211              	.LEHB1:
- 212 0097 E8000000 		call	_Z5print8onefield
+ 212 0097 E8000000 		call	_Z5print10onefieldOA
  212      00
  213              	.LEHE1:
  214              	.LVL20:
@@ -413,83 +414,90 @@ GAS LISTING /tmp/cchdn7Ac.s 			page 1
  217 009e 4889C3   		movq	%rax, %rbx
  218 00a1 488D7C24 		leaq	16(%rsp), %rdi
  218      10
- 219 00a6 E8000000 		call	_ZN8onefieldD1Ev
+ 219 00a6 E8000000 		call	_ZN10onefieldOAD1Ev
  219      00
  220              	.LVL21:
- 221 00ab 4889E7   		movq	%rsp, %rdi
- 222 00ae E8000000 		call	_ZN8onefieldD1Ev
-GAS LISTING /tmp/cchdn7Ac.s 			page 8
+  25:object-arg.cpp **** }
+GAS LISTING /tmp/ccv4KZbP.s 			page 8
 
 
- 222      00
- 223              	.LVL22:
- 224 00b3 4889DF   		movq	%rbx, %rdi
- 225              	.LEHB2:
- 226 00b6 E8000000 		call	_Unwind_Resume
- 226      00
- 227              	.LEHE2:
- 228              	.LVL23:
- 229              	.L14:
-  24:object-arg.cpp **** }
- 230              		.loc 1 24 0 is_stmt 0 discriminator 1
- 231 00bb 488D7C24 		leaq	16(%rsp), %rdi
- 231      10
- 232 00c0 E8000000 		call	_ZN8onefieldD1Ev
- 232      00
- 233              	.LVL24:
- 234 00c5 4889E7   		movq	%rsp, %rdi
- 235 00c8 E8000000 		call	_ZN8onefieldD1Ev
- 235      00
- 236              	.LVL25:
- 237              	.LBE19:
-  25:object-arg.cpp **** 
- 238              		.loc 1 25 0 is_stmt 1 discriminator 1
- 239 00cd B8000000 		movl	$0, %eax
- 239      00
- 240 00d2 4883C420 		addq	$32, %rsp
- 241              		.cfi_def_cfa_offset 16
- 242 00d6 5B       		popq	%rbx
- 243              		.cfi_def_cfa_offset 8
- 244 00d7 C3       		ret
- 245              		.cfi_endproc
- 246              	.LFE20:
- 247              		.section	.gcc_except_table
- 248              	.LLSDA20:
- 249 0004 FF       		.byte	0xff
- 250 0005 FF       		.byte	0xff
- 251 0006 01       		.byte	0x1
- 252 0007 0C       		.uleb128 .LLSDACSE20-.LLSDACSB20
- 253              	.LLSDACSB20:
- 254 0008 0D       		.uleb128 .LEHB0-.LFB20
- 255 0009 05       		.uleb128 .LEHE0-.LEHB0
- 256 000a 00       		.uleb128 0
- 257 000b 00       		.uleb128 0
- 258 000c 24       		.uleb128 .LEHB1-.LFB20
- 259 000d 05       		.uleb128 .LEHE1-.LEHB1
- 260 000e 2B       		.uleb128 .L12-.LFB20
- 261 000f 00       		.uleb128 0
- 262 0010 43       		.uleb128 .LEHB2-.LFB20
- 263 0011 05       		.uleb128 .LEHE2-.LEHB2
- 264 0012 00       		.uleb128 0
- 265 0013 00       		.uleb128 0
- 266              	.LLSDACSE20:
- 267              		.text
- 269              	.Letext0:
-GAS LISTING /tmp/cchdn7Ac.s 			page 9
+ 221              		.loc 1 25 0
+ 222 00ab 4889E7   		movq	%rsp, %rdi
+ 223 00ae E8000000 		call	_ZN10onefieldOAD1Ev
+ 223      00
+ 224              	.LVL22:
+ 225 00b3 4889DF   		movq	%rbx, %rdi
+ 226              	.LEHB2:
+ 227 00b6 E8000000 		call	_Unwind_Resume
+ 227      00
+ 228              	.LEHE2:
+ 229              	.LVL23:
+ 230              	.L14:
+  24:object-arg.cpp ****     return 0;
+ 231              		.loc 1 24 0 discriminator 1
+ 232 00bb 488D7C24 		leaq	16(%rsp), %rdi
+ 232      10
+ 233 00c0 E8000000 		call	_ZN10onefieldOAD1Ev
+ 233      00
+ 234              	.LVL24:
+  25:object-arg.cpp **** }
+ 235              		.loc 1 25 0 discriminator 1
+ 236 00c5 4889E7   		movq	%rsp, %rdi
+ 237 00c8 E8000000 		call	_ZN10onefieldOAD1Ev
+ 237      00
+ 238              	.LVL25:
+ 239              	.LBE19:
+  26:object-arg.cpp **** 
+ 240              		.loc 1 26 0 discriminator 1
+ 241 00cd B8000000 		movl	$0, %eax
+ 241      00
+ 242 00d2 4883C420 		addq	$32, %rsp
+ 243              		.cfi_def_cfa_offset 16
+ 244 00d6 5B       		popq	%rbx
+ 245              		.cfi_def_cfa_offset 8
+ 246 00d7 C3       		ret
+ 247              		.cfi_endproc
+ 248              	.LFE20:
+ 249              		.section	.gcc_except_table
+ 250              	.LLSDA20:
+ 251 0004 FF       		.byte	0xff
+ 252 0005 FF       		.byte	0xff
+ 253 0006 01       		.byte	0x1
+ 254 0007 0C       		.uleb128 .LLSDACSE20-.LLSDACSB20
+ 255              	.LLSDACSB20:
+ 256 0008 0D       		.uleb128 .LEHB0-.LFB20
+ 257 0009 05       		.uleb128 .LEHE0-.LEHB0
+ 258 000a 00       		.uleb128 0
+ 259 000b 00       		.uleb128 0
+ 260 000c 24       		.uleb128 .LEHB1-.LFB20
+ 261 000d 05       		.uleb128 .LEHE1-.LEHB1
+ 262 000e 2B       		.uleb128 .L12-.LFB20
+ 263 000f 00       		.uleb128 0
+ 264 0010 43       		.uleb128 .LEHB2-.LFB20
+ 265 0011 05       		.uleb128 .LEHE2-.LEHB2
+ 266 0012 00       		.uleb128 0
+ 267 0013 00       		.uleb128 0
+ 268              	.LLSDACSE20:
+GAS LISTING /tmp/ccv4KZbP.s 			page 9
+
+
+ 269              		.text
+ 271              	.Letext0:
+GAS LISTING /tmp/ccv4KZbP.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 object-arg.cpp
-     /tmp/cchdn7Ac.s:7      .text:0000000000000000 _ZN8onefield8setFieldEi
-     /tmp/cchdn7Ac.s:22     .text:0000000000000004 _ZNK8onefield8getFieldEv
-     /tmp/cchdn7Ac.s:41     .text:0000000000000007 _Z5print8onefield
-     /tmp/cchdn7Ac.s:78     .text:000000000000002c _ZN8onefieldC2Ei
-     /tmp/cchdn7Ac.s:78     .text:000000000000002c _ZN8onefieldC1Ei
-     /tmp/cchdn7Ac.s:115    .text:000000000000004e _ZN8onefieldC2ERKS_
-     /tmp/cchdn7Ac.s:115    .text:000000000000004e _ZN8onefieldC1ERKS_
-     /tmp/cchdn7Ac.s:138    .text:0000000000000054 _ZN8onefieldD2Ev
-     /tmp/cchdn7Ac.s:138    .text:0000000000000054 _ZN8onefieldD1Ev
-     /tmp/cchdn7Ac.s:183    .text:0000000000000073 main
+     /tmp/ccv4KZbP.s:7      .text:0000000000000000 _ZN10onefieldOA8setFieldEi
+     /tmp/ccv4KZbP.s:22     .text:0000000000000004 _ZNK10onefieldOA8getFieldEv
+     /tmp/ccv4KZbP.s:41     .text:0000000000000007 _Z5print10onefieldOA
+     /tmp/ccv4KZbP.s:78     .text:000000000000002c _ZN10onefieldOAC2Ei
+     /tmp/ccv4KZbP.s:78     .text:000000000000002c _ZN10onefieldOAC1Ei
+     /tmp/ccv4KZbP.s:115    .text:000000000000004e _ZN10onefieldOAC2ERKS_
+     /tmp/ccv4KZbP.s:115    .text:000000000000004e _ZN10onefieldOAC1ERKS_
+     /tmp/ccv4KZbP.s:138    .text:0000000000000054 _ZN10onefieldOAD2Ev
+     /tmp/ccv4KZbP.s:138    .text:0000000000000054 _ZN10onefieldOAD1Ev
+     /tmp/ccv4KZbP.s:183    .text:0000000000000073 _Z9objectArgiPPc
 
 UNDEFINED SYMBOLS
 __printf_chk

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc54fNVp.s 			page 1
+GAS LISTING /tmp/ccXjkY5n.s 			page 1
 
 
    1              		.file	"unions.c"
@@ -11,8 +11,8 @@ GAS LISTING /tmp/cc54fNVp.s 			page 1
    6      6576656E 
    6      00
    7              		.text
-   8              		.globl	main
-  10              	main:
+   8              		.globl	unionTest
+  10              	unionTest:
   11              	.LFB0:
   12              		.file 1 "unions.c"
    1:unions.c      **** #include <string.h>
@@ -26,7 +26,7 @@ GAS LISTING /tmp/cc54fNVp.s 			page 1
    9:unions.c      ****   char str[LENGTH];
   10:unions.c      **** };
   11:unions.c      **** 
-  12:unions.c      **** int main (int argc, char **argv) {
+  12:unions.c      **** int unionTest (int argc, char **argv) {
   13              		.loc 1 12 0
   14              		.cfi_startproc
   15 0000 55       		pushq	%rbp
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc54fNVp.s 			page 1
   33 002b 48C745E0 		movq	$137, -32(%rbp)
   33      89000000 
   18:unions.c      ****   d1.d = 3.7;
-GAS LISTING /tmp/cc54fNVp.s 			page 2
+GAS LISTING /tmp/ccXjkY5n.s 			page 2
 
 
   34              		.loc 1 18 0
@@ -96,12 +96,12 @@ GAS LISTING /tmp/cc54fNVp.s 			page 1
   54              		.cfi_endproc
   55              	.LFE0:
   57              	.Letext0:
-GAS LISTING /tmp/cc54fNVp.s 			page 3
+GAS LISTING /tmp/ccXjkY5n.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 unions.c
-     /tmp/cc54fNVp.s:10     .text:0000000000000000 main
+     /tmp/ccXjkY5n.s:10     .text:0000000000000000 unionTest
 
 UNDEFINED SYMBOLS
 strncpy

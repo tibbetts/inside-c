@@ -90,9 +90,13 @@ externMethod:
 	.cfi_endproc
 .LFE1244:
 	.size	externMethod, .-externMethod
-	.globl	_Z7externCv
-	.type	_Z7externCv, @function
-_Z7externCv:
+	.section	.rodata.str1.1
+.LC4:
+	.string	"x="
+	.text
+	.globl	_Z7externCiPPKc
+	.type	_Z7externCiPPKc, @function
+_Z7externCiPPKc:
 .LFB1245:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -101,12 +105,22 @@ _Z7externCv:
 	movl	$13, externVar(%rip)
 	call	_Z13regularMethodv
 	call	externMethod
+	movl	$.LC4, %esi
+	movl	$_ZSt4cout, %edi
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+	movl	$59, %esi
+	movq	%rax, %rdi
+	call	_ZNSolsEi
+	movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+	movq	%rax, %rdi
+	call	_ZNSolsEPFRSoS_E
+	movl	$0, %eax
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE1245:
-	.size	_Z7externCv, .-_Z7externCv
+	.size	_Z7externCiPPKc, .-_Z7externCiPPKc
 	.type	_GLOBAL__sub_I_regularVar, @function
 _GLOBAL__sub_I_regularVar:
 .LFB1401:

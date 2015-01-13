@@ -36,9 +36,9 @@ bypointer:
 	.cfi_endproc
 .LFE1:
 	.size	bypointer, .-bypointer
-	.globl	main
-	.type	main, @function
-main:
+	.globl	structTest
+	.type	structTest, @function
+structTest:
 .LFB2:
 	.cfi_startproc
 	pushq	%rbp
@@ -69,6 +69,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE2:
-	.size	main, .-main
+	.size	structTest, .-structTest
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

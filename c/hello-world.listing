@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccfqKfA2.s 			page 1
+GAS LISTING /tmp/ccZIfWZ5.s 			page 1
 
 
    1              		.file	"hello-world.c"
@@ -11,16 +11,14 @@ GAS LISTING /tmp/ccfqKfA2.s 			page 1
    6      726C642E 
    6      00
    7              		.text
-   8              		.globl	main
-  10              	main:
+   8              		.globl	helloWorld
+  10              	helloWorld:
   11              	.LFB0:
   12              		.file 1 "hello-world.c"
    1:hello-world.c **** #include <stdio.h>
    2:hello-world.c **** 
-   3:hello-world.c **** int
-   4:hello-world.c **** main (int argc, char **argv)
-   5:hello-world.c **** {
-  13              		.loc 1 5 0
+   3:hello-world.c **** int helloWorld (int argc, char **argv) {
+  13              		.loc 1 3 0
   14              		.cfi_startproc
   15 0000 55       		pushq	%rbp
   16              		.cfi_def_cfa_offset 16
@@ -30,30 +28,30 @@ GAS LISTING /tmp/ccfqKfA2.s 			page 1
   20 0004 4883EC10 		subq	$16, %rsp
   21 0008 897DFC   		movl	%edi, -4(%rbp)
   22 000b 488975F0 		movq	%rsi, -16(%rbp)
-   6:hello-world.c ****     printf("Hello World.\n");
-  23              		.loc 1 6 0
+   4:hello-world.c ****     printf("Hello World.\n");
+  23              		.loc 1 4 0
   24 000f BF000000 		movl	$.LC0, %edi
   24      00
   25 0014 E8000000 		call	puts
   25      00
-   7:hello-world.c ****     return 0;
-  26              		.loc 1 7 0
+   5:hello-world.c ****     return 0;
+  26              		.loc 1 5 0
   27 0019 B8000000 		movl	$0, %eax
   27      00
-   8:hello-world.c **** }
-  28              		.loc 1 8 0
+   6:hello-world.c **** }
+  28              		.loc 1 6 0
   29 001e C9       		leave
   30              		.cfi_def_cfa 7, 8
   31 001f C3       		ret
   32              		.cfi_endproc
   33              	.LFE0:
   35              	.Letext0:
-GAS LISTING /tmp/ccfqKfA2.s 			page 2
+GAS LISTING /tmp/ccZIfWZ5.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 hello-world.c
-     /tmp/ccfqKfA2.s:10     .text:0000000000000000 main
+     /tmp/ccZIfWZ5.s:10     .text:0000000000000000 helloWorld
 
 UNDEFINED SYMBOLS
 puts

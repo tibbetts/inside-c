@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccrLqPpk.s 			page 1
+GAS LISTING /tmp/cctNBGpj.s 			page 1
 
 
    1              		.file	"arrays.c"
@@ -8,9 +8,10 @@ GAS LISTING /tmp/ccrLqPpk.s 			page 1
    6              	func:
    7              	.LFB0:
    8              		.file 1 "arrays.c"
-   1:arrays.c      **** 
-   2:arrays.c      **** int func(int *array) {
-   9              		.loc 1 2 0
+   1:arrays.c      **** #include <stdio.h>
+   2:arrays.c      **** 
+   3:arrays.c      **** int func(int *array, int *other) {
+   9              		.loc 1 3 0
   10              		.cfi_startproc
   11 0000 55       		pushq	%rbp
   12              		.cfi_def_cfa_offset 16
@@ -18,72 +19,97 @@ GAS LISTING /tmp/ccrLqPpk.s 			page 1
   14 0001 4889E5   		movq	%rsp, %rbp
   15              		.cfi_def_cfa_register 6
   16 0004 48897DF8 		movq	%rdi, -8(%rbp)
-   3:arrays.c      ****   return array[3];
-  17              		.loc 1 3 0
-  18 0008 488B45F8 		movq	-8(%rbp), %rax
-  19 000c 8B400C   		movl	12(%rax), %eax
-   4:arrays.c      **** }
-  20              		.loc 1 4 0
-  21 000f 5D       		popq	%rbp
-  22              		.cfi_def_cfa 7, 8
-  23 0010 C3       		ret
-  24              		.cfi_endproc
-  25              	.LFE0:
-  27              		.globl	main
-  29              	main:
-  30              	.LFB1:
-   5:arrays.c      **** 
-   6:arrays.c      **** int main (int argc, char **argv) {
-  31              		.loc 1 6 0
-  32              		.cfi_startproc
-  33 0011 55       		pushq	%rbp
-  34              		.cfi_def_cfa_offset 16
-  35              		.cfi_offset 6, -16
-  36 0012 4889E5   		movq	%rsp, %rbp
-  37              		.cfi_def_cfa_register 6
-  38 0015 4883EC70 		subq	$112, %rsp
-  39 0019 897D9C   		movl	%edi, -100(%rbp)
-  40 001c 48897590 		movq	%rsi, -112(%rbp)
-   7:arrays.c      ****   int foo[10];
-   8:arrays.c      ****   int bar[5];
-   9:arrays.c      ****   foo[7]=137;
-  41              		.loc 1 9 0
-  42 0020 C745EC89 		movl	$137, -20(%rbp)
-  42      000000
-  10:arrays.c      ****   bar[2]=3;
-  43              		.loc 1 10 0
-  44 0027 C745B803 		movl	$3, -72(%rbp)
-  44      000000
-  11:arrays.c      **** 
-  12:arrays.c      ****   int x = func(foo);
-  45              		.loc 1 12 0
-  46 002e 488D45D0 		leaq	-48(%rbp), %rax
-GAS LISTING /tmp/ccrLqPpk.s 			page 2
+  17 0008 488975F0 		movq	%rsi, -16(%rbp)
+   4:arrays.c      ****   return array[7] + other[5];
+  18              		.loc 1 4 0
+  19 000c 488B45F8 		movq	-8(%rbp), %rax
+  20 0010 4883C01C 		addq	$28, %rax
+  21 0014 8B10     		movl	(%rax), %edx
+  22 0016 488B45F0 		movq	-16(%rbp), %rax
+  23 001a 4883C014 		addq	$20, %rax
+  24 001e 8B00     		movl	(%rax), %eax
+  25 0020 01D0     		addl	%edx, %eax
+   5:arrays.c      **** }
+  26              		.loc 1 5 0
+  27 0022 5D       		popq	%rbp
+  28              		.cfi_def_cfa 7, 8
+  29 0023 C3       		ret
+  30              		.cfi_endproc
+  31              	.LFE0:
+  33              		.section	.rodata
+  34              	.LC0:
+  35 0000 783D2564 		.string	"x=%d"
+  35      00
+  36              		.text
+  37              		.globl	array
+  39              	array:
+  40              	.LFB1:
+   6:arrays.c      **** 
+   7:arrays.c      **** int array (int argc, char **argv) {
+  41              		.loc 1 7 0
+  42              		.cfi_startproc
+  43 0024 55       		pushq	%rbp
+  44              		.cfi_def_cfa_offset 16
+  45              		.cfi_offset 6, -16
+  46 0025 4889E5   		movq	%rsp, %rbp
+  47              		.cfi_def_cfa_register 6
+  48 0028 4883EC70 		subq	$112, %rsp
+  49 002c 897D9C   		movl	%edi, -100(%rbp)
+  50 002f 48897590 		movq	%rsi, -112(%rbp)
+   8:arrays.c      ****   int foo[10];
+   9:arrays.c      ****   int bar[5];
+GAS LISTING /tmp/cctNBGpj.s 			page 2
 
 
-  47 0032 4889C7   		movq	%rax, %rdi
-  48 0035 E8000000 		call	func
-  48      00
-  49 003a 8945AC   		movl	%eax, -84(%rbp)
-  13:arrays.c      **** 
-  14:arrays.c      ****   return 0;
-  50              		.loc 1 14 0
-  51 003d B8000000 		movl	$0, %eax
-  51      00
-  15:arrays.c      **** }
-  52              		.loc 1 15 0
-  53 0042 C9       		leave
-  54              		.cfi_def_cfa 7, 8
-  55 0043 C3       		ret
-  56              		.cfi_endproc
-  57              	.LFE1:
-  59              	.Letext0:
-GAS LISTING /tmp/ccrLqPpk.s 			page 3
+  10:arrays.c      ****   foo[7]=137;
+  51              		.loc 1 10 0
+  52 0033 C745EC89 		movl	$137, -20(%rbp)
+  52      000000
+  11:arrays.c      ****   bar[2]=3;
+  53              		.loc 1 11 0
+  54 003a C745B803 		movl	$3, -72(%rbp)
+  54      000000
+  12:arrays.c      **** 
+  13:arrays.c      ****   int x = func(foo, bar);
+  55              		.loc 1 13 0
+  56 0041 488D55B0 		leaq	-80(%rbp), %rdx
+  57 0045 488D45D0 		leaq	-48(%rbp), %rax
+  58 0049 4889D6   		movq	%rdx, %rsi
+  59 004c 4889C7   		movq	%rax, %rdi
+  60 004f E8000000 		call	func
+  60      00
+  61 0054 8945AC   		movl	%eax, -84(%rbp)
+  14:arrays.c      ****     
+  15:arrays.c      ****   printf("x=%d", x);
+  62              		.loc 1 15 0
+  63 0057 8B45AC   		movl	-84(%rbp), %eax
+  64 005a 89C6     		movl	%eax, %esi
+  65 005c BF000000 		movl	$.LC0, %edi
+  65      00
+  66 0061 B8000000 		movl	$0, %eax
+  66      00
+  67 0066 E8000000 		call	printf
+  67      00
+  16:arrays.c      **** 
+  17:arrays.c      ****   return 0;
+  68              		.loc 1 17 0
+  69 006b B8000000 		movl	$0, %eax
+  69      00
+  18:arrays.c      **** }
+  70              		.loc 1 18 0
+  71 0070 C9       		leave
+  72              		.cfi_def_cfa 7, 8
+  73 0071 C3       		ret
+  74              		.cfi_endproc
+  75              	.LFE1:
+  77              	.Letext0:
+GAS LISTING /tmp/cctNBGpj.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 arrays.c
-     /tmp/ccrLqPpk.s:6      .text:0000000000000000 func
-     /tmp/ccrLqPpk.s:29     .text:0000000000000011 main
+     /tmp/cctNBGpj.s:6      .text:0000000000000000 func
+     /tmp/cctNBGpj.s:39     .text:0000000000000024 array
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+printf

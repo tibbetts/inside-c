@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cctYsXca.s 			page 1
+GAS LISTING /tmp/ccPe0tc1.s 			page 1
 
 
    1              		.file	"extern-c.cpp"
@@ -39,7 +39,7 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   18:extern-c.cpp  ****   }
   19:extern-c.cpp  **** }
   20:extern-c.cpp  **** 
-  21:extern-c.cpp  **** void externC() {
+  21:extern-c.cpp  **** int externC(int argc, const char** argv) {
   22:extern-c.cpp  ****   regularVar = 12;
   23:extern-c.cpp  ****   externVar = 13;
   24:extern-c.cpp  **** 
@@ -47,20 +47,23 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   26:extern-c.cpp  **** 
   27:extern-c.cpp  ****   regularMethod();
   28:extern-c.cpp  ****   externMethod();
-  29:extern-c.cpp  **** }
-  14              		.loc 1 29 0
+  29:extern-c.cpp  **** 
+  30:extern-c.cpp  ****   std::cout << "x=" << x << std::endl;
+  31:extern-c.cpp  ****   return 0;
+  32:extern-c.cpp  **** }
+  14              		.loc 1 32 0
   15              		.cfi_startproc
   16              	.LVL0:
   17 0000 83FF01   		cmpl	$1, %edi
   18 0003 757E     		jne	.L5
-  19              		.loc 1 29 0 discriminator 1
+  19              		.loc 1 32 0 discriminator 1
   20 0005 81FEFFFF 		cmpl	$65535, %esi
+GAS LISTING /tmp/ccPe0tc1.s 			page 2
+
+
   20      0000
   21 000b 7576     		jne	.L5
-  22              		.loc 1 29 0 is_stmt 0
-GAS LISTING /tmp/cctYsXca.s 			page 2
-
-
+  22              		.loc 1 32 0 is_stmt 0
   23 000d 4883EC18 		subq	$24, %rsp
   24              		.cfi_def_cfa_offset 32
   25              		.file 2 "/usr/include/c++/4.8/iostream"
@@ -115,12 +118,12 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
   50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
   51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+GAS LISTING /tmp/ccPe0tc1.s 			page 3
+
+
   52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
   53:/usr/include/c++/4.8/iostream ****    *
   54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
-GAS LISTING /tmp/cctYsXca.s 			page 3
-
-
   55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
   56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
   57:/usr/include/c++/4.8/iostream ****    *  linked to above.
@@ -175,12 +178,12 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   44 004d BF000000 		movl	$_ZNSsD1Ev, %edi
   44      00
   45 0052 E8000000 		call	__cxa_atexit
+GAS LISTING /tmp/ccPe0tc1.s 			page 4
+
+
   45      00
   46              	.LVL5:
    7:extern-c.cpp  **** 
-GAS LISTING /tmp/cctYsXca.s 			page 4
-
-
   47              		.loc 1 7 0
   48 0057 488D5424 		leaq	15(%rsp), %rdx
   48      0F
@@ -200,7 +203,7 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   56 007a E8000000 		call	__cxa_atexit
   56      00
   57              	.LVL7:
-  58              		.loc 1 29 0
+  58              		.loc 1 32 0
   59 007f 4883C418 		addq	$24, %rsp
   60              		.cfi_def_cfa_offset 8
   61              	.L5:
@@ -235,12 +238,12 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
   83      00
   84 009c 4889C7   		movq	%rax, %rdi
   85 009f E8000000 		call	_ZNSolsEPFRSoS_E
+GAS LISTING /tmp/ccPe0tc1.s 			page 5
+
+
   85      00
   86              	.LVL9:
   11:extern-c.cpp  **** 
-GAS LISTING /tmp/cctYsXca.s 			page 5
-
-
   87              		.loc 1 11 0
   88 00a4 4883C408 		addq	$8, %rsp
   89              		.cfi_def_cfa_offset 8
@@ -284,153 +287,185 @@ GAS LISTING /tmp/cctYsXca.s 			page 1
  118 00cd C3       		ret
  119              		.cfi_endproc
  120              	.LFE1244:
- 122              		.globl	_Z7externCv
- 124              	_Z7externCv:
- 125              	.LFB1245:
+ 122              		.section	.rodata.str1.1
+ 123              	.LC4:
+ 124 0039 783D00   		.string	"x="
+ 125              		.text
+ 126              		.globl	_Z7externCiPPKc
+ 128              	_Z7externCiPPKc:
+ 129              	.LFB1245:
   21:extern-c.cpp  ****   regularVar = 12;
- 126              		.loc 1 21 0
- 127              		.cfi_startproc
- 128 00ce 4883EC08 		subq	$8, %rsp
- 129              		.cfi_def_cfa_offset 16
- 130              	.LBB2:
+ 130              		.loc 1 21 0
+ 131              		.cfi_startproc
+ 132              	.LVL12:
+GAS LISTING /tmp/ccPe0tc1.s 			page 6
+
+
+ 133 00ce 4883EC08 		subq	$8, %rsp
+ 134              		.cfi_def_cfa_offset 16
+ 135              	.LBB2:
   22:extern-c.cpp  ****   externVar = 13;
- 131              		.loc 1 22 0
- 132 00d2 C7050000 		movl	$12, regularVar(%rip)
- 132      00000C00 
- 132      0000
-GAS LISTING /tmp/cctYsXca.s 			page 6
-
-
+ 136              		.loc 1 22 0
+ 137 00d2 C7050000 		movl	$12, regularVar(%rip)
+ 137      00000C00 
+ 137      0000
   23:extern-c.cpp  **** 
- 133              		.loc 1 23 0
- 134 00dc C7050000 		movl	$13, externVar(%rip)
- 134      00000D00 
- 134      0000
- 135              	.LVL12:
+ 138              		.loc 1 23 0
+ 139 00dc C7050000 		movl	$13, externVar(%rip)
+ 139      00000D00 
+ 139      0000
+ 140              	.LVL13:
   27:extern-c.cpp  ****   externMethod();
- 136              		.loc 1 27 0
- 137 00e6 E8000000 		call	_Z13regularMethodv
- 137      00
- 138              	.LVL13:
-  28:extern-c.cpp  **** }
- 139              		.loc 1 28 0
- 140 00eb E8000000 		call	externMethod
- 140      00
- 141              	.LVL14:
- 142              	.LBE2:
- 143              		.loc 1 29 0
- 144 00f0 4883C408 		addq	$8, %rsp
- 145              		.cfi_def_cfa_offset 8
- 146 00f4 C3       		ret
- 147              		.cfi_endproc
- 148              	.LFE1245:
- 151              	_GLOBAL__sub_I_regularVar:
- 152              	.LFB1401:
- 153              		.loc 1 29 0
- 154              		.cfi_startproc
- 155 00f5 4883EC08 		subq	$8, %rsp
- 156              		.cfi_def_cfa_offset 16
- 157              		.loc 1 29 0
- 158 00f9 BEFFFF00 		movl	$65535, %esi
+ 141              		.loc 1 27 0
+ 142 00e6 E8000000 		call	_Z13regularMethodv
+ 142      00
+ 143              	.LVL14:
+  28:extern-c.cpp  **** 
+ 144              		.loc 1 28 0
+ 145 00eb E8000000 		call	externMethod
+ 145      00
+ 146              	.LVL15:
+  30:extern-c.cpp  ****   return 0;
+ 147              		.loc 1 30 0
+ 148 00f0 BE000000 		movl	$.LC4, %esi
+ 148      00
+ 149 00f5 BF000000 		movl	$_ZSt4cout, %edi
+ 149      00
+ 150 00fa E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 150      00
+ 151              	.LVL16:
+ 152 00ff BE3B0000 		movl	$59, %esi
+ 152      00
+ 153 0104 4889C7   		movq	%rax, %rdi
+ 154 0107 E8000000 		call	_ZNSolsEi
+ 154      00
+ 155              	.LVL17:
+ 156 010c BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 156      00
+ 157 0111 4889C7   		movq	%rax, %rdi
+ 158 0114 E8000000 		call	_ZNSolsEPFRSoS_E
  158      00
- 159 00fe BF010000 		movl	$1, %edi
- 159      00
- 160 0103 E8F8FEFF 		call	_Z41__static_initialization_and_destruction_0ii
- 160      FF
- 161              	.LVL15:
- 162 0108 4883C408 		addq	$8, %rsp
- 163              		.cfi_def_cfa_offset 8
- 164 010c C3       		ret
- 165              		.cfi_endproc
- 166              	.LFE1401:
- 168              		.section	.init_array,"aw"
- 169              		.align 8
- 170 0000 00000000 		.quad	_GLOBAL__sub_I_regularVar
- 170      00000000 
- 171              		.globl	externVar
- 172              		.bss
- 173              		.align 4
- 176              	externVar:
- 177 0000 00000000 		.zero	4
- 178              		.globl	implicitlyStaticWithInit
- 179 0004 00000000 		.align 8
- 182              	implicitlyStaticWithInit:
- 183 0008 00000000 		.zero	8
- 183      00000000 
- 184              		.local	_ZL29implicitlyStaticConstWithInit
-GAS LISTING /tmp/cctYsXca.s 			page 7
+ 159              	.LVL18:
+ 160              	.LBE2:
+ 161              		.loc 1 32 0
+ 162 0119 B8000000 		movl	$0, %eax
+ 162      00
+ 163 011e 4883C408 		addq	$8, %rsp
+ 164              		.cfi_def_cfa_offset 8
+ 165 0122 C3       		ret
+ 166              		.cfi_endproc
+ 167              	.LFE1245:
+ 170              	_GLOBAL__sub_I_regularVar:
+ 171              	.LFB1401:
+ 172              		.loc 1 32 0
+GAS LISTING /tmp/ccPe0tc1.s 			page 7
 
 
- 185              		.comm	_ZL29implicitlyStaticConstWithInit,8,8
- 186              		.globl	regularConst
- 187              		.section	.rodata
- 188              		.align 4
- 191              	regularConst:
- 192 0000 07000000 		.long	7
- 193              		.globl	regularVar
- 194              		.bss
- 195              		.align 4
- 198              	regularVar:
- 199 0010 00000000 		.zero	4
- 200              		.local	_ZStL8__ioinit
- 201              		.comm	_ZStL8__ioinit,1,1
- 202              		.text
- 203              	.Letext0:
- 204              		.file 3 "/usr/include/libio.h"
- 205              		.file 4 "/usr/include/stdio.h"
- 206              		.file 5 "<built-in>"
- 207              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
- 208              		.file 7 "/usr/include/wchar.h"
- 209              		.file 8 "/usr/include/c++/4.8/cwchar"
- 210              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
- 211              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
- 212              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
- 213              		.file 12 "/usr/include/c++/4.8/cstdint"
- 214              		.file 13 "/usr/include/c++/4.8/clocale"
- 215              		.file 14 "/usr/include/c++/4.8/bits/allocator.h"
- 216              		.file 15 "/usr/include/c++/4.8/cstdlib"
- 217              		.file 16 "/usr/include/c++/4.8/cstdio"
- 218              		.file 17 "/usr/include/c++/4.8/bits/basic_string.h"
- 219              		.file 18 "/usr/include/c++/4.8/bits/basic_string.tcc"
- 220              		.file 19 "/usr/include/c++/4.8/initializer_list"
- 221              		.file 20 "/usr/include/c++/4.8/bits/stringfwd.h"
- 222              		.file 21 "/usr/include/c++/4.8/bits/ios_base.h"
- 223              		.file 22 "/usr/include/c++/4.8/cwctype"
- 224              		.file 23 "/usr/include/c++/4.8/ostream"
- 225              		.file 24 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
- 226              		.file 25 "/usr/include/c++/4.8/iosfwd"
- 227              		.file 26 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
- 228              		.file 27 "/usr/include/time.h"
- 229              		.file 28 "/usr/include/c++/4.8/ext/new_allocator.h"
- 230              		.file 29 "/usr/include/c++/4.8/ext/numeric_traits.h"
- 231              		.file 30 "/usr/include/c++/4.8/bits/stl_iterator.h"
- 232              		.file 31 "/usr/include/c++/4.8/debug/debug.h"
- 233              		.file 32 "/usr/include/stdint.h"
- 234              		.file 33 "/usr/include/locale.h"
- 235              		.file 34 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 236              		.file 35 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
- 237              		.file 36 "/usr/include/stdlib.h"
- 238              		.file 37 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
- 239              		.file 38 "/usr/include/_G_config.h"
- 240              		.file 39 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
- 241              		.file 40 "/usr/include/wctype.h"
- 242              		.file 41 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/cctYsXca.s 			page 8
+ 173              		.cfi_startproc
+ 174 0123 4883EC08 		subq	$8, %rsp
+ 175              		.cfi_def_cfa_offset 16
+ 176              		.loc 1 32 0
+ 177 0127 BEFFFF00 		movl	$65535, %esi
+ 177      00
+ 178 012c BF010000 		movl	$1, %edi
+ 178      00
+ 179 0131 E8CAFEFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 179      FF
+ 180              	.LVL19:
+ 181 0136 4883C408 		addq	$8, %rsp
+ 182              		.cfi_def_cfa_offset 8
+ 183 013a C3       		ret
+ 184              		.cfi_endproc
+ 185              	.LFE1401:
+ 187              		.section	.init_array,"aw"
+ 188              		.align 8
+ 189 0000 00000000 		.quad	_GLOBAL__sub_I_regularVar
+ 189      00000000 
+ 190              		.globl	externVar
+ 191              		.bss
+ 192              		.align 4
+ 195              	externVar:
+ 196 0000 00000000 		.zero	4
+ 197              		.globl	implicitlyStaticWithInit
+ 198 0004 00000000 		.align 8
+ 201              	implicitlyStaticWithInit:
+ 202 0008 00000000 		.zero	8
+ 202      00000000 
+ 203              		.local	_ZL29implicitlyStaticConstWithInit
+ 204              		.comm	_ZL29implicitlyStaticConstWithInit,8,8
+ 205              		.globl	regularConst
+ 206              		.section	.rodata
+ 207              		.align 4
+ 210              	regularConst:
+ 211 0000 07000000 		.long	7
+ 212              		.globl	regularVar
+ 213              		.bss
+ 214              		.align 4
+ 217              	regularVar:
+ 218 0010 00000000 		.zero	4
+ 219              		.local	_ZStL8__ioinit
+ 220              		.comm	_ZStL8__ioinit,1,1
+ 221              		.text
+ 222              	.Letext0:
+ 223              		.file 3 "/usr/include/libio.h"
+ 224              		.file 4 "/usr/include/stdio.h"
+ 225              		.file 5 "<built-in>"
+ 226              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 227              		.file 7 "/usr/include/wchar.h"
+ 228              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 229              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 230              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 231              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 232              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 233              		.file 13 "/usr/include/c++/4.8/clocale"
+GAS LISTING /tmp/ccPe0tc1.s 			page 8
+
+
+ 234              		.file 14 "/usr/include/c++/4.8/bits/allocator.h"
+ 235              		.file 15 "/usr/include/c++/4.8/cstdlib"
+ 236              		.file 16 "/usr/include/c++/4.8/cstdio"
+ 237              		.file 17 "/usr/include/c++/4.8/bits/basic_string.h"
+ 238              		.file 18 "/usr/include/c++/4.8/bits/basic_string.tcc"
+ 239              		.file 19 "/usr/include/c++/4.8/initializer_list"
+ 240              		.file 20 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 241              		.file 21 "/usr/include/c++/4.8/bits/ios_base.h"
+ 242              		.file 22 "/usr/include/c++/4.8/cwctype"
+ 243              		.file 23 "/usr/include/c++/4.8/ostream"
+ 244              		.file 24 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 245              		.file 25 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 246              		.file 26 "/usr/include/c++/4.8/iosfwd"
+ 247              		.file 27 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 248              		.file 28 "/usr/include/time.h"
+ 249              		.file 29 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 250              		.file 30 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 251              		.file 31 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 252              		.file 32 "/usr/include/c++/4.8/debug/debug.h"
+ 253              		.file 33 "/usr/include/stdint.h"
+ 254              		.file 34 "/usr/include/locale.h"
+ 255              		.file 35 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 256              		.file 36 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 257              		.file 37 "/usr/include/stdlib.h"
+ 258              		.file 38 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 259              		.file 39 "/usr/include/_G_config.h"
+ 260              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 261              		.file 41 "/usr/include/wctype.h"
+ 262              		.file 42 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccPe0tc1.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 extern-c.cpp
-     /tmp/cctYsXca.s:11     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/cctYsXca.s:185    .bss:0000000000000020 _ZStL8__ioinit
-     /tmp/cctYsXca.s:185    .bss:0000000000000018 _ZL29implicitlyStaticConstWithInit
-     /tmp/cctYsXca.s:182    .bss:0000000000000008 implicitlyStaticWithInit
-     /tmp/cctYsXca.s:72     .text:0000000000000084 _Z13regularMethodv
-     /tmp/cctYsXca.s:100    .text:00000000000000a9 externMethod
-     /tmp/cctYsXca.s:124    .text:00000000000000ce _Z7externCv
-     /tmp/cctYsXca.s:198    .bss:0000000000000010 regularVar
-     /tmp/cctYsXca.s:176    .bss:0000000000000000 externVar
-     /tmp/cctYsXca.s:151    .text:00000000000000f5 _GLOBAL__sub_I_regularVar
-     /tmp/cctYsXca.s:191    .rodata:0000000000000000 regularConst
+     /tmp/ccPe0tc1.s:11     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccPe0tc1.s:204    .bss:0000000000000020 _ZStL8__ioinit
+     /tmp/ccPe0tc1.s:204    .bss:0000000000000018 _ZL29implicitlyStaticConstWithInit
+     /tmp/ccPe0tc1.s:201    .bss:0000000000000008 implicitlyStaticWithInit
+     /tmp/ccPe0tc1.s:72     .text:0000000000000084 _Z13regularMethodv
+     /tmp/ccPe0tc1.s:100    .text:00000000000000a9 externMethod
+     /tmp/ccPe0tc1.s:128    .text:00000000000000ce _Z7externCiPPKc
+     /tmp/ccPe0tc1.s:217    .bss:0000000000000010 regularVar
+     /tmp/ccPe0tc1.s:195    .bss:0000000000000000 externVar
+     /tmp/ccPe0tc1.s:170    .text:0000000000000123 _GLOBAL__sub_I_regularVar
+     /tmp/ccPe0tc1.s:210    .rodata:0000000000000000 regularConst
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev
@@ -443,3 +478,4 @@ _ZSt4cout
 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
 _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
 _ZNSolsEPFRSoS_E
+_ZNSolsEi

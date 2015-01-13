@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccifxgib.s 			page 1
+GAS LISTING /tmp/ccgFhGTd.s 			page 1
 
 
    1              		.file	"global-variables.c"
@@ -20,11 +20,14 @@ GAS LISTING /tmp/ccifxgib.s 			page 1
   19 0008 05000000 		.long	5
   20              		.comm	uninitialized,4,4
   21              		.comm	uninitialized_c,8,8
-  22              		.text
-  23              		.globl	main
-  25              	main:
-  26              	.LFB0:
-  27              		.file 1 "global-variables.c"
+  22              		.section	.rodata
+  23              	.LC1:
+  24 0005 257300   		.string	"%s"
+  25              		.text
+  26              		.globl	globalVariables
+  28              	globalVariables:
+  29              	.LFB0:
+  30              		.file 1 "global-variables.c"
    1:global-variables.c **** #include <stdio.h>
    2:global-variables.c **** 
    3:global-variables.c **** const char *init_c = "TEST";
@@ -32,66 +35,66 @@ GAS LISTING /tmp/ccifxgib.s 			page 1
    5:global-variables.c **** int uninitialized;
    6:global-variables.c **** const char *uninitialized_c;
    7:global-variables.c **** 
-   8:global-variables.c **** int
-   9:global-variables.c **** main (int argc, char **argv)
-  10:global-variables.c **** {
-  28              		.loc 1 10 0
-  29              		.cfi_startproc
-  30 0000 55       		pushq	%rbp
-  31              		.cfi_def_cfa_offset 16
-  32              		.cfi_offset 6, -16
-  33 0001 4889E5   		movq	%rsp, %rbp
-  34              		.cfi_def_cfa_register 6
-  35 0004 4883EC10 		subq	$16, %rsp
-  36 0008 897DFC   		movl	%edi, -4(%rbp)
-  37 000b 488975F0 		movq	%rsi, -16(%rbp)
-  11:global-variables.c ****     printf(init_c);
-  38              		.loc 1 11 0
-  39 000f 488B0500 		movq	init_c(%rip), %rax
-  39      000000
-  40 0016 4889C7   		movq	%rax, %rdi
-  41 0019 B8000000 		movl	$0, %eax
-  41      00
-  42 001e E8000000 		call	printf
-  42      00
-  12:global-variables.c ****     uninitialized_c = init_c;
-  43              		.loc 1 12 0
-  44 0023 488B0500 		movq	init_c(%rip), %rax
-  44      000000
-GAS LISTING /tmp/ccifxgib.s 			page 2
+   8:global-variables.c **** int globalVariables (int argc, char **argv) {
+  31              		.loc 1 8 0
+  32              		.cfi_startproc
+  33 0000 55       		pushq	%rbp
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 6, -16
+  36 0001 4889E5   		movq	%rsp, %rbp
+  37              		.cfi_def_cfa_register 6
+  38 0004 4883EC10 		subq	$16, %rsp
+  39 0008 897DFC   		movl	%edi, -4(%rbp)
+  40 000b 488975F0 		movq	%rsi, -16(%rbp)
+   9:global-variables.c ****   printf("%s", init_c);
+  41              		.loc 1 9 0
+  42 000f 488B0500 		movq	init_c(%rip), %rax
+  42      000000
+  43 0016 4889C6   		movq	%rax, %rsi
+  44 0019 BF000000 		movl	$.LC1, %edi
+  44      00
+  45 001e B8000000 		movl	$0, %eax
+  45      00
+  46 0023 E8000000 		call	printf
+  46      00
+  10:global-variables.c ****   uninitialized_c = init_c;
+GAS LISTING /tmp/ccgFhGTd.s 			page 2
 
 
-  45 002a 48890500 		movq	%rax, uninitialized_c(%rip)
-  45      000000
-  13:global-variables.c ****     uninitialized = 12 + initialized;
-  46              		.loc 1 13 0
-  47 0031 8B050000 		movl	initialized(%rip), %eax
-  47      0000
-  48 0037 83C00C   		addl	$12, %eax
-  49 003a 89050000 		movl	%eax, uninitialized(%rip)
-  49      0000
-  14:global-variables.c ****     return uninitialized;
-  50              		.loc 1 14 0
-  51 0040 8B050000 		movl	uninitialized(%rip), %eax
+  47              		.loc 1 10 0
+  48 0028 488B0500 		movq	init_c(%rip), %rax
+  48      000000
+  49 002f 48890500 		movq	%rax, uninitialized_c(%rip)
+  49      000000
+  11:global-variables.c ****   uninitialized = 12 + initialized;
+  50              		.loc 1 11 0
+  51 0036 8B050000 		movl	initialized(%rip), %eax
   51      0000
-  15:global-variables.c **** }
-  52              		.loc 1 15 0
-  53 0046 C9       		leave
-  54              		.cfi_def_cfa 7, 8
-  55 0047 C3       		ret
-  56              		.cfi_endproc
-  57              	.LFE0:
-  59              	.Letext0:
-GAS LISTING /tmp/ccifxgib.s 			page 3
+  52 003c 83C00C   		addl	$12, %eax
+  53 003f 89050000 		movl	%eax, uninitialized(%rip)
+  53      0000
+  12:global-variables.c ****   return uninitialized;
+  54              		.loc 1 12 0
+  55 0045 8B050000 		movl	uninitialized(%rip), %eax
+  55      0000
+  13:global-variables.c **** }
+  56              		.loc 1 13 0
+  57 004b C9       		leave
+  58              		.cfi_def_cfa 7, 8
+  59 004c C3       		ret
+  60              		.cfi_endproc
+  61              	.LFE0:
+  63              	.Letext0:
+GAS LISTING /tmp/ccgFhGTd.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 global-variables.c
-     /tmp/ccifxgib.s:12     .data:0000000000000000 init_c
-     /tmp/ccifxgib.s:18     .data:0000000000000008 initialized
+     /tmp/ccgFhGTd.s:12     .data:0000000000000000 init_c
+     /tmp/ccgFhGTd.s:18     .data:0000000000000008 initialized
                             *COM*:0000000000000004 uninitialized
                             *COM*:0000000000000008 uninitialized_c
-     /tmp/ccifxgib.s:25     .text:0000000000000000 main
+     /tmp/ccgFhGTd.s:28     .text:0000000000000000 globalVariables
 
 UNDEFINED SYMBOLS
 printf
