@@ -6,7 +6,7 @@ class onefield2 {
     virtual int getField() const;
 };
 
-int callByValueError(int argc, char **argv) {
+int callByValueError(int argc, const char **argv) {
     onefield2 of;
 
     of.setField(13);

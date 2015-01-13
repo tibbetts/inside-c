@@ -15,7 +15,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTI18onefield3_subclass = constant { i8*, i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([21 x i8]* @_ZTS18onefield3_subclass, i32 0, i32 0), i8* bitcast ({ i8*, i8* }* @_ZTI9onefield3 to i8*) }
 
 ; Function Attrs: noinline ssp uwtable
-define i32 @_Z11dynamicCastiPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z11dynamicCastiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %1 = tail call noalias i8* @_Znwm(i64 16) #6
   %2 = bitcast i8* %1 to %class.onefield3_subclass*
   tail call void @_ZN18onefield3_subclassC1Ev(%class.onefield3_subclass* %2) #7

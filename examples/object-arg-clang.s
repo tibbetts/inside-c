@@ -39,9 +39,9 @@ Ltmp9:
 	retq
 	.cfi_endproc
 
-	.globl	__Z9objectArgiPPc
+	.globl	__Z9objectArgiPPKc
 	.align	4, 0x90
-__Z9objectArgiPPc:                      ## @_Z9objectArgiPPc
+__Z9objectArgiPPKc:                     ## @_Z9objectArgiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

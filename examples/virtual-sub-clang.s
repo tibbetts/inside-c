@@ -415,7 +415,7 @@ L_.str3:                                ## @.str3
 	.asciz	"calling getBaseData()\n"
 
 L_.str4:                                ## @.str4
-	.asciz	"sb->getSum()=%d"
+	.asciz	"sb->getSum()=%d\n"
 
 	.section	__DATA,__const
 	.globl	__ZTV7subBoth           ## @_ZTV7subBoth

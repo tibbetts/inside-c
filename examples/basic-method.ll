@@ -5,7 +5,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 %class.onefield4 = type { i32 }
 
 ; Function Attrs: noinline ssp uwtable
-define i32 @_Z11basicMethodiPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z11basicMethodiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefield4, align 4
   call void @_ZN9onefield48setFieldEi(%class.onefield4* %of, i32 13)
   %1 = tail call noalias i8* @_Znwm(i64 4) #5

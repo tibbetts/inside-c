@@ -26,6 +26,7 @@
 		A4C7E61E1A65A74C007DB9B3 /* virtual-method.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E60C1A65A74C007DB9B3 /* virtual-method.cpp */; };
 		A4C7E61F1A65A74C007DB9B3 /* virtual-sub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E60D1A65A74C007DB9B3 /* virtual-sub.cpp */; };
 		A4C7E6201A65A74C007DB9B3 /* vtable-null.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E60E1A65A74C007DB9B3 /* vtable-null.cpp */; };
+		A4C7E6221A65C946007DB9B3 /* rtti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6211A65C946007DB9B3 /* rtti.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +63,7 @@
 		A4C7E60C1A65A74C007DB9B3 /* virtual-method.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "virtual-method.cpp"; path = "../../../examples/virtual-method.cpp"; sourceTree = "<group>"; };
 		A4C7E60D1A65A74C007DB9B3 /* virtual-sub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "virtual-sub.cpp"; path = "../../../examples/virtual-sub.cpp"; sourceTree = "<group>"; };
 		A4C7E60E1A65A74C007DB9B3 /* vtable-null.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "vtable-null.cpp"; path = "../../../examples/vtable-null.cpp"; sourceTree = "<group>"; };
+		A4C7E6211A65C946007DB9B3 /* rtti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rtti.cpp; path = ../../../examples/rtti.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				A4C7E5FC1A65A70A007DB9B3 /* main.hpp */,
 				A4C7E5FD1A65A74C007DB9B3 /* basic-constructor.cpp */,
 				A4C7E5FE1A65A74C007DB9B3 /* basic-method.cpp */,
+				A4C7E6211A65C946007DB9B3 /* rtti.cpp */,
 				A4C7E5FF1A65A74C007DB9B3 /* basic-struct.cpp */,
 				A4C7E6001A65A74C007DB9B3 /* basic-vtable.cpp */,
 				A4C7E6011A65A74C007DB9B3 /* call-by-value-error.cpp */,
@@ -182,6 +185,7 @@
 				A4C7E6201A65A74C007DB9B3 /* vtable-null.cpp in Sources */,
 				A4C7E6131A65A74C007DB9B3 /* call-by-value-error.cpp in Sources */,
 				A4C7E5F61A65A6E4007DB9B3 /* main.cpp in Sources */,
+				A4C7E6221A65C946007DB9B3 /* rtti.cpp in Sources */,
 				A4C7E6171A65A74C007DB9B3 /* mangling.cpp in Sources */,
 				A4C7E6111A65A74C007DB9B3 /* basic-struct.cpp in Sources */,
 				A4C7E61B1A65A74C007DB9B3 /* reference.cpp in Sources */,

@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__Z11dynamicCastiPPc
+	.globl	__Z11dynamicCastiPPKc
 	.align	4, 0x90
-__Z11dynamicCastiPPc:                   ## @_Z11dynamicCastiPPc
+__Z11dynamicCastiPPKc:                  ## @_Z11dynamicCastiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

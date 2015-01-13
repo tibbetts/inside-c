@@ -1,4 +1,4 @@
-NAMES=reference object virtual-method basic-constructor basic-method basic-struct basic-vtable call-by-value-error complex-multiple dynamic-cast object-arg object-ret simple-multiple subclass-vtable virtual-sub vtable-null mangling extern-c
+NAMES=reference object virtual-method basic-constructor basic-method basic-struct basic-vtable call-by-value-error complex-multiple dynamic-cast object-arg object-ret simple-multiple subclass-vtable virtual-sub vtable-null mangling extern-c rtti
 
 
 # Build different things on linux (where we assume we have gcc and gnu ld) and mac (where we have clang)

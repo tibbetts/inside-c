@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[]) {
     basicConstructor(argc, argv);
-/*    basicMethod(argc, argv);
+    basicMethod(argc, argv);
     basicStruct(argc, argv);
     basicVtable(argc, argv);
     callByValueError(argc, argv);
@@ -27,8 +27,8 @@ int main(int argc, const char * argv[]) {
     subclassVtable(argc, argv);
     virtualMethod(argc, argv);
     virtualSub(argc, argv);
-    vtableNull(argc, argv);*/
-
+    vtableNull(argc, argv);
+    rtti(argc, argv);
     
     return 0;
 }

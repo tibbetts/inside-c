@@ -6,7 +6,7 @@ class onefield4 {
     int getField() const;
 };
 
-extern int basicMethod(int argc, char **argv) {
+extern int basicMethod(int argc, const char **argv) {
     onefield4 of;
 
     of.setField(13);

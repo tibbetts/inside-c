@@ -659,6 +659,28 @@ Prism.languages.listing = {
     'number': /(\b|-|(?=\$))(0[hx][\da-f]*\.?[\da-f]+(p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(\.?e[+-]?\d+)?[dt]?)\b/i,
     'operator': /[\[\]\*+\-\/%<>=&|\$!]/gm,
 };
+Prism.languages.make = {
+    'comment': /#.*$/m,
+    'string': /("|'|`)(\\?.)*?\1/gm,
+    'label': {
+        pattern: /^[A-Za-z\._\?\$][\w\.\?\$@~#]*:/m,
+        alias: 'function'
+    },
+    'keyword': [
+            /\[?BITS (16|32|64)\]?/m,
+            /^\s*section\s*[a-zA-Z\.]+:?/im,
+            /(?:extern|global)[^;]*/im,
+            /(?:CPU|FLOAT|DEFAULT).*$/m
+    ],
+    'variable': [
+            /\$\([^)]+\)/g,
+            /^ *([^ \n\t][^:#= \t\n]*)[ \t]*[*:+]?[:?]?=/,
+            /^[\w+]=}/g,
+        
+    ],
+    'number': /(\b|-|(?=\$))(0[hx][\da-f]*\.?[\da-f]+(p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(\.?e[+-]?\d+)?[dt]?)\b/i,
+    'operator': /[\[\]\*+\-\/%<>=&|\$!]/gm,
+};
 Prism.languages.llvm = {
     'comment': /;.*$/m,
     'string': /("|'|`)(\\?.)*?\1/gm,
@@ -833,6 +855,10 @@ Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(f
 	var src = pre.getAttribute('data-src');
 	var extension = (src.match(/\.(\w+)$/) || [,''])[1];
 	var language = Extensions[extension] || extension;
+
+        if (src.match(/Makefile$/)) {
+            language = "make";
+        }
 	
 	var code = document.createElement('code');
 	code.className = 'language-' + language;

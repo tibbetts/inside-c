@@ -6,7 +6,7 @@ class onefieldBVT {
     virtual int getField() const;
 };
 
-int basicVtable(int argc, char **argv) {
+int basicVtable(int argc, const char **argv) {
     onefieldBVT of;
 
     of.setField(13);

@@ -26,5 +26,6 @@ int subclassVtable(int argc, const char** argv);
 int virtualMethod(int argc, const char** argv);
 int virtualSub(int argc, const char** argv);
 int vtableNull(int argc, const char** argv);
+int rtti(int argc, const char** argv);
 
 #endif

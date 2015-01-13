@@ -10,7 +10,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTI9onefield2 = constant { i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv117__class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([11 x i8]* @_ZTS9onefield2, i32 0, i32 0) }
 
 ; Function Attrs: noinline ssp uwtable
-define i32 @_Z16callByValueErroriPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z16callByValueErroriPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefield2, align 8
   call void @_ZN9onefield2C1Ev(%class.onefield2* %of) #5
   call void @_ZN9onefield28setFieldEi(%class.onefield2* %of, i32 13)

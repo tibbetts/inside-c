@@ -71,36 +71,86 @@
       use this for a little bit of introspection and for checking for
       safe casts.
     </p>
+    <p>
+    Run time type information allows us to do complicated things at
+    runtime, like dynamic_cast<>.
+    <p>
+    As we saw in our VTable examples, there is a pointer to a type
+    info structure in every vtable of every class. This allows us to
+    look at this object at runtime and find out details about the
+    class we have. All we have to know is the vtable for an object,
+    and we can, for example, find the name of its type.
     <h2>RTTI</h2>
-    First, a basic struct with no constructor:
+    Lets look at a quick example that use dynamic_cast&lt;T&gt;.
     <div role="tabpanel">
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#dynamic-cast-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#dynamic-cast-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#dynamic-cast-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#dynamic-cast-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#dynamic-cast-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
+        <div role="tab-panel" class="tab-pane active" id="dynamic-cast-cpp">
 
-          <pre data-src="../examples/basic-struct.cpp"></pre>
+          <pre data-src="../examples/dynamic-cast.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
+        <div role="tab-panel" class="tab-pane" id="dynamic-cast-clang-s">
 
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+          <pre data-src="../examples/dynamic-cast-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="dynamic-cast-ll">
+          <pre data-src="../examples/dynamic-cast.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="dynamic-cast-gcc-s">
+          <pre data-src="../examples/dynamic-cast-gcc.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="dynamic-cast-listing">
+          <pre data-src="../examples/dynamic-cast.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>__dynamic_cast</h2>
+    <p>It's clear that the <code>__dynamic_cast</code> function does
+    most of the work. Let's look at the implementation.<p>
+    <pre data-src="../examples/__dynamic_cast.cpp"></pre>
+
+    <h2>Using RTT directly</h2>
+    <p>We can also use RTTI ourselves to do some cute things, or at
+    least print stuff.</p>
+
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#rtti-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#rtti-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#rtti-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#rtti-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#rtti-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="rtti-cpp">
+
+          <pre data-src="../examples/rtti.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rtti-clang-s">
+
+          <pre data-src="../examples/rtti-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rtti-ll">
+          <pre data-src="../examples/rtti.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rtti-gcc-s">
+          <pre data-src="../examples/rtti-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rtti-listing">
+          <pre data-src="../examples/rtti.listing"></pre>
         </div>
       </div>
     </div>

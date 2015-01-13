@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__Z16callByValueErroriPPc
+	.globl	__Z16callByValueErroriPPKc
 	.align	4, 0x90
-__Z16callByValueErroriPPc:              ## @_Z16callByValueErroriPPc
+__Z16callByValueErroriPPKc:             ## @_Z16callByValueErroriPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

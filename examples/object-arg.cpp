@@ -18,7 +18,7 @@ void print(onefieldOA of) {
 }
 
 
-int objectArg(int argc, char **argv) {
+int objectArg(int argc, const char **argv) {
     onefieldOA of(13);
 
     print(of);

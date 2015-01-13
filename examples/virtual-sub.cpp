@@ -89,7 +89,7 @@ int virtualSub(int argc, const char **argv) {
     bb->setDataB(13);
     bb->getDataB();
     
-    printf("sb->getSum()=%d", sb->getSum());
+    printf("sb->getSum()=%d\n", sb->getSum());
 
     return 0;
 

@@ -14,7 +14,7 @@ class onefield3_subclass : public onefield3 {
     virtual void setField(int f);
 };
 
-int dynamicCast(int argc, char **argv) {
+int dynamicCast(int argc, const char **argv) {
     onefield3 *ofp = new onefield3_subclass;
 
     onefield3_subclass *ofsp = dynamic_cast<onefield3_subclass *>(ofp);

@@ -2,7 +2,7 @@ struct onefield {
     int field;
 };
 
-int basicStruct(int argc, char **argv) {
+int basicStruct(int argc, const char **argv) {
     onefield of;
 
     of.field = 13;

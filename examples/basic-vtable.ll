@@ -10,7 +10,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTI11onefieldBVT = constant { i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv117__class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([14 x i8]* @_ZTS11onefieldBVT, i32 0, i32 0) }
 
 ; Function Attrs: noinline ssp uwtable
-define i32 @_Z11basicVtableiPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z11basicVtableiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefieldBVT, align 8
   call void @_ZN11onefieldBVTC1Ev(%class.onefieldBVT* %of) #5
   call void @_ZN11onefieldBVT8setFieldEi(%class.onefieldBVT* %of, i32 13)

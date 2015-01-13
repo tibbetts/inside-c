@@ -13,7 +13,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str1 = private unnamed_addr constant [20 x i8] c"calling getDataA()\0A\00", align 1
 @.str2 = private unnamed_addr constant [20 x i8] c"calling getDataB()\0A\00", align 1
 @.str3 = private unnamed_addr constant [23 x i8] c"calling getBaseData()\0A\00", align 1
-@.str4 = private unnamed_addr constant [16 x i8] c"sb->getSum()=%d\00", align 1
+@.str4 = private unnamed_addr constant [17 x i8] c"sb->getSum()=%d\0A\00", align 1
 @_ZTV7subBoth = unnamed_addr constant [15 x i8*] [i8* inttoptr (i64 32 to i8*), i8* null, i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth8getDataAEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth6getSumEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth8getDataBEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth11getBaseDataEv to i8*), i8* inttoptr (i64 16 to i8*), i8* inttoptr (i64 -16 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZThn16_NK7subBoth8getDataBEv to i8*), i8* inttoptr (i64 -32 to i8*), i8* inttoptr (i64 -32 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZTv0_n24_NK7subBoth11getBaseDataEv to i8*)]
 @_ZTT7subBoth = unnamed_addr constant [7 x i8*] [i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth0_5baseA, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth0_5baseA, i64 0, i64 7) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth16_5baseB, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth16_5baseB, i64 0, i64 7) to i8*), i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 14) to i8*), i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 10) to i8*)]
 @_ZTC7subBoth0_5baseA = unnamed_addr constant [8 x i8*] [i8* inttoptr (i64 32 to i8*), i8* null, i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64 }* @_ZTI5baseA to i8*), i8* bitcast (i32 (%class.baseA*)* @_ZNK5baseA8getDataAEv to i8*), i8* null, i8* inttoptr (i64 -32 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64 }* @_ZTI5baseA to i8*), i8* bitcast (i32 (%class.bottomBase*)* @_ZNK10bottomBase11getBaseDataEv to i8*)]
@@ -162,7 +162,7 @@ define i32 @_Z10virtualSubiPPKc(i32 %argc, i8** nocapture readnone %argv) #3 {
   %20 = getelementptr inbounds i32 (%class.subBoth*)** %19, i64 1
   %21 = load i32 (%class.subBoth*)** %20, align 8
   %22 = tail call i32 %21(%class.subBoth* %2)
-  %23 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([16 x i8]* @.str4, i64 0, i64 0), i32 %22)
+  %23 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([17 x i8]* @.str4, i64 0, i64 0), i32 %22)
   ret i32 0
 }
 

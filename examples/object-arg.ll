@@ -26,7 +26,7 @@ define i32 @_ZNK10onefieldOA8getFieldEv(%class.onefieldOA* nocapture readonly %t
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @_Z9objectArgiPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z9objectArgiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefieldOA, align 4
   %1 = alloca %class.onefieldOA, align 4
   call void @_ZN10onefieldOAC1Ei(%class.onefieldOA* %of, i32 13)
