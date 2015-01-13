@@ -25,15 +25,15 @@ define i32 @_ZNK8onefield8getFieldEv(%class.onefield* nocapture readonly %this) 
   ret i32 %2
 }
 
-; Function Attrs: noinline ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #3 {
+; Function Attrs: noinline nounwind ssp uwtable
+define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefield, align 4
   %1 = alloca %class.onefield, align 4
   call void @_ZN8onefieldC1Ei(%class.onefield* %of, i32 13)
   call void @_ZN8onefieldC1ERKS_(%class.onefield* %1, %class.onefield* %of)
   call void @_Z5print8onefield(%class.onefield* %1)
-  call void @_ZN8onefieldD1Ev(%class.onefield* %1)
-  call void @_ZN8onefieldD1Ev(%class.onefield* %of)
+  call void @_ZN8onefieldD1Ev(%class.onefield* %1) #4
+  call void @_ZN8onefieldD1Ev(%class.onefield* %of) #4
   ret i32 0
 }
 
@@ -53,20 +53,9 @@ declare i32 @__gxx_personality_v0(...)
 
 ; Function Attrs: noinline nounwind ssp uwtable
 define void @_ZN8onefieldD1Ev(%class.onefield* nocapture readonly %this) unnamed_addr #0 align 2 {
-  tail call void @_ZN8onefieldD2Ev(%class.onefield* %this)
+  tail call void @_ZN8onefieldD2Ev(%class.onefield* %this) #4
   ret void
 }
-
-; Function Attrs: noinline noreturn nounwind
-define linkonce_odr hidden void @__clang_call_terminate(i8*) #4 {
-  %2 = tail call i8* @__cxa_begin_catch(i8* %0) #5
-  tail call void @_ZSt9terminatev() #6
-  unreachable
-}
-
-declare i8* @__cxa_begin_catch(i8*)
-
-declare void @_ZSt9terminatev()
 
 ; Function Attrs: noinline nounwind ssp uwtable
 define void @_ZN8onefield8setFieldEi(%class.onefield* nocapture %this, i32 %f) #0 align 2 {
@@ -100,13 +89,23 @@ define void @_ZN8onefieldD2Ev(%class.onefield* nocapture readonly %this) unnamed
   ret void
 }
 
+; Function Attrs: noinline noreturn nounwind
+define linkonce_odr hidden void @__clang_call_terminate(i8*) #3 {
+  %2 = tail call i8* @__cxa_begin_catch(i8* %0) #4
+  tail call void @_ZSt9terminatev() #5
+  unreachable
+}
+
+declare i8* @__cxa_begin_catch(i8*)
+
+declare void @_ZSt9terminatev()
+
 attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #3 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline noreturn nounwind }
-attributes #5 = { nounwind }
-attributes #6 = { noreturn nounwind }
+attributes #3 = { noinline noreturn nounwind }
+attributes #4 = { nounwind }
+attributes #5 = { noreturn nounwind }
 
 !llvm.ident = !{!0}
 

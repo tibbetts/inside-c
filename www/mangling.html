@@ -92,18 +92,18 @@
     </ol>
 
     <h2>How types are represented</h2>
-    Within the mangling there are a lot of types. Some have a short name, others get their full name.
-
-    TODO: Fill in.
-
+    <p>
+      Within the mangling there are a lot of types. Some have a short
+      name, others get their full name.
+    </p>
     <table class="table">
       <tr><th>Type</th><th>Mangled Representation</th></tr>
       <tr><td>void</td><td>v</td></tr>
       <tr><td>int</td><td>i</td></tr>
       <tr><td>std::string</td><td>Ss</td></tr>
       <tr><td>std::ostream</td><td>So</td></tr>
-      <tr><td>MyClass</td><td>TODO</td></tr>
-      <tr><td>std::vector<MyClass></td><td>TODO</td></tr>
+      <tr><td>int Something::Inside::Deeper::deeperMethod(void)</td><td>_ZN9Something6Inside6Deeper10deepMethodEv</td></tr>
+      <tr><td>int Something::Inside::Deeper::<br>deeperMethod(std::vector<std::string>)</td><td>__ZN9Something6Inside6Deeper10deepMethod<br>ENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE</td></tr>
     </table>
 
     <h2>Name Mangling Example</h2>

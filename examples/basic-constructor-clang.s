@@ -162,19 +162,6 @@ Ltmp30:
 	retq
 	.cfi_endproc
 
-	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.private_extern	___clang_call_terminate
-	.globl	___clang_call_terminate
-	.weak_def_can_be_hidden	___clang_call_terminate
-	.align	4, 0x90
-___clang_call_terminate:                ## @__clang_call_terminate
-## BB#0:
-	pushq	%rbp
-	movq	%rsp, %rbp
-	callq	___cxa_begin_catch
-	callq	__ZSt9terminatev
-
-	.section	__TEXT,__text,regular,pure_instructions
 	.globl	__ZN8onefieldC2Ei
 	.align	4, 0x90
 __ZN8onefieldC2Ei:                      ## @_ZN8onefieldC2Ei
@@ -214,6 +201,18 @@ Ltmp40:
 	popq	%rbp
 	jmp	_printf                 ## TAILCALL
 	.cfi_endproc
+
+	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
+	.private_extern	___clang_call_terminate
+	.globl	___clang_call_terminate
+	.weak_def_can_be_hidden	___clang_call_terminate
+	.align	4, 0x90
+___clang_call_terminate:                ## @__clang_call_terminate
+## BB#0:
+	pushq	%rbp
+	movq	%rsp, %rbp
+	callq	___cxa_begin_catch
+	callq	__ZSt9terminatev
 
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str

@@ -21,7 +21,7 @@ define void @_ZN8twofieldC1Ei(%class.twofield* nocapture %this, i32 %f) unnamed_
 
 ; Function Attrs: noinline nounwind ssp uwtable
 define void @_ZN8twofieldD1Ev(%class.twofield* nocapture readonly %this) unnamed_addr #0 align 2 {
-  tail call void @_ZN8twofieldD2Ev(%class.twofield* %this)
+  tail call void @_ZN8twofieldD2Ev(%class.twofield* %this) #4
   ret void
 }
 
@@ -30,7 +30,7 @@ define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
   %1 = alloca %class.twofield, align 4
   call void @_Z7frominti(%class.twofield* sret %1, i32 13)
   %2 = call i32 @_ZNK8twofield8getFieldEv(%class.twofield* %1)
-  call void @_ZN8twofieldD1Ev(%class.twofield* %1)
+  call void @_ZN8twofieldD1Ev(%class.twofield* %1) #4
   ret i32 %2
 }
 
@@ -40,6 +40,8 @@ define i32 @_ZNK8twofield8getFieldEv(%class.twofield* nocapture readonly %this) 
   %2 = load i32* %1, align 4, !tbaa !1
   ret i32 %2
 }
+
+declare i32 @__gxx_personality_v0(...)
 
 ; Function Attrs: noinline nounwind ssp uwtable
 define void @_ZN8twofield8setFieldEi(%class.twofield* nocapture %this, i32 %f) #0 align 2 {
@@ -82,9 +84,23 @@ define void @_ZN8twofieldD2Ev(%class.twofield* nocapture readonly %this) unnamed
   ret void
 }
 
+; Function Attrs: noinline noreturn nounwind
+define linkonce_odr hidden void @__clang_call_terminate(i8*) #3 {
+  %2 = tail call i8* @__cxa_begin_catch(i8* %0) #4
+  tail call void @_ZSt9terminatev() #5
+  unreachable
+}
+
+declare i8* @__cxa_begin_catch(i8*)
+
+declare void @_ZSt9terminatev()
+
 attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { noinline noreturn nounwind }
+attributes #4 = { nounwind }
+attributes #5 = { noreturn nounwind }
 
 !llvm.ident = !{!0}
 

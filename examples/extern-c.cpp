@@ -1,7 +1,7 @@
 #include <iostream>
 
 int regularVar;
-extern const int regular
+extern const int regularConst = 7;
 const int implicitlyStaticConst = 15;
 const std::string implicitlyStaticConstWithInit("some string");
 std::string implicitlyStaticWithInit("some other string");

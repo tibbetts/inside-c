@@ -14,7 +14,7 @@ LLVM=$(addsuffix .ll, $(NAMES))
 ASSEMBLIES=$(addsuffix -clang.s, $(NAMES))
 TARGETS=$(LLVM) $(ASSEMBLIES)
 
-CFLAGS=-fno-inline -O1
+CFLAGS=-fno-inline -O1 -std=c++11
 # I used -fno-stackprotect in Xcode but not here for some reason.
 endif
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -19,6 +20,10 @@ namespace Something {
       }
 
       int deepMethod(std::string s) {
+        return deepMember;
+      }
+
+      int deepMethod(std::vector<std::string> v) {
         return deepMember;
       }
     };
@@ -42,6 +47,8 @@ void mangling() {
   Something::Inside::Deeper d;
   d.deepMethod(23);
   d.deepMethod("foo");
+  std::vector<std::string> vs = {"x", "y", "z"};
+  d.deepMethod(vs);
   int v = d.deepMethod();
 
   Outside o(37);
