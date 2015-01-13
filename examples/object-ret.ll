@@ -26,7 +26,7 @@ define void @_ZN8twofieldD1Ev(%class.twofield* nocapture readonly %this) unnamed
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z9objectRetiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %1 = alloca %class.twofield, align 4
   call void @_Z7frominti(%class.twofield* sret %1, i32 13)
   %2 = call i32 @_ZNK8twofield8getFieldEv(%class.twofield* %1)

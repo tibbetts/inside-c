@@ -1,22 +1,22 @@
 #include "stdio.h"
 
-class onefield {
+class onefield1 {
   private:
     int field;
   public:
-    explicit onefield(int f);
-    ~onefield();
+    explicit onefield1(int f);
+    ~onefield1();
 
     void setField(int f);
     int getField() const;
 };
 
-int main(int argc, char **argv) {
-    onefield of(13);
+int basicConstructor(int argc, const char **argv) {
+    onefield1 of(13);
 
     of.setField(12);
 
-    onefield *ofp = new onefield(23);
+    onefield1 *ofp = new onefield1(23);
 
     ofp->setField(27);
 
@@ -26,19 +26,19 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefield1::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefield1::getField() const {
     return this->field;
 }
 
-onefield::onefield(int f) {
+onefield1::onefield1(int f) {
     field = f;
     printf("initial value of field was %d.\n", field);
 }
 
-onefield::~onefield() {
+onefield1::~onefield1() {
     printf("Last value of field was %d.\n", field);
 }
 

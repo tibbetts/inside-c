@@ -19,7 +19,7 @@ define void @_Z11use_pointerPi(i32* nocapture %arg) #0 {
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z9referenceiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %foo = alloca i32, align 4
   store i32 12, i32* %foo, align 4, !tbaa !1
   call void @_Z13use_referenceRi(i32* %foo)

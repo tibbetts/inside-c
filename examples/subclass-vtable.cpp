@@ -1,4 +1,4 @@
-class onefield {
+class onefieldSV {
   private:
     int field;
   public:
@@ -6,7 +6,7 @@ class onefield {
     virtual int getField() const;
 };
 
-class onefield_subclass : public onefield {
+class onefieldSV_subclass : public onefieldSV {
   private:
     int otherfield;
   public:
@@ -14,14 +14,14 @@ class onefield_subclass : public onefield {
     virtual void setField(int f);
 };
 
-int main(int argc, char **argv) {
-    onefield of;
-    onefield_subclass ofs;
+int subclassVtable(int argc, const char **argv) {
+    onefieldSV of;
+    onefieldSV_subclass ofs;
 
     of.setField(13);
     ofs.setField(17);
 
-    onefield *ofp = new onefield_subclass;
+    onefieldSV *ofp = new onefieldSV_subclass;
 
     ofp->setField(27);
 
@@ -33,14 +33,14 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefieldSV::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefieldSV::getField() const {
     return this->field;
 }
 
-void onefield_subclass::setField(int f) {
-    onefield::setField(f);
+void onefieldSV_subclass::setField(int f) {
+    onefieldSV::setField(f);
     otherfield = f;
 }

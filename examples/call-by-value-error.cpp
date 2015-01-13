@@ -1,4 +1,4 @@
-class onefield {
+class onefield2 {
   private:
     int field;
   public:
@@ -6,12 +6,12 @@ class onefield {
     virtual int getField() const;
 };
 
-int main(int argc, char **argv) {
-    onefield of;
+int callByValueError(int argc, char **argv) {
+    onefield2 of;
 
     of.setField(13);
 
-    onefield *ofp = new onefield;
+    onefield2 *ofp = new onefield2;
 
     ofp->setField(27);
 
@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefield2::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefield2::getField() const {
     return this->field;
 }

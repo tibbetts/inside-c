@@ -5,7 +5,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 %struct.onefield_struct = type { i32 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z6objectiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %os = alloca %struct.onefield_struct, align 4
   call void @_ZN15onefield_structC1Ei(%struct.onefield_struct* %os, i32 13)
   ret i32 0

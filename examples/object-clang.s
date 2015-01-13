@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	__Z6objectiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z6objectiPPKc:                        ## @_Z6objectiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

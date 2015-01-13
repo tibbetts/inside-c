@@ -34,6 +34,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str3 = private unnamed_addr constant [14 x i8] c"regularMethod\00", align 1
 @externVar = global i32 0, align 4
 @.str4 = private unnamed_addr constant [13 x i8] c"externMethod\00", align 1
+@.str5 = private unnamed_addr constant [3 x i8] c"x=\00", align 1
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 @llvm.global_ctors = appending global [1 x { i32, void ()* }] [{ i32, void ()* } { i32 65535, void ()* @_GLOBAL__I_a }]
 
@@ -147,13 +148,52 @@ _ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_.exit: ; pre
 }
 
 ; Function Attrs: noinline ssp uwtable
-define void @_Z7externCv() #3 {
+define i32 @_Z7externCiPPKc(i32 %argc, i8** nocapture readnone %argv) #3 {
+  %1 = alloca %"class.std::__1::locale", align 8
   store i32 12, i32* @regularVar, align 4, !tbaa !4
   store i32 13, i32* @externVar, align 4, !tbaa !4
-  tail call void @_Z13regularMethodv()
-  tail call void @externMethod()
-  ret void
+  call void @_Z13regularMethodv()
+  call void @externMethod()
+  %2 = call %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* @_ZNSt3__14coutE, i8* getelementptr inbounds ([3 x i8]* @.str5, i64 0, i64 0))
+  %3 = call %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* %2, i32 59)
+  %4 = bitcast %"class.std::__1::basic_ostream"* %3 to i8**
+  %5 = load i8** %4, align 8, !tbaa !1
+  %6 = getelementptr i8* %5, i64 -24
+  %7 = bitcast i8* %6 to i64*
+  %8 = load i64* %7, align 8
+  %9 = bitcast %"class.std::__1::basic_ostream"* %3 to i8*
+  %10 = getelementptr inbounds i8* %9, i64 %8
+  %11 = bitcast %"class.std::__1::locale"* %1 to i8*
+  call void @llvm.lifetime.start(i64 8, i8* %11)
+  %12 = bitcast i8* %10 to %"class.std::__1::ios_base"*
+  call void @_ZNKSt3__18ios_base6getlocEv(%"class.std::__1::locale"* sret %1, %"class.std::__1::ios_base"* %12)
+  %13 = invoke %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"* %1, %"class.std::__1::locale::id"* @_ZNSt3__15ctypeIcE2idE)
+          to label %14 unwind label %21
+
+; <label>:14                                      ; preds = %0
+  %15 = bitcast %"class.std::__1::locale::facet"* %13 to %"class.std::__1::ctype"*
+  %16 = bitcast %"class.std::__1::locale::facet"* %13 to i8 (%"class.std::__1::ctype"*, i8)***
+  %17 = load i8 (%"class.std::__1::ctype"*, i8)*** %16, align 8, !tbaa !1
+  %18 = getelementptr inbounds i8 (%"class.std::__1::ctype"*, i8)** %17, i64 7
+  %19 = load i8 (%"class.std::__1::ctype"*, i8)** %18, align 8
+  %20 = invoke signext i8 %19(%"class.std::__1::ctype"* %15, i8 signext 10)
+          to label %_ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_.exit unwind label %21
+
+; <label>:21                                      ; preds = %14, %0
+  %22 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
+          cleanup
+  call void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"* %1) #2
+  resume { i8*, i32 } %22
+
+_ZNSt3__14endlIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_.exit: ; preds = %14
+  call void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"* %1) #2
+  call void @llvm.lifetime.end(i64 8, i8* %11)
+  %23 = call %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc(%"class.std::__1::basic_ostream"* %3, i8 signext %20)
+  %24 = call %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE5flushEv(%"class.std::__1::basic_ostream"* %3)
+  ret i32 0
 }
+
+declare %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"*, i32) #4
 
 declare %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE3putEc(%"class.std::__1::basic_ostream"*, i8 signext) #4
 

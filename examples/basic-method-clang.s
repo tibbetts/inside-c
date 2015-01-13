@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	__Z11basicMethodiPPc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z11basicMethodiPPc:                   ## @_Z11basicMethodiPPc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -22,17 +22,17 @@ Ltmp7:
 	leaq	-24(%rbp), %r14
 	movl	$13, %esi
 	movq	%r14, %rdi
-	callq	__ZN8onefield8setFieldEi
+	callq	__ZN9onefield48setFieldEi
 	movl	$4, %edi
 	callq	__Znwm
 	movq	%rax, %rbx
 	movl	$27, %esi
 	movq	%rbx, %rdi
-	callq	__ZN8onefield8setFieldEi
+	callq	__ZN9onefield48setFieldEi
 	movq	%rbx, %rdi
 	callq	__ZdlPv
 	movq	%r14, %rdi
-	callq	__ZNK8onefield8getFieldEv
+	callq	__ZNK9onefield48getFieldEv
 	addq	$16, %rsp
 	popq	%rbx
 	popq	%r14
@@ -40,9 +40,9 @@ Ltmp7:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefield8setFieldEi
+	.globl	__ZN9onefield48setFieldEi
 	.align	4, 0x90
-__ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
+__ZN9onefield48setFieldEi:              ## @_ZN9onefield48setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -58,9 +58,9 @@ Ltmp12:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK8onefield8getFieldEv
+	.globl	__ZNK9onefield48getFieldEv
 	.align	4, 0x90
-__ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
+__ZNK9onefield48getFieldEv:             ## @_ZNK9onefield48getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

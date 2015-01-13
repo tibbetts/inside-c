@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	__Z16basicConstructoriPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z16basicConstructoriPPKc:             ## @_Z16basicConstructoriPPKc
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin0:
@@ -25,10 +25,10 @@ Ltmp10:
 	leaq	-24(%rbp), %rbx
 	movl	$13, %esi
 	movq	%rbx, %rdi
-	callq	__ZN8onefieldC1Ei
+	callq	__ZN9onefield1C1Ei
 	movl	$12, %esi
 	movq	%rbx, %rdi
-	callq	__ZN8onefield8setFieldEi
+	callq	__ZN9onefield18setFieldEi
 Ltmp0:
 	movl	$4, %edi
 	callq	__Znwm
@@ -37,20 +37,20 @@ Ltmp1:
 ## BB#1:
 	movl	$23, %esi
 	movq	%rbx, %rdi
-	callq	__ZN8onefieldC1Ei
+	callq	__ZN9onefield1C1Ei
 	movl	$27, %esi
 	movq	%rbx, %rdi
-	callq	__ZN8onefield8setFieldEi
+	callq	__ZN9onefield18setFieldEi
 	movq	%rbx, %rdi
-	callq	__ZN8onefieldD1Ev
+	callq	__ZN9onefield1D1Ev
 	movq	%rbx, %rdi
 	callq	__ZdlPv
 	leaq	-24(%rbp), %r14
 	movq	%r14, %rdi
-	callq	__ZNK8onefield8getFieldEv
+	callq	__ZNK9onefield18getFieldEv
 	movl	%eax, %ebx
 	movq	%r14, %rdi
-	callq	__ZN8onefieldD1Ev
+	callq	__ZN9onefield1D1Ev
 	movl	%ebx, %eax
 	addq	$16, %rsp
 	popq	%rbx
@@ -62,7 +62,7 @@ Ltmp2:
 	movq	%rax, %rbx
 	leaq	-24(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZN8onefieldD1Ev
+	callq	__ZN9onefield1D1Ev
 	movq	%rbx, %rdi
 	callq	__Unwind_Resume
 	.cfi_endproc
@@ -92,9 +92,9 @@ Lset4 = Leh_func_end0-Ltmp1             ##   Call between Ltmp1 and Leh_func_end
 	.align	2
 
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__ZN8onefieldC1Ei
+	.globl	__ZN9onefield1C1Ei
 	.align	4, 0x90
-__ZN8onefieldC1Ei:                      ## @_ZN8onefieldC1Ei
+__ZN9onefield1C1Ei:                     ## @_ZN9onefield1C1Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -106,12 +106,12 @@ Ltmp14:
 Ltmp15:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN8onefieldC2Ei       ## TAILCALL
+	jmp	__ZN9onefield1C2Ei      ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefield8setFieldEi
+	.globl	__ZN9onefield18setFieldEi
 	.align	4, 0x90
-__ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
+__ZN9onefield18setFieldEi:              ## @_ZN9onefield18setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -127,9 +127,9 @@ Ltmp20:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldD1Ev
+	.globl	__ZN9onefield1D1Ev
 	.align	4, 0x90
-__ZN8onefieldD1Ev:                      ## @_ZN8onefieldD1Ev
+__ZN9onefield1D1Ev:                     ## @_ZN9onefield1D1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -141,12 +141,12 @@ Ltmp24:
 Ltmp25:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN8onefieldD2Ev       ## TAILCALL
+	jmp	__ZN9onefield1D2Ev      ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNK8onefield8getFieldEv
+	.globl	__ZNK9onefield18getFieldEv
 	.align	4, 0x90
-__ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
+__ZNK9onefield18getFieldEv:             ## @_ZNK9onefield18getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -162,9 +162,9 @@ Ltmp30:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC2Ei
+	.globl	__ZN9onefield1C2Ei
 	.align	4, 0x90
-__ZN8onefieldC2Ei:                      ## @_ZN8onefieldC2Ei
+__ZN9onefield1C2Ei:                     ## @_ZN9onefield1C2Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -182,9 +182,9 @@ Ltmp35:
 	jmp	_printf                 ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefieldD2Ev
+	.globl	__ZN9onefield1D2Ev
 	.align	4, 0x90
-__ZN8onefieldD2Ev:                      ## @_ZN8onefieldD2Ev
+__ZN9onefield1D2Ev:                     ## @_ZN9onefield1D2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

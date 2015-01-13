@@ -1,48 +1,49 @@
 #include "stdio.h"
 
-class onefield {
+class onefieldOA {
   private:
     int field;
   public:
-    explicit onefield(int f);
+    explicit onefieldOA(int f);
     // Copy constructor.
-    onefield(const onefield &of);
-    ~onefield();
+    onefieldOA(const onefieldOA &of);
+    ~onefieldOA();
 
     void setField(int f);
     int getField() const;
 };
 
-void print(onefield of) {
+void print(onefieldOA of) {
     printf("The value of the field is %d.\n", of.getField());
 }
 
 
-int main(int argc, char **argv) {
-    onefield of(13);
+int objectArg(int argc, char **argv) {
+    onefieldOA of(13);
 
     print(of);
+    return 0;
 }
 
 
-void onefield::setField(int f) {
+void onefieldOA::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefieldOA::getField() const {
     return this->field;
 }
 
-onefield::onefield(int f) {
+onefieldOA::onefieldOA(int f) {
     field = f;
     printf("initial value of field was %d.\n", field);
 }
 
-onefield::onefield(const onefield &of) {
+onefieldOA::onefieldOA(const onefieldOA &of) {
     field = of.field;
 }
 
 
-onefield::~onefield() {
+onefieldOA::~onefieldOA() {
     printf("Last value of field was %d.\n", field);
 }
 

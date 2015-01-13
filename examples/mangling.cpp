@@ -30,6 +30,8 @@ namespace Something {
   };    
 };
 
+int Something::Inside::anotherStatic = 137;
+
 struct Outside {
   const static int someStatic = 12;
   int member;
@@ -40,7 +42,7 @@ struct Outside {
 
 };
 
-void mangling() {
+int mangling(int argc, const char** argv) {
   Something::Inside i;
   i.anotherStatic = 11;
 
@@ -52,5 +54,7 @@ void mangling() {
   int v = d.deepMethod();
 
   Outside o(37);
-  cout << Outside::someStatic << " and " << o.member;
+  cout << Outside::someStatic << " and " << o.member << " and " << v;
+
+  return 0;
 }

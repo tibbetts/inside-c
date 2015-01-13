@@ -1,6 +1,7 @@
+#include <stdio.h>
 
-int func(int *array) {
-  return array[3];
+int func(int *array, int *other) {
+  return array[7] + other[5];
 }
 
 int array (int argc, char **argv) {
@@ -9,7 +10,9 @@ int array (int argc, char **argv) {
   foo[7]=137;
   bar[2]=3;
 
-  int x = func(foo);
+  int x = func(foo, bar);
+    
+  printf("x=%d", x);
 
   return 0;
 }

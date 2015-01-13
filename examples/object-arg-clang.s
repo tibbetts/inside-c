@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__Z5print8onefield
+	.globl	__Z5print10onefieldOA
 	.align	4, 0x90
-__Z5print8onefield:                     ## @_Z5print8onefield
+__Z5print10onefieldOA:                  ## @_Z5print10onefieldOA
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -12,7 +12,7 @@ Ltmp3:
 	movq	%rsp, %rbp
 Ltmp4:
 	.cfi_def_cfa_register %rbp
-	callq	__ZNK8onefield8getFieldEv
+	callq	__ZNK10onefieldOA8getFieldEv
 	movl	%eax, %ecx
 	leaq	L_.str(%rip), %rdi
 	xorl	%eax, %eax
@@ -21,9 +21,9 @@ Ltmp4:
 	jmp	_printf                 ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNK8onefield8getFieldEv
+	.globl	__ZNK10onefieldOA8getFieldEv
 	.align	4, 0x90
-__ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
+__ZNK10onefieldOA8getFieldEv:           ## @_ZNK10onefieldOA8getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -39,9 +39,9 @@ Ltmp9:
 	retq
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z9objectArgiPPc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z9objectArgiPPc:                      ## @_Z9objectArgiPPc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -62,17 +62,17 @@ Ltmp17:
 	leaq	-24(%rbp), %r14
 	movl	$13, %esi
 	movq	%r14, %rdi
-	callq	__ZN8onefieldC1Ei
+	callq	__ZN10onefieldOAC1Ei
 	leaq	-32(%rbp), %rbx
 	movq	%rbx, %rdi
 	movq	%r14, %rsi
-	callq	__ZN8onefieldC1ERKS_
+	callq	__ZN10onefieldOAC1ERKS_
 	movq	%rbx, %rdi
-	callq	__Z5print8onefield
+	callq	__Z5print10onefieldOA
 	movq	%rbx, %rdi
-	callq	__ZN8onefieldD1Ev
+	callq	__ZN10onefieldOAD1Ev
 	movq	%r14, %rdi
-	callq	__ZN8onefieldD1Ev
+	callq	__ZN10onefieldOAD1Ev
 	xorl	%eax, %eax
 	addq	$16, %rsp
 	popq	%rbx
@@ -81,9 +81,9 @@ Ltmp17:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC1Ei
+	.globl	__ZN10onefieldOAC1Ei
 	.align	4, 0x90
-__ZN8onefieldC1Ei:                      ## @_ZN8onefieldC1Ei
+__ZN10onefieldOAC1Ei:                   ## @_ZN10onefieldOAC1Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -95,12 +95,12 @@ Ltmp21:
 Ltmp22:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN8onefieldC2Ei       ## TAILCALL
+	jmp	__ZN10onefieldOAC2Ei    ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC1ERKS_
+	.globl	__ZN10onefieldOAC1ERKS_
 	.align	4, 0x90
-__ZN8onefieldC1ERKS_:                   ## @_ZN8onefieldC1ERKS_
+__ZN10onefieldOAC1ERKS_:                ## @_ZN10onefieldOAC1ERKS_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -112,12 +112,12 @@ Ltmp26:
 Ltmp27:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN8onefieldC2ERKS_    ## TAILCALL
+	jmp	__ZN10onefieldOAC2ERKS_ ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefieldD1Ev
+	.globl	__ZN10onefieldOAD1Ev
 	.align	4, 0x90
-__ZN8onefieldD1Ev:                      ## @_ZN8onefieldD1Ev
+__ZN10onefieldOAD1Ev:                   ## @_ZN10onefieldOAD1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -129,12 +129,12 @@ Ltmp31:
 Ltmp32:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN8onefieldD2Ev       ## TAILCALL
+	jmp	__ZN10onefieldOAD2Ev    ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefield8setFieldEi
+	.globl	__ZN10onefieldOA8setFieldEi
 	.align	4, 0x90
-__ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
+__ZN10onefieldOA8setFieldEi:            ## @_ZN10onefieldOA8setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -150,9 +150,9 @@ Ltmp37:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC2Ei
+	.globl	__ZN10onefieldOAC2Ei
 	.align	4, 0x90
-__ZN8onefieldC2Ei:                      ## @_ZN8onefieldC2Ei
+__ZN10onefieldOAC2Ei:                   ## @_ZN10onefieldOAC2Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -170,9 +170,9 @@ Ltmp42:
 	jmp	_printf                 ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC2ERKS_
+	.globl	__ZN10onefieldOAC2ERKS_
 	.align	4, 0x90
-__ZN8onefieldC2ERKS_:                   ## @_ZN8onefieldC2ERKS_
+__ZN10onefieldOAC2ERKS_:                ## @_ZN10onefieldOAC2ERKS_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -189,9 +189,9 @@ Ltmp47:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldD2Ev
+	.globl	__ZN10onefieldOAD2Ev
 	.align	4, 0x90
-__ZN8onefieldD2Ev:                      ## @_ZN8onefieldD2Ev
+__ZN10onefieldOAD2Ev:                   ## @_ZN10onefieldOAD2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

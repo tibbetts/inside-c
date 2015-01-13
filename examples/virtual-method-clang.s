@@ -28,9 +28,9 @@ Ltmp6:
 	jmpq	*8(%rax)  # TAILCALL
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z13virtualMethodiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z13virtualMethodiPPKc:                ## @_Z13virtualMethodiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

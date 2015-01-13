@@ -31,6 +31,11 @@ class subBoth : public baseA, public baseB {
     virtual int getBaseData() const;
 };
 
+int bottomBase::getBaseData() const {
+    printf("Calling bottomBase::getBaseData()\n");
+    return 37;
+}
+
 void baseA::setDataA(int a) {
     dataA = a;
 }
@@ -68,11 +73,11 @@ int subBoth::getBaseData() const {
 }
 
 
-int main(int argc, char **argv) {
+int virtualSub(int argc, const char **argv) {
 
     subBoth *sb = new subBoth;
 
-    int i = sb->getSum();
+    sb->getSum();
 
     baseA *ba = sb;
 
@@ -83,6 +88,8 @@ int main(int argc, char **argv) {
 
     bb->setDataB(13);
     bb->getDataB();
+    
+    printf("sb->getSum()=%d", sb->getSum());
 
     return 0;
 

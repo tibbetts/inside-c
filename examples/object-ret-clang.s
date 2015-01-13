@@ -60,9 +60,9 @@ Ltmp16:
 	jmp	__ZN8twofieldD2Ev       ## TAILCALL
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z9objectRetiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z9objectRetiPPKc:                     ## @_Z9objectRetiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

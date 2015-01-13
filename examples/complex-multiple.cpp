@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-class baseA {
+class baseA2 {
     int dataA;
   public:
     void setDataA(int a);
     virtual int getDataA() const;
 };
 
-class baseB {
+class baseB2 {
     int dataB;
   public:
     void setDataB(int b);
     virtual int getDataB() const;
 };
 
-class subBoth : public baseA, public baseB {
+class subBoth2 : public baseA2, public baseB2 {
   public:
     virtual int getSum() const;
     // Overrise get data methods for fun.
@@ -22,54 +22,56 @@ class subBoth : public baseA, public baseB {
     virtual int getDataB() const;
 };
 
-void baseA::setDataA(int a) {
+void baseA2::setDataA(int a) {
     dataA = a;
 }
-int baseA::getDataA() const {
+int baseA2::getDataA() const {
     return dataA;
 }
 
-void baseB::setDataB(int b) {
+void baseB2::setDataB(int b) {
     dataB = b;
 }
-int baseB::getDataB() const {
+int baseB2::getDataB() const {
     return dataB;
 }
 
-int subBoth::getSum() const {
+int subBoth2::getSum() const {
     int total = 0;
     total += getDataA();
     total += getDataB();
     return total;
 }
 
-int subBoth::getDataA() const {
+int subBoth2::getDataA() const {
     printf("calling getDataA()\n");
-    return baseA::getDataA();
+    return baseA2::getDataA();
 }
 
-int subBoth::getDataB() const {
+int subBoth2::getDataB() const {
     printf("calling getDataB()\n");
-    return baseB::getDataB();
+    return baseB2::getDataB();
 }
 
 
-int main(int argc, char **argv) {
+int complexMultiple(int argc, const char **argv) {
 
-    subBoth *sb = new subBoth;
+    subBoth2 *sb = new subBoth2;
 
-    int i = sb->getSum();
+    sb->getSum();
 
-    baseA *ba = sb;
+    baseA2 *ba = sb;
 
     ba->setDataA(12);
     ba->getDataA();
 
-    baseB *bb = sb;
+    baseB2 *bb = sb;
 
     bb->setDataB(13);
     bb->getDataB();
 
+    printf("sb->getSum()=%d", sb->getSum());
+           
     return 0;
 
 }

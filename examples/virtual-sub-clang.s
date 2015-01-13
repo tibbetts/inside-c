@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__ZN5baseA8setDataAEi
+	.globl	__ZNK10bottomBase11getBaseDataEv
 	.align	4, 0x90
-__ZN5baseA8setDataAEi:                  ## @_ZN5baseA8setDataAEi
+__ZNK10bottomBase11getBaseDataEv:       ## @_ZNK10bottomBase11getBaseDataEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -11,6 +11,26 @@ Ltmp3:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 Ltmp4:
+	.cfi_def_cfa_register %rbp
+	leaq	L_str(%rip), %rdi
+	callq	_puts
+	movl	$37, %eax
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.globl	__ZN5baseA8setDataAEi
+	.align	4, 0x90
+__ZN5baseA8setDataAEi:                  ## @_ZN5baseA8setDataAEi
+	.cfi_startproc
+## BB#0:
+	pushq	%rbp
+Ltmp7:
+	.cfi_def_cfa_offset 16
+Ltmp8:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Ltmp9:
 	.cfi_def_cfa_register %rbp
 	movl	%esi, 8(%rdi)
 	popq	%rbp
@@ -23,12 +43,12 @@ __ZNK5baseA8getDataAEv:                 ## @_ZNK5baseA8getDataAEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp7:
+Ltmp12:
 	.cfi_def_cfa_offset 16
-Ltmp8:
+Ltmp13:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp9:
+Ltmp14:
 	.cfi_def_cfa_register %rbp
 	movl	8(%rdi), %eax
 	popq	%rbp
@@ -41,12 +61,12 @@ __ZN5baseB8setDataBEi:                  ## @_ZN5baseB8setDataBEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp12:
+Ltmp17:
 	.cfi_def_cfa_offset 16
-Ltmp13:
+Ltmp18:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp14:
+Ltmp19:
 	.cfi_def_cfa_register %rbp
 	movl	%esi, 8(%rdi)
 	popq	%rbp
@@ -59,12 +79,12 @@ __ZNK5baseB8getDataBEv:                 ## @_ZNK5baseB8getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp17:
+Ltmp22:
 	.cfi_def_cfa_offset 16
-Ltmp18:
+Ltmp23:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp19:
+Ltmp24:
 	.cfi_def_cfa_register %rbp
 	movl	8(%rdi), %eax
 	popq	%rbp
@@ -77,18 +97,18 @@ __ZNK7subBoth6getSumEv:                 ## @_ZNK7subBoth6getSumEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp23:
+Ltmp28:
 	.cfi_def_cfa_offset 16
-Ltmp24:
+Ltmp29:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp25:
+Ltmp30:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp26:
+Ltmp31:
 	.cfi_offset %rbx, -32
-Ltmp27:
+Ltmp32:
 	.cfi_offset %r14, -24
 	movq	%rdi, %rbx
 	movq	(%rbx), %rax
@@ -111,19 +131,19 @@ __ZNK7subBoth8getDataAEv:               ## @_ZNK7subBoth8getDataAEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp31:
+Ltmp36:
 	.cfi_def_cfa_offset 16
-Ltmp32:
+Ltmp37:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp33:
+Ltmp38:
 	.cfi_def_cfa_register %rbp
 	pushq	%rbx
 	pushq	%rax
-Ltmp34:
+Ltmp39:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
-	leaq	L_str(%rip), %rdi
+	leaq	L_str5(%rip), %rdi
 	callq	_puts
 	movq	%rbx, %rdi
 	addq	$8, %rsp
@@ -138,19 +158,19 @@ __ZNK7subBoth8getDataBEv:               ## @_ZNK7subBoth8getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp38:
+Ltmp43:
 	.cfi_def_cfa_offset 16
-Ltmp39:
+Ltmp44:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp40:
+Ltmp45:
 	.cfi_def_cfa_register %rbp
 	pushq	%rbx
 	pushq	%rax
-Ltmp41:
+Ltmp46:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
-	leaq	L_str3(%rip), %rdi
+	leaq	L_str6(%rip), %rdi
 	callq	_puts
 	addq	$16, %rbx
 	movq	%rbx, %rdi
@@ -166,12 +186,12 @@ __ZThn16_NK7subBoth8getDataBEv:         ## @_ZThn16_NK7subBoth8getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp44:
+Ltmp49:
 	.cfi_def_cfa_offset 16
-Ltmp45:
+Ltmp50:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp46:
+Ltmp51:
 	.cfi_def_cfa_register %rbp
 	addq	$-16, %rdi
 	popq	%rbp
@@ -184,27 +204,19 @@ __ZNK7subBoth11getBaseDataEv:           ## @_ZNK7subBoth11getBaseDataEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp50:
+Ltmp54:
 	.cfi_def_cfa_offset 16
-Ltmp51:
+Ltmp55:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp52:
+Ltmp56:
 	.cfi_def_cfa_register %rbp
-	pushq	%rbx
-	pushq	%rax
-Ltmp53:
-	.cfi_offset %rbx, -24
-	movq	%rdi, %rbx
-	leaq	L_str4(%rip), %rdi
+	leaq	L_str7(%rip), %rdi
 	callq	_puts
-	movq	(%rbx), %rax
-	addq	-24(%rax), %rbx
-	movq	%rbx, %rdi
-	addq	$8, %rsp
-	popq	%rbx
+	callq	__ZNK10bottomBase11getBaseDataEv
+	movl	$37, %eax
 	popq	%rbp
-	jmp	__ZNK10bottomBase11getBaseDataEv ## TAILCALL
+	retq
 	.cfi_endproc
 
 	.globl	__ZTv0_n24_NK7subBoth11getBaseDataEv
@@ -213,37 +225,39 @@ __ZTv0_n24_NK7subBoth11getBaseDataEv:   ## @_ZTv0_n24_NK7subBoth11getBaseDataEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp56:
+Ltmp59:
 	.cfi_def_cfa_offset 16
-Ltmp57:
+Ltmp60:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp58:
+Ltmp61:
 	.cfi_def_cfa_register %rbp
 	movq	(%rdi), %rax
 	addq	-24(%rax), %rdi
+	callq	__ZNK7subBoth11getBaseDataEv
+	movl	$37, %eax
 	popq	%rbp
-	jmp	__ZNK7subBoth11getBaseDataEv ## TAILCALL
+	retq
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z10virtualSubiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z10virtualSubiPPKc:                   ## @_Z10virtualSubiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp62:
+Ltmp65:
 	.cfi_def_cfa_offset 16
-Ltmp63:
+Ltmp66:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp64:
+Ltmp67:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp65:
+Ltmp68:
 	.cfi_offset %rbx, -32
-Ltmp66:
+Ltmp69:
 	.cfi_offset %r14, -24
 	movl	$48, %edi
 	callq	__Znwm
@@ -266,6 +280,14 @@ Ltmp66:
 	movq	16(%rbx), %rax
 	movq	%r14, %rdi
 	callq	*(%rax)
+	movq	(%rbx), %rax
+	movq	%rbx, %rdi
+	callq	*8(%rax)
+	movl	%eax, %ecx
+	leaq	L_.str4(%rip), %rdi
+	xorl	%eax, %eax
+	movl	%ecx, %esi
+	callq	_printf
 	xorl	%eax, %eax
 	popq	%rbx
 	popq	%r14
@@ -281,16 +303,16 @@ __ZN7subBothC1Ev:                       ## @_ZN7subBothC1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp70:
+Ltmp73:
 	.cfi_def_cfa_offset 16
-Ltmp71:
+Ltmp74:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp72:
+Ltmp75:
 	.cfi_def_cfa_register %rbp
 	pushq	%rbx
 	pushq	%rax
-Ltmp73:
+Ltmp76:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
 	leaq	32(%rbx), %rdi
@@ -320,15 +342,14 @@ __ZN10bottomBaseC2Ev:                   ## @_ZN10bottomBaseC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp76:
+Ltmp79:
 	.cfi_def_cfa_offset 16
-Ltmp77:
+Ltmp80:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp78:
+Ltmp81:
 	.cfi_def_cfa_register %rbp
-	movq	__ZTV10bottomBase@GOTPCREL(%rip), %rax
-	addq	$16, %rax
+	leaq	__ZTV10bottomBase+16(%rip), %rax
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq
@@ -341,12 +362,12 @@ __ZN5baseAC2Ev:                         ## @_ZN5baseAC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp81:
+Ltmp84:
 	.cfi_def_cfa_offset 16
-Ltmp82:
+Ltmp85:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp83:
+Ltmp86:
 	.cfi_def_cfa_register %rbp
 	movq	(%rsi), %rax
 	movq	%rax, (%rdi)
@@ -364,12 +385,12 @@ __ZN5baseBC2Ev:                         ## @_ZN5baseBC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp86:
+Ltmp89:
 	.cfi_def_cfa_offset 16
-Ltmp87:
+Ltmp90:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp88:
+Ltmp91:
 	.cfi_def_cfa_register %rbp
 	movq	(%rsi), %rax
 	movq	%rax, (%rdi)
@@ -382,13 +403,19 @@ Ltmp88:
 
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str
-	.asciz	"calling getDataA()\n"
+	.asciz	"Calling bottomBase::getBaseData()\n"
 
 L_.str1:                                ## @.str1
-	.asciz	"calling getDataB()\n"
+	.asciz	"calling getDataA()\n"
 
 L_.str2:                                ## @.str2
+	.asciz	"calling getDataB()\n"
+
+L_.str3:                                ## @.str3
 	.asciz	"calling getBaseData()\n"
+
+L_.str4:                                ## @.str4
+	.asciz	"sb->getSum()=%d"
 
 	.section	__DATA,__const
 	.globl	__ZTV7subBoth           ## @_ZTV7subBoth
@@ -438,7 +465,17 @@ __ZTC7subBoth0_5baseA:
 __ZTS5baseA:
 	.asciz	"5baseA"
 
+	.globl	__ZTS10bottomBase       ## @_ZTS10bottomBase
+__ZTS10bottomBase:
+	.asciz	"10bottomBase"
+
 	.section	__DATA,__const
+	.globl	__ZTI10bottomBase       ## @_ZTI10bottomBase
+	.align	3
+__ZTI10bottomBase:
+	.quad	__ZTVN10__cxxabiv117__class_type_infoE+16
+	.quad	__ZTS10bottomBase
+
 	.globl	__ZTI5baseA             ## @_ZTI5baseA
 	.align	4
 __ZTI5baseA:
@@ -531,17 +568,28 @@ __ZTT5baseB:
 	.quad	__ZTV5baseB+24
 	.quad	__ZTV5baseB+56
 
+	.globl	__ZTV10bottomBase       ## @_ZTV10bottomBase
+	.align	4
+__ZTV10bottomBase:
+	.quad	0
+	.quad	__ZTI10bottomBase
+	.quad	__ZNK10bottomBase11getBaseDataEv
+
 	.section	__TEXT,__cstring,cstring_literals
 	.align	4                       ## @str
 L_str:
+	.asciz	"Calling bottomBase::getBaseData()"
+
+	.align	4                       ## @str5
+L_str5:
 	.asciz	"calling getDataA()"
 
-	.align	4                       ## @str3
-L_str3:
+	.align	4                       ## @str6
+L_str6:
 	.asciz	"calling getDataB()"
 
-	.align	4                       ## @str4
-L_str4:
+	.align	4                       ## @str7
+L_str7:
 	.asciz	"calling getBaseData()"
 
 

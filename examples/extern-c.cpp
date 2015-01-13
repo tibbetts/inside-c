@@ -18,7 +18,7 @@ extern "C" {
   }
 }
 
-void externC() {
+int externC(int argc, const char** argv) {
   regularVar = 12;
   externVar = 13;
 
@@ -26,4 +26,7 @@ void externC() {
 
   regularMethod();
   externMethod();
+
+  std::cout << "x=" << x << std::endl;
+  return 0;
 }

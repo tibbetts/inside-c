@@ -18,7 +18,7 @@ twofield fromint(int j) {
     return of;
 }
 
-int main(int argc, char **argv) {
+int objectRet(int argc, const char **argv) {
     int i = fromint(13).getField();
     return i;
 }

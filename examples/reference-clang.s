@@ -35,9 +35,9 @@ Ltmp9:
 	retq
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z9referenceiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z9referenceiPPKc:                     ## @_Z9referenceiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

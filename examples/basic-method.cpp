@@ -1,4 +1,4 @@
-class onefield {
+class onefield4 {
   private:
     int field;
   public:
@@ -6,12 +6,12 @@ class onefield {
     int getField() const;
 };
 
-int main(int argc, char **argv) {
-    onefield of;
+extern int basicMethod(int argc, char **argv) {
+    onefield4 of;
 
     of.setField(13);
 
-    onefield *ofp = new onefield;
+    onefield4 *ofp = new onefield4;
 
     ofp->setField(27);
 
@@ -21,9 +21,9 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefield4::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefield4::getField() const {
     return this->field;
 }

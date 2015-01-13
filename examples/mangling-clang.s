@@ -1,35 +1,34 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__Z8manglingv
+	.globl	__Z8manglingiPPKc
 	.align	4, 0x90
-__Z8manglingv:                          ## @_Z8manglingv
+__Z8manglingiPPKc:                      ## @_Z8manglingiPPKc
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin0:
 	.cfi_lsda 16, Lexception0
 ## BB#0:
 	pushq	%rbp
-Ltmp24:
+Ltmp28:
 	.cfi_def_cfa_offset 16
-Ltmp25:
+Ltmp29:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp26:
+Ltmp30:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
 	pushq	%rbx
 	subq	$168, %rsp
-Ltmp27:
+Ltmp31:
 	.cfi_offset %rbx, -40
-Ltmp28:
+Ltmp32:
 	.cfi_offset %r14, -32
-Ltmp29:
+Ltmp33:
 	.cfi_offset %r15, -24
 	movq	___stack_chk_guard@GOTPCREL(%rip), %r15
 	movq	(%r15), %rax
 	movq	%rax, -32(%rbp)
-	movq	__ZN9Something6Inside13anotherStaticE@GOTPCREL(%rip), %rax
-	movl	$11, (%rax)
+	movl	$11, __ZN9Something6Inside13anotherStaticE(%rip)
 	leaq	-112(%rbp), %rdi
 	movl	$23, %esi
 	callq	__ZN9Something6Inside6Deeper10deepMethodEi
@@ -97,6 +96,9 @@ Ltmp13:
 ## BB#7:
 	leaq	-184(%rbp), %rdi
 	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
+	leaq	-112(%rbp), %rdi
+	callq	__ZN9Something6Inside6Deeper10deepMethodEv
+	movl	%eax, %ebx
 	leaq	-192(%rbp), %rdi
 	movl	$37, %esi
 	callq	__ZN7OutsideC1Ei
@@ -118,54 +120,67 @@ Ltmp18:
 	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
 Ltmp19:
 ## BB#10:
+Ltmp20:
+	leaq	L_.str4(%rip), %rsi
+	movq	%rax, %rdi
+	callq	__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
+Ltmp21:
+## BB#11:
+Ltmp22:
+	movq	%rax, %rdi
+	movl	%ebx, %esi
+	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+Ltmp23:
+## BB#12:
 	leaq	-160(%rbp), %rdi
 	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
 	movq	(%r15), %rax
 	cmpq	-32(%rbp), %rax
-	jne	LBB0_18
-## BB#11:
+	jne	LBB0_20
+## BB#13:
+	xorl	%eax, %eax
 	addq	$168, %rsp
 	popq	%rbx
 	popq	%r14
 	popq	%r15
 	popq	%rbp
 	retq
-LBB0_18:
+LBB0_20:
 	callq	___stack_chk_fail
-LBB0_12:
+LBB0_14:
 Ltmp6:
 	movq	%rax, %r15
 	cmpq	%rbx, %r14
-	je	LBB0_17
-## BB#13:
+	je	LBB0_19
+## BB#15:
 	leaq	-104(%rbp), %r14
-LBB0_14:                                ## %.preheader
+LBB0_16:                                ## %.preheader
                                         ## =>This Inner Loop Header: Depth=1
 	addq	$-24, %rbx
 	movq	%rbx, %rdi
 	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 	cmpq	%rbx, %r14
-	jne	LBB0_14
-	jmp	LBB0_17
-LBB0_15:                                ## %.body
+	jne	LBB0_16
+	jmp	LBB0_19
+LBB0_17:                                ## %.body
 Ltmp11:
 	movq	%rax, %r15
 	leaq	-160(%rbp), %rax
 	movq	%rax, %rdi
 	callq	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
 	movl	$48, %ebx
-LBB0_16:                                ## =>This Inner Loop Header: Depth=1
+LBB0_18:                                ## =>This Inner Loop Header: Depth=1
 	leaq	-104(%rbp,%rbx), %rax
 	movq	%rax, %rdi
 	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 	addq	$-24, %rbx
 	cmpq	$-24, %rbx
-	jne	LBB0_16
-LBB0_17:                                ## %.loopexit5
+	jne	LBB0_18
+LBB0_19:                                ## %.loopexit5
 	movq	%r15, %rdi
 	callq	__Unwind_Resume
-LBB0_19:
-Ltmp20:
+LBB0_21:
+Ltmp24:
 	movq	%rax, %r15
 	leaq	-160(%rbp), %rax
 	movq	%rax, %rdi
@@ -205,14 +220,14 @@ Lset7 = Ltmp11-Leh_func_begin0          ##     jumps to Ltmp11
 	.byte	0                       ##   On action: cleanup
 Lset8 = Ltmp12-Leh_func_begin0          ## >> Call Site 4 <<
 	.long	Lset8
-Lset9 = Ltmp19-Ltmp12                   ##   Call between Ltmp12 and Ltmp19
+Lset9 = Ltmp23-Ltmp12                   ##   Call between Ltmp12 and Ltmp23
 	.long	Lset9
-Lset10 = Ltmp20-Leh_func_begin0         ##     jumps to Ltmp20
+Lset10 = Ltmp24-Leh_func_begin0         ##     jumps to Ltmp24
 	.long	Lset10
 	.byte	0                       ##   On action: cleanup
-Lset11 = Ltmp19-Leh_func_begin0         ## >> Call Site 5 <<
+Lset11 = Ltmp23-Leh_func_begin0         ## >> Call Site 5 <<
 	.long	Lset11
-Lset12 = Leh_func_end0-Ltmp19           ##   Call between Ltmp19 and Leh_func_end0
+Lset12 = Leh_func_end0-Ltmp23           ##   Call between Ltmp23 and Leh_func_end0
 	.long	Lset12
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
@@ -226,12 +241,12 @@ __ZN9Something6Inside6Deeper10deepMethodEi: ## @_ZN9Something6Inside6Deeper10dee
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp32:
+Ltmp36:
 	.cfi_def_cfa_offset 16
-Ltmp33:
+Ltmp37:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp34:
+Ltmp38:
 	.cfi_def_cfa_register %rbp
 	movl	%esi, (%rdi)
 	movl	%esi, %eax
@@ -246,12 +261,12 @@ __ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_trait
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp37:
+Ltmp41:
 	.cfi_def_cfa_offset 16
-Ltmp38:
+Ltmp42:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp39:
+Ltmp43:
 	.cfi_def_cfa_register %rbp
 	movl	(%rdi), %eax
 	popq	%rbp
@@ -265,12 +280,12 @@ __ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp42:
+Ltmp46:
 	.cfi_def_cfa_offset 16
-Ltmp43:
+Ltmp47:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp44:
+Ltmp48:
 	.cfi_def_cfa_register %rbp
 	movl	(%rdi), %eax
 	popq	%rbp
@@ -284,12 +299,12 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp47:
+Ltmp51:
 	.cfi_def_cfa_offset 16
-Ltmp48:
+Ltmp52:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp49:
+Ltmp53:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
 	jmp	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_ ## TAILCALL
@@ -302,12 +317,12 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp52:
+Ltmp56:
 	.cfi_def_cfa_offset 16
-Ltmp53:
+Ltmp57:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp54:
+Ltmp58:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
 	jmp	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev ## TAILCALL
@@ -320,12 +335,12 @@ __ZN9Something6Inside6Deeper10deepMethodEv: ## @_ZN9Something6Inside6Deeper10dee
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp57:
+Ltmp61:
 	.cfi_def_cfa_offset 16
-Ltmp58:
+Ltmp62:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp59:
+Ltmp63:
 	.cfi_def_cfa_register %rbp
 	movl	(%rdi), %eax
 	popq	%rbp
@@ -339,12 +354,12 @@ __ZN7OutsideC1Ei:                       ## @_ZN7OutsideC1Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp62:
+Ltmp66:
 	.cfi_def_cfa_offset 16
-Ltmp63:
+Ltmp67:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp64:
+Ltmp68:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
 	jmp	__ZN7OutsideC2Ei        ## TAILCALL
@@ -357,18 +372,18 @@ __ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc: ## @_ZNSt3__
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp68:
+Ltmp72:
 	.cfi_def_cfa_offset 16
-Ltmp69:
+Ltmp73:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp70:
+Ltmp74:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp71:
+Ltmp75:
 	.cfi_offset %rbx, -32
-Ltmp72:
+Ltmp76:
 	.cfi_offset %r14, -24
 	movq	%rsi, %rbx
 	movq	%rdi, %r14
@@ -393,12 +408,12 @@ Leh_func_begin9:
 	.cfi_lsda 16, Lexception9
 ## BB#0:
 	pushq	%rbp
-Ltmp97:
+Ltmp101:
 	.cfi_def_cfa_offset 16
-Ltmp98:
+Ltmp102:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp99:
+Ltmp103:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
@@ -406,24 +421,24 @@ Ltmp99:
 	pushq	%r12
 	pushq	%rbx
 	subq	$56, %rsp
-Ltmp100:
-	.cfi_offset %rbx, -56
-Ltmp101:
-	.cfi_offset %r12, -48
-Ltmp102:
-	.cfi_offset %r13, -40
-Ltmp103:
-	.cfi_offset %r14, -32
 Ltmp104:
+	.cfi_offset %rbx, -56
+Ltmp105:
+	.cfi_offset %r12, -48
+Ltmp106:
+	.cfi_offset %r13, -40
+Ltmp107:
+	.cfi_offset %r14, -32
+Ltmp108:
 	.cfi_offset %r15, -24
 	movq	%rdx, %r14
 	movq	%rsi, %r15
 	movq	%rdi, %rbx
-Ltmp73:
+Ltmp77:
 	leaq	-64(%rbp), %rdi
 	movq	%rbx, %rsi
 	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_
-Ltmp74:
+Ltmp78:
 ## BB#1:
 	cmpb	$0, -64(%rbp)
 	je	LBB9_12
@@ -445,28 +460,28 @@ LBB9_4:
 	cmpl	$-1, 144(%rbx,%r13)
 	jne	LBB9_9
 ## BB#5:
-Ltmp76:
+Ltmp80:
 	movq	%rdx, -80(%rbp)         ## 8-byte Spill
 	movq	%rdi, -72(%rbp)         ## 8-byte Spill
 	leaq	-48(%rbp), %rdi
 	movq	%r12, %rsi
 	callq	__ZNKSt3__18ios_base6getlocEv
-Ltmp77:
+Ltmp81:
 ## BB#6:                                ## %.noexc
-Ltmp78:
+Ltmp82:
 	movq	__ZNSt3__15ctypeIcE2idE@GOTPCREL(%rip), %rsi
 	leaq	-48(%rbp), %rdi
 	callq	__ZNKSt3__16locale9use_facetERNS0_2idE
-Ltmp79:
+Ltmp83:
 ## BB#7:
 	movq	(%rax), %rcx
 	movq	56(%rcx), %rcx
-Ltmp80:
+Ltmp84:
 	movl	$32, %esi
 	movq	%rax, %rdi
 	callq	*%rcx
 	movb	%al, -81(%rbp)          ## 1-byte Spill
-Ltmp81:
+Ltmp85:
 ## BB#8:                                ## %_ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit.i
 	leaq	-48(%rbp), %rdi
 	callq	__ZNSt3__16localeD1Ev
@@ -477,12 +492,12 @@ Ltmp81:
 LBB9_9:
 	addq	%r15, %r14
 	movsbl	144(%rbx,%r13), %r9d
-Ltmp83:
+Ltmp87:
 	movq	%r15, %rsi
 	movq	%r14, %rcx
 	movq	%r12, %r8
 	callq	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-Ltmp84:
+Ltmp88:
 ## BB#10:
 	testq	%rax, %rax
 	jne	LBB9_12
@@ -492,9 +507,9 @@ Ltmp84:
 	leaq	(%rbx,%rax), %rdi
 	movl	32(%rbx,%rax), %esi
 	orl	$5, %esi
-Ltmp85:
+Ltmp89:
 	callq	__ZNSt3__18ios_base5clearEj
-Ltmp86:
+Ltmp90:
 LBB9_12:                                ## %_ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateEj.exit
 	leaq	-64(%rbp), %rdi
 	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
@@ -509,18 +524,18 @@ LBB9_17:
 	popq	%rbp
 	retq
 LBB9_22:
-Ltmp75:
+Ltmp79:
 	movq	%rax, %r14
 	jmp	LBB9_15
 LBB9_21:
-Ltmp82:
+Ltmp86:
 	movq	%rax, %r14
 	leaq	-48(%rbp), %rax
 	movq	%rax, %rdi
 	callq	__ZNSt3__16localeD1Ev
 	jmp	LBB9_14
 LBB9_13:
-Ltmp87:
+Ltmp91:
 	movq	%rax, %r14
 LBB9_14:                                ## %.body
 	leaq	-64(%rbp), %rax
@@ -532,24 +547,24 @@ LBB9_15:
 	movq	(%rbx), %rax
 	movq	-24(%rax), %rax
 	addq	%rbx, %rax
-Ltmp88:
+Ltmp92:
 	movq	%rax, %rdi
 	callq	__ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv
-Ltmp89:
+Ltmp93:
 ## BB#16:
 	callq	___cxa_end_catch
 	jmp	LBB9_17
 LBB9_18:
-Ltmp90:
+Ltmp94:
 	movq	%rax, %rbx
-Ltmp91:
+Ltmp95:
 	callq	___cxa_end_catch
-Ltmp92:
+Ltmp96:
 ## BB#19:
 	movq	%rbx, %rdi
 	callq	__Unwind_Resume
 LBB9_20:
-Ltmp93:
+Ltmp97:
 	movq	%rax, %rdi
 	callq	___clang_call_terminate
 	.cfi_endproc
@@ -563,63 +578,63 @@ Lexception9:
 	.byte	125                     ## @TType base offset
 	.byte	3                       ## Call site Encoding = udata4
 	.byte	117                     ## Call site table length
-Lset13 = Ltmp73-Leh_func_begin9         ## >> Call Site 1 <<
+Lset13 = Ltmp77-Leh_func_begin9         ## >> Call Site 1 <<
 	.long	Lset13
-Lset14 = Ltmp74-Ltmp73                  ##   Call between Ltmp73 and Ltmp74
+Lset14 = Ltmp78-Ltmp77                  ##   Call between Ltmp77 and Ltmp78
 	.long	Lset14
-Lset15 = Ltmp75-Leh_func_begin9         ##     jumps to Ltmp75
+Lset15 = Ltmp79-Leh_func_begin9         ##     jumps to Ltmp79
 	.long	Lset15
 	.byte	1                       ##   On action: 1
-Lset16 = Ltmp76-Leh_func_begin9         ## >> Call Site 2 <<
+Lset16 = Ltmp80-Leh_func_begin9         ## >> Call Site 2 <<
 	.long	Lset16
-Lset17 = Ltmp77-Ltmp76                  ##   Call between Ltmp76 and Ltmp77
+Lset17 = Ltmp81-Ltmp80                  ##   Call between Ltmp80 and Ltmp81
 	.long	Lset17
-Lset18 = Ltmp87-Leh_func_begin9         ##     jumps to Ltmp87
+Lset18 = Ltmp91-Leh_func_begin9         ##     jumps to Ltmp91
 	.long	Lset18
 	.byte	1                       ##   On action: 1
-Lset19 = Ltmp78-Leh_func_begin9         ## >> Call Site 3 <<
+Lset19 = Ltmp82-Leh_func_begin9         ## >> Call Site 3 <<
 	.long	Lset19
-Lset20 = Ltmp81-Ltmp78                  ##   Call between Ltmp78 and Ltmp81
+Lset20 = Ltmp85-Ltmp82                  ##   Call between Ltmp82 and Ltmp85
 	.long	Lset20
-Lset21 = Ltmp82-Leh_func_begin9         ##     jumps to Ltmp82
+Lset21 = Ltmp86-Leh_func_begin9         ##     jumps to Ltmp86
 	.long	Lset21
 	.byte	1                       ##   On action: 1
-Lset22 = Ltmp83-Leh_func_begin9         ## >> Call Site 4 <<
+Lset22 = Ltmp87-Leh_func_begin9         ## >> Call Site 4 <<
 	.long	Lset22
-Lset23 = Ltmp86-Ltmp83                  ##   Call between Ltmp83 and Ltmp86
+Lset23 = Ltmp90-Ltmp87                  ##   Call between Ltmp87 and Ltmp90
 	.long	Lset23
-Lset24 = Ltmp87-Leh_func_begin9         ##     jumps to Ltmp87
+Lset24 = Ltmp91-Leh_func_begin9         ##     jumps to Ltmp91
 	.long	Lset24
 	.byte	1                       ##   On action: 1
-Lset25 = Ltmp86-Leh_func_begin9         ## >> Call Site 5 <<
+Lset25 = Ltmp90-Leh_func_begin9         ## >> Call Site 5 <<
 	.long	Lset25
-Lset26 = Ltmp88-Ltmp86                  ##   Call between Ltmp86 and Ltmp88
+Lset26 = Ltmp92-Ltmp90                  ##   Call between Ltmp90 and Ltmp92
 	.long	Lset26
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
-Lset27 = Ltmp88-Leh_func_begin9         ## >> Call Site 6 <<
+Lset27 = Ltmp92-Leh_func_begin9         ## >> Call Site 6 <<
 	.long	Lset27
-Lset28 = Ltmp89-Ltmp88                  ##   Call between Ltmp88 and Ltmp89
+Lset28 = Ltmp93-Ltmp92                  ##   Call between Ltmp92 and Ltmp93
 	.long	Lset28
-Lset29 = Ltmp90-Leh_func_begin9         ##     jumps to Ltmp90
+Lset29 = Ltmp94-Leh_func_begin9         ##     jumps to Ltmp94
 	.long	Lset29
 	.byte	0                       ##   On action: cleanup
-Lset30 = Ltmp89-Leh_func_begin9         ## >> Call Site 7 <<
+Lset30 = Ltmp93-Leh_func_begin9         ## >> Call Site 7 <<
 	.long	Lset30
-Lset31 = Ltmp91-Ltmp89                  ##   Call between Ltmp89 and Ltmp91
+Lset31 = Ltmp95-Ltmp93                  ##   Call between Ltmp93 and Ltmp95
 	.long	Lset31
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
-Lset32 = Ltmp91-Leh_func_begin9         ## >> Call Site 8 <<
+Lset32 = Ltmp95-Leh_func_begin9         ## >> Call Site 8 <<
 	.long	Lset32
-Lset33 = Ltmp92-Ltmp91                  ##   Call between Ltmp91 and Ltmp92
+Lset33 = Ltmp96-Ltmp95                  ##   Call between Ltmp95 and Ltmp96
 	.long	Lset33
-Lset34 = Ltmp93-Leh_func_begin9         ##     jumps to Ltmp93
+Lset34 = Ltmp97-Leh_func_begin9         ##     jumps to Ltmp97
 	.long	Lset34
 	.byte	1                       ##   On action: 1
-Lset35 = Ltmp92-Leh_func_begin9         ## >> Call Site 9 <<
+Lset35 = Ltmp96-Leh_func_begin9         ## >> Call Site 9 <<
 	.long	Lset35
-Lset36 = Leh_func_end9-Ltmp92           ##   Call between Ltmp92 and Leh_func_end9
+Lset36 = Leh_func_end9-Ltmp96           ##   Call between Ltmp96 and Leh_func_end9
 	.long	Lset36
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
@@ -642,12 +657,12 @@ Leh_func_begin10:
 	.cfi_lsda 16, Lexception10
 ## BB#0:
 	pushq	%rbp
-Ltmp111:
+Ltmp115:
 	.cfi_def_cfa_offset 16
-Ltmp112:
+Ltmp116:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp113:
+Ltmp117:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
@@ -655,15 +670,15 @@ Ltmp113:
 	pushq	%r12
 	pushq	%rbx
 	subq	$40, %rsp
-Ltmp114:
-	.cfi_offset %rbx, -56
-Ltmp115:
-	.cfi_offset %r12, -48
-Ltmp116:
-	.cfi_offset %r13, -40
-Ltmp117:
-	.cfi_offset %r14, -32
 Ltmp118:
+	.cfi_offset %rbx, -56
+Ltmp119:
+	.cfi_offset %r12, -48
+Ltmp120:
+	.cfi_offset %r13, -40
+Ltmp121:
+	.cfi_offset %r14, -32
+Ltmp122:
 	.cfi_offset %r15, -24
 	movq	%rcx, %r15
 	movq	%rdi, %r13
@@ -718,12 +733,12 @@ LBB10_6:
 LBB10_7:                                ## %_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataEv.exit
 	movq	(%r13), %rax
 	movq	96(%rax), %rax
-Ltmp105:
+Ltmp109:
 	movq	%r13, %rdi
 	movq	%rbx, %rdx
 	callq	*%rax
 	movq	%rax, %r14
-Ltmp106:
+Ltmp110:
 ## BB#8:                                ## %_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sputnEPKcl.exit
 	leaq	-64(%rbp), %rdi
 	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
@@ -762,7 +777,7 @@ LBB10_12:
 	popq	%rbp
 	retq
 LBB10_13:
-Ltmp107:
+Ltmp111:
 	movq	%rax, %rbx
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
@@ -782,20 +797,20 @@ Lexception10:
 	.byte	39                      ## Call site table length
 Lset37 = Leh_func_begin10-Leh_func_begin10 ## >> Call Site 1 <<
 	.long	Lset37
-Lset38 = Ltmp105-Leh_func_begin10       ##   Call between Leh_func_begin10 and Ltmp105
+Lset38 = Ltmp109-Leh_func_begin10       ##   Call between Leh_func_begin10 and Ltmp109
 	.long	Lset38
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
-Lset39 = Ltmp105-Leh_func_begin10       ## >> Call Site 2 <<
+Lset39 = Ltmp109-Leh_func_begin10       ## >> Call Site 2 <<
 	.long	Lset39
-Lset40 = Ltmp106-Ltmp105                ##   Call between Ltmp105 and Ltmp106
+Lset40 = Ltmp110-Ltmp109                ##   Call between Ltmp109 and Ltmp110
 	.long	Lset40
-Lset41 = Ltmp107-Leh_func_begin10       ##     jumps to Ltmp107
+Lset41 = Ltmp111-Leh_func_begin10       ##     jumps to Ltmp111
 	.long	Lset41
 	.byte	0                       ##   On action: cleanup
-Lset42 = Ltmp106-Leh_func_begin10       ## >> Call Site 3 <<
+Lset42 = Ltmp110-Leh_func_begin10       ## >> Call Site 3 <<
 	.long	Lset42
-Lset43 = Leh_func_end10-Ltmp106         ##   Call between Ltmp106 and Leh_func_end10
+Lset43 = Leh_func_end10-Ltmp110         ##   Call between Ltmp110 and Leh_func_end10
 	.long	Lset43
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
@@ -823,18 +838,18 @@ Leh_func_begin12:
 	.cfi_lsda 16, Lexception12
 ## BB#0:
 	pushq	%rbp
-Ltmp127:
+Ltmp131:
 	.cfi_def_cfa_offset 16
-Ltmp128:
+Ltmp132:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp129:
+Ltmp133:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp130:
+Ltmp134:
 	.cfi_offset %rbx, -32
-Ltmp131:
+Ltmp135:
 	.cfi_offset %r14, -24
 	movq	%rsi, %rbx
 	movq	%rdi, %r14
@@ -848,24 +863,24 @@ Ltmp131:
 	sarq	$3, %rax
 	movabsq	$-6148914691236517205, %rsi ## imm = 0xAAAAAAAAAAAAAAAB
 	imulq	%rax, %rsi
-Ltmp119:
+Ltmp123:
 	movq	%r14, %rdi
 	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
-Ltmp120:
+Ltmp124:
 ## BB#2:
 	movq	(%rbx), %rsi
 	movq	8(%rbx), %rdx
-Ltmp121:
+Ltmp125:
 	movq	%r14, %rdi
 	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
-Ltmp122:
+Ltmp126:
 LBB12_3:
 	popq	%rbx
 	popq	%r14
 	popq	%rbp
 	retq
 LBB12_4:
-Ltmp123:
+Ltmp127:
 	movq	%rax, %rbx
 	movq	%r14, %rdi
 	callq	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
@@ -882,16 +897,16 @@ Lexception12:
 	.asciz	"\234"                  ## @TType base offset
 	.byte	3                       ## Call site Encoding = udata4
 	.byte	26                      ## Call site table length
-Lset44 = Ltmp119-Leh_func_begin12       ## >> Call Site 1 <<
+Lset44 = Ltmp123-Leh_func_begin12       ## >> Call Site 1 <<
 	.long	Lset44
-Lset45 = Ltmp122-Ltmp119                ##   Call between Ltmp119 and Ltmp122
+Lset45 = Ltmp126-Ltmp123                ##   Call between Ltmp123 and Ltmp126
 	.long	Lset45
-Lset46 = Ltmp123-Leh_func_begin12       ##     jumps to Ltmp123
+Lset46 = Ltmp127-Leh_func_begin12       ##     jumps to Ltmp127
 	.long	Lset46
 	.byte	0                       ##   On action: cleanup
-Lset47 = Ltmp122-Leh_func_begin12       ## >> Call Site 2 <<
+Lset47 = Ltmp126-Leh_func_begin12       ## >> Call Site 2 <<
 	.long	Lset47
-Lset48 = Leh_func_end12-Ltmp122         ##   Call between Ltmp122 and Leh_func_end12
+Lset48 = Leh_func_end12-Ltmp126         ##   Call between Ltmp126 and Leh_func_end12
 	.long	Lset48
 	.long	0                       ##     has no landing pad
 	.byte	0                       ##   On action: cleanup
@@ -905,18 +920,18 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp135:
+Ltmp139:
 	.cfi_def_cfa_offset 16
-Ltmp136:
+Ltmp140:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp137:
+Ltmp141:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp138:
+Ltmp142:
 	.cfi_offset %rbx, -32
-Ltmp139:
+Ltmp143:
 	.cfi_offset %r14, -24
 	movq	%rsi, %rbx
 	movq	%rdi, %r14
@@ -949,22 +964,22 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp143:
+Ltmp147:
 	.cfi_def_cfa_offset 16
-Ltmp144:
+Ltmp148:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp145:
+Ltmp149:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
 	pushq	%rbx
 	pushq	%rax
-Ltmp146:
+Ltmp150:
 	.cfi_offset %rbx, -40
-Ltmp147:
+Ltmp151:
 	.cfi_offset %r14, -32
-Ltmp148:
+Ltmp152:
 	.cfi_offset %r15, -24
 	movq	%rdx, %r14
 	movq	%rsi, %rbx
@@ -1004,18 +1019,18 @@ __ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp152:
+Ltmp156:
 	.cfi_def_cfa_offset 16
-Ltmp153:
+Ltmp157:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp154:
+Ltmp158:
 	.cfi_def_cfa_register %rbp
 	pushq	%r14
 	pushq	%rbx
-Ltmp155:
+Ltmp159:
 	.cfi_offset %rbx, -32
-Ltmp156:
+Ltmp160:
 	.cfi_offset %r14, -24
 	movq	%rdi, %rbx
 	movq	(%rbx), %r14
@@ -1052,12 +1067,12 @@ __ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp159:
+Ltmp163:
 	.cfi_def_cfa_offset 16
-Ltmp160:
+Ltmp164:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp161:
+Ltmp165:
 	.cfi_def_cfa_register %rbp
 	movabsq	$768614336404564650, %rax ## imm = 0xAAAAAAAAAAAAAAA
 	popq	%rbp
@@ -1071,22 +1086,22 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp165:
+Ltmp169:
 	.cfi_def_cfa_offset 16
-Ltmp166:
+Ltmp170:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp167:
+Ltmp171:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
 	pushq	%rbx
 	pushq	%rax
-Ltmp168:
+Ltmp172:
 	.cfi_offset %rbx, -40
-Ltmp169:
+Ltmp173:
 	.cfi_offset %r14, -32
-Ltmp170:
+Ltmp174:
 	.cfi_offset %r15, -24
 	movq	%rdx, %r14
 	movq	%rsi, %rbx
@@ -1126,12 +1141,12 @@ __ZN7OutsideC2Ei:                       ## @_ZN7OutsideC2Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp173:
+Ltmp177:
 	.cfi_def_cfa_offset 16
-Ltmp174:
+Ltmp178:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp175:
+Ltmp179:
 	.cfi_def_cfa_register %rbp
 	movl	%esi, (%rdi)
 	popq	%rbp
@@ -1145,16 +1160,22 @@ __ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp178:
+Ltmp182:
 	.cfi_def_cfa_offset 16
-Ltmp179:
+Ltmp183:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp180:
+Ltmp184:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
 	jmp	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev ## TAILCALL
 	.cfi_endproc
+
+	.section	__DATA,__data
+	.globl	__ZN9Something6Inside13anotherStaticE ## @_ZN9Something6Inside13anotherStaticE
+	.align	2
+__ZN9Something6Inside13anotherStaticE:
+	.long	137                     ## 0x89
 
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str

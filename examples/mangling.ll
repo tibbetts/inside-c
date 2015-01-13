@@ -30,7 +30,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 %union.anon.0 = type { i8 }
 %"class.std::__1::__vector_base_common" = type { i8 }
 
-@_ZN9Something6Inside13anotherStaticE = external global i32
+@_ZN9Something6Inside13anotherStaticE = global i32 137, align 4
 @.str = private unnamed_addr constant [4 x i8] c"foo\00", align 1
 @.str1 = private unnamed_addr constant [2 x i8] c"x\00", align 1
 @.str2 = private unnamed_addr constant [2 x i8] c"y\00", align 1
@@ -40,7 +40,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 
 ; Function Attrs: noinline ssp uwtable
-define void @_Z8manglingv() #0 {
+define i32 @_Z8manglingiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %d = alloca %"struct.Something::Inside::Deeper", align 4
   %1 = alloca %"class.std::__1::basic_string", align 8
   %vs = alloca %"class.std::__1::vector", align 8
@@ -53,17 +53,17 @@ define void @_Z8manglingv() #0 {
   call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %1) #10
   %5 = getelementptr inbounds [3 x %"class.std::__1::basic_string"]* %2, i64 0, i64 0
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm(%"class.std::__1::basic_string"* %5, i8* getelementptr inbounds ([2 x i8]* @.str1, i64 0, i64 0), i64 1)
-          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit unwind label %27
+          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit unwind label %32
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; preds = %0
   %6 = getelementptr inbounds [3 x %"class.std::__1::basic_string"]* %2, i64 0, i64 1
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm(%"class.std::__1::basic_string"* %6, i8* getelementptr inbounds ([2 x i8]* @.str2, i64 0, i64 0), i64 1)
-          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3 unwind label %27
+          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3 unwind label %32
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3: ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
   %7 = getelementptr inbounds [3 x %"class.std::__1::basic_string"]* %2, i64 0, i64 2
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm(%"class.std::__1::basic_string"* %7, i8* getelementptr inbounds ([2 x i8]* @.str3, i64 0, i64 0), i64 1)
-          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit4 unwind label %27
+          to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit4 unwind label %32
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit4: ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3
   %8 = getelementptr inbounds %"class.std::__1::vector"* %vs, i64 0, i32 0
@@ -90,77 +90,86 @@ _ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_I
 
 ; <label>:17                                      ; preds = %13
   invoke void @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_(%"class.std::__1::vector"* %3, %"class.std::__1::vector"* %vs)
-          to label %18 unwind label %42
+          to label %18 unwind label %47
 
 ; <label>:18                                      ; preds = %17
   call void @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev(%"class.std::__1::vector"* %3) #10
+  %19 = call i32 @_ZN9Something6Inside6Deeper10deepMethodEv(%"struct.Something::Inside::Deeper"* %d)
   call void @_ZN7OutsideC1Ei(%struct.Outside* %o, i32 37)
-  %19 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* @_ZNSt3__14coutE, i32 12)
-          to label %20 unwind label %42
+  %20 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* @_ZNSt3__14coutE, i32 12)
+          to label %21 unwind label %47
 
-; <label>:20                                      ; preds = %18
-  %21 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %19, i8* getelementptr inbounds ([6 x i8]* @.str4, i64 0, i64 0))
-          to label %22 unwind label %42
+; <label>:21                                      ; preds = %18
+  %22 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %20, i8* getelementptr inbounds ([6 x i8]* @.str4, i64 0, i64 0))
+          to label %23 unwind label %47
 
-; <label>:22                                      ; preds = %20
-  %23 = getelementptr inbounds %struct.Outside* %o, i64 0, i32 0
-  %24 = load i32* %23, align 4, !tbaa !5
-  %25 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* %21, i32 %24)
-          to label %26 unwind label %42
+; <label>:23                                      ; preds = %21
+  %24 = getelementptr inbounds %struct.Outside* %o, i64 0, i32 0
+  %25 = load i32* %24, align 4, !tbaa !5
+  %26 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* %22, i32 %25)
+          to label %27 unwind label %47
 
-; <label>:26                                      ; preds = %22
+; <label>:27                                      ; preds = %23
+  %28 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %26, i8* getelementptr inbounds ([6 x i8]* @.str4, i64 0, i64 0))
+          to label %29 unwind label %47
+
+; <label>:29                                      ; preds = %27
+  %30 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"* %28, i32 %19)
+          to label %31 unwind label %47
+
+; <label>:31                                      ; preds = %29
   call void @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev(%"class.std::__1::vector"* %vs) #10
-  ret void
+  ret i32 0
 
-; <label>:27                                      ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit, %0
-  %.01 = phi %"class.std::__1::basic_string"* [ %5, %0 ], [ %6, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit ], [ %7, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3 ]
-  %28 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
+; <label>:32                                      ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit, %0
+  %.02 = phi %"class.std::__1::basic_string"* [ %5, %0 ], [ %6, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit ], [ %7, %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3 ]
+  %33 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-  %29 = extractvalue { i8*, i32 } %28, 0
-  %30 = extractvalue { i8*, i32 } %28, 1
-  %31 = icmp eq %"class.std::__1::basic_string"* %5, %.01
-  br i1 %31, label %.loopexit5, label %.preheader
+  %34 = extractvalue { i8*, i32 } %33, 0
+  %35 = extractvalue { i8*, i32 } %33, 1
+  %36 = icmp eq %"class.std::__1::basic_string"* %5, %.02
+  br i1 %36, label %.loopexit5, label %.preheader
 
-.preheader:                                       ; preds = %27, %.preheader
-  %32 = phi %"class.std::__1::basic_string"* [ %33, %.preheader ], [ %.01, %27 ]
-  %33 = getelementptr inbounds %"class.std::__1::basic_string"* %32, i64 -1
-  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %33) #10
-  %34 = icmp eq %"class.std::__1::basic_string"* %33, %5
-  br i1 %34, label %.loopexit5, label %.preheader
+.preheader:                                       ; preds = %32, %.preheader
+  %37 = phi %"class.std::__1::basic_string"* [ %38, %.preheader ], [ %.02, %32 ]
+  %38 = getelementptr inbounds %"class.std::__1::basic_string"* %37, i64 -1
+  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %38) #10
+  %39 = icmp eq %"class.std::__1::basic_string"* %38, %5
+  br i1 %39, label %.loopexit5, label %.preheader
 
 .body:                                            ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit4, %10
-  %35 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
+  %40 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
   call void @_ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev(%"class.std::__1::__vector_base"* %8) #10
-  %36 = extractvalue { i8*, i32 } %35, 0
-  %37 = getelementptr inbounds [3 x %"class.std::__1::basic_string"]* %2, i64 0, i64 3
-  br label %38
+  %41 = extractvalue { i8*, i32 } %40, 0
+  %42 = getelementptr inbounds [3 x %"class.std::__1::basic_string"]* %2, i64 0, i64 3
+  br label %43
 
-; <label>:38                                      ; preds = %38, %.body
-  %39 = phi %"class.std::__1::basic_string"* [ %37, %.body ], [ %40, %38 ]
-  %40 = getelementptr inbounds %"class.std::__1::basic_string"* %39, i64 -1
-  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %40) #10
-  %41 = icmp eq %"class.std::__1::basic_string"* %40, %5
-  br i1 %41, label %.loopexit, label %38
+; <label>:43                                      ; preds = %43, %.body
+  %44 = phi %"class.std::__1::basic_string"* [ %42, %.body ], [ %45, %43 ]
+  %45 = getelementptr inbounds %"class.std::__1::basic_string"* %44, i64 -1
+  call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %45) #10
+  %46 = icmp eq %"class.std::__1::basic_string"* %45, %5
+  br i1 %46, label %.loopexit, label %43
 
-; <label>:42                                      ; preds = %22, %20, %18, %17
-  %43 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
+; <label>:47                                      ; preds = %29, %27, %23, %21, %18, %17
+  %48 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-  %44 = extractvalue { i8*, i32 } %43, 0
-  %45 = extractvalue { i8*, i32 } %43, 1
+  %49 = extractvalue { i8*, i32 } %48, 0
+  %50 = extractvalue { i8*, i32 } %48, 1
   call void @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev(%"class.std::__1::vector"* %vs) #10
   br label %.loopexit5
 
-.loopexit:                                        ; preds = %38
-  %46 = extractvalue { i8*, i32 } %35, 1
+.loopexit:                                        ; preds = %43
+  %51 = extractvalue { i8*, i32 } %40, 1
   br label %.loopexit5
 
-.loopexit5:                                       ; preds = %.preheader, %.loopexit, %27, %42
-  %.02 = phi i32 [ %45, %42 ], [ %30, %27 ], [ %46, %.loopexit ], [ %30, %.preheader ]
-  %.0 = phi i8* [ %44, %42 ], [ %29, %27 ], [ %36, %.loopexit ], [ %29, %.preheader ]
-  %47 = insertvalue { i8*, i32 } undef, i8* %.0, 0
-  %48 = insertvalue { i8*, i32 } %47, i32 %.02, 1
-  resume { i8*, i32 } %48
+.loopexit5:                                       ; preds = %.preheader, %.loopexit, %32, %47
+  %.01 = phi i32 [ %50, %47 ], [ %35, %32 ], [ %51, %.loopexit ], [ %35, %.preheader ]
+  %.0 = phi i8* [ %49, %47 ], [ %34, %32 ], [ %41, %.loopexit ], [ %34, %.preheader ]
+  %52 = insertvalue { i8*, i32 } undef, i8* %.0, 0
+  %53 = insertvalue { i8*, i32 } %52, i32 %.01, 1
+  resume { i8*, i32 } %53
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable

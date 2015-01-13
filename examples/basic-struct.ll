@@ -3,7 +3,7 @@ target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-apple-macosx10.10.0"
 
 ; Function Attrs: noinline nounwind readnone ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z11basicStructiPPc(i32 %argc, i8** nocapture readnone %argv) #0 {
   ret i32 0
 }
 

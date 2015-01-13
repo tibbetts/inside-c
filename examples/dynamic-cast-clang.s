@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	__Z11dynamicCastiPPc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z11dynamicCastiPPc:                   ## @_Z11dynamicCastiPPc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -20,9 +20,9 @@ Ltmp6:
 	callq	__Znwm
 	movq	%rax, %rbx
 	movq	%rbx, %rdi
-	callq	__ZN17onefield_subclassC1Ev
-	leaq	__ZTI8onefield(%rip), %rsi
-	leaq	__ZTI17onefield_subclass(%rip), %rdx
+	callq	__ZN18onefield3_subclassC1Ev
+	leaq	__ZTI9onefield3(%rip), %rsi
+	leaq	__ZTI18onefield3_subclass(%rip), %rdx
 	xorl	%ecx, %ecx
 	movq	%rbx, %rdi
 	callq	___dynamic_cast
@@ -40,10 +40,10 @@ LBB0_2:
 	.cfi_endproc
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.globl	__ZN17onefield_subclassC1Ev
-	.weak_def_can_be_hidden	__ZN17onefield_subclassC1Ev
+	.globl	__ZN18onefield3_subclassC1Ev
+	.weak_def_can_be_hidden	__ZN18onefield3_subclassC1Ev
 	.align	4, 0x90
-__ZN17onefield_subclassC1Ev:            ## @_ZN17onefield_subclassC1Ev
+__ZN18onefield3_subclassC1Ev:           ## @_ZN18onefield3_subclassC1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -55,13 +55,13 @@ Ltmp10:
 Ltmp11:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN17onefield_subclassC2Ev ## TAILCALL
+	jmp	__ZN18onefield3_subclassC2Ev ## TAILCALL
 	.cfi_endproc
 
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__ZN8onefield8setFieldEi
+	.globl	__ZN9onefield38setFieldEi
 	.align	4, 0x90
-__ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
+__ZN9onefield38setFieldEi:              ## @_ZN9onefield38setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -77,9 +77,9 @@ Ltmp16:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK8onefield8getFieldEv
+	.globl	__ZNK9onefield38getFieldEv
 	.align	4, 0x90
-__ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
+__ZNK9onefield38getFieldEv:             ## @_ZNK9onefield38getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -95,9 +95,9 @@ Ltmp21:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN17onefield_subclass8setFieldEi
+	.globl	__ZN18onefield3_subclass8setFieldEi
 	.align	4, 0x90
-__ZN17onefield_subclass8setFieldEi:     ## @_ZN17onefield_subclass8setFieldEi
+__ZN18onefield3_subclass8setFieldEi:    ## @_ZN18onefield3_subclass8setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -118,7 +118,7 @@ Ltmp29:
 	movq	%rdi, %rbx
                                         ## kill: RDI<def> RBX<kill>
                                         ## kill: ESI<def> R14D<kill>
-	callq	__ZN8onefield8setFieldEi
+	callq	__ZN9onefield38setFieldEi
 	movl	%r14d, 12(%rbx)
 	popq	%rbx
 	popq	%r14
@@ -127,10 +127,10 @@ Ltmp29:
 	.cfi_endproc
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.globl	__ZN17onefield_subclassC2Ev
-	.weak_def_can_be_hidden	__ZN17onefield_subclassC2Ev
+	.globl	__ZN18onefield3_subclassC2Ev
+	.weak_def_can_be_hidden	__ZN18onefield3_subclassC2Ev
 	.align	4, 0x90
-__ZN17onefield_subclassC2Ev:            ## @_ZN17onefield_subclassC2Ev
+__ZN18onefield3_subclassC2Ev:           ## @_ZN18onefield3_subclassC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -147,8 +147,8 @@ Ltmp36:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
                                         ## kill: RDI<def> RBX<kill>
-	callq	__ZN8onefieldC2Ev
-	leaq	__ZTV17onefield_subclass+16(%rip), %rax
+	callq	__ZN9onefield3C2Ev
+	leaq	__ZTV18onefield3_subclass+16(%rip), %rax
 	movq	%rax, (%rbx)
 	addq	$8, %rsp
 	popq	%rbx
@@ -156,10 +156,10 @@ Ltmp36:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN8onefieldC2Ev
-	.weak_def_can_be_hidden	__ZN8onefieldC2Ev
+	.globl	__ZN9onefield3C2Ev
+	.weak_def_can_be_hidden	__ZN9onefield3C2Ev
 	.align	4, 0x90
-__ZN8onefieldC2Ev:                      ## @_ZN8onefieldC2Ev
+__ZN9onefield3C2Ev:                     ## @_ZN9onefield3C2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -170,54 +170,54 @@ Ltmp40:
 	movq	%rsp, %rbp
 Ltmp41:
 	.cfi_def_cfa_register %rbp
-	leaq	__ZTV8onefield+16(%rip), %rax
+	leaq	__ZTV9onefield3+16(%rip), %rax
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq
 	.cfi_endproc
 
 	.section	__DATA,__const
-	.globl	__ZTV8onefield          ## @_ZTV8onefield
+	.globl	__ZTV9onefield3         ## @_ZTV9onefield3
 	.align	4
-__ZTV8onefield:
+__ZTV9onefield3:
 	.quad	0
-	.quad	__ZTI8onefield
-	.quad	__ZN8onefield8setFieldEi
-	.quad	__ZNK8onefield8getFieldEv
+	.quad	__ZTI9onefield3
+	.quad	__ZN9onefield38setFieldEi
+	.quad	__ZNK9onefield38getFieldEv
 
 	.section	__TEXT,__const
-	.globl	__ZTS8onefield          ## @_ZTS8onefield
-__ZTS8onefield:
-	.asciz	"8onefield"
+	.globl	__ZTS9onefield3         ## @_ZTS9onefield3
+__ZTS9onefield3:
+	.asciz	"9onefield3"
 
 	.section	__DATA,__const
-	.globl	__ZTI8onefield          ## @_ZTI8onefield
+	.globl	__ZTI9onefield3         ## @_ZTI9onefield3
 	.align	3
-__ZTI8onefield:
+__ZTI9onefield3:
 	.quad	__ZTVN10__cxxabiv117__class_type_infoE+16
-	.quad	__ZTS8onefield
+	.quad	__ZTS9onefield3
 
-	.globl	__ZTV17onefield_subclass ## @_ZTV17onefield_subclass
+	.globl	__ZTV18onefield3_subclass ## @_ZTV18onefield3_subclass
 	.align	4
-__ZTV17onefield_subclass:
+__ZTV18onefield3_subclass:
 	.quad	0
-	.quad	__ZTI17onefield_subclass
-	.quad	__ZN17onefield_subclass8setFieldEi
-	.quad	__ZNK8onefield8getFieldEv
+	.quad	__ZTI18onefield3_subclass
+	.quad	__ZN18onefield3_subclass8setFieldEi
+	.quad	__ZNK9onefield38getFieldEv
 
 	.section	__TEXT,__const
-	.globl	__ZTS17onefield_subclass ## @_ZTS17onefield_subclass
+	.globl	__ZTS18onefield3_subclass ## @_ZTS18onefield3_subclass
 	.align	4
-__ZTS17onefield_subclass:
-	.asciz	"17onefield_subclass"
+__ZTS18onefield3_subclass:
+	.asciz	"18onefield3_subclass"
 
 	.section	__DATA,__const
-	.globl	__ZTI17onefield_subclass ## @_ZTI17onefield_subclass
+	.globl	__ZTI18onefield3_subclass ## @_ZTI18onefield3_subclass
 	.align	4
-__ZTI17onefield_subclass:
+__ZTI18onefield3_subclass:
 	.quad	__ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	__ZTS17onefield_subclass
-	.quad	__ZTI8onefield
+	.quad	__ZTS18onefield3_subclass
+	.quad	__ZTI9onefield3
 
 
 .subsections_via_symbols

@@ -238,6 +238,11 @@
 		A4C7E5D41A659F17007DB9B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 1;
+				OTHER_CFLAGS = (
+					"-fno-inline",
+					"-fno-stack-protector",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -245,6 +250,10 @@
 		A4C7E5D51A659F17007DB9B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = (
+					"-fno-inline",
+					"-fno-stack-protector",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

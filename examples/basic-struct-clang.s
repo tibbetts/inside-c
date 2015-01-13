@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	__Z11basicStructiPPc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z11basicStructiPPc:                   ## @_Z11basicStructiPPc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp

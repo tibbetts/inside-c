@@ -12,11 +12,12 @@ void doMethods(parent &p) {
     p.bar();
 }
 
-int main(int argc, char **argv) {
+int virtualMethod(int argc, const char **argv) {
     parent p;
     doMethods(p);
 
     child c;
     doMethods(c);
+    return 0;
 }
 

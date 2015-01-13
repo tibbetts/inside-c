@@ -1,4 +1,4 @@
-class onefield {
+class onefieldBVT {
   private:
     int field;
   public:
@@ -6,12 +6,12 @@ class onefield {
     virtual int getField() const;
 };
 
-int main(int argc, char **argv) {
-    onefield of;
+int basicVtable(int argc, char **argv) {
+    onefieldBVT of;
 
     of.setField(13);
 
-    onefield *ofp = new onefield;
+    onefieldBVT *ofp = new onefieldBVT;
 
     ofp->setField(27);
 
@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefieldBVT::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefieldBVT::getField() const {
     return this->field;
 }

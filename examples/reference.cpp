@@ -6,8 +6,7 @@ void use_pointer (int *arg) {
     (*arg) += 23;
 }
 
-int
-main (int argc, char **argv) {
+int reference(int argc, const char **argv) {
     int foo;
     foo = 12;
     use_reference(foo);

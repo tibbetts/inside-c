@@ -14,7 +14,7 @@ public:
 };
 */
 
-int main(int argc, char **argv) {
+int object(int argc, const char **argv) {
     onefield_struct os(13);
     //    onefield_class oc(9);
 

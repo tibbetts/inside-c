@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__ZN5baseA8setDataAEi
+	.globl	__ZN6baseA28setDataAEi
 	.align	4, 0x90
-__ZN5baseA8setDataAEi:                  ## @_ZN5baseA8setDataAEi
+__ZN6baseA28setDataAEi:                 ## @_ZN6baseA28setDataAEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -17,9 +17,9 @@ Ltmp4:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK5baseA8getDataAEv
+	.globl	__ZNK6baseA28getDataAEv
 	.align	4, 0x90
-__ZNK5baseA8getDataAEv:                 ## @_ZNK5baseA8getDataAEv
+__ZNK6baseA28getDataAEv:                ## @_ZNK6baseA28getDataAEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -35,9 +35,9 @@ Ltmp9:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN5baseB8setDataBEi
+	.globl	__ZN6baseB28setDataBEi
 	.align	4, 0x90
-__ZN5baseB8setDataBEi:                  ## @_ZN5baseB8setDataBEi
+__ZN6baseB28setDataBEi:                 ## @_ZN6baseB28setDataBEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -53,9 +53,9 @@ Ltmp14:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK5baseB8getDataBEv
+	.globl	__ZNK6baseB28getDataBEv
 	.align	4, 0x90
-__ZNK5baseB8getDataBEv:                 ## @_ZNK5baseB8getDataBEv
+__ZNK6baseB28getDataBEv:                ## @_ZNK6baseB28getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -71,9 +71,9 @@ Ltmp19:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK7subBoth6getSumEv
+	.globl	__ZNK8subBoth26getSumEv
 	.align	4, 0x90
-__ZNK7subBoth6getSumEv:                 ## @_ZNK7subBoth6getSumEv
+__ZNK8subBoth26getSumEv:                ## @_ZNK8subBoth26getSumEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -105,9 +105,9 @@ Ltmp27:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNK7subBoth8getDataAEv
+	.globl	__ZNK8subBoth28getDataAEv
 	.align	4, 0x90
-__ZNK7subBoth8getDataAEv:               ## @_ZNK7subBoth8getDataAEv
+__ZNK8subBoth28getDataAEv:              ## @_ZNK8subBoth28getDataAEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -129,12 +129,12 @@ Ltmp34:
 	addq	$8, %rsp
 	popq	%rbx
 	popq	%rbp
-	jmp	__ZNK5baseA8getDataAEv  ## TAILCALL
+	jmp	__ZNK6baseA28getDataAEv ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNK7subBoth8getDataBEv
+	.globl	__ZNK8subBoth28getDataBEv
 	.align	4, 0x90
-__ZNK7subBoth8getDataBEv:               ## @_ZNK7subBoth8getDataBEv
+__ZNK8subBoth28getDataBEv:              ## @_ZNK8subBoth28getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -150,19 +150,19 @@ Ltmp40:
 Ltmp41:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
-	leaq	L_str2(%rip), %rdi
+	leaq	L_str3(%rip), %rdi
 	callq	_puts
 	addq	$16, %rbx
 	movq	%rbx, %rdi
 	addq	$8, %rsp
 	popq	%rbx
 	popq	%rbp
-	jmp	__ZNK5baseB8getDataBEv  ## TAILCALL
+	jmp	__ZNK6baseB28getDataBEv ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZThn16_NK7subBoth8getDataBEv
+	.globl	__ZThn16_NK8subBoth28getDataBEv
 	.align	4, 0x90
-__ZThn16_NK7subBoth8getDataBEv:         ## @_ZThn16_NK7subBoth8getDataBEv
+__ZThn16_NK8subBoth28getDataBEv:        ## @_ZThn16_NK8subBoth28getDataBEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -175,12 +175,12 @@ Ltmp46:
 	.cfi_def_cfa_register %rbp
 	addq	$-16, %rdi
 	popq	%rbp
-	jmp	__ZNK7subBoth8getDataBEv ## TAILCALL
+	jmp	__ZNK8subBoth28getDataBEv ## TAILCALL
 	.cfi_endproc
 
-	.globl	_main
+	.globl	__Z15complexMultipleiPPKc
 	.align	4, 0x90
-_main:                                  ## @main
+__Z15complexMultipleiPPKc:              ## @_Z15complexMultipleiPPKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -201,23 +201,31 @@ Ltmp54:
 	callq	__Znwm
 	movq	%rax, %rbx
 	movq	%rbx, %rdi
-	callq	__ZN7subBothC1Ev
+	callq	__ZN8subBoth2C1Ev
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	callq	*8(%rax)
 	movl	$12, %esi
 	movq	%rbx, %rdi
-	callq	__ZN5baseA8setDataAEi
+	callq	__ZN6baseA28setDataAEi
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	callq	*(%rax)
 	leaq	16(%rbx), %r14
 	movl	$13, %esi
 	movq	%r14, %rdi
-	callq	__ZN5baseB8setDataBEi
+	callq	__ZN6baseB28setDataBEi
 	movq	16(%rbx), %rax
 	movq	%r14, %rdi
 	callq	*(%rax)
+	movq	(%rbx), %rax
+	movq	%rbx, %rdi
+	callq	*8(%rax)
+	movl	%eax, %ecx
+	leaq	L_.str2(%rip), %rdi
+	xorl	%eax, %eax
+	movl	%ecx, %esi
+	callq	_printf
 	xorl	%eax, %eax
 	popq	%rbx
 	popq	%r14
@@ -226,10 +234,10 @@ Ltmp54:
 	.cfi_endproc
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.globl	__ZN7subBothC1Ev
-	.weak_def_can_be_hidden	__ZN7subBothC1Ev
+	.globl	__ZN8subBoth2C1Ev
+	.weak_def_can_be_hidden	__ZN8subBoth2C1Ev
 	.align	4, 0x90
-__ZN7subBothC1Ev:                       ## @_ZN7subBothC1Ev
+__ZN8subBoth2C1Ev:                      ## @_ZN8subBoth2C1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -241,13 +249,13 @@ Ltmp58:
 Ltmp59:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN7subBothC2Ev        ## TAILCALL
+	jmp	__ZN8subBoth2C2Ev       ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN7subBothC2Ev
-	.weak_def_can_be_hidden	__ZN7subBothC2Ev
+	.globl	__ZN8subBoth2C2Ev
+	.weak_def_can_be_hidden	__ZN8subBoth2C2Ev
 	.align	4, 0x90
-__ZN7subBothC2Ev:                       ## @_ZN7subBothC2Ev
+__ZN8subBoth2C2Ev:                      ## @_ZN8subBoth2C2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -264,12 +272,12 @@ Ltmp66:
 	.cfi_offset %rbx, -24
 	movq	%rdi, %rbx
                                         ## kill: RDI<def> RBX<kill>
-	callq	__ZN5baseAC2Ev
+	callq	__ZN6baseA2C2Ev
 	leaq	16(%rbx), %rdi
-	callq	__ZN5baseBC2Ev
-	leaq	__ZTV7subBoth+16(%rip), %rax
+	callq	__ZN6baseB2C2Ev
+	leaq	__ZTV8subBoth2+16(%rip), %rax
 	movq	%rax, (%rbx)
-	leaq	__ZTV7subBoth+56(%rip), %rax
+	leaq	__ZTV8subBoth2+56(%rip), %rax
 	movq	%rax, 16(%rbx)
 	addq	$8, %rsp
 	popq	%rbx
@@ -277,10 +285,10 @@ Ltmp66:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN5baseAC2Ev
-	.weak_def_can_be_hidden	__ZN5baseAC2Ev
+	.globl	__ZN6baseA2C2Ev
+	.weak_def_can_be_hidden	__ZN6baseA2C2Ev
 	.align	4, 0x90
-__ZN5baseAC2Ev:                         ## @_ZN5baseAC2Ev
+__ZN6baseA2C2Ev:                        ## @_ZN6baseA2C2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -291,16 +299,16 @@ Ltmp70:
 	movq	%rsp, %rbp
 Ltmp71:
 	.cfi_def_cfa_register %rbp
-	leaq	__ZTV5baseA+16(%rip), %rax
+	leaq	__ZTV6baseA2+16(%rip), %rax
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq
 	.cfi_endproc
 
-	.globl	__ZN5baseBC2Ev
-	.weak_def_can_be_hidden	__ZN5baseBC2Ev
+	.globl	__ZN6baseB2C2Ev
+	.weak_def_can_be_hidden	__ZN6baseB2C2Ev
 	.align	4, 0x90
-__ZN5baseBC2Ev:                         ## @_ZN5baseBC2Ev
+__ZN6baseB2C2Ev:                        ## @_ZN6baseB2C2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -311,7 +319,7 @@ Ltmp75:
 	movq	%rsp, %rbp
 Ltmp76:
 	.cfi_def_cfa_register %rbp
-	leaq	__ZTV5baseB+16(%rip), %rax
+	leaq	__ZTV6baseB2+16(%rip), %rax
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq
@@ -324,80 +332,83 @@ L_.str:                                 ## @.str
 L_.str1:                                ## @.str1
 	.asciz	"calling getDataB()\n"
 
+L_.str2:                                ## @.str2
+	.asciz	"sb->getSum()=%d"
+
 	.section	__DATA,__const
-	.globl	__ZTV7subBoth           ## @_ZTV7subBoth
+	.globl	__ZTV8subBoth2          ## @_ZTV8subBoth2
 	.align	4
-__ZTV7subBoth:
+__ZTV8subBoth2:
 	.quad	0
-	.quad	__ZTI7subBoth
-	.quad	__ZNK7subBoth8getDataAEv
-	.quad	__ZNK7subBoth6getSumEv
-	.quad	__ZNK7subBoth8getDataBEv
+	.quad	__ZTI8subBoth2
+	.quad	__ZNK8subBoth28getDataAEv
+	.quad	__ZNK8subBoth26getSumEv
+	.quad	__ZNK8subBoth28getDataBEv
 	.quad	-16
-	.quad	__ZTI7subBoth
-	.quad	__ZThn16_NK7subBoth8getDataBEv
+	.quad	__ZTI8subBoth2
+	.quad	__ZThn16_NK8subBoth28getDataBEv
 
 	.section	__TEXT,__const
-	.globl	__ZTS7subBoth           ## @_ZTS7subBoth
-__ZTS7subBoth:
-	.asciz	"7subBoth"
+	.globl	__ZTS8subBoth2          ## @_ZTS8subBoth2
+__ZTS8subBoth2:
+	.asciz	"8subBoth2"
 
-	.globl	__ZTS5baseA             ## @_ZTS5baseA
-__ZTS5baseA:
-	.asciz	"5baseA"
+	.globl	__ZTS6baseA2            ## @_ZTS6baseA2
+__ZTS6baseA2:
+	.asciz	"6baseA2"
 
 	.section	__DATA,__const
-	.globl	__ZTI5baseA             ## @_ZTI5baseA
+	.globl	__ZTI6baseA2            ## @_ZTI6baseA2
 	.align	3
-__ZTI5baseA:
+__ZTI6baseA2:
 	.quad	__ZTVN10__cxxabiv117__class_type_infoE+16
-	.quad	__ZTS5baseA
+	.quad	__ZTS6baseA2
 
 	.section	__TEXT,__const
-	.globl	__ZTS5baseB             ## @_ZTS5baseB
-__ZTS5baseB:
-	.asciz	"5baseB"
+	.globl	__ZTS6baseB2            ## @_ZTS6baseB2
+__ZTS6baseB2:
+	.asciz	"6baseB2"
 
 	.section	__DATA,__const
-	.globl	__ZTI5baseB             ## @_ZTI5baseB
+	.globl	__ZTI6baseB2            ## @_ZTI6baseB2
 	.align	3
-__ZTI5baseB:
+__ZTI6baseB2:
 	.quad	__ZTVN10__cxxabiv117__class_type_infoE+16
-	.quad	__ZTS5baseB
+	.quad	__ZTS6baseB2
 
-	.globl	__ZTI7subBoth           ## @_ZTI7subBoth
+	.globl	__ZTI8subBoth2          ## @_ZTI8subBoth2
 	.align	4
-__ZTI7subBoth:
+__ZTI8subBoth2:
 	.quad	__ZTVN10__cxxabiv121__vmi_class_type_infoE+16
-	.quad	__ZTS7subBoth
+	.quad	__ZTS8subBoth2
 	.long	0                       ## 0x0
 	.long	2                       ## 0x2
-	.quad	__ZTI5baseA
+	.quad	__ZTI6baseA2
 	.quad	2                       ## 0x2
-	.quad	__ZTI5baseB
+	.quad	__ZTI6baseB2
 	.quad	4098                    ## 0x1002
 
-	.globl	__ZTV5baseA             ## @_ZTV5baseA
+	.globl	__ZTV6baseA2            ## @_ZTV6baseA2
 	.align	4
-__ZTV5baseA:
+__ZTV6baseA2:
 	.quad	0
-	.quad	__ZTI5baseA
-	.quad	__ZNK5baseA8getDataAEv
+	.quad	__ZTI6baseA2
+	.quad	__ZNK6baseA28getDataAEv
 
-	.globl	__ZTV5baseB             ## @_ZTV5baseB
+	.globl	__ZTV6baseB2            ## @_ZTV6baseB2
 	.align	4
-__ZTV5baseB:
+__ZTV6baseB2:
 	.quad	0
-	.quad	__ZTI5baseB
-	.quad	__ZNK5baseB8getDataBEv
+	.quad	__ZTI6baseB2
+	.quad	__ZNK6baseB28getDataBEv
 
 	.section	__TEXT,__cstring,cstring_literals
 	.align	4                       ## @str
 L_str:
 	.asciz	"calling getDataA()"
 
-	.align	4                       ## @str2
-L_str2:
+	.align	4                       ## @str3
+L_str3:
 	.asciz	"calling getDataB()"
 
 

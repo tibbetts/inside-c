@@ -1,4 +1,4 @@
-class onefield {
+class onefield3 {
   private:
     int field;
   public:
@@ -6,7 +6,7 @@ class onefield {
     virtual int getField() const;
 };
 
-class onefield_subclass : public onefield {
+class onefield3_subclass : public onefield3 {
   private:
     int otherfield;
   public:
@@ -14,10 +14,10 @@ class onefield_subclass : public onefield {
     virtual void setField(int f);
 };
 
-int main(int argc, char **argv) {
-    onefield *ofp = new onefield_subclass;
+int dynamicCast(int argc, char **argv) {
+    onefield3 *ofp = new onefield3_subclass;
 
-    onefield_subclass *ofsp = dynamic_cast<onefield_subclass *>(ofp);
+    onefield3_subclass *ofsp = dynamic_cast<onefield3_subclass *>(ofp);
 
     delete ofsp;
 
@@ -25,14 +25,14 @@ int main(int argc, char **argv) {
 }
 
 
-void onefield::setField(int f) {
+void onefield3::setField(int f) {
     this->field = f;
 }
-int onefield::getField() const {
+int onefield3::getField() const {
     return this->field;
 }
 
-void onefield_subclass::setField(int f) {
-    onefield::setField(f);
+void onefield3_subclass::setField(int f) {
+    onefield3::setField(f);
     otherfield = f;
 }

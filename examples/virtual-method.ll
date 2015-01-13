@@ -28,7 +28,7 @@ define void @_Z9doMethodsR6parent(%struct.parent* %p) #0 {
 }
 
 ; Function Attrs: noinline ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #0 {
+define i32 @_Z13virtualMethodiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %p = alloca %struct.parent, align 8
   %c = alloca %struct.child, align 8
   call void @_ZN6parentC1Ev(%struct.parent* %p) #3
