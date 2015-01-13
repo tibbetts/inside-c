@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Secret Life of C++: What Your Compiler Doesn't Want You To Know</title>
+    <title>The Secret Life of C++: Anonymous Functions and Captures</title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -64,39 +64,57 @@
     </nav>
 
     <div class="container">
-      <h1>The Secret Life of C++: What Your Compiler Doesn't Want You To Know</h1>
-      <i>Richard Tibbetts</i><br>
-      <i>Date: Jan 13 6-8pm, Jan 14 6-8pm in 4-237</i><br>
-      <p>C++ is filled with strange and wonderful features, with a few more added in C++11. We will explore in detail how these features are implemented under the covers, in terms of the assembly code generated. Features to be explored include construction and destruction, copying, references, virtual methods, method dispatch, object layout, exceptions, templates, anonymous functions, captures, and more. No one should claim to be a C++ expert (including the instructor) but this class should help you win a geek fight (or job interview) with anyone who does. Examples will be worked on OSX or Linux with clang or gcc, but we will encourage experimentation if you show up with a Visual Studio 2013 environment.</p>
-      Attendance: Two-session series.<br>
-      Prereqs: Familiarity with C and C++, 6.004 useful.<br>
-      Contact: sipb-iap-cpp at mit dot edu<br>
+    <h1>The Secret Life of C++: Anonymous Functions and Captures</h1>
 
-      <ul>
-        <li><a href="c-primer.html">Hour One: The Not So Secret Life of C, and crash course in x86_64 assembly</a>
-        <li>Hour Two
-          <ul>
-            <li><a href="references.html">References</a>
-            <li><a href="mangling.html">Symbol Mangling</a>
-            <li><a href="objects.html">Objects, Methods, Inheritance, Copying, References, Methods</a>
-            <li><a href="rtti.html">Runtime Time Type Information and Casting</a>
-          </ul>
-        <li>Hour Three
-          <ul>
-            <li><a href="virtual-inheritance.html">Virtual Inheritance Review</a>
-            <li><a href="initializing-globals.html">Initializing Global Objects</a>
-            <li><a href="exceptions.html">Exceptions</a>
-          </ul>
-        <li>Hour Four
-          <ul>
-            <li><a href="sugar.html">Syntactic Sugar</a>
-            <li><a href="templates.html">Templates</a>
-            <li><a href="closures.html">Anonymous Functions, Captures</a>
-          </ul>
+    <p>
+      C++ objects in mdoern runtimes generally know their types, and can
+      use this for a little bit of introspection and for checking for
+      safe casts.
+    </p>
+    <h2>RTTI</h2>
+    First, a basic struct with no constructor:
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/basic-struct.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/basic-struct.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/basic-struct-clang.s">basic-struct-clang.s</a>.
+          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
+          <pre data-src="../examples/basic-struct.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
+          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
+          <pre data-src="../examples/basic-struct.listing"></pre>
+        </div>
+      </div>
     </div>
+
+
+
 
 <a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/prism.js"></script>
   </body>
 </html>
