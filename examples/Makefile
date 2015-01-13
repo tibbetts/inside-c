@@ -1,4 +1,4 @@
-NAMES=reference object virtual-method basic-constructor basic-method basic-struct basic-vtable call-by-value-error complex-multiple dynamic-cast object-arg object-ret simple-multiple subclass-vtable virtual-sub vtable-null
+NAMES=reference object virtual-method basic-constructor basic-method basic-struct basic-vtable call-by-value-error complex-multiple dynamic-cast object-arg object-ret simple-multiple subclass-vtable virtual-sub vtable-null mangling extern-c
 
 
 # Build different things on linux (where we assume we have gcc and gnu ld) and mac (where we have clang)
@@ -14,7 +14,7 @@ LLVM=$(addsuffix .ll, $(NAMES))
 ASSEMBLIES=$(addsuffix -clang.s, $(NAMES))
 TARGETS=$(LLVM) $(ASSEMBLIES)
 
-CFLAGS=-fno-inline
+CFLAGS=-fno-inline -O1
 # I used -fno-stackprotect in Xcode but not here for some reason.
 endif
 

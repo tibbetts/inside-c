@@ -5,40 +5,37 @@ _main:                                  ## @main
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp2:
-	.cfi_def_cfa_offset 16
 Ltmp3:
+	.cfi_def_cfa_offset 16
+Ltmp4:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp4:
+Ltmp5:
 	.cfi_def_cfa_register %rbp
-	subq	$48, %rsp
-	leaq	-24(%rbp), %rax
-	movl	$13, %ecx
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
-	movq	%rsi, -16(%rbp)
-	movq	%rax, %rdi
-	movl	%ecx, %esi
+	pushq	%r14
+	pushq	%rbx
+	subq	$16, %rsp
+Ltmp6:
+	.cfi_offset %rbx, -32
+Ltmp7:
+	.cfi_offset %r14, -24
+	leaq	-24(%rbp), %r14
+	movl	$13, %esi
+	movq	%r14, %rdi
 	callq	__ZN8onefield8setFieldEi
-	movabsq	$4, %rdi
+	movl	$4, %edi
 	callq	__Znwm
+	movq	%rax, %rbx
 	movl	$27, %esi
-	movq	%rax, -32(%rbp)
-	movq	-32(%rbp), %rdi
+	movq	%rbx, %rdi
 	callq	__ZN8onefield8setFieldEi
-	movq	-32(%rbp), %rax
-	cmpq	$0, %rax
-	movq	%rax, -40(%rbp)         ## 8-byte Spill
-	je	LBB0_2
-## BB#1:
-	movq	-40(%rbp), %rax         ## 8-byte Reload
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
 	callq	__ZdlPv
-LBB0_2:
-	leaq	-24(%rbp), %rdi
+	movq	%r14, %rdi
 	callq	__ZNK8onefield8getFieldEv
-	addq	$48, %rsp
+	addq	$16, %rsp
+	popq	%rbx
+	popq	%r14
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -49,17 +46,13 @@ __ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp7:
+Ltmp10:
 	.cfi_def_cfa_offset 16
-Ltmp8:
+Ltmp11:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp9:
+Ltmp12:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
 	movl	%esi, (%rdi)
 	popq	%rbp
 	retq
@@ -71,15 +64,13 @@ __ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp12:
+Ltmp15:
 	.cfi_def_cfa_offset 16
-Ltmp13:
+Ltmp16:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp14:
+Ltmp17:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
 	movl	(%rdi), %eax
 	popq	%rbp
 	retq

@@ -5,60 +5,36 @@ _main:                                  ## @main
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp2:
-	.cfi_def_cfa_offset 16
 Ltmp3:
+	.cfi_def_cfa_offset 16
+Ltmp4:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp4:
+Ltmp5:
 	.cfi_def_cfa_register %rbp
-	subq	$80, %rsp
-	movabsq	$16, %rax
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
-	movq	%rsi, -16(%rbp)
-	movq	%rax, %rdi
+	pushq	%rbx
+	pushq	%rax
+Ltmp6:
+	.cfi_offset %rbx, -24
+	movl	$16, %edi
 	callq	__Znwm
-	movq	%rax, %rdi
-	movq	%rax, -40(%rbp)         ## 8-byte Spill
+	movq	%rax, %rbx
+	movq	%rbx, %rdi
 	callq	__ZN17onefield_subclassC1Ev
-	movq	-40(%rbp), %rax         ## 8-byte Reload
-	movq	%rax, -24(%rbp)
-	movq	-24(%rbp), %rax
-	cmpq	$0, %rax
-	movq	%rax, -48(%rbp)         ## 8-byte Spill
+	leaq	__ZTI8onefield(%rip), %rsi
+	leaq	__ZTI17onefield_subclass(%rip), %rdx
+	xorl	%ecx, %ecx
+	movq	%rbx, %rdi
+	callq	___dynamic_cast
+	testq	%rax, %rax
 	je	LBB0_2
 ## BB#1:
-	leaq	__ZTI8onefield(%rip), %rax
-	leaq	__ZTI17onefield_subclass(%rip), %rcx
-	movabsq	$0, %rdx
-	movq	-48(%rbp), %rsi         ## 8-byte Reload
-	movq	%rsi, %rdi
-	movq	%rax, %rsi
-	movq	%rdx, -56(%rbp)         ## 8-byte Spill
-	movq	%rcx, %rdx
-	movq	-56(%rbp), %rcx         ## 8-byte Reload
-	callq	___dynamic_cast
-	movq	%rax, -64(%rbp)         ## 8-byte Spill
-	jmp	LBB0_3
-LBB0_2:
-	movabsq	$0, %rax
-	movq	%rax, -64(%rbp)         ## 8-byte Spill
-	jmp	LBB0_3
-LBB0_3:
-	movq	-64(%rbp), %rax         ## 8-byte Reload
-	movq	%rax, -32(%rbp)
-	movq	-32(%rbp), %rax
-	cmpq	$0, %rax
-	movq	%rax, -72(%rbp)         ## 8-byte Spill
-	je	LBB0_5
-## BB#4:
-	movq	-72(%rbp), %rax         ## 8-byte Reload
 	movq	%rax, %rdi
 	callq	__ZdlPv
-LBB0_5:
-	movl	$0, %eax
-	addq	$80, %rsp
+LBB0_2:
+	xorl	%eax, %eax
+	addq	$8, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -71,20 +47,15 @@ __ZN17onefield_subclassC1Ev:            ## @_ZN17onefield_subclassC1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp7:
+Ltmp9:
 	.cfi_def_cfa_offset 16
-Ltmp8:
+Ltmp10:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp9:
+Ltmp11:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	callq	__ZN17onefield_subclassC2Ev
-	addq	$16, %rsp
 	popq	%rbp
-	retq
+	jmp	__ZN17onefield_subclassC2Ev ## TAILCALL
 	.cfi_endproc
 
 	.section	__TEXT,__text,regular,pure_instructions
@@ -94,17 +65,13 @@ __ZN8onefield8setFieldEi:               ## @_ZN8onefield8setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp12:
+Ltmp14:
 	.cfi_def_cfa_offset 16
-Ltmp13:
+Ltmp15:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp14:
+Ltmp16:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
 	movl	%esi, 8(%rdi)
 	popq	%rbp
 	retq
@@ -116,15 +83,13 @@ __ZNK8onefield8getFieldEv:              ## @_ZNK8onefield8getFieldEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp17:
+Ltmp19:
 	.cfi_def_cfa_offset 16
-Ltmp18:
+Ltmp20:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp19:
+Ltmp21:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
 	movl	8(%rdi), %eax
 	popq	%rbp
 	retq
@@ -136,26 +101,27 @@ __ZN17onefield_subclass8setFieldEi:     ## @_ZN17onefield_subclass8setFieldEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp22:
+Ltmp25:
 	.cfi_def_cfa_offset 16
-Ltmp23:
+Ltmp26:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp24:
+Ltmp27:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movq	%rdi, %rax
-	movl	-12(%rbp), %esi
-	movq	%rdi, -24(%rbp)         ## 8-byte Spill
-	movq	%rax, %rdi
+	pushq	%r14
+	pushq	%rbx
+Ltmp28:
+	.cfi_offset %rbx, -32
+Ltmp29:
+	.cfi_offset %r14, -24
+	movl	%esi, %r14d
+	movq	%rdi, %rbx
+                                        ## kill: RDI<def> RBX<kill>
+                                        ## kill: ESI<def> R14D<kill>
 	callq	__ZN8onefield8setFieldEi
-	movl	-12(%rbp), %esi
-	movq	-24(%rbp), %rax         ## 8-byte Reload
-	movl	%esi, 12(%rax)
-	addq	$32, %rsp
+	movl	%r14d, 12(%rbx)
+	popq	%rbx
+	popq	%r14
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -168,25 +134,24 @@ __ZN17onefield_subclassC2Ev:            ## @_ZN17onefield_subclassC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp27:
+Ltmp33:
 	.cfi_def_cfa_offset 16
-Ltmp28:
+Ltmp34:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp29:
+Ltmp35:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movq	%rdi, %rax
-	movq	%rdi, -16(%rbp)         ## 8-byte Spill
-	movq	%rax, %rdi
+	pushq	%rbx
+	pushq	%rax
+Ltmp36:
+	.cfi_offset %rbx, -24
+	movq	%rdi, %rbx
+                                        ## kill: RDI<def> RBX<kill>
 	callq	__ZN8onefieldC2Ev
-	leaq	__ZTV17onefield_subclass(%rip), %rax
-	addq	$16, %rax
-	movq	-16(%rbp), %rdi         ## 8-byte Reload
-	movq	%rax, (%rdi)
-	addq	$16, %rsp
+	leaq	__ZTV17onefield_subclass+16(%rip), %rax
+	movq	%rax, (%rbx)
+	addq	$8, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -198,17 +163,14 @@ __ZN8onefieldC2Ev:                      ## @_ZN8onefieldC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp32:
+Ltmp39:
 	.cfi_def_cfa_offset 16
-Ltmp33:
+Ltmp40:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp34:
+Ltmp41:
 	.cfi_def_cfa_register %rbp
-	leaq	__ZTV8onefield(%rip), %rax
-	addq	$16, %rax
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
+	leaq	__ZTV8onefield+16(%rip), %rax
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq

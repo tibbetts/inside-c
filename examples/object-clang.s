@@ -12,17 +12,12 @@ Ltmp3:
 	movq	%rsp, %rbp
 Ltmp4:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	leaq	-24(%rbp), %rax
-	movl	$13, %ecx
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
-	movq	%rsi, -16(%rbp)
-	movq	%rax, %rdi
-	movl	%ecx, %esi
+	subq	$16, %rsp
+	leaq	-8(%rbp), %rdi
+	movl	$13, %esi
 	callq	__ZN15onefield_structC1Ei
-	movl	$0, %eax
-	addq	$32, %rsp
+	xorl	%eax, %eax
+	addq	$16, %rsp
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -42,15 +37,8 @@ Ltmp8:
 	movq	%rsp, %rbp
 Ltmp9:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
-	callq	__ZN15onefield_structC2Ei
-	addq	$16, %rsp
 	popq	%rbp
-	retq
+	jmp	__ZN15onefield_structC2Ei ## TAILCALL
 	.cfi_endproc
 
 	.globl	__ZN15onefield_structC2Ei
@@ -67,10 +55,6 @@ Ltmp13:
 	movq	%rsp, %rbp
 Ltmp14:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
 	movl	%esi, (%rdi)
 	popq	%rbp
 	retq

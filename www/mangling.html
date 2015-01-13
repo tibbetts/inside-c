@@ -66,15 +66,91 @@
       <tr><td>std::vector<MyClass></td><td>TODO</td></tr>
     </table>
 
-    TODO: Actual code example.
+    <h2>Name Mangling Example</h2>
+    <div role="tabpanel">
 
-    <h2>More Information<h2>
-    For more detail, you can do worse than Wikipedia: <a href="http://en.wikipedia.org/wiki/Name_mangling#Name_mangling_in_C.2B.2B">Name Mangling in C++</a>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#mangling-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#mangling-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#mangling-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#mangling-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#mangling-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="mangling-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/mangling.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/mangling.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="mangling-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/mangling-clang.s">mangling-clang.s</a>.
+          <pre data-src="../examples/mangling-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="mangling-ll">
+          <pre data-src="../examples/mangling.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="mangling-gcc-s">
+          <pre data-src="../examples/mangling-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="mangling-listing">
+          <pre data-src="../examples/mangling.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>More Information</h2>
+    <p>
+      For more detail, you can do worse than
+      Wikipedia: <a href="http://en.wikipedia.org/wiki/Name_mangling#Name_mangling_in_C.2B.2B">Name
+      Mangling in C++</a>
+    </p>
 
     <h2>Extern C</h2>
 
-    TODO.
-    TODO example
+    <p>
+      When you want to link with a C method, or be able to have a
+      method called from C, you need to tag it as extern C. This tells
+      the compiler not to mangle the symbol, so it will have a basic C
+      looking symbol. For global variables there is no mangling and
+      extern is redundant. But variables declared without extern are
+      implicitly static. If they are initialized they will need
+      symbols, and those symbols are mangled to avoid conflicting in
+      the linker.
+    </p>
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#extern-c-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#extern-c-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#extern-c-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#extern-c-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#extern-c-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="extern-c-cpp">
+          Our source code, as you might expect, looks like this (<a href="../examples/extern-c.cpp">click here for the source in a file.</a>):
+          <pre data-src="../examples/extern-c.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="extern-c-clang-s">
+          We turn that into assembly, and it looks like <a href="../examples/extern-c-clang.s">extern-c-clang.s</a>.
+          <pre data-src="../examples/extern-c-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="extern-c-ll">
+          <pre data-src="../examples/extern-c.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="extern-c-gcc-s">
+          <pre data-src="../examples/extern-c-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="extern-c-listing">
+          <pre data-src="../examples/extern-c.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+
 
 <a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 

@@ -12,10 +12,6 @@ Ltmp3:
 	movq	%rsp, %rbp
 Ltmp4:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
 	movl	%esi, (%rdi)
 	popq	%rbp
 	retq
@@ -34,8 +30,6 @@ Ltmp8:
 	movq	%rsp, %rbp
 Ltmp9:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
 	movl	(%rdi), %eax
 	popq	%rbp
 	retq
@@ -54,10 +48,6 @@ Ltmp13:
 	movq	%rsp, %rbp
 Ltmp14:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movl	%esi, -12(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	-12(%rbp), %esi
 	movl	%esi, (%rdi)
 	popq	%rbp
 	retq
@@ -76,8 +66,6 @@ Ltmp18:
 	movq	%rsp, %rbp
 Ltmp19:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
 	movl	(%rdi), %eax
 	popq	%rbp
 	retq
@@ -89,32 +77,29 @@ __ZNK7subBoth6getSumEv:                 ## @_ZNK7subBoth6getSumEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp22:
-	.cfi_def_cfa_offset 16
 Ltmp23:
+	.cfi_def_cfa_offset 16
+Ltmp24:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp24:
+Ltmp25:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	$0, -12(%rbp)
-	movq	%rdi, %rax
-	movq	%rdi, -24(%rbp)         ## 8-byte Spill
-	movq	%rax, %rdi
+	pushq	%r14
+	pushq	%rbx
+Ltmp26:
+	.cfi_offset %rbx, -32
+Ltmp27:
+	.cfi_offset %r14, -24
+	movq	%rdi, %rbx
+                                        ## kill: RDI<def> RBX<kill>
 	callq	__ZNK5baseA8getDataAEv
-	movl	-12(%rbp), %ecx
-	addl	%eax, %ecx
-	movl	%ecx, -12(%rbp)
-	movq	-24(%rbp), %rdi         ## 8-byte Reload
-	addq	$4, %rdi
+	movl	%eax, %r14d
+	addq	$4, %rbx
+	movq	%rbx, %rdi
 	callq	__ZNK5baseB8getDataBEv
-	movl	-12(%rbp), %ecx
-	addl	%eax, %ecx
-	movl	%ecx, -12(%rbp)
-	movl	-12(%rbp), %eax
-	addq	$32, %rsp
+	addl	%r14d, %eax
+	popq	%rbx
+	popq	%r14
 	popq	%rbp
 	retq
 	.cfi_endproc

@@ -5,26 +5,27 @@ __Z9doMethodsR6parent:                  ## @_Z9doMethodsR6parent
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp2:
-	.cfi_def_cfa_offset 16
 Ltmp3:
+	.cfi_def_cfa_offset 16
+Ltmp4:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp4:
+Ltmp5:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movq	(%rdi), %rax
+	pushq	%rbx
+	pushq	%rax
+Ltmp6:
+	.cfi_offset %rbx, -24
+	movq	%rdi, %rbx
+	movq	(%rbx), %rax
+                                        ## kill: RDI<def> RBX<kill>
 	callq	*(%rax)
-	movq	-8(%rbp), %rdi
-	movq	(%rdi), %rcx
-	movl	%eax, -12(%rbp)         ## 4-byte Spill
-	callq	*8(%rcx)
-	movl	%eax, -16(%rbp)         ## 4-byte Spill
-	addq	$16, %rsp
+	movq	(%rbx), %rax
+	movq	%rbx, %rdi
+	addq	$8, %rsp
+	popq	%rbx
 	popq	%rbp
-	retq
+	jmpq	*8(%rax)  # TAILCALL
 	.cfi_endproc
 
 	.globl	_main
@@ -33,28 +34,30 @@ _main:                                  ## @main
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp7:
+Ltmp10:
 	.cfi_def_cfa_offset 16
-Ltmp8:
+Ltmp11:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp9:
+Ltmp12:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	leaq	-24(%rbp), %rax
-	movl	%edi, -4(%rbp)
-	movq	%rsi, -16(%rbp)
-	movq	%rax, %rdi
+	pushq	%rbx
+	subq	$24, %rsp
+Ltmp13:
+	.cfi_offset %rbx, -24
+	leaq	-16(%rbp), %rbx
+	movq	%rbx, %rdi
 	callq	__ZN6parentC1Ev
-	leaq	-24(%rbp), %rdi
+	movq	%rbx, %rdi
 	callq	__Z9doMethodsR6parent
-	leaq	-32(%rbp), %rdi
+	leaq	-24(%rbp), %rbx
+	movq	%rbx, %rdi
 	callq	__ZN5childC1Ev
-	leaq	-32(%rbp), %rax
-	movq	%rax, %rdi
+	movq	%rbx, %rdi
 	callq	__Z9doMethodsR6parent
-	movl	$0, %eax
-	addq	$32, %rsp
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -67,20 +70,15 @@ __ZN6parentC1Ev:                        ## @_ZN6parentC1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp12:
+Ltmp16:
 	.cfi_def_cfa_offset 16
-Ltmp13:
+Ltmp17:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp14:
+Ltmp18:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	callq	__ZN6parentC2Ev
-	addq	$16, %rsp
 	popq	%rbp
-	retq
+	jmp	__ZN6parentC2Ev         ## TAILCALL
 	.cfi_endproc
 
 	.globl	__ZN5childC1Ev
@@ -90,20 +88,15 @@ __ZN5childC1Ev:                         ## @_ZN5childC1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp17:
+Ltmp21:
 	.cfi_def_cfa_offset 16
-Ltmp18:
+Ltmp22:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp19:
+Ltmp23:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	callq	__ZN5childC2Ev
-	addq	$16, %rsp
 	popq	%rbp
-	retq
+	jmp	__ZN5childC2Ev          ## TAILCALL
 	.cfi_endproc
 
 	.globl	__ZN5childC2Ev
@@ -113,25 +106,25 @@ __ZN5childC2Ev:                         ## @_ZN5childC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp22:
+Ltmp27:
 	.cfi_def_cfa_offset 16
-Ltmp23:
+Ltmp28:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp24:
+Ltmp29:
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movq	%rdi, %rax
-	movq	%rdi, -16(%rbp)         ## 8-byte Spill
-	movq	%rax, %rdi
+	pushq	%rbx
+	pushq	%rax
+Ltmp30:
+	.cfi_offset %rbx, -24
+	movq	%rdi, %rbx
+                                        ## kill: RDI<def> RBX<kill>
 	callq	__ZN6parentC2Ev
 	movq	__ZTV5child@GOTPCREL(%rip), %rax
 	addq	$16, %rax
-	movq	-16(%rbp), %rdi         ## 8-byte Reload
-	movq	%rax, (%rdi)
-	addq	$16, %rsp
+	movq	%rax, (%rbx)
+	addq	$8, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -143,17 +136,15 @@ __ZN6parentC2Ev:                        ## @_ZN6parentC2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp27:
+Ltmp33:
 	.cfi_def_cfa_offset 16
-Ltmp28:
+Ltmp34:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp29:
+Ltmp35:
 	.cfi_def_cfa_register %rbp
 	movq	__ZTV6parent@GOTPCREL(%rip), %rax
 	addq	$16, %rax
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
 	movq	%rax, (%rdi)
 	popq	%rbp
 	retq
@@ -166,15 +157,14 @@ __ZN5child3fooEv:                       ## @_ZN5child3fooEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp32:
+Ltmp38:
 	.cfi_def_cfa_offset 16
-Ltmp33:
+Ltmp39:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp34:
+Ltmp40:
 	.cfi_def_cfa_register %rbp
 	movl	$37, %eax
-	movq	%rdi, -8(%rbp)
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -186,15 +176,14 @@ __ZN6parent3barEv:                      ## @_ZN6parent3barEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp37:
+Ltmp43:
 	.cfi_def_cfa_offset 16
-Ltmp38:
+Ltmp44:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp39:
+Ltmp45:
 	.cfi_def_cfa_register %rbp
 	movl	$15, %eax
-	movq	%rdi, -8(%rbp)
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -206,15 +195,14 @@ __ZN6parent3fooEv:                      ## @_ZN6parent3fooEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp42:
+Ltmp48:
 	.cfi_def_cfa_offset 16
-Ltmp43:
+Ltmp49:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp44:
+Ltmp50:
 	.cfi_def_cfa_register %rbp
 	movl	$12, %eax
-	movq	%rdi, -8(%rbp)
 	popq	%rbp
 	retq
 	.cfi_endproc

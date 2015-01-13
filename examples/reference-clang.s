@@ -12,11 +12,7 @@ Ltmp3:
 	movq	%rsp, %rbp
 Ltmp4:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	(%rdi), %eax
-	addl	$37, %eax
-	movl	%eax, (%rdi)
+	addl	$37, (%rdi)
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -34,11 +30,7 @@ Ltmp8:
 	movq	%rsp, %rbp
 Ltmp9:
 	.cfi_def_cfa_register %rbp
-	movq	%rdi, -8(%rbp)
-	movq	-8(%rbp), %rdi
-	movl	(%rdi), %eax
-	addl	$23, %eax
-	movl	%eax, (%rdi)
+	addl	$23, (%rdi)
 	popq	%rbp
 	retq
 	.cfi_endproc
@@ -49,25 +41,26 @@ _main:                                  ## @main
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
-Ltmp12:
-	.cfi_def_cfa_offset 16
 Ltmp13:
+	.cfi_def_cfa_offset 16
+Ltmp14:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-Ltmp14:
+Ltmp15:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	leaq	-20(%rbp), %rax
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
-	movq	%rsi, -16(%rbp)
-	movl	$12, -20(%rbp)
-	movq	%rax, %rdi
+	pushq	%rbx
+	pushq	%rax
+Ltmp16:
+	.cfi_offset %rbx, -24
+	movl	$12, -12(%rbp)
+	leaq	-12(%rbp), %rbx
+	movq	%rbx, %rdi
 	callq	__Z13use_referenceRi
-	leaq	-20(%rbp), %rdi
+	movq	%rbx, %rdi
 	callq	__Z11use_pointerPi
-	movl	-20(%rbp), %eax
-	addq	$32, %rsp
+	movl	-12(%rbp), %eax
+	addq	$8, %rsp
+	popq	%rbx
 	popq	%rbp
 	retq
 	.cfi_endproc
