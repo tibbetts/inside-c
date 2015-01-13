@@ -13,7 +13,7 @@ int bypointer(struct Data *d) {
   return d->i;
 }
 
-int main (int argc, char **argv) {
+int structTest (int argc, char **argv) {
   struct Data data;
   data.i = 37;
   data.l = 137;

@@ -19,9 +19,9 @@ Ltmp4:
 	retq
 	.cfi_endproc
 
-	.globl	_main
+	.globl	_array
 	.align	4, 0x90
-_main:                                  ## @main
+_array:                                 ## @array
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -37,8 +37,7 @@ Ltmp9:
 	movq	___stack_chk_guard@GOTPCREL(%rip), %rcx
 	movq	(%rcx), %rcx
 	movq	%rcx, -8(%rbp)
-	movl	$0, -84(%rbp)
-	movl	%edi, -88(%rbp)
+	movl	%edi, -84(%rbp)
 	movq	%rsi, -96(%rbp)
 	movl	$137, -20(%rbp)
 	movl	$3, -72(%rbp)

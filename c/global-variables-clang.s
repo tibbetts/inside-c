@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	_globalVariables
 	.align	4, 0x90
-_main:                                  ## @main
+_globalVariables:                       ## @globalVariables
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -13,10 +13,11 @@ Ltmp3:
 Ltmp4:
 	.cfi_def_cfa_register %rbp
 	subq	$32, %rsp
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
+	leaq	L_.str1(%rip), %rax
+	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
-	movq	_init_c(%rip), %rdi
+	movq	_init_c(%rip), %rsi
+	movq	%rax, %rdi
 	movb	$0, %al
 	callq	_printf
 	movq	_uninitialized@GOTPCREL(%rip), %rsi
@@ -48,6 +49,10 @@ _init_c:
 	.align	2
 _initialized:
 	.long	5                       ## 0x5
+
+	.section	__TEXT,__cstring,cstring_literals
+L_.str1:                                ## @.str1
+	.asciz	"%s"
 
 	.comm	_uninitialized_c,8,3    ## @uninitialized_c
 	.comm	_uninitialized,4,2      ## @uninitialized

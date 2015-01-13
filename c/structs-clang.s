@@ -43,9 +43,9 @@ Ltmp9:
 LCPI2_0:
 	.quad	4615514078110652826     ## double 3.7000000000000002
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	_structTest
 	.align	4, 0x90
-_main:                                  ## @main
+_structTest:                            ## @structTest
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -59,8 +59,7 @@ Ltmp14:
 	subq	$80, %rsp
 	leaq	-40(%rbp), %rax
 	movsd	LCPI2_0(%rip), %xmm0
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
+	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
 	movl	$37, -40(%rbp)
 	movq	$137, -32(%rbp)

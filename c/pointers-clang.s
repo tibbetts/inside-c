@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_function
+	.globl	_functionToCall
 	.align	4, 0x90
-_function:                              ## @function
+_functionToCall:                        ## @functionToCall
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -25,9 +25,9 @@ Ltmp4:
 	retq
 	.cfi_endproc
 
-	.globl	_pointers
+	.globl	_pointer
 	.align	4, 0x90
-_pointers:                              ## @pointers
+_pointer:                               ## @pointer
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -38,22 +38,24 @@ Ltmp8:
 	movq	%rsp, %rbp
 Ltmp9:
 	.cfi_def_cfa_register %rbp
-	subq	$32, %rsp
-	leaq	-4(%rbp), %rax
-	leaq	-16(%rbp), %rcx
-	movl	$3, -4(%rbp)
-	movq	%rax, -16(%rbp)
-	movq	%rcx, -24(%rbp)
-	movl	-4(%rbp), %edi
+	subq	$48, %rsp
+	leaq	-20(%rbp), %rax
+	leaq	-32(%rbp), %rcx
+	movl	%edi, -4(%rbp)
+	movq	%rsi, -16(%rbp)
+	movl	$3, -20(%rbp)
+	movq	%rax, -32(%rbp)
+	movq	%rcx, -40(%rbp)
+	movl	-20(%rbp), %edi
 	movq	%rax, %rsi
 	movq	%rcx, %rdx
-	callq	_function
+	callq	_functionToCall
 	leaq	L_.str(%rip), %rdi
-	movl	-4(%rbp), %esi
+	movl	-20(%rbp), %esi
 	movb	$0, %al
 	callq	_printf
-	movl	%eax, -28(%rbp)         ## 4-byte Spill
-	addq	$32, %rsp
+	movl	%eax, -44(%rbp)         ## 4-byte Spill
+	addq	$48, %rsp
 	popq	%rbp
 	retq
 	.cfi_endproc

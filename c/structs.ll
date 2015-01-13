@@ -22,22 +22,20 @@ define i32 @bypointer(%struct.Data* %d) #0 {
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** %argv) #0 {
+define i32 @structTest(i32 %argc, i8** %argv) #0 {
   %1 = alloca i32, align 4
-  %2 = alloca i32, align 4
-  %3 = alloca i8**, align 8
+  %2 = alloca i8**, align 8
   %data = alloca %struct.Data, align 8
-  store i32 0, i32* %1
-  store i32 %argc, i32* %2, align 4
-  store i8** %argv, i8*** %3, align 8
-  %4 = getelementptr inbounds %struct.Data* %data, i32 0, i32 0
-  store i32 37, i32* %4, align 4
-  %5 = getelementptr inbounds %struct.Data* %data, i32 0, i32 1
-  store i64 137, i64* %5, align 8
-  %6 = getelementptr inbounds %struct.Data* %data, i32 0, i32 2
-  store double 3.700000e+00, double* %6, align 8
-  %7 = call i32 @byvalue(%struct.Data* byval align 8 %data)
-  %8 = call i32 @bypointer(%struct.Data* %data)
+  store i32 %argc, i32* %1, align 4
+  store i8** %argv, i8*** %2, align 8
+  %3 = getelementptr inbounds %struct.Data* %data, i32 0, i32 0
+  store i32 37, i32* %3, align 4
+  %4 = getelementptr inbounds %struct.Data* %data, i32 0, i32 1
+  store i64 137, i64* %4, align 8
+  %5 = getelementptr inbounds %struct.Data* %data, i32 0, i32 2
+  store double 3.700000e+00, double* %5, align 8
+  %6 = call i32 @byvalue(%struct.Data* byval align 8 %data)
+  %7 = call i32 @bypointer(%struct.Data* %data)
   ret i32 0
 }
 

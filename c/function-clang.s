@@ -21,9 +21,9 @@ Ltmp4:
 	retq
 	.cfi_endproc
 
-	.globl	_main
+	.globl	_function
 	.align	4, 0x90
-_main:                                  ## @main
+_function:                              ## @function
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -36,8 +36,7 @@ Ltmp9:
 	.cfi_def_cfa_register %rbp
 	subq	$32, %rsp
 	movl	$13, %eax
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
+	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
 	movl	%eax, %edi
 	callq	_foo

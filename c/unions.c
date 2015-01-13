@@ -9,7 +9,7 @@ union Data {
   char str[LENGTH];
 };
 
-int main (int argc, char **argv) {
+int unionTest (int argc, char **argv) {
   union Data d1;
   int x;
   x = 37;

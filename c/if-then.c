@@ -1,6 +1,4 @@
-int
-main (int argc, char **argv)
-{
+int ifThen (int argc, char **argv) {
     int foo;
     if (foo > 0) {
         foo += 12;

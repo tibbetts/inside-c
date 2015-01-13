@@ -5,26 +5,25 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [5 x i8] c"TEST\00", align 1
 @init_c = global i8* getelementptr inbounds ([5 x i8]* @.str, i32 0, i32 0), align 8
 @initialized = global i32 5, align 4
+@.str1 = private unnamed_addr constant [3 x i8] c"%s\00", align 1
 @uninitialized_c = common global i8* null, align 8
 @uninitialized = common global i32 0, align 4
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** %argv) #0 {
+define i32 @globalVariables(i32 %argc, i8** %argv) #0 {
   %1 = alloca i32, align 4
-  %2 = alloca i32, align 4
-  %3 = alloca i8**, align 8
-  store i32 0, i32* %1
-  store i32 %argc, i32* %2, align 4
-  store i8** %argv, i8*** %3, align 8
-  %4 = load i8** @init_c, align 8
-  %5 = call i32 (i8*, ...)* @printf(i8* %4)
-  %6 = load i8** @init_c, align 8
-  store i8* %6, i8** @uninitialized_c, align 8
-  %7 = load i32* @initialized, align 4
-  %8 = add nsw i32 12, %7
-  store i32 %8, i32* @uninitialized, align 4
-  %9 = load i32* @uninitialized, align 4
-  ret i32 %9
+  %2 = alloca i8**, align 8
+  store i32 %argc, i32* %1, align 4
+  store i8** %argv, i8*** %2, align 8
+  %3 = load i8** @init_c, align 8
+  %4 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str1, i32 0, i32 0), i8* %3)
+  %5 = load i8** @init_c, align 8
+  store i8* %5, i8** @uninitialized_c, align 8
+  %6 = load i32* @initialized, align 4
+  %7 = add nsw i32 12, %6
+  store i32 %7, i32* @uninitialized, align 4
+  %8 = load i32* @uninitialized, align 4
+  ret i32 %8
 }
 
 declare i32 @printf(i8*, ...) #1

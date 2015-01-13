@@ -4,9 +4,9 @@
 LCPI0_0:
 	.quad	4615514078110652826     ## double 3.7000000000000002
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	_unionTest
 	.align	4, 0x90
-_main:                                  ## @main
+_unionTest:                             ## @unionTest
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -26,8 +26,7 @@ Ltmp4:
 	movq	___stack_chk_guard@GOTPCREL(%rip), %r9
 	movq	(%r9), %r9
 	movq	%r9, -8(%rbp)
-	movl	$0, -36(%rbp)
-	movl	%edi, -40(%rbp)
+	movl	%edi, -36(%rbp)
 	movq	%rsi, -48(%rbp)
 	movl	$37, -52(%rbp)
 	movl	-52(%rbp), %edi

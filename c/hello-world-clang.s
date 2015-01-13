@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	_helloWorld
 	.align	4, 0x90
-_main:                                  ## @main
+_helloWorld:                            ## @helloWorld
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -14,8 +14,7 @@ Ltmp4:
 	.cfi_def_cfa_register %rbp
 	subq	$32, %rsp
 	leaq	L_.str(%rip), %rax
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
+	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
 	movq	%rax, %rdi
 	movb	$0, %al

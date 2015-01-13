@@ -6,9 +6,7 @@ int foo(int arg) {
     return ret;
 }
 
-int
-main (int argc, char **argv)
-{
+int function(int argc, char **argv) {
     int val;
     val = foo(13);
     return val;

@@ -3,7 +3,7 @@ int func(int *array) {
   return array[3];
 }
 
-int main (int argc, char **argv) {
+int array (int argc, char **argv) {
   int foo[10];
   int bar[5];
   foo[7]=137;

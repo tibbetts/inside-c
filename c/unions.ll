@@ -7,26 +7,24 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [13 x i8] c"thirty-seven\00", align 1
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define i32 @main(i32 %argc, i8** %argv) #0 {
+define i32 @unionTest(i32 %argc, i8** %argv) #0 {
   %1 = alloca i32, align 4
-  %2 = alloca i32, align 4
-  %3 = alloca i8**, align 8
+  %2 = alloca i8**, align 8
   %d1 = alloca %union.Data, align 8
   %x = alloca i32, align 4
-  store i32 0, i32* %1
-  store i32 %argc, i32* %2, align 4
-  store i8** %argv, i8*** %3, align 8
+  store i32 %argc, i32* %1, align 4
+  store i8** %argv, i8*** %2, align 8
   store i32 37, i32* %x, align 4
-  %4 = load i32* %x, align 4
-  %5 = bitcast %union.Data* %d1 to i32*
-  store i32 %4, i32* %5, align 4
-  %6 = bitcast %union.Data* %d1 to i64*
-  store i64 137, i64* %6, align 8
-  %7 = bitcast %union.Data* %d1 to double*
-  store double 3.700000e+00, double* %7, align 8
-  %8 = bitcast %union.Data* %d1 to [20 x i8]*
-  %9 = getelementptr inbounds [20 x i8]* %8, i32 0, i32 0
-  %10 = call i8* @__strncpy_chk(i8* %9, i8* getelementptr inbounds ([13 x i8]* @.str, i32 0, i32 0), i64 20, i64 24) #2
+  %3 = load i32* %x, align 4
+  %4 = bitcast %union.Data* %d1 to i32*
+  store i32 %3, i32* %4, align 4
+  %5 = bitcast %union.Data* %d1 to i64*
+  store i64 137, i64* %5, align 8
+  %6 = bitcast %union.Data* %d1 to double*
+  store double 3.700000e+00, double* %6, align 8
+  %7 = bitcast %union.Data* %d1 to [20 x i8]*
+  %8 = getelementptr inbounds [20 x i8]* %7, i32 0, i32 0
+  %9 = call i8* @__strncpy_chk(i8* %8, i8* getelementptr inbounds ([13 x i8]* @.str, i32 0, i32 0), i64 20, i64 24) #2
   ret i32 0
 }
 

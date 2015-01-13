@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
+	.globl	_ifThen
 	.align	4, 0x90
-_main:                                  ## @main
+_ifThen:                                ## @ifThen
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -12,8 +12,7 @@ Ltmp3:
 	movq	%rsp, %rbp
 Ltmp4:
 	.cfi_def_cfa_register %rbp
-	movl	$0, -4(%rbp)
-	movl	%edi, -8(%rbp)
+	movl	%edi, -4(%rbp)
 	movq	%rsi, -16(%rbp)
 	cmpl	$0, -20(%rbp)
 	jle	LBB0_2

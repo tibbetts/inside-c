@@ -5,7 +5,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [9 x i8] c"foo = %d\00", align 1
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define void @function(i32 %foo, i32* %fp, i32** %fpp) #0 {
+define void @functionToCall(i32 %foo, i32* %fp, i32** %fpp) #0 {
   %1 = alloca i32, align 4
   %2 = alloca i32*, align 8
   %3 = alloca i32**, align 8
@@ -22,17 +22,21 @@ define void @function(i32 %foo, i32* %fp, i32** %fpp) #0 {
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define void @pointers() #0 {
+define void @pointer(i32 %argc, i8** %argv) #0 {
+  %1 = alloca i32, align 4
+  %2 = alloca i8**, align 8
   %foo = alloca i32, align 4
   %fp = alloca i32*, align 8
   %fpp = alloca i32**, align 8
+  store i32 %argc, i32* %1, align 4
+  store i8** %argv, i8*** %2, align 8
   store i32 3, i32* %foo, align 4
   store i32* %foo, i32** %fp, align 8
   store i32** %fp, i32*** %fpp, align 8
-  %1 = load i32* %foo, align 4
-  call void @function(i32 %1, i32* %foo, i32** %fp)
-  %2 = load i32* %foo, align 4
-  %3 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([9 x i8]* @.str, i32 0, i32 0), i32 %2)
+  %3 = load i32* %foo, align 4
+  call void @functionToCall(i32 %3, i32* %foo, i32** %fp)
+  %4 = load i32* %foo, align 4
+  %5 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([9 x i8]* @.str, i32 0, i32 0), i32 %4)
   ret void
 }
 
