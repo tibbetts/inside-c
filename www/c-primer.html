@@ -113,7 +113,7 @@
         </div>
         <div role="tab-panel" class="tab-pane" id="hello-world-mac">
           Or on the mac:
-          <pre><code class="language-nasm">Test`helloWorld() at main.cpp:12:
+          <code class="language-nasm"><pre>Test`helloWorld() at main.cpp:12:
 0x100000c80:  pushq  %rbp
 0x100000c81:  movq   %rsp, %rbp
 0x100000c84:  leaq   0x2b6(%rip), %rdi         ; "Hello, World"
@@ -123,15 +123,41 @@
         </div>
       </div>
     </div>
+      <h2>Generating assembly and listings</h2>
     <p>
-      How do we do that? We run <code>cc -s -o hello-world.s hello-world.c</code> Or we set a breakpoint in XCode and check Debug -> Debug Workflow -> Always Show Assembly. Or we get the built objects and we run odump on them. If building with xocde they will be at /Users/tibbetts/Library/Developer/Xcode/DerivedData/Test-gklyipaixaqhfmaztcrgfnmrvniq/Build/Intermediates/Test.build/Debug/Test.build/Objects-normal/x86_64
-
-    <p>
+      How do we do that? We run <code>cc -s -o hello-world.s
+      hello-world.c</code> Or we set a breakpoint in XCode and check
+      Debug -> Debug Workflow -> Always Show Assembly. Or we get the
+      built objects and we run odump on them. If building with xocde
+      they will be at
+      /Users/tibbetts/Library/Developer/Xcode/DerivedData/Test-gklyipaixaqhfmaztcrgfnmrvniq/Build/Intermediates/Test.build/Debug/Test.build/Objects-normal/x86_64
+    </p>
 
     <p>
       We can also see it with source interpolated by running
       <code>cc -g -c -Wa,-adhls=hello-world.listing hello-world.c</code>
       The output of that will look like <a href="hello-world.listing">hello-world.listing</a>
+    </p>
+    <p>
+      Our makefile looks like this:
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#c-makefile" role="tab" data-toggle="tab">C Makefile</a></li>
+          <li role="presentation"><a href="#cpp-makefile" role="tab" data-toggle="tab">C++ Makefile</a></li>
+        </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="c-makefile">
+          <pre data-src="../c/Makefile"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane active" id="cpp-makefile">
+          <pre data-src="../examples/Makefile"></pre>
+        </div>
+      </div>
+    </p>
+
 
     <h2>Crash Course in x86_64 Assembly</h2>
 
@@ -168,13 +194,15 @@
       <tr><td><code>add</code>/<code>sub</code>/<code>imul</code></td><td>Accumulator, Argument</td><td>Size</td><td>Add/Substract/Multiply</td><td></td></tr>
       <tr><td><code>and</code>/<code>or</code>/<code>xor</code></td><td>Accumulator, Argument</td><td>Size</td><td>Bitwise And/Or/Xor</td><td></td></tr>
       <tr><td><code>sal</code>/<code>shl</code>/<code>sar</code>/<code>shr</code></td><td>Argument, Accumulator</td><td>Size</td><td>Shift Left/Right, Arith/Logical<br>(only different for right)</td><td></td></tr>
-      <tr><td><code>cmp</code></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td><code>test</code></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td><code>cmov</code></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td><code>jmp</code></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td><code>call/ret</code></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td><code></code></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td><code>cmp</code></td><td>Arg2, Arg1</td><td>Size</td><td>Numerical comparison by substraction</td><td></td></tr>
+      <tr><td><code>test</code></td><td>Arg1, Arg2</td><td>Size</td><td>Bitwise AND and set flags</td><td></td></tr>
+      <tr><td><code>jmp</code></td><td>Address</td><td></td><td>Basic jump</td><td></td></tr>
+      <tr><td><code>j*</code></td><td>Address</td><td>Why to jump. Equal/Not Equal, Greater/Less, Zero, etc</td><td></td><td></td></tr>
+      <tr><td><code>call</code></td><td>Address</td><td></td><td>Call subroutine</td><td></td></tr>
+      <tr><td><code>ret</code></td><td></td><td></td><td>Return from subroutine</td><td></td></tr>
     </table>
+    Control flow reference: <a href="http://en.wikibooks.org/wiki/X86_Assembly/Control_Flow">X86 Assembly Control Flow</a>
+
     <h3>Types</h3>
     <table class="table">
       <tr><th>C declaration</th><th>Intel data type</th><th>GAS suffix x86-64</th><th>Size (Bytes)</th></tr>
@@ -326,8 +354,37 @@
     <h2>Pointers</h2>
 
     You may have noticed that assembly already deals with pointers a
-    great deal. So its obvious how pointers and pointer arithmatic are
+    great deal. So it is pretty obvious how pointers and pointer arithmatic are
     dealt with when they are compiled.
+
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#pointers-c" role="tab" data-toggle="tab">C</a></li>
+          <li role="presentation"><a href="#pointers-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+          <li role="presentation"><a href="#pointers-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+          <li role="presentation"><a href="#pointers-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+          <li role="presentation"><a href="#pointers-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tab-panel" class="tab-pane active" id="pointers-c">
+            <pre data-src="../c/pointers.c"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="pointers-clang-s">
+            <pre data-src="../c/pointers-clang.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="pointers-ll">
+            <pre data-src="../c/pointers.ll"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="pointers-gcc-s">
+            <pre data-src="../c/pointers-gcc.s"></pre>
+          </div>
+          <div role="tab-panel" class="tab-pane" id="pointers-listing">
+            <pre data-src="../c/pointers.listing"></pre>
+          </div>
+        </div>
 
     <h2>Array</h2>
 

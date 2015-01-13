@@ -1,4 +1,4 @@
-NAMES=hello-world function variable global-variables if-then arrays structs unions
+NAMES=hello-world function variable global-variables if-then pointers arrays structs unions
 
 # Build different things on linux (where we assume we have gcc and gnu ld) and mac (where we have clang)
 UNAME := $(shell uname)
