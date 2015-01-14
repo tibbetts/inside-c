@@ -25,6 +25,8 @@ int simpleMultiple(int argc, const char** argv);
 int subclassVtable(int argc, const char** argv);
 int virtualMethod(int argc, const char** argv);
 int virtualSub();
+void virtualDiamond();
+void virtualPassing();
 int vtableNull(int argc, const char** argv);
 int rtti(int argc, const char** argv);
 

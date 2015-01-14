@@ -16,13 +16,22 @@ class onefieldP_subclass : public onefieldP {
     virtual void setField(int f);
 };
 
+// Slice the object and copy it.
 void setFieldToValue(onefieldP f) {
   f.setField(33);
+}
+
+void dirtyFunction(void (onefieldP::** func)(int), void (*regularFunc)(int)) {
+  // do nothing.
 }
 
 void polymorphicFp() {
     
     void (onefieldP::* func)(int) = &onefieldP::setField;
+    void (regularFunc)(int) = &setFieldToValue;
+
+    // Force those to be real memory locations
+    dirtyFunction(func, regularfunc);
 
     onefieldP of;
     onefieldP_subclass ofs;

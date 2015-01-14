@@ -69,7 +69,7 @@
     <h2>Dreaded Diamond Problem</h2>
 
     This is when we have a base class, a pair of derived classes, and
-    we want a class that inherits from both derrived classes.
+    we want a class that inherits from both derived classes.
 
     <h2>Virtual Base Classes in Memory</h2>
 
@@ -82,29 +82,6 @@
     that offset.
     <p>
     An example of a simple virtual base class:
-    <a href="virtual-sub.cc">virtual-sub.cc</a>,
-    <a href="virtual-sub.s">virtual-sub.s</a>,
-    <a href="virtual-sub.listing">virtual-sub.listing</a>.
-    <p>
-    An example of the diamond problem:
-    <a href="virtual-diamond.cc">virtual-diamond.cc</a>,
-    <a href="virtual-diamond.s">virtual-diamond.s</a>,
-    <a href="virtual-diamond.listing">virtual-diamond.listing</a>.
-
-    <h2>Virtual Base Classes in the VTable</h2>
-
-    There are two things we will find the VTable: Entries for the
-    offsets, and
-
-
-    <h2>How they are constructed</h2>
-
-    When constructing a class with Virtual base classes, we need to
-    populate all the various VTable entries.
-
-    TODO: Slicing them off for passing references to base class.
-
-
 
     <div role="tabpanel">
       <!-- Nav tabs -->
@@ -135,6 +112,9 @@
       </div>
     </div>
 
+    <h2>Double Diamond Inheritance</h2>
+
+    An example of the diamond problem:
     <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
@@ -164,9 +144,40 @@
       </div>
     </div>
 
+    <h2>Virtual Base Classes in the VTable</h2>
+
+    The vtable for a class with virtual bases will have copies of each
+    of the tables, at well known offsets, and with
+
+    <p>
+      More information, including a better description of what VTT is for, at <a href="http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class">http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class</a>.
+      <p>
+       TODO: Build an example that needs VTT.<br>
+       TODO: Draw some pictures.
+       </p>
+
+    <h2>How they are constructed</h2>
+
+    When constructing a class with Virtual base classes, we need to
+    populate all the various VTable entries.
+
+    <h2>Passing a reference to a virtual base class</h2>
+
+    <p>
+      When we pass a reference to a virtual base class, we have to
+      slice it off at the right offset, since the method expecting the
+      base class doesn't know it might be virtual.
+    </p>
 
     <h2>Polymorphic Function Pointers</h2>
 
+    Polymorphic function pointers require enough information to know
+    where to find themselves int he VTable. However, because the
+    compiler knows the type of their target, that means they just need
+    to be the offset.
+    <p>
+      Compare to regular function pointers.
+    </p>
 
     <div role="tabpanel">
       <!-- Nav tabs -->
@@ -198,12 +209,6 @@
     </div>
 
 
-    <p>
-      More information, including a better description of what VTT is for, at <a href="http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class">http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class</a>.
-      <p>
-       TODO: Build an example that needs VTT.<br>
-       TODO: Draw some pictures.
-       </p>
 
     <footer role="contentinfo">
       <div class="container">

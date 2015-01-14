@@ -19,7 +19,7 @@ Notes from first class 2015:
 
 TODO:
 Better source code for __dynamic_cast.
-Download links in the code areas, or links that open in new tab.
+x Download links in the code areas, or links that open in new tab.
 
 Things not yet appearing anywhere:
 Rvalue references which are modifiable.
@@ -44,3 +44,6 @@ x Range based for loop
 Default values of function parameters except not.
 Final and override
 Enum classes
+
+
+TODO: Build the basic examples without exceptions for simpilicity.

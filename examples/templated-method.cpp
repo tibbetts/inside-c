@@ -19,7 +19,6 @@ void templateMethod() {
 
     cout << "f1._field=" << f1._field << endl;
 
-    int i = 5;
     f1.set_field_from(5);
 
     cout << "f1._field=" << f1._field << endl;

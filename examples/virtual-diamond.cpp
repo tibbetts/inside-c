@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 
 class bottomBase {
     int baseData;
@@ -67,7 +68,7 @@ int subBoth::getDataB() const {
 }
 
 int subBoth::getBaseData() const {
-    printf("calling getBaseData()\n");
+    printf("calling subBoth::getBaseData()\n");
     return bottomBase::getBaseData();
 }
 
@@ -88,4 +89,29 @@ void virtualDiamond() {
     int j = bb->getDataB();
     
     printf("virtualDiamond %d %d", i, j);
+}
+
+void bottomBaseMethod(bottomBase *b) {
+  std::cout << "bottomBaseMethod arg=" << (uint64_t)b << " " << b->getBaseData() << std::endl;
+}
+
+void baseAMethod(baseA *b) {
+  std::cout << "baseAMethod arg=" << (uint64_t)b << " " << b->getBaseData() << std::endl;
+}
+
+void baseBMethod(baseB *b) {
+  std::cout << "baseBMethod arg=" << (uint64_t)b  << " " << b->getBaseData() << std::endl;
+}
+
+void subBothMethod(subBoth *b) {
+  std::cout << "bottomBaseMethod arg=" << (uint64_t)b << " " << b->getBaseData() << std::endl;
+}
+
+void virtualPassing() {
+  subBoth *sb = new subBoth();
+
+  bottomBaseMethod(sb);
+  baseAMethod(sb);
+  baseBMethod(sb);
+  subBothMethod(sb);
 }

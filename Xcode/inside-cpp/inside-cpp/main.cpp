@@ -27,6 +27,8 @@ int main(int argc, const char * argv[]) {
     subclassVtable(argc, argv);
     virtualMethod(argc, argv);
     virtualSub();
+    virtualDiamond();
+    virtualPassing();
     vtableNull(argc, argv);
     rtti(argc, argv);
 
