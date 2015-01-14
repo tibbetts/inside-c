@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccDqlSAW.s 			page 1
+GAS LISTING /tmp/ccUmuLfD.s 			page 1
 
 
    1              		.file	"basic-struct.cpp"
@@ -57,12 +57,12 @@ GAS LISTING /tmp/ccDqlSAW.s 			page 1
   33              		.cfi_endproc
   34              	.LFE0:
   36              	.Letext0:
-GAS LISTING /tmp/ccDqlSAW.s 			page 2
+GAS LISTING /tmp/ccUmuLfD.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-struct.cpp
-     /tmp/ccDqlSAW.s:6      .text:0000000000000000 _Z11basicStructiPPKc
+     /tmp/ccUmuLfD.s:6      .text:0000000000000000 _Z11basicStructiPPKc
 
 UNDEFINED SYMBOLS
 _Znwm

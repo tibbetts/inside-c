@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccLxVpJT.s 			page 1
+GAS LISTING /tmp/cc2J2bRS.s 			page 1
 
 
    1              		.file	"rtti.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
   14 0000 897708   		movl	%esi, 8(%rdi)
   15 0003 C3       		ret
   16              		.cfi_endproc
-GAS LISTING /tmp/ccLxVpJT.s 			page 2
+GAS LISTING /tmp/cc2J2bRS.s 			page 2
 
 
   17              	.LFE1301:
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
   67              	_Z41__static_initialization_and_destruction_0ii:
   68              	.LFB1460:
   69              		.loc 1 51 0
-GAS LISTING /tmp/ccLxVpJT.s 			page 3
+GAS LISTING /tmp/cc2J2bRS.s 			page 3
 
 
   70              		.cfi_startproc
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
   43:/usr/include/c++/4.8/iostream **** {
   44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
   45:/usr/include/c++/4.8/iostream **** 
-GAS LISTING /tmp/ccLxVpJT.s 			page 4
+GAS LISTING /tmp/cc2J2bRS.s 			page 4
 
 
   46:/usr/include/c++/4.8/iostream ****   /**
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  101              		.weak	_ZNKSt9type_info4nameEv
  103              	_ZNKSt9type_info4nameEv:
  104              	.LFB1243:
-GAS LISTING /tmp/ccLxVpJT.s 			page 5
+GAS LISTING /tmp/cc2J2bRS.s 			page 5
 
 
  105              		.file 3 "/usr/include/c++/4.8/typeinfo"
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
   54:/usr/include/c++/4.8/typeinfo **** // default.  For ABI compatibility, we do the strcmp inline if weak symbols
   55:/usr/include/c++/4.8/typeinfo **** // are available, and out-of-line if not.  Out-of-line pointer comparison
   56:/usr/include/c++/4.8/typeinfo **** // is used where the object files are to be portable to multiple systems,
-GAS LISTING /tmp/ccLxVpJT.s 			page 6
+GAS LISTING /tmp/cc2J2bRS.s 			page 6
 
 
   57:/usr/include/c++/4.8/typeinfo **** // some of which may not be able to use pointer comparison, but the
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  116              		.cfi_endproc
  117              	.LFE1243:
  119              		.text
-GAS LISTING /tmp/ccLxVpJT.s 			page 7
+GAS LISTING /tmp/cc2J2bRS.s 			page 7
 
 
  120              		.globl	_Z8unmanglePKc
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  163      10
  164 008f E8000000 		call	_ZNSsC1EPKcRKSaIcE
  164      00
-GAS LISTING /tmp/ccLxVpJT.s 			page 8
+GAS LISTING /tmp/cc2J2bRS.s 			page 8
 
 
  165              	.LVL16:
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  209              		.align 2
  210              		.weak	_ZN9onefield5C2Ev
  212              	_ZN9onefield5C2Ev:
-GAS LISTING /tmp/ccLxVpJT.s 			page 9
+GAS LISTING /tmp/cc2J2bRS.s 			page 9
 
 
  213              	.LFB1297:
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
   31:rtti.cpp      ****   onefield5 *ofp = new onefield5_subclass;
  263              		.loc 1 31 0
  264              		.cfi_startproc
-GAS LISTING /tmp/ccLxVpJT.s 			page 10
+GAS LISTING /tmp/cc2J2bRS.s 			page 10
 
 
  265              		.cfi_personality 0x3,__gxx_personality_v0
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  303              	.LVL37:
  304 0126 4889C6   		movq	%rax, %rsi
  305 0129 4889E7   		movq	%rsp, %rdi
-GAS LISTING /tmp/ccLxVpJT.s 			page 11
+GAS LISTING /tmp/cc2J2bRS.s 			page 11
 
 
  306 012c E8000000 		call	_Z8unmanglePKc
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  345              		.cfi_def_cfa_offset 16
  346 017e 5B       		popq	%rbx
  347              		.cfi_def_cfa_offset 8
-GAS LISTING /tmp/ccLxVpJT.s 			page 12
+GAS LISTING /tmp/cc2J2bRS.s 			page 12
 
 
  348 017f C3       		ret
@@ -718,7 +718,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  401              		.weak	_ZTI9onefield5
  402              		.section	.rodata._ZTI9onefield5,"aG",@progbits,_ZTI9onefield5,comdat
  403              		.align 16
-GAS LISTING /tmp/ccLxVpJT.s 			page 13
+GAS LISTING /tmp/cc2J2bRS.s 			page 13
 
 
  406              	_ZTI9onefield5:
@@ -778,7 +778,7 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  452              		.weak	_ZTV18onefield5_subclass
  453              		.section	.rodata._ZTV18onefield5_subclass,"aG",@progbits,_ZTV18onefield5_subclass,comdat
  454              		.align 32
-GAS LISTING /tmp/ccLxVpJT.s 			page 14
+GAS LISTING /tmp/cc2J2bRS.s 			page 14
 
 
  457              	_ZTV18onefield5_subclass:
@@ -835,32 +835,32 @@ GAS LISTING /tmp/ccLxVpJT.s 			page 1
  504              		.file 42 "/usr/include/c++/4.8/cxxabi.h"
  505              		.file 43 "/usr/include/c++/4.8/new"
  506              		.file 44 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/ccLxVpJT.s 			page 15
+GAS LISTING /tmp/cc2J2bRS.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 rtti.cpp
-     /tmp/ccLxVpJT.s:7      .text:0000000000000000 _ZN9onefield58setFieldEi
-     /tmp/ccLxVpJT.s:22     .text:0000000000000004 _ZNK9onefield58getFieldEv
-     /tmp/ccLxVpJT.s:37     .text:0000000000000008 _ZN18onefield5_subclass8setFieldEi
-     /tmp/ccLxVpJT.s:67     .text:000000000000001a _Z41__static_initialization_and_destruction_0ii
+     /tmp/cc2J2bRS.s:7      .text:0000000000000000 _ZN9onefield58setFieldEi
+     /tmp/cc2J2bRS.s:22     .text:0000000000000004 _ZNK9onefield58getFieldEv
+     /tmp/cc2J2bRS.s:37     .text:0000000000000008 _ZN18onefield5_subclass8setFieldEi
+     /tmp/cc2J2bRS.s:67     .text:000000000000001a _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/ccLxVpJT.s:103    .text._ZNKSt9type_info4nameEv:0000000000000000 _ZNKSt9type_info4nameEv
-     /tmp/ccLxVpJT.s:122    .text:000000000000004e _Z8unmanglePKc
-     /tmp/ccLxVpJT.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C2Ev
-     /tmp/ccLxVpJT.s:447    .rodata._ZTV9onefield5:0000000000000000 _ZTV9onefield5
-     /tmp/ccLxVpJT.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C1Ev
-     /tmp/ccLxVpJT.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC2Ev
-     /tmp/ccLxVpJT.s:457    .rodata._ZTV18onefield5_subclass:0000000000000000 _ZTV18onefield5_subclass
-     /tmp/ccLxVpJT.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC1Ev
-     /tmp/ccLxVpJT.s:261    .text:00000000000000d1 _Z4rttiiPPKc
-     /tmp/ccLxVpJT.s:430    .rodata._ZTIP9onefield5:0000000000000000 _ZTIP9onefield5
-     /tmp/ccLxVpJT.s:375    .text:0000000000000180 _GLOBAL__sub_I__Z8unmanglePKc
-     /tmp/ccLxVpJT.s:399    .rodata._ZTS9onefield5:0000000000000000 _ZTS9onefield5
-     /tmp/ccLxVpJT.s:406    .rodata._ZTI9onefield5:0000000000000000 _ZTI9onefield5
-     /tmp/ccLxVpJT.s:414    .rodata._ZTS18onefield5_subclass:0000000000000000 _ZTS18onefield5_subclass
-     /tmp/ccLxVpJT.s:421    .rodata._ZTI18onefield5_subclass:0000000000000000 _ZTI18onefield5_subclass
-     /tmp/ccLxVpJT.s:440    .rodata._ZTSP9onefield5:0000000000000000 _ZTSP9onefield5
+     /tmp/cc2J2bRS.s:103    .text._ZNKSt9type_info4nameEv:0000000000000000 _ZNKSt9type_info4nameEv
+     /tmp/cc2J2bRS.s:122    .text:000000000000004e _Z8unmanglePKc
+     /tmp/cc2J2bRS.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C2Ev
+     /tmp/cc2J2bRS.s:447    .rodata._ZTV9onefield5:0000000000000000 _ZTV9onefield5
+     /tmp/cc2J2bRS.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C1Ev
+     /tmp/cc2J2bRS.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC2Ev
+     /tmp/cc2J2bRS.s:457    .rodata._ZTV18onefield5_subclass:0000000000000000 _ZTV18onefield5_subclass
+     /tmp/cc2J2bRS.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC1Ev
+     /tmp/cc2J2bRS.s:261    .text:00000000000000d1 _Z4rttiiPPKc
+     /tmp/cc2J2bRS.s:430    .rodata._ZTIP9onefield5:0000000000000000 _ZTIP9onefield5
+     /tmp/cc2J2bRS.s:375    .text:0000000000000180 _GLOBAL__sub_I__Z8unmanglePKc
+     /tmp/cc2J2bRS.s:399    .rodata._ZTS9onefield5:0000000000000000 _ZTS9onefield5
+     /tmp/cc2J2bRS.s:406    .rodata._ZTI9onefield5:0000000000000000 _ZTI9onefield5
+     /tmp/cc2J2bRS.s:414    .rodata._ZTS18onefield5_subclass:0000000000000000 _ZTS18onefield5_subclass
+     /tmp/cc2J2bRS.s:421    .rodata._ZTI18onefield5_subclass:0000000000000000 _ZTI18onefield5_subclass
+     /tmp/cc2J2bRS.s:440    .rodata._ZTSP9onefield5:0000000000000000 _ZTSP9onefield5
                            .group:0000000000000000 _ZN9onefield5C5Ev
                            .group:0000000000000000 _ZN18onefield5_subclassC5Ev
 

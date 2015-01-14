@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccOXNQjl.s 			page 1
+GAS LISTING /tmp/ccL10kol.s 			page 1
 
 
    1              		.file	"fibonacci.cpp"
@@ -28,23 +28,22 @@ GAS LISTING /tmp/ccOXNQjl.s 			page 1
   19:fibonacci.cpp **** 
   20:fibonacci.cpp **** const int arg = 17;
   21:fibonacci.cpp **** 
-  22:fibonacci.cpp **** int
-  23:fibonacci.cpp **** main (int argc, char **argv) {
-  24:fibonacci.cpp ****     int result = fibonacci<arg>::value;
-  25:fibonacci.cpp **** 
-  26:fibonacci.cpp ****     std::cout << "fibonacci<" << arg << ">::value = "
-  27:fibonacci.cpp ****               << result << std::endl;
-  28:fibonacci.cpp **** }
-   8              		.loc 1 28 0
+  22:fibonacci.cpp **** void useFibonacci () {
+  23:fibonacci.cpp ****     int result = fibonacci<arg>::value;
+  24:fibonacci.cpp **** 
+  25:fibonacci.cpp ****     std::cout << "fibonacci<" << arg << ">::value = "
+  26:fibonacci.cpp ****               << result << std::endl;
+  27:fibonacci.cpp **** }
+   8              		.loc 1 27 0
    9              		.cfi_startproc
   10              	.LVL0:
   11 0000 83FF01   		cmpl	$1, %edi
   12 0003 752E     		jne	.L5
-  13              		.loc 1 28 0 discriminator 1
+  13              		.loc 1 27 0 discriminator 1
   14 0005 81FEFFFF 		cmpl	$65535, %esi
   14      0000
   15 000b 7526     		jne	.L5
-  16              		.loc 1 28 0 is_stmt 0
+  16              		.loc 1 27 0 is_stmt 0
   17 000d 4883EC08 		subq	$8, %rsp
   18              		.cfi_def_cfa_offset 16
   19              		.file 2 "/usr/include/c++/4.8/iostream"
@@ -58,10 +57,10 @@ GAS LISTING /tmp/ccOXNQjl.s 			page 1
    8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
    9:/usr/include/c++/4.8/iostream **** // any later version.
   10:/usr/include/c++/4.8/iostream **** 
-GAS LISTING /tmp/ccOXNQjl.s 			page 2
-
-
   11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+GAS LISTING /tmp/ccL10kol.s 			page 2
+
+
   12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
   13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
@@ -118,10 +117,10 @@ GAS LISTING /tmp/ccOXNQjl.s 			page 1
   65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
   66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
   67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
-GAS LISTING /tmp/ccOXNQjl.s 			page 3
-
-
   68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+GAS LISTING /tmp/ccL10kol.s 			page 3
+
+
   69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
   70:/usr/include/c++/4.8/iostream **** #endif
   71:/usr/include/c++/4.8/iostream ****   //@}
@@ -144,7 +143,7 @@ GAS LISTING /tmp/ccOXNQjl.s 			page 1
   28 002a E8000000 		call	__cxa_atexit
   28      00
   29              	.LVL3:
-  30              		.loc 1 28 0
+  30              		.loc 1 27 0
   31 002f 4883C408 		addq	$8, %rsp
   32              		.cfi_def_cfa_offset 8
   33              	.L5:
@@ -161,138 +160,133 @@ GAS LISTING /tmp/ccOXNQjl.s 			page 1
   42      616C7565 
   42      203D2000 
   43              		.text
-  44              		.globl	main
-  46              	main:
+  44              		.globl	_Z12useFibonacciv
+  46              	_Z12useFibonacciv:
   47              	.LFB1243:
-  23:fibonacci.cpp ****     int result = fibonacci<arg>::value;
-  48              		.loc 1 23 0
+  22:fibonacci.cpp ****     int result = fibonacci<arg>::value;
+  48              		.loc 1 22 0
   49              		.cfi_startproc
-  50              	.LVL4:
-  51 0034 4883EC08 		subq	$8, %rsp
-  52              		.cfi_def_cfa_offset 16
-  53              	.LVL5:
-  54              	.LBB2:
-  26:fibonacci.cpp ****               << result << std::endl;
-  55              		.loc 1 26 0
-  56 0038 BE000000 		movl	$.LC0, %esi
+  50 0034 4883EC08 		subq	$8, %rsp
+  51              		.cfi_def_cfa_offset 16
+  52              	.LVL4:
+  53              	.LBB2:
+  25:fibonacci.cpp ****               << result << std::endl;
+  54              		.loc 1 25 0
+  55 0038 BE000000 		movl	$.LC0, %esi
+  55      00
+  56 003d BF000000 		movl	$_ZSt4cout, %edi
   56      00
-  57              	.LVL6:
-  58 003d BF000000 		movl	$_ZSt4cout, %edi
-GAS LISTING /tmp/ccOXNQjl.s 			page 4
+  57 0042 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  57      00
+GAS LISTING /tmp/ccL10kol.s 			page 4
 
 
-  58      00
-  59              	.LVL7:
-  60 0042 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-  60      00
-  61              	.LVL8:
-  62 0047 BE110000 		movl	$17, %esi
-  62      00
-  63 004c 4889C7   		movq	%rax, %rdi
-  64 004f E8000000 		call	_ZNSolsEi
-  64      00
-  65              	.LVL9:
-  66 0054 BE000000 		movl	$.LC1, %esi
-  66      00
-  67 0059 4889C7   		movq	%rax, %rdi
-  68 005c E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  58              	.LVL5:
+  59 0047 BE110000 		movl	$17, %esi
+  59      00
+  60 004c 4889C7   		movq	%rax, %rdi
+  61 004f E8000000 		call	_ZNSolsEi
+  61      00
+  62              	.LVL6:
+  63 0054 BE000000 		movl	$.LC1, %esi
+  63      00
+  64 0059 4889C7   		movq	%rax, %rdi
+  65 005c E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  65      00
+  66              	.LVL7:
+  26:fibonacci.cpp **** }
+  67              		.loc 1 26 0
+  68 0061 BE180A00 		movl	$2584, %esi
   68      00
-  69              	.LVL10:
-  27:fibonacci.cpp **** }
-  70              		.loc 1 27 0
-  71 0061 BE180A00 		movl	$2584, %esi
-  71      00
-  72 0066 4889C7   		movq	%rax, %rdi
-  73 0069 E8000000 		call	_ZNSolsEi
-  73      00
-  74              	.LVL11:
-  75 006e BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
-  75      00
-  76 0073 4889C7   		movq	%rax, %rdi
-  77 0076 E8000000 		call	_ZNSolsEPFRSoS_E
-  77      00
-  78              	.LVL12:
-  79              	.LBE2:
-  80              		.loc 1 28 0
-  81 007b B8000000 		movl	$0, %eax
-  81      00
-  82 0080 4883C408 		addq	$8, %rsp
-  83              		.cfi_def_cfa_offset 8
-  84 0084 C3       		ret
-  85              		.cfi_endproc
-  86              	.LFE1243:
-  89              	_GLOBAL__sub_I_main:
-  90              	.LFB1399:
-  91              		.loc 1 28 0
-  92              		.cfi_startproc
-  93 0085 4883EC08 		subq	$8, %rsp
-  94              		.cfi_def_cfa_offset 16
-  95              		.loc 1 28 0
-  96 0089 BEFFFF00 		movl	$65535, %esi
-  96      00
-  97 008e BF010000 		movl	$1, %edi
-  97      00
-  98 0093 E868FFFF 		call	_Z41__static_initialization_and_destruction_0ii
-  98      FF
-  99              	.LVL13:
- 100 0098 4883C408 		addq	$8, %rsp
- 101              		.cfi_def_cfa_offset 8
- 102 009c C3       		ret
-GAS LISTING /tmp/ccOXNQjl.s 			page 5
+  69 0066 4889C7   		movq	%rax, %rdi
+  70 0069 E8000000 		call	_ZNSolsEi
+  70      00
+  71              	.LVL8:
+  72 006e BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+  72      00
+  73 0073 4889C7   		movq	%rax, %rdi
+  74 0076 E8000000 		call	_ZNSolsEPFRSoS_E
+  74      00
+  75              	.LVL9:
+  76              	.LBE2:
+  77              		.loc 1 27 0
+  78 007b 4883C408 		addq	$8, %rsp
+  79              		.cfi_def_cfa_offset 8
+  80 007f C3       		ret
+  81              		.cfi_endproc
+  82              	.LFE1243:
+  85              	_GLOBAL__sub_I__Z12useFibonacciv:
+  86              	.LFB1399:
+  87              		.loc 1 27 0
+  88              		.cfi_startproc
+  89 0080 4883EC08 		subq	$8, %rsp
+  90              		.cfi_def_cfa_offset 16
+  91              		.loc 1 27 0
+  92 0084 BEFFFF00 		movl	$65535, %esi
+  92      00
+  93 0089 BF010000 		movl	$1, %edi
+  93      00
+  94 008e E86DFFFF 		call	_Z41__static_initialization_and_destruction_0ii
+  94      FF
+  95              	.LVL10:
+  96 0093 4883C408 		addq	$8, %rsp
+  97              		.cfi_def_cfa_offset 8
+  98 0097 C3       		ret
+  99              		.cfi_endproc
+ 100              	.LFE1399:
+ 102              		.section	.init_array,"aw"
+ 103              		.align 8
+ 104 0000 00000000 		.quad	_GLOBAL__sub_I__Z12useFibonacciv
+ 104      00000000 
+GAS LISTING /tmp/ccL10kol.s 			page 5
 
 
- 103              		.cfi_endproc
- 104              	.LFE1399:
- 106              		.section	.init_array,"aw"
- 107              		.align 8
- 108 0000 00000000 		.quad	_GLOBAL__sub_I_main
- 108      00000000 
- 109              		.local	_ZStL8__ioinit
- 110              		.comm	_ZStL8__ioinit,1,1
- 111              		.text
- 112              	.Letext0:
- 113              		.file 3 "/usr/include/libio.h"
- 114              		.file 4 "/usr/include/stdio.h"
- 115              		.file 5 "<built-in>"
- 116              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
- 117              		.file 7 "/usr/include/wchar.h"
- 118              		.file 8 "/usr/include/c++/4.8/cwchar"
- 119              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
- 120              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
- 121              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
- 122              		.file 12 "/usr/include/c++/4.8/cstdint"
- 123              		.file 13 "/usr/include/c++/4.8/clocale"
- 124              		.file 14 "/usr/include/c++/4.8/cstdlib"
- 125              		.file 15 "/usr/include/c++/4.8/cstdio"
- 126              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
- 127              		.file 17 "/usr/include/c++/4.8/cwctype"
- 128              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
- 129              		.file 19 "/usr/include/c++/4.8/ostream"
- 130              		.file 20 "/usr/include/c++/4.8/iosfwd"
- 131              		.file 21 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
- 132              		.file 22 "/usr/include/time.h"
- 133              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
- 134              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
- 135              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
- 136              		.file 26 "/usr/include/stdint.h"
- 137              		.file 27 "/usr/include/locale.h"
- 138              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 139              		.file 29 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
- 140              		.file 30 "/usr/include/stdlib.h"
- 141              		.file 31 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
- 142              		.file 32 "/usr/include/_G_config.h"
- 143              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
- 144              		.file 34 "/usr/include/wctype.h"
- 145              		.file 35 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/ccOXNQjl.s 			page 6
+ 105              		.local	_ZStL8__ioinit
+ 106              		.comm	_ZStL8__ioinit,1,1
+ 107              		.text
+ 108              	.Letext0:
+ 109              		.file 3 "/usr/include/libio.h"
+ 110              		.file 4 "/usr/include/stdio.h"
+ 111              		.file 5 "<built-in>"
+ 112              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 113              		.file 7 "/usr/include/wchar.h"
+ 114              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 115              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 116              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 117              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 118              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 119              		.file 13 "/usr/include/c++/4.8/clocale"
+ 120              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 121              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 122              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 123              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 124              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 125              		.file 19 "/usr/include/c++/4.8/ostream"
+ 126              		.file 20 "/usr/include/c++/4.8/iosfwd"
+ 127              		.file 21 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 128              		.file 22 "/usr/include/time.h"
+ 129              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 130              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 131              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
+ 132              		.file 26 "/usr/include/stdint.h"
+ 133              		.file 27 "/usr/include/locale.h"
+ 134              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 135              		.file 29 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 136              		.file 30 "/usr/include/stdlib.h"
+ 137              		.file 31 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 138              		.file 32 "/usr/include/_G_config.h"
+ 139              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 140              		.file 34 "/usr/include/wctype.h"
+ 141              		.file 35 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccL10kol.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 fibonacci.cpp
-     /tmp/ccOXNQjl.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccL10kol.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/ccOXNQjl.s:46     .text:0000000000000034 main
-     /tmp/ccOXNQjl.s:89     .text:0000000000000085 _GLOBAL__sub_I_main
+     /tmp/ccL10kol.s:46     .text:0000000000000034 _Z12useFibonacciv
+     /tmp/ccL10kol.s:85     .text:0000000000000080 _GLOBAL__sub_I__Z12useFibonacciv
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

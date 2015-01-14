@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc5t8UR1.s 			page 1
+GAS LISTING /tmp/ccCtZFHL.s 			page 1
 
 
    1              		.file	"call-by-value-error.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc5t8UR1.s 			page 1
   28 0004 8B4708   		movl	8(%rdi), %eax
   31:call-by-value-error.cpp **** }
   29              		.loc 1 31 0
-GAS LISTING /tmp/cc5t8UR1.s 			page 2
+GAS LISTING /tmp/ccCtZFHL.s 			page 2
 
 
   30 0007 C3       		ret
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc5t8UR1.s 			page 1
   79              	.LVL6:
   14:call-by-value-error.cpp **** 
   80              		.loc 1 14 0
-GAS LISTING /tmp/cc5t8UR1.s 			page 3
+GAS LISTING /tmp/ccCtZFHL.s 			page 3
 
 
   81 0023 BF100000 		movl	$16, %edi
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cc5t8UR1.s 			page 1
  125              		.section	.rodata._ZTS9onefield2,"aG",@progbits,_ZTS9onefield2,comdat
  128              	_ZTS9onefield2:
  129 0000 396F6E65 		.string	"9onefield2"
-GAS LISTING /tmp/cc5t8UR1.s 			page 4
+GAS LISTING /tmp/ccCtZFHL.s 			page 4
 
 
  129      6669656C 
@@ -205,19 +205,19 @@ GAS LISTING /tmp/cc5t8UR1.s 			page 1
  147      00000000 
  148              		.text
  149              	.Letext0:
-GAS LISTING /tmp/cc5t8UR1.s 			page 5
+GAS LISTING /tmp/ccCtZFHL.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 call-by-value-error.cpp
-     /tmp/cc5t8UR1.s:7      .text:0000000000000000 _ZN9onefield28setFieldEi
-     /tmp/cc5t8UR1.s:22     .text:0000000000000004 _ZNK9onefield28getFieldEv
-     /tmp/cc5t8UR1.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C2Ev
-     /tmp/cc5t8UR1.s:143    .rodata._ZTV9onefield2:0000000000000000 _ZTV9onefield2
-     /tmp/cc5t8UR1.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C1Ev
-     /tmp/cc5t8UR1.s:56     .text:0000000000000008 _Z16callByValueErroriPPKc
-     /tmp/cc5t8UR1.s:128    .rodata._ZTS9onefield2:0000000000000000 _ZTS9onefield2
-     /tmp/cc5t8UR1.s:135    .rodata._ZTI9onefield2:0000000000000000 _ZTI9onefield2
+     /tmp/ccCtZFHL.s:7      .text:0000000000000000 _ZN9onefield28setFieldEi
+     /tmp/ccCtZFHL.s:22     .text:0000000000000004 _ZNK9onefield28getFieldEv
+     /tmp/ccCtZFHL.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C2Ev
+     /tmp/ccCtZFHL.s:143    .rodata._ZTV9onefield2:0000000000000000 _ZTV9onefield2
+     /tmp/ccCtZFHL.s:38     .text._ZN9onefield2C2Ev:0000000000000000 _ZN9onefield2C1Ev
+     /tmp/ccCtZFHL.s:56     .text:0000000000000008 _Z16callByValueErroriPPKc
+     /tmp/ccCtZFHL.s:128    .rodata._ZTS9onefield2:0000000000000000 _ZTS9onefield2
+     /tmp/ccCtZFHL.s:135    .rodata._ZTI9onefield2:0000000000000000 _ZTI9onefield2
                            .group:0000000000000000 _ZN9onefield2C5Ev
 
 UNDEFINED SYMBOLS

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccuomfat.s 			page 1
+GAS LISTING /tmp/ccjCyx1r.s 			page 1
 
 
    1              		.file	"extern-c.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
   18 0003 757E     		jne	.L5
   19              		.loc 1 32 0 discriminator 1
   20 0005 81FEFFFF 		cmpl	$65535, %esi
-GAS LISTING /tmp/ccuomfat.s 			page 2
+GAS LISTING /tmp/ccjCyx1r.s 			page 2
 
 
   20      0000
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
   49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
   50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
   51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
-GAS LISTING /tmp/ccuomfat.s 			page 3
+GAS LISTING /tmp/ccjCyx1r.s 			page 3
 
 
   52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
   44 004d BF000000 		movl	$_ZNSsD1Ev, %edi
   44      00
   45 0052 E8000000 		call	__cxa_atexit
-GAS LISTING /tmp/ccuomfat.s 			page 4
+GAS LISTING /tmp/ccjCyx1r.s 			page 4
 
 
   45      00
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
   83      00
   84 009c 4889C7   		movq	%rax, %rdi
   85 009f E8000000 		call	_ZNSolsEPFRSoS_E
-GAS LISTING /tmp/ccuomfat.s 			page 5
+GAS LISTING /tmp/ccjCyx1r.s 			page 5
 
 
   85      00
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
  130              		.loc 1 21 0
  131              		.cfi_startproc
  132              	.LVL12:
-GAS LISTING /tmp/ccuomfat.s 			page 6
+GAS LISTING /tmp/ccjCyx1r.s 			page 6
 
 
  133 00ce 4883EC08 		subq	$8, %rsp
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
  170              	_GLOBAL__sub_I_regularVar:
  171              	.LFB1401:
  172              		.loc 1 32 0
-GAS LISTING /tmp/ccuomfat.s 			page 7
+GAS LISTING /tmp/ccjCyx1r.s 			page 7
 
 
  173              		.cfi_startproc
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
  231              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
  232              		.file 12 "/usr/include/c++/4.8/cstdint"
  233              		.file 13 "/usr/include/c++/4.8/clocale"
-GAS LISTING /tmp/ccuomfat.s 			page 8
+GAS LISTING /tmp/ccjCyx1r.s 			page 8
 
 
  234              		.file 14 "/usr/include/c++/4.8/bits/allocator.h"
@@ -450,22 +450,22 @@ GAS LISTING /tmp/ccuomfat.s 			page 1
  260              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
  261              		.file 41 "/usr/include/wctype.h"
  262              		.file 42 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/ccuomfat.s 			page 9
+GAS LISTING /tmp/ccjCyx1r.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 extern-c.cpp
-     /tmp/ccuomfat.s:11     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/ccuomfat.s:204    .bss:0000000000000020 _ZStL8__ioinit
-     /tmp/ccuomfat.s:204    .bss:0000000000000018 _ZL29implicitlyStaticConstWithInit
-     /tmp/ccuomfat.s:201    .bss:0000000000000008 implicitlyStaticWithInit
-     /tmp/ccuomfat.s:72     .text:0000000000000084 _Z13regularMethodv
-     /tmp/ccuomfat.s:100    .text:00000000000000a9 externMethod
-     /tmp/ccuomfat.s:128    .text:00000000000000ce _Z7externCiPPKc
-     /tmp/ccuomfat.s:217    .bss:0000000000000010 regularVar
-     /tmp/ccuomfat.s:195    .bss:0000000000000000 externVar
-     /tmp/ccuomfat.s:170    .text:0000000000000123 _GLOBAL__sub_I_regularVar
-     /tmp/ccuomfat.s:210    .rodata:0000000000000000 regularConst
+     /tmp/ccjCyx1r.s:11     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccjCyx1r.s:204    .bss:0000000000000020 _ZStL8__ioinit
+     /tmp/ccjCyx1r.s:204    .bss:0000000000000018 _ZL29implicitlyStaticConstWithInit
+     /tmp/ccjCyx1r.s:201    .bss:0000000000000008 implicitlyStaticWithInit
+     /tmp/ccjCyx1r.s:72     .text:0000000000000084 _Z13regularMethodv
+     /tmp/ccjCyx1r.s:100    .text:00000000000000a9 externMethod
+     /tmp/ccjCyx1r.s:128    .text:00000000000000ce _Z7externCiPPKc
+     /tmp/ccjCyx1r.s:217    .bss:0000000000000010 regularVar
+     /tmp/ccjCyx1r.s:195    .bss:0000000000000000 externVar
+     /tmp/ccjCyx1r.s:170    .text:0000000000000123 _GLOBAL__sub_I_regularVar
+     /tmp/ccjCyx1r.s:210    .rodata:0000000000000000 regularConst
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

@@ -3,10 +3,12 @@ basic-struct basic-vtable call-by-value-error complex-multiple		\
 dynamic-cast object-arg object-ret simple-multiple subclass-vtable	\
 virtual-sub vtable-null mangling extern-c rtti fibonacci global		\
 hello-exceptions rethrow template-max templated-method			\
-throw-nonexception virtual-diamond anon-function operator-overload	\
-user-literal constexpr initialization-list range-loop type-inference    \
-capture-function capture-reference capture-error thread-local \
+throw-nonexception virtual-diamond operator-overload	\
+user-literal constexpr initialization-list range-loop type-inference \
 polymorphic-fp 
+
+FUNCTIONS=capture-function capture-reference capture-error
+THREAD=thread-local
 # range-loop	\
 #type-inference
 
@@ -15,15 +17,15 @@ polymorphic-fp
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-LISTINGS=$(addsuffix .listing, $(NAMES))
-ASSEMBLIES=$(addsuffix -gcc.s, $(NAMES))
+LISTINGS=$(addsuffix .listing, $(NAMES) $(THREAD))
+ASSEMBLIES=$(addsuffix -gcc.s, $(NAMES) $(THREAD))
 TARGETS=$(LISTINGS) $(ASSEMBLIES)
 
 CFLAGS=-fno-inline -O1 -std=c++11
 endif
 ifeq ($(UNAME), Darwin)
-LLVM=$(addsuffix .ll, $(NAMES))
-ASSEMBLIES=$(addsuffix -clang.s, $(NAMES))
+LLVM=$(addsuffix .ll, $(NAMES) $(FUNCTIONS))
+ASSEMBLIES=$(addsuffix -clang.s, $(NAMES) $(FUNCTIONS))
 FILT=$(addsuffix -filt.s, $(NAMES))
 TARGETS=$(LLVM) $(ASSEMBLIES)
 

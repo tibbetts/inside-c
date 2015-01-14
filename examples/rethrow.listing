@@ -1,12 +1,12 @@
-GAS LISTING /tmp/cccUNf9o.s 			page 1
+GAS LISTING /tmp/ccrG9BDx.s 			page 1
 
 
    1              		.file	"rethrow.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZNK11MyException4whatEv
-   7              	_ZNK11MyException4whatEv:
+   5              		.globl	_ZNK12MyExceptionB4whatEv
+   7              	_ZNK12MyExceptionB4whatEv:
    8              	.LFB1250:
    9              		.file 1 "rethrow.cpp"
    1:rethrow.cpp   **** #include <exception>
@@ -15,25 +15,25 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
    4:rethrow.cpp   **** 
    5:rethrow.cpp   **** using namespace std;
    6:rethrow.cpp   **** 
-   7:rethrow.cpp   **** class MyException : public exception {
+   7:rethrow.cpp   **** class MyExceptionB : public exception {
    8:rethrow.cpp   ****   private:
    9:rethrow.cpp   ****     string _what;
   10:rethrow.cpp   ****   public:
-  11:rethrow.cpp   ****     MyException(string what) throw ();
-  12:rethrow.cpp   ****     ~MyException() throw ();
+  11:rethrow.cpp   ****     MyExceptionB(string what) throw ();
+  12:rethrow.cpp   ****     ~MyExceptionB() throw ();
   13:rethrow.cpp   **** 
   14:rethrow.cpp   ****     virtual const char *what() const throw ();
   15:rethrow.cpp   ****     string as_string() const;
   16:rethrow.cpp   **** };
   17:rethrow.cpp   **** 
-  18:rethrow.cpp   **** MyException::MyException(string what) throw ():
+  18:rethrow.cpp   **** MyExceptionB::MyExceptionB(string what) throw ():
   19:rethrow.cpp   ****     _what(what)
   20:rethrow.cpp   **** {}
   21:rethrow.cpp   **** 
-  22:rethrow.cpp   **** MyException::~MyException() throw () {
+  22:rethrow.cpp   **** MyExceptionB::~MyExceptionB() throw () {
   23:rethrow.cpp   **** }
   24:rethrow.cpp   **** 
-  25:rethrow.cpp   **** const char *MyException::what() const throw () {
+  25:rethrow.cpp   **** const char *MyExceptionB::what() const throw () {
   10              		.loc 1 25 0
   11              		.cfi_startproc
   12              	.LVL0:
@@ -54,11 +54,11 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   24              		.cfi_endproc
   25              	.LFE1250:
   27              		.align 2
-  28              		.globl	_ZN11MyExceptionD2Ev
-  30              	_ZN11MyExceptionD2Ev:
+  28              		.globl	_ZN12MyExceptionBD2Ev
+  30              	_ZN12MyExceptionBD2Ev:
   31              	.LFB1247:
   22:rethrow.cpp   **** }
-GAS LISTING /tmp/cccUNf9o.s 			page 2
+GAS LISTING /tmp/ccrG9BDx.s 			page 2
 
 
   32              		.loc 1 22 0
@@ -71,7 +71,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   39              	.LBB2:
   22:rethrow.cpp   **** }
   40              		.loc 1 22 0
-  41 0016 48C70700 		movq	$_ZTV11MyException+16, (%rdi)
+  41 0016 48C70700 		movq	$_ZTV12MyExceptionB+16, (%rdi)
   41      000000
   42 001d 488D7F08 		leaq	8(%rdi), %rdi
   43              	.LVL4:
@@ -91,11 +91,11 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   54 002f C3       		ret
   55              		.cfi_endproc
   56              	.LFE1247:
-  58              		.globl	_ZN11MyExceptionD1Ev
-  59              		.set	_ZN11MyExceptionD1Ev,_ZN11MyExceptionD2Ev
+  58              		.globl	_ZN12MyExceptionBD1Ev
+  59              		.set	_ZN12MyExceptionBD1Ev,_ZN12MyExceptionBD2Ev
   60              		.align 2
-  61              		.globl	_ZN11MyExceptionD0Ev
-  63              	_ZN11MyExceptionD0Ev:
+  61              		.globl	_ZN12MyExceptionBD0Ev
+  63              	_ZN12MyExceptionBD0Ev:
   64              	.LFB1249:
   22:rethrow.cpp   **** }
   65              		.loc 1 22 0
@@ -107,7 +107,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   71 0031 4889FB   		movq	%rdi, %rbx
   23:rethrow.cpp   **** 
   72              		.loc 1 23 0
-  73 0034 E8000000 		call	_ZN11MyExceptionD1Ev
+  73 0034 E8000000 		call	_ZN12MyExceptionBD1Ev
   73      00
   74              	.LVL9:
   75 0039 4889DF   		movq	%rbx, %rdi
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   79              		.cfi_def_cfa_offset 8
   80              	.LVL11:
   81 0042 C3       		ret
-GAS LISTING /tmp/cccUNf9o.s 			page 3
+GAS LISTING /tmp/ccrG9BDx.s 			page 3
 
 
   82              		.cfi_endproc
@@ -126,59 +126,59 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   86              	_Z41__static_initialization_and_destruction_0ii:
   87              	.LFB1426:
   28:rethrow.cpp   **** 
-  29:rethrow.cpp   **** string MyException::as_string() const {
-  30:rethrow.cpp   ****     return "MyException(" + _what + ")";
+  29:rethrow.cpp   **** string MyExceptionB::as_string() const {
+  30:rethrow.cpp   ****     return "MyExceptionB(" + _what + ")";
   31:rethrow.cpp   **** }
   32:rethrow.cpp   **** 
   33:rethrow.cpp   **** 
-  34:rethrow.cpp   **** void throw_MyException(string message) throw (MyException) {
-  35:rethrow.cpp   ****     throw MyException(message);
+  34:rethrow.cpp   **** void throw_MyExceptionB(string message) throw (MyExceptionB) {
+  35:rethrow.cpp   ****     throw MyExceptionB(message);
   36:rethrow.cpp   **** }
   37:rethrow.cpp   **** 
-  38:rethrow.cpp   **** void catch_and_rethrow() throw (MyException) {
+  38:rethrow.cpp   **** void catch_and_rethrow() throw (MyExceptionB) {
   39:rethrow.cpp   ****     try {
-  40:rethrow.cpp   ****         throw_MyException("Foo");
-  41:rethrow.cpp   ****     } catch (MyException &e) {
+  40:rethrow.cpp   ****         throw_MyExceptionB("Foo");
+  41:rethrow.cpp   ****     } catch (MyExceptionB &e) {
   42:rethrow.cpp   ****         cout << "Got exception:" << e.as_string() << " rethrowing..." << endl;
   43:rethrow.cpp   ****         throw;
   44:rethrow.cpp   ****     }
   45:rethrow.cpp   **** }
   46:rethrow.cpp   **** 
-  47:rethrow.cpp   **** void catch_and_throw_another() throw (MyException) {
+  47:rethrow.cpp   **** void catch_and_throw_another() throw (MyExceptionB) {
   48:rethrow.cpp   ****     try {
-  49:rethrow.cpp   ****         throw_MyException("Baz");
-  50:rethrow.cpp   ****     } catch (MyException &e) {
+  49:rethrow.cpp   ****         throw_MyExceptionB("Baz");
+  50:rethrow.cpp   ****     } catch (MyExceptionB &e) {
   51:rethrow.cpp   ****         cout << "Got exception:" << e.as_string() << " throwing another..." << endl;
-  52:rethrow.cpp   ****         throw MyException(e.as_string());
+  52:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
   53:rethrow.cpp   ****     }
   54:rethrow.cpp   **** }
   55:rethrow.cpp   **** 
   56:rethrow.cpp   **** void doesnt_throw() throw () {
-  57:rethrow.cpp   ****     throw_MyException("Bar");
+  57:rethrow.cpp   ****     throw_MyExceptionB("Bar");
   58:rethrow.cpp   **** }
   59:rethrow.cpp   **** 
-  60:rethrow.cpp   **** int main(int argc, char **argv) {
+  60:rethrow.cpp   **** void doRethrow() {
   61:rethrow.cpp   ****     try {
   62:rethrow.cpp   ****         catch_and_rethrow();
-  63:rethrow.cpp   ****     } catch (MyException &e) {
+  63:rethrow.cpp   ****     } catch (MyExceptionB &e) {
   64:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
   65:rethrow.cpp   ****     }
   66:rethrow.cpp   **** 
   67:rethrow.cpp   ****     try {
   68:rethrow.cpp   ****         catch_and_throw_another();
-  69:rethrow.cpp   ****     } catch (MyException &e) {
+  69:rethrow.cpp   ****     } catch (MyExceptionB &e) {
   70:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
   71:rethrow.cpp   ****     }
   72:rethrow.cpp   **** 
   73:rethrow.cpp   ****     try {
   74:rethrow.cpp   ****         doesnt_throw();
-  75:rethrow.cpp   ****     } catch (MyException &e) {
+  75:rethrow.cpp   ****     } catch (MyExceptionB &e) {
   76:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
   77:rethrow.cpp   ****     }
   78:rethrow.cpp   **** }
   88              		.loc 1 78 0
   89              		.cfi_startproc
-GAS LISTING /tmp/cccUNf9o.s 			page 4
+GAS LISTING /tmp/ccrG9BDx.s 			page 4
 
 
   90              	.LVL12:
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
   45:/usr/include/c++/4.8/iostream **** 
   46:/usr/include/c++/4.8/iostream ****   /**
-GAS LISTING /tmp/cccUNf9o.s 			page 5
+GAS LISTING /tmp/ccrG9BDx.s 			page 5
 
 
   47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
@@ -298,7 +298,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  122              	_ZNSt9exceptionC2Ev:
  123              	.LFB1:
  124              		.file 3 "/usr/include/c++/4.8/exception"
-GAS LISTING /tmp/cccUNf9o.s 			page 6
+GAS LISTING /tmp/ccrG9BDx.s 			page 6
 
 
    1:/usr/include/c++/4.8/exception **** // Exception Handling support header for -*- C++ -*-
@@ -358,7 +358,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   55:/usr/include/c++/4.8/exception ****    *  This is the base class for all exceptions thrown by the standard
   56:/usr/include/c++/4.8/exception ****    *  library, and by certain language expressions.  You are free to derive
   57:/usr/include/c++/4.8/exception ****    *  your own %exception classes, or use a different hierarchy, or to
-GAS LISTING /tmp/cccUNf9o.s 			page 7
+GAS LISTING /tmp/ccrG9BDx.s 			page 7
 
 
   58:/usr/include/c++/4.8/exception ****    *  throw non-class data (e.g., fundamental types).
@@ -418,7 +418,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   31:/usr/include/c++/4.8/bits/char_traits.h **** // ISO C++ 14882: 21  Strings library
   32:/usr/include/c++/4.8/bits/char_traits.h **** //
   33:/usr/include/c++/4.8/bits/char_traits.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 8
+GAS LISTING /tmp/ccrG9BDx.s 			page 8
 
 
   34:/usr/include/c++/4.8/bits/char_traits.h **** #ifndef _CHAR_TRAITS_H
@@ -478,7 +478,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   88:/usr/include/c++/4.8/bits/char_traits.h ****       typedef typename _Char_types<_CharT>::off_type    off_type;
   89:/usr/include/c++/4.8/bits/char_traits.h ****       typedef typename _Char_types<_CharT>::state_type  state_type;
   90:/usr/include/c++/4.8/bits/char_traits.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 9
+GAS LISTING /tmp/ccrG9BDx.s 			page 9
 
 
   91:/usr/include/c++/4.8/bits/char_traits.h ****       static void
@@ -538,7 +538,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  145:/usr/include/c++/4.8/bits/char_traits.h ****     compare(const char_type* __s1, const char_type* __s2, std::size_t __n)
  146:/usr/include/c++/4.8/bits/char_traits.h ****     {
  147:/usr/include/c++/4.8/bits/char_traits.h ****       for (std::size_t __i = 0; __i < __n; ++__i)
-GAS LISTING /tmp/cccUNf9o.s 			page 10
+GAS LISTING /tmp/ccrG9BDx.s 			page 10
 
 
  148:/usr/include/c++/4.8/bits/char_traits.h **** 	if (lt(__s1[__i], __s2[__i]))
@@ -598,7 +598,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  202:/usr/include/c++/4.8/bits/char_traits.h ****       std::fill_n(__s, __n, __a);
  203:/usr/include/c++/4.8/bits/char_traits.h ****       return __s;
  204:/usr/include/c++/4.8/bits/char_traits.h ****     }
-GAS LISTING /tmp/cccUNf9o.s 			page 11
+GAS LISTING /tmp/ccrG9BDx.s 			page 11
 
 
  205:/usr/include/c++/4.8/bits/char_traits.h **** 
@@ -658,7 +658,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  144              		.loc 4 258 0
  145              		.cfi_startproc
  146              	.LVL17:
-GAS LISTING /tmp/cccUNf9o.s 			page 12
+GAS LISTING /tmp/ccrG9BDx.s 			page 12
 
 
  259:/usr/include/c++/4.8/bits/char_traits.h ****       { return __builtin_strlen(__s); }
@@ -676,8 +676,8 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  156              	.LFE299:
  158              		.text
  159 0077 90       		.align 2
- 160              		.globl	_ZN11MyExceptionC2ESs
- 162              	_ZN11MyExceptionC2ESs:
+ 160              		.globl	_ZN12MyExceptionBC2ESs
+ 162              	_ZN12MyExceptionBC2ESs:
  163              	.LFB1244:
   18:rethrow.cpp   ****     _what(what)
  164              		.loc 1 18 0
@@ -702,7 +702,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  182 0082 E8000000 		call	_ZNSt9exceptionC2Ev
  182      00
  183              	.LVL20:
- 184 0087 48C70300 		movq	$_ZTV11MyException+16, (%rbx)
+ 184 0087 48C70300 		movq	$_ZTV12MyExceptionB+16, (%rbx)
  184      000000
  185 008e 488D7B08 		leaq	8(%rbx), %rdi
  186 0092 4889EE   		movq	%rbp, %rsi
@@ -718,7 +718,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  195 009f 4989D4   		movq	%rdx, %r12
  196 00a2 4889DF   		movq	%rbx, %rdi
  197 00a5 E8000000 		call	_ZNSt9exceptionD2Ev
-GAS LISTING /tmp/cccUNf9o.s 			page 13
+GAS LISTING /tmp/ccrG9BDx.s 			page 13
 
 
  197      00
@@ -778,18 +778,18 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  247 000f 00       		.byte	0
  248 0010 7D       		.byte	0x7d
  249 0011 000000   		.align 4
-GAS LISTING /tmp/cccUNf9o.s 			page 14
+GAS LISTING /tmp/ccrG9BDx.s 			page 14
 
 
  250              	.LLSDATT1244:
  251 0014 00       		.byte	0
  252              		.text
- 254              		.globl	_ZN11MyExceptionC1ESs
- 255              		.set	_ZN11MyExceptionC1ESs,_ZN11MyExceptionC2ESs
- 256              		.globl	_Z17throw_MyExceptionSs
- 258              	_Z17throw_MyExceptionSs:
+ 254              		.globl	_ZN12MyExceptionBC1ESs
+ 255              		.set	_ZN12MyExceptionBC1ESs,_ZN12MyExceptionBC2ESs
+ 256              		.globl	_Z18throw_MyExceptionBSs
+ 258              	_Z18throw_MyExceptionBSs:
  259              	.LFB1252:
-  34:rethrow.cpp   ****     throw MyException(message);
+  34:rethrow.cpp   ****     throw MyExceptionB(message);
  260              		.loc 1 34 0
  261              		.cfi_startproc
  262              		.cfi_personality 0x3,__gxx_personality_v0
@@ -827,18 +827,18 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  289              		.loc 1 35 0 is_stmt 0 discriminator 1
  290 00e8 4889E6   		movq	%rsp, %rsi
  291 00eb 4889DF   		movq	%rbx, %rdi
- 292 00ee E8000000 		call	_ZN11MyExceptionC1ESs
+ 292 00ee E8000000 		call	_ZN12MyExceptionBC1ESs
  292      00
  293              	.LVL32:
  294 00f3 4889E7   		movq	%rsp, %rdi
  295 00f6 E8000000 		call	_ZNSsD1Ev
  295      00
  296              	.LVL33:
- 297 00fb BA000000 		movl	$_ZN11MyExceptionD1Ev, %edx
+ 297 00fb BA000000 		movl	$_ZN12MyExceptionBD1Ev, %edx
  297      00
- 298 0100 BE000000 		movl	$_ZTI11MyException, %esi
+ 298 0100 BE000000 		movl	$_ZTI12MyExceptionB, %esi
  298      00
-GAS LISTING /tmp/cccUNf9o.s 			page 15
+GAS LISTING /tmp/ccrG9BDx.s 			page 15
 
 
  299 0105 4889DF   		movq	%rbx, %rdi
@@ -872,7 +872,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  323      00
  324              	.LVL39:
  325              	.L23:
-  34:rethrow.cpp   ****     throw MyException(message);
+  34:rethrow.cpp   ****     throw MyExceptionB(message);
  326              		.loc 1 34 0 is_stmt 1
  327 0131 E8000000 		call	__cxa_call_unexpected
  327      00
@@ -898,7 +898,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  347 0022 05       		.uleb128 .LEHE3-.LEHB3
  348 0023 5E       		.uleb128 .L25-.LFB1252
  349 0024 01       		.uleb128 0x1
-GAS LISTING /tmp/cccUNf9o.s 			page 16
+GAS LISTING /tmp/ccrG9BDx.s 			page 16
 
 
  350 0025 67       		.uleb128 .LEHB4-.LFB1252
@@ -911,7 +911,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  357 002b 00       		.byte	0
  358 002c 7D       		.byte	0x7d
  359 002d 000000   		.align 4
- 360 0030 00000000 		.long	_ZTI11MyException
+ 360 0030 00000000 		.long	_ZTI12MyExceptionB
  361              	.LLSDATT1252:
  362 0034 01       		.byte	0x1
  363 0035 00       		.byte	0
@@ -923,7 +923,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  370              		.globl	_Z12doesnt_throwv
  372              	_Z12doesnt_throwv:
  373              	.LFB1261:
-  56:rethrow.cpp   ****     throw_MyException("Bar");
+  56:rethrow.cpp   ****     throw_MyExceptionB("Bar");
  374              		.loc 1 56 0
  375              		.cfi_startproc
  376              		.cfi_personality 0x3,__gxx_personality_v0
@@ -954,11 +954,11 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  395 0150 488D7C24 		leaq	16(%rsp), %rdi
  395      10
  396              	.LEHB6:
- 397 0155 E8000000 		call	_Z17throw_MyExceptionSs
+ 397 0155 E8000000 		call	_Z18throw_MyExceptionBSs
  397      00
  398              	.LEHE6:
  399              	.LVL42:
-GAS LISTING /tmp/cccUNf9o.s 			page 17
+GAS LISTING /tmp/ccrG9BDx.s 			page 17
 
 
  400              	.L32:
@@ -984,7 +984,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  416      00
  417              	.LVL44:
  418              	.L30:
-  56:rethrow.cpp   ****     throw_MyException("Bar");
+  56:rethrow.cpp   ****     throw_MyExceptionB("Bar");
  419              		.loc 1 56 0 is_stmt 1
  420 0180 E8000000 		call	__cxa_call_unexpected
  420      00
@@ -1018,7 +1018,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  448 0049 7F       		.byte	0x7f
  449 004a 00       		.byte	0
  450 004b 00       		.byte	0
-GAS LISTING /tmp/cccUNf9o.s 			page 18
+GAS LISTING /tmp/ccrG9BDx.s 			page 18
 
 
  451 004c 7D       		.byte	0x7d
@@ -1078,7 +1078,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   45:/usr/include/c++/4.8/bits/basic_string.tcc **** {
   46:/usr/include/c++/4.8/bits/basic_string.tcc **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
   47:/usr/include/c++/4.8/bits/basic_string.tcc **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 19
+GAS LISTING /tmp/ccrG9BDx.s 			page 19
 
 
   48:/usr/include/c++/4.8/bits/basic_string.tcc ****   template<typename _CharT, typename _Traits, typename _Alloc>
@@ -1138,7 +1138,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  102:/usr/include/c++/4.8/bits/basic_string.tcc **** 		    _Rep* __another = _Rep::_S_create(__len + 1, __len, __a);
  103:/usr/include/c++/4.8/bits/basic_string.tcc **** 		    _M_copy(__another->_M_refdata(), __r->_M_refdata(), __len);
  104:/usr/include/c++/4.8/bits/basic_string.tcc **** 		    __r->_M_destroy(__a);
-GAS LISTING /tmp/cccUNf9o.s 			page 20
+GAS LISTING /tmp/ccrG9BDx.s 			page 20
 
 
  105:/usr/include/c++/4.8/bits/basic_string.tcc **** 		    __r = __another;
@@ -1198,7 +1198,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  159:/usr/include/c++/4.8/bits/basic_string.tcc ****       // Check for out_of_range and length_error exceptions.
  160:/usr/include/c++/4.8/bits/basic_string.tcc ****       _Rep* __r = _Rep::_S_create(__n, size_type(0), __a);
  161:/usr/include/c++/4.8/bits/basic_string.tcc ****       if (__n)
-GAS LISTING /tmp/cccUNf9o.s 			page 21
+GAS LISTING /tmp/ccrG9BDx.s 			page 21
 
 
  162:/usr/include/c++/4.8/bits/basic_string.tcc **** 	_M_assign(__r->_M_refdata(), __n, __c);
@@ -1258,7 +1258,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  216:/usr/include/c++/4.8/bits/basic_string.tcc ****     { }
  217:/usr/include/c++/4.8/bits/basic_string.tcc **** 
  218:/usr/include/c++/4.8/bits/basic_string.tcc ****   template<typename _CharT, typename _Traits, typename _Alloc>
-GAS LISTING /tmp/cccUNf9o.s 			page 22
+GAS LISTING /tmp/ccrG9BDx.s 			page 22
 
 
  219:/usr/include/c++/4.8/bits/basic_string.tcc ****     basic_string<_CharT, _Traits, _Alloc>::
@@ -1318,7 +1318,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  273:/usr/include/c++/4.8/bits/basic_string.tcc **** 	  _M_rep()->_M_set_length_and_sharable(__n);
  274:/usr/include/c++/4.8/bits/basic_string.tcc **** 	  return *this;
  275:/usr/include/c++/4.8/bits/basic_string.tcc **** 	}
-GAS LISTING /tmp/cccUNf9o.s 			page 23
+GAS LISTING /tmp/ccrG9BDx.s 			page 23
 
 
  276:/usr/include/c++/4.8/bits/basic_string.tcc ****      }
@@ -1378,7 +1378,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  330:/usr/include/c++/4.8/bits/basic_string.tcc **** 	  const size_type __len = __size + this->size();
  331:/usr/include/c++/4.8/bits/basic_string.tcc **** 	  if (__len > this->capacity() || _M_rep()->_M_is_shared())
  332:/usr/include/c++/4.8/bits/basic_string.tcc **** 	    this->reserve(__len);
-GAS LISTING /tmp/cccUNf9o.s 			page 24
+GAS LISTING /tmp/ccrG9BDx.s 			page 24
 
 
  333:/usr/include/c++/4.8/bits/basic_string.tcc **** 	  _M_copy(_M_data() + this->size(), __str._M_data(), __size);
@@ -1438,7 +1438,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  387:/usr/include/c++/4.8/bits/basic_string.tcc **** 
  388:/usr/include/c++/4.8/bits/basic_string.tcc ****    template<typename _CharT, typename _Traits, typename _Alloc>
  389:/usr/include/c++/4.8/bits/basic_string.tcc ****      typename basic_string<_CharT, _Traits, _Alloc>::iterator
-GAS LISTING /tmp/cccUNf9o.s 			page 25
+GAS LISTING /tmp/ccrG9BDx.s 			page 25
 
 
  390:/usr/include/c++/4.8/bits/basic_string.tcc ****      basic_string<_CharT, _Traits, _Alloc>::
@@ -1498,7 +1498,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  444:/usr/include/c++/4.8/bits/basic_string.tcc ****     basic_string<_CharT, _Traits, _Alloc>::_Rep::
  445:/usr/include/c++/4.8/bits/basic_string.tcc ****     _M_destroy(const _Alloc& __a) throw ()
  446:/usr/include/c++/4.8/bits/basic_string.tcc ****     {
-GAS LISTING /tmp/cccUNf9o.s 			page 26
+GAS LISTING /tmp/ccrG9BDx.s 			page 26
 
 
  447:/usr/include/c++/4.8/bits/basic_string.tcc ****       const size_type __size = sizeof(_Rep_base) +
@@ -1558,7 +1558,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  501:/usr/include/c++/4.8/bits/basic_string.tcc ****     basic_string<_CharT, _Traits, _Alloc>::
  502:/usr/include/c++/4.8/bits/basic_string.tcc ****     reserve(size_type __res)
  503:/usr/include/c++/4.8/bits/basic_string.tcc ****     {
-GAS LISTING /tmp/cccUNf9o.s 			page 27
+GAS LISTING /tmp/ccrG9BDx.s 			page 27
 
 
  504:/usr/include/c++/4.8/bits/basic_string.tcc ****       if (__res != this->capacity() || _M_rep()->_M_is_shared())
@@ -1618,7 +1618,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  558:/usr/include/c++/4.8/bits/basic_string.tcc ****       // Many malloc implementations perform quite poorly when an
  559:/usr/include/c++/4.8/bits/basic_string.tcc ****       // application attempts to allocate memory in a stepwise fashion
  560:/usr/include/c++/4.8/bits/basic_string.tcc ****       // growing each allocation size by only 1 char.  Additionally,
-GAS LISTING /tmp/cccUNf9o.s 			page 28
+GAS LISTING /tmp/ccrG9BDx.s 			page 28
 
 
  561:/usr/include/c++/4.8/bits/basic_string.tcc ****       // it makes little sense to allocate less linear memory than the
@@ -1678,7 +1678,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  615:/usr/include/c++/4.8/bits/basic_string.tcc ****       // have 3.4.x compiled code with _S_create callers inlined
  616:/usr/include/c++/4.8/bits/basic_string.tcc ****       // calling 4.0.x+ _S_create.
  617:/usr/include/c++/4.8/bits/basic_string.tcc ****       __p->_M_set_sharable();
-GAS LISTING /tmp/cccUNf9o.s 			page 29
+GAS LISTING /tmp/ccrG9BDx.s 			page 29
 
 
  618:/usr/include/c++/4.8/bits/basic_string.tcc ****       return __p;
@@ -1738,7 +1738,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  672:/usr/include/c++/4.8/bits/basic_string.tcc ****       _M_mutate(__pos1, __n1, __n2);
  673:/usr/include/c++/4.8/bits/basic_string.tcc ****       if (__n2)
  674:/usr/include/c++/4.8/bits/basic_string.tcc **** 	_M_assign(_M_data() + __pos1, __n2, __c);
-GAS LISTING /tmp/cccUNf9o.s 			page 30
+GAS LISTING /tmp/ccrG9BDx.s 			page 30
 
 
  675:/usr/include/c++/4.8/bits/basic_string.tcc ****       return *this;
@@ -1798,7 +1798,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  492              	.LVL49:
  699:/usr/include/c++/4.8/bits/basic_string.tcc ****       __string_type __str;
  493              		.loc 5 699 0
-GAS LISTING /tmp/cccUNf9o.s 			page 31
+GAS LISTING /tmp/ccrG9BDx.s 			page 31
 
 
  494 001e 4889DF   		movq	%rbx, %rdi
@@ -1858,7 +1858,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  536 006f 5B       		popq	%rbx
  537              		.cfi_def_cfa_offset 32
  538              	.LVL58:
-GAS LISTING /tmp/cccUNf9o.s 			page 32
+GAS LISTING /tmp/ccrG9BDx.s 			page 32
 
 
  539 0070 5D       		popq	%rbp
@@ -1918,7 +1918,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   21:/usr/include/c++/4.8/bits/move.h **** // a copy of the GCC Runtime Library Exception along with this program;
   22:/usr/include/c++/4.8/bits/move.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
   23:/usr/include/c++/4.8/bits/move.h **** // <http://www.gnu.org/licenses/>.
-GAS LISTING /tmp/cccUNf9o.s 			page 33
+GAS LISTING /tmp/ccrG9BDx.s 			page 33
 
 
   24:/usr/include/c++/4.8/bits/move.h **** 
@@ -1978,7 +1978,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   78:/usr/include/c++/4.8/bits/move.h **** 
   79:/usr/include/c++/4.8/bits/move.h ****   /**
   80:/usr/include/c++/4.8/bits/move.h ****    *  @brief  Forward an rvalue.
-GAS LISTING /tmp/cccUNf9o.s 			page 34
+GAS LISTING /tmp/ccrG9BDx.s 			page 34
 
 
   81:/usr/include/c++/4.8/bits/move.h ****    *  @return The parameter cast to the specified type.
@@ -2038,7 +2038,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   20:/usr/include/c++/4.8/bits/basic_string.h **** // You should have received a copy of the GNU General Public License and
   21:/usr/include/c++/4.8/bits/basic_string.h **** // a copy of the GCC Runtime Library Exception along with this program;
   22:/usr/include/c++/4.8/bits/basic_string.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-GAS LISTING /tmp/cccUNf9o.s 			page 35
+GAS LISTING /tmp/ccrG9BDx.s 			page 35
 
 
   23:/usr/include/c++/4.8/bits/basic_string.h **** // <http://www.gnu.org/licenses/>.
@@ -2098,7 +2098,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
   77:/usr/include/c++/4.8/bits/basic_string.h ****    *                                        _M_length
   78:/usr/include/c++/4.8/bits/basic_string.h ****    *   [basic_string<char_type>]            _M_capacity
   79:/usr/include/c++/4.8/bits/basic_string.h ****    *   _M_dataplus                          _M_refcount
-GAS LISTING /tmp/cccUNf9o.s 			page 36
+GAS LISTING /tmp/ccrG9BDx.s 			page 36
 
 
   80:/usr/include/c++/4.8/bits/basic_string.h ****    *   _M_p ---------------->               unnamed array of char_type
@@ -2158,7 +2158,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  134:/usr/include/c++/4.8/bits/basic_string.h ****       // _Rep: string representation
  135:/usr/include/c++/4.8/bits/basic_string.h ****       //   Invariants:
  136:/usr/include/c++/4.8/bits/basic_string.h ****       //   1. String really contains _M_length + 1 characters: due to 21.3.4
-GAS LISTING /tmp/cccUNf9o.s 			page 37
+GAS LISTING /tmp/ccrG9BDx.s 			page 37
 
 
  137:/usr/include/c++/4.8/bits/basic_string.h ****       //      must be kept null-terminated.
@@ -2218,7 +2218,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  191:/usr/include/c++/4.8/bits/basic_string.h **** 	_M_is_leaked() const
  192:/usr/include/c++/4.8/bits/basic_string.h ****         { return this->_M_refcount < 0; }
  193:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 38
+GAS LISTING /tmp/ccrG9BDx.s 			page 38
 
 
  194:/usr/include/c++/4.8/bits/basic_string.h ****         bool
@@ -2278,7 +2278,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  248:/usr/include/c++/4.8/bits/basic_string.h **** 		  _GLIBCXX_SYNCHRONIZATION_HAPPENS_AFTER(&this->_M_refcount);
  249:/usr/include/c++/4.8/bits/basic_string.h **** 		  _M_destroy(__a);
  250:/usr/include/c++/4.8/bits/basic_string.h **** 		}
-GAS LISTING /tmp/cccUNf9o.s 			page 39
+GAS LISTING /tmp/ccrG9BDx.s 			page 39
 
 
  251:/usr/include/c++/4.8/bits/basic_string.h **** 	    }
@@ -2338,7 +2338,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  305:/usr/include/c++/4.8/bits/basic_string.h ****       iterator
  306:/usr/include/c++/4.8/bits/basic_string.h ****       _M_ibegin() const
  307:/usr/include/c++/4.8/bits/basic_string.h ****       { return iterator(_M_data()); }
-GAS LISTING /tmp/cccUNf9o.s 			page 40
+GAS LISTING /tmp/ccrG9BDx.s 			page 40
 
 
  308:/usr/include/c++/4.8/bits/basic_string.h **** 
@@ -2398,7 +2398,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  362:/usr/include/c++/4.8/bits/basic_string.h ****       static void
  363:/usr/include/c++/4.8/bits/basic_string.h ****       _M_move(_CharT* __d, const _CharT* __s, size_type __n)
  364:/usr/include/c++/4.8/bits/basic_string.h ****       {
-GAS LISTING /tmp/cccUNf9o.s 			page 41
+GAS LISTING /tmp/ccrG9BDx.s 			page 41
 
 
  365:/usr/include/c++/4.8/bits/basic_string.h **** 	if (__n == 1)
@@ -2458,7 +2458,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  419:/usr/include/c++/4.8/bits/basic_string.h ****       void
  420:/usr/include/c++/4.8/bits/basic_string.h ****       _M_mutate(size_type __pos, size_type __len1, size_type __len2);
  421:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 42
+GAS LISTING /tmp/ccrG9BDx.s 			page 42
 
 
  422:/usr/include/c++/4.8/bits/basic_string.h ****       void
@@ -2518,7 +2518,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  476:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __s  Source character %array.
  477:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __n  Number of characters to copy.
  478:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __a  Allocator to use (default is default allocator).
-GAS LISTING /tmp/cccUNf9o.s 			page 43
+GAS LISTING /tmp/ccrG9BDx.s 			page 43
 
 
  479:/usr/include/c++/4.8/bits/basic_string.h ****        *
@@ -2578,7 +2578,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  533:/usr/include/c++/4.8/bits/basic_string.h **** 		     const _Alloc& __a = _Alloc());
  534:/usr/include/c++/4.8/bits/basic_string.h **** 
  535:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/cccUNf9o.s 			page 44
+GAS LISTING /tmp/ccrG9BDx.s 			page 44
 
 
  536:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Destroy the string instance.
@@ -2638,7 +2638,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  590:/usr/include/c++/4.8/bits/basic_string.h ****        */
  591:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string&
  592:/usr/include/c++/4.8/bits/basic_string.h ****       operator=(initializer_list<_CharT> __l)
-GAS LISTING /tmp/cccUNf9o.s 			page 45
+GAS LISTING /tmp/ccrG9BDx.s 			page 45
 
 
  593:/usr/include/c++/4.8/bits/basic_string.h ****       {
@@ -2698,7 +2698,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  647:/usr/include/c++/4.8/bits/basic_string.h ****       /**
  648:/usr/include/c++/4.8/bits/basic_string.h ****        *  Returns a read-only (constant) reverse iterator that points
  649:/usr/include/c++/4.8/bits/basic_string.h ****        *  to the last character in the %string.  Iteration is done in
-GAS LISTING /tmp/cccUNf9o.s 			page 46
+GAS LISTING /tmp/ccrG9BDx.s 			page 46
 
 
  650:/usr/include/c++/4.8/bits/basic_string.h ****        *  reverse element order.
@@ -2758,7 +2758,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  704:/usr/include/c++/4.8/bits/basic_string.h ****        */
  705:/usr/include/c++/4.8/bits/basic_string.h ****       const_reverse_iterator
  706:/usr/include/c++/4.8/bits/basic_string.h ****       crend() const noexcept
-GAS LISTING /tmp/cccUNf9o.s 			page 47
+GAS LISTING /tmp/ccrG9BDx.s 			page 47
 
 
  707:/usr/include/c++/4.8/bits/basic_string.h ****       { return const_reverse_iterator(this->begin()); }
@@ -2818,7 +2818,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  761:/usr/include/c++/4.8/bits/basic_string.h **** 	if (capacity() > size())
  762:/usr/include/c++/4.8/bits/basic_string.h **** 	  {
  763:/usr/include/c++/4.8/bits/basic_string.h **** 	    __try
-GAS LISTING /tmp/cccUNf9o.s 			page 48
+GAS LISTING /tmp/ccrG9BDx.s 			page 48
 
 
  764:/usr/include/c++/4.8/bits/basic_string.h **** 	      { reserve(0); }
@@ -2878,7 +2878,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  818:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Read-only (constant) reference to the character.
  819:/usr/include/c++/4.8/bits/basic_string.h ****        *
  820:/usr/include/c++/4.8/bits/basic_string.h ****        *  This operator allows for easy, array-style, data access.
-GAS LISTING /tmp/cccUNf9o.s 			page 49
+GAS LISTING /tmp/ccrG9BDx.s 			page 49
 
 
  821:/usr/include/c++/4.8/bits/basic_string.h ****        *  Note that data access with this operator is unchecked and
@@ -2938,7 +2938,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  875:/usr/include/c++/4.8/bits/basic_string.h ****        *  @throw  std::out_of_range  If @a n is an invalid index.
  876:/usr/include/c++/4.8/bits/basic_string.h ****        *
  877:/usr/include/c++/4.8/bits/basic_string.h ****        *  This function provides for safer data access.  The parameter is
-GAS LISTING /tmp/cccUNf9o.s 			page 50
+GAS LISTING /tmp/ccrG9BDx.s 			page 50
 
 
  878:/usr/include/c++/4.8/bits/basic_string.h ****        *  first checked that it is in the range of the string.  The function
@@ -2998,7 +2998,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  932:/usr/include/c++/4.8/bits/basic_string.h ****       operator+=(const basic_string& __str)
  933:/usr/include/c++/4.8/bits/basic_string.h ****       { return this->append(__str); }
  934:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 51
+GAS LISTING /tmp/ccrG9BDx.s 			page 51
 
 
  935:/usr/include/c++/4.8/bits/basic_string.h ****       /**
@@ -3058,7 +3058,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  989:/usr/include/c++/4.8/bits/basic_string.h ****       append(const basic_string& __str, size_type __pos, size_type __n);
  990:/usr/include/c++/4.8/bits/basic_string.h **** 
  991:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/cccUNf9o.s 			page 52
+GAS LISTING /tmp/ccrG9BDx.s 			page 52
 
 
  992:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Append a C substring.
@@ -3118,7 +3118,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1046:/usr/include/c++/4.8/bits/basic_string.h **** 
 1047:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1048:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Append a single character.
-GAS LISTING /tmp/cccUNf9o.s 			page 53
+GAS LISTING /tmp/ccrG9BDx.s 			page 53
 
 
 1049:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __c  Character to append.
@@ -3178,7 +3178,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1103:/usr/include/c++/4.8/bits/basic_string.h **** 			    __str._M_limit(__pos, __n)); }
 1104:/usr/include/c++/4.8/bits/basic_string.h **** 
 1105:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/cccUNf9o.s 			page 54
+GAS LISTING /tmp/ccrG9BDx.s 			page 54
 
 
 1106:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Set value to a C substring.
@@ -3238,7 +3238,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1160:/usr/include/c++/4.8/bits/basic_string.h **** #if __cplusplus >= 201103L
 1161:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1162:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Set value to an initializer_list of characters.
-GAS LISTING /tmp/cccUNf9o.s 			page 55
+GAS LISTING /tmp/ccrG9BDx.s 			page 55
 
 
 1163:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __l  The initializer_list of characters to assign.
@@ -3298,7 +3298,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1217:/usr/include/c++/4.8/bits/basic_string.h ****       }
 1218:/usr/include/c++/4.8/bits/basic_string.h **** #endif // C++11
 1219:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 56
+GAS LISTING /tmp/ccrG9BDx.s 			page 56
 
 
 1220:/usr/include/c++/4.8/bits/basic_string.h ****       /**
@@ -3358,7 +3358,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1274:/usr/include/c++/4.8/bits/basic_string.h ****        *  end(), out_of_range is thrown.  The value of the string
 1275:/usr/include/c++/4.8/bits/basic_string.h ****        *  doesn't change if an error is thrown.
 1276:/usr/include/c++/4.8/bits/basic_string.h ****       */
-GAS LISTING /tmp/cccUNf9o.s 			page 57
+GAS LISTING /tmp/ccrG9BDx.s 			page 57
 
 
 1277:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string&
@@ -3418,7 +3418,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1331:/usr/include/c++/4.8/bits/basic_string.h ****        *  If adding character causes the length to exceed max_size(),
 1332:/usr/include/c++/4.8/bits/basic_string.h ****        *  length_error is thrown.  If @a __p is beyond end of string,
 1333:/usr/include/c++/4.8/bits/basic_string.h ****        *  out_of_range is thrown.  The value of the string doesn't
-GAS LISTING /tmp/cccUNf9o.s 			page 58
+GAS LISTING /tmp/ccrG9BDx.s 			page 58
 
 
 1334:/usr/include/c++/4.8/bits/basic_string.h ****        *  change if an error is thrown.
@@ -3478,7 +3478,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1388:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1389:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Remove a range of characters.
 1390:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __first  Iterator referencing the first character to remove.
-GAS LISTING /tmp/cccUNf9o.s 			page 59
+GAS LISTING /tmp/ccrG9BDx.s 			page 59
 
 
 1391:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __last  Iterator referencing the end of the range.
@@ -3538,7 +3538,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1445:/usr/include/c++/4.8/bits/basic_string.h ****        *  string.  In place, the value of @a __str is inserted.  If @a __pos is
 1446:/usr/include/c++/4.8/bits/basic_string.h ****        *  beyond end of string, out_of_range is thrown.  If the length of the
 1447:/usr/include/c++/4.8/bits/basic_string.h ****        *  result exceeds max_size(), length_error is thrown.  The value of the
-GAS LISTING /tmp/cccUNf9o.s 			page 60
+GAS LISTING /tmp/ccrG9BDx.s 			page 60
 
 
 1448:/usr/include/c++/4.8/bits/basic_string.h ****        *  string doesn't change if an error is thrown.
@@ -3598,7 +3598,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1502:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1503:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Replace characters with multiple characters.
 1504:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of first character to replace.
-GAS LISTING /tmp/cccUNf9o.s 			page 61
+GAS LISTING /tmp/ccrG9BDx.s 			page 61
 
 
 1505:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n1  Number of characters to be replaced.
@@ -3658,7 +3658,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1559:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_DEBUG_PEDASSERT(_M_ibegin() <= __i1 && __i1 <= __i2
 1560:/usr/include/c++/4.8/bits/basic_string.h **** 				 && __i2 <= _M_iend());
 1561:/usr/include/c++/4.8/bits/basic_string.h **** 	return this->replace(__i1 - _M_ibegin(), __i2 - __i1, __s, __n);
-GAS LISTING /tmp/cccUNf9o.s 			page 62
+GAS LISTING /tmp/ccrG9BDx.s 			page 62
 
 
 1562:/usr/include/c++/4.8/bits/basic_string.h ****       }
@@ -3718,7 +3718,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1616:/usr/include/c++/4.8/bits/basic_string.h ****        *  characters in the range [__k1,__k2) are inserted.  If the
 1617:/usr/include/c++/4.8/bits/basic_string.h ****        *  length of result exceeds max_size(), length_error is thrown.
 1618:/usr/include/c++/4.8/bits/basic_string.h ****        *  The value of the string doesn't change if an error is
-GAS LISTING /tmp/cccUNf9o.s 			page 63
+GAS LISTING /tmp/ccrG9BDx.s 			page 63
 
 
 1619:/usr/include/c++/4.8/bits/basic_string.h ****        *  thrown.
@@ -3778,7 +3778,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1673:/usr/include/c++/4.8/bits/basic_string.h **** 	return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
 1674:/usr/include/c++/4.8/bits/basic_string.h **** 			     __k1.base(), __k2 - __k1);
 1675:/usr/include/c++/4.8/bits/basic_string.h ****       }
-GAS LISTING /tmp/cccUNf9o.s 			page 64
+GAS LISTING /tmp/ccrG9BDx.s 			page 64
 
 
 1676:/usr/include/c++/4.8/bits/basic_string.h ****       
@@ -3838,7 +3838,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1730:/usr/include/c++/4.8/bits/basic_string.h ****       template<class _Integer>
 1731:/usr/include/c++/4.8/bits/basic_string.h ****         static _CharT*
 1732:/usr/include/c++/4.8/bits/basic_string.h ****         _S_construct_aux(_Integer __beg, _Integer __end,
-GAS LISTING /tmp/cccUNf9o.s 			page 65
+GAS LISTING /tmp/ccrG9BDx.s 			page 65
 
 
 1733:/usr/include/c++/4.8/bits/basic_string.h **** 			 const _Alloc& __a, __true_type)
@@ -3898,7 +3898,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1787:/usr/include/c++/4.8/bits/basic_string.h ****        *  time.
 1788:/usr/include/c++/4.8/bits/basic_string.h ****       */
 1789:/usr/include/c++/4.8/bits/basic_string.h ****       void
-GAS LISTING /tmp/cccUNf9o.s 			page 66
+GAS LISTING /tmp/ccrG9BDx.s 			page 66
 
 
 1790:/usr/include/c++/4.8/bits/basic_string.h ****       swap(basic_string& __s);
@@ -3958,7 +3958,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1844:/usr/include/c++/4.8/bits/basic_string.h ****       */
 1845:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
 1846:/usr/include/c++/4.8/bits/basic_string.h ****       find(const basic_string& __str, size_type __pos = 0) const
-GAS LISTING /tmp/cccUNf9o.s 			page 67
+GAS LISTING /tmp/ccrG9BDx.s 			page 67
 
 
 1847:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_NOEXCEPT
@@ -4018,7 +4018,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1901:/usr/include/c++/4.8/bits/basic_string.h ****        *
 1902:/usr/include/c++/4.8/bits/basic_string.h ****        *  Starting from @a __pos, searches backward for the first @a
 1903:/usr/include/c++/4.8/bits/basic_string.h ****        *  __n characters in @a __s within this string.  If found,
-GAS LISTING /tmp/cccUNf9o.s 			page 68
+GAS LISTING /tmp/ccrG9BDx.s 			page 68
 
 
 1904:/usr/include/c++/4.8/bits/basic_string.h ****        *  returns the index where it begins.  If not found, returns
@@ -4078,7 +4078,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 1958:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __s  String containing characters to locate.
 1959:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of character to search from.
 1960:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n  Number of characters from s to search for.
-GAS LISTING /tmp/cccUNf9o.s 			page 69
+GAS LISTING /tmp/ccrG9BDx.s 			page 69
 
 
 1961:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Index of first occurrence.
@@ -4138,7 +4138,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2015:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
 2016:/usr/include/c++/4.8/bits/basic_string.h ****       find_last_of(const basic_string& __str, size_type __pos = npos) const
 2017:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_NOEXCEPT
-GAS LISTING /tmp/cccUNf9o.s 			page 70
+GAS LISTING /tmp/ccrG9BDx.s 			page 70
 
 
 2018:/usr/include/c++/4.8/bits/basic_string.h ****       { return this->find_last_of(__str.data(), __pos, __str.size()); }
@@ -4198,7 +4198,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2072:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Index of first occurrence.
 2073:/usr/include/c++/4.8/bits/basic_string.h ****        *
 2074:/usr/include/c++/4.8/bits/basic_string.h ****        *  Starting from @a __pos, searches forward for a character not contained
-GAS LISTING /tmp/cccUNf9o.s 			page 71
+GAS LISTING /tmp/ccrG9BDx.s 			page 71
 
 
 2075:/usr/include/c++/4.8/bits/basic_string.h ****        *  in @a __str within this string.  If found, returns the index where it
@@ -4258,7 +4258,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2129:/usr/include/c++/4.8/bits/basic_string.h **** 
 2130:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 2131:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Find last position of a character not in string.
-GAS LISTING /tmp/cccUNf9o.s 			page 72
+GAS LISTING /tmp/ccrG9BDx.s 			page 72
 
 
 2132:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __str  String containing characters to avoid.
@@ -4318,7 +4318,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2186:/usr/include/c++/4.8/bits/basic_string.h ****        *  @a __c within this string.  If found, returns the index where it was
 2187:/usr/include/c++/4.8/bits/basic_string.h ****        *  found.  If not found, returns npos.
 2188:/usr/include/c++/4.8/bits/basic_string.h ****       */
-GAS LISTING /tmp/cccUNf9o.s 			page 73
+GAS LISTING /tmp/ccrG9BDx.s 			page 73
 
 
 2189:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
@@ -4378,7 +4378,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2243:/usr/include/c++/4.8/bits/basic_string.h ****        *
 2244:/usr/include/c++/4.8/bits/basic_string.h ****        *  Form the substring of this string from the @a __n characters
 2245:/usr/include/c++/4.8/bits/basic_string.h ****        *  starting at @a __pos.  Returns an integer < 0 if the
-GAS LISTING /tmp/cccUNf9o.s 			page 74
+GAS LISTING /tmp/ccrG9BDx.s 			page 74
 
 
 2246:/usr/include/c++/4.8/bits/basic_string.h ****        *  substring is ordered before @a __str, 0 if their values are
@@ -4438,7 +4438,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2300:/usr/include/c++/4.8/bits/basic_string.h ****       int
 2301:/usr/include/c++/4.8/bits/basic_string.h ****       compare(const _CharT* __s) const;
 2302:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/cccUNf9o.s 			page 75
+GAS LISTING /tmp/ccrG9BDx.s 			page 75
 
 
 2303:/usr/include/c++/4.8/bits/basic_string.h ****       // _GLIBCXX_RESOLVE_LIB_DEFECTS
@@ -4498,7 +4498,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2357:/usr/include/c++/4.8/bits/basic_string.h ****   /**
 2358:/usr/include/c++/4.8/bits/basic_string.h ****    *  @brief  Concatenate two strings.
 2359:/usr/include/c++/4.8/bits/basic_string.h ****    *  @param __lhs  First string.
-GAS LISTING /tmp/cccUNf9o.s 			page 76
+GAS LISTING /tmp/ccrG9BDx.s 			page 76
 
 
 2360:/usr/include/c++/4.8/bits/basic_string.h ****    *  @param __rhs  Last string.
@@ -4558,7 +4558,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
 2414:/usr/include/c++/4.8/bits/basic_string.h ****    *  @return  New string with @a __lhs followed by @a __rhs.
 2415:/usr/include/c++/4.8/bits/basic_string.h ****    */
 2416:/usr/include/c++/4.8/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
-GAS LISTING /tmp/cccUNf9o.s 			page 77
+GAS LISTING /tmp/ccrG9BDx.s 			page 77
 
 
 2417:/usr/include/c++/4.8/bits/basic_string.h ****     inline basic_string<_CharT, _Traits, _Alloc>
@@ -4618,7 +4618,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  594              		.cfi_def_cfa_offset 16
  595              		.cfi_offset 3, -16
  596 0001 4889FB   		movq	%rdi, %rbx
-GAS LISTING /tmp/cccUNf9o.s 			page 78
+GAS LISTING /tmp/ccrG9BDx.s 			page 78
 
 
  597 0004 4889F7   		movq	%rsi, %rdi
@@ -4649,18 +4649,18 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  617              	.LFE1318:
  619              		.section	.rodata.str1.1
  620              	.LC1:
- 621 0004 4D794578 		.string	"MyException("
+ 621 0004 4D794578 		.string	"MyExceptionB("
  621      63657074 
- 621      696F6E28 
- 621      00
+ 621      696F6E42 
+ 621      2800
  622              	.LC2:
- 623 0011 2900     		.string	")"
+ 623 0012 2900     		.string	")"
  624              		.text
  625 0185 90       		.align 2
- 626              		.globl	_ZNK11MyException9as_stringEv
- 628              	_ZNK11MyException9as_stringEv:
+ 626              		.globl	_ZNK12MyExceptionB9as_stringEv
+ 628              	_ZNK12MyExceptionB9as_stringEv:
  629              	.LFB1251:
-  29:rethrow.cpp   ****     return "MyException(" + _what + ")";
+  29:rethrow.cpp   ****     return "MyExceptionB(" + _what + ")";
  630              		.loc 1 29 0
  631              		.cfi_startproc
  632              		.cfi_personality 0x3,__gxx_personality_v0
@@ -4678,7 +4678,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  643 0192 BE000000 		movl	$.LC1, %esi
  643      00
  644              	.LVL71:
-GAS LISTING /tmp/cccUNf9o.s 			page 79
+GAS LISTING /tmp/ccrG9BDx.s 			page 79
 
 
  645 0197 4889E7   		movq	%rsp, %rdi
@@ -4738,7 +4738,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  691              	.LLSDACSB1251:
  692 0061 14       		.uleb128 .LEHB10-.LFB1251
  693 0062 05       		.uleb128 .LEHE10-.LEHB10
-GAS LISTING /tmp/cccUNf9o.s 			page 80
+GAS LISTING /tmp/ccrG9BDx.s 			page 80
 
 
  694 0063 00       		.uleb128 0
@@ -4755,14 +4755,14 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  705              		.text
  707              		.section	.rodata.str1.1
  708              	.LC3:
- 709 0013 466F6F00 		.string	"Foo"
+ 709 0014 466F6F00 		.string	"Foo"
  710              	.LC4:
- 711 0017 476F7420 		.string	"Got exception:"
+ 711 0018 476F7420 		.string	"Got exception:"
  711      65786365 
  711      7074696F 
  711      6E3A00
  712              	.LC5:
- 713 0026 20726574 		.string	" rethrowing..."
+ 713 0027 20726574 		.string	" rethrowing..."
  713      68726F77 
  713      696E672E 
  713      2E2E00
@@ -4784,7 +4784,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  729 01d7 4883EC28 		subq	$40, %rsp
  730              		.cfi_def_cfa_offset 64
  731              	.LBB6:
-  40:rethrow.cpp   ****     } catch (MyException &e) {
+  40:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  732              		.loc 1 40 0
  733 01db 488D5424 		leaq	16(%rsp), %rdx
  733      10
@@ -4796,21 +4796,21 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  737      00
  738              	.LEHE13:
  739              	.LVL80:
-  40:rethrow.cpp   ****     } catch (MyException &e) {
+  40:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  740              		.loc 1 40 0 is_stmt 0 discriminator 1
-GAS LISTING /tmp/cccUNf9o.s 			page 81
+GAS LISTING /tmp/ccrG9BDx.s 			page 81
 
 
  741 01ed 4889E7   		movq	%rsp, %rdi
  742              	.LEHB14:
- 743 01f0 E8000000 		call	_Z17throw_MyExceptionSs
+ 743 01f0 E8000000 		call	_Z18throw_MyExceptionBSs
  743      00
  744              	.LEHE14:
  745              	.LVL81:
  746              	.L58:
  747 01f5 4889C5   		movq	%rax, %rbp
  748 01f8 4889D3   		movq	%rdx, %rbx
-  40:rethrow.cpp   ****     } catch (MyException &e) {
+  40:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  749              		.loc 1 40 0
  750 01fb 4889E7   		movq	%rsp, %rdi
  751 01fe E8000000 		call	_ZNSsD1Ev
@@ -4858,7 +4858,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  786      00
  787              	.LVL86:
   42:rethrow.cpp   ****         throw;
-GAS LISTING /tmp/cccUNf9o.s 			page 82
+GAS LISTING /tmp/ccrG9BDx.s 			page 82
 
 
  788              		.loc 1 42 0
@@ -4866,7 +4866,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  790 0248 488D7C24 		leaq	16(%rsp), %rdi
  790      10
  791              	.LEHB15:
- 792 024d E8000000 		call	_ZNK11MyException9as_stringEv
+ 792 024d E8000000 		call	_ZNK12MyExceptionB9as_stringEv
  792      00
  793              	.LEHE15:
  794              	.LVL87:
@@ -4918,7 +4918,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  824              	.L55:
  825 0297 4883FAFF 		cmpq	$-1, %rdx
  826 029b 7405     		je	.L56
-GAS LISTING /tmp/cccUNf9o.s 			page 83
+GAS LISTING /tmp/ccrG9BDx.s 			page 83
 
 
  827              	.LEHB18:
@@ -4978,21 +4978,21 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  878 0094 00       		.byte	0
  879 0095 7D       		.byte	0x7d
  880 0096 00       		.byte	0
-GAS LISTING /tmp/cccUNf9o.s 			page 84
+GAS LISTING /tmp/ccrG9BDx.s 			page 84
 
 
  881 0097 79       		.byte	0x79
  882              		.align 4
- 883 0098 00000000 		.long	_ZTI11MyException
+ 883 0098 00000000 		.long	_ZTI12MyExceptionB
  884              	.LLSDATT1259:
  885 009c 01       		.byte	0x1
  886 009d 00       		.byte	0
  887              		.text
  889              		.section	.rodata.str1.1
  890              	.LC6:
- 891 0035 42617A00 		.string	"Baz"
+ 891 0036 42617A00 		.string	"Baz"
  892              	.LC7:
- 893 0039 20746872 		.string	" throwing another..."
+ 893 003a 20746872 		.string	" throwing another..."
  893      6F77696E 
  893      6720616E 
  893      6F746865 
@@ -5018,7 +5018,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  912 02ab 4883EC30 		subq	$48, %rsp
  913              		.cfi_def_cfa_offset 80
  914              	.LBB8:
-  49:rethrow.cpp   ****     } catch (MyException &e) {
+  49:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  915              		.loc 1 49 0
  916 02af 488D5424 		leaq	32(%rsp), %rdx
  916      20
@@ -5030,21 +5030,21 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  920      00
  921              	.LEHE19:
  922              	.LVL96:
-  49:rethrow.cpp   ****     } catch (MyException &e) {
+  49:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  923              		.loc 1 49 0 is_stmt 0 discriminator 1
  924 02c1 4889E7   		movq	%rsp, %rdi
  925              	.LEHB20:
- 926 02c4 E8000000 		call	_Z17throw_MyExceptionSs
+ 926 02c4 E8000000 		call	_Z18throw_MyExceptionBSs
  926      00
  927              	.LEHE20:
  928              	.LVL97:
-GAS LISTING /tmp/cccUNf9o.s 			page 85
+GAS LISTING /tmp/ccrG9BDx.s 			page 85
 
 
  929              	.L74:
  930 02c9 4889C5   		movq	%rax, %rbp
  931 02cc 4889D3   		movq	%rdx, %rbx
-  49:rethrow.cpp   ****     } catch (MyException &e) {
+  49:rethrow.cpp   ****     } catch (MyExceptionB &e) {
  932              		.loc 1 49 0
  933 02cf 4889E7   		movq	%rsp, %rdi
  934 02d2 E8000000 		call	_ZNSsD1Ev
@@ -5064,7 +5064,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  947              	.LVL100:
  948 02ea 4889D3   		movq	%rdx, %rbx
  949              	.LBB9:
-  51:rethrow.cpp   ****         throw MyException(e.as_string());
+  51:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
  950              		.loc 1 51 0 is_stmt 1
  951 02ed 488D7C24 		leaq	16(%rsp), %rdi
  951      10
@@ -5098,7 +5098,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  974              	.LVL107:
  975 0317 4889EF   		movq	%rbp, %rdi
  976 031a 4889DA   		movq	%rbx, %rdx
-GAS LISTING /tmp/cccUNf9o.s 			page 86
+GAS LISTING /tmp/ccrG9BDx.s 			page 86
 
 
  977 031d E9A30000 		jmp	.L71
@@ -5114,17 +5114,17 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  984              	.LVL108:
  985 0332 4889C5   		movq	%rax, %rbp
  986              	.LVL109:
-  51:rethrow.cpp   ****         throw MyException(e.as_string());
+  51:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
  987              		.loc 1 51 0
  988 0335 4889C6   		movq	%rax, %rsi
  989 0338 488D7C24 		leaq	16(%rsp), %rdi
  989      10
  990              	.LEHB21:
- 991 033d E8000000 		call	_ZNK11MyException9as_stringEv
+ 991 033d E8000000 		call	_ZNK12MyExceptionB9as_stringEv
  991      00
  992              	.LEHE21:
  993              	.LVL110:
-  51:rethrow.cpp   ****         throw MyException(e.as_string());
+  51:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
  994              		.loc 1 51 0 is_stmt 0 discriminator 1
  995 0342 BE000000 		movl	$.LC4, %esi
  995      00
@@ -5146,7 +5146,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1006 0366 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
  1006      00
  1007              	.LVL113:
-  51:rethrow.cpp   ****         throw MyException(e.as_string());
+  51:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
  1008              		.loc 1 51 0 discriminator 2
  1009 036b BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
  1009      00
@@ -5155,10 +5155,10 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1011      00
  1012              	.LEHE22:
  1013              	.LVL114:
-  51:rethrow.cpp   ****         throw MyException(e.as_string());
+  51:rethrow.cpp   ****         throw MyExceptionB(e.as_string());
  1014              		.loc 1 51 0 discriminator 1
  1015 0378 488D7C24 		leaq	16(%rsp), %rdi
-GAS LISTING /tmp/cccUNf9o.s 			page 87
+GAS LISTING /tmp/ccrG9BDx.s 			page 87
 
 
  1015      10
@@ -5177,14 +5177,14 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1024 0392 488D7C24 		leaq	32(%rsp), %rdi
  1024      20
  1025              	.LEHB23:
- 1026 0397 E8000000 		call	_ZNK11MyException9as_stringEv
+ 1026 0397 E8000000 		call	_ZNK12MyExceptionB9as_stringEv
  1026      00
  1027              	.LEHE23:
  1028              	.LVL117:
  1029 039c 488D7424 		leaq	32(%rsp), %rsi
  1029      20
  1030 03a1 4889DF   		movq	%rbx, %rdi
- 1031 03a4 E8000000 		call	_ZN11MyExceptionC1ESs
+ 1031 03a4 E8000000 		call	_ZN12MyExceptionBC1ESs
  1031      00
  1032              	.LVL118:
  1033 03a9 488D7C24 		leaq	32(%rsp), %rdi
@@ -5192,9 +5192,9 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1034 03ae E8000000 		call	_ZNSsD1Ev
  1034      00
  1035              	.LVL119:
- 1036 03b3 BA000000 		movl	$_ZN11MyExceptionD1Ev, %edx
+ 1036 03b3 BA000000 		movl	$_ZN12MyExceptionBD1Ev, %edx
  1036      00
- 1037 03b8 BE000000 		movl	$_ZTI11MyException, %esi
+ 1037 03b8 BE000000 		movl	$_ZTI12MyExceptionB, %esi
  1037      00
  1038 03bd 4889DF   		movq	%rbx, %rdi
  1039              	.LEHB24:
@@ -5218,7 +5218,7 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1053      00
  1054              	.LEHE25:
  1055              	.LVL122:
-GAS LISTING /tmp/cccUNf9o.s 			page 88
+GAS LISTING /tmp/ccrG9BDx.s 			page 88
 
 
  1056              		.cfi_endproc
@@ -5271,400 +5271,399 @@ GAS LISTING /tmp/cccUNf9o.s 			page 1
  1103 00cc 00       		.byte	0
  1104 00cd 79       		.byte	0x79
  1105 00ce 0000     		.align 4
- 1106 00d0 00000000 		.long	_ZTI11MyException
+ 1106 00d0 00000000 		.long	_ZTI12MyExceptionB
  1107              	.LLSDATT1260:
  1108 00d4 01       		.byte	0x1
  1109 00d5 00       		.byte	0
  1110              		.text
  1112              		.section	.rodata.str1.1
  1113              	.LC8:
-GAS LISTING /tmp/cccUNf9o.s 			page 89
+GAS LISTING /tmp/ccrG9BDx.s 			page 89
 
 
- 1114 004e 4D61696E 		.string	"Main got exception: "
+ 1114 004f 4D61696E 		.string	"Main got exception: "
  1114      20676F74 
  1114      20657863 
  1114      65707469 
  1114      6F6E3A20 
  1115              		.text
- 1116              		.globl	main
- 1118              	main:
+ 1116              		.globl	_Z9doRethrowv
+ 1118              	_Z9doRethrowv:
  1119              	.LFB1262:
   60:rethrow.cpp   ****     try {
  1120              		.loc 1 60 0
  1121              		.cfi_startproc
  1122              		.cfi_personality 0x3,__gxx_personality_v0
  1123              		.cfi_lsda 0x3,.LLSDA1262
- 1124              	.LVL123:
- 1125 03d5 53       		pushq	%rbx
- 1126              		.cfi_def_cfa_offset 16
- 1127              		.cfi_offset 3, -16
- 1128 03d6 4883EC10 		subq	$16, %rsp
- 1129              		.cfi_def_cfa_offset 32
- 1130              	.LEHB26:
- 1131              	.LBB10:
-  62:rethrow.cpp   ****     } catch (MyException &e) {
- 1132              		.loc 1 62 0
- 1133 03da E8000000 		call	_Z17catch_and_rethrowv
- 1133      00
- 1134              	.LEHE26:
- 1135              	.LVL124:
- 1136              	.L93:
- 1137 03df 4889C3   		movq	%rax, %rbx
- 1138              	.LBB11:
+ 1124 03d5 53       		pushq	%rbx
+ 1125              		.cfi_def_cfa_offset 16
+ 1126              		.cfi_offset 3, -16
+ 1127 03d6 4883EC10 		subq	$16, %rsp
+ 1128              		.cfi_def_cfa_offset 32
+ 1129              	.LEHB26:
+ 1130              	.LBB10:
+  62:rethrow.cpp   ****     } catch (MyExceptionB &e) {
+ 1131              		.loc 1 62 0
+ 1132 03da E8000000 		call	_Z17catch_and_rethrowv
+ 1132      00
+ 1133              	.LEHE26:
+ 1134              	.LVL123:
+ 1135              	.L93:
+ 1136 03df 4889C3   		movq	%rax, %rbx
+ 1137              	.LBB11:
   64:rethrow.cpp   ****     }
- 1139              		.loc 1 64 0
- 1140 03e2 4889E7   		movq	%rsp, %rdi
- 1141 03e5 E8000000 		call	_ZNSsD1Ev
- 1141      00
- 1142              	.LVL125:
- 1143 03ea EB03     		jmp	.L82
- 1144              	.L92:
- 1145 03ec 4889C3   		movq	%rax, %rbx
- 1146              	.L82:
+ 1138              		.loc 1 64 0
+ 1139 03e2 4889E7   		movq	%rsp, %rdi
+ 1140 03e5 E8000000 		call	_ZNSsD1Ev
+ 1140      00
+ 1141              	.LVL124:
+ 1142 03ea EB03     		jmp	.L82
+ 1143              	.L92:
+ 1144 03ec 4889C3   		movq	%rax, %rbx
+ 1145              	.L82:
   63:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
- 1147              		.loc 1 63 0
- 1148 03ef E8000000 		call	__cxa_end_catch
- 1148      00
- 1149              	.LVL126:
- 1150 03f4 4889DF   		movq	%rbx, %rdi
- 1151              	.LEHB27:
- 1152 03f7 E8000000 		call	_Unwind_Resume
- 1152      00
- 1153              	.LVL127:
- 1154              	.L91:
- 1155 03fc 4889C7   		movq	%rax, %rdi
- 1156 03ff 4883FA01 		cmpq	$1, %rdx
- 1157 0403 7405     		je	.L85
- 1158 0405 E8000000 		call	_Unwind_Resume
- 1158      00
-GAS LISTING /tmp/cccUNf9o.s 			page 90
+ 1146              		.loc 1 63 0
+ 1147 03ef E8000000 		call	__cxa_end_catch
+ 1147      00
+ 1148              	.LVL125:
+ 1149 03f4 4889DF   		movq	%rbx, %rdi
+ 1150              	.LEHB27:
+ 1151 03f7 E8000000 		call	_Unwind_Resume
+ 1151      00
+ 1152              	.LVL126:
+ 1153              	.L91:
+ 1154 03fc 4889C7   		movq	%rax, %rdi
+ 1155 03ff 4883FA01 		cmpq	$1, %rdx
+ 1156 0403 7405     		je	.L85
+ 1157 0405 E8000000 		call	_Unwind_Resume
+ 1157      00
+ 1158              	.LEHE27:
+GAS LISTING /tmp/ccrG9BDx.s 			page 90
 
 
- 1159              	.LEHE27:
- 1160              	.LVL128:
- 1161              	.L85:
- 1162 040a E8000000 		call	__cxa_begin_catch
- 1162      00
- 1163              	.LVL129:
+ 1159              	.LVL127:
+ 1160              	.L85:
+ 1161 040a E8000000 		call	__cxa_begin_catch
+ 1161      00
+ 1162              	.LVL128:
   64:rethrow.cpp   ****     }
- 1164              		.loc 1 64 0
- 1165 040f 4889C6   		movq	%rax, %rsi
- 1166 0412 4889E7   		movq	%rsp, %rdi
- 1167              	.LEHB28:
- 1168 0415 E8000000 		call	_ZNK11MyException9as_stringEv
- 1168      00
- 1169              	.LEHE28:
- 1170              	.LVL130:
+ 1163              		.loc 1 64 0
+ 1164 040f 4889C6   		movq	%rax, %rsi
+ 1165 0412 4889E7   		movq	%rsp, %rdi
+ 1166              	.LEHB28:
+ 1167 0415 E8000000 		call	_ZNK12MyExceptionB9as_stringEv
+ 1167      00
+ 1168              	.LEHE28:
+ 1169              	.LVL129:
   64:rethrow.cpp   ****     }
- 1171              		.loc 1 64 0 is_stmt 0 discriminator 1
- 1172 041a BE000000 		movl	$.LC8, %esi
+ 1170              		.loc 1 64 0 is_stmt 0 discriminator 1
+ 1171 041a BE000000 		movl	$.LC8, %esi
+ 1171      00
+ 1172 041f BF000000 		movl	$_ZSt4cout, %edi
  1172      00
- 1173 041f BF000000 		movl	$_ZSt4cout, %edi
- 1173      00
- 1174              	.LEHB29:
- 1175 0424 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
- 1175      00
- 1176              	.LVL131:
- 1177 0429 4889E6   		movq	%rsp, %rsi
- 1178 042c 4889C7   		movq	%rax, %rdi
- 1179 042f E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
- 1179      00
- 1180              	.LVL132:
- 1181 0434 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
- 1181      00
- 1182 0439 4889C7   		movq	%rax, %rdi
- 1183 043c E8000000 		call	_ZNSolsEPFRSoS_E
- 1183      00
- 1184              	.LEHE29:
- 1185              	.LVL133:
- 1186 0441 4889E7   		movq	%rsp, %rdi
- 1187 0444 E8000000 		call	_ZNSsD1Ev
- 1187      00
- 1188              	.LVL134:
+ 1173              	.LEHB29:
+ 1174 0424 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 1174      00
+ 1175              	.LVL130:
+ 1176 0429 4889E6   		movq	%rsp, %rsi
+ 1177 042c 4889C7   		movq	%rax, %rdi
+ 1178 042f E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+ 1178      00
+ 1179              	.LVL131:
+ 1180 0434 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 1180      00
+ 1181 0439 4889C7   		movq	%rax, %rdi
+ 1182 043c E8000000 		call	_ZNSolsEPFRSoS_E
+ 1182      00
+ 1183              	.LEHE29:
+ 1184              	.LVL132:
+ 1185 0441 4889E7   		movq	%rsp, %rdi
+ 1186 0444 E8000000 		call	_ZNSsD1Ev
+ 1186      00
+ 1187              	.LVL133:
   63:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
- 1189              		.loc 1 63 0 is_stmt 1 discriminator 1
- 1190 0449 E8000000 		call	__cxa_end_catch
- 1190      00
- 1191              	.LVL135:
- 1192              	.LEHB30:
- 1193              	.LBE11:
-  68:rethrow.cpp   ****     } catch (MyException &e) {
- 1194              		.loc 1 68 0 discriminator 1
- 1195 044e E8000000 		call	_Z23catch_and_throw_anotherv
- 1195      00
- 1196              	.LEHE30:
- 1197              	.LVL136:
- 1198              	.L96:
- 1199 0453 4889C3   		movq	%rax, %rbx
- 1200              	.LBB12:
-GAS LISTING /tmp/cccUNf9o.s 			page 91
-
-
+ 1188              		.loc 1 63 0 is_stmt 1 discriminator 1
+ 1189 0449 E8000000 		call	__cxa_end_catch
+ 1189      00
+ 1190              	.LVL134:
+ 1191              	.LEHB30:
+ 1192              	.LBE11:
+  68:rethrow.cpp   ****     } catch (MyExceptionB &e) {
+ 1193              		.loc 1 68 0 discriminator 1
+ 1194 044e E8000000 		call	_Z23catch_and_throw_anotherv
+ 1194      00
+ 1195              	.LEHE30:
+ 1196              	.LVL135:
+ 1197              	.L96:
+ 1198 0453 4889C3   		movq	%rax, %rbx
+ 1199              	.LBB12:
   70:rethrow.cpp   ****     }
- 1201              		.loc 1 70 0
- 1202 0456 4889E7   		movq	%rsp, %rdi
- 1203 0459 E8000000 		call	_ZNSsD1Ev
- 1203      00
- 1204              	.LVL137:
- 1205 045e EB03     		jmp	.L87
- 1206              	.L95:
- 1207 0460 4889C3   		movq	%rax, %rbx
- 1208              	.L87:
+GAS LISTING /tmp/ccrG9BDx.s 			page 91
+
+
+ 1200              		.loc 1 70 0
+ 1201 0456 4889E7   		movq	%rsp, %rdi
+ 1202 0459 E8000000 		call	_ZNSsD1Ev
+ 1202      00
+ 1203              	.LVL136:
+ 1204 045e EB03     		jmp	.L87
+ 1205              	.L95:
+ 1206 0460 4889C3   		movq	%rax, %rbx
+ 1207              	.L87:
   69:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
- 1209              		.loc 1 69 0
- 1210 0463 E8000000 		call	__cxa_end_catch
- 1210      00
- 1211              	.LVL138:
- 1212 0468 4889DF   		movq	%rbx, %rdi
- 1213              	.LEHB31:
- 1214 046b E8000000 		call	_Unwind_Resume
- 1214      00
- 1215              	.LVL139:
- 1216              	.L94:
- 1217 0470 4889C7   		movq	%rax, %rdi
- 1218 0473 4883FA01 		cmpq	$1, %rdx
- 1219 0477 7405     		je	.L90
- 1220 0479 E8000000 		call	_Unwind_Resume
- 1220      00
- 1221              	.LEHE31:
- 1222              	.LVL140:
- 1223              	.L90:
- 1224 047e E8000000 		call	__cxa_begin_catch
- 1224      00
- 1225              	.LVL141:
+ 1208              		.loc 1 69 0
+ 1209 0463 E8000000 		call	__cxa_end_catch
+ 1209      00
+ 1210              	.LVL137:
+ 1211 0468 4889DF   		movq	%rbx, %rdi
+ 1212              	.LEHB31:
+ 1213 046b E8000000 		call	_Unwind_Resume
+ 1213      00
+ 1214              	.LVL138:
+ 1215              	.L94:
+ 1216 0470 4889C7   		movq	%rax, %rdi
+ 1217 0473 4883FA01 		cmpq	$1, %rdx
+ 1218 0477 7405     		je	.L90
+ 1219 0479 E8000000 		call	_Unwind_Resume
+ 1219      00
+ 1220              	.LEHE31:
+ 1221              	.LVL139:
+ 1222              	.L90:
+ 1223 047e E8000000 		call	__cxa_begin_catch
+ 1223      00
+ 1224              	.LVL140:
   70:rethrow.cpp   ****     }
- 1226              		.loc 1 70 0
- 1227 0483 4889C6   		movq	%rax, %rsi
- 1228 0486 4889E7   		movq	%rsp, %rdi
- 1229              	.LEHB32:
- 1230 0489 E8000000 		call	_ZNK11MyException9as_stringEv
- 1230      00
- 1231              	.LEHE32:
- 1232              	.LVL142:
+ 1225              		.loc 1 70 0
+ 1226 0483 4889C6   		movq	%rax, %rsi
+ 1227 0486 4889E7   		movq	%rsp, %rdi
+ 1228              	.LEHB32:
+ 1229 0489 E8000000 		call	_ZNK12MyExceptionB9as_stringEv
+ 1229      00
+ 1230              	.LEHE32:
+ 1231              	.LVL141:
   70:rethrow.cpp   ****     }
- 1233              		.loc 1 70 0 is_stmt 0 discriminator 1
- 1234 048e BE000000 		movl	$.LC8, %esi
+ 1232              		.loc 1 70 0 is_stmt 0 discriminator 1
+ 1233 048e BE000000 		movl	$.LC8, %esi
+ 1233      00
+ 1234 0493 BF000000 		movl	$_ZSt4cout, %edi
  1234      00
- 1235 0493 BF000000 		movl	$_ZSt4cout, %edi
- 1235      00
- 1236              	.LEHB33:
- 1237 0498 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
- 1237      00
- 1238              	.LVL143:
- 1239 049d 4889E6   		movq	%rsp, %rsi
- 1240 04a0 4889C7   		movq	%rax, %rdi
- 1241 04a3 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
- 1241      00
- 1242              	.LVL144:
- 1243 04a8 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
-GAS LISTING /tmp/cccUNf9o.s 			page 92
+ 1235              	.LEHB33:
+ 1236 0498 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 1236      00
+ 1237              	.LVL142:
+ 1238 049d 4889E6   		movq	%rsp, %rsi
+ 1239 04a0 4889C7   		movq	%rax, %rdi
+ 1240 04a3 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+ 1240      00
+ 1241              	.LVL143:
+ 1242 04a8 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 1242      00
+GAS LISTING /tmp/ccrG9BDx.s 			page 92
 
 
- 1243      00
- 1244 04ad 4889C7   		movq	%rax, %rdi
- 1245 04b0 E8000000 		call	_ZNSolsEPFRSoS_E
- 1245      00
- 1246              	.LEHE33:
- 1247              	.LVL145:
- 1248 04b5 4889E7   		movq	%rsp, %rdi
- 1249 04b8 E8000000 		call	_ZNSsD1Ev
- 1249      00
- 1250              	.LVL146:
+ 1243 04ad 4889C7   		movq	%rax, %rdi
+ 1244 04b0 E8000000 		call	_ZNSolsEPFRSoS_E
+ 1244      00
+ 1245              	.LEHE33:
+ 1246              	.LVL144:
+ 1247 04b5 4889E7   		movq	%rsp, %rdi
+ 1248 04b8 E8000000 		call	_ZNSsD1Ev
+ 1248      00
+ 1249              	.LVL145:
   69:rethrow.cpp   ****         cout << "Main got exception: " << e.as_string() << endl;
- 1251              		.loc 1 69 0 is_stmt 1 discriminator 1
- 1252 04bd E8000000 		call	__cxa_end_catch
- 1252      00
- 1253              	.LVL147:
- 1254              	.LBE12:
-  74:rethrow.cpp   ****     } catch (MyException &e) {
- 1255              		.loc 1 74 0 discriminator 1
- 1256 04c2 E8000000 		call	_Z12doesnt_throwv
- 1256      00
- 1257              	.LVL148:
- 1258              	.LBE10:
- 1259              		.cfi_endproc
- 1260              	.LFE1262:
- 1261              		.section	.gcc_except_table
- 1262 00d6 0000     		.align 4
- 1263              	.LLSDA1262:
- 1264 00d8 FF       		.byte	0xff
- 1265 00d9 03       		.byte	0x3
- 1266 00da 2D       		.uleb128 .LLSDATT1262-.LLSDATTD1262
- 1267              	.LLSDATTD1262:
- 1268 00db 01       		.byte	0x1
- 1269 00dc 25       		.uleb128 .LLSDACSE1262-.LLSDACSB1262
- 1270              	.LLSDACSB1262:
- 1271 00dd 05       		.uleb128 .LEHB26-.LFB1262
- 1272 00de 05       		.uleb128 .LEHE26-.LEHB26
- 1273 00df 27       		.uleb128 .L91-.LFB1262
- 1274 00e0 01       		.uleb128 0x1
- 1275 00e1 22       		.uleb128 .LEHB27-.LFB1262
- 1276 00e2 13       		.uleb128 .LEHE27-.LEHB27
- 1277 00e3 00       		.uleb128 0
- 1278 00e4 00       		.uleb128 0
- 1279 00e5 40       		.uleb128 .LEHB28-.LFB1262
- 1280 00e6 05       		.uleb128 .LEHE28-.LEHB28
- 1281 00e7 17       		.uleb128 .L92-.LFB1262
- 1282 00e8 00       		.uleb128 0
- 1283 00e9 4F       		.uleb128 .LEHB29-.LFB1262
- 1284 00ea 1D       		.uleb128 .LEHE29-.LEHB29
- 1285 00eb 0A       		.uleb128 .L93-.LFB1262
- 1286 00ec 00       		.uleb128 0
- 1287 00ed 79       		.uleb128 .LEHB30-.LFB1262
- 1288 00ee 05       		.uleb128 .LEHE30-.LEHB30
- 1289 00ef 9B01     		.uleb128 .L94-.LFB1262
- 1290 00f1 01       		.uleb128 0x1
- 1291 00f2 9601     		.uleb128 .LEHB31-.LFB1262
- 1292 00f4 13       		.uleb128 .LEHE31-.LEHB31
- 1293 00f5 00       		.uleb128 0
-GAS LISTING /tmp/cccUNf9o.s 			page 93
+ 1250              		.loc 1 69 0 is_stmt 1 discriminator 1
+ 1251 04bd E8000000 		call	__cxa_end_catch
+ 1251      00
+ 1252              	.LVL146:
+ 1253              	.LBE12:
+  74:rethrow.cpp   ****     } catch (MyExceptionB &e) {
+ 1254              		.loc 1 74 0 discriminator 1
+ 1255 04c2 E8000000 		call	_Z12doesnt_throwv
+ 1255      00
+ 1256              	.LVL147:
+ 1257              	.LBE10:
+ 1258              		.cfi_endproc
+ 1259              	.LFE1262:
+ 1260              		.section	.gcc_except_table
+ 1261 00d6 0000     		.align 4
+ 1262              	.LLSDA1262:
+ 1263 00d8 FF       		.byte	0xff
+ 1264 00d9 03       		.byte	0x3
+ 1265 00da 2D       		.uleb128 .LLSDATT1262-.LLSDATTD1262
+ 1266              	.LLSDATTD1262:
+ 1267 00db 01       		.byte	0x1
+ 1268 00dc 25       		.uleb128 .LLSDACSE1262-.LLSDACSB1262
+ 1269              	.LLSDACSB1262:
+ 1270 00dd 05       		.uleb128 .LEHB26-.LFB1262
+ 1271 00de 05       		.uleb128 .LEHE26-.LEHB26
+ 1272 00df 27       		.uleb128 .L91-.LFB1262
+ 1273 00e0 01       		.uleb128 0x1
+ 1274 00e1 22       		.uleb128 .LEHB27-.LFB1262
+ 1275 00e2 13       		.uleb128 .LEHE27-.LEHB27
+ 1276 00e3 00       		.uleb128 0
+ 1277 00e4 00       		.uleb128 0
+ 1278 00e5 40       		.uleb128 .LEHB28-.LFB1262
+ 1279 00e6 05       		.uleb128 .LEHE28-.LEHB28
+ 1280 00e7 17       		.uleb128 .L92-.LFB1262
+ 1281 00e8 00       		.uleb128 0
+ 1282 00e9 4F       		.uleb128 .LEHB29-.LFB1262
+ 1283 00ea 1D       		.uleb128 .LEHE29-.LEHB29
+ 1284 00eb 0A       		.uleb128 .L93-.LFB1262
+ 1285 00ec 00       		.uleb128 0
+ 1286 00ed 79       		.uleb128 .LEHB30-.LFB1262
+ 1287 00ee 05       		.uleb128 .LEHE30-.LEHB30
+ 1288 00ef 9B01     		.uleb128 .L94-.LFB1262
+ 1289 00f1 01       		.uleb128 0x1
+ 1290 00f2 9601     		.uleb128 .LEHB31-.LFB1262
+ 1291 00f4 13       		.uleb128 .LEHE31-.LEHB31
+ 1292 00f5 00       		.uleb128 0
+ 1293 00f6 00       		.uleb128 0
+GAS LISTING /tmp/ccrG9BDx.s 			page 93
 
 
- 1294 00f6 00       		.uleb128 0
- 1295 00f7 B401     		.uleb128 .LEHB32-.LFB1262
- 1296 00f9 05       		.uleb128 .LEHE32-.LEHB32
- 1297 00fa 8B01     		.uleb128 .L95-.LFB1262
- 1298 00fc 00       		.uleb128 0
- 1299 00fd C301     		.uleb128 .LEHB33-.LFB1262
- 1300 00ff 1D       		.uleb128 .LEHE33-.LEHB33
- 1301 0100 7E       		.uleb128 .L96-.LFB1262
- 1302 0101 00       		.uleb128 0
- 1303              	.LLSDACSE1262:
- 1304 0102 01       		.byte	0x1
- 1305 0103 00       		.byte	0
- 1306              		.align 4
- 1307 0104 00000000 		.long	_ZTI11MyException
- 1308              	.LLSDATT1262:
- 1309              		.text
- 1312              	_GLOBAL__sub_I__ZN11MyExceptionC2ESs:
- 1313              	.LFB1427:
- 1314              		.loc 1 78 0
- 1315              		.cfi_startproc
- 1316 04c7 4883EC08 		subq	$8, %rsp
- 1317              		.cfi_def_cfa_offset 16
- 1318              		.loc 1 78 0
- 1319 04cb BEFFFF00 		movl	$65535, %esi
+ 1294 00f7 B401     		.uleb128 .LEHB32-.LFB1262
+ 1295 00f9 05       		.uleb128 .LEHE32-.LEHB32
+ 1296 00fa 8B01     		.uleb128 .L95-.LFB1262
+ 1297 00fc 00       		.uleb128 0
+ 1298 00fd C301     		.uleb128 .LEHB33-.LFB1262
+ 1299 00ff 1D       		.uleb128 .LEHE33-.LEHB33
+ 1300 0100 7E       		.uleb128 .L96-.LFB1262
+ 1301 0101 00       		.uleb128 0
+ 1302              	.LLSDACSE1262:
+ 1303 0102 01       		.byte	0x1
+ 1304 0103 00       		.byte	0
+ 1305              		.align 4
+ 1306 0104 00000000 		.long	_ZTI12MyExceptionB
+ 1307              	.LLSDATT1262:
+ 1308              		.text
+ 1311              	_GLOBAL__sub_I__ZN12MyExceptionBC2ESs:
+ 1312              	.LFB1427:
+ 1313              		.loc 1 78 0
+ 1314              		.cfi_startproc
+ 1315 04c7 4883EC08 		subq	$8, %rsp
+ 1316              		.cfi_def_cfa_offset 16
+ 1317              		.loc 1 78 0
+ 1318 04cb BEFFFF00 		movl	$65535, %esi
+ 1318      00
+ 1319 04d0 BF010000 		movl	$1, %edi
  1319      00
- 1320 04d0 BF010000 		movl	$1, %edi
- 1320      00
- 1321 04d5 E869FBFF 		call	_Z41__static_initialization_and_destruction_0ii
- 1321      FF
- 1322              	.LVL149:
- 1323 04da 4883C408 		addq	$8, %rsp
- 1324              		.cfi_def_cfa_offset 8
- 1325 04de C3       		ret
- 1326              		.cfi_endproc
- 1327              	.LFE1427:
- 1329              		.section	.init_array,"aw"
- 1330              		.align 8
- 1331 0000 00000000 		.quad	_GLOBAL__sub_I__ZN11MyExceptionC2ESs
- 1331      00000000 
- 1332              		.weak	_ZTS11MyException
- 1333              		.section	.rodata._ZTS11MyException,"aG",@progbits,_ZTS11MyException,comdat
- 1336              	_ZTS11MyException:
- 1337 0000 31314D79 		.string	"11MyException"
- 1337      45786365 
- 1337      7074696F 
- 1337      6E00
- 1338              		.weak	_ZTI11MyException
- 1339              		.section	.rodata._ZTI11MyException,"aG",@progbits,_ZTI11MyException,comdat
- 1340              		.align 16
- 1343              	_ZTI11MyException:
- 1344 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 1320 04d5 E869FBFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 1320      FF
+ 1321              	.LVL148:
+ 1322 04da 4883C408 		addq	$8, %rsp
+ 1323              		.cfi_def_cfa_offset 8
+ 1324 04de C3       		ret
+ 1325              		.cfi_endproc
+ 1326              	.LFE1427:
+ 1328              		.section	.init_array,"aw"
+ 1329              		.align 8
+ 1330 0000 00000000 		.quad	_GLOBAL__sub_I__ZN12MyExceptionBC2ESs
+ 1330      00000000 
+ 1331              		.weak	_ZTS12MyExceptionB
+ 1332              		.section	.rodata._ZTS12MyExceptionB,"aG",@progbits,_ZTS12MyExceptionB,comdat
+ 1335              	_ZTS12MyExceptionB:
+ 1336 0000 31324D79 		.string	"12MyExceptionB"
+ 1336      45786365 
+ 1336      7074696F 
+ 1336      6E4200
+ 1337              		.weak	_ZTI12MyExceptionB
+ 1338              		.section	.rodata._ZTI12MyExceptionB,"aG",@progbits,_ZTI12MyExceptionB,comdat
+ 1339              		.align 16
+ 1342              	_ZTI12MyExceptionB:
+ 1343 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 1343      00000000 
+ 1344 0008 00000000 		.quad	_ZTS12MyExceptionB
  1344      00000000 
- 1345 0008 00000000 		.quad	_ZTS11MyException
+ 1345 0010 00000000 		.quad	_ZTISt9exception
  1345      00000000 
- 1346 0010 00000000 		.quad	_ZTISt9exception
- 1346      00000000 
- 1347              		.weak	_ZTV11MyException
-GAS LISTING /tmp/cccUNf9o.s 			page 94
+ 1346              		.weak	_ZTV12MyExceptionB
+ 1347              		.section	.rodata._ZTV12MyExceptionB,"aG",@progbits,_ZTV12MyExceptionB,comdat
+GAS LISTING /tmp/ccrG9BDx.s 			page 94
 
 
- 1348              		.section	.rodata._ZTV11MyException,"aG",@progbits,_ZTV11MyException,comdat
- 1349              		.align 32
- 1352              	_ZTV11MyException:
- 1353 0000 00000000 		.quad	0
+ 1348              		.align 32
+ 1351              	_ZTV12MyExceptionB:
+ 1352 0000 00000000 		.quad	0
+ 1352      00000000 
+ 1353 0008 00000000 		.quad	_ZTI12MyExceptionB
  1353      00000000 
- 1354 0008 00000000 		.quad	_ZTI11MyException
+ 1354 0010 00000000 		.quad	_ZN12MyExceptionBD1Ev
  1354      00000000 
- 1355 0010 00000000 		.quad	_ZN11MyExceptionD1Ev
+ 1355 0018 00000000 		.quad	_ZN12MyExceptionBD0Ev
  1355      00000000 
- 1356 0018 00000000 		.quad	_ZN11MyExceptionD0Ev
+ 1356 0020 00000000 		.quad	_ZNK12MyExceptionB4whatEv
  1356      00000000 
- 1357 0020 00000000 		.quad	_ZNK11MyException4whatEv
- 1357      00000000 
- 1358              		.local	_ZStL8__ioinit
- 1359              		.comm	_ZStL8__ioinit,1,1
- 1360              		.text
- 1361              	.Letext0:
- 1362              		.file 8 "/usr/include/c++/4.8/bits/exception_ptr.h"
- 1363              		.file 9 "/usr/include/c++/4.8/cwchar"
- 1364              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
- 1365              		.file 11 "/usr/include/c++/4.8/cstdint"
- 1366              		.file 12 "/usr/include/c++/4.8/bits/allocator.h"
- 1367              		.file 13 "/usr/include/c++/4.8/clocale"
- 1368              		.file 14 "/usr/include/c++/4.8/cstdlib"
- 1369              		.file 15 "/usr/include/c++/4.8/cstdio"
- 1370              		.file 16 "/usr/include/c++/4.8/initializer_list"
- 1371              		.file 17 "/usr/include/c++/4.8/bits/stringfwd.h"
- 1372              		.file 18 "/usr/include/c++/4.8/bits/ios_base.h"
- 1373              		.file 19 "/usr/include/c++/4.8/cwctype"
- 1374              		.file 20 "/usr/include/c++/4.8/ostream"
- 1375              		.file 21 "/usr/include/c++/4.8/type_traits"
- 1376              		.file 22 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
- 1377              		.file 23 "/usr/include/c++/4.8/iosfwd"
- 1378              		.file 24 "/usr/include/c++/4.8/ext/new_allocator.h"
- 1379              		.file 25 "/usr/include/c++/4.8/ext/numeric_traits.h"
- 1380              		.file 26 "/usr/include/c++/4.8/bits/stl_iterator.h"
- 1381              		.file 27 "/usr/include/c++/4.8/debug/debug.h"
- 1382              		.file 28 "/usr/include/stdio.h"
- 1383              		.file 29 "/usr/include/libio.h"
- 1384              		.file 30 "<built-in>"
- 1385              		.file 31 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
- 1386              		.file 32 "/usr/include/wchar.h"
- 1387              		.file 33 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
- 1388              		.file 34 "/usr/include/time.h"
- 1389              		.file 35 "/usr/include/stdint.h"
- 1390              		.file 36 "/usr/include/locale.h"
- 1391              		.file 37 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 1392              		.file 38 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
- 1393              		.file 39 "/usr/include/stdlib.h"
- 1394              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
- 1395              		.file 41 "/usr/include/_G_config.h"
- 1396              		.file 42 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
- 1397              		.file 43 "/usr/include/wctype.h"
- 1398              		.file 44 "/usr/include/c++/4.8/new"
- 1399              		.file 45 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/cccUNf9o.s 			page 95
+ 1357              		.local	_ZStL8__ioinit
+ 1358              		.comm	_ZStL8__ioinit,1,1
+ 1359              		.text
+ 1360              	.Letext0:
+ 1361              		.file 8 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 1362              		.file 9 "/usr/include/c++/4.8/cwchar"
+ 1363              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 1364              		.file 11 "/usr/include/c++/4.8/cstdint"
+ 1365              		.file 12 "/usr/include/c++/4.8/bits/allocator.h"
+ 1366              		.file 13 "/usr/include/c++/4.8/clocale"
+ 1367              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 1368              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 1369              		.file 16 "/usr/include/c++/4.8/initializer_list"
+ 1370              		.file 17 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 1371              		.file 18 "/usr/include/c++/4.8/bits/ios_base.h"
+ 1372              		.file 19 "/usr/include/c++/4.8/cwctype"
+ 1373              		.file 20 "/usr/include/c++/4.8/ostream"
+ 1374              		.file 21 "/usr/include/c++/4.8/type_traits"
+ 1375              		.file 22 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 1376              		.file 23 "/usr/include/c++/4.8/iosfwd"
+ 1377              		.file 24 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 1378              		.file 25 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 1379              		.file 26 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 1380              		.file 27 "/usr/include/c++/4.8/debug/debug.h"
+ 1381              		.file 28 "/usr/include/stdio.h"
+ 1382              		.file 29 "/usr/include/libio.h"
+ 1383              		.file 30 "<built-in>"
+ 1384              		.file 31 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 1385              		.file 32 "/usr/include/wchar.h"
+ 1386              		.file 33 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 1387              		.file 34 "/usr/include/time.h"
+ 1388              		.file 35 "/usr/include/stdint.h"
+ 1389              		.file 36 "/usr/include/locale.h"
+ 1390              		.file 37 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 1391              		.file 38 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 1392              		.file 39 "/usr/include/stdlib.h"
+ 1393              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 1394              		.file 41 "/usr/include/_G_config.h"
+ 1395              		.file 42 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 1396              		.file 43 "/usr/include/wctype.h"
+ 1397              		.file 44 "/usr/include/c++/4.8/new"
+ 1398              		.file 45 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccrG9BDx.s 			page 95
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 rethrow.cpp
-     /tmp/cccUNf9o.s:7      .text:0000000000000000 _ZNK11MyException4whatEv
-     /tmp/cccUNf9o.s:30     .text:0000000000000012 _ZN11MyExceptionD2Ev
-     /tmp/cccUNf9o.s:1352   .rodata._ZTV11MyException:0000000000000000 _ZTV11MyException
-     /tmp/cccUNf9o.s:30     .text:0000000000000012 _ZN11MyExceptionD1Ev
-     /tmp/cccUNf9o.s:63     .text:0000000000000030 _ZN11MyExceptionD0Ev
-     /tmp/cccUNf9o.s:86     .text:0000000000000043 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccrG9BDx.s:7      .text:0000000000000000 _ZNK12MyExceptionB4whatEv
+     /tmp/ccrG9BDx.s:30     .text:0000000000000012 _ZN12MyExceptionBD2Ev
+     /tmp/ccrG9BDx.s:1351   .rodata._ZTV12MyExceptionB:0000000000000000 _ZTV12MyExceptionB
+     /tmp/ccrG9BDx.s:30     .text:0000000000000012 _ZN12MyExceptionBD1Ev
+     /tmp/ccrG9BDx.s:63     .text:0000000000000030 _ZN12MyExceptionBD0Ev
+     /tmp/ccrG9BDx.s:86     .text:0000000000000043 _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/cccUNf9o.s:122    .text._ZNSt9exceptionC2Ev:0000000000000000 _ZNSt9exceptionC2Ev
-     /tmp/cccUNf9o.s:122    .text._ZNSt9exceptionC2Ev:0000000000000000 _ZNSt9exceptionC1Ev
-     /tmp/cccUNf9o.s:141    .text._ZNSt11char_traitsIcE6lengthEPKc:0000000000000000 _ZNSt11char_traitsIcE6lengthEPKc
-     /tmp/cccUNf9o.s:162    .text:0000000000000078 _ZN11MyExceptionC2ESs
-     /tmp/cccUNf9o.s:162    .text:0000000000000078 _ZN11MyExceptionC1ESs
-     /tmp/cccUNf9o.s:258    .text:00000000000000c5 _Z17throw_MyExceptionSs
-     /tmp/cccUNf9o.s:1343   .rodata._ZTI11MyException:0000000000000000 _ZTI11MyException
-     /tmp/cccUNf9o.s:372    .text:0000000000000136 _Z12doesnt_throwv
-     /tmp/cccUNf9o.s:460    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_
-     /tmp/cccUNf9o.s:572    .text._ZSt4moveIRSsEONSt16remove_referenceIT_E4typeEOS2_:0000000000000000 _ZSt4moveIRSsEONSt16remove_referenceIT_E4typeEOS2_
-     /tmp/cccUNf9o.s:587    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_
-     /tmp/cccUNf9o.s:628    .text:0000000000000186 _ZNK11MyException9as_stringEv
-     /tmp/cccUNf9o.s:717    .text:00000000000001d5 _Z17catch_and_rethrowv
-     /tmp/cccUNf9o.s:897    .text:00000000000002a7 _Z23catch_and_throw_anotherv
-     /tmp/cccUNf9o.s:1118   .text:00000000000003d5 main
-     /tmp/cccUNf9o.s:1312   .text:00000000000004c7 _GLOBAL__sub_I__ZN11MyExceptionC2ESs
-     /tmp/cccUNf9o.s:1336   .rodata._ZTS11MyException:0000000000000000 _ZTS11MyException
+     /tmp/ccrG9BDx.s:122    .text._ZNSt9exceptionC2Ev:0000000000000000 _ZNSt9exceptionC2Ev
+     /tmp/ccrG9BDx.s:122    .text._ZNSt9exceptionC2Ev:0000000000000000 _ZNSt9exceptionC1Ev
+     /tmp/ccrG9BDx.s:141    .text._ZNSt11char_traitsIcE6lengthEPKc:0000000000000000 _ZNSt11char_traitsIcE6lengthEPKc
+     /tmp/ccrG9BDx.s:162    .text:0000000000000078 _ZN12MyExceptionBC2ESs
+     /tmp/ccrG9BDx.s:162    .text:0000000000000078 _ZN12MyExceptionBC1ESs
+     /tmp/ccrG9BDx.s:258    .text:00000000000000c5 _Z18throw_MyExceptionBSs
+     /tmp/ccrG9BDx.s:1342   .rodata._ZTI12MyExceptionB:0000000000000000 _ZTI12MyExceptionB
+     /tmp/ccrG9BDx.s:372    .text:0000000000000136 _Z12doesnt_throwv
+     /tmp/ccrG9BDx.s:460    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_
+     /tmp/ccrG9BDx.s:572    .text._ZSt4moveIRSsEONSt16remove_referenceIT_E4typeEOS2_:0000000000000000 _ZSt4moveIRSsEONSt16remove_referenceIT_E4typeEOS2_
+     /tmp/ccrG9BDx.s:587    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_
+     /tmp/ccrG9BDx.s:628    .text:0000000000000186 _ZNK12MyExceptionB9as_stringEv
+     /tmp/ccrG9BDx.s:717    .text:00000000000001d5 _Z17catch_and_rethrowv
+     /tmp/ccrG9BDx.s:897    .text:00000000000002a7 _Z23catch_and_throw_anotherv
+     /tmp/ccrG9BDx.s:1118   .text:00000000000003d5 _Z9doRethrowv
+     /tmp/ccrG9BDx.s:1311   .text:00000000000004c7 _GLOBAL__sub_I__ZN12MyExceptionBC2ESs
+     /tmp/ccrG9BDx.s:1335   .rodata._ZTS12MyExceptionB:0000000000000000 _ZTS12MyExceptionB
                            .group:0000000000000000 _ZNSt9exceptionC5Ev
 
 UNDEFINED SYMBOLS
@@ -5696,7 +5695,7 @@ __cxa_end_catch
 __cxa_begin_catch
 _ZSt4cout
 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-GAS LISTING /tmp/cccUNf9o.s 			page 96
+GAS LISTING /tmp/ccrG9BDx.s 			page 96
 
 
 _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E

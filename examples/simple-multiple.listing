@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc3IHlug.s 			page 1
+GAS LISTING /tmp/ccHgbRb8.s 			page 1
 
 
    1              		.file	"simple-multiple.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
   49:simple-multiple.cpp ****     return 0;
   50:simple-multiple.cpp **** }...
    8              		.loc 1 50 0
-GAS LISTING /tmp/cc3IHlug.s 			page 2
+GAS LISTING /tmp/ccHgbRb8.s 			page 2
 
 
    9              		.cfi_startproc
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
   43:/usr/include/c++/4.8/iostream **** {
   44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
   45:/usr/include/c++/4.8/iostream **** 
-GAS LISTING /tmp/cc3IHlug.s 			page 3
+GAS LISTING /tmp/ccHgbRb8.s 			page 3
 
 
   46:/usr/include/c++/4.8/iostream ****   /**
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
   41              	_ZN6baseA18setDataAEi:
   42              	.LFB1243:
   22:simple-multiple.cpp **** void baseA1::setDataA(int a) {
-GAS LISTING /tmp/cc3IHlug.s 			page 4
+GAS LISTING /tmp/ccHgbRb8.s 			page 4
 
 
   43              		.loc 1 22 0
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
   94              	.LFE1246:
   96 0043 90       		.align 2
   97              		.globl	_ZNK8subBoth16getSumEv
-GAS LISTING /tmp/cc3IHlug.s 			page 5
+GAS LISTING /tmp/ccHgbRb8.s 			page 5
 
 
   99              	_ZNK8subBoth16getSumEv:
@@ -298,7 +298,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
  144              		.cfi_startproc
  145              	.LVL15:
  146 005e 53       		pushq	%rbx
-GAS LISTING /tmp/cc3IHlug.s 			page 6
+GAS LISTING /tmp/ccHgbRb8.s 			page 6
 
 
  147              		.cfi_def_cfa_offset 16
@@ -358,7 +358,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
  185 00af B8000000 		movl	$0, %eax
  185      00
  186 00b4 4883C410 		addq	$16, %rsp
-GAS LISTING /tmp/cc3IHlug.s 			page 7
+GAS LISTING /tmp/ccHgbRb8.s 			page 7
 
 
  187              		.cfi_def_cfa_offset 16
@@ -418,7 +418,7 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
  240              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
  241              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
  242              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
-GAS LISTING /tmp/cc3IHlug.s 			page 8
+GAS LISTING /tmp/ccHgbRb8.s 			page 8
 
 
  243              		.file 26 "/usr/include/stdint.h"
@@ -431,20 +431,20 @@ GAS LISTING /tmp/cc3IHlug.s 			page 1
  250              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
  251              		.file 34 "/usr/include/wctype.h"
  252              		.file 35 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/cc3IHlug.s 			page 9
+GAS LISTING /tmp/ccHgbRb8.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 simple-multiple.cpp
-     /tmp/cc3IHlug.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccHgbRb8.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/cc3IHlug.s:41     .text:0000000000000034 _ZN6baseA18setDataAEi
-     /tmp/cc3IHlug.s:55     .text:0000000000000038 _ZNK6baseA18getDataAEv
-     /tmp/cc3IHlug.s:70     .text:000000000000003c _ZN6baseB18setDataBEi
-     /tmp/cc3IHlug.s:84     .text:0000000000000040 _ZNK6baseB18getDataBEv
-     /tmp/cc3IHlug.s:99     .text:0000000000000044 _ZNK8subBoth16getSumEv
-     /tmp/cc3IHlug.s:141    .text:000000000000005e _Z14simpleMultipleiPPKc
-     /tmp/cc3IHlug.s:196    .text:00000000000000ba _GLOBAL__sub_I__ZN6baseA18setDataAEi
+     /tmp/ccHgbRb8.s:41     .text:0000000000000034 _ZN6baseA18setDataAEi
+     /tmp/ccHgbRb8.s:55     .text:0000000000000038 _ZNK6baseA18getDataAEv
+     /tmp/ccHgbRb8.s:70     .text:000000000000003c _ZN6baseB18setDataBEi
+     /tmp/ccHgbRb8.s:84     .text:0000000000000040 _ZNK6baseB18getDataBEv
+     /tmp/ccHgbRb8.s:99     .text:0000000000000044 _ZNK8subBoth16getSumEv
+     /tmp/ccHgbRb8.s:141    .text:000000000000005e _Z14simpleMultipleiPPKc
+     /tmp/ccHgbRb8.s:196    .text:00000000000000ba _GLOBAL__sub_I__ZN6baseA18setDataAEi
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

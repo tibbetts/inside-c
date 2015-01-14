@@ -1,6 +1,6 @@
 #include <iostream>
 
-extern thread_local string threadName("starting name");
+thread_local std::string threadName("starting name");
 
 void threadLocal() {
   threadName = "myname";

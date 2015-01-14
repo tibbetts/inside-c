@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccBDC7ZY.s 			page 1
+GAS LISTING /tmp/cc7HJU9U.s 			page 1
 
 
    1              		.file	"template-max.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
   44              	.LFB5:
   17:template-max.cpp ****     bool operator>(const my_struct &rhs) const;
   18:template-max.cpp **** };
-GAS LISTING /tmp/ccBDC7ZY.s 			page 2
+GAS LISTING /tmp/cc7HJU9U.s 			page 2
 
 
   19:template-max.cpp **** 
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
   92 001c 8B442410 		movl	16(%rsp), %eax
   93 0020 EB03     		jmp	.L7
   94              	.L6:
-GAS LISTING /tmp/ccBDC7ZY.s 			page 3
+GAS LISTING /tmp/cc7HJU9U.s 			page 3
 
 
    6:template-max.cpp **** }
@@ -133,13 +133,12 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
  102              		.cfi_endproc
  103              	.LFE9:
  105              		.text
- 106              		.globl	main
- 108              	main:
+ 106              		.globl	_Z11templateMaxiPPKc
+ 108              	_Z11templateMaxiPPKc:
  109              	.LFB6:
   23:template-max.cpp **** 
-  24:template-max.cpp **** int
-  25:template-max.cpp **** main (int argc, char **argv) {
- 110              		.loc 1 25 0
+  24:template-max.cpp **** int templateMax(int argc, const char **argv) {
+ 110              		.loc 1 24 0
  111              		.cfi_startproc
  112              	.LVL5:
  113 000e 53       		pushq	%rbx
@@ -148,9 +147,9 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
  116 000f 4883EC20 		subq	$32, %rsp
  117              		.cfi_def_cfa_offset 48
  118              	.LBB3:
-  26:template-max.cpp ****     // int
-  27:template-max.cpp ****     int i = max(2, 3);
- 119              		.loc 1 27 0
+  25:template-max.cpp ****     // int
+  26:template-max.cpp ****     int i = max(2, 3);
+ 119              		.loc 1 26 0
  120 0013 BE030000 		movl	$3, %esi
  120      00
  121              	.LVL6:
@@ -162,42 +161,42 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
  125              	.LVL8:
  126 0022 89C3     		movl	%eax, %ebx
  127              	.LVL9:
-  28:template-max.cpp **** 
-  29:template-max.cpp ****     // double
-  30:template-max.cpp ****     double d = max (2.3, 3.5);
-  31:template-max.cpp **** 
-  32:template-max.cpp ****     // my_struct
-  33:template-max.cpp ****     my_struct x(37);
- 128              		.loc 1 33 0
+  27:template-max.cpp **** 
+  28:template-max.cpp ****     // double
+  29:template-max.cpp ****     double d = max (2.3, 3.5);
+  30:template-max.cpp **** 
+  31:template-max.cpp ****     // my_struct
+  32:template-max.cpp ****     my_struct x(37);
+ 128              		.loc 1 32 0
  129 0024 BE250000 		movl	$37, %esi
  129      00
  130 0029 4889E7   		movq	%rsp, %rdi
  131 002c E8000000 		call	_ZN9my_structC1Ei
  131      00
  132              	.LVL10:
-  34:template-max.cpp ****     my_struct y(12);
- 133              		.loc 1 34 0
+  33:template-max.cpp ****     my_struct y(12);
+ 133              		.loc 1 33 0
  134 0031 BE0C0000 		movl	$12, %esi
-GAS LISTING /tmp/ccBDC7ZY.s 			page 4
-
-
  134      00
+GAS LISTING /tmp/cc7HJU9U.s 			page 4
+
+
  135 0036 488D7C24 		leaq	16(%rsp), %rdi
  135      10
  136 003b E8000000 		call	_ZN9my_structC1Ei
  136      00
  137              	.LVL11:
  138              	.LBE3:
-  35:template-max.cpp ****     my_struct m = max (x, y);
-  36:template-max.cpp **** 
-  37:template-max.cpp ****     // bool
-  38:template-max.cpp ****     bool bx = true;
-  39:template-max.cpp ****     bool by = false;
-  40:template-max.cpp ****     bool b = max(bx, by);
-  41:template-max.cpp **** 
-  42:template-max.cpp ****     return i;
-  43:template-max.cpp **** }
- 139              		.loc 1 43 0
+  34:template-max.cpp ****     my_struct m = max (x, y);
+  35:template-max.cpp **** 
+  36:template-max.cpp ****     // bool
+  37:template-max.cpp ****     bool bx = true;
+  38:template-max.cpp ****     bool by = false;
+  39:template-max.cpp ****     bool b = max(bx, by);
+  40:template-max.cpp **** 
+  41:template-max.cpp ****     return i;
+  42:template-max.cpp **** }
+ 139              		.loc 1 42 0
  140 0040 89D8     		movl	%ebx, %eax
  141 0042 4883C420 		addq	$32, %rsp
  142              		.cfi_def_cfa_offset 16
@@ -208,18 +207,18 @@ GAS LISTING /tmp/ccBDC7ZY.s 			page 1
  147              		.cfi_endproc
  148              	.LFE6:
  150              	.Letext0:
-GAS LISTING /tmp/ccBDC7ZY.s 			page 5
+GAS LISTING /tmp/cc7HJU9U.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 template-max.cpp
-     /tmp/ccBDC7ZY.s:6      .text:0000000000000000 _Z3maxIbET_S0_S0_
-     /tmp/ccBDC7ZY.s:24     .text._ZN9my_structC2Ei:0000000000000000 _ZN9my_structC2Ei
-     /tmp/ccBDC7ZY.s:24     .text._ZN9my_structC2Ei:0000000000000000 _ZN9my_structC1Ei
-     /tmp/ccBDC7ZY.s:43     .text:0000000000000006 _ZNK9my_structgtERKS_
-     /tmp/ccBDC7ZY.s:60     .text._Z3maxIiET_S0_S0_:0000000000000000 _Z3maxIiET_S0_S0_
-     /tmp/ccBDC7ZY.s:76     .text._Z3maxI9my_structET_S1_S1_:0000000000000000 _Z3maxI9my_structET_S1_S1_
-     /tmp/ccBDC7ZY.s:108    .text:000000000000000e main
+     /tmp/cc7HJU9U.s:6      .text:0000000000000000 _Z3maxIbET_S0_S0_
+     /tmp/cc7HJU9U.s:24     .text._ZN9my_structC2Ei:0000000000000000 _ZN9my_structC2Ei
+     /tmp/cc7HJU9U.s:24     .text._ZN9my_structC2Ei:0000000000000000 _ZN9my_structC1Ei
+     /tmp/cc7HJU9U.s:43     .text:0000000000000006 _ZNK9my_structgtERKS_
+     /tmp/cc7HJU9U.s:60     .text._Z3maxIiET_S0_S0_:0000000000000000 _Z3maxIiET_S0_S0_
+     /tmp/cc7HJU9U.s:76     .text._Z3maxI9my_structET_S1_S1_:0000000000000000 _Z3maxI9my_structET_S1_S1_
+     /tmp/cc7HJU9U.s:108    .text:000000000000000e _Z11templateMaxiPPKc
                            .group:0000000000000000 _ZN9my_structC5Ei
 
 NO UNDEFINED SYMBOLS

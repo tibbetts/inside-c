@@ -264,15 +264,23 @@ _ZN7subBothC1Ev:
 	.cfi_endproc
 .LFE40:
 	.size	_ZN7subBothC1Ev, .-_ZN7subBothC1Ev
+	.section	.rodata.str1.1
+.LC3:
+	.string	"virtualDiamond %d %d"
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z14virtualDiamondv
+	.type	_Z14virtualDiamondv, @function
+_Z14virtualDiamondv:
 .LFB28:
 	.cfi_startproc
-	pushq	%rbx
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 32
 	movl	$48, %edi
 	call	_Znwm
 	movq	%rax, %rbx
@@ -281,6 +289,7 @@ main:
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	call	*8(%rax)
+	movl	%eax, %ebp
 	movl	$12, %esi
 	movq	%rbx, %rdi
 	call	_ZN5baseA8setDataAEi
@@ -298,13 +307,22 @@ main:
 	movq	(%rbx), %rax
 	movq	%rbx, %rdi
 	call	*(%rax)
+	movl	%eax, %ecx
+	movl	%ebp, %edx
+	movl	$.LC3, %esi
+	movl	$1, %edi
 	movl	$0, %eax
+	call	__printf_chk
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 24
 	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE28:
-	.size	main, .-main
+	.size	_Z14virtualDiamondv, .-_Z14virtualDiamondv
 	.weak	_ZTS10bottomBase
 	.section	.rodata._ZTS10bottomBase,"aG",@progbits,_ZTS10bottomBase,comdat
 	.type	_ZTS10bottomBase, @object

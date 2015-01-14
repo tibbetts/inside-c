@@ -262,9 +262,9 @@ _Z12throw_structv:
 .LC6:
 	.string	"Caught something unexpected."
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z17throwNonexceptionv
+	.type	_Z17throwNonexceptionv, @function
+_Z17throwNonexceptionv:
 .LFB1249:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -373,7 +373,7 @@ main:
 	call	_ZNSolsEPFRSoS_E
 .LEHE12:
 	call	__cxa_end_catch
-	jmp	.L47
+	jmp	.L24
 .L46:
 	movq	%rax, %rbx
 	.p2align 4,,5
@@ -395,8 +395,7 @@ main:
 .LEHB15:
 	call	__cxa_end_catch
 .LEHE15:
-.L47:
-	movl	$0, %eax
+.L24:
 	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%rbp
@@ -471,7 +470,7 @@ main:
 
 .LLSDATT1249:
 	.text
-	.size	main, .-main
+	.size	_Z17throwNonexceptionv, .-_Z17throwNonexceptionv
 	.type	_GLOBAL__sub_I__Z9throw_intv, @function
 _GLOBAL__sub_I__Z9throw_intv:
 .LFB1407:

@@ -79,9 +79,9 @@ _Z3maxI9my_structET_S1_S1_:
 .LFE9:
 	.size	_Z3maxI9my_structET_S1_S1_, .-_Z3maxI9my_structET_S1_S1_
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z11templateMaxiPPKc
+	.type	_Z11templateMaxiPPKc, @function
+_Z11templateMaxiPPKc:
 .LFB6:
 	.cfi_startproc
 	pushq	%rbx
@@ -107,6 +107,6 @@ main:
 	ret
 	.cfi_endproc
 .LFE6:
-	.size	main, .-main
+	.size	_Z11templateMaxiPPKc, .-_Z11templateMaxiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits
