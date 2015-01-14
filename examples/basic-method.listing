@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cc4Jdzms.s 			page 1
+GAS LISTING /tmp/ccc8d3FV.s 			page 1
 
 
    1              		.file	"basic-method.cpp"
@@ -17,7 +17,7 @@ GAS LISTING /tmp/cc4Jdzms.s 			page 1
    6:basic-method.cpp ****     int getField() const;
    7:basic-method.cpp **** };
    8:basic-method.cpp **** 
-   9:basic-method.cpp **** extern int basicMethod(int argc, char **argv) {
+   9:basic-method.cpp **** extern int basicMethod(int argc, const char **argv) {
   10:basic-method.cpp ****     onefield4 of;
   11:basic-method.cpp **** 
   12:basic-method.cpp ****     of.setField(13);
@@ -58,12 +58,12 @@ GAS LISTING /tmp/cc4Jdzms.s 			page 1
   29              		.loc 1 29 0
   30 0006 C3       		ret
   31              		.cfi_endproc
-GAS LISTING /tmp/cc4Jdzms.s 			page 2
+GAS LISTING /tmp/ccc8d3FV.s 			page 2
 
 
   32              	.LFE2:
-  34              		.globl	_Z11basicMethodiPPc
-  36              	_Z11basicMethodiPPc:
+  34              		.globl	_Z11basicMethodiPPKc
+  36              	_Z11basicMethodiPPKc:
   37              	.LFB0:
    9:basic-method.cpp ****     onefield4 of;
   38              		.loc 1 9 0
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cc4Jdzms.s 			page 1
   21:basic-method.cpp **** 
   74              		.loc 1 21 0
   75 0043 4883C410 		addq	$16, %rsp
-GAS LISTING /tmp/cc4Jdzms.s 			page 3
+GAS LISTING /tmp/ccc8d3FV.s 			page 3
 
 
   76              		.cfi_def_cfa_offset 16
@@ -129,14 +129,14 @@ GAS LISTING /tmp/cc4Jdzms.s 			page 1
   81              		.cfi_endproc
   82              	.LFE0:
   84              	.Letext0:
-GAS LISTING /tmp/cc4Jdzms.s 			page 4
+GAS LISTING /tmp/ccc8d3FV.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-method.cpp
-     /tmp/cc4Jdzms.s:7      .text:0000000000000000 _ZN9onefield48setFieldEi
-     /tmp/cc4Jdzms.s:22     .text:0000000000000004 _ZNK9onefield48getFieldEv
-     /tmp/cc4Jdzms.s:36     .text:0000000000000007 _Z11basicMethodiPPc
+     /tmp/ccc8d3FV.s:7      .text:0000000000000000 _ZN9onefield48setFieldEi
+     /tmp/ccc8d3FV.s:22     .text:0000000000000004 _ZNK9onefield48getFieldEv
+     /tmp/ccc8d3FV.s:36     .text:0000000000000007 _Z11basicMethodiPPKc
 
 UNDEFINED SYMBOLS
 _Znwm

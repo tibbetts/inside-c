@@ -1,0 +1,306 @@
+GAS LISTING /tmp/ccOXNQjl.s 			page 1
+
+
+   1              		.file	"fibonacci.cpp"
+   2              		.text
+   3              	.Ltext0:
+   5              	_Z41__static_initialization_and_destruction_0ii:
+   6              	.LFB1398:
+   7              		.file 1 "fibonacci.cpp"
+   1:fibonacci.cpp **** #include <iostream>
+   2:fibonacci.cpp **** 
+   3:fibonacci.cpp **** // Fibonacci numbers using template math.
+   4:fibonacci.cpp **** 
+   5:fibonacci.cpp **** template <int I>
+   6:fibonacci.cpp **** struct fibonacci {
+   7:fibonacci.cpp ****     static const int value = (fibonacci<I-1>::value +
+   8:fibonacci.cpp ****                               fibonacci<I-2>::value);
+   9:fibonacci.cpp **** };
+  10:fibonacci.cpp **** 
+  11:fibonacci.cpp **** template <>
+  12:fibonacci.cpp **** struct fibonacci<0> {
+  13:fibonacci.cpp ****     static const int value = 1;
+  14:fibonacci.cpp **** };
+  15:fibonacci.cpp **** template <>
+  16:fibonacci.cpp **** struct fibonacci<1> {
+  17:fibonacci.cpp ****     static const int value = 1;
+  18:fibonacci.cpp **** };
+  19:fibonacci.cpp **** 
+  20:fibonacci.cpp **** const int arg = 17;
+  21:fibonacci.cpp **** 
+  22:fibonacci.cpp **** int
+  23:fibonacci.cpp **** main (int argc, char **argv) {
+  24:fibonacci.cpp ****     int result = fibonacci<arg>::value;
+  25:fibonacci.cpp **** 
+  26:fibonacci.cpp ****     std::cout << "fibonacci<" << arg << ">::value = "
+  27:fibonacci.cpp ****               << result << std::endl;
+  28:fibonacci.cpp **** }
+   8              		.loc 1 28 0
+   9              		.cfi_startproc
+  10              	.LVL0:
+  11 0000 83FF01   		cmpl	$1, %edi
+  12 0003 752E     		jne	.L5
+  13              		.loc 1 28 0 discriminator 1
+  14 0005 81FEFFFF 		cmpl	$65535, %esi
+  14      0000
+  15 000b 7526     		jne	.L5
+  16              		.loc 1 28 0 is_stmt 0
+  17 000d 4883EC08 		subq	$8, %rsp
+  18              		.cfi_def_cfa_offset 16
+  19              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+GAS LISTING /tmp/ccOXNQjl.s 			page 2
+
+
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  45:/usr/include/c++/4.8/iostream **** 
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+GAS LISTING /tmp/ccOXNQjl.s 			page 3
+
+
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  20              		.loc 2 74 0 is_stmt 1
+  21 0011 BF000000 		movl	$_ZStL8__ioinit, %edi
+  21      00
+  22              	.LVL1:
+  23 0016 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  23      00
+  24              	.LVL2:
+  25 001b BA000000 		movl	$__dso_handle, %edx
+  25      00
+  26 0020 BE000000 		movl	$_ZStL8__ioinit, %esi
+  26      00
+  27 0025 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  27      00
+  28 002a E8000000 		call	__cxa_atexit
+  28      00
+  29              	.LVL3:
+  30              		.loc 1 28 0
+  31 002f 4883C408 		addq	$8, %rsp
+  32              		.cfi_def_cfa_offset 8
+  33              	.L5:
+  34 0033 C3       		ret
+  35              		.cfi_endproc
+  36              	.LFE1398:
+  38              		.section	.rodata.str1.1,"aMS",@progbits,1
+  39              	.LC0:
+  40 0000 6669626F 		.string	"fibonacci<"
+  40      6E616363 
+  40      693C00
+  41              	.LC1:
+  42 000b 3E3A3A76 		.string	">::value = "
+  42      616C7565 
+  42      203D2000 
+  43              		.text
+  44              		.globl	main
+  46              	main:
+  47              	.LFB1243:
+  23:fibonacci.cpp ****     int result = fibonacci<arg>::value;
+  48              		.loc 1 23 0
+  49              		.cfi_startproc
+  50              	.LVL4:
+  51 0034 4883EC08 		subq	$8, %rsp
+  52              		.cfi_def_cfa_offset 16
+  53              	.LVL5:
+  54              	.LBB2:
+  26:fibonacci.cpp ****               << result << std::endl;
+  55              		.loc 1 26 0
+  56 0038 BE000000 		movl	$.LC0, %esi
+  56      00
+  57              	.LVL6:
+  58 003d BF000000 		movl	$_ZSt4cout, %edi
+GAS LISTING /tmp/ccOXNQjl.s 			page 4
+
+
+  58      00
+  59              	.LVL7:
+  60 0042 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  60      00
+  61              	.LVL8:
+  62 0047 BE110000 		movl	$17, %esi
+  62      00
+  63 004c 4889C7   		movq	%rax, %rdi
+  64 004f E8000000 		call	_ZNSolsEi
+  64      00
+  65              	.LVL9:
+  66 0054 BE000000 		movl	$.LC1, %esi
+  66      00
+  67 0059 4889C7   		movq	%rax, %rdi
+  68 005c E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  68      00
+  69              	.LVL10:
+  27:fibonacci.cpp **** }
+  70              		.loc 1 27 0
+  71 0061 BE180A00 		movl	$2584, %esi
+  71      00
+  72 0066 4889C7   		movq	%rax, %rdi
+  73 0069 E8000000 		call	_ZNSolsEi
+  73      00
+  74              	.LVL11:
+  75 006e BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+  75      00
+  76 0073 4889C7   		movq	%rax, %rdi
+  77 0076 E8000000 		call	_ZNSolsEPFRSoS_E
+  77      00
+  78              	.LVL12:
+  79              	.LBE2:
+  80              		.loc 1 28 0
+  81 007b B8000000 		movl	$0, %eax
+  81      00
+  82 0080 4883C408 		addq	$8, %rsp
+  83              		.cfi_def_cfa_offset 8
+  84 0084 C3       		ret
+  85              		.cfi_endproc
+  86              	.LFE1243:
+  89              	_GLOBAL__sub_I_main:
+  90              	.LFB1399:
+  91              		.loc 1 28 0
+  92              		.cfi_startproc
+  93 0085 4883EC08 		subq	$8, %rsp
+  94              		.cfi_def_cfa_offset 16
+  95              		.loc 1 28 0
+  96 0089 BEFFFF00 		movl	$65535, %esi
+  96      00
+  97 008e BF010000 		movl	$1, %edi
+  97      00
+  98 0093 E868FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+  98      FF
+  99              	.LVL13:
+ 100 0098 4883C408 		addq	$8, %rsp
+ 101              		.cfi_def_cfa_offset 8
+ 102 009c C3       		ret
+GAS LISTING /tmp/ccOXNQjl.s 			page 5
+
+
+ 103              		.cfi_endproc
+ 104              	.LFE1399:
+ 106              		.section	.init_array,"aw"
+ 107              		.align 8
+ 108 0000 00000000 		.quad	_GLOBAL__sub_I_main
+ 108      00000000 
+ 109              		.local	_ZStL8__ioinit
+ 110              		.comm	_ZStL8__ioinit,1,1
+ 111              		.text
+ 112              	.Letext0:
+ 113              		.file 3 "/usr/include/libio.h"
+ 114              		.file 4 "/usr/include/stdio.h"
+ 115              		.file 5 "<built-in>"
+ 116              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 117              		.file 7 "/usr/include/wchar.h"
+ 118              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 119              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 120              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 121              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 122              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 123              		.file 13 "/usr/include/c++/4.8/clocale"
+ 124              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 125              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 126              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 127              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 128              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 129              		.file 19 "/usr/include/c++/4.8/ostream"
+ 130              		.file 20 "/usr/include/c++/4.8/iosfwd"
+ 131              		.file 21 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 132              		.file 22 "/usr/include/time.h"
+ 133              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 134              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 135              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
+ 136              		.file 26 "/usr/include/stdint.h"
+ 137              		.file 27 "/usr/include/locale.h"
+ 138              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 139              		.file 29 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 140              		.file 30 "/usr/include/stdlib.h"
+ 141              		.file 31 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 142              		.file 32 "/usr/include/_G_config.h"
+ 143              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 144              		.file 34 "/usr/include/wctype.h"
+ 145              		.file 35 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccOXNQjl.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 fibonacci.cpp
+     /tmp/ccOXNQjl.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+                             .bss:0000000000000000 _ZStL8__ioinit
+     /tmp/ccOXNQjl.s:46     .text:0000000000000034 main
+     /tmp/ccOXNQjl.s:89     .text:0000000000000085 _GLOBAL__sub_I_main
+
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E

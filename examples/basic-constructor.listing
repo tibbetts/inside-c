@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccKft2qn.s 			page 1
+GAS LISTING /tmp/cc6KZchP.s 			page 1
 
 
    1              		.file	"basic-constructor.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
   26              	.LVL1:
   33:basic-constructor.cpp ****     return this->field;
   27              		.loc 1 33 0
-GAS LISTING /tmp/ccKft2qn.s 			page 2
+GAS LISTING /tmp/cc6KZchP.s 			page 2
 
 
   28 0004 8B07     		movl	(%rdi), %eax
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
   20:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # error "Never include <bits/stdio2.h> directly; use <stdio.h> instead."
   21:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
   22:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-GAS LISTING /tmp/ccKft2qn.s 			page 3
+GAS LISTING /tmp/cc6KZchP.s 			page 3
 
 
   23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
   77:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsnprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
   78:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				    __bos (__s), __fmt, __ap);
   79:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-GAS LISTING /tmp/ccKft2qn.s 			page 4
+GAS LISTING /tmp/cc6KZchP.s 			page 4
 
 
   80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
   79      7565206F 
   79      66206669 
   79      656C6420 
-GAS LISTING /tmp/ccKft2qn.s 			page 5
+GAS LISTING /tmp/cc6KZchP.s 			page 5
 
 
   80              		.text
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
  129              	_Z16basicConstructoriPPKc:
  130              	.LFB19:
   14:basic-constructor.cpp ****     onefield1 of(13);
-GAS LISTING /tmp/ccKft2qn.s 			page 6
+GAS LISTING /tmp/cc6KZchP.s 			page 6
 
 
  131              		.loc 1 14 0
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
  173 0083 BE1B0000 		movl	$27, %esi
  173      00
  174 0088 4889DF   		movq	%rbx, %rdi
-GAS LISTING /tmp/ccKft2qn.s 			page 7
+GAS LISTING /tmp/cc6KZchP.s 			page 7
 
 
  175 008b E8000000 		call	_ZN9onefield18setFieldEi
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
  217              	.LVL27:
  218              	.LBE14:
   26:basic-constructor.cpp **** 
-GAS LISTING /tmp/ccKft2qn.s 			page 8
+GAS LISTING /tmp/cc6KZchP.s 			page 8
 
 
  219              		.loc 1 26 0
@@ -458,18 +458,18 @@ GAS LISTING /tmp/ccKft2qn.s 			page 1
  253              	.LLSDACSE19:
  254              		.text
  256              	.Letext0:
-GAS LISTING /tmp/ccKft2qn.s 			page 9
+GAS LISTING /tmp/cc6KZchP.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-constructor.cpp
-     /tmp/ccKft2qn.s:7      .text:0000000000000000 _ZN9onefield18setFieldEi
-     /tmp/ccKft2qn.s:22     .text:0000000000000004 _ZNK9onefield18getFieldEv
-     /tmp/ccKft2qn.s:42     .text:0000000000000008 _ZN9onefield1C2Ei
-     /tmp/ccKft2qn.s:42     .text:0000000000000008 _ZN9onefield1C1Ei
-     /tmp/ccKft2qn.s:84     .text:000000000000002a _ZN9onefield1D2Ev
-     /tmp/ccKft2qn.s:84     .text:000000000000002a _ZN9onefield1D1Ev
-     /tmp/ccKft2qn.s:129    .text:0000000000000049 _Z16basicConstructoriPPKc
+     /tmp/cc6KZchP.s:7      .text:0000000000000000 _ZN9onefield18setFieldEi
+     /tmp/cc6KZchP.s:22     .text:0000000000000004 _ZNK9onefield18getFieldEv
+     /tmp/cc6KZchP.s:42     .text:0000000000000008 _ZN9onefield1C2Ei
+     /tmp/cc6KZchP.s:42     .text:0000000000000008 _ZN9onefield1C1Ei
+     /tmp/cc6KZchP.s:84     .text:000000000000002a _ZN9onefield1D2Ev
+     /tmp/cc6KZchP.s:84     .text:000000000000002a _ZN9onefield1D1Ev
+     /tmp/cc6KZchP.s:129    .text:0000000000000049 _Z16basicConstructoriPPKc
 
 UNDEFINED SYMBOLS
 __printf_chk

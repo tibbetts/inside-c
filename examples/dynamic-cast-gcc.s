@@ -82,9 +82,9 @@ _ZN18onefield3_subclassC2Ev:
 	.weak	_ZN18onefield3_subclassC1Ev
 	.set	_ZN18onefield3_subclassC1Ev,_ZN18onefield3_subclassC2Ev
 	.text
-	.globl	_Z11dynamicCastiPPc
-	.type	_Z11dynamicCastiPPc, @function
-_Z11dynamicCastiPPc:
+	.globl	_Z11dynamicCastiPPKc
+	.type	_Z11dynamicCastiPPKc, @function
+_Z11dynamicCastiPPKc:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbx
@@ -114,7 +114,7 @@ _Z11dynamicCastiPPc:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	_Z11dynamicCastiPPc, .-_Z11dynamicCastiPPc
+	.size	_Z11dynamicCastiPPKc, .-_Z11dynamicCastiPPKc
 	.weak	_ZTS9onefield3
 	.section	.rodata._ZTS9onefield3,"aG",@progbits,_ZTS9onefield3,comdat
 	.type	_ZTS9onefield3, @object

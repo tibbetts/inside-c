@@ -37,9 +37,9 @@ _ZN11onefieldBVTC2Ev:
 	.weak	_ZN11onefieldBVTC1Ev
 	.set	_ZN11onefieldBVTC1Ev,_ZN11onefieldBVTC2Ev
 	.text
-	.globl	_Z11basicVtableiPPc
-	.type	_Z11basicVtableiPPc, @function
-_Z11basicVtableiPPc:
+	.globl	_Z11basicVtableiPPKc
+	.type	_Z11basicVtableiPPKc, @function
+_Z11basicVtableiPPKc:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -82,7 +82,7 @@ _Z11basicVtableiPPc:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	_Z11basicVtableiPPc, .-_Z11basicVtableiPPc
+	.size	_Z11basicVtableiPPKc, .-_Z11basicVtableiPPKc
 	.weak	_ZTS11onefieldBVT
 	.section	.rodata._ZTS11onefieldBVT,"aG",@progbits,_ZTS11onefieldBVT,comdat
 	.type	_ZTS11onefieldBVT, @object

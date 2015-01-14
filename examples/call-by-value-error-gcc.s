@@ -37,9 +37,9 @@ _ZN9onefield2C2Ev:
 	.weak	_ZN9onefield2C1Ev
 	.set	_ZN9onefield2C1Ev,_ZN9onefield2C2Ev
 	.text
-	.globl	_Z16callByValueErroriPPc
-	.type	_Z16callByValueErroriPPc, @function
-_Z16callByValueErroriPPc:
+	.globl	_Z16callByValueErroriPPKc
+	.type	_Z16callByValueErroriPPKc, @function
+_Z16callByValueErroriPPKc:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbp
@@ -82,7 +82,7 @@ _Z16callByValueErroriPPc:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	_Z16callByValueErroriPPc, .-_Z16callByValueErroriPPc
+	.size	_Z16callByValueErroriPPKc, .-_Z16callByValueErroriPPKc
 	.weak	_ZTS9onefield2
 	.section	.rodata._ZTS9onefield2,"aG",@progbits,_ZTS9onefield2,comdat
 	.type	_ZTS9onefield2, @object

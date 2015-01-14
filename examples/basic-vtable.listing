@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cchpw2nA.s 			page 1
+GAS LISTING /tmp/ccmYGh0Y.s 			page 1
 
 
    1              		.file	"basic-vtable.cpp"
@@ -17,7 +17,7 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
    6:basic-vtable.cpp ****     virtual int getField() const;
    7:basic-vtable.cpp **** };
    8:basic-vtable.cpp **** 
-   9:basic-vtable.cpp **** int basicVtable(int argc, char **argv) {
+   9:basic-vtable.cpp **** int basicVtable(int argc, const char **argv) {
   10:basic-vtable.cpp ****     onefieldBVT of;
   11:basic-vtable.cpp **** 
   12:basic-vtable.cpp ****     of.setField(13);
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
   28 0004 8B4708   		movl	8(%rdi), %eax
   31:basic-vtable.cpp **** }
   29              		.loc 1 31 0
-GAS LISTING /tmp/cchpw2nA.s 			page 2
+GAS LISTING /tmp/ccmYGh0Y.s 			page 2
 
 
   30 0007 C3       		ret
@@ -85,8 +85,8 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
   51              		.weak	_ZN11onefieldBVTC1Ev
   52              		.set	_ZN11onefieldBVTC1Ev,_ZN11onefieldBVTC2Ev
   53              		.text
-  54              		.globl	_Z11basicVtableiPPc
-  56              	_Z11basicVtableiPPc:
+  54              		.globl	_Z11basicVtableiPPKc
+  56              	_Z11basicVtableiPPKc:
   57              	.LFB0:
    9:basic-vtable.cpp ****     onefieldBVT of;
   58              		.loc 1 9 0
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
   79              	.LVL6:
   14:basic-vtable.cpp **** 
   80              		.loc 1 14 0
-GAS LISTING /tmp/cchpw2nA.s 			page 3
+GAS LISTING /tmp/ccmYGh0Y.s 			page 3
 
 
   81 0023 BF100000 		movl	$16, %edi
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
  125              		.section	.rodata._ZTS11onefieldBVT,"aG",@progbits,_ZTS11onefieldBVT,comdat
  128              	_ZTS11onefieldBVT:
  129 0000 31316F6E 		.string	"11onefieldBVT"
-GAS LISTING /tmp/cchpw2nA.s 			page 4
+GAS LISTING /tmp/ccmYGh0Y.s 			page 4
 
 
  129      65666965 
@@ -206,19 +206,19 @@ GAS LISTING /tmp/cchpw2nA.s 			page 1
  147      00000000 
  148              		.text
  149              	.Letext0:
-GAS LISTING /tmp/cchpw2nA.s 			page 5
+GAS LISTING /tmp/ccmYGh0Y.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 basic-vtable.cpp
-     /tmp/cchpw2nA.s:7      .text:0000000000000000 _ZN11onefieldBVT8setFieldEi
-     /tmp/cchpw2nA.s:22     .text:0000000000000004 _ZNK11onefieldBVT8getFieldEv
-     /tmp/cchpw2nA.s:38     .text._ZN11onefieldBVTC2Ev:0000000000000000 _ZN11onefieldBVTC2Ev
-     /tmp/cchpw2nA.s:143    .rodata._ZTV11onefieldBVT:0000000000000000 _ZTV11onefieldBVT
-     /tmp/cchpw2nA.s:38     .text._ZN11onefieldBVTC2Ev:0000000000000000 _ZN11onefieldBVTC1Ev
-     /tmp/cchpw2nA.s:56     .text:0000000000000008 _Z11basicVtableiPPc
-     /tmp/cchpw2nA.s:128    .rodata._ZTS11onefieldBVT:0000000000000000 _ZTS11onefieldBVT
-     /tmp/cchpw2nA.s:135    .rodata._ZTI11onefieldBVT:0000000000000000 _ZTI11onefieldBVT
+     /tmp/ccmYGh0Y.s:7      .text:0000000000000000 _ZN11onefieldBVT8setFieldEi
+     /tmp/ccmYGh0Y.s:22     .text:0000000000000004 _ZNK11onefieldBVT8getFieldEv
+     /tmp/ccmYGh0Y.s:38     .text._ZN11onefieldBVTC2Ev:0000000000000000 _ZN11onefieldBVTC2Ev
+     /tmp/ccmYGh0Y.s:143    .rodata._ZTV11onefieldBVT:0000000000000000 _ZTV11onefieldBVT
+     /tmp/ccmYGh0Y.s:38     .text._ZN11onefieldBVTC2Ev:0000000000000000 _ZN11onefieldBVTC1Ev
+     /tmp/ccmYGh0Y.s:56     .text:0000000000000008 _Z11basicVtableiPPKc
+     /tmp/ccmYGh0Y.s:128    .rodata._ZTS11onefieldBVT:0000000000000000 _ZTS11onefieldBVT
+     /tmp/ccmYGh0Y.s:135    .rodata._ZTI11onefieldBVT:0000000000000000 _ZTI11onefieldBVT
                            .group:0000000000000000 _ZN11onefieldBVTC5Ev
 
 UNDEFINED SYMBOLS

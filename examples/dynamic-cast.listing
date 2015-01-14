@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccmbRfdJ.s 			page 1
+GAS LISTING /tmp/cc5Oht6a.s 			page 1
 
 
    1              		.file	"dynamic-cast.cpp"
@@ -25,7 +25,7 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
   14:dynamic-cast.cpp ****     virtual void setField(int f);
   15:dynamic-cast.cpp **** };
   16:dynamic-cast.cpp **** 
-  17:dynamic-cast.cpp **** int dynamicCast(int argc, char **argv) {
+  17:dynamic-cast.cpp **** int dynamicCast(int argc, const char **argv) {
   18:dynamic-cast.cpp ****     onefield3 *ofp = new onefield3_subclass;
   19:dynamic-cast.cpp **** 
   20:dynamic-cast.cpp ****     onefield3_subclass *ofsp = dynamic_cast<onefield3_subclass *>(ofp);
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
   32:dynamic-cast.cpp ****     return this->field;
   27              		.loc 1 32 0
   28 0004 8B4708   		movl	8(%rdi), %eax
-GAS LISTING /tmp/ccmbRfdJ.s 			page 2
+GAS LISTING /tmp/cc5Oht6a.s 			page 2
 
 
   33:dynamic-cast.cpp **** }
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
   77      000000
   78 0007 C3       		ret
   79              	.LBE2:
-GAS LISTING /tmp/ccmbRfdJ.s 			page 3
+GAS LISTING /tmp/cc5Oht6a.s 			page 3
 
 
   80              		.cfi_endproc
@@ -156,8 +156,8 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
  111              		.weak	_ZN18onefield3_subclassC1Ev
  112              		.set	_ZN18onefield3_subclassC1Ev,_ZN18onefield3_subclassC2Ev
  113              		.text
- 114              		.globl	_Z11dynamicCastiPPc
- 116              	_Z11dynamicCastiPPc:
+ 114              		.globl	_Z11dynamicCastiPPKc
+ 116              	_Z11dynamicCastiPPKc:
  117              	.LFB0:
   17:dynamic-cast.cpp ****     onefield3 *ofp = new onefield3_subclass;
  118              		.loc 1 17 0
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
  130 0025 4889C3   		movq	%rax, %rbx
  131 0028 4889C7   		movq	%rax, %rdi
  132 002b E8000000 		call	_ZN18onefield3_subclassC1Ev
-GAS LISTING /tmp/ccmbRfdJ.s 			page 4
+GAS LISTING /tmp/cc5Oht6a.s 			page 4
 
 
  132      00
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
  176      00000000 
  177 0008 00000000 		.quad	_ZTS9onefield3
  177      00000000 
-GAS LISTING /tmp/ccmbRfdJ.s 			page 5
+GAS LISTING /tmp/cc5Oht6a.s 			page 5
 
 
  178              		.weak	_ZTS18onefield3_subclass
@@ -287,25 +287,25 @@ GAS LISTING /tmp/ccmbRfdJ.s 			page 1
  214              		.text
  215              	.Letext0:
  216              		.file 2 "<built-in>"
-GAS LISTING /tmp/ccmbRfdJ.s 			page 6
+GAS LISTING /tmp/cc5Oht6a.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 dynamic-cast.cpp
-     /tmp/ccmbRfdJ.s:7      .text:0000000000000000 _ZN9onefield38setFieldEi
-     /tmp/ccmbRfdJ.s:22     .text:0000000000000004 _ZNK9onefield38getFieldEv
-     /tmp/ccmbRfdJ.s:37     .text:0000000000000008 _ZN18onefield3_subclass8setFieldEi
-     /tmp/ccmbRfdJ.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C2Ev
-     /tmp/ccmbRfdJ.s:199    .rodata._ZTV9onefield3:0000000000000000 _ZTV9onefield3
-     /tmp/ccmbRfdJ.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C1Ev
-     /tmp/ccmbRfdJ.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC2Ev
-     /tmp/ccmbRfdJ.s:209    .rodata._ZTV18onefield3_subclass:0000000000000000 _ZTV18onefield3_subclass
-     /tmp/ccmbRfdJ.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC1Ev
-     /tmp/ccmbRfdJ.s:116    .text:000000000000001a _Z11dynamicCastiPPc
-     /tmp/ccmbRfdJ.s:190    .rodata._ZTI18onefield3_subclass:0000000000000000 _ZTI18onefield3_subclass
-     /tmp/ccmbRfdJ.s:175    .rodata._ZTI9onefield3:0000000000000000 _ZTI9onefield3
-     /tmp/ccmbRfdJ.s:168    .rodata._ZTS9onefield3:0000000000000000 _ZTS9onefield3
-     /tmp/ccmbRfdJ.s:183    .rodata._ZTS18onefield3_subclass:0000000000000000 _ZTS18onefield3_subclass
+     /tmp/cc5Oht6a.s:7      .text:0000000000000000 _ZN9onefield38setFieldEi
+     /tmp/cc5Oht6a.s:22     .text:0000000000000004 _ZNK9onefield38getFieldEv
+     /tmp/cc5Oht6a.s:37     .text:0000000000000008 _ZN18onefield3_subclass8setFieldEi
+     /tmp/cc5Oht6a.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C2Ev
+     /tmp/cc5Oht6a.s:199    .rodata._ZTV9onefield3:0000000000000000 _ZTV9onefield3
+     /tmp/cc5Oht6a.s:70     .text._ZN9onefield3C2Ev:0000000000000000 _ZN9onefield3C1Ev
+     /tmp/cc5Oht6a.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC2Ev
+     /tmp/cc5Oht6a.s:209    .rodata._ZTV18onefield3_subclass:0000000000000000 _ZTV18onefield3_subclass
+     /tmp/cc5Oht6a.s:89     .text._ZN18onefield3_subclassC2Ev:0000000000000000 _ZN18onefield3_subclassC1Ev
+     /tmp/cc5Oht6a.s:116    .text:000000000000001a _Z11dynamicCastiPPKc
+     /tmp/cc5Oht6a.s:190    .rodata._ZTI18onefield3_subclass:0000000000000000 _ZTI18onefield3_subclass
+     /tmp/cc5Oht6a.s:175    .rodata._ZTI9onefield3:0000000000000000 _ZTI9onefield3
+     /tmp/cc5Oht6a.s:168    .rodata._ZTS9onefield3:0000000000000000 _ZTS9onefield3
+     /tmp/cc5Oht6a.s:183    .rodata._ZTS18onefield3_subclass:0000000000000000 _ZTS18onefield3_subclass
                            .group:0000000000000000 _ZN9onefield3C5Ev
                            .group:0000000000000000 _ZN18onefield3_subclassC5Ev
 

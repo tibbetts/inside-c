@@ -124,9 +124,9 @@ _ZN10onefieldOAD2Ev:
 	.size	_ZN10onefieldOAD2Ev, .-_ZN10onefieldOAD2Ev
 	.globl	_ZN10onefieldOAD1Ev
 	.set	_ZN10onefieldOAD1Ev,_ZN10onefieldOAD2Ev
-	.globl	_Z9objectArgiPPc
-	.type	_Z9objectArgiPPc, @function
-_Z9objectArgiPPc:
+	.globl	_Z9objectArgiPPKc
+	.type	_Z9objectArgiPPKc, @function
+_Z9objectArgiPPKc:
 .LFB20:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -193,6 +193,6 @@ _Z9objectArgiPPc:
 	.uleb128 0
 .LLSDACSE20:
 	.text
-	.size	_Z9objectArgiPPc, .-_Z9objectArgiPPc
+	.size	_Z9objectArgiPPKc, .-_Z9objectArgiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

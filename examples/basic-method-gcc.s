@@ -22,9 +22,9 @@ _ZNK9onefield48getFieldEv:
 	.cfi_endproc
 .LFE2:
 	.size	_ZNK9onefield48getFieldEv, .-_ZNK9onefield48getFieldEv
-	.globl	_Z11basicMethodiPPc
-	.type	_Z11basicMethodiPPc, @function
-_Z11basicMethodiPPc:
+	.globl	_Z11basicMethodiPPKc
+	.type	_Z11basicMethodiPPKc, @function
+_Z11basicMethodiPPKc:
 .LFB0:
 	.cfi_startproc
 	pushq	%rbx
@@ -52,6 +52,6 @@ _Z11basicMethodiPPc:
 	ret
 	.cfi_endproc
 .LFE0:
-	.size	_Z11basicMethodiPPc, .-_Z11basicMethodiPPc
+	.size	_Z11basicMethodiPPKc, .-_Z11basicMethodiPPKc
 	.ident	"GCC: (Ubuntu 4.8.2-19ubuntu1) 4.8.2"
 	.section	.note.GNU-stack,"",@progbits

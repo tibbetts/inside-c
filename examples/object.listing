@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccKYiK6h.s 			page 1
+GAS LISTING /tmp/cc6XmQOL.s 			page 1
 
 
    1              		.file	"object.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccKYiK6h.s 			page 1
   39              	.LVL3:
   40 000c E8000000 		call	_ZN15onefield_structC1Ei
   40      00
-GAS LISTING /tmp/ccKYiK6h.s 			page 2
+GAS LISTING /tmp/cc6XmQOL.s 			page 2
 
 
   41              	.LVL4:
@@ -79,14 +79,14 @@ GAS LISTING /tmp/ccKYiK6h.s 			page 1
   48              		.cfi_endproc
   49              	.LFE3:
   51              	.Letext0:
-GAS LISTING /tmp/ccKYiK6h.s 			page 3
+GAS LISTING /tmp/cc6XmQOL.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 object.cpp
-     /tmp/ccKYiK6h.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC2Ei
-     /tmp/ccKYiK6h.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC1Ei
-     /tmp/ccKYiK6h.s:27     .text:0000000000000000 _Z6objectiPPKc
+     /tmp/cc6XmQOL.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC2Ei
+     /tmp/cc6XmQOL.s:8      .text._ZN15onefield_structC2Ei:0000000000000000 _ZN15onefield_structC1Ei
+     /tmp/cc6XmQOL.s:27     .text:0000000000000000 _Z6objectiPPKc
                            .group:0000000000000000 _ZN15onefield_structC5Ei
 
 NO UNDEFINED SYMBOLS

@@ -1,0 +1,1022 @@
+GAS LISTING /tmp/ccRqKDYr.s 			page 1
+
+
+   1              		.file	"throw-nonexception.cpp"
+   2              		.text
+   3              	.Ltext0:
+   5              	_Z41__static_initialization_and_destruction_0ii:
+   6              	.LFB1406:
+   7              		.file 1 "throw-nonexception.cpp"
+   1:throw-nonexception.cpp **** #include <exception>
+   2:throw-nonexception.cpp **** #include <string>
+   3:throw-nonexception.cpp **** #include <iostream>
+   4:throw-nonexception.cpp **** 
+   5:throw-nonexception.cpp **** using namespace std;
+   6:throw-nonexception.cpp **** 
+   7:throw-nonexception.cpp **** void throw_int() throw (int) {
+   8:throw-nonexception.cpp ****     throw 3;
+   9:throw-nonexception.cpp **** }
+  10:throw-nonexception.cpp **** 
+  11:throw-nonexception.cpp **** void throw_string() throw (string) {
+  12:throw-nonexception.cpp ****     throw string("foo");
+  13:throw-nonexception.cpp **** }
+  14:throw-nonexception.cpp **** 
+  15:throw-nonexception.cpp **** struct my_struct {
+  16:throw-nonexception.cpp ****     int x,y,z;
+  17:throw-nonexception.cpp ****     my_struct(int val);
+  18:throw-nonexception.cpp **** };
+  19:throw-nonexception.cpp **** 
+  20:throw-nonexception.cpp **** my_struct::my_struct(int val) :
+  21:throw-nonexception.cpp ****     x(val), y(val), z(val)
+  22:throw-nonexception.cpp **** {}
+  23:throw-nonexception.cpp **** 
+  24:throw-nonexception.cpp **** void throw_struct() throw (my_struct) {
+  25:throw-nonexception.cpp ****     throw my_struct(5);
+  26:throw-nonexception.cpp **** }
+  27:throw-nonexception.cpp **** 
+  28:throw-nonexception.cpp **** int main(int argc, char **argv) {
+  29:throw-nonexception.cpp ****     try {
+  30:throw-nonexception.cpp ****         try {
+  31:throw-nonexception.cpp ****             throw_int();
+  32:throw-nonexception.cpp ****         } catch (int &e) {
+  33:throw-nonexception.cpp ****             cout << "Got int: " << e << endl;
+  34:throw-nonexception.cpp ****         }
+  35:throw-nonexception.cpp **** 
+  36:throw-nonexception.cpp ****         try {
+  37:throw-nonexception.cpp ****             throw_string();
+  38:throw-nonexception.cpp ****         } catch (string &e) {
+  39:throw-nonexception.cpp ****             cout << "Got string: " << e << endl;
+  40:throw-nonexception.cpp ****         }
+  41:throw-nonexception.cpp **** 
+  42:throw-nonexception.cpp ****         try {
+  43:throw-nonexception.cpp ****             throw_int();
+  44:throw-nonexception.cpp ****         } catch (my_struct &e) {
+  45:throw-nonexception.cpp ****             cout << "Got my_struct: (" << e.x << ","
+  46:throw-nonexception.cpp ****                  << e.y << "," << e.z << ")" << endl;
+  47:throw-nonexception.cpp ****         }
+  48:throw-nonexception.cpp ****     } catch (...) {
+  49:throw-nonexception.cpp ****         cout << "Caught something unexpected." << endl;
+  50:throw-nonexception.cpp ****     }
+  51:throw-nonexception.cpp **** }
+GAS LISTING /tmp/ccRqKDYr.s 			page 2
+
+
+   8              		.loc 1 51 0
+   9              		.cfi_startproc
+  10              	.LVL0:
+  11 0000 83FF01   		cmpl	$1, %edi
+  12 0003 752E     		jne	.L5
+  13              		.loc 1 51 0 discriminator 1
+  14 0005 81FEFFFF 		cmpl	$65535, %esi
+  14      0000
+  15 000b 7526     		jne	.L5
+  16              		.loc 1 51 0 is_stmt 0
+  17 000d 4883EC08 		subq	$8, %rsp
+  18              		.cfi_def_cfa_offset 16
+  19              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+GAS LISTING /tmp/ccRqKDYr.s 			page 3
+
+
+  45:/usr/include/c++/4.8/iostream **** 
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  20              		.loc 2 74 0 is_stmt 1
+  21 0011 BF000000 		movl	$_ZStL8__ioinit, %edi
+  21      00
+  22              	.LVL1:
+  23 0016 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  23      00
+  24              	.LVL2:
+  25 001b BA000000 		movl	$__dso_handle, %edx
+  25      00
+  26 0020 BE000000 		movl	$_ZStL8__ioinit, %esi
+  26      00
+  27 0025 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  27      00
+  28 002a E8000000 		call	__cxa_atexit
+  28      00
+  29              	.LVL3:
+  30              		.loc 1 51 0
+  31 002f 4883C408 		addq	$8, %rsp
+  32              		.cfi_def_cfa_offset 8
+  33              	.L5:
+  34 0033 C3       		ret
+  35              		.cfi_endproc
+  36              	.LFE1406:
+  38              		.globl	_Z9throw_intv
+  40              	_Z9throw_intv:
+  41              	.LFB1243:
+   7:throw-nonexception.cpp ****     throw 3;
+GAS LISTING /tmp/ccRqKDYr.s 			page 4
+
+
+  42              		.loc 1 7 0
+  43              		.cfi_startproc
+  44              		.cfi_personality 0x3,__gxx_personality_v0
+  45              		.cfi_lsda 0x3,.LLSDA1243
+  46 0034 4883EC08 		subq	$8, %rsp
+  47              		.cfi_def_cfa_offset 16
+   8:throw-nonexception.cpp **** }
+  48              		.loc 1 8 0
+  49 0038 BF040000 		movl	$4, %edi
+  49      00
+  50 003d E8000000 		call	__cxa_allocate_exception
+  50      00
+  51              	.LVL4:
+  52 0042 C7000300 		movl	$3, (%rax)
+  52      0000
+  53 0048 BA000000 		movl	$0, %edx
+  53      00
+  54 004d BE000000 		movl	$_ZTIi, %esi
+  54      00
+  55 0052 4889C7   		movq	%rax, %rdi
+  56              	.LEHB0:
+  57 0055 E8000000 		call	__cxa_throw
+  57      00
+  58              	.LEHE0:
+  59              	.LVL5:
+  60              	.L9:
+  61 005a 4889C7   		movq	%rax, %rdi
+  62 005d 4883FAFF 		cmpq	$-1, %rdx
+  63 0061 7405     		je	.L8
+  64              	.LEHB1:
+  65 0063 E8000000 		call	_Unwind_Resume
+  65      00
+  66              	.LVL6:
+  67              	.L8:
+   7:throw-nonexception.cpp ****     throw 3;
+  68              		.loc 1 7 0
+  69 0068 E8000000 		call	__cxa_call_unexpected
+  69      00
+  70              	.LEHE1:
+  71              	.LVL7:
+  72              		.cfi_endproc
+  73              	.LFE1243:
+  74              		.globl	__gxx_personality_v0
+  75              		.section	.gcc_except_table,"a",@progbits
+  76              		.align 4
+  77              	.LLSDA1243:
+  78 0000 FF       		.byte	0xff
+  79 0001 03       		.byte	0x3
+  80 0002 11       		.uleb128 .LLSDATT1243-.LLSDATTD1243
+  81              	.LLSDATTD1243:
+  82 0003 01       		.byte	0x1
+  83 0004 08       		.uleb128 .LLSDACSE1243-.LLSDACSB1243
+  84              	.LLSDACSB1243:
+  85 0005 21       		.uleb128 .LEHB0-.LFB1243
+  86 0006 05       		.uleb128 .LEHE0-.LEHB0
+  87 0007 26       		.uleb128 .L9-.LFB1243
+  88 0008 01       		.uleb128 0x1
+GAS LISTING /tmp/ccRqKDYr.s 			page 5
+
+
+  89 0009 2F       		.uleb128 .LEHB1-.LFB1243
+  90 000a 0A       		.uleb128 .LEHE1-.LEHB1
+  91 000b 00       		.uleb128 0
+  92 000c 00       		.uleb128 0
+  93              	.LLSDACSE1243:
+  94 000d 7F       		.byte	0x7f
+  95 000e 00       		.byte	0
+  96 000f 00       		.align 4
+  97 0010 00000000 		.long	_ZTIi
+  98              	.LLSDATT1243:
+  99 0014 01       		.byte	0x1
+ 100 0015 00       		.byte	0
+ 101              		.text
+ 103              		.section	.rodata.str1.1,"aMS",@progbits,1
+ 104              	.LC0:
+ 105 0000 666F6F00 		.string	"foo"
+ 106              		.text
+ 107              		.globl	_Z12throw_stringv
+ 109              	_Z12throw_stringv:
+ 110              	.LFB1244:
+  11:throw-nonexception.cpp ****     throw string("foo");
+ 111              		.loc 1 11 0
+ 112              		.cfi_startproc
+ 113              		.cfi_personality 0x3,__gxx_personality_v0
+ 114              		.cfi_lsda 0x3,.LLSDA1244
+ 115 006d 4154     		pushq	%r12
+ 116              		.cfi_def_cfa_offset 16
+ 117              		.cfi_offset 12, -16
+ 118 006f 55       		pushq	%rbp
+ 119              		.cfi_def_cfa_offset 24
+ 120              		.cfi_offset 6, -24
+ 121 0070 53       		pushq	%rbx
+ 122              		.cfi_def_cfa_offset 32
+ 123              		.cfi_offset 3, -32
+ 124 0071 4883EC10 		subq	$16, %rsp
+ 125              		.cfi_def_cfa_offset 48
+  12:throw-nonexception.cpp **** }
+ 126              		.loc 1 12 0
+ 127 0075 BF080000 		movl	$8, %edi
+ 127      00
+ 128 007a E8000000 		call	__cxa_allocate_exception
+ 128      00
+ 129              	.LVL8:
+ 130 007f 4889C3   		movq	%rax, %rbx
+ 131 0082 488D5424 		leaq	15(%rsp), %rdx
+ 131      0F
+ 132 0087 BE000000 		movl	$.LC0, %esi
+ 132      00
+ 133 008c 4889C7   		movq	%rax, %rdi
+ 134              	.LEHB2:
+ 135 008f E8000000 		call	_ZNSsC1EPKcRKSaIcE
+ 135      00
+ 136              	.LEHE2:
+ 137              	.LVL9:
+  12:throw-nonexception.cpp **** }
+ 138              		.loc 1 12 0 is_stmt 0 discriminator 1
+ 139 0094 BA000000 		movl	$_ZNSsD1Ev, %edx
+GAS LISTING /tmp/ccRqKDYr.s 			page 6
+
+
+ 139      00
+ 140 0099 BE000000 		movl	$_ZTISs, %esi
+ 140      00
+ 141 009e 4889DF   		movq	%rbx, %rdi
+ 142              	.LEHB3:
+ 143 00a1 E8000000 		call	__cxa_throw
+ 143      00
+ 144              	.LEHE3:
+ 145              	.LVL10:
+ 146              	.L15:
+ 147 00a6 4989C4   		movq	%rax, %r12
+ 148 00a9 4889D5   		movq	%rdx, %rbp
+  12:throw-nonexception.cpp **** }
+ 149              		.loc 1 12 0
+ 150 00ac 4889DF   		movq	%rbx, %rdi
+ 151 00af E8000000 		call	__cxa_free_exception
+ 151      00
+ 152              	.LVL11:
+ 153 00b4 4C89E7   		movq	%r12, %rdi
+ 154 00b7 4889EA   		movq	%rbp, %rdx
+ 155 00ba EB03     		jmp	.L13
+ 156              	.L16:
+ 157 00bc 4889C7   		movq	%rax, %rdi
+ 158              	.L13:
+ 159 00bf 4883FAFF 		cmpq	$-1, %rdx
+ 160 00c3 7405     		je	.L14
+ 161              	.LEHB4:
+ 162 00c5 E8000000 		call	_Unwind_Resume
+ 162      00
+ 163              	.LVL12:
+ 164              	.L14:
+  11:throw-nonexception.cpp ****     throw string("foo");
+ 165              		.loc 1 11 0 is_stmt 1
+ 166 00ca E8000000 		call	__cxa_call_unexpected
+ 166      00
+ 167              	.LEHE4:
+ 168              	.LVL13:
+ 169              		.cfi_endproc
+ 170              	.LFE1244:
+ 171              		.section	.gcc_except_table
+ 172 0016 0000     		.align 4
+ 173              	.LLSDA1244:
+ 174 0018 FF       		.byte	0xff
+ 175 0019 03       		.byte	0x3
+ 176 001a 19       		.uleb128 .LLSDATT1244-.LLSDATTD1244
+ 177              	.LLSDATTD1244:
+ 178 001b 01       		.byte	0x1
+ 179 001c 0C       		.uleb128 .LLSDACSE1244-.LLSDACSB1244
+ 180              	.LLSDACSB1244:
+ 181 001d 22       		.uleb128 .LEHB2-.LFB1244
+ 182 001e 05       		.uleb128 .LEHE2-.LEHB2
+ 183 001f 39       		.uleb128 .L15-.LFB1244
+ 184 0020 03       		.uleb128 0x3
+ 185 0021 34       		.uleb128 .LEHB3-.LFB1244
+ 186 0022 05       		.uleb128 .LEHE3-.LEHB3
+ 187 0023 4F       		.uleb128 .L16-.LFB1244
+ 188 0024 01       		.uleb128 0x1
+GAS LISTING /tmp/ccRqKDYr.s 			page 7
+
+
+ 189 0025 58       		.uleb128 .LEHB4-.LFB1244
+ 190 0026 0A       		.uleb128 .LEHE4-.LEHB4
+ 191 0027 00       		.uleb128 0
+ 192 0028 00       		.uleb128 0
+ 193              	.LLSDACSE1244:
+ 194 0029 7F       		.byte	0x7f
+ 195 002a 00       		.byte	0
+ 196 002b 00       		.byte	0
+ 197 002c 7D       		.byte	0x7d
+ 198 002d 000000   		.align 4
+ 199 0030 00000000 		.long	_ZTISs
+ 200              	.LLSDATT1244:
+ 201 0034 01       		.byte	0x1
+ 202 0035 00       		.byte	0
+ 203              		.text
+ 205 00cf 90       		.align 2
+ 206              		.globl	_ZN9my_structC2Ei
+ 208              	_ZN9my_structC2Ei:
+ 209              	.LFB1246:
+  20:throw-nonexception.cpp ****     x(val), y(val), z(val)
+ 210              		.loc 1 20 0
+ 211              		.cfi_startproc
+ 212              	.LVL14:
+ 213              	.LBB2:
+  21:throw-nonexception.cpp **** {}
+ 214              		.loc 1 21 0
+ 215 00d0 8937     		movl	%esi, (%rdi)
+ 216 00d2 897704   		movl	%esi, 4(%rdi)
+ 217 00d5 897708   		movl	%esi, 8(%rdi)
+ 218 00d8 C3       		ret
+ 219              	.LBE2:
+ 220              		.cfi_endproc
+ 221              	.LFE1246:
+ 223              		.globl	_ZN9my_structC1Ei
+ 224              		.set	_ZN9my_structC1Ei,_ZN9my_structC2Ei
+ 225              		.globl	_Z12throw_structv
+ 227              	_Z12throw_structv:
+ 228              	.LFB1248:
+  24:throw-nonexception.cpp ****     throw my_struct(5);
+ 229              		.loc 1 24 0
+ 230              		.cfi_startproc
+ 231              		.cfi_personality 0x3,__gxx_personality_v0
+ 232              		.cfi_lsda 0x3,.LLSDA1248
+ 233 00d9 53       		pushq	%rbx
+ 234              		.cfi_def_cfa_offset 16
+ 235              		.cfi_offset 3, -16
+  25:throw-nonexception.cpp **** }
+ 236              		.loc 1 25 0
+ 237 00da BF0C0000 		movl	$12, %edi
+ 237      00
+ 238 00df E8000000 		call	__cxa_allocate_exception
+ 238      00
+ 239              	.LVL15:
+ 240 00e4 4889C3   		movq	%rax, %rbx
+ 241 00e7 BE050000 		movl	$5, %esi
+ 241      00
+ 242 00ec 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/ccRqKDYr.s 			page 8
+
+
+ 243 00ef E8000000 		call	_ZN9my_structC1Ei
+ 243      00
+ 244              	.LVL16:
+ 245 00f4 BA000000 		movl	$0, %edx
+ 245      00
+ 246 00f9 BE000000 		movl	$_ZTI9my_struct, %esi
+ 246      00
+ 247 00fe 4889DF   		movq	%rbx, %rdi
+ 248              	.LEHB5:
+ 249 0101 E8000000 		call	__cxa_throw
+ 249      00
+ 250              	.LEHE5:
+ 251              	.LVL17:
+ 252              	.L22:
+ 253 0106 4889C7   		movq	%rax, %rdi
+ 254 0109 4883FAFF 		cmpq	$-1, %rdx
+ 255 010d 7405     		je	.L21
+ 256              	.LEHB6:
+ 257 010f E8000000 		call	_Unwind_Resume
+ 257      00
+ 258              	.LVL18:
+ 259              	.L21:
+  24:throw-nonexception.cpp ****     throw my_struct(5);
+ 260              		.loc 1 24 0
+ 261 0114 E8000000 		call	__cxa_call_unexpected
+ 261      00
+ 262              	.LEHE6:
+ 263              	.LVL19:
+ 264              		.cfi_endproc
+ 265              	.LFE1248:
+ 266              		.section	.gcc_except_table
+ 267 0036 0000     		.align 4
+ 268              	.LLSDA1248:
+ 269 0038 FF       		.byte	0xff
+ 270 0039 03       		.byte	0x3
+ 271 003a 11       		.uleb128 .LLSDATT1248-.LLSDATTD1248
+ 272              	.LLSDATTD1248:
+ 273 003b 01       		.byte	0x1
+ 274 003c 08       		.uleb128 .LLSDACSE1248-.LLSDACSB1248
+ 275              	.LLSDACSB1248:
+ 276 003d 28       		.uleb128 .LEHB5-.LFB1248
+ 277 003e 05       		.uleb128 .LEHE5-.LEHB5
+ 278 003f 2D       		.uleb128 .L22-.LFB1248
+ 279 0040 01       		.uleb128 0x1
+ 280 0041 36       		.uleb128 .LEHB6-.LFB1248
+ 281 0042 0A       		.uleb128 .LEHE6-.LEHB6
+ 282 0043 00       		.uleb128 0
+ 283 0044 00       		.uleb128 0
+ 284              	.LLSDACSE1248:
+ 285 0045 7F       		.byte	0x7f
+ 286 0046 00       		.byte	0
+ 287 0047 00       		.align 4
+ 288 0048 00000000 		.long	_ZTI9my_struct
+ 289              	.LLSDATT1248:
+ 290 004c 01       		.byte	0x1
+ 291 004d 00       		.byte	0
+ 292              		.text
+GAS LISTING /tmp/ccRqKDYr.s 			page 9
+
+
+ 294              		.section	.rodata.str1.1
+ 295              	.LC1:
+ 296 0004 476F7420 		.string	"Got int: "
+ 296      696E743A 
+ 296      2000
+ 297              	.LC2:
+ 298 000e 476F7420 		.string	"Got string: "
+ 298      73747269 
+ 298      6E673A20 
+ 298      00
+ 299              	.LC3:
+ 300 001b 476F7420 		.string	"Got my_struct: ("
+ 300      6D795F73 
+ 300      74727563 
+ 300      743A2028 
+ 300      00
+ 301              	.LC4:
+ 302 002c 2C00     		.string	","
+ 303              	.LC5:
+ 304 002e 2900     		.string	")"
+ 305              	.LC6:
+ 306 0030 43617567 		.string	"Caught something unexpected."
+ 306      68742073 
+ 306      6F6D6574 
+ 306      68696E67 
+ 306      20756E65 
+ 307              		.text
+ 308              		.globl	main
+ 310              	main:
+ 311              	.LFB1249:
+  28:throw-nonexception.cpp ****     try {
+ 312              		.loc 1 28 0
+ 313              		.cfi_startproc
+ 314              		.cfi_personality 0x3,__gxx_personality_v0
+ 315              		.cfi_lsda 0x3,.LLSDA1249
+ 316              	.LVL20:
+ 317 0119 4154     		pushq	%r12
+ 318              		.cfi_def_cfa_offset 16
+ 319              		.cfi_offset 12, -16
+ 320 011b 55       		pushq	%rbp
+ 321              		.cfi_def_cfa_offset 24
+ 322              		.cfi_offset 6, -24
+ 323 011c 53       		pushq	%rbx
+ 324              		.cfi_def_cfa_offset 32
+ 325              		.cfi_offset 3, -32
+ 326              	.LEHB7:
+ 327              	.LBB3:
+ 328              	.LBB4:
+  31:throw-nonexception.cpp ****         } catch (int &e) {
+ 329              		.loc 1 31 0
+ 330 011d E8000000 		call	_Z9throw_intv
+ 330      00
+ 331              	.LEHE7:
+ 332              	.LVL21:
+ 333              	.L41:
+ 334 0122 4889C3   		movq	%rax, %rbx
+ 335              	.LBB5:
+GAS LISTING /tmp/ccRqKDYr.s 			page 10
+
+
+  32:throw-nonexception.cpp ****             cout << "Got int: " << e << endl;
+ 336              		.loc 1 32 0
+ 337 0125 E8000000 		call	__cxa_end_catch
+ 337      00
+ 338              	.LVL22:
+ 339 012a 4889DF   		movq	%rbx, %rdi
+ 340 012d E93E0100 		jmp	.L26
+ 340      00
+ 341              	.L40:
+ 342 0132 4889C7   		movq	%rax, %rdi
+ 343 0135 4883FA02 		cmpq	$2, %rdx
+ 344 0139 0F853101 		jne	.L26
+ 344      0000
+ 345 013f E8000000 		call	__cxa_begin_catch
+ 345      00
+ 346              	.LVL23:
+  33:throw-nonexception.cpp ****         }
+ 347              		.loc 1 33 0
+ 348 0144 8B18     		movl	(%rax), %ebx
+ 349 0146 BE000000 		movl	$.LC1, %esi
+ 349      00
+ 350 014b BF000000 		movl	$_ZSt4cout, %edi
+ 350      00
+ 351              	.LEHB8:
+ 352 0150 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 352      00
+ 353              	.LVL24:
+ 354 0155 89DE     		movl	%ebx, %esi
+ 355 0157 4889C7   		movq	%rax, %rdi
+ 356 015a E8000000 		call	_ZNSolsEi
+ 356      00
+ 357              	.LVL25:
+  33:throw-nonexception.cpp ****         }
+ 358              		.loc 1 33 0 is_stmt 0 discriminator 1
+ 359 015f BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 359      00
+ 360 0164 4889C7   		movq	%rax, %rdi
+ 361 0167 E8000000 		call	_ZNSolsEPFRSoS_E
+ 361      00
+ 362              	.LEHE8:
+ 363              	.LVL26:
+  32:throw-nonexception.cpp ****             cout << "Got int: " << e << endl;
+ 364              		.loc 1 32 0 is_stmt 1
+ 365 016c E8000000 		call	__cxa_end_catch
+ 365      00
+ 366              	.LVL27:
+ 367              	.LEHB9:
+ 368              	.LBE5:
+  37:throw-nonexception.cpp ****         } catch (string &e) {
+ 369              		.loc 1 37 0
+ 370 0171 E8000000 		call	_Z12throw_stringv
+ 370      00
+ 371              	.LEHE9:
+ 372              	.LVL28:
+ 373              	.L43:
+ 374 0176 4889C3   		movq	%rax, %rbx
+ 375              	.LVL29:
+GAS LISTING /tmp/ccRqKDYr.s 			page 11
+
+
+ 376              	.LBB6:
+  38:throw-nonexception.cpp ****             cout << "Got string: " << e << endl;
+ 377              		.loc 1 38 0
+ 378 0179 E8000000 		call	__cxa_end_catch
+ 378      00
+ 379              	.LVL30:
+ 380 017e 4889DF   		movq	%rbx, %rdi
+ 381 0181 E9EA0000 		jmp	.L26
+ 381      00
+ 382              	.L42:
+ 383 0186 4889C7   		movq	%rax, %rdi
+ 384 0189 4883FA03 		cmpq	$3, %rdx
+ 385 018d 0F85DD00 		jne	.L26
+ 385      0000
+ 386 0193 E8000000 		call	__cxa_begin_catch
+ 386      00
+ 387              	.LVL31:
+ 388 0198 4889C3   		movq	%rax, %rbx
+ 389              	.LVL32:
+  39:throw-nonexception.cpp ****         }
+ 390              		.loc 1 39 0
+ 391 019b BE000000 		movl	$.LC2, %esi
+ 391      00
+ 392 01a0 BF000000 		movl	$_ZSt4cout, %edi
+ 392      00
+ 393              	.LEHB10:
+ 394 01a5 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 394      00
+ 395              	.LVL33:
+ 396 01aa 4889DE   		movq	%rbx, %rsi
+ 397 01ad 4889C7   		movq	%rax, %rdi
+ 398 01b0 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+ 398      00
+ 399              	.LVL34:
+  39:throw-nonexception.cpp ****         }
+ 400              		.loc 1 39 0 is_stmt 0 discriminator 1
+ 401 01b5 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 401      00
+ 402 01ba 4889C7   		movq	%rax, %rdi
+ 403 01bd E8000000 		call	_ZNSolsEPFRSoS_E
+ 403      00
+ 404              	.LEHE10:
+ 405              	.LVL35:
+  38:throw-nonexception.cpp ****             cout << "Got string: " << e << endl;
+ 406              		.loc 1 38 0 is_stmt 1
+ 407 01c2 E8000000 		call	__cxa_end_catch
+ 407      00
+ 408              	.LVL36:
+ 409              	.LEHB11:
+ 410              	.LBE6:
+  43:throw-nonexception.cpp ****         } catch (my_struct &e) {
+ 411              		.loc 1 43 0
+ 412 01c7 E8000000 		call	_Z9throw_intv
+ 412      00
+ 413              	.LEHE11:
+ 414              	.LVL37:
+ 415              	.L45:
+GAS LISTING /tmp/ccRqKDYr.s 			page 12
+
+
+ 416 01cc 4889C3   		movq	%rax, %rbx
+ 417              	.LBB7:
+  44:throw-nonexception.cpp ****             cout << "Got my_struct: (" << e.x << ","
+ 418              		.loc 1 44 0
+ 419 01cf E8000000 		call	__cxa_end_catch
+ 419      00
+ 420              	.LVL38:
+ 421 01d4 4889DF   		movq	%rbx, %rdi
+ 422 01d7 E9940000 		jmp	.L26
+ 422      00
+ 423              	.LVL39:
+ 424              	.L44:
+ 425 01dc 4889C7   		movq	%rax, %rdi
+ 426 01df 4883FA04 		cmpq	$4, %rdx
+ 427 01e3 0F858700 		jne	.L26
+ 427      0000
+ 428 01e9 E8000000 		call	__cxa_begin_catch
+ 428      00
+ 429              	.LVL40:
+  46:throw-nonexception.cpp ****         }
+ 430              		.loc 1 46 0
+ 431 01ee 8B5808   		movl	8(%rax), %ebx
+ 432              	.LVL41:
+ 433 01f1 8B6804   		movl	4(%rax), %ebp
+  45:throw-nonexception.cpp ****                  << e.y << "," << e.z << ")" << endl;
+ 434              		.loc 1 45 0
+ 435 01f4 448B20   		movl	(%rax), %r12d
+ 436 01f7 BE000000 		movl	$.LC3, %esi
+ 436      00
+ 437 01fc BF000000 		movl	$_ZSt4cout, %edi
+ 437      00
+ 438              	.LEHB12:
+ 439 0201 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 439      00
+ 440              	.LVL42:
+ 441 0206 4489E6   		movl	%r12d, %esi
+ 442 0209 4889C7   		movq	%rax, %rdi
+ 443 020c E8000000 		call	_ZNSolsEi
+ 443      00
+ 444              	.LVL43:
+  45:throw-nonexception.cpp ****                  << e.y << "," << e.z << ")" << endl;
+ 445              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 446 0211 BE000000 		movl	$.LC4, %esi
+ 446      00
+ 447 0216 4889C7   		movq	%rax, %rdi
+ 448 0219 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 448      00
+ 449              	.LVL44:
+  46:throw-nonexception.cpp ****         }
+ 450              		.loc 1 46 0 is_stmt 1 discriminator 1
+ 451 021e 89EE     		movl	%ebp, %esi
+ 452 0220 4889C7   		movq	%rax, %rdi
+ 453 0223 E8000000 		call	_ZNSolsEi
+ 453      00
+ 454              	.LVL45:
+ 455 0228 BE000000 		movl	$.LC4, %esi
+ 455      00
+GAS LISTING /tmp/ccRqKDYr.s 			page 13
+
+
+ 456 022d 4889C7   		movq	%rax, %rdi
+ 457 0230 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 457      00
+ 458              	.LVL46:
+ 459 0235 89DE     		movl	%ebx, %esi
+ 460 0237 4889C7   		movq	%rax, %rdi
+ 461 023a E8000000 		call	_ZNSolsEi
+ 461      00
+ 462              	.LVL47:
+ 463 023f BE000000 		movl	$.LC5, %esi
+ 463      00
+ 464 0244 4889C7   		movq	%rax, %rdi
+ 465 0247 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 465      00
+ 466              	.LVL48:
+ 467 024c BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 467      00
+ 468 0251 4889C7   		movq	%rax, %rdi
+ 469 0254 E8000000 		call	_ZNSolsEPFRSoS_E
+ 469      00
+ 470              	.LEHE12:
+ 471              	.LVL49:
+  44:throw-nonexception.cpp ****             cout << "Got my_struct: (" << e.x << ","
+ 472              		.loc 1 44 0
+ 473 0259 E8000000 		call	__cxa_end_catch
+ 473      00
+ 474              	.LVL50:
+ 475 025e EB36     		jmp	.L47
+ 476              	.L46:
+ 477 0260 4889C3   		movq	%rax, %rbx
+ 478              	.LBE7:
+ 479              	.LBE4:
+  48:throw-nonexception.cpp ****         cout << "Caught something unexpected." << endl;
+ 480              		.loc 1 48 0
+ 481              		.p2align 4,,5
+ 482 0263 E8000000 		call	__cxa_end_catch
+ 482      00
+ 483              	.LVL51:
+ 484 0268 4889DF   		movq	%rbx, %rdi
+ 485              	.LEHB13:
+ 486 026b E8000000 		call	_Unwind_Resume
+ 486      00
+ 487              	.LEHE13:
+ 488              	.LVL52:
+ 489              	.L26:
+ 490 0270 E8000000 		call	__cxa_begin_catch
+ 490      00
+ 491              	.LVL53:
+  49:throw-nonexception.cpp ****     }
+ 492              		.loc 1 49 0
+ 493 0275 BE000000 		movl	$.LC6, %esi
+ 493      00
+ 494 027a BF000000 		movl	$_ZSt4cout, %edi
+ 494      00
+ 495              	.LEHB14:
+ 496 027f E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 496      00
+GAS LISTING /tmp/ccRqKDYr.s 			page 14
+
+
+ 497              	.LVL54:
+ 498 0284 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 498      00
+ 499 0289 4889C7   		movq	%rax, %rdi
+ 500 028c E8000000 		call	_ZNSolsEPFRSoS_E
+ 500      00
+ 501              	.LEHE14:
+ 502              	.LVL55:
+ 503              	.LEHB15:
+  48:throw-nonexception.cpp ****         cout << "Caught something unexpected." << endl;
+ 504              		.loc 1 48 0
+ 505 0291 E8000000 		call	__cxa_end_catch
+ 505      00
+ 506              	.LEHE15:
+ 507              	.LVL56:
+ 508              	.L47:
+ 509              	.LBE3:
+ 510              		.loc 1 51 0
+ 511 0296 B8000000 		movl	$0, %eax
+ 511      00
+ 512 029b 5B       		popq	%rbx
+ 513              		.cfi_def_cfa_offset 24
+ 514 029c 5D       		popq	%rbp
+ 515              		.cfi_def_cfa_offset 16
+ 516 029d 415C     		popq	%r12
+ 517              		.cfi_def_cfa_offset 8
+ 518 029f C3       		ret
+ 519              		.cfi_endproc
+ 520              	.LFE1249:
+ 521              		.section	.gcc_except_table
+ 522 004e 0000     		.align 4
+ 523              	.LLSDA1249:
+ 524 0050 FF       		.byte	0xff
+ 525 0051 03       		.byte	0x3
+ 526 0052 49       		.uleb128 .LLSDATT1249-.LLSDATTD1249
+ 527              	.LLSDATTD1249:
+ 528 0053 01       		.byte	0x1
+ 529 0054 2D       		.uleb128 .LLSDACSE1249-.LLSDACSB1249
+ 530              	.LLSDACSB1249:
+ 531 0055 04       		.uleb128 .LEHB7-.LFB1249
+ 532 0056 05       		.uleb128 .LEHE7-.LEHB7
+ 533 0057 19       		.uleb128 .L40-.LFB1249
+ 534 0058 03       		.uleb128 0x3
+ 535 0059 37       		.uleb128 .LEHB8-.LFB1249
+ 536 005a 1C       		.uleb128 .LEHE8-.LEHB8
+ 537 005b 09       		.uleb128 .L41-.LFB1249
+ 538 005c 05       		.uleb128 0x5
+ 539 005d 58       		.uleb128 .LEHB9-.LFB1249
+ 540 005e 05       		.uleb128 .LEHE9-.LEHB9
+ 541 005f 6D       		.uleb128 .L42-.LFB1249
+ 542 0060 07       		.uleb128 0x7
+ 543 0061 8C01     		.uleb128 .LEHB10-.LFB1249
+ 544 0063 1D       		.uleb128 .LEHE10-.LEHB10
+ 545 0064 5D       		.uleb128 .L43-.LFB1249
+ 546 0065 05       		.uleb128 0x5
+ 547 0066 AE01     		.uleb128 .LEHB11-.LFB1249
+ 548 0068 05       		.uleb128 .LEHE11-.LEHB11
+GAS LISTING /tmp/ccRqKDYr.s 			page 15
+
+
+ 549 0069 C301     		.uleb128 .L44-.LFB1249
+ 550 006b 09       		.uleb128 0x9
+ 551 006c E801     		.uleb128 .LEHB12-.LFB1249
+ 552 006e 58       		.uleb128 .LEHE12-.LEHB12
+ 553 006f B301     		.uleb128 .L45-.LFB1249
+ 554 0071 05       		.uleb128 0x5
+ 555 0072 D202     		.uleb128 .LEHB13-.LFB1249
+ 556 0074 05       		.uleb128 .LEHE13-.LEHB13
+ 557 0075 00       		.uleb128 0
+ 558 0076 00       		.uleb128 0
+ 559 0077 E602     		.uleb128 .LEHB14-.LFB1249
+ 560 0079 12       		.uleb128 .LEHE14-.LEHB14
+ 561 007a C702     		.uleb128 .L46-.LFB1249
+ 562 007c 00       		.uleb128 0
+ 563 007d F802     		.uleb128 .LEHB15-.LFB1249
+ 564 007f 05       		.uleb128 .LEHE15-.LEHB15
+ 565 0080 00       		.uleb128 0
+ 566 0081 00       		.uleb128 0
+ 567              	.LLSDACSE1249:
+ 568 0082 01       		.byte	0x1
+ 569 0083 00       		.byte	0
+ 570 0084 02       		.byte	0x2
+ 571 0085 7D       		.byte	0x7d
+ 572 0086 00       		.byte	0
+ 573 0087 7B       		.byte	0x7b
+ 574 0088 03       		.byte	0x3
+ 575 0089 79       		.byte	0x79
+ 576 008a 04       		.byte	0x4
+ 577 008b 77       		.byte	0x77
+ 578              		.align 4
+ 579 008c 00000000 		.long	_ZTI9my_struct
+ 580 0090 00000000 		.long	_ZTISs
+ 581 0094 00000000 		.long	_ZTIi
+ 582 0098 00000000 		.long	0
+ 583              	
+ 584              	.LLSDATT1249:
+ 585              		.text
+ 588              	_GLOBAL__sub_I__Z9throw_intv:
+ 589              	.LFB1407:
+ 590              		.loc 1 51 0
+ 591              		.cfi_startproc
+ 592 02a0 4883EC08 		subq	$8, %rsp
+ 593              		.cfi_def_cfa_offset 16
+ 594              		.loc 1 51 0
+ 595 02a4 BEFFFF00 		movl	$65535, %esi
+ 595      00
+ 596 02a9 BF010000 		movl	$1, %edi
+ 596      00
+ 597 02ae E84DFDFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 597      FF
+ 598              	.LVL57:
+ 599 02b3 4883C408 		addq	$8, %rsp
+ 600              		.cfi_def_cfa_offset 8
+ 601 02b7 C3       		ret
+ 602              		.cfi_endproc
+ 603              	.LFE1407:
+ 605              		.section	.init_array,"aw"
+GAS LISTING /tmp/ccRqKDYr.s 			page 16
+
+
+ 606              		.align 8
+ 607 0000 00000000 		.quad	_GLOBAL__sub_I__Z9throw_intv
+ 607      00000000 
+ 608              		.weak	_ZTISs
+ 609              		.section	.rodata._ZTISs,"aG",@progbits,_ZTISs,comdat
+ 610              		.align 16
+ 613              	_ZTISs:
+ 614 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 614      00000000 
+ 615 0008 00000000 		.quad	_ZTSSs
+ 615      00000000 
+ 616              		.weak	_ZTSSs
+ 617              		.section	.rodata._ZTSSs,"aG",@progbits,_ZTSSs,comdat
+ 620              	_ZTSSs:
+ 621 0000 537300   		.string	"Ss"
+ 622              		.weak	_ZTI9my_struct
+ 623              		.section	.rodata._ZTI9my_struct,"aG",@progbits,_ZTI9my_struct,comdat
+ 624              		.align 16
+ 627              	_ZTI9my_struct:
+ 628 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 628      00000000 
+ 629 0008 00000000 		.quad	_ZTS9my_struct
+ 629      00000000 
+ 630              		.weak	_ZTS9my_struct
+ 631              		.section	.rodata._ZTS9my_struct,"aG",@progbits,_ZTS9my_struct,comdat
+ 634              	_ZTS9my_struct:
+ 635 0000 396D795F 		.string	"9my_struct"
+ 635      73747275 
+ 635      637400
+ 636              		.local	_ZStL8__ioinit
+ 637              		.comm	_ZStL8__ioinit,1,1
+ 638              		.text
+ 639              	.Letext0:
+ 640              		.file 3 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 641              		.file 4 "/usr/include/c++/4.8/cwchar"
+ 642              		.file 5 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 643              		.file 6 "/usr/include/c++/4.8/bits/char_traits.h"
+ 644              		.file 7 "/usr/include/c++/4.8/cstdint"
+ 645              		.file 8 "/usr/include/c++/4.8/bits/allocator.h"
+ 646              		.file 9 "/usr/include/c++/4.8/clocale"
+ 647              		.file 10 "/usr/include/c++/4.8/cstdlib"
+ 648              		.file 11 "/usr/include/c++/4.8/cstdio"
+ 649              		.file 12 "/usr/include/c++/4.8/bits/basic_string.h"
+ 650              		.file 13 "/usr/include/c++/4.8/bits/basic_string.tcc"
+ 651              		.file 14 "/usr/include/c++/4.8/initializer_list"
+ 652              		.file 15 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 653              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 654              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 655              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 656              		.file 19 "/usr/include/c++/4.8/ostream"
+ 657              		.file 20 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 658              		.file 21 "/usr/include/c++/4.8/iosfwd"
+ 659              		.file 22 "/usr/include/c++/4.8/exception"
+ 660              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 661              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 662              		.file 25 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 663              		.file 26 "/usr/include/c++/4.8/debug/debug.h"
+GAS LISTING /tmp/ccRqKDYr.s 			page 17
+
+
+ 664              		.file 27 "/usr/include/stdio.h"
+ 665              		.file 28 "/usr/include/libio.h"
+ 666              		.file 29 "<built-in>"
+ 667              		.file 30 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 668              		.file 31 "/usr/include/wchar.h"
+ 669              		.file 32 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 670              		.file 33 "/usr/include/time.h"
+ 671              		.file 34 "/usr/include/stdint.h"
+ 672              		.file 35 "/usr/include/locale.h"
+ 673              		.file 36 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 674              		.file 37 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 675              		.file 38 "/usr/include/stdlib.h"
+ 676              		.file 39 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 677              		.file 40 "/usr/include/_G_config.h"
+ 678              		.file 41 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 679              		.file 42 "/usr/include/wctype.h"
+ 680              		.file 43 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccRqKDYr.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 throw-nonexception.cpp
+     /tmp/ccRqKDYr.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+                             .bss:0000000000000000 _ZStL8__ioinit
+     /tmp/ccRqKDYr.s:40     .text:0000000000000034 _Z9throw_intv
+     /tmp/ccRqKDYr.s:109    .text:000000000000006d _Z12throw_stringv
+     /tmp/ccRqKDYr.s:613    .rodata._ZTISs:0000000000000000 _ZTISs
+     /tmp/ccRqKDYr.s:208    .text:00000000000000d0 _ZN9my_structC2Ei
+     /tmp/ccRqKDYr.s:208    .text:00000000000000d0 _ZN9my_structC1Ei
+     /tmp/ccRqKDYr.s:227    .text:00000000000000d9 _Z12throw_structv
+     /tmp/ccRqKDYr.s:627    .rodata._ZTI9my_struct:0000000000000000 _ZTI9my_struct
+     /tmp/ccRqKDYr.s:310    .text:0000000000000119 main
+     /tmp/ccRqKDYr.s:588    .text:00000000000002a0 _GLOBAL__sub_I__Z9throw_intv
+     /tmp/ccRqKDYr.s:620    .rodata._ZTSSs:0000000000000000 _ZTSSs
+     /tmp/ccRqKDYr.s:634    .rodata._ZTS9my_struct:0000000000000000 _ZTS9my_struct
+
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+__gxx_personality_v0
+__cxa_allocate_exception
+_ZTIi
+__cxa_throw
+_Unwind_Resume
+__cxa_call_unexpected
+_ZNSsC1EPKcRKSaIcE
+_ZNSsD1Ev
+__cxa_free_exception
+__cxa_end_catch
+__cxa_begin_catch
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E
+_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+_ZTVN10__cxxabiv117__class_type_infoE

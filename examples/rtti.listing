@@ -1,0 +1,887 @@
+GAS LISTING /tmp/ccLxVpJT.s 			page 1
+
+
+   1              		.file	"rtti.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.align 2
+   5              		.globl	_ZN9onefield58setFieldEi
+   7              	_ZN9onefield58setFieldEi:
+   8              	.LFB1301:
+   9              		.file 1 "rtti.cpp"
+   1:rtti.cpp      **** #include <iostream>
+   2:rtti.cpp      **** #include <cxxabi.h>
+   3:rtti.cpp      **** 
+   4:rtti.cpp      **** class onefield5 {
+   5:rtti.cpp      **** private:
+   6:rtti.cpp      ****   int field;
+   7:rtti.cpp      **** public:
+   8:rtti.cpp      ****   virtual void setField(int f);
+   9:rtti.cpp      ****   virtual int getField() const;
+  10:rtti.cpp      **** };
+  11:rtti.cpp      **** 
+  12:rtti.cpp      **** class onefield5_subclass : public onefield5 {
+  13:rtti.cpp      **** private:
+  14:rtti.cpp      ****   int otherfield;
+  15:rtti.cpp      **** public:
+  16:rtti.cpp      ****   // Override setField, but not getField.
+  17:rtti.cpp      ****   virtual void setField(int f);
+  18:rtti.cpp      **** };
+  19:rtti.cpp      **** 
+  20:rtti.cpp      **** std::string unmangle(const char* type) {
+  21:rtti.cpp      ****     int status;
+  22:rtti.cpp      ****     char *buf = abi::__cxa_demangle(type, 0, 0, &status);
+  23:rtti.cpp      ****     if (buf && status == 0) {
+  24:rtti.cpp      ****         std::string out = buf;
+  25:rtti.cpp      ****         free(buf);
+  26:rtti.cpp      ****         return out;
+  27:rtti.cpp      ****     }
+  28:rtti.cpp      ****     return type;
+  29:rtti.cpp      **** }
+  30:rtti.cpp      **** 
+  31:rtti.cpp      **** int rtti(int argc, const char**argv) {
+  32:rtti.cpp      ****   onefield5 *ofp = new onefield5_subclass;
+  33:rtti.cpp      **** 
+  34:rtti.cpp      ****   const std::type_info& info = typeid(ofp);
+  35:rtti.cpp      ****   std::cout << "RTTI: " << info.name() << std::endl;
+  36:rtti.cpp      ****   std::cout << "RTTI: " << unmangle(info.name()) << std::endl;
+  37:rtti.cpp      ****   return 0;
+  38:rtti.cpp      **** }
+  39:rtti.cpp      **** 
+  40:rtti.cpp      **** 
+  41:rtti.cpp      **** void onefield5::setField(int f) {
+  10              		.loc 1 41 0
+  11              		.cfi_startproc
+  12              	.LVL0:
+  42:rtti.cpp      ****   this->field = f;
+  13              		.loc 1 42 0
+  14 0000 897708   		movl	%esi, 8(%rdi)
+  15 0003 C3       		ret
+  16              		.cfi_endproc
+GAS LISTING /tmp/ccLxVpJT.s 			page 2
+
+
+  17              	.LFE1301:
+  19              		.align 2
+  20              		.globl	_ZNK9onefield58getFieldEv
+  22              	_ZNK9onefield58getFieldEv:
+  23              	.LFB1302:
+  43:rtti.cpp      **** }
+  44:rtti.cpp      **** int onefield5::getField() const {
+  24              		.loc 1 44 0
+  25              		.cfi_startproc
+  26              	.LVL1:
+  45:rtti.cpp      ****   return this->field;
+  27              		.loc 1 45 0
+  28 0004 8B4708   		movl	8(%rdi), %eax
+  46:rtti.cpp      **** }
+  29              		.loc 1 46 0
+  30 0007 C3       		ret
+  31              		.cfi_endproc
+  32              	.LFE1302:
+  34              		.align 2
+  35              		.globl	_ZN18onefield5_subclass8setFieldEi
+  37              	_ZN18onefield5_subclass8setFieldEi:
+  38              	.LFB1303:
+  47:rtti.cpp      **** 
+  48:rtti.cpp      **** void onefield5_subclass::setField(int f) {
+  39              		.loc 1 48 0
+  40              		.cfi_startproc
+  41              	.LVL2:
+  42 0008 55       		pushq	%rbp
+  43              		.cfi_def_cfa_offset 16
+  44              		.cfi_offset 6, -16
+  45 0009 53       		pushq	%rbx
+  46              		.cfi_def_cfa_offset 24
+  47              		.cfi_offset 3, -24
+  48 000a 4889FB   		movq	%rdi, %rbx
+  49 000d 89F5     		movl	%esi, %ebp
+  49:rtti.cpp      ****   onefield5::setField(f);
+  50              		.loc 1 49 0
+  51 000f E8000000 		call	_ZN9onefield58setFieldEi
+  51      00
+  52              	.LVL3:
+  50:rtti.cpp      ****   otherfield = f;
+  53              		.loc 1 50 0
+  54 0014 896B0C   		movl	%ebp, 12(%rbx)
+  51:rtti.cpp      **** }
+  55              		.loc 1 51 0
+  56 0017 5B       		popq	%rbx
+  57              		.cfi_def_cfa_offset 16
+  58              	.LVL4:
+  59 0018 5D       		popq	%rbp
+  60              		.cfi_def_cfa_offset 8
+  61              	.LVL5:
+  62 0019 C3       		ret
+  63              		.cfi_endproc
+  64              	.LFE1303:
+  67              	_Z41__static_initialization_and_destruction_0ii:
+  68              	.LFB1460:
+  69              		.loc 1 51 0
+GAS LISTING /tmp/ccLxVpJT.s 			page 3
+
+
+  70              		.cfi_startproc
+  71              	.LVL6:
+  72 001a 83FF01   		cmpl	$1, %edi
+  73 001d 752E     		jne	.L9
+  74              		.loc 1 51 0 discriminator 1
+  75 001f 81FEFFFF 		cmpl	$65535, %esi
+  75      0000
+  76 0025 7526     		jne	.L9
+  77              		.loc 1 51 0 is_stmt 0
+  78 0027 4883EC08 		subq	$8, %rsp
+  79              		.cfi_def_cfa_offset 16
+  80              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  45:/usr/include/c++/4.8/iostream **** 
+GAS LISTING /tmp/ccLxVpJT.s 			page 4
+
+
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  81              		.loc 2 74 0 is_stmt 1
+  82 002b BF000000 		movl	$_ZStL8__ioinit, %edi
+  82      00
+  83              	.LVL7:
+  84 0030 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  84      00
+  85              	.LVL8:
+  86 0035 BA000000 		movl	$__dso_handle, %edx
+  86      00
+  87 003a BE000000 		movl	$_ZStL8__ioinit, %esi
+  87      00
+  88 003f BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  88      00
+  89 0044 E8000000 		call	__cxa_atexit
+  89      00
+  90              	.LVL9:
+  91              		.loc 1 51 0
+  92 0049 4883C408 		addq	$8, %rsp
+  93              		.cfi_def_cfa_offset 8
+  94              	.L9:
+  95 004d C3       		ret
+  96              		.cfi_endproc
+  97              	.LFE1460:
+  99              		.section	.text._ZNKSt9type_info4nameEv,"axG",@progbits,_ZNKSt9type_info4nameEv,comdat
+ 100              		.align 2
+ 101              		.weak	_ZNKSt9type_info4nameEv
+ 103              	_ZNKSt9type_info4nameEv:
+ 104              	.LFB1243:
+GAS LISTING /tmp/ccLxVpJT.s 			page 5
+
+
+ 105              		.file 3 "/usr/include/c++/4.8/typeinfo"
+   1:/usr/include/c++/4.8/typeinfo **** // RTTI support for -*- C++ -*-
+   2:/usr/include/c++/4.8/typeinfo **** // Copyright (C) 1994-2013 Free Software Foundation, Inc.
+   3:/usr/include/c++/4.8/typeinfo **** //
+   4:/usr/include/c++/4.8/typeinfo **** // This file is part of GCC.
+   5:/usr/include/c++/4.8/typeinfo **** //
+   6:/usr/include/c++/4.8/typeinfo **** // GCC is free software; you can redistribute it and/or modify
+   7:/usr/include/c++/4.8/typeinfo **** // it under the terms of the GNU General Public License as published by
+   8:/usr/include/c++/4.8/typeinfo **** // the Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/typeinfo **** // any later version.
+  10:/usr/include/c++/4.8/typeinfo **** //
+  11:/usr/include/c++/4.8/typeinfo **** // GCC is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/typeinfo **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/typeinfo **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/typeinfo **** // GNU General Public License for more details.
+  15:/usr/include/c++/4.8/typeinfo **** //
+  16:/usr/include/c++/4.8/typeinfo **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/typeinfo **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/typeinfo **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/typeinfo **** 
+  20:/usr/include/c++/4.8/typeinfo **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/typeinfo **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/typeinfo **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/typeinfo **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/typeinfo **** 
+  25:/usr/include/c++/4.8/typeinfo **** /** @file typeinfo
+  26:/usr/include/c++/4.8/typeinfo ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/typeinfo ****  */
+  28:/usr/include/c++/4.8/typeinfo **** 
+  29:/usr/include/c++/4.8/typeinfo **** #ifndef _TYPEINFO
+  30:/usr/include/c++/4.8/typeinfo **** #define _TYPEINFO
+  31:/usr/include/c++/4.8/typeinfo **** 
+  32:/usr/include/c++/4.8/typeinfo **** #pragma GCC system_header
+  33:/usr/include/c++/4.8/typeinfo **** 
+  34:/usr/include/c++/4.8/typeinfo **** #include <exception>
+  35:/usr/include/c++/4.8/typeinfo **** #if __cplusplus >= 201103L
+  36:/usr/include/c++/4.8/typeinfo **** #include <bits/hash_bytes.h>
+  37:/usr/include/c++/4.8/typeinfo **** #endif
+  38:/usr/include/c++/4.8/typeinfo **** 
+  39:/usr/include/c++/4.8/typeinfo **** #pragma GCC visibility push(default)
+  40:/usr/include/c++/4.8/typeinfo **** 
+  41:/usr/include/c++/4.8/typeinfo **** extern "C++" {
+  42:/usr/include/c++/4.8/typeinfo **** 
+  43:/usr/include/c++/4.8/typeinfo **** namespace __cxxabiv1
+  44:/usr/include/c++/4.8/typeinfo **** {
+  45:/usr/include/c++/4.8/typeinfo ****   class __class_type_info;
+  46:/usr/include/c++/4.8/typeinfo **** } // namespace __cxxabiv1
+  47:/usr/include/c++/4.8/typeinfo **** 
+  48:/usr/include/c++/4.8/typeinfo **** // Determine whether typeinfo names for the same type are merged (in which
+  49:/usr/include/c++/4.8/typeinfo **** // case comparison can just compare pointers) or not (in which case strings
+  50:/usr/include/c++/4.8/typeinfo **** // must be compared), and whether comparison is to be implemented inline or
+  51:/usr/include/c++/4.8/typeinfo **** // not.  We used to do inline pointer comparison by default if weak symbols
+  52:/usr/include/c++/4.8/typeinfo **** // are available, but even with weak symbols sometimes names are not merged
+  53:/usr/include/c++/4.8/typeinfo **** // when objects are loaded with RTLD_LOCAL, so now we always use strcmp by
+  54:/usr/include/c++/4.8/typeinfo **** // default.  For ABI compatibility, we do the strcmp inline if weak symbols
+  55:/usr/include/c++/4.8/typeinfo **** // are available, and out-of-line if not.  Out-of-line pointer comparison
+  56:/usr/include/c++/4.8/typeinfo **** // is used where the object files are to be portable to multiple systems,
+GAS LISTING /tmp/ccLxVpJT.s 			page 6
+
+
+  57:/usr/include/c++/4.8/typeinfo **** // some of which may not be able to use pointer comparison, but the
+  58:/usr/include/c++/4.8/typeinfo **** // particular system for which libstdc++ is being built can use pointer
+  59:/usr/include/c++/4.8/typeinfo **** // comparison; in particular for most ARM EABI systems, where the ABI
+  60:/usr/include/c++/4.8/typeinfo **** // specifies out-of-line comparison.  The compiler's target configuration
+  61:/usr/include/c++/4.8/typeinfo **** // can override the defaults by defining __GXX_TYPEINFO_EQUALITY_INLINE to
+  62:/usr/include/c++/4.8/typeinfo **** // 1 or 0 to indicate whether or not comparison is inline, and
+  63:/usr/include/c++/4.8/typeinfo **** // __GXX_MERGED_TYPEINFO_NAMES to 1 or 0 to indicate whether or not pointer
+  64:/usr/include/c++/4.8/typeinfo **** // comparison can be used.
+  65:/usr/include/c++/4.8/typeinfo **** 
+  66:/usr/include/c++/4.8/typeinfo **** #ifndef __GXX_MERGED_TYPEINFO_NAMES
+  67:/usr/include/c++/4.8/typeinfo **** // By default, typeinfo names are not merged.
+  68:/usr/include/c++/4.8/typeinfo **** #define __GXX_MERGED_TYPEINFO_NAMES 0
+  69:/usr/include/c++/4.8/typeinfo **** #endif
+  70:/usr/include/c++/4.8/typeinfo **** 
+  71:/usr/include/c++/4.8/typeinfo **** // By default follow the old inline rules to avoid ABI changes.
+  72:/usr/include/c++/4.8/typeinfo **** #ifndef __GXX_TYPEINFO_EQUALITY_INLINE
+  73:/usr/include/c++/4.8/typeinfo ****   #if !__GXX_WEAK__
+  74:/usr/include/c++/4.8/typeinfo ****     #define __GXX_TYPEINFO_EQUALITY_INLINE 0
+  75:/usr/include/c++/4.8/typeinfo ****   #else
+  76:/usr/include/c++/4.8/typeinfo ****     #define __GXX_TYPEINFO_EQUALITY_INLINE 1
+  77:/usr/include/c++/4.8/typeinfo ****   #endif
+  78:/usr/include/c++/4.8/typeinfo **** #endif
+  79:/usr/include/c++/4.8/typeinfo **** 
+  80:/usr/include/c++/4.8/typeinfo **** namespace std
+  81:/usr/include/c++/4.8/typeinfo **** {
+  82:/usr/include/c++/4.8/typeinfo ****   /**
+  83:/usr/include/c++/4.8/typeinfo ****    *  @brief  Part of RTTI.
+  84:/usr/include/c++/4.8/typeinfo ****    *
+  85:/usr/include/c++/4.8/typeinfo ****    *  The @c type_info class describes type information generated by
+  86:/usr/include/c++/4.8/typeinfo ****    *  an implementation.
+  87:/usr/include/c++/4.8/typeinfo ****   */
+  88:/usr/include/c++/4.8/typeinfo ****   class type_info
+  89:/usr/include/c++/4.8/typeinfo ****   {
+  90:/usr/include/c++/4.8/typeinfo ****   public:
+  91:/usr/include/c++/4.8/typeinfo ****     /** Destructor first. Being the first non-inline virtual function, this
+  92:/usr/include/c++/4.8/typeinfo ****      *  controls in which translation unit the vtable is emitted. The
+  93:/usr/include/c++/4.8/typeinfo ****      *  compiler makes use of that information to know where to emit
+  94:/usr/include/c++/4.8/typeinfo ****      *  the runtime-mandated type_info structures in the new-abi.  */
+  95:/usr/include/c++/4.8/typeinfo ****     virtual ~type_info();
+  96:/usr/include/c++/4.8/typeinfo **** 
+  97:/usr/include/c++/4.8/typeinfo ****     /** Returns an @e implementation-defined byte string; this is not
+  98:/usr/include/c++/4.8/typeinfo ****      *  portable between compilers!  */
+  99:/usr/include/c++/4.8/typeinfo ****     const char* name() const _GLIBCXX_NOEXCEPT
+ 106              		.loc 3 99 0
+ 107              		.cfi_startproc
+ 108              	.LVL10:
+ 100:/usr/include/c++/4.8/typeinfo ****     { return __name[0] == '*' ? __name + 1 : __name; }
+ 109              		.loc 3 100 0
+ 110 0000 488B4708 		movq	8(%rdi), %rax
+ 111 0004 80382A   		cmpb	$42, (%rax)
+ 112 0007 0F94C2   		sete	%dl
+ 113 000a 0FB6D2   		movzbl	%dl, %edx
+ 114 000d 4801D0   		addq	%rdx, %rax
+ 115 0010 C3       		ret
+ 116              		.cfi_endproc
+ 117              	.LFE1243:
+ 119              		.text
+GAS LISTING /tmp/ccLxVpJT.s 			page 7
+
+
+ 120              		.globl	_Z8unmanglePKc
+ 122              	_Z8unmanglePKc:
+ 123              	.LFB1293:
+  20:rtti.cpp      ****     int status;
+ 124              		.loc 1 20 0
+ 125              		.cfi_startproc
+ 126              	.LVL11:
+ 127 004e 4154     		pushq	%r12
+ 128              		.cfi_def_cfa_offset 16
+ 129              		.cfi_offset 12, -16
+ 130 0050 55       		pushq	%rbp
+ 131              		.cfi_def_cfa_offset 24
+ 132              		.cfi_offset 6, -24
+ 133 0051 53       		pushq	%rbx
+ 134              		.cfi_def_cfa_offset 32
+ 135              		.cfi_offset 3, -32
+ 136 0052 4883EC20 		subq	$32, %rsp
+ 137              		.cfi_def_cfa_offset 64
+ 138 0056 4889FB   		movq	%rdi, %rbx
+ 139 0059 4889F5   		movq	%rsi, %rbp
+ 140              	.LBB2:
+  22:rtti.cpp      ****     if (buf && status == 0) {
+ 141              		.loc 1 22 0
+ 142 005c 488D4C24 		leaq	12(%rsp), %rcx
+ 142      0C
+ 143 0061 BA000000 		movl	$0, %edx
+ 143      00
+ 144 0066 BE000000 		movl	$0, %esi
+ 144      00
+ 145              	.LVL12:
+ 146 006b 4889EF   		movq	%rbp, %rdi
+ 147              	.LVL13:
+ 148 006e E8000000 		call	__cxa_demangle
+ 148      00
+ 149              	.LVL14:
+ 150 0073 4989C4   		movq	%rax, %r12
+ 151              	.LVL15:
+ 152              	.LBB3:
+  23:rtti.cpp      ****         std::string out = buf;
+ 153              		.loc 1 23 0
+ 154 0076 4885C0   		testq	%rax, %rax
+ 155 0079 743A     		je	.L14
+  23:rtti.cpp      ****         std::string out = buf;
+ 156              		.loc 1 23 0 is_stmt 0 discriminator 1
+ 157 007b 837C240C 		cmpl	$0, 12(%rsp)
+ 157      00
+ 158 0080 7533     		jne	.L14
+ 159              	.LBB4:
+  24:rtti.cpp      ****         free(buf);
+ 160              		.loc 1 24 0 is_stmt 1
+ 161 0082 488D5424 		leaq	11(%rsp), %rdx
+ 161      0B
+ 162 0087 4889C6   		movq	%rax, %rsi
+ 163 008a 488D7C24 		leaq	16(%rsp), %rdi
+ 163      10
+ 164 008f E8000000 		call	_ZNSsC1EPKcRKSaIcE
+ 164      00
+GAS LISTING /tmp/ccLxVpJT.s 			page 8
+
+
+ 165              	.LVL16:
+  25:rtti.cpp      ****         return out;
+ 166              		.loc 1 25 0
+ 167 0094 4C89E7   		movq	%r12, %rdi
+ 168 0097 E8000000 		call	free
+ 168      00
+ 169              	.LVL17:
+  26:rtti.cpp      ****     }
+ 170              		.loc 1 26 0
+ 171 009c 488D7424 		leaq	16(%rsp), %rsi
+ 171      10
+ 172 00a1 4889DF   		movq	%rbx, %rdi
+ 173 00a4 E8000000 		call	_ZNSsC1EOSs
+ 173      00
+ 174              	.LVL18:
+ 175 00a9 488D7C24 		leaq	16(%rsp), %rdi
+ 175      10
+ 176 00ae E8000000 		call	_ZNSsD1Ev
+ 176      00
+ 177              	.LVL19:
+ 178 00b3 EB10     		jmp	.L13
+ 179              	.LVL20:
+ 180              	.L14:
+ 181              	.LBE4:
+ 182              	.LBE3:
+  28:rtti.cpp      **** }
+ 183              		.loc 1 28 0
+ 184 00b5 488D5424 		leaq	16(%rsp), %rdx
+ 184      10
+ 185 00ba 4889EE   		movq	%rbp, %rsi
+ 186 00bd 4889DF   		movq	%rbx, %rdi
+ 187 00c0 E8000000 		call	_ZNSsC1EPKcRKSaIcE
+ 187      00
+ 188              	.LVL21:
+ 189              	.L13:
+ 190              	.LBE2:
+  29:rtti.cpp      **** 
+ 191              		.loc 1 29 0
+ 192 00c5 4889D8   		movq	%rbx, %rax
+ 193 00c8 4883C420 		addq	$32, %rsp
+ 194              		.cfi_def_cfa_offset 32
+ 195 00cc 5B       		popq	%rbx
+ 196              		.cfi_def_cfa_offset 24
+ 197              	.LVL22:
+ 198 00cd 5D       		popq	%rbp
+ 199              		.cfi_def_cfa_offset 16
+ 200              	.LVL23:
+ 201 00ce 415C     		popq	%r12
+ 202              		.cfi_def_cfa_offset 8
+ 203              	.LVL24:
+ 204 00d0 C3       		ret
+ 205              		.cfi_endproc
+ 206              	.LFE1293:
+ 208              		.section	.text._ZN9onefield5C2Ev,"axG",@progbits,_ZN9onefield5C5Ev,comdat
+ 209              		.align 2
+ 210              		.weak	_ZN9onefield5C2Ev
+ 212              	_ZN9onefield5C2Ev:
+GAS LISTING /tmp/ccLxVpJT.s 			page 9
+
+
+ 213              	.LFB1297:
+   4:rtti.cpp      **** private:
+ 214              		.loc 1 4 0
+ 215              		.cfi_startproc
+ 216              	.LVL25:
+ 217              	.LBB5:
+   4:rtti.cpp      **** private:
+ 218              		.loc 1 4 0
+ 219 0000 48C70700 		movq	$_ZTV9onefield5+16, (%rdi)
+ 219      000000
+ 220 0007 C3       		ret
+ 221              	.LBE5:
+ 222              		.cfi_endproc
+ 223              	.LFE1297:
+ 225              		.weak	_ZN9onefield5C1Ev
+ 226              		.set	_ZN9onefield5C1Ev,_ZN9onefield5C2Ev
+ 227              		.section	.text._ZN18onefield5_subclassC2Ev,"axG",@progbits,_ZN18onefield5_subclassC5Ev,comdat
+ 228              		.align 2
+ 229              		.weak	_ZN18onefield5_subclassC2Ev
+ 231              	_ZN18onefield5_subclassC2Ev:
+ 232              	.LFB1299:
+  12:rtti.cpp      **** private:
+ 233              		.loc 1 12 0
+ 234              		.cfi_startproc
+ 235              	.LVL26:
+ 236 0000 53       		pushq	%rbx
+ 237              		.cfi_def_cfa_offset 16
+ 238              		.cfi_offset 3, -16
+ 239 0001 4889FB   		movq	%rdi, %rbx
+ 240              	.LBB6:
+  12:rtti.cpp      **** private:
+ 241              		.loc 1 12 0
+ 242 0004 E8000000 		call	_ZN9onefield5C2Ev
+ 242      00
+ 243              	.LVL27:
+ 244 0009 48C70300 		movq	$_ZTV18onefield5_subclass+16, (%rbx)
+ 244      000000
+ 245              	.LBE6:
+ 246 0010 5B       		popq	%rbx
+ 247              		.cfi_def_cfa_offset 8
+ 248              	.LVL28:
+ 249 0011 C3       		ret
+ 250              		.cfi_endproc
+ 251              	.LFE1299:
+ 253              		.weak	_ZN18onefield5_subclassC1Ev
+ 254              		.set	_ZN18onefield5_subclassC1Ev,_ZN18onefield5_subclassC2Ev
+ 255              		.section	.rodata.str1.1,"aMS",@progbits,1
+ 256              	.LC0:
+ 257 0000 52545449 		.string	"RTTI: "
+ 257      3A2000
+ 258              		.text
+ 259              		.globl	_Z4rttiiPPKc
+ 261              	_Z4rttiiPPKc:
+ 262              	.LFB1294:
+  31:rtti.cpp      ****   onefield5 *ofp = new onefield5_subclass;
+ 263              		.loc 1 31 0
+ 264              		.cfi_startproc
+GAS LISTING /tmp/ccLxVpJT.s 			page 10
+
+
+ 265              		.cfi_personality 0x3,__gxx_personality_v0
+ 266              		.cfi_lsda 0x3,.LLSDA1294
+ 267              	.LVL29:
+ 268 00d1 53       		pushq	%rbx
+ 269              		.cfi_def_cfa_offset 16
+ 270              		.cfi_offset 3, -16
+ 271 00d2 4883EC10 		subq	$16, %rsp
+ 272              		.cfi_def_cfa_offset 32
+ 273              	.LBB7:
+  32:rtti.cpp      **** 
+ 274              		.loc 1 32 0
+ 275 00d6 BF100000 		movl	$16, %edi
+ 275      00
+ 276              	.LVL30:
+ 277              	.LEHB0:
+ 278 00db E8000000 		call	_Znwm
+ 278      00
+ 279              	.LVL31:
+ 280 00e0 4889C7   		movq	%rax, %rdi
+ 281 00e3 E8000000 		call	_ZN18onefield5_subclassC1Ev
+ 281      00
+ 282              	.LVL32:
+  35:rtti.cpp      ****   std::cout << "RTTI: " << unmangle(info.name()) << std::endl;
+ 283              		.loc 1 35 0
+ 284 00e8 BF000000 		movl	$_ZTIP9onefield5, %edi
+ 284      00
+ 285 00ed E8000000 		call	_ZNKSt9type_info4nameEv
+ 285      00
+ 286              	.LVL33:
+ 287 00f2 4889C3   		movq	%rax, %rbx
+ 288 00f5 BE000000 		movl	$.LC0, %esi
+ 288      00
+ 289 00fa BF000000 		movl	$_ZSt4cout, %edi
+ 289      00
+ 290 00ff E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 290      00
+ 291              	.LVL34:
+ 292 0104 4889DE   		movq	%rbx, %rsi
+ 293 0107 4889C7   		movq	%rax, %rdi
+ 294 010a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 294      00
+ 295              	.LVL35:
+ 296 010f BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 296      00
+ 297 0114 4889C7   		movq	%rax, %rdi
+ 298 0117 E8000000 		call	_ZNSolsEPFRSoS_E
+ 298      00
+ 299              	.LVL36:
+  36:rtti.cpp      ****   return 0;
+ 300              		.loc 1 36 0
+ 301 011c BF000000 		movl	$_ZTIP9onefield5, %edi
+ 301      00
+ 302 0121 E8000000 		call	_ZNKSt9type_info4nameEv
+ 302      00
+ 303              	.LVL37:
+ 304 0126 4889C6   		movq	%rax, %rsi
+ 305 0129 4889E7   		movq	%rsp, %rdi
+GAS LISTING /tmp/ccLxVpJT.s 			page 11
+
+
+ 306 012c E8000000 		call	_Z8unmanglePKc
+ 306      00
+ 307              	.LEHE0:
+ 308              	.LVL38:
+ 309 0131 BE000000 		movl	$.LC0, %esi
+ 309      00
+ 310 0136 BF000000 		movl	$_ZSt4cout, %edi
+ 310      00
+ 311              	.LEHB1:
+ 312 013b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 312      00
+ 313              	.LVL39:
+ 314 0140 4889E6   		movq	%rsp, %rsi
+ 315 0143 4889C7   		movq	%rax, %rdi
+ 316 0146 E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+ 316      00
+ 317              	.LVL40:
+  36:rtti.cpp      ****   return 0;
+ 318              		.loc 1 36 0 is_stmt 0 discriminator 1
+ 319 014b BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 319      00
+ 320 0150 4889C7   		movq	%rax, %rdi
+ 321 0153 E8000000 		call	_ZNSolsEPFRSoS_E
+ 321      00
+ 322              	.LEHE1:
+ 323              	.LVL41:
+ 324 0158 EB13     		jmp	.L24
+ 325              	.L22:
+ 326 015a 4889C3   		movq	%rax, %rbx
+  36:rtti.cpp      ****   return 0;
+ 327              		.loc 1 36 0
+ 328 015d 4889E7   		movq	%rsp, %rdi
+ 329 0160 E8000000 		call	_ZNSsD1Ev
+ 329      00
+ 330              	.LVL42:
+ 331 0165 4889DF   		movq	%rbx, %rdi
+ 332              	.LEHB2:
+ 333 0168 E8000000 		call	_Unwind_Resume
+ 333      00
+ 334              	.LEHE2:
+ 335              	.LVL43:
+ 336              	.L24:
+  36:rtti.cpp      ****   return 0;
+ 337              		.loc 1 36 0 discriminator 1
+ 338 016d 4889E7   		movq	%rsp, %rdi
+ 339 0170 E8000000 		call	_ZNSsD1Ev
+ 339      00
+ 340              	.LVL44:
+ 341              	.LBE7:
+  38:rtti.cpp      **** 
+ 342              		.loc 1 38 0 is_stmt 1 discriminator 1
+ 343 0175 B8000000 		movl	$0, %eax
+ 343      00
+ 344 017a 4883C410 		addq	$16, %rsp
+ 345              		.cfi_def_cfa_offset 16
+ 346 017e 5B       		popq	%rbx
+ 347              		.cfi_def_cfa_offset 8
+GAS LISTING /tmp/ccLxVpJT.s 			page 12
+
+
+ 348 017f C3       		ret
+ 349              		.cfi_endproc
+ 350              	.LFE1294:
+ 351              		.globl	__gxx_personality_v0
+ 352              		.section	.gcc_except_table,"a",@progbits
+ 353              	.LLSDA1294:
+ 354 0000 FF       		.byte	0xff
+ 355 0001 FF       		.byte	0xff
+ 356 0002 01       		.byte	0x1
+ 357 0003 0E       		.uleb128 .LLSDACSE1294-.LLSDACSB1294
+ 358              	.LLSDACSB1294:
+ 359 0004 0A       		.uleb128 .LEHB0-.LFB1294
+ 360 0005 56       		.uleb128 .LEHE0-.LEHB0
+ 361 0006 00       		.uleb128 0
+ 362 0007 00       		.uleb128 0
+ 363 0008 6A       		.uleb128 .LEHB1-.LFB1294
+ 364 0009 1D       		.uleb128 .LEHE1-.LEHB1
+ 365 000a 8901     		.uleb128 .L22-.LFB1294
+ 366 000c 00       		.uleb128 0
+ 367 000d 9701     		.uleb128 .LEHB2-.LFB1294
+ 368 000f 05       		.uleb128 .LEHE2-.LEHB2
+ 369 0010 00       		.uleb128 0
+ 370 0011 00       		.uleb128 0
+ 371              	.LLSDACSE1294:
+ 372              		.text
+ 375              	_GLOBAL__sub_I__Z8unmanglePKc:
+ 376              	.LFB1461:
+ 377              		.loc 1 51 0
+ 378              		.cfi_startproc
+ 379 0180 4883EC08 		subq	$8, %rsp
+ 380              		.cfi_def_cfa_offset 16
+ 381              		.loc 1 51 0
+ 382 0184 BEFFFF00 		movl	$65535, %esi
+ 382      00
+ 383 0189 BF010000 		movl	$1, %edi
+ 383      00
+ 384 018e E887FEFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 384      FF
+ 385              	.LVL45:
+ 386 0193 4883C408 		addq	$8, %rsp
+ 387              		.cfi_def_cfa_offset 8
+ 388 0197 C3       		ret
+ 389              		.cfi_endproc
+ 390              	.LFE1461:
+ 392              		.section	.init_array,"aw"
+ 393              		.align 8
+ 394 0000 00000000 		.quad	_GLOBAL__sub_I__Z8unmanglePKc
+ 394      00000000 
+ 395              		.weak	_ZTS9onefield5
+ 396              		.section	.rodata._ZTS9onefield5,"aG",@progbits,_ZTS9onefield5,comdat
+ 399              	_ZTS9onefield5:
+ 400 0000 396F6E65 		.string	"9onefield5"
+ 400      6669656C 
+ 400      643500
+ 401              		.weak	_ZTI9onefield5
+ 402              		.section	.rodata._ZTI9onefield5,"aG",@progbits,_ZTI9onefield5,comdat
+ 403              		.align 16
+GAS LISTING /tmp/ccLxVpJT.s 			page 13
+
+
+ 406              	_ZTI9onefield5:
+ 407 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 407      00000000 
+ 408 0008 00000000 		.quad	_ZTS9onefield5
+ 408      00000000 
+ 409              		.weak	_ZTS18onefield5_subclass
+ 410              		.section	.rodata._ZTS18onefield5_subclass,"aG",@progbits,_ZTS18onefield5_subclass,comdat
+ 411              		.align 16
+ 414              	_ZTS18onefield5_subclass:
+ 415 0000 31386F6E 		.string	"18onefield5_subclass"
+ 415      65666965 
+ 415      6C64355F 
+ 415      73756263 
+ 415      6C617373 
+ 416              		.weak	_ZTI18onefield5_subclass
+ 417              		.section	.rodata._ZTI18onefield5_subclass,"aG",@progbits,_ZTI18onefield5_subclass,comdat
+ 418              		.align 16
+ 421              	_ZTI18onefield5_subclass:
+ 422 0000 00000000 		.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
+ 422      00000000 
+ 423 0008 00000000 		.quad	_ZTS18onefield5_subclass
+ 423      00000000 
+ 424 0010 00000000 		.quad	_ZTI9onefield5
+ 424      00000000 
+ 425              		.weak	_ZTIP9onefield5
+ 426              		.section	.rodata._ZTIP9onefield5,"aG",@progbits,_ZTIP9onefield5,comdat
+ 427              		.align 32
+ 430              	_ZTIP9onefield5:
+ 431 0000 00000000 		.quad	_ZTVN10__cxxabiv119__pointer_type_infoE+16
+ 431      00000000 
+ 432 0008 00000000 		.quad	_ZTSP9onefield5
+ 432      00000000 
+ 433 0010 00000000 		.long	0
+ 434 0014 00000000 		.zero	4
+ 435 0018 00000000 		.quad	_ZTI9onefield5
+ 435      00000000 
+ 436              		.weak	_ZTSP9onefield5
+ 437              		.section	.rodata._ZTSP9onefield5,"aG",@progbits,_ZTSP9onefield5,comdat
+ 440              	_ZTSP9onefield5:
+ 441 0000 50396F6E 		.string	"P9onefield5"
+ 441      65666965 
+ 441      6C643500 
+ 442              		.weak	_ZTV9onefield5
+ 443              		.section	.rodata._ZTV9onefield5,"aG",@progbits,_ZTV9onefield5,comdat
+ 444              		.align 32
+ 447              	_ZTV9onefield5:
+ 448 0000 00000000 		.quad	0
+ 448      00000000 
+ 449 0008 00000000 		.quad	_ZTI9onefield5
+ 449      00000000 
+ 450 0010 00000000 		.quad	_ZN9onefield58setFieldEi
+ 450      00000000 
+ 451 0018 00000000 		.quad	_ZNK9onefield58getFieldEv
+ 451      00000000 
+ 452              		.weak	_ZTV18onefield5_subclass
+ 453              		.section	.rodata._ZTV18onefield5_subclass,"aG",@progbits,_ZTV18onefield5_subclass,comdat
+ 454              		.align 32
+GAS LISTING /tmp/ccLxVpJT.s 			page 14
+
+
+ 457              	_ZTV18onefield5_subclass:
+ 458 0000 00000000 		.quad	0
+ 458      00000000 
+ 459 0008 00000000 		.quad	_ZTI18onefield5_subclass
+ 459      00000000 
+ 460 0010 00000000 		.quad	_ZN18onefield5_subclass8setFieldEi
+ 460      00000000 
+ 461 0018 00000000 		.quad	_ZNK9onefield58getFieldEv
+ 461      00000000 
+ 462              		.local	_ZStL8__ioinit
+ 463              		.comm	_ZStL8__ioinit,1,1
+ 464              		.text
+ 465              	.Letext0:
+ 466              		.file 4 "/usr/include/libio.h"
+ 467              		.file 5 "/usr/include/stdio.h"
+ 468              		.file 6 "<built-in>"
+ 469              		.file 7 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 470              		.file 8 "/usr/include/wchar.h"
+ 471              		.file 9 "/usr/include/c++/4.8/cwchar"
+ 472              		.file 10 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 473              		.file 11 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 474              		.file 12 "/usr/include/c++/4.8/bits/char_traits.h"
+ 475              		.file 13 "/usr/include/c++/4.8/cstdint"
+ 476              		.file 14 "/usr/include/c++/4.8/clocale"
+ 477              		.file 15 "/usr/include/c++/4.8/bits/allocator.h"
+ 478              		.file 16 "/usr/include/c++/4.8/cstdlib"
+ 479              		.file 17 "/usr/include/c++/4.8/cstdio"
+ 480              		.file 18 "/usr/include/c++/4.8/bits/basic_string.h"
+ 481              		.file 19 "/usr/include/c++/4.8/bits/basic_string.tcc"
+ 482              		.file 20 "/usr/include/c++/4.8/initializer_list"
+ 483              		.file 21 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 484              		.file 22 "/usr/include/c++/4.8/bits/ios_base.h"
+ 485              		.file 23 "/usr/include/c++/4.8/cwctype"
+ 486              		.file 24 "/usr/include/c++/4.8/ostream"
+ 487              		.file 25 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 488              		.file 26 "/usr/include/c++/4.8/iosfwd"
+ 489              		.file 27 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 490              		.file 28 "/usr/include/time.h"
+ 491              		.file 29 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 492              		.file 30 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 493              		.file 31 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 494              		.file 32 "/usr/include/c++/4.8/debug/debug.h"
+ 495              		.file 33 "/usr/include/stdint.h"
+ 496              		.file 34 "/usr/include/locale.h"
+ 497              		.file 35 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 498              		.file 36 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 499              		.file 37 "/usr/include/stdlib.h"
+ 500              		.file 38 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 501              		.file 39 "/usr/include/_G_config.h"
+ 502              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 503              		.file 41 "/usr/include/wctype.h"
+ 504              		.file 42 "/usr/include/c++/4.8/cxxabi.h"
+ 505              		.file 43 "/usr/include/c++/4.8/new"
+ 506              		.file 44 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccLxVpJT.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 rtti.cpp
+     /tmp/ccLxVpJT.s:7      .text:0000000000000000 _ZN9onefield58setFieldEi
+     /tmp/ccLxVpJT.s:22     .text:0000000000000004 _ZNK9onefield58getFieldEv
+     /tmp/ccLxVpJT.s:37     .text:0000000000000008 _ZN18onefield5_subclass8setFieldEi
+     /tmp/ccLxVpJT.s:67     .text:000000000000001a _Z41__static_initialization_and_destruction_0ii
+                             .bss:0000000000000000 _ZStL8__ioinit
+     /tmp/ccLxVpJT.s:103    .text._ZNKSt9type_info4nameEv:0000000000000000 _ZNKSt9type_info4nameEv
+     /tmp/ccLxVpJT.s:122    .text:000000000000004e _Z8unmanglePKc
+     /tmp/ccLxVpJT.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C2Ev
+     /tmp/ccLxVpJT.s:447    .rodata._ZTV9onefield5:0000000000000000 _ZTV9onefield5
+     /tmp/ccLxVpJT.s:212    .text._ZN9onefield5C2Ev:0000000000000000 _ZN9onefield5C1Ev
+     /tmp/ccLxVpJT.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC2Ev
+     /tmp/ccLxVpJT.s:457    .rodata._ZTV18onefield5_subclass:0000000000000000 _ZTV18onefield5_subclass
+     /tmp/ccLxVpJT.s:231    .text._ZN18onefield5_subclassC2Ev:0000000000000000 _ZN18onefield5_subclassC1Ev
+     /tmp/ccLxVpJT.s:261    .text:00000000000000d1 _Z4rttiiPPKc
+     /tmp/ccLxVpJT.s:430    .rodata._ZTIP9onefield5:0000000000000000 _ZTIP9onefield5
+     /tmp/ccLxVpJT.s:375    .text:0000000000000180 _GLOBAL__sub_I__Z8unmanglePKc
+     /tmp/ccLxVpJT.s:399    .rodata._ZTS9onefield5:0000000000000000 _ZTS9onefield5
+     /tmp/ccLxVpJT.s:406    .rodata._ZTI9onefield5:0000000000000000 _ZTI9onefield5
+     /tmp/ccLxVpJT.s:414    .rodata._ZTS18onefield5_subclass:0000000000000000 _ZTS18onefield5_subclass
+     /tmp/ccLxVpJT.s:421    .rodata._ZTI18onefield5_subclass:0000000000000000 _ZTI18onefield5_subclass
+     /tmp/ccLxVpJT.s:440    .rodata._ZTSP9onefield5:0000000000000000 _ZTSP9onefield5
+                           .group:0000000000000000 _ZN9onefield5C5Ev
+                           .group:0000000000000000 _ZN18onefield5_subclassC5Ev
+
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+__cxa_demangle
+_ZNSsC1EPKcRKSaIcE
+free
+_ZNSsC1EOSs
+_ZNSsD1Ev
+__gxx_personality_v0
+_Znwm
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E
+_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+_Unwind_Resume
+_ZTVN10__cxxabiv117__class_type_infoE
+_ZTVN10__cxxabiv120__si_class_type_infoE
+_ZTVN10__cxxabiv119__pointer_type_infoE

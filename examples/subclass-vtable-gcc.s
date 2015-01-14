@@ -4,29 +4,29 @@
 	.globl	_ZN10onefieldSV8setFieldEi
 	.type	_ZN10onefieldSV8setFieldEi, @function
 _ZN10onefieldSV8setFieldEi:
-.LFB7:
+.LFB11:
 	.cfi_startproc
 	movl	%esi, 8(%rdi)
 	ret
 	.cfi_endproc
-.LFE7:
+.LFE11:
 	.size	_ZN10onefieldSV8setFieldEi, .-_ZN10onefieldSV8setFieldEi
 	.align 2
 	.globl	_ZNK10onefieldSV8getFieldEv
 	.type	_ZNK10onefieldSV8getFieldEv, @function
 _ZNK10onefieldSV8getFieldEv:
-.LFB8:
+.LFB12:
 	.cfi_startproc
 	movl	8(%rdi), %eax
 	ret
 	.cfi_endproc
-.LFE8:
+.LFE12:
 	.size	_ZNK10onefieldSV8getFieldEv, .-_ZNK10onefieldSV8getFieldEv
 	.align 2
 	.globl	_ZN19onefieldSV_subclass8setFieldEi
 	.type	_ZN19onefieldSV_subclass8setFieldEi, @function
 _ZN19onefieldSV_subclass8setFieldEi:
-.LFB9:
+.LFB13:
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -44,19 +44,30 @@ _ZN19onefieldSV_subclass8setFieldEi:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE9:
+.LFE13:
 	.size	_ZN19onefieldSV_subclass8setFieldEi, .-_ZN19onefieldSV_subclass8setFieldEi
+	.globl	_Z15setFieldToValue10onefieldSV
+	.type	_Z15setFieldToValue10onefieldSV, @function
+_Z15setFieldToValue10onefieldSV:
+.LFB0:
+	.cfi_startproc
+	movl	$33, %esi
+	call	_ZN10onefieldSV8setFieldEi
+	rep ret
+	.cfi_endproc
+.LFE0:
+	.size	_Z15setFieldToValue10onefieldSV, .-_Z15setFieldToValue10onefieldSV
 	.section	.text._ZN10onefieldSVC2Ev,"axG",@progbits,_ZN10onefieldSVC5Ev,comdat
 	.align 2
 	.weak	_ZN10onefieldSVC2Ev
 	.type	_ZN10onefieldSVC2Ev, @function
 _ZN10onefieldSVC2Ev:
-.LFB2:
+.LFB3:
 	.cfi_startproc
 	movq	$_ZTV10onefieldSV+16, (%rdi)
 	ret
 	.cfi_endproc
-.LFE2:
+.LFE3:
 	.size	_ZN10onefieldSVC2Ev, .-_ZN10onefieldSVC2Ev
 	.weak	_ZN10onefieldSVC1Ev
 	.set	_ZN10onefieldSVC1Ev,_ZN10onefieldSVC2Ev
@@ -65,7 +76,7 @@ _ZN10onefieldSVC2Ev:
 	.weak	_ZN19onefieldSV_subclassC2Ev
 	.type	_ZN19onefieldSV_subclassC2Ev, @function
 _ZN19onefieldSV_subclassC2Ev:
-.LFB5:
+.LFB6:
 	.cfi_startproc
 	pushq	%rbx
 	.cfi_def_cfa_offset 16
@@ -77,15 +88,31 @@ _ZN19onefieldSV_subclassC2Ev:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE5:
+.LFE6:
 	.size	_ZN19onefieldSV_subclassC2Ev, .-_ZN19onefieldSV_subclassC2Ev
 	.weak	_ZN19onefieldSV_subclassC1Ev
 	.set	_ZN19onefieldSV_subclassC1Ev,_ZN19onefieldSV_subclassC2Ev
+	.section	.text._ZN10onefieldSVC2ERKS_,"axG",@progbits,_ZN10onefieldSVC5ERKS_,comdat
+	.align 2
+	.weak	_ZN10onefieldSVC2ERKS_
+	.type	_ZN10onefieldSVC2ERKS_, @function
+_ZN10onefieldSVC2ERKS_:
+.LFB9:
+	.cfi_startproc
+	movq	$_ZTV10onefieldSV+16, (%rdi)
+	movl	8(%rsi), %eax
+	movl	%eax, 8(%rdi)
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	_ZN10onefieldSVC2ERKS_, .-_ZN10onefieldSVC2ERKS_
+	.weak	_ZN10onefieldSVC1ERKS_
+	.set	_ZN10onefieldSVC1ERKS_,_ZN10onefieldSVC2ERKS_
 	.text
 	.globl	_Z14subclassVtableiPPKc
 	.type	_Z14subclassVtableiPPKc, @function
 _Z14subclassVtableiPPKc:
-.LFB0:
+.LFB1:
 	.cfi_startproc
 	pushq	%rbp
 	.cfi_def_cfa_offset 16
@@ -93,8 +120,8 @@ _Z14subclassVtableiPPKc:
 	pushq	%rbx
 	.cfi_def_cfa_offset 24
 	.cfi_offset 3, -24
-	subq	$40, %rsp
-	.cfi_def_cfa_offset 64
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 80
 	movq	%rsp, %rdi
 	call	_ZN10onefieldSVC1Ev
 	leaq	16(%rsp), %rdi
@@ -105,6 +132,11 @@ _Z14subclassVtableiPPKc:
 	movl	$17, %esi
 	leaq	16(%rsp), %rdi
 	call	_ZN19onefieldSV_subclass8setFieldEi
+	leaq	16(%rsp), %rsi
+	leaq	32(%rsp), %rdi
+	call	_ZN10onefieldSVC1ERKS_
+	leaq	32(%rsp), %rdi
+	call	_Z15setFieldToValue10onefieldSV
 	movl	$16, %edi
 	call	_Znwm
 	movq	%rax, %rbx
@@ -123,7 +155,7 @@ _Z14subclassVtableiPPKc:
 	movq	%rsp, %rdi
 	call	_ZNK10onefieldSV8getFieldEv
 	addl	%ebp, %eax
-	addq	$40, %rsp
+	addq	$56, %rsp
 	.cfi_def_cfa_offset 24
 	popq	%rbx
 	.cfi_def_cfa_offset 16
@@ -131,7 +163,7 @@ _Z14subclassVtableiPPKc:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE0:
+.LFE1:
 	.size	_Z14subclassVtableiPPKc, .-_Z14subclassVtableiPPKc
 	.weak	_ZTS10onefieldSV
 	.section	.rodata._ZTS10onefieldSV,"aG",@progbits,_ZTS10onefieldSV,comdat

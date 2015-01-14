@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccpD0HUT.s 			page 1
+GAS LISTING /tmp/ccCYL4ma.s 			page 1
 
 
    1              		.file	"object-ret.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
   28 0004 8B07     		movl	(%rdi), %eax
   31:object-ret.cpp **** }
   29              		.loc 1 31 0
-GAS LISTING /tmp/ccpD0HUT.s 			page 2
+GAS LISTING /tmp/ccCYL4ma.s 			page 2
 
 
   30 0006 C3       		ret
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
   23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
   24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
   25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
-GAS LISTING /tmp/ccpD0HUT.s 			page 3
+GAS LISTING /tmp/ccCYL4ma.s 			page 3
 
 
   26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
   80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
   81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
   82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-GAS LISTING /tmp/ccpD0HUT.s 			page 4
+GAS LISTING /tmp/ccCYL4ma.s 			page 4
 
 
   83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
   84 0029 53       		pushq	%rbx
   85              		.cfi_def_cfa_offset 16
   86              		.cfi_offset 3, -16
-GAS LISTING /tmp/ccpD0HUT.s 			page 5
+GAS LISTING /tmp/ccCYL4ma.s 			page 5
 
 
   87 002a 4889FB   		movq	%rdi, %rbx
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
  132              		.cfi_personality 0x3,__gxx_personality_v0
  133              		.cfi_lsda 0x3,.LLSDA30
  134              	.LVL11:
-GAS LISTING /tmp/ccpD0HUT.s 			page 6
+GAS LISTING /tmp/ccCYL4ma.s 			page 6
 
 
  135 003e 4883EC08 		subq	$8, %rsp
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
   22:object-ret.cpp ****     return i;
  184              		.loc 1 22 0
  185 0062 BE0D0000 		movl	$13, %esi
-GAS LISTING /tmp/ccpD0HUT.s 			page 7
+GAS LISTING /tmp/ccCYL4ma.s 			page 7
 
 
  185      00
@@ -391,21 +391,21 @@ GAS LISTING /tmp/ccpD0HUT.s 			page 1
  208              		.cfi_endproc
  209              	.LFE20:
  211              	.Letext0:
-GAS LISTING /tmp/ccpD0HUT.s 			page 8
+GAS LISTING /tmp/ccCYL4ma.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 object-ret.cpp
-     /tmp/ccpD0HUT.s:7      .text:0000000000000000 _ZN8twofield8setFieldEi
-     /tmp/ccpD0HUT.s:22     .text:0000000000000004 _ZNK8twofield8getFieldEv
-     /tmp/ccpD0HUT.s:42     .text:0000000000000008 _ZN8twofieldC2Ei
-     /tmp/ccpD0HUT.s:42     .text:0000000000000008 _ZN8twofieldC1Ei
-     /tmp/ccpD0HUT.s:79     .text:0000000000000029 _Z7frominti
-     /tmp/ccpD0HUT.s:105    .text:0000000000000038 _ZN8twofieldC2ERKS_
-     /tmp/ccpD0HUT.s:105    .text:0000000000000038 _ZN8twofieldC1ERKS_
-     /tmp/ccpD0HUT.s:128    .text:000000000000003e _ZN8twofieldD2Ev
-     /tmp/ccpD0HUT.s:128    .text:000000000000003e _ZN8twofieldD1Ev
-     /tmp/ccpD0HUT.s:173    .text:000000000000005d _Z9objectRetiPPKc
+     /tmp/ccCYL4ma.s:7      .text:0000000000000000 _ZN8twofield8setFieldEi
+     /tmp/ccCYL4ma.s:22     .text:0000000000000004 _ZNK8twofield8getFieldEv
+     /tmp/ccCYL4ma.s:42     .text:0000000000000008 _ZN8twofieldC2Ei
+     /tmp/ccCYL4ma.s:42     .text:0000000000000008 _ZN8twofieldC1Ei
+     /tmp/ccCYL4ma.s:79     .text:0000000000000029 _Z7frominti
+     /tmp/ccCYL4ma.s:105    .text:0000000000000038 _ZN8twofieldC2ERKS_
+     /tmp/ccCYL4ma.s:105    .text:0000000000000038 _ZN8twofieldC1ERKS_
+     /tmp/ccCYL4ma.s:128    .text:000000000000003e _ZN8twofieldD2Ev
+     /tmp/ccCYL4ma.s:128    .text:000000000000003e _ZN8twofieldD1Ev
+     /tmp/ccCYL4ma.s:173    .text:000000000000005d _Z9objectRetiPPKc
 
 UNDEFINED SYMBOLS
 __printf_chk

@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccDB5ihs.s 			page 1
+GAS LISTING /tmp/ccXRx6FS.s 			page 1
 
 
    1              		.file	"mangling.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   49:mangling.cpp  ****   Something::Inside::Deeper d;
   50:mangling.cpp  ****   d.deepMethod(23);
   51:mangling.cpp  ****   d.deepMethod("foo");
-GAS LISTING /tmp/ccDB5ihs.s 			page 2
+GAS LISTING /tmp/ccXRx6FS.s 			page 2
 
 
   52:mangling.cpp  ****   std::vector<std::string> vs = {"x", "y", "z"};
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
   34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
   35:/usr/include/c++/4.8/iostream **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 3
+GAS LISTING /tmp/ccXRx6FS.s 			page 3
 
 
   36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   29              	.LVL3:
   30              		.loc 1 60 0
   31 002f 4883C408 		addq	$8, %rsp
-GAS LISTING /tmp/ccDB5ihs.s 			page 4
+GAS LISTING /tmp/ccXRx6FS.s 			page 4
 
 
   32              		.cfi_def_cfa_offset 8
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   45:/usr/include/c++/4.8/new **** 
   46:/usr/include/c++/4.8/new **** namespace std 
   47:/usr/include/c++/4.8/new **** {
-GAS LISTING /tmp/ccDB5ihs.s 			page 5
+GAS LISTING /tmp/ccXRx6FS.s 			page 5
 
 
   48:/usr/include/c++/4.8/new ****   /**
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  102:/usr/include/c++/4.8/new ****   __attribute__((__externally_visible__));
  103:/usr/include/c++/4.8/new **** void operator delete(void*, const std::nothrow_t&) _GLIBCXX_USE_NOEXCEPT
  104:/usr/include/c++/4.8/new ****   __attribute__((__externally_visible__));
-GAS LISTING /tmp/ccDB5ihs.s 			page 6
+GAS LISTING /tmp/ccXRx6FS.s 			page 6
 
 
  105:/usr/include/c++/4.8/new **** void operator delete[](void*, const std::nothrow_t&) _GLIBCXX_USE_NOEXCEPT
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   39:mangling.cpp  ****     member = arg;
   92              		.loc 1 39 0
   93              		.cfi_startproc
-GAS LISTING /tmp/ccDB5ihs.s 			page 7
+GAS LISTING /tmp/ccXRx6FS.s 			page 7
 
 
   94              	.LVL7:
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   38:/usr/include/c++/4.8/initializer_list **** 
   39:/usr/include/c++/4.8/initializer_list **** #pragma GCC visibility push(default)
   40:/usr/include/c++/4.8/initializer_list **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 8
+GAS LISTING /tmp/ccXRx6FS.s 			page 8
 
 
   41:/usr/include/c++/4.8/initializer_list **** #include <bits/c++config.h>
@@ -478,7 +478,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  131 0000 488B4708 		movq	8(%rdi), %rax
  132 0004 C3       		ret
  133              		.cfi_endproc
-GAS LISTING /tmp/ccDB5ihs.s 			page 9
+GAS LISTING /tmp/ccXRx6FS.s 			page 9
 
 
  134              	.LFE1680:
@@ -538,7 +538,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
    6:/usr/include/c++/4.8/bits/stl_vector.h **** // software; you can redistribute it and/or modify it under the
    7:/usr/include/c++/4.8/bits/stl_vector.h **** // terms of the GNU General Public License as published by the
    8:/usr/include/c++/4.8/bits/stl_vector.h **** // Free Software Foundation; either version 3, or (at your option)
-GAS LISTING /tmp/ccDB5ihs.s 			page 10
+GAS LISTING /tmp/ccXRx6FS.s 			page 10
 
 
    9:/usr/include/c++/4.8/bits/stl_vector.h **** // any later version.
@@ -598,7 +598,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   63:/usr/include/c++/4.8/bits/stl_vector.h **** #include <initializer_list>
   64:/usr/include/c++/4.8/bits/stl_vector.h **** #endif
   65:/usr/include/c++/4.8/bits/stl_vector.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 11
+GAS LISTING /tmp/ccXRx6FS.s 			page 11
 
 
   66:/usr/include/c++/4.8/bits/stl_vector.h **** namespace std _GLIBCXX_VISIBILITY(default)
@@ -658,7 +658,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  185 0003 C3       		ret
  186              		.cfi_endproc
  187              	.LFE1750:
-GAS LISTING /tmp/ccDB5ihs.s 			page 12
+GAS LISTING /tmp/ccXRx6FS.s 			page 12
 
 
  189              		.section	.text._ZNKSt6vectorISsSaISsEE4sizeEv,"axG",@progbits,_ZNKSt6vectorISsSaISsEE4sizeEv,comda
@@ -718,7 +718,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  164:/usr/include/c++/4.8/bits/stl_vector.h ****       _Vector_impl _M_impl;
  165:/usr/include/c++/4.8/bits/stl_vector.h **** 
  166:/usr/include/c++/4.8/bits/stl_vector.h ****       pointer
-GAS LISTING /tmp/ccDB5ihs.s 			page 13
+GAS LISTING /tmp/ccXRx6FS.s 			page 13
 
 
  167:/usr/include/c++/4.8/bits/stl_vector.h ****       _M_allocate(size_t __n)
@@ -778,7 +778,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  221:/usr/include/c++/4.8/bits/stl_vector.h ****     public:
  222:/usr/include/c++/4.8/bits/stl_vector.h ****       typedef _Tp					 value_type;
  223:/usr/include/c++/4.8/bits/stl_vector.h ****       typedef typename _Base::pointer                    pointer;
-GAS LISTING /tmp/ccDB5ihs.s 			page 14
+GAS LISTING /tmp/ccXRx6FS.s 			page 14
 
 
  224:/usr/include/c++/4.8/bits/stl_vector.h ****       typedef typename _Alloc_traits::const_pointer      const_pointer;
@@ -838,7 +838,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  278:/usr/include/c++/4.8/bits/stl_vector.h ****        *
  279:/usr/include/c++/4.8/bits/stl_vector.h ****        *  This constructor fills the %vector with @a __n copies of @a __value.
  280:/usr/include/c++/4.8/bits/stl_vector.h ****        */
-GAS LISTING /tmp/ccDB5ihs.s 			page 15
+GAS LISTING /tmp/ccXRx6FS.s 			page 15
 
 
  281:/usr/include/c++/4.8/bits/stl_vector.h ****       vector(size_type __n, const value_type& __value,
@@ -898,7 +898,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  335:/usr/include/c++/4.8/bits/stl_vector.h **** 				      this->_M_impl._M_start,
  336:/usr/include/c++/4.8/bits/stl_vector.h **** 				      _M_get_Tp_allocator());
  337:/usr/include/c++/4.8/bits/stl_vector.h ****       }
-GAS LISTING /tmp/ccDB5ihs.s 			page 16
+GAS LISTING /tmp/ccXRx6FS.s 			page 16
 
 
  338:/usr/include/c++/4.8/bits/stl_vector.h **** 
@@ -958,7 +958,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  392:/usr/include/c++/4.8/bits/stl_vector.h ****         vector(_InputIterator __first, _InputIterator __last,
  393:/usr/include/c++/4.8/bits/stl_vector.h **** 	       const allocator_type& __a = allocator_type())
  394:/usr/include/c++/4.8/bits/stl_vector.h **** 	: _Base(__a)
-GAS LISTING /tmp/ccDB5ihs.s 			page 17
+GAS LISTING /tmp/ccXRx6FS.s 			page 17
 
 
  395:/usr/include/c++/4.8/bits/stl_vector.h ****         { _M_initialize_dispatch(__first, __last, __false_type()); }
@@ -1018,7 +1018,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  449:/usr/include/c++/4.8/bits/stl_vector.h ****       /**
  450:/usr/include/c++/4.8/bits/stl_vector.h ****        *  @brief  %Vector list assignment operator.
  451:/usr/include/c++/4.8/bits/stl_vector.h ****        *  @param  __l  An initializer_list.
-GAS LISTING /tmp/ccDB5ihs.s 			page 18
+GAS LISTING /tmp/ccXRx6FS.s 			page 18
 
 
  452:/usr/include/c++/4.8/bits/stl_vector.h ****        *
@@ -1078,7 +1078,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  506:/usr/include/c++/4.8/bits/stl_vector.h **** 	  typedef typename std::__is_integer<_InputIterator>::__type _Integral;
  507:/usr/include/c++/4.8/bits/stl_vector.h **** 	  _M_assign_dispatch(__first, __last, _Integral());
  508:/usr/include/c++/4.8/bits/stl_vector.h **** 	}
-GAS LISTING /tmp/ccDB5ihs.s 			page 19
+GAS LISTING /tmp/ccXRx6FS.s 			page 19
 
 
  509:/usr/include/c++/4.8/bits/stl_vector.h **** #endif
@@ -1138,7 +1138,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  563:/usr/include/c++/4.8/bits/stl_vector.h ****        */
  564:/usr/include/c++/4.8/bits/stl_vector.h ****       const_iterator
  565:/usr/include/c++/4.8/bits/stl_vector.h ****       end() const _GLIBCXX_NOEXCEPT
-GAS LISTING /tmp/ccDB5ihs.s 			page 20
+GAS LISTING /tmp/ccXRx6FS.s 			page 20
 
 
  566:/usr/include/c++/4.8/bits/stl_vector.h ****       { return const_iterator(this->_M_impl._M_finish); }
@@ -1198,7 +1198,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  620:/usr/include/c++/4.8/bits/stl_vector.h ****       cend() const noexcept
  621:/usr/include/c++/4.8/bits/stl_vector.h ****       { return const_iterator(this->_M_impl._M_finish); }
  622:/usr/include/c++/4.8/bits/stl_vector.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 21
+GAS LISTING /tmp/ccXRx6FS.s 			page 21
 
 
  623:/usr/include/c++/4.8/bits/stl_vector.h ****       /**
@@ -1258,7 +1258,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   90:/usr/include/c++/4.8/bits/stl_vector.h **** 	: _Tp_alloc_type(__a), _M_start(0), _M_finish(0), _M_end_of_storage(0)
  227              		.loc 5 90 0
  228              		.cfi_startproc
-GAS LISTING /tmp/ccDB5ihs.s 			page 22
+GAS LISTING /tmp/ccXRx6FS.s 			page 22
 
 
  229              	.LVL17:
@@ -1318,7 +1318,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
    8:/usr/include/c++/4.8/bits/stl_iterator.h **** // Free Software Foundation; either version 3, or (at your option)
    9:/usr/include/c++/4.8/bits/stl_iterator.h **** // any later version.
   10:/usr/include/c++/4.8/bits/stl_iterator.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 23
+GAS LISTING /tmp/ccXRx6FS.s 			page 23
 
 
   11:/usr/include/c++/4.8/bits/stl_iterator.h **** // This library is distributed in the hope that it will be useful,
@@ -1378,7 +1378,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   65:/usr/include/c++/4.8/bits/stl_iterator.h **** #include <bits/move.h>
   66:/usr/include/c++/4.8/bits/stl_iterator.h **** 
   67:/usr/include/c++/4.8/bits/stl_iterator.h **** namespace std _GLIBCXX_VISIBILITY(default)
-GAS LISTING /tmp/ccDB5ihs.s 			page 24
+GAS LISTING /tmp/ccXRx6FS.s 			page 24
 
 
   68:/usr/include/c++/4.8/bits/stl_iterator.h **** {
@@ -1438,7 +1438,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  122:/usr/include/c++/4.8/bits/stl_iterator.h ****       /**
  123:/usr/include/c++/4.8/bits/stl_iterator.h ****        *  This %iterator will move in the opposite direction that @p x does.
  124:/usr/include/c++/4.8/bits/stl_iterator.h ****       */
-GAS LISTING /tmp/ccDB5ihs.s 			page 25
+GAS LISTING /tmp/ccXRx6FS.s 			page 25
 
 
  125:/usr/include/c++/4.8/bits/stl_iterator.h ****       explicit
@@ -1498,7 +1498,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  179:/usr/include/c++/4.8/bits/stl_iterator.h ****       */
  180:/usr/include/c++/4.8/bits/stl_iterator.h ****       reverse_iterator&
  181:/usr/include/c++/4.8/bits/stl_iterator.h ****       operator++()
-GAS LISTING /tmp/ccDB5ihs.s 			page 26
+GAS LISTING /tmp/ccXRx6FS.s 			page 26
 
 
  182:/usr/include/c++/4.8/bits/stl_iterator.h ****       {
@@ -1558,7 +1558,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  236:/usr/include/c++/4.8/bits/stl_iterator.h ****        *
  237:/usr/include/c++/4.8/bits/stl_iterator.h ****        *  Moves the underlying iterator backwards @a __n steps.
  238:/usr/include/c++/4.8/bits/stl_iterator.h ****        *  The underlying iterator must be a Random Access Iterator.
-GAS LISTING /tmp/ccDB5ihs.s 			page 27
+GAS LISTING /tmp/ccXRx6FS.s 			page 27
 
 
  239:/usr/include/c++/4.8/bits/stl_iterator.h ****       */
@@ -1618,7 +1618,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  293:/usr/include/c++/4.8/bits/stl_iterator.h ****     { return __x.base() == __y.base(); }
  294:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  295:/usr/include/c++/4.8/bits/stl_iterator.h ****   template<typename _Iterator>
-GAS LISTING /tmp/ccDB5ihs.s 			page 28
+GAS LISTING /tmp/ccXRx6FS.s 			page 28
 
 
  296:/usr/include/c++/4.8/bits/stl_iterator.h ****     inline bool
@@ -1678,7 +1678,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  350:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  351:/usr/include/c++/4.8/bits/stl_iterator.h ****   template<typename _IteratorL, typename _IteratorR>
  352:/usr/include/c++/4.8/bits/stl_iterator.h ****     inline bool
-GAS LISTING /tmp/ccDB5ihs.s 			page 29
+GAS LISTING /tmp/ccXRx6FS.s 			page 29
 
 
  353:/usr/include/c++/4.8/bits/stl_iterator.h ****     operator!=(const reverse_iterator<_IteratorL>& __x,
@@ -1738,7 +1738,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  407:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  408:/usr/include/c++/4.8/bits/stl_iterator.h ****     public:
  409:/usr/include/c++/4.8/bits/stl_iterator.h ****       /// A nested typedef for the type of whatever container you used.
-GAS LISTING /tmp/ccDB5ihs.s 			page 30
+GAS LISTING /tmp/ccXRx6FS.s 			page 30
 
 
  410:/usr/include/c++/4.8/bits/stl_iterator.h ****       typedef _Container          container_type;
@@ -1798,7 +1798,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  464:/usr/include/c++/4.8/bits/stl_iterator.h ****     };
  465:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  466:/usr/include/c++/4.8/bits/stl_iterator.h ****   /**
-GAS LISTING /tmp/ccDB5ihs.s 			page 31
+GAS LISTING /tmp/ccXRx6FS.s 			page 31
 
 
  467:/usr/include/c++/4.8/bits/stl_iterator.h ****    *  @param  __x  A container of arbitrary type.
@@ -1858,7 +1858,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  521:/usr/include/c++/4.8/bits/stl_iterator.h **** 	container->push_front(__value);
  522:/usr/include/c++/4.8/bits/stl_iterator.h **** 	return *this;
  523:/usr/include/c++/4.8/bits/stl_iterator.h ****       }
-GAS LISTING /tmp/ccDB5ihs.s 			page 32
+GAS LISTING /tmp/ccXRx6FS.s 			page 32
 
 
  524:/usr/include/c++/4.8/bits/stl_iterator.h **** #else
@@ -1918,7 +1918,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  578:/usr/include/c++/4.8/bits/stl_iterator.h ****    *  position.
  579:/usr/include/c++/4.8/bits/stl_iterator.h ****    *
  580:/usr/include/c++/4.8/bits/stl_iterator.h ****    *  (Sequences will actually insert a @e copy of the value before the
-GAS LISTING /tmp/ccDB5ihs.s 			page 33
+GAS LISTING /tmp/ccXRx6FS.s 			page 33
 
 
  581:/usr/include/c++/4.8/bits/stl_iterator.h ****    *  %iterator's position.)
@@ -1978,7 +1978,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  635:/usr/include/c++/4.8/bits/stl_iterator.h ****       }
  636:/usr/include/c++/4.8/bits/stl_iterator.h **** #else
  637:/usr/include/c++/4.8/bits/stl_iterator.h ****       insert_iterator&
-GAS LISTING /tmp/ccDB5ihs.s 			page 34
+GAS LISTING /tmp/ccXRx6FS.s 			page 34
 
 
  638:/usr/include/c++/4.8/bits/stl_iterator.h ****       operator=(const typename _Container::value_type& __value)
@@ -2038,7 +2038,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  692:/usr/include/c++/4.8/bits/stl_iterator.h **** } // namespace
  693:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  694:/usr/include/c++/4.8/bits/stl_iterator.h **** namespace __gnu_cxx _GLIBCXX_VISIBILITY(default)
-GAS LISTING /tmp/ccDB5ihs.s 			page 35
+GAS LISTING /tmp/ccXRx6FS.s 			page 35
 
 
  695:/usr/include/c++/4.8/bits/stl_iterator.h **** {
@@ -2098,7 +2098,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  296 0000 4883EC18 		subq	$24, %rsp
  297              		.cfi_def_cfa_offset 32
  566:/usr/include/c++/4.8/bits/stl_vector.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 36
+GAS LISTING /tmp/ccXRx6FS.s 			page 36
 
 
  298              		.loc 5 566 0
@@ -2158,7 +2158,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
    3:/usr/include/c++/4.8/ext/new_allocator.h **** // Copyright (C) 2001-2013 Free Software Foundation, Inc.
    4:/usr/include/c++/4.8/ext/new_allocator.h **** //
    5:/usr/include/c++/4.8/ext/new_allocator.h **** // This file is part of the GNU ISO C++ Library.  This library is free
-GAS LISTING /tmp/ccDB5ihs.s 			page 37
+GAS LISTING /tmp/ccXRx6FS.s 			page 37
 
 
    6:/usr/include/c++/4.8/ext/new_allocator.h **** // software; you can redistribute it and/or modify it under the
@@ -2218,7 +2218,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   60:/usr/include/c++/4.8/ext/new_allocator.h ****     public:
   61:/usr/include/c++/4.8/ext/new_allocator.h ****       typedef size_t     size_type;
   62:/usr/include/c++/4.8/ext/new_allocator.h ****       typedef ptrdiff_t  difference_type;
-GAS LISTING /tmp/ccDB5ihs.s 			page 38
+GAS LISTING /tmp/ccXRx6FS.s 			page 38
 
 
   63:/usr/include/c++/4.8/ext/new_allocator.h ****       typedef _Tp*       pointer;
@@ -2278,7 +2278,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  352 0004 4889F7   		movq	%rsi, %rdi
  353              	.LVL28:
  354 0007 E8000000 		call	_ZdlPv
-GAS LISTING /tmp/ccDB5ihs.s 			page 39
+GAS LISTING /tmp/ccXRx6FS.s 			page 39
 
 
  354      00
@@ -2338,7 +2338,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  404 000e 48C1FA03 		sarq	$3, %rdx
  160:/usr/include/c++/4.8/bits/stl_vector.h **** 		      - this->_M_impl._M_start); }
  405              		.loc 5 160 0
-GAS LISTING /tmp/ccDB5ihs.s 			page 40
+GAS LISTING /tmp/ccXRx6FS.s 			page 40
 
 
  406 0012 E8000000 		call	_ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm
@@ -2398,7 +2398,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   37:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****  *
   38:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****  *
   39:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****  * Copyright (c) 1996-1998
-GAS LISTING /tmp/ccDB5ihs.s 			page 41
+GAS LISTING /tmp/ccXRx6FS.s 			page 41
 
 
   40:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****  * Silicon Graphics Computer Systems, Inc.
@@ -2458,7 +2458,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   91:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****                random_access_iterator_tag)
   92:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****     {
   93:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****       // concept requirements
-GAS LISTING /tmp/ccDB5ihs.s 			page 42
+GAS LISTING /tmp/ccXRx6FS.s 			page 42
 
 
   94:/usr/include/c++/4.8/bits/stl_iterator_base_funcs.h ****       __glibcxx_function_requires(_RandomAccessIteratorConcept<
@@ -2518,7 +2518,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  457              		.section	.text._ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_h
  458              		.weak	_ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_E
  460              	_ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_EE5value
-GAS LISTING /tmp/ccDB5ihs.s 			page 43
+GAS LISTING /tmp/ccXRx6FS.s 			page 43
 
 
  461              	.LFB1811:
@@ -2578,7 +2578,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   53:/usr/include/c++/4.8/bits/alloc_traits.h ****        	_S_chk(...)
   54:/usr/include/c++/4.8/bits/alloc_traits.h ****        	{ return false; }
   55:/usr/include/c++/4.8/bits/alloc_traits.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 44
+GAS LISTING /tmp/ccXRx6FS.s 			page 44
 
 
   56:/usr/include/c++/4.8/bits/alloc_traits.h ****     public:
@@ -2638,7 +2638,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  110:/usr/include/c++/4.8/bits/alloc_traits.h ****   typename pointer_traits<pointer>::template rebind<const value_type>)
  111:/usr/include/c++/4.8/bits/alloc_traits.h **** 
  112:/usr/include/c++/4.8/bits/alloc_traits.h ****       /**
-GAS LISTING /tmp/ccDB5ihs.s 			page 45
+GAS LISTING /tmp/ccXRx6FS.s 			page 45
 
 
  113:/usr/include/c++/4.8/bits/alloc_traits.h ****        * @brief   The allocator's const pointer type.
@@ -2698,7 +2698,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  167:/usr/include/c++/4.8/bits/alloc_traits.h ****       /**
  168:/usr/include/c++/4.8/bits/alloc_traits.h ****        * @brief   How the allocator is propagated on copy assignment
  169:/usr/include/c++/4.8/bits/alloc_traits.h ****        *
-GAS LISTING /tmp/ccDB5ihs.s 			page 46
+GAS LISTING /tmp/ccXRx6FS.s 			page 46
 
 
  170:/usr/include/c++/4.8/bits/alloc_traits.h ****        * @c Alloc::propagate_on_container_copy_assignment if that type exists,
@@ -2758,7 +2758,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  224:/usr/include/c++/4.8/bits/alloc_traits.h **** 	static typename
  225:/usr/include/c++/4.8/bits/alloc_traits.h ****        	enable_if<__allocate_helper<_Alloc2>::value, pointer>::type
  226:/usr/include/c++/4.8/bits/alloc_traits.h ****        	_S_allocate(_Alloc2& __a, size_type __n, const_void_pointer __hint)
-GAS LISTING /tmp/ccDB5ihs.s 			page 47
+GAS LISTING /tmp/ccXRx6FS.s 			page 47
 
 
  227:/usr/include/c++/4.8/bits/alloc_traits.h **** 	{ return __a.allocate(__n, __hint); }
@@ -2818,7 +2818,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  281:/usr/include/c++/4.8/bits/alloc_traits.h **** 	{ __a.destroy(__p); }
  282:/usr/include/c++/4.8/bits/alloc_traits.h **** 
  283:/usr/include/c++/4.8/bits/alloc_traits.h ****       template<typename _Tp>
-GAS LISTING /tmp/ccDB5ihs.s 			page 48
+GAS LISTING /tmp/ccXRx6FS.s 			page 48
 
 
  284:/usr/include/c++/4.8/bits/alloc_traits.h **** 	static typename enable_if<!__destroy_helper<_Tp>::value, void>::type
@@ -2878,7 +2878,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  463              		.loc 9 337 0
  464              		.cfi_startproc
  465              	.LVL37:
-GAS LISTING /tmp/ccDB5ihs.s 			page 49
+GAS LISTING /tmp/ccXRx6FS.s 			page 49
 
 
  466 0000 4889F8   		movq	%rdi, %rax
@@ -2938,7 +2938,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  383:/usr/include/c++/4.8/bits/alloc_traits.h ****        *  @param  __args Constructor arguments.
  384:/usr/include/c++/4.8/bits/alloc_traits.h ****        *
  385:/usr/include/c++/4.8/bits/alloc_traits.h ****        *  Calls <tt> __a.construct(__p, std::forward<Args>(__args)...) </tt>
-GAS LISTING /tmp/ccDB5ihs.s 			page 50
+GAS LISTING /tmp/ccXRx6FS.s 			page 50
 
 
  386:/usr/include/c++/4.8/bits/alloc_traits.h ****        *  if that expression is well-formed, otherwise uses placement-new
@@ -2998,7 +2998,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  487 0009 4889D8   		movq	%rbx, %rax
  488 000c 5B       		popq	%rbx
  489              		.cfi_def_cfa_offset 8
-GAS LISTING /tmp/ccDB5ihs.s 			page 51
+GAS LISTING /tmp/ccXRx6FS.s 			page 51
 
 
  490              	.LVL40:
@@ -3058,7 +3058,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   46:/usr/include/c++/4.8/ext/alloc_traits.h ****   template<typename _Alloc>
   47:/usr/include/c++/4.8/ext/alloc_traits.h ****     struct __allocator_always_compares_equal
   48:/usr/include/c++/4.8/ext/alloc_traits.h ****     { static const bool value = false; };
-GAS LISTING /tmp/ccDB5ihs.s 			page 52
+GAS LISTING /tmp/ccXRx6FS.s 			page 52
 
 
   49:/usr/include/c++/4.8/ext/alloc_traits.h **** 
@@ -3118,7 +3118,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  103:/usr/include/c++/4.8/ext/alloc_traits.h ****   template<typename _Tp>
  104:/usr/include/c++/4.8/ext/alloc_traits.h ****     const bool __allocator_always_compares_equal<new_allocator<_Tp>>::value;
  105:/usr/include/c++/4.8/ext/alloc_traits.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 53
+GAS LISTING /tmp/ccXRx6FS.s 			page 53
 
 
  106:/usr/include/c++/4.8/ext/alloc_traits.h ****   template<typename> struct pool_allocator;
@@ -3178,7 +3178,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  160:/usr/include/c++/4.8/ext/alloc_traits.h ****     // overload destroy for non-standard pointer types
  161:/usr/include/c++/4.8/ext/alloc_traits.h ****     template<typename _Ptr>
  162:/usr/include/c++/4.8/ext/alloc_traits.h ****       static typename std::enable_if<__is_custom_pointer<_Ptr>::value>::type
-GAS LISTING /tmp/ccDB5ihs.s 			page 54
+GAS LISTING /tmp/ccXRx6FS.s 			page 54
 
 
  163:/usr/include/c++/4.8/ext/alloc_traits.h ****       destroy(_Alloc& __a, _Ptr __p)
@@ -3238,7 +3238,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  546 0001 4889F3   		movq	%rsi, %rbx
  101:/usr/include/c++/4.8/ext/new_allocator.h **** 	  std::__throw_bad_alloc();
  547              		.loc 7 101 0
-GAS LISTING /tmp/ccDB5ihs.s 			page 55
+GAS LISTING /tmp/ccXRx6FS.s 			page 55
 
 
  548 0004 E8000000 		call	_ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv
@@ -3298,7 +3298,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  590              	.L51:
  168:/usr/include/c++/4.8/bits/stl_vector.h **** 
  591              		.loc 5 168 0 is_stmt 0 discriminator 3
-GAS LISTING /tmp/ccDB5ihs.s 			page 56
+GAS LISTING /tmp/ccXRx6FS.s 			page 56
 
 
  592 001c F3C3     		rep ret
@@ -3358,7 +3358,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  643              		.loc 5 134 0
  644              		.cfi_startproc
  645              	.LVL56:
-GAS LISTING /tmp/ccDB5ihs.s 			page 57
+GAS LISTING /tmp/ccXRx6FS.s 			page 57
 
 
  646 0000 55       		pushq	%rbp
@@ -3418,7 +3418,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   11:/usr/include/c++/4.8/bits/move.h **** // This library is distributed in the hope that it will be useful,
   12:/usr/include/c++/4.8/bits/move.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
   13:/usr/include/c++/4.8/bits/move.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GAS LISTING /tmp/ccDB5ihs.s 			page 58
+GAS LISTING /tmp/ccXRx6FS.s 			page 58
 
 
   14:/usr/include/c++/4.8/bits/move.h **** // GNU General Public License for more details.
@@ -3478,7 +3478,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
    4:/usr/include/c++/4.8/bits/stl_construct.h **** //
    5:/usr/include/c++/4.8/bits/stl_construct.h **** // This file is part of the GNU ISO C++ Library.  This library is free
    6:/usr/include/c++/4.8/bits/stl_construct.h **** // software; you can redistribute it and/or modify it under the
-GAS LISTING /tmp/ccDB5ihs.s 			page 59
+GAS LISTING /tmp/ccXRx6FS.s 			page 59
 
 
    7:/usr/include/c++/4.8/bits/stl_construct.h **** // terms of the GNU General Public License as published by the
@@ -3538,7 +3538,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   61:/usr/include/c++/4.8/bits/stl_construct.h **** #include <ext/alloc_traits.h>
   62:/usr/include/c++/4.8/bits/stl_construct.h **** 
   63:/usr/include/c++/4.8/bits/stl_construct.h **** namespace std _GLIBCXX_VISIBILITY(default)
-GAS LISTING /tmp/ccDB5ihs.s 			page 60
+GAS LISTING /tmp/ccXRx6FS.s 			page 60
 
 
   64:/usr/include/c++/4.8/bits/stl_construct.h **** {
@@ -3598,7 +3598,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  100:/usr/include/c++/4.8/bits/stl_construct.h ****         __destroy(_ForwardIterator __first, _ForwardIterator __last)
  722              		.loc 12 100 0
  723              		.cfi_startproc
-GAS LISTING /tmp/ccDB5ihs.s 			page 61
+GAS LISTING /tmp/ccXRx6FS.s 			page 61
 
 
  724              	.LVL65:
@@ -3658,7 +3658,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  107:/usr/include/c++/4.8/bits/stl_construct.h ****   template<>
  108:/usr/include/c++/4.8/bits/stl_construct.h ****     struct _Destroy_aux<true>
  109:/usr/include/c++/4.8/bits/stl_construct.h ****     {
-GAS LISTING /tmp/ccDB5ihs.s 			page 62
+GAS LISTING /tmp/ccXRx6FS.s 			page 62
 
 
  110:/usr/include/c++/4.8/bits/stl_construct.h ****       template<typename _ForwardIterator>
@@ -3718,7 +3718,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  143:/usr/include/c++/4.8/bits/stl_construct.h **** 	__traits::destroy(__alloc, std::__addressof(*__first));
  144:/usr/include/c++/4.8/bits/stl_construct.h ****     }
  145:/usr/include/c++/4.8/bits/stl_construct.h **** 
-GAS LISTING /tmp/ccDB5ihs.s 			page 63
+GAS LISTING /tmp/ccXRx6FS.s 			page 63
 
 
  146:/usr/include/c++/4.8/bits/stl_construct.h ****   template<typename _ForwardIterator, typename _Tp>
@@ -3778,7 +3778,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  834              	.LVL79:
  835              	.LBE9:
  836 0020 5B       		popq	%rbx
-GAS LISTING /tmp/ccDB5ihs.s 			page 64
+GAS LISTING /tmp/ccXRx6FS.s 			page 64
 
 
  837              		.cfi_def_cfa_offset 8
@@ -3838,7 +3838,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  870              	.LVL82:
  739:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  871              		.loc 6 739 0
-GAS LISTING /tmp/ccDB5ihs.s 			page 65
+GAS LISTING /tmp/ccXRx6FS.s 			page 65
 
 
  872 0000 488B07   		movq	(%rdi), %rax
@@ -3898,7 +3898,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  903              		.cfi_def_cfa_offset 24
  904              		.cfi_offset 3, -24
  905 0002 4883EC08 		subq	$8, %rsp
-GAS LISTING /tmp/ccDB5ihs.s 			page 66
+GAS LISTING /tmp/ccXRx6FS.s 			page 66
 
 
  906              		.cfi_def_cfa_offset 32
@@ -3958,7 +3958,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   10:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 
   11:/usr/include/c++/4.8/bits/stl_uninitialized.h **** // This library is distributed in the hope that it will be useful,
   12:/usr/include/c++/4.8/bits/stl_uninitialized.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
-GAS LISTING /tmp/ccDB5ihs.s 			page 67
+GAS LISTING /tmp/ccXRx6FS.s 			page 67
 
 
   13:/usr/include/c++/4.8/bits/stl_uninitialized.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -4018,7 +4018,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   67:/usr/include/c++/4.8/bits/stl_uninitialized.h ****         static _ForwardIterator
   68:/usr/include/c++/4.8/bits/stl_uninitialized.h ****         __uninit_copy(_InputIterator __first, _InputIterator __last,
  946              		.loc 13 68 0 is_stmt 1
-GAS LISTING /tmp/ccDB5ihs.s 			page 68
+GAS LISTING /tmp/ccXRx6FS.s 			page 68
 
 
  947              		.cfi_startproc
@@ -4078,7 +4078,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  990 0032 4883C508 		addq	$8, %rbp
  991              	.LVL96:
  992 0036 4939DC   		cmpq	%rbx, %r12
-GAS LISTING /tmp/ccDB5ihs.s 			page 69
+GAS LISTING /tmp/ccXRx6FS.s 			page 69
 
 
  993 0039 75E0     		jne	.L77
@@ -4138,7 +4138,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1033 0071 5B       		popq	%rbx
  1034              		.cfi_def_cfa_offset 32
  1035              	.LVL105:
-GAS LISTING /tmp/ccDB5ihs.s 			page 70
+GAS LISTING /tmp/ccXRx6FS.s 			page 70
 
 
  1036 0072 5D       		popq	%rbp
@@ -4198,7 +4198,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
   91:/usr/include/c++/4.8/bits/stl_uninitialized.h ****         __uninit_copy(_InputIterator __first, _InputIterator __last,
   92:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 		      _ForwardIterator __result)
   93:/usr/include/c++/4.8/bits/stl_uninitialized.h ****         { return std::copy(__first, __last, __result); }
-GAS LISTING /tmp/ccDB5ihs.s 			page 71
+GAS LISTING /tmp/ccXRx6FS.s 			page 71
 
 
   94:/usr/include/c++/4.8/bits/stl_uninitialized.h ****     };
@@ -4258,7 +4258,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  127:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 		      const _Tp& __x)
  128:/usr/include/c++/4.8/bits/stl_uninitialized.h ****         {
  129:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	  _ForwardIterator __cur = __first;
-GAS LISTING /tmp/ccDB5ihs.s 			page 72
+GAS LISTING /tmp/ccXRx6FS.s 			page 72
 
 
  130:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	  __try
@@ -4318,7 +4318,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  184:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	  __try
  185:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	    {
  186:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	      for (; __n > 0; --__n, ++__cur)
-GAS LISTING /tmp/ccDB5ihs.s 			page 73
+GAS LISTING /tmp/ccXRx6FS.s 			page 73
 
 
  187:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 		std::_Construct(std::__addressof(*__cur), __x);
@@ -4378,7 +4378,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  241:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	{
  242:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	  typedef __gnu_cxx::__alloc_traits<_Allocator> __traits;
  243:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	  for (; __first != __last; ++__first, ++__cur)
-GAS LISTING /tmp/ccDB5ihs.s 			page 74
+GAS LISTING /tmp/ccXRx6FS.s 			page 74
 
 
  244:/usr/include/c++/4.8/bits/stl_uninitialized.h **** 	    __traits::construct(__alloc, std::__addressof(*__cur), *__first);
@@ -4438,7 +4438,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  667:/usr/include/c++/4.8/bits/stl_vector.h **** 	  _M_default_append(__new_size - size());
  668:/usr/include/c++/4.8/bits/stl_vector.h **** 	else if (__new_size < size())
  669:/usr/include/c++/4.8/bits/stl_vector.h **** 	  _M_erase_at_end(this->_M_impl._M_start + __new_size);
-GAS LISTING /tmp/ccDB5ihs.s 			page 75
+GAS LISTING /tmp/ccXRx6FS.s 			page 75
 
 
  670:/usr/include/c++/4.8/bits/stl_vector.h ****       }
@@ -4498,7 +4498,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  724:/usr/include/c++/4.8/bits/stl_vector.h ****       size_type
  725:/usr/include/c++/4.8/bits/stl_vector.h ****       capacity() const _GLIBCXX_NOEXCEPT
  726:/usr/include/c++/4.8/bits/stl_vector.h ****       { return size_type(this->_M_impl._M_end_of_storage
-GAS LISTING /tmp/ccDB5ihs.s 			page 76
+GAS LISTING /tmp/ccXRx6FS.s 			page 76
 
 
  727:/usr/include/c++/4.8/bits/stl_vector.h **** 			 - this->_M_impl._M_start); }
@@ -4558,7 +4558,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  781:/usr/include/c++/4.8/bits/stl_vector.h ****        *  out_of_range lookups are not defined. (For checked lookups
  782:/usr/include/c++/4.8/bits/stl_vector.h ****        *  see at().)
  783:/usr/include/c++/4.8/bits/stl_vector.h ****        */
-GAS LISTING /tmp/ccDB5ihs.s 			page 77
+GAS LISTING /tmp/ccXRx6FS.s 			page 77
 
 
  784:/usr/include/c++/4.8/bits/stl_vector.h ****       const_reference
@@ -4618,7 +4618,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  838:/usr/include/c++/4.8/bits/stl_vector.h ****       reference
  839:/usr/include/c++/4.8/bits/stl_vector.h ****       front()
  840:/usr/include/c++/4.8/bits/stl_vector.h ****       { return *begin(); }
-GAS LISTING /tmp/ccDB5ihs.s 			page 78
+GAS LISTING /tmp/ccXRx6FS.s 			page 78
 
 
  841:/usr/include/c++/4.8/bits/stl_vector.h **** 
@@ -4678,7 +4678,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  895:/usr/include/c++/4.8/bits/stl_vector.h ****        *  element at the end of the %vector and assigns the given data
  896:/usr/include/c++/4.8/bits/stl_vector.h ****        *  to it.  Due to the nature of a %vector this operation can be
  897:/usr/include/c++/4.8/bits/stl_vector.h ****        *  done in constant time if the %vector has preallocated space
-GAS LISTING /tmp/ccDB5ihs.s 			page 79
+GAS LISTING /tmp/ccXRx6FS.s 			page 79
 
 
  898:/usr/include/c++/4.8/bits/stl_vector.h ****        *  available.
@@ -4738,7 +4738,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  952:/usr/include/c++/4.8/bits/stl_vector.h ****        *  Note that this kind of operation could be expensive for a %vector
  953:/usr/include/c++/4.8/bits/stl_vector.h ****        *  and if it is frequently used the user should consider using
  954:/usr/include/c++/4.8/bits/stl_vector.h ****        *  std::list.
-GAS LISTING /tmp/ccDB5ihs.s 			page 80
+GAS LISTING /tmp/ccXRx6FS.s 			page 80
 
 
  955:/usr/include/c++/4.8/bits/stl_vector.h ****        */
@@ -4798,7 +4798,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
 1009:/usr/include/c++/4.8/bits/stl_vector.h ****       /**
 1010:/usr/include/c++/4.8/bits/stl_vector.h ****        *  @brief  Inserts a number of copies of given data into the %vector.
 1011:/usr/include/c++/4.8/bits/stl_vector.h ****        *  @param  __position  An iterator into the %vector.
-GAS LISTING /tmp/ccDB5ihs.s 			page 81
+GAS LISTING /tmp/ccXRx6FS.s 			page 81
 
 
 1012:/usr/include/c++/4.8/bits/stl_vector.h ****        *  @param  __n  Number of elements to be inserted.
@@ -4858,7 +4858,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
 1066:/usr/include/c++/4.8/bits/stl_vector.h ****        *
 1067:/usr/include/c++/4.8/bits/stl_vector.h ****        *  Note This operation could be expensive and if it is
 1068:/usr/include/c++/4.8/bits/stl_vector.h ****        *  frequently used the user should consider using std::list.
-GAS LISTING /tmp/ccDB5ihs.s 			page 82
+GAS LISTING /tmp/ccXRx6FS.s 			page 82
 
 
 1069:/usr/include/c++/4.8/bits/stl_vector.h ****        *  The user is also cautioned that this function only erases
@@ -4918,7 +4918,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
 1123:/usr/include/c++/4.8/bits/stl_vector.h ****        */
 1124:/usr/include/c++/4.8/bits/stl_vector.h ****       void
 1125:/usr/include/c++/4.8/bits/stl_vector.h ****       clear() _GLIBCXX_NOEXCEPT
-GAS LISTING /tmp/ccDB5ihs.s 			page 83
+GAS LISTING /tmp/ccXRx6FS.s 			page 83
 
 
 1126:/usr/include/c++/4.8/bits/stl_vector.h ****       { _M_erase_at_end(this->_M_impl._M_start); }
@@ -4978,7 +4978,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
 1180:/usr/include/c++/4.8/bits/stl_vector.h ****       // Called by the second initialize_dispatch above
 1181:/usr/include/c++/4.8/bits/stl_vector.h ****       template<typename _InputIterator>
 1182:/usr/include/c++/4.8/bits/stl_vector.h ****         void
-GAS LISTING /tmp/ccDB5ihs.s 			page 84
+GAS LISTING /tmp/ccXRx6FS.s 			page 84
 
 
 1183:/usr/include/c++/4.8/bits/stl_vector.h ****         _M_range_initialize(_InputIterator __first,
@@ -5038,7 +5038,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1161 0025 E8000000 		call	_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm
  1161      00
  1162              	.LVL118:
-GAS LISTING /tmp/ccDB5ihs.s 			page 85
+GAS LISTING /tmp/ccXRx6FS.s 			page 85
 
 
  1163 002a 4889C5   		movq	%rax, %rbp
@@ -5098,7 +5098,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1209              		.cfi_lsda 0x3,.LLSDA1681
  1210              	.LVL125:
  1211 0000 55       		pushq	%rbp
-GAS LISTING /tmp/ccDB5ihs.s 			page 86
+GAS LISTING /tmp/ccXRx6FS.s 			page 86
 
 
  1212              		.cfi_def_cfa_offset 16
@@ -5158,7 +5158,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1253 0054 E8000000 		call	_Unwind_Resume
  1253      00
  1254              	.LEHE4:
-GAS LISTING /tmp/ccDB5ihs.s 			page 87
+GAS LISTING /tmp/ccXRx6FS.s 			page 87
 
 
  1255              	.LVL131:
@@ -5218,7 +5218,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  766:/usr/include/c++/4.8/bits/stl_iterator.h ****       { return __normal_iterator(_M_current--); }
  767:/usr/include/c++/4.8/bits/stl_iterator.h **** 
  768:/usr/include/c++/4.8/bits/stl_iterator.h ****       // Random access iterator requirements
-GAS LISTING /tmp/ccDB5ihs.s 			page 88
+GAS LISTING /tmp/ccXRx6FS.s 			page 88
 
 
  769:/usr/include/c++/4.8/bits/stl_iterator.h ****       reference
@@ -5278,7 +5278,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  811:/usr/include/c++/4.8/bits/stl_iterator.h ****     operator==(const __normal_iterator<_Iterator, _Container>& __lhs,
  812:/usr/include/c++/4.8/bits/stl_iterator.h **** 	       const __normal_iterator<_Iterator, _Container>& __rhs)
  813:/usr/include/c++/4.8/bits/stl_iterator.h ****     { return __lhs.base() == __rhs.base(); }
-GAS LISTING /tmp/ccDB5ihs.s 			page 89
+GAS LISTING /tmp/ccXRx6FS.s 			page 89
 
 
  814:/usr/include/c++/4.8/bits/stl_iterator.h **** 
@@ -5338,7 +5338,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1350              		.cfi_lsda 0x3,.LLSDA1815
  1351              	.LVL138:
  1352 0000 4154     		pushq	%r12
-GAS LISTING /tmp/ccDB5ihs.s 			page 90
+GAS LISTING /tmp/ccXRx6FS.s 			page 90
 
 
  1353              		.cfi_def_cfa_offset 16
@@ -5398,7 +5398,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1395              		.loc 13 74 0 is_stmt 0 discriminator 1
  1396 0047 4889E6   		movq	%rsp, %rsi
  1397 004a 488D7C24 		leaq	16(%rsp), %rdi
-GAS LISTING /tmp/ccDB5ihs.s 			page 91
+GAS LISTING /tmp/ccXRx6FS.s 			page 91
 
 
  1397      10
@@ -5458,7 +5458,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1441              		.cfi_def_cfa_offset 8
  1442              	.LVL154:
  1443 0090 C3       		ret
-GAS LISTING /tmp/ccDB5ihs.s 			page 92
+GAS LISTING /tmp/ccXRx6FS.s 			page 92
 
 
  1444              		.cfi_endproc
@@ -5518,7 +5518,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1496              		.cfi_endproc
  1497              	.LFE1801:
  1499              		.section	.text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEE
-GAS LISTING /tmp/ccDB5ihs.s 			page 93
+GAS LISTING /tmp/ccXRx6FS.s 			page 93
 
 
  1500              		.weak	_ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET
@@ -5578,7 +5578,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1552      00
  1553              	.LVL161:
  1554 001a 4889C6   		movq	%rax, %rsi
-GAS LISTING /tmp/ccDB5ihs.s 			page 94
+GAS LISTING /tmp/ccXRx6FS.s 			page 94
 
 
  1555 001d 488D7C24 		leaq	15(%rsp), %rdi
@@ -5638,7 +5638,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1597 007d E8000000 		call	_ZNSt12_Vector_baseISsSaISsEED2Ev
  1597      00
  1598              	.LVL170:
-GAS LISTING /tmp/ccDB5ihs.s 			page 95
+GAS LISTING /tmp/ccXRx6FS.s 			page 95
 
 
  1599 0082 4889EF   		movq	%rbp, %rdi
@@ -5698,7 +5698,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1652 0004 7800     		.string	"x"
  1653              	.LC2:
  1654 0006 7900     		.string	"y"
-GAS LISTING /tmp/ccDB5ihs.s 			page 96
+GAS LISTING /tmp/ccXRx6FS.s 			page 96
 
 
  1655              	.LC3:
@@ -5758,7 +5758,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1695 006c E8000000 		call	_ZNSsD1Ev
  1695      00
  1696              	.LVL179:
-GAS LISTING /tmp/ccDB5ihs.s 			page 97
+GAS LISTING /tmp/ccXRx6FS.s 			page 97
 
 
   52:mangling.cpp  ****   d.deepMethod(vs);
@@ -5818,7 +5818,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1729      00
  1730              	.LVL185:
  1731 00df 488D7C24 		leaq	80(%rsp), %rdi
-GAS LISTING /tmp/ccDB5ihs.s 			page 98
+GAS LISTING /tmp/ccXRx6FS.s 			page 98
 
 
  1731      50
@@ -5878,7 +5878,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1766 0134 BE250000 		movl	$37, %esi
  1766      00
  1767 0139 488D7C24 		leaq	32(%rsp), %rdi
-GAS LISTING /tmp/ccDB5ihs.s 			page 99
+GAS LISTING /tmp/ccXRx6FS.s 			page 99
 
 
  1767      20
@@ -5938,7 +5938,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1806              	.L125:
  1807 019b 488D7C24 		leaq	48(%rsp), %rdi
  1807      30
-GAS LISTING /tmp/ccDB5ihs.s 			page 100
+GAS LISTING /tmp/ccXRx6FS.s 			page 100
 
 
  1808 01a0 E8000000 		call	_ZNSt6vectorISsSaISsEED1Ev
@@ -5998,7 +5998,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1861      00
  1862 01ba BF010000 		movl	$1, %edi
  1862      00
-GAS LISTING /tmp/ccDB5ihs.s 			page 101
+GAS LISTING /tmp/ccXRx6FS.s 			page 101
 
 
  1863 01bf E83CFEFF 		call	_Z41__static_initialization_and_destruction_0ii
@@ -6058,7 +6058,7 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1918              		.file 47 "/usr/include/locale.h"
  1919              		.file 48 "/usr/include/x86_64-linux-gnu/bits/types.h"
  1920              		.file 49 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
-GAS LISTING /tmp/ccDB5ihs.s 			page 102
+GAS LISTING /tmp/ccXRx6FS.s 			page 102
 
 
  1921              		.file 50 "/usr/include/stdlib.h"
@@ -6066,78 +6066,78 @@ GAS LISTING /tmp/ccDB5ihs.s 			page 1
  1923              		.file 52 "/usr/include/_G_config.h"
  1924              		.file 53 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
  1925              		.file 54 "/usr/include/wctype.h"
-GAS LISTING /tmp/ccDB5ihs.s 			page 103
+GAS LISTING /tmp/ccXRx6FS.s 			page 103
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 mangling.cpp
-     /tmp/ccDB5ihs.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccXRx6FS.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/ccDB5ihs.s:41     .text._ZnwmPv:0000000000000000 _ZnwmPv
-     /tmp/ccDB5ihs.s:57     .text._ZN9Something6Inside6Deeper10deepMethodEv:0000000000000000 _ZN9Something6Inside6Deeper10deepMethodEv
-     /tmp/ccDB5ihs.s:73     .text._ZN9Something6Inside6Deeper10deepMethodEi:0000000000000000 _ZN9Something6Inside6Deeper10deepMethodEi
-     /tmp/ccDB5ihs.s:90     .text._ZN7OutsideC2Ei:0000000000000000 _ZN7OutsideC2Ei
-     /tmp/ccDB5ihs.s:90     .text._ZN7OutsideC2Ei:0000000000000000 _ZN7OutsideC1Ei
-     /tmp/ccDB5ihs.s:109    .text._ZNKSt16initializer_listISsE5beginEv:0000000000000000 _ZNKSt16initializer_listISsE5beginEv
-     /tmp/ccDB5ihs.s:125    .text._ZNKSt16initializer_listISsE4sizeEv:0000000000000000 _ZNKSt16initializer_listISsE4sizeEv
-     /tmp/ccDB5ihs.s:140    .text._ZNKSt16initializer_listISsE3endEv:0000000000000000 _ZNKSt16initializer_listISsE3endEv
-     /tmp/ccDB5ihs.s:177    .text._ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv
-     /tmp/ccDB5ihs.s:193    .text._ZNKSt6vectorISsSaISsEE4sizeEv:0000000000000000 _ZNKSt6vectorISsSaISsEE4sizeEv
-     /tmp/ccDB5ihs.s:210    .text._ZNKSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv:0000000000000000 _ZNKSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv
-     /tmp/ccDB5ihs.s:225    .text._ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_
-     /tmp/ccDB5ihs.s:225    .text._ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE12_Vector_implC1ERKS0_
-     /tmp/ccDB5ihs.s:246    .text._ZNSt12_Vector_baseISsSaISsEEC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC2ERKS0_
-     /tmp/ccDB5ihs.s:246    .text._ZNSt12_Vector_baseISsSaISsEEC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC1ERKS0_
-     /tmp/ccDB5ihs.s:270    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_
-     /tmp/ccDB5ihs.s:270    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC1ERKS2_
-     /tmp/ccDB5ihs.s:291    .text._ZNKSt6vectorISsSaISsEE3endEv:0000000000000000 _ZNKSt6vectorISsSaISsEE3endEv
-     /tmp/ccDB5ihs.s:317    .text._ZNKSt6vectorISsSaISsEE5beginEv:0000000000000000 _ZNKSt6vectorISsSaISsEE5beginEv
-     /tmp/ccDB5ihs.s:343    .text._ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm:0000000000000000 _ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm
-     /tmp/ccDB5ihs.s:366    .text._ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm
-     /tmp/ccDB5ihs.s:392    .text._ZNSt12_Vector_baseISsSaISsEED2Ev:0000000000000000 _ZNSt12_Vector_baseISsSaISsEED2Ev
-     /tmp/ccDB5ihs.s:392    .text._ZNSt12_Vector_baseISsSaISsEED2Ev:0000000000000000 _ZNSt12_Vector_baseISsSaISsEED1Ev
-     /tmp/ccDB5ihs.s:421    .text._ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag:0000000000000000 _ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-     /tmp/ccDB5ihs.s:439    .text._ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_:0000000000000000 _ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_
-     /tmp/ccDB5ihs.s:460    .text._ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_EE5valueES6_E4typeERS6_:0000000000000000 _ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_EE5valueES6_E4typeERS6_
-     /tmp/ccDB5ihs.s:475    .text._ZNSt16allocator_traitsISaISsEE37select_on_container_copy_constructionERKS0_:0000000000000000 _ZNSt16allocator_traitsISaISsEE37select_on_container_copy_constructionERKS0_
-     /tmp/ccDB5ihs.s:498    .text._ZN9__gnu_cxx14__alloc_traitsISaISsEE17_S_select_on_copyERKS1_:0000000000000000 _ZN9__gnu_cxx14__alloc_traitsISaISsEE17_S_select_on_copyERKS1_
-     /tmp/ccDB5ihs.s:523    .text._ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv:0000000000000000 _ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv
-     /tmp/ccDB5ihs.s:538    .text._ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv:0000000000000000 _ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv
-     /tmp/ccDB5ihs.s:572    .text._ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm
-     /tmp/ccDB5ihs.s:600    .text._ZNSt12_Vector_baseISsSaISsEE17_M_create_storageEm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE17_M_create_storageEm
-     /tmp/ccDB5ihs.s:641    .text._ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_
-     /tmp/ccDB5ihs.s:641    .text._ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC1EmRKS0_
-     /tmp/ccDB5ihs.s:685    .text._ZSt11__addressofISsEPT_RS0_:0000000000000000 _ZSt11__addressofISsEPT_RS0_
-     /tmp/ccDB5ihs.s:700    .text._ZSt8_DestroyISsEvPT_:0000000000000000 _ZSt8_DestroyISsEvPT_
-     /tmp/ccDB5ihs.s:720    .text._ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_:0000000000000000 _ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_
-     /tmp/ccDB5ihs.s:769    .text._ZSt8_DestroyIPSsEvT_S1_:0000000000000000 _ZSt8_DestroyIPSsEvT_S1_
-     /tmp/ccDB5ihs.s:791    .text._ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E:0000000000000000 _ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E
-     /tmp/ccDB5ihs.s:812    .text._ZNSt6vectorISsSaISsEED2Ev:0000000000000000 _ZNSt6vectorISsSaISsEED2Ev
-     /tmp/ccDB5ihs.s:812    .text._ZNSt6vectorISsSaISsEED2Ev:0000000000000000 _ZNSt6vectorISsSaISsEED1Ev
-     /tmp/ccDB5ihs.s:849    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEppEv:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEppEv
-     /tmp/ccDB5ihs.s:866    .text._ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEdeEv:0000000000000000 _ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEdeEv
-     /tmp/ccDB5ihs.s:880    .text._ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE:0000000000000000 _ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE
-     /tmp/ccDB5ihs.s:894    .text._ZSt10_ConstructISsIRKSsEEvPT_DpOT0_:0000000000000000 _ZSt10_ConstructISsIRKSsEEvPT_DpOT0_
-     /tmp/ccDB5ihs.s:894    .text._ZSt10_ConstructISsIRKSsEEvPT_DpOT0_:0000000000000000 _ZSt10_ConstructISsJRKSsEEvPT_DpOT0_
-     /tmp/ccDB5ihs.s:943    .text._ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:0000000000000000 _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_
-     /tmp/ccDB5ihs.s:1083   .text._ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_:0000000000000000 _ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_
-     /tmp/ccDB5ihs.s:1105   .text._ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E:0000000000000000 _ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E
-     /tmp/ccDB5ihs.s:1125   .text._ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag:0000000000000000 _ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag
-     /tmp/ccDB5ihs.s:1204   .text._ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:0000000000000000 _ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_
-     /tmp/ccDB5ihs.s:1204   .text._ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:0000000000000000 _ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_
-     /tmp/ccDB5ihs.s:1293   .text._ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEE4baseEv:0000000000000000 _ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEE4baseEv
-GAS LISTING /tmp/ccDB5ihs.s 			page 104
+     /tmp/ccXRx6FS.s:41     .text._ZnwmPv:0000000000000000 _ZnwmPv
+     /tmp/ccXRx6FS.s:57     .text._ZN9Something6Inside6Deeper10deepMethodEv:0000000000000000 _ZN9Something6Inside6Deeper10deepMethodEv
+     /tmp/ccXRx6FS.s:73     .text._ZN9Something6Inside6Deeper10deepMethodEi:0000000000000000 _ZN9Something6Inside6Deeper10deepMethodEi
+     /tmp/ccXRx6FS.s:90     .text._ZN7OutsideC2Ei:0000000000000000 _ZN7OutsideC2Ei
+     /tmp/ccXRx6FS.s:90     .text._ZN7OutsideC2Ei:0000000000000000 _ZN7OutsideC1Ei
+     /tmp/ccXRx6FS.s:109    .text._ZNKSt16initializer_listISsE5beginEv:0000000000000000 _ZNKSt16initializer_listISsE5beginEv
+     /tmp/ccXRx6FS.s:125    .text._ZNKSt16initializer_listISsE4sizeEv:0000000000000000 _ZNKSt16initializer_listISsE4sizeEv
+     /tmp/ccXRx6FS.s:140    .text._ZNKSt16initializer_listISsE3endEv:0000000000000000 _ZNKSt16initializer_listISsE3endEv
+     /tmp/ccXRx6FS.s:177    .text._ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv
+     /tmp/ccXRx6FS.s:193    .text._ZNKSt6vectorISsSaISsEE4sizeEv:0000000000000000 _ZNKSt6vectorISsSaISsEE4sizeEv
+     /tmp/ccXRx6FS.s:210    .text._ZNKSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv:0000000000000000 _ZNKSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv
+     /tmp/ccXRx6FS.s:225    .text._ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_
+     /tmp/ccXRx6FS.s:225    .text._ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE12_Vector_implC1ERKS0_
+     /tmp/ccXRx6FS.s:246    .text._ZNSt12_Vector_baseISsSaISsEEC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC2ERKS0_
+     /tmp/ccXRx6FS.s:246    .text._ZNSt12_Vector_baseISsSaISsEEC2ERKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC1ERKS0_
+     /tmp/ccXRx6FS.s:270    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_
+     /tmp/ccXRx6FS.s:270    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC2ERKS2_:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEC1ERKS2_
+     /tmp/ccXRx6FS.s:291    .text._ZNKSt6vectorISsSaISsEE3endEv:0000000000000000 _ZNKSt6vectorISsSaISsEE3endEv
+     /tmp/ccXRx6FS.s:317    .text._ZNKSt6vectorISsSaISsEE5beginEv:0000000000000000 _ZNKSt6vectorISsSaISsEE5beginEv
+     /tmp/ccXRx6FS.s:343    .text._ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm:0000000000000000 _ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm
+     /tmp/ccXRx6FS.s:366    .text._ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm
+     /tmp/ccXRx6FS.s:392    .text._ZNSt12_Vector_baseISsSaISsEED2Ev:0000000000000000 _ZNSt12_Vector_baseISsSaISsEED2Ev
+     /tmp/ccXRx6FS.s:392    .text._ZNSt12_Vector_baseISsSaISsEED2Ev:0000000000000000 _ZNSt12_Vector_baseISsSaISsEED1Ev
+     /tmp/ccXRx6FS.s:421    .text._ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag:0000000000000000 _ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
+     /tmp/ccXRx6FS.s:439    .text._ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_:0000000000000000 _ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_
+     /tmp/ccXRx6FS.s:460    .text._ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_EE5valueES6_E4typeERS6_:0000000000000000 _ZNSt16allocator_traitsISaISsEE9_S_selectIKS0_EENSt9enable_ifIXntsrNS1_15__select_helperIT_EE5valueES6_E4typeERS6_
+     /tmp/ccXRx6FS.s:475    .text._ZNSt16allocator_traitsISaISsEE37select_on_container_copy_constructionERKS0_:0000000000000000 _ZNSt16allocator_traitsISaISsEE37select_on_container_copy_constructionERKS0_
+     /tmp/ccXRx6FS.s:498    .text._ZN9__gnu_cxx14__alloc_traitsISaISsEE17_S_select_on_copyERKS1_:0000000000000000 _ZN9__gnu_cxx14__alloc_traitsISaISsEE17_S_select_on_copyERKS1_
+     /tmp/ccXRx6FS.s:523    .text._ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv:0000000000000000 _ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv
+     /tmp/ccXRx6FS.s:538    .text._ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv:0000000000000000 _ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv
+     /tmp/ccXRx6FS.s:572    .text._ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm
+     /tmp/ccXRx6FS.s:600    .text._ZNSt12_Vector_baseISsSaISsEE17_M_create_storageEm:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE17_M_create_storageEm
+     /tmp/ccXRx6FS.s:641    .text._ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_
+     /tmp/ccXRx6FS.s:641    .text._ZNSt12_Vector_baseISsSaISsEEC2EmRKS0_:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC1EmRKS0_
+     /tmp/ccXRx6FS.s:685    .text._ZSt11__addressofISsEPT_RS0_:0000000000000000 _ZSt11__addressofISsEPT_RS0_
+     /tmp/ccXRx6FS.s:700    .text._ZSt8_DestroyISsEvPT_:0000000000000000 _ZSt8_DestroyISsEvPT_
+     /tmp/ccXRx6FS.s:720    .text._ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_:0000000000000000 _ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_
+     /tmp/ccXRx6FS.s:769    .text._ZSt8_DestroyIPSsEvT_S1_:0000000000000000 _ZSt8_DestroyIPSsEvT_S1_
+     /tmp/ccXRx6FS.s:791    .text._ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E:0000000000000000 _ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E
+     /tmp/ccXRx6FS.s:812    .text._ZNSt6vectorISsSaISsEED2Ev:0000000000000000 _ZNSt6vectorISsSaISsEED2Ev
+     /tmp/ccXRx6FS.s:812    .text._ZNSt6vectorISsSaISsEED2Ev:0000000000000000 _ZNSt6vectorISsSaISsEED1Ev
+     /tmp/ccXRx6FS.s:849    .text._ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEppEv:0000000000000000 _ZN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEppEv
+     /tmp/ccXRx6FS.s:866    .text._ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEdeEv:0000000000000000 _ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEdeEv
+     /tmp/ccXRx6FS.s:880    .text._ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE:0000000000000000 _ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE
+     /tmp/ccXRx6FS.s:894    .text._ZSt10_ConstructISsIRKSsEEvPT_DpOT0_:0000000000000000 _ZSt10_ConstructISsIRKSsEEvPT_DpOT0_
+     /tmp/ccXRx6FS.s:894    .text._ZSt10_ConstructISsIRKSsEEvPT_DpOT0_:0000000000000000 _ZSt10_ConstructISsJRKSsEEvPT_DpOT0_
+     /tmp/ccXRx6FS.s:943    .text._ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_:0000000000000000 _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_
+     /tmp/ccXRx6FS.s:1083   .text._ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_:0000000000000000 _ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_
+     /tmp/ccXRx6FS.s:1105   .text._ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E:0000000000000000 _ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E
+     /tmp/ccXRx6FS.s:1125   .text._ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag:0000000000000000 _ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag
+     /tmp/ccXRx6FS.s:1204   .text._ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:0000000000000000 _ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_
+     /tmp/ccXRx6FS.s:1204   .text._ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_:0000000000000000 _ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_
+     /tmp/ccXRx6FS.s:1293   .text._ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEE4baseEv:0000000000000000 _ZNK9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEE4baseEv
+GAS LISTING /tmp/ccXRx6FS.s 			page 104
 
 
-     /tmp/ccDB5ihs.s:1307   .text._ZN9__gnu_cxxneIPKSsSt6vectorISsSaISsEEEEbRKNS_17__normal_iteratorIT_T0_EESB_:0000000000000000 _ZN9__gnu_cxxneIPKSsSt6vectorISsSaISsEEEEbRKNS_17__normal_iteratorIT_T0_EESB_
-     /tmp/ccDB5ihs.s:1345   .text._ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsEET0_T_SC_SB_:0000000000000000 _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsEET0_T_SC_SB_
-     /tmp/ccDB5ihs.s:1480   .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsET0_T_SA_S9_:0000000000000000 _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsET0_T_SA_S9_
-     /tmp/ccDB5ihs.s:1502   .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET0_T_SA_S9_RSaIT1_E:0000000000000000 _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET0_T_SA_S9_RSaIT1_E
-     /tmp/ccDB5ihs.s:1522   .text._ZNSt6vectorISsSaISsEEC2ERKS1_:0000000000000000 _ZNSt6vectorISsSaISsEEC2ERKS1_
-     /tmp/ccDB5ihs.s:1522   .text._ZNSt6vectorISsSaISsEEC2ERKS1_:0000000000000000 _ZNSt6vectorISsSaISsEEC1ERKS1_
-     /tmp/ccDB5ihs.s:1662   .text:0000000000000034 _Z8manglingiPPKc
-     /tmp/ccDB5ihs.s:1879   .data:0000000000000000 _ZN9Something6Inside13anotherStaticE
-     /tmp/ccDB5ihs.s:1854   .text:00000000000001b1 _GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE
+     /tmp/ccXRx6FS.s:1307   .text._ZN9__gnu_cxxneIPKSsSt6vectorISsSaISsEEEEbRKNS_17__normal_iteratorIT_T0_EESB_:0000000000000000 _ZN9__gnu_cxxneIPKSsSt6vectorISsSaISsEEEEbRKNS_17__normal_iteratorIT_T0_EESB_
+     /tmp/ccXRx6FS.s:1345   .text._ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsEET0_T_SC_SB_:0000000000000000 _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsEET0_T_SC_SB_
+     /tmp/ccXRx6FS.s:1480   .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsET0_T_SA_S9_:0000000000000000 _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsET0_T_SA_S9_
+     /tmp/ccXRx6FS.s:1502   .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET0_T_SA_S9_RSaIT1_E:0000000000000000 _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEEPSsSsET0_T_SA_S9_RSaIT1_E
+     /tmp/ccXRx6FS.s:1522   .text._ZNSt6vectorISsSaISsEEC2ERKS1_:0000000000000000 _ZNSt6vectorISsSaISsEEC2ERKS1_
+     /tmp/ccXRx6FS.s:1522   .text._ZNSt6vectorISsSaISsEEC2ERKS1_:0000000000000000 _ZNSt6vectorISsSaISsEEC1ERKS1_
+     /tmp/ccXRx6FS.s:1662   .text:0000000000000034 _Z8manglingiPPKc
+     /tmp/ccXRx6FS.s:1879   .data:0000000000000000 _ZN9Something6Inside13anotherStaticE
+     /tmp/ccXRx6FS.s:1854   .text:00000000000001b1 _GLOBAL__sub_I__ZN9Something6Inside13anotherStaticE
                            .group:0000000000000000 _ZN7OutsideC5Ei
                            .group:0000000000000000 _ZNSt12_Vector_baseISsSaISsEE12_Vector_implC5ERKS0_
                            .group:0000000000000000 _ZNSt12_Vector_baseISsSaISsEEC5ERKS0_

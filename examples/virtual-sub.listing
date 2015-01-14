@@ -1,13 +1,13 @@
-GAS LISTING /tmp/ccHuhKRj.s 			page 1
+GAS LISTING /tmp/ccrgLAPL.s 			page 1
 
 
    1              		.file	"virtual-sub.cpp"
    2              		.text
    3              	.Ltext0:
    4              		.align 2
-   5              		.globl	_ZNK5baseA8getDataAEv
-   7              	_ZNK5baseA8getDataAEv:
-   8              	.LFB21:
+   5              		.globl	_ZNK10bottomBase11getBaseDataEv
+   7              	_ZNK10bottomBase11getBaseDataEv:
+   8              	.LFB19:
    9              		.file 1 "virtual-sub.cpp"
    1:virtual-sub.cpp **** #include <stdio.h>
    2:virtual-sub.cpp **** 
@@ -24,1039 +24,289 @@ GAS LISTING /tmp/ccHuhKRj.s 			page 1
   13:virtual-sub.cpp ****     virtual int getDataA() const;
   14:virtual-sub.cpp **** };
   15:virtual-sub.cpp **** 
-  16:virtual-sub.cpp **** class baseB : public virtual bottomBase {
-  17:virtual-sub.cpp ****     int dataB;
-  18:virtual-sub.cpp ****   public:
-  19:virtual-sub.cpp ****     void setDataB(int b);
-  20:virtual-sub.cpp ****     virtual int getDataB() const;
-  21:virtual-sub.cpp **** };
-  22:virtual-sub.cpp **** 
-  23:virtual-sub.cpp **** class subBoth : public baseA, public baseB {
-  24:virtual-sub.cpp ****   public:
-  25:virtual-sub.cpp ****     virtual int getSum() const;
-  26:virtual-sub.cpp ****     // Overrise get data methods for fun.
-  27:virtual-sub.cpp ****     virtual int getDataA() const;
-  28:virtual-sub.cpp ****     virtual int getDataB() const;
-  29:virtual-sub.cpp **** 
-  30:virtual-sub.cpp ****     // Override getBaseData;
-  31:virtual-sub.cpp ****     virtual int getBaseData() const;
-  32:virtual-sub.cpp **** };
-  33:virtual-sub.cpp **** 
-  34:virtual-sub.cpp **** int bottomBase::getBaseData() const {
-  35:virtual-sub.cpp ****     printf("Calling bottomBase::getBaseData()\n");
-  36:virtual-sub.cpp ****     return 37;
-  37:virtual-sub.cpp **** }
-  38:virtual-sub.cpp **** 
-  39:virtual-sub.cpp **** void baseA::setDataA(int a) {
-  40:virtual-sub.cpp ****     dataA = a;
-  41:virtual-sub.cpp **** }
-  42:virtual-sub.cpp **** int baseA::getDataA() const {
-  10              		.loc 1 42 0
+  16:virtual-sub.cpp **** int bottomBase::getBaseData() const {
+  10              		.loc 1 16 0
   11              		.cfi_startproc
   12              	.LVL0:
-  43:virtual-sub.cpp ****     return dataA;
-  13              		.loc 1 43 0
+  17:virtual-sub.cpp ****     return baseData;
+  13              		.loc 1 17 0
   14 0000 8B4708   		movl	8(%rdi), %eax
-  44:virtual-sub.cpp **** }
-GAS LISTING /tmp/ccHuhKRj.s 			page 2
-
-
-  15              		.loc 1 44 0
+  18:virtual-sub.cpp **** }
+  15              		.loc 1 18 0
   16 0003 C3       		ret
   17              		.cfi_endproc
-  18              	.LFE21:
+  18              	.LFE19:
   20              		.align 2
-  21              		.globl	_ZNK5baseB8getDataBEv
-  23              	_ZNK5baseB8getDataBEv:
-  24              	.LFB23:
-  45:virtual-sub.cpp **** 
-  46:virtual-sub.cpp **** void baseB::setDataB(int b) {
-  47:virtual-sub.cpp ****     dataB = b;
-  48:virtual-sub.cpp **** }
-  49:virtual-sub.cpp **** int baseB::getDataB() const {
-  25              		.loc 1 49 0
+  21              		.globl	_ZNK5baseA8getDataAEv
+  23              	_ZNK5baseA8getDataAEv:
+  24              	.LFB21:
+  19:virtual-sub.cpp **** 
+  20:virtual-sub.cpp **** void baseA::setDataA(int a) {
+  21:virtual-sub.cpp ****     dataA = a;
+  22:virtual-sub.cpp **** }
+  23:virtual-sub.cpp **** int baseA::getDataA() const {
+  25              		.loc 1 23 0
   26              		.cfi_startproc
   27              	.LVL1:
-  50:virtual-sub.cpp ****     return dataB;
-  28              		.loc 1 50 0
+  24:virtual-sub.cpp ****     return dataA;
+  28              		.loc 1 24 0
   29 0004 8B4708   		movl	8(%rdi), %eax
-  51:virtual-sub.cpp **** }
-  30              		.loc 1 51 0
+  25:virtual-sub.cpp **** }
+  30              		.loc 1 25 0
   31 0007 C3       		ret
   32              		.cfi_endproc
-  33              	.LFE23:
+  33              	.LFE21:
   35              		.align 2
-  36              		.globl	_ZNK7subBoth6getSumEv
-  38              	_ZNK7subBoth6getSumEv:
-  39              	.LFB24:
-  52:virtual-sub.cpp **** 
-  53:virtual-sub.cpp **** int subBoth::getSum() const {
-  40              		.loc 1 53 0
+  36              		.globl	_ZN5baseA8setDataAEi
+GAS LISTING /tmp/ccrgLAPL.s 			page 2
+
+
+  38              	_ZN5baseA8setDataAEi:
+  39              	.LFB20:
+  20:virtual-sub.cpp ****     dataA = a;
+  40              		.loc 1 20 0
   41              		.cfi_startproc
   42              	.LVL2:
-  43 0008 55       		pushq	%rbp
-  44              		.cfi_def_cfa_offset 16
-  45              		.cfi_offset 6, -16
-  46 0009 53       		pushq	%rbx
-  47              		.cfi_def_cfa_offset 24
-  48              		.cfi_offset 3, -24
-  49 000a 4883EC08 		subq	$8, %rsp
-  50              		.cfi_def_cfa_offset 32
-  51 000e 4889FB   		movq	%rdi, %rbx
-  52              	.LVL3:
-  53              	.LBB13:
-  54:virtual-sub.cpp ****     int total = 0;
-  55:virtual-sub.cpp ****     total += getDataA();
-  54              		.loc 1 55 0
-  55 0011 488B07   		movq	(%rdi), %rax
-  56 0014 FF10     		call	*(%rax)
-  57              	.LVL4:
-  58 0016 89C5     		movl	%eax, %ebp
-  59              	.LVL5:
-  56:virtual-sub.cpp ****     total += getDataB();
-  60              		.loc 1 56 0
-  61 0018 488B03   		movq	(%rbx), %rax
-  62              	.LVL6:
-  63 001b 4889DF   		movq	%rbx, %rdi
-GAS LISTING /tmp/ccHuhKRj.s 			page 3
+  21:virtual-sub.cpp **** }
+  43              		.loc 1 21 0
+  44 0008 897708   		movl	%esi, 8(%rdi)
+  45 000b C3       		ret
+  46              		.cfi_endproc
+  47              	.LFE20:
+  49              		.section	.text._ZN10bottomBaseC2Ev,"axG",@progbits,_ZN10bottomBaseC5Ev,comdat
+  50              		.align 2
+  51              		.weak	_ZN10bottomBaseC2Ev
+  53              	_ZN10bottomBaseC2Ev:
+  54              	.LFB25:
+   3:virtual-sub.cpp ****     int baseData;
+  55              		.loc 1 3 0
+  56              		.cfi_startproc
+  57              	.LVL3:
+  58              	.LBB2:
+   3:virtual-sub.cpp ****     int baseData;
+  59              		.loc 1 3 0
+  60 0000 48C70700 		movq	$_ZTV10bottomBase+16, (%rdi)
+  60      000000
+  61 0007 C3       		ret
+  62              	.LBE2:
+  63              		.cfi_endproc
+  64              	.LFE25:
+  66              		.weak	_ZN10bottomBaseC1Ev
+  67              		.set	_ZN10bottomBaseC1Ev,_ZN10bottomBaseC2Ev
+  68              		.section	.text._ZN5baseAC1Ev,"axG",@progbits,_ZN5baseAC1Ev,comdat
+  69              		.align 2
+  70              		.weak	_ZN5baseAC1Ev
+  72              	_ZN5baseAC1Ev:
+  73              	.LFB28:
+   9:virtual-sub.cpp ****     int dataA;
+  74              		.loc 1 9 0
+  75              		.cfi_startproc
+  76              	.LVL4:
+  77 0000 53       		pushq	%rbx
+  78              		.cfi_def_cfa_offset 16
+  79              		.cfi_offset 3, -16
+  80 0001 4889FB   		movq	%rdi, %rbx
+  81              	.LBB3:
+   9:virtual-sub.cpp ****     int dataA;
+  82              		.loc 1 9 0
+  83 0004 488D7F10 		leaq	16(%rdi), %rdi
+  84              	.LVL5:
+  85 0008 E8000000 		call	_ZN10bottomBaseC2Ev
+  85      00
+  86              	.LVL6:
+  87 000d 48C70300 		movq	$_ZTV5baseA+24, (%rbx)
+  87      000000
+  88 0014 48C74310 		movq	$_ZTV5baseA+56, 16(%rbx)
+  88      00000000 
+GAS LISTING /tmp/ccrgLAPL.s 			page 3
 
 
-  64 001e FF5010   		call	*16(%rax)
-  65              	.LVL7:
-  66 0021 01E8     		addl	%ebp, %eax
-  67              	.LVL8:
-  68              	.LBE13:
-  57:virtual-sub.cpp ****     return total;
-  58:virtual-sub.cpp **** }
-  69              		.loc 1 58 0
-  70 0023 4883C408 		addq	$8, %rsp
-  71              		.cfi_def_cfa_offset 24
-  72 0027 5B       		popq	%rbx
-  73              		.cfi_def_cfa_offset 16
-  74              	.LVL9:
-  75 0028 5D       		popq	%rbp
-  76              		.cfi_def_cfa_offset 8
-  77 0029 C3       		ret
-  78              		.cfi_endproc
-  79              	.LFE24:
-  81              		.section	.rodata.str1.8,"aMS",@progbits,1
-  82              		.align 8
-  83              	.LC0:
-  84 0000 43616C6C 		.string	"Calling bottomBase::getBaseData()\n"
-  84      696E6720 
-  84      626F7474 
-  84      6F6D4261 
-  84      73653A3A 
-  85              		.text
-  86              		.align 2
-  87              		.globl	_ZNK10bottomBase11getBaseDataEv
-  89              	_ZNK10bottomBase11getBaseDataEv:
-  90              	.LFB19:
-  34:virtual-sub.cpp ****     printf("Calling bottomBase::getBaseData()\n");
-  91              		.loc 1 34 0
-  92              		.cfi_startproc
-  93              	.LVL10:
-  94 002a 4883EC08 		subq	$8, %rsp
-  95              		.cfi_def_cfa_offset 16
-  96              	.LVL11:
-  97              	.LBB14:
-  98              	.LBB15:
-  99              		.file 2 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
-   1:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** /* Checking macros for stdio functions.
-   2:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Copyright (C) 2004-2014 Free Software Foundation, Inc.
-   3:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    This file is part of the GNU C Library.
-   4:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-   5:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is free software; you can redistribute it and/or
-   6:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    modify it under the terms of the GNU Lesser General Public
-   7:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License as published by the Free Software Foundation; either
-   8:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    version 2.1 of the License, or (at your option) any later version.
-   9:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  10:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    The GNU C Library is distributed in the hope that it will be useful,
-  11:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    but WITHOUT ANY WARRANTY; without even the implied warranty of
-  12:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  13:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    Lesser General Public License for more details.
-  14:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  15:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    You should have received a copy of the GNU Lesser General Public
-  16:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    License along with the GNU C Library; if not, see
-GAS LISTING /tmp/ccHuhKRj.s 			page 4
-
-
-  17:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****    <http://www.gnu.org/licenses/>.  */
-  18:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  19:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifndef _STDIO_H
-  20:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # error "Never include <bits/stdio2.h> directly; use <stdio.h> instead."
-  21:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
-  22:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
-  24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
-  25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
-  26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
-  27:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   _G_va_list __ap) __THROW;
-  28:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  29:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #ifdef __va_arg_pack
-  30:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
-  31:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (sprintf (char *__restrict __s, const char *__restrict __fmt, ...))
-  32:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
-  33:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
-  34:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				  __bos (__s), __fmt, __va_arg_pack ());
-  35:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-  36:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #elif !defined __cplusplus
-  37:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # define sprintf(str, ...) \
-  38:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___sprintf_chk (str, __USE_FORTIFY_LEVEL - 1, __bos (str), \
-  39:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   __VA_ARGS__)
-  40:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
-  41:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  42:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
-  43:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsprintf (char *__restrict __s, const char *__restrict __fmt,
-  44:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 _G_va_list __ap))
-  45:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
-  46:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
-  47:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __ap);
-  48:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-  49:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  50:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if defined __USE_BSD || defined __USE_ISOC99 || defined __USE_UNIX98
-  51:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  52:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __snprintf_chk (char *__restrict __s, size_t __n, int __flag,
-  53:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   size_t __slen, const char *__restrict __format,
-  54:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   ...) __THROW;
-  55:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsnprintf_chk (char *__restrict __s, size_t __n, int __flag,
-  56:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    size_t __slen, const char *__restrict __format,
-  57:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    _G_va_list __ap) __THROW;
-  58:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  59:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
-  60:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
-  61:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (snprintf (char *__restrict __s, size_t __n,
-  62:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		 const char *__restrict __fmt, ...))
-  63:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
-  64:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
-  65:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				   __bos (__s), __fmt, __va_arg_pack ());
-  66:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-  67:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # elif !defined __cplusplus
-  68:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #  define snprintf(str, len, ...) \
-  69:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   __builtin___snprintf_chk (str, len, __USE_FORTIFY_LEVEL - 1, __bos (str), \
-  70:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			    __VA_ARGS__)
-  71:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # endif
-  72:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  73:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
-GAS LISTING /tmp/ccHuhKRj.s 			page 5
-
-
-  74:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __NTH (vsnprintf (char *__restrict __s, size_t __n,
-  75:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 		  const char *__restrict __fmt, _G_va_list __ap))
-  76:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
-  77:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __builtin___vsnprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
-  78:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 				    __bos (__s), __fmt, __ap);
-  79:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
-  80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
-  82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
-  84:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  85:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __fprintf_chk (FILE *__restrict __stream, int __flag,
-  86:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...);
-  87:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __printf_chk (int __flag, const char *__restrict __format, ...);
-  88:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vfprintf_chk (FILE *__restrict __stream, int __flag,
-  89:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format, _G_va_list __ap);
-  90:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vprintf_chk (int __flag, const char *__restrict __format,
-  91:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  _G_va_list __ap);
-  92:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-  93:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** # ifdef __va_arg_pack
-  94:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
-  95:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
-  96:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
-  97:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
-  98:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			__va_arg_pack ());
-  99:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** }
- 100:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
- 101:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** __fortify_function int
- 102:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** printf (const char *__restrict __fmt, ...)
- 103:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** {
- 104:/usr/include/x86_64-linux-gnu/bits/stdio2.h ****   return __printf_chk (__USE_FORTIFY_LEVEL - 1, __fmt, __va_arg_pack ());
- 100              		.loc 2 104 0
- 101 002e BE000000 		movl	$.LC0, %esi
- 101      00
- 102 0033 BF010000 		movl	$1, %edi
- 102      00
- 103              	.LVL12:
- 104 0038 B8000000 		movl	$0, %eax
- 104      00
- 105 003d E8000000 		call	__printf_chk
- 105      00
- 106              	.LVL13:
- 107              	.LBE15:
- 108              	.LBE14:
-  37:virtual-sub.cpp **** 
- 109              		.loc 1 37 0
- 110 0042 B8250000 		movl	$37, %eax
- 110      00
- 111 0047 4883C408 		addq	$8, %rsp
- 112              		.cfi_def_cfa_offset 8
- 113 004b C3       		ret
- 114              		.cfi_endproc
- 115              	.LFE19:
- 117              		.section	.rodata.str1.1,"aMS",@progbits,1
- 118              	.LC1:
- 119 0000 63616C6C 		.string	"calling getDataA()\n"
- 119      696E6720 
-GAS LISTING /tmp/ccHuhKRj.s 			page 6
-
-
- 119      67657444 
- 119      61746141 
- 119      28290A00 
- 120              		.text
- 121              		.align 2
- 122              		.globl	_ZNK7subBoth8getDataAEv
- 124              	_ZNK7subBoth8getDataAEv:
- 125              	.LFB25:
-  59:virtual-sub.cpp **** 
-  60:virtual-sub.cpp **** int subBoth::getDataA() const {
- 126              		.loc 1 60 0
- 127              		.cfi_startproc
- 128              	.LVL14:
- 129 004c 53       		pushq	%rbx
- 130              		.cfi_def_cfa_offset 16
- 131              		.cfi_offset 3, -16
- 132 004d 4889FB   		movq	%rdi, %rbx
- 133              	.LVL15:
- 134              	.LBB16:
- 135              	.LBB17:
- 136              		.loc 2 104 0
- 137 0050 BE000000 		movl	$.LC1, %esi
- 137      00
- 138 0055 BF010000 		movl	$1, %edi
- 138      00
- 139              	.LVL16:
- 140 005a B8000000 		movl	$0, %eax
- 140      00
- 141 005f E8000000 		call	__printf_chk
- 141      00
- 142              	.LVL17:
- 143              	.LBE17:
- 144              	.LBE16:
-  61:virtual-sub.cpp ****     printf("calling getDataA()\n");
-  62:virtual-sub.cpp ****     return baseA::getDataA();
- 145              		.loc 1 62 0
- 146 0064 4889DF   		movq	%rbx, %rdi
- 147 0067 E8000000 		call	_ZNK5baseA8getDataAEv
- 147      00
- 148              	.LVL18:
-  63:virtual-sub.cpp **** }
- 149              		.loc 1 63 0
- 150 006c 5B       		popq	%rbx
- 151              		.cfi_def_cfa_offset 8
- 152              	.LVL19:
- 153 006d C3       		ret
- 154              		.cfi_endproc
- 155              	.LFE25:
- 157              		.section	.rodata.str1.1
- 158              	.LC2:
- 159 0014 63616C6C 		.string	"calling getDataB()\n"
- 159      696E6720 
- 159      67657444 
- 159      61746142 
- 159      28290A00 
- 160              		.text
- 161              		.align 2
-GAS LISTING /tmp/ccHuhKRj.s 			page 7
-
-
- 162              		.globl	_ZNK7subBoth8getDataBEv
- 164              	_ZNK7subBoth8getDataBEv:
- 165              	.LFB26:
-  64:virtual-sub.cpp **** 
-  65:virtual-sub.cpp **** int subBoth::getDataB() const {
- 166              		.loc 1 65 0
- 167              		.cfi_startproc
- 168              	.LVL20:
- 169 006e 53       		pushq	%rbx
- 170              		.cfi_def_cfa_offset 16
- 171              		.cfi_offset 3, -16
- 172 006f 4889FB   		movq	%rdi, %rbx
- 173              	.LVL21:
- 174              	.LBB18:
- 175              	.LBB19:
- 176              		.loc 2 104 0
- 177 0072 BE000000 		movl	$.LC2, %esi
- 177      00
- 178 0077 BF010000 		movl	$1, %edi
- 178      00
- 179              	.LVL22:
- 180 007c B8000000 		movl	$0, %eax
- 180      00
- 181 0081 E8000000 		call	__printf_chk
- 181      00
- 182              	.LVL23:
- 183              	.LBE19:
- 184              	.LBE18:
-  66:virtual-sub.cpp ****     printf("calling getDataB()\n");
-  67:virtual-sub.cpp ****     return baseB::getDataB();
- 185              		.loc 1 67 0
- 186 0086 488D7B10 		leaq	16(%rbx), %rdi
- 187 008a E8000000 		call	_ZNK5baseB8getDataBEv
- 187      00
- 188              	.LVL24:
-  68:virtual-sub.cpp **** }
- 189              		.loc 1 68 0
- 190 008f 5B       		popq	%rbx
- 191              		.cfi_def_cfa_offset 8
- 192              	.LVL25:
- 193 0090 C3       		ret
- 194              		.cfi_endproc
- 195              	.LFE26:
- 197              		.set	.LTHUNK0,_ZNK7subBoth8getDataBEv
- 198              		.globl	_ZThn16_NK7subBoth8getDataBEv
- 200              	_ZThn16_NK7subBoth8getDataBEv:
- 201              	.LFB41:
+  89              	.LBE3:
+  90 001c 5B       		popq	%rbx
+  91              		.cfi_def_cfa_offset 8
+  92              	.LVL7:
+  93 001d C3       		ret
+  94              		.cfi_endproc
+  95              	.LFE28:
+  97              		.text
+  98              		.globl	main
+ 100              	main:
+ 101              	.LFB22:
+  26:virtual-sub.cpp **** 
+  27:virtual-sub.cpp **** int main(int argc, char **argv) {
+ 102              		.loc 1 27 0
+ 103              		.cfi_startproc
+ 104              	.LVL8:
+ 105 000c 53       		pushq	%rbx
+ 106              		.cfi_def_cfa_offset 16
+ 107              		.cfi_offset 3, -16
+ 108              	.LBB4:
   28:virtual-sub.cpp **** 
- 202              		.loc 1 28 0
- 203              		.cfi_startproc
- 204 0091 4883EF10 		subq	$16, %rdi
- 205 0095 EBD7     		jmp	.LTHUNK0
- 206              		.cfi_endproc
- 207              	.LFE41:
- 209              		.section	.rodata.str1.1
- 210              	.LC3:
- 211 0028 63616C6C 		.string	"calling getBaseData()\n"
-GAS LISTING /tmp/ccHuhKRj.s 			page 8
+  29:virtual-sub.cpp ****     baseA *ba = new baseA();
+ 109              		.loc 1 29 0
+ 110 000d BF200000 		movl	$32, %edi
+ 110      00
+ 111              	.LVL9:
+ 112 0012 E8000000 		call	_Znwm
+ 112      00
+ 113              	.LVL10:
+ 114 0017 4889C3   		movq	%rax, %rbx
+ 115 001a 48C70000 		movq	$0, (%rax)
+ 115      000000
+ 116 0021 C7400800 		movl	$0, 8(%rax)
+ 116      000000
+ 117 0028 48C74010 		movq	$0, 16(%rax)
+ 117      00000000 
+ 118 0030 C7401800 		movl	$0, 24(%rax)
+ 118      000000
+ 119 0037 4889C7   		movq	%rax, %rdi
+ 120 003a E8000000 		call	_ZN5baseAC1Ev
+ 120      00
+ 121              	.LVL11:
+  30:virtual-sub.cpp **** 
+  31:virtual-sub.cpp ****     int i  = ba->getDataA();
+ 122              		.loc 1 31 0
+ 123 003f 488B03   		movq	(%rbx), %rax
+ 124 0042 4889DF   		movq	%rbx, %rdi
+ 125 0045 FF10     		call	*(%rax)
+ 126              	.LVL12:
+  32:virtual-sub.cpp **** 
+  33:virtual-sub.cpp ****     bottomBase *botb = ba;
+ 127              		.loc 1 33 0
+ 128 0047 4885DB   		testq	%rbx, %rbx
+ 129 004a 740C     		je	.L9
+ 130              		.loc 1 33 0 is_stmt 0 discriminator 1
+ 131 004c 488B03   		movq	(%rbx), %rax
+ 132 004f 4889DF   		movq	%rbx, %rdi
+GAS LISTING /tmp/ccrgLAPL.s 			page 4
 
 
- 211      696E6720 
- 211      67657442 
- 211      61736544 
- 211      61746128 
- 212              		.text
- 213 0097 90       		.align 2
- 214              		.globl	_ZNK7subBoth11getBaseDataEv
- 216              	_ZNK7subBoth11getBaseDataEv:
- 217              	.LFB27:
-  69:virtual-sub.cpp **** 
-  70:virtual-sub.cpp **** int subBoth::getBaseData() const {
- 218              		.loc 1 70 0
- 219              		.cfi_startproc
- 220              	.LVL26:
- 221 0098 53       		pushq	%rbx
- 222              		.cfi_def_cfa_offset 16
- 223              		.cfi_offset 3, -16
- 224 0099 4889FB   		movq	%rdi, %rbx
- 225              	.LVL27:
- 226              	.LBB20:
- 227              	.LBB21:
- 228              		.loc 2 104 0
- 229 009c BE000000 		movl	$.LC3, %esi
- 229      00
- 230 00a1 BF010000 		movl	$1, %edi
- 230      00
- 231              	.LVL28:
- 232 00a6 B8000000 		movl	$0, %eax
- 232      00
- 233 00ab E8000000 		call	__printf_chk
- 233      00
- 234              	.LVL29:
- 235              	.LBE21:
- 236              	.LBE20:
-  71:virtual-sub.cpp ****     printf("calling getBaseData()\n");
-  72:virtual-sub.cpp ****     return bottomBase::getBaseData();
- 237              		.loc 1 72 0
- 238 00b0 488B03   		movq	(%rbx), %rax
- 239 00b3 480358E8 		addq	-24(%rax), %rbx
- 240              	.LVL30:
- 241 00b7 4889DF   		movq	%rbx, %rdi
- 242 00ba E8000000 		call	_ZNK10bottomBase11getBaseDataEv
- 242      00
- 243              	.LVL31:
-  73:virtual-sub.cpp **** }
- 244              		.loc 1 73 0
- 245 00bf 5B       		popq	%rbx
- 246              		.cfi_def_cfa_offset 8
- 247 00c0 C3       		ret
- 248              		.cfi_endproc
- 249              	.LFE27:
- 251              		.set	.LTHUNK1,_ZNK7subBoth11getBaseDataEv
- 252              		.globl	_ZTv0_n24_NK7subBoth11getBaseDataEv
- 254              	_ZTv0_n24_NK7subBoth11getBaseDataEv:
- 255              	.LFB42:
-  31:virtual-sub.cpp **** };
- 256              		.loc 1 31 0
-GAS LISTING /tmp/ccHuhKRj.s 			page 9
+ 133 0052 480378E8 		addq	-24(%rax), %rdi
+ 134 0056 EB05     		jmp	.L8
+ 135              	.L9:
+ 136              		.loc 1 33 0
+ 137 0058 BF000000 		movl	$0, %edi
+ 137      00
+ 138              	.L8:
+ 139              	.LVL13:
+  34:virtual-sub.cpp **** 
+  35:virtual-sub.cpp ****     int j = botb->getBaseData();
+ 140              		.loc 1 35 0 is_stmt 1 discriminator 3
+ 141 005d 488B07   		movq	(%rdi), %rax
+ 142 0060 FF10     		call	*(%rax)
+ 143              	.LVL14:
+ 144              	.LBE4:
+  36:virtual-sub.cpp **** 
+  37:virtual-sub.cpp ****     return 0;
+  38:virtual-sub.cpp **** }
+ 145              		.loc 1 38 0 discriminator 3
+ 146 0062 B8000000 		movl	$0, %eax
+ 146      00
+ 147 0067 5B       		popq	%rbx
+ 148              		.cfi_def_cfa_offset 8
+ 149              	.LVL15:
+ 150 0068 C3       		ret
+ 151              		.cfi_endproc
+ 152              	.LFE22:
+ 154              		.weak	_ZTS10bottomBase
+ 155              		.section	.rodata._ZTS10bottomBase,"aG",@progbits,_ZTS10bottomBase,comdat
+ 158              	_ZTS10bottomBase:
+ 159 0000 3130626F 		.string	"10bottomBase"
+ 159      74746F6D 
+ 159      42617365 
+ 159      00
+ 160              		.weak	_ZTI10bottomBase
+ 161              		.section	.rodata._ZTI10bottomBase,"aG",@progbits,_ZTI10bottomBase,comdat
+ 162              		.align 16
+ 165              	_ZTI10bottomBase:
+ 166 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 166      00000000 
+ 167 0008 00000000 		.quad	_ZTS10bottomBase
+ 167      00000000 
+ 168              		.weak	_ZTS5baseA
+ 169              		.section	.rodata._ZTS5baseA,"aG",@progbits,_ZTS5baseA,comdat
+ 172              	_ZTS5baseA:
+ 173 0000 35626173 		.string	"5baseA"
+ 173      654100
+ 174              		.weak	_ZTI5baseA
+ 175              		.section	.rodata._ZTI5baseA,"aG",@progbits,_ZTI5baseA,comdat
+ 176              		.align 32
+ 179              	_ZTI5baseA:
+ 180 0000 00000000 		.quad	_ZTVN10__cxxabiv121__vmi_class_type_infoE+16
+ 180      00000000 
+ 181 0008 00000000 		.quad	_ZTS5baseA
+ 181      00000000 
+ 182 0010 00000000 		.long	0
+ 183 0014 01000000 		.long	1
+GAS LISTING /tmp/ccrgLAPL.s 			page 5
 
 
- 257              		.cfi_startproc
- 258 00c1 4C8B17   		movq	(%rdi), %r10
- 259 00c4 49037AE8 		addq	-24(%r10), %rdi
- 260 00c8 EBCE     		jmp	.LTHUNK1
- 261              		.cfi_endproc
- 262              	.LFE42:
- 264              		.align 2
- 265              		.globl	_ZN5baseA8setDataAEi
- 267              	_ZN5baseA8setDataAEi:
- 268              	.LFB20:
-  39:virtual-sub.cpp ****     dataA = a;
- 269              		.loc 1 39 0
- 270              		.cfi_startproc
- 271              	.LVL32:
-  40:virtual-sub.cpp **** }
- 272              		.loc 1 40 0
- 273 00ca 897708   		movl	%esi, 8(%rdi)
- 274 00cd C3       		ret
- 275              		.cfi_endproc
- 276              	.LFE20:
- 278              		.align 2
- 279              		.globl	_ZN5baseB8setDataBEi
- 281              	_ZN5baseB8setDataBEi:
- 282              	.LFB22:
-  46:virtual-sub.cpp ****     dataB = b;
- 283              		.loc 1 46 0
- 284              		.cfi_startproc
- 285              	.LVL33:
-  47:virtual-sub.cpp **** }
- 286              		.loc 1 47 0
- 287 00ce 897708   		movl	%esi, 8(%rdi)
- 288 00d1 C3       		ret
- 289              		.cfi_endproc
- 290              	.LFE22:
- 292              		.section	.text._ZN10bottomBaseC2Ev,"axG",@progbits,_ZN10bottomBaseC5Ev,comdat
- 293              		.align 2
- 294              		.weak	_ZN10bottomBaseC2Ev
- 296              	_ZN10bottomBaseC2Ev:
- 297              	.LFB31:
-   3:virtual-sub.cpp ****     int baseData;
- 298              		.loc 1 3 0
- 299              		.cfi_startproc
- 300              	.LVL34:
- 301              	.LBB22:
-   3:virtual-sub.cpp ****     int baseData;
- 302              		.loc 1 3 0
- 303 0000 48C70700 		movq	$_ZTV10bottomBase+16, (%rdi)
- 303      000000
- 304 0007 C3       		ret
- 305              	.LBE22:
- 306              		.cfi_endproc
- 307              	.LFE31:
- 309              		.weak	_ZN10bottomBaseC1Ev
- 310              		.set	_ZN10bottomBaseC1Ev,_ZN10bottomBaseC2Ev
- 311              		.section	.text._ZN5baseAC2Ev,"axG",@progbits,_ZN5baseAC2Ev,comdat
- 312              		.align 2
- 313              		.weak	_ZN5baseAC2Ev
-GAS LISTING /tmp/ccHuhKRj.s 			page 10
-
-
- 315              	_ZN5baseAC2Ev:
- 316              	.LFB34:
-   9:virtual-sub.cpp ****     int dataA;
- 317              		.loc 1 9 0
- 318              		.cfi_startproc
- 319              	.LVL35:
- 320              	.LBB23:
-   9:virtual-sub.cpp ****     int dataA;
- 321              		.loc 1 9 0
- 322 0000 488B06   		movq	(%rsi), %rax
- 323 0003 488907   		movq	%rax, (%rdi)
- 324 0006 488B5608 		movq	8(%rsi), %rdx
- 325 000a 488B40E8 		movq	-24(%rax), %rax
- 326 000e 48891407 		movq	%rdx, (%rdi,%rax)
- 327 0012 C3       		ret
- 328              	.LBE23:
- 329              		.cfi_endproc
- 330              	.LFE34:
- 332              		.section	.text._ZN5baseBC2Ev,"axG",@progbits,_ZN5baseBC2Ev,comdat
- 333              		.align 2
- 334              		.weak	_ZN5baseBC2Ev
- 336              	_ZN5baseBC2Ev:
- 337              	.LFB37:
-  16:virtual-sub.cpp ****     int dataB;
- 338              		.loc 1 16 0
- 339              		.cfi_startproc
- 340              	.LVL36:
- 341              	.LBB24:
-  16:virtual-sub.cpp ****     int dataB;
- 342              		.loc 1 16 0
- 343 0000 488B06   		movq	(%rsi), %rax
- 344 0003 488907   		movq	%rax, (%rdi)
- 345 0006 488B5608 		movq	8(%rsi), %rdx
- 346 000a 488B40E8 		movq	-24(%rax), %rax
- 347 000e 48891407 		movq	%rdx, (%rdi,%rax)
- 348 0012 C3       		ret
- 349              	.LBE24:
- 350              		.cfi_endproc
- 351              	.LFE37:
- 353              		.section	.text._ZN7subBothC1Ev,"axG",@progbits,_ZN7subBothC1Ev,comdat
- 354              		.align 2
- 355              		.weak	_ZN7subBothC1Ev
- 357              	_ZN7subBothC1Ev:
- 358              	.LFB40:
-  23:virtual-sub.cpp ****   public:
- 359              		.loc 1 23 0
- 360              		.cfi_startproc
- 361              	.LVL37:
- 362 0000 53       		pushq	%rbx
- 363              		.cfi_def_cfa_offset 16
- 364              		.cfi_offset 3, -16
- 365 0001 4889FB   		movq	%rdi, %rbx
- 366              	.LBB25:
-  23:virtual-sub.cpp ****   public:
- 367              		.loc 1 23 0
- 368 0004 488D7F20 		leaq	32(%rdi), %rdi
- 369              	.LVL38:
-GAS LISTING /tmp/ccHuhKRj.s 			page 11
-
-
- 370 0008 E8000000 		call	_ZN10bottomBaseC2Ev
- 370      00
- 371              	.LVL39:
- 372 000d BE000000 		movl	$_ZTT7subBoth+8, %esi
- 372      00
- 373 0012 4889DF   		movq	%rbx, %rdi
- 374 0015 E8000000 		call	_ZN5baseAC2Ev
- 374      00
- 375              	.LVL40:
- 376 001a 488D7B10 		leaq	16(%rbx), %rdi
- 377 001e BE000000 		movl	$_ZTT7subBoth+24, %esi
- 377      00
- 378 0023 E8000000 		call	_ZN5baseBC2Ev
- 378      00
- 379              	.LVL41:
- 380 0028 48C70300 		movq	$_ZTV7subBoth+24, (%rbx)
- 380      000000
- 381 002f 48C74320 		movq	$_ZTV7subBoth+112, 32(%rbx)
- 381      00000000 
- 382 0037 48C74310 		movq	$_ZTV7subBoth+80, 16(%rbx)
- 382      00000000 
- 383              	.LBE25:
- 384 003f 5B       		popq	%rbx
- 385              		.cfi_def_cfa_offset 8
- 386              	.LVL42:
- 387 0040 C3       		ret
- 388              		.cfi_endproc
- 389              	.LFE40:
- 391              		.section	.rodata.str1.1
- 392              	.LC4:
- 393 003f 73622D3E 		.string	"sb->getSum()=%d"
- 393      67657453 
- 393      756D2829 
- 393      3D256400 
- 394              		.text
- 395              		.globl	_Z10virtualSubiPPKc
- 397              	_Z10virtualSubiPPKc:
- 398              	.LFB28:
-  74:virtual-sub.cpp **** 
-  75:virtual-sub.cpp **** 
-  76:virtual-sub.cpp **** int virtualSub(int argc, const char **argv) {
- 399              		.loc 1 76 0
- 400              		.cfi_startproc
- 401              	.LVL43:
- 402 00d2 55       		pushq	%rbp
- 403              		.cfi_def_cfa_offset 16
- 404              		.cfi_offset 6, -16
- 405 00d3 53       		pushq	%rbx
- 406              		.cfi_def_cfa_offset 24
- 407              		.cfi_offset 3, -24
- 408 00d4 4883EC08 		subq	$8, %rsp
- 409              		.cfi_def_cfa_offset 32
- 410              	.LBB26:
-  77:virtual-sub.cpp **** 
-  78:virtual-sub.cpp ****     subBoth *sb = new subBoth;
- 411              		.loc 1 78 0
- 412 00d8 BF300000 		movl	$48, %edi
-GAS LISTING /tmp/ccHuhKRj.s 			page 12
-
-
- 412      00
- 413              	.LVL44:
- 414 00dd E8000000 		call	_Znwm
- 414      00
- 415              	.LVL45:
- 416 00e2 4889C3   		movq	%rax, %rbx
- 417 00e5 4889C7   		movq	%rax, %rdi
- 418 00e8 E8000000 		call	_ZN7subBothC1Ev
- 418      00
- 419              	.LVL46:
-  79:virtual-sub.cpp **** 
-  80:virtual-sub.cpp ****     sb->getSum();
- 420              		.loc 1 80 0
- 421 00ed 488B03   		movq	(%rbx), %rax
- 422 00f0 4889DF   		movq	%rbx, %rdi
- 423 00f3 FF5008   		call	*8(%rax)
- 424              	.LVL47:
-  81:virtual-sub.cpp **** 
-  82:virtual-sub.cpp ****     baseA *ba = sb;
-  83:virtual-sub.cpp **** 
-  84:virtual-sub.cpp ****     ba->setDataA(12);
- 425              		.loc 1 84 0
- 426 00f6 BE0C0000 		movl	$12, %esi
- 426      00
- 427 00fb 4889DF   		movq	%rbx, %rdi
- 428 00fe E8000000 		call	_ZN5baseA8setDataAEi
- 428      00
- 429              	.LVL48:
-  85:virtual-sub.cpp ****     ba->getDataA();
- 430              		.loc 1 85 0
- 431 0103 488B03   		movq	(%rbx), %rax
- 432 0106 4889DF   		movq	%rbx, %rdi
- 433 0109 FF10     		call	*(%rax)
- 434              	.LVL49:
-  86:virtual-sub.cpp **** 
-  87:virtual-sub.cpp ****     baseB *bb = sb;
- 435              		.loc 1 87 0
- 436 010b 488D6B10 		leaq	16(%rbx), %rbp
- 437 010f 4885DB   		testq	%rbx, %rbx
- 438 0112 B8000000 		movl	$0, %eax
- 438      00
- 439 0117 480F44E8 		cmove	%rax, %rbp
- 440              	.LVL50:
-  88:virtual-sub.cpp **** 
-  89:virtual-sub.cpp ****     bb->setDataB(13);
- 441              		.loc 1 89 0
- 442 011b BE0D0000 		movl	$13, %esi
- 442      00
- 443 0120 4889EF   		movq	%rbp, %rdi
- 444 0123 E8000000 		call	_ZN5baseB8setDataBEi
- 444      00
- 445              	.LVL51:
-  90:virtual-sub.cpp ****     bb->getDataB();
- 446              		.loc 1 90 0
- 447 0128 488B4500 		movq	0(%rbp), %rax
- 448 012c 4889EF   		movq	%rbp, %rdi
- 449 012f FF10     		call	*(%rax)
-GAS LISTING /tmp/ccHuhKRj.s 			page 13
-
-
- 450              	.LVL52:
-  91:virtual-sub.cpp ****     
-  92:virtual-sub.cpp ****     printf("sb->getSum()=%d", sb->getSum());
- 451              		.loc 1 92 0
- 452 0131 488B03   		movq	(%rbx), %rax
- 453 0134 4889DF   		movq	%rbx, %rdi
- 454 0137 FF5008   		call	*8(%rax)
- 455              	.LVL53:
- 456              	.LBB27:
- 457              	.LBB28:
- 458              		.loc 2 104 0
- 459 013a 89C2     		movl	%eax, %edx
- 460 013c BE000000 		movl	$.LC4, %esi
- 460      00
- 461 0141 BF010000 		movl	$1, %edi
- 461      00
- 462 0146 B8000000 		movl	$0, %eax
- 462      00
- 463 014b E8000000 		call	__printf_chk
- 463      00
- 464              	.LVL54:
- 465              	.LBE28:
- 466              	.LBE27:
- 467              	.LBE26:
-  93:virtual-sub.cpp **** 
-  94:virtual-sub.cpp ****     return 0;
-  95:virtual-sub.cpp **** 
-  96:virtual-sub.cpp **** }
- 468              		.loc 1 96 0
- 469 0150 B8000000 		movl	$0, %eax
- 469      00
- 470 0155 4883C408 		addq	$8, %rsp
- 471              		.cfi_def_cfa_offset 24
- 472 0159 5B       		popq	%rbx
- 473              		.cfi_def_cfa_offset 16
- 474              	.LVL55:
- 475 015a 5D       		popq	%rbp
- 476              		.cfi_def_cfa_offset 8
- 477              	.LVL56:
- 478 015b C3       		ret
- 479              		.cfi_endproc
- 480              	.LFE28:
- 482              		.weak	_ZTS10bottomBase
- 483              		.section	.rodata._ZTS10bottomBase,"aG",@progbits,_ZTS10bottomBase,comdat
- 486              	_ZTS10bottomBase:
- 487 0000 3130626F 		.string	"10bottomBase"
- 487      74746F6D 
- 487      42617365 
- 487      00
- 488              		.weak	_ZTI10bottomBase
- 489              		.section	.rodata._ZTI10bottomBase,"aG",@progbits,_ZTI10bottomBase,comdat
- 490              		.align 16
- 493              	_ZTI10bottomBase:
- 494 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
- 494      00000000 
- 495 0008 00000000 		.quad	_ZTS10bottomBase
- 495      00000000 
-GAS LISTING /tmp/ccHuhKRj.s 			page 14
-
-
- 496              		.weak	_ZTS5baseA
- 497              		.section	.rodata._ZTS5baseA,"aG",@progbits,_ZTS5baseA,comdat
- 500              	_ZTS5baseA:
- 501 0000 35626173 		.string	"5baseA"
- 501      654100
- 502              		.weak	_ZTI5baseA
- 503              		.section	.rodata._ZTI5baseA,"aG",@progbits,_ZTI5baseA,comdat
- 504              		.align 32
- 507              	_ZTI5baseA:
- 508 0000 00000000 		.quad	_ZTVN10__cxxabiv121__vmi_class_type_infoE+16
- 508      00000000 
- 509 0008 00000000 		.quad	_ZTS5baseA
- 509      00000000 
- 510 0010 00000000 		.long	0
- 511 0014 01000000 		.long	1
- 512 0018 00000000 		.quad	_ZTI10bottomBase
- 512      00000000 
- 513 0020 03E8FFFF 		.quad	-6141
- 513      FFFFFFFF 
- 514              		.weak	_ZTS5baseB
- 515              		.section	.rodata._ZTS5baseB,"aG",@progbits,_ZTS5baseB,comdat
- 518              	_ZTS5baseB:
- 519 0000 35626173 		.string	"5baseB"
- 519      654200
- 520              		.weak	_ZTI5baseB
- 521              		.section	.rodata._ZTI5baseB,"aG",@progbits,_ZTI5baseB,comdat
- 522              		.align 32
- 525              	_ZTI5baseB:
- 526 0000 00000000 		.quad	_ZTVN10__cxxabiv121__vmi_class_type_infoE+16
- 526      00000000 
- 527 0008 00000000 		.quad	_ZTS5baseB
- 527      00000000 
- 528 0010 00000000 		.long	0
- 529 0014 01000000 		.long	1
- 530 0018 00000000 		.quad	_ZTI10bottomBase
- 530      00000000 
- 531 0020 03E8FFFF 		.quad	-6141
- 531      FFFFFFFF 
- 532              		.weak	_ZTS7subBoth
- 533              		.section	.rodata._ZTS7subBoth,"aG",@progbits,_ZTS7subBoth,comdat
- 536              	_ZTS7subBoth:
- 537 0000 37737562 		.string	"7subBoth"
- 537      426F7468 
- 537      00
- 538              		.weak	_ZTI7subBoth
- 539              		.section	.rodata._ZTI7subBoth,"aG",@progbits,_ZTI7subBoth,comdat
- 540              		.align 32
- 543              	_ZTI7subBoth:
- 544 0000 00000000 		.quad	_ZTVN10__cxxabiv121__vmi_class_type_infoE+16
- 544      00000000 
- 545 0008 00000000 		.quad	_ZTS7subBoth
- 545      00000000 
- 546 0010 02000000 		.long	2
- 547 0014 02000000 		.long	2
- 548 0018 00000000 		.quad	_ZTI5baseA
- 548      00000000 
- 549 0020 02000000 		.quad	2
-GAS LISTING /tmp/ccHuhKRj.s 			page 15
-
-
- 549      00000000 
- 550 0028 00000000 		.quad	_ZTI5baseB
- 550      00000000 
- 551 0030 02100000 		.quad	4098
- 551      00000000 
- 552              		.weak	_ZTV10bottomBase
- 553              		.section	.rodata._ZTV10bottomBase,"aG",@progbits,_ZTV10bottomBase,comdat
- 554              		.align 16
- 557              	_ZTV10bottomBase:
- 558 0000 00000000 		.quad	0
- 558      00000000 
- 559 0008 00000000 		.quad	_ZTI10bottomBase
- 559      00000000 
- 560 0010 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
- 560      00000000 
- 561              		.weak	_ZTT5baseA
- 562              		.section	.rodata._ZTT5baseA,"aG",@progbits,_ZTV5baseA,comdat
- 563              		.align 16
- 566              	_ZTT5baseA:
- 567 0000 00000000 		.quad	_ZTV5baseA+24
- 567      00000000 
- 568 0008 00000000 		.quad	_ZTV5baseA+56
- 568      00000000 
- 569              		.weak	_ZTV5baseA
- 570              		.section	.rodata._ZTV5baseA,"aG",@progbits,_ZTV5baseA,comdat
- 571              		.align 32
- 574              	_ZTV5baseA:
- 575 0000 10000000 		.quad	16
- 575      00000000 
- 576 0008 00000000 		.quad	0
- 576      00000000 
- 577 0010 00000000 		.quad	_ZTI5baseA
- 577      00000000 
- 578 0018 00000000 		.quad	_ZNK5baseA8getDataAEv
- 578      00000000 
- 579 0020 00000000 		.quad	0
- 579      00000000 
- 580 0028 F0FFFFFF 		.quad	-16
- 580      FFFFFFFF 
- 581 0030 00000000 		.quad	_ZTI5baseA
- 581      00000000 
- 582 0038 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
- 582      00000000 
- 583              		.weak	_ZTT5baseB
- 584              		.section	.rodata._ZTT5baseB,"aG",@progbits,_ZTV5baseB,comdat
- 585              		.align 16
- 588              	_ZTT5baseB:
- 589 0000 00000000 		.quad	_ZTV5baseB+24
- 589      00000000 
- 590 0008 00000000 		.quad	_ZTV5baseB+56
- 590      00000000 
- 591              		.weak	_ZTV5baseB
- 592              		.section	.rodata._ZTV5baseB,"aG",@progbits,_ZTV5baseB,comdat
- 593              		.align 32
- 596              	_ZTV5baseB:
- 597 0000 10000000 		.quad	16
- 597      00000000 
-GAS LISTING /tmp/ccHuhKRj.s 			page 16
-
-
- 598 0008 00000000 		.quad	0
- 598      00000000 
- 599 0010 00000000 		.quad	_ZTI5baseB
- 599      00000000 
- 600 0018 00000000 		.quad	_ZNK5baseB8getDataBEv
- 600      00000000 
- 601 0020 00000000 		.quad	0
- 601      00000000 
- 602 0028 F0FFFFFF 		.quad	-16
- 602      FFFFFFFF 
- 603 0030 00000000 		.quad	_ZTI5baseB
- 603      00000000 
- 604 0038 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
- 604      00000000 
- 605              		.hidden	_ZTC7subBoth16_5baseB
- 606              		.weak	_ZTC7subBoth16_5baseB
- 607              		.section	.rodata._ZTC7subBoth16_5baseB,"aG",@progbits,_ZTV7subBoth,comdat
- 608              		.align 32
- 611              	_ZTC7subBoth16_5baseB:
- 612 0000 10000000 		.quad	16
- 612      00000000 
- 613 0008 00000000 		.quad	0
- 613      00000000 
- 614 0010 00000000 		.quad	_ZTI5baseB
- 614      00000000 
- 615 0018 00000000 		.quad	_ZNK5baseB8getDataBEv
- 615      00000000 
- 616 0020 00000000 		.quad	0
- 616      00000000 
- 617 0028 F0FFFFFF 		.quad	-16
- 617      FFFFFFFF 
- 618 0030 00000000 		.quad	_ZTI5baseB
- 618      00000000 
- 619 0038 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
- 619      00000000 
- 620              		.hidden	_ZTC7subBoth0_5baseA
- 621              		.weak	_ZTC7subBoth0_5baseA
- 622              		.section	.rodata._ZTC7subBoth0_5baseA,"aG",@progbits,_ZTV7subBoth,comdat
- 623              		.align 32
- 626              	_ZTC7subBoth0_5baseA:
- 627 0000 20000000 		.quad	32
- 627      00000000 
- 628 0008 00000000 		.quad	0
- 628      00000000 
- 629 0010 00000000 		.quad	_ZTI5baseA
- 629      00000000 
- 630 0018 00000000 		.quad	_ZNK5baseA8getDataAEv
- 630      00000000 
- 631 0020 00000000 		.quad	0
- 631      00000000 
- 632 0028 E0FFFFFF 		.quad	-32
- 632      FFFFFFFF 
- 633 0030 00000000 		.quad	_ZTI5baseA
- 633      00000000 
- 634 0038 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
- 634      00000000 
- 635              		.weak	_ZTT7subBoth
-GAS LISTING /tmp/ccHuhKRj.s 			page 17
-
-
- 636              		.section	.rodata._ZTT7subBoth,"aG",@progbits,_ZTV7subBoth,comdat
- 637              		.align 32
- 640              	_ZTT7subBoth:
- 641 0000 00000000 		.quad	_ZTV7subBoth+24
- 641      00000000 
- 642 0008 00000000 		.quad	_ZTC7subBoth0_5baseA+24
- 642      00000000 
- 643 0010 00000000 		.quad	_ZTC7subBoth0_5baseA+56
- 643      00000000 
- 644 0018 00000000 		.quad	_ZTC7subBoth16_5baseB+24
- 644      00000000 
- 645 0020 00000000 		.quad	_ZTC7subBoth16_5baseB+56
- 645      00000000 
- 646 0028 00000000 		.quad	_ZTV7subBoth+112
- 646      00000000 
- 647 0030 00000000 		.quad	_ZTV7subBoth+80
- 647      00000000 
- 648              		.weak	_ZTV7subBoth
- 649              		.section	.rodata._ZTV7subBoth,"aG",@progbits,_ZTV7subBoth,comdat
- 650              		.align 32
- 653              	_ZTV7subBoth:
- 654 0000 20000000 		.quad	32
- 654      00000000 
- 655 0008 00000000 		.quad	0
- 655      00000000 
- 656 0010 00000000 		.quad	_ZTI7subBoth
- 656      00000000 
- 657 0018 00000000 		.quad	_ZNK7subBoth8getDataAEv
- 657      00000000 
- 658 0020 00000000 		.quad	_ZNK7subBoth6getSumEv
- 658      00000000 
- 659 0028 00000000 		.quad	_ZNK7subBoth8getDataBEv
- 659      00000000 
- 660 0030 00000000 		.quad	_ZNK7subBoth11getBaseDataEv
- 660      00000000 
- 661 0038 10000000 		.quad	16
- 661      00000000 
- 662 0040 F0FFFFFF 		.quad	-16
- 662      FFFFFFFF 
- 663 0048 00000000 		.quad	_ZTI7subBoth
- 663      00000000 
- 664 0050 00000000 		.quad	_ZThn16_NK7subBoth8getDataBEv
- 664      00000000 
- 665 0058 E0FFFFFF 		.quad	-32
- 665      FFFFFFFF 
- 666 0060 E0FFFFFF 		.quad	-32
- 666      FFFFFFFF 
- 667 0068 00000000 		.quad	_ZTI7subBoth
- 667      00000000 
- 668 0070 00000000 		.quad	_ZTv0_n24_NK7subBoth11getBaseDataEv
- 668      00000000 
- 669              		.text
- 670              	.Letext0:
-GAS LISTING /tmp/ccHuhKRj.s 			page 18
+ 184 0018 00000000 		.quad	_ZTI10bottomBase
+ 184      00000000 
+ 185 0020 03E8FFFF 		.quad	-6141
+ 185      FFFFFFFF 
+ 186              		.weak	_ZTV10bottomBase
+ 187              		.section	.rodata._ZTV10bottomBase,"aG",@progbits,_ZTV10bottomBase,comdat
+ 188              		.align 16
+ 191              	_ZTV10bottomBase:
+ 192 0000 00000000 		.quad	0
+ 192      00000000 
+ 193 0008 00000000 		.quad	_ZTI10bottomBase
+ 193      00000000 
+ 194 0010 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
+ 194      00000000 
+ 195              		.weak	_ZTT5baseA
+ 196              		.section	.rodata._ZTT5baseA,"aG",@progbits,_ZTV5baseA,comdat
+ 197              		.align 16
+ 200              	_ZTT5baseA:
+ 201 0000 00000000 		.quad	_ZTV5baseA+24
+ 201      00000000 
+ 202 0008 00000000 		.quad	_ZTV5baseA+56
+ 202      00000000 
+ 203              		.weak	_ZTV5baseA
+ 204              		.section	.rodata._ZTV5baseA,"aG",@progbits,_ZTV5baseA,comdat
+ 205              		.align 32
+ 208              	_ZTV5baseA:
+ 209 0000 10000000 		.quad	16
+ 209      00000000 
+ 210 0008 00000000 		.quad	0
+ 210      00000000 
+ 211 0010 00000000 		.quad	_ZTI5baseA
+ 211      00000000 
+ 212 0018 00000000 		.quad	_ZNK5baseA8getDataAEv
+ 212      00000000 
+ 213 0020 00000000 		.quad	0
+ 213      00000000 
+ 214 0028 F0FFFFFF 		.quad	-16
+ 214      FFFFFFFF 
+ 215 0030 00000000 		.quad	_ZTI5baseA
+ 215      00000000 
+ 216 0038 00000000 		.quad	_ZNK10bottomBase11getBaseDataEv
+ 216      00000000 
+ 217              		.text
+ 218              	.Letext0:
+GAS LISTING /tmp/ccrgLAPL.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 virtual-sub.cpp
-     /tmp/ccHuhKRj.s:7      .text:0000000000000000 _ZNK5baseA8getDataAEv
-     /tmp/ccHuhKRj.s:23     .text:0000000000000004 _ZNK5baseB8getDataBEv
-     /tmp/ccHuhKRj.s:38     .text:0000000000000008 _ZNK7subBoth6getSumEv
-     /tmp/ccHuhKRj.s:89     .text:000000000000002a _ZNK10bottomBase11getBaseDataEv
-     /tmp/ccHuhKRj.s:124    .text:000000000000004c _ZNK7subBoth8getDataAEv
-     /tmp/ccHuhKRj.s:164    .text:000000000000006e _ZNK7subBoth8getDataBEv
-     /tmp/ccHuhKRj.s:200    .text:0000000000000091 _ZThn16_NK7subBoth8getDataBEv
-     /tmp/ccHuhKRj.s:216    .text:0000000000000098 _ZNK7subBoth11getBaseDataEv
-     /tmp/ccHuhKRj.s:254    .text:00000000000000c1 _ZTv0_n24_NK7subBoth11getBaseDataEv
-     /tmp/ccHuhKRj.s:267    .text:00000000000000ca _ZN5baseA8setDataAEi
-     /tmp/ccHuhKRj.s:281    .text:00000000000000ce _ZN5baseB8setDataBEi
-     /tmp/ccHuhKRj.s:296    .text._ZN10bottomBaseC2Ev:0000000000000000 _ZN10bottomBaseC2Ev
-     /tmp/ccHuhKRj.s:557    .rodata._ZTV10bottomBase:0000000000000000 _ZTV10bottomBase
-     /tmp/ccHuhKRj.s:296    .text._ZN10bottomBaseC2Ev:0000000000000000 _ZN10bottomBaseC1Ev
-     /tmp/ccHuhKRj.s:315    .text._ZN5baseAC2Ev:0000000000000000 _ZN5baseAC2Ev
-     /tmp/ccHuhKRj.s:336    .text._ZN5baseBC2Ev:0000000000000000 _ZN5baseBC2Ev
-     /tmp/ccHuhKRj.s:357    .text._ZN7subBothC1Ev:0000000000000000 _ZN7subBothC1Ev
-     /tmp/ccHuhKRj.s:640    .rodata._ZTT7subBoth:0000000000000000 _ZTT7subBoth
-     /tmp/ccHuhKRj.s:653    .rodata._ZTV7subBoth:0000000000000000 _ZTV7subBoth
-     /tmp/ccHuhKRj.s:397    .text:00000000000000d2 _Z10virtualSubiPPKc
-     /tmp/ccHuhKRj.s:486    .rodata._ZTS10bottomBase:0000000000000000 _ZTS10bottomBase
-     /tmp/ccHuhKRj.s:493    .rodata._ZTI10bottomBase:0000000000000000 _ZTI10bottomBase
-     /tmp/ccHuhKRj.s:500    .rodata._ZTS5baseA:0000000000000000 _ZTS5baseA
-     /tmp/ccHuhKRj.s:507    .rodata._ZTI5baseA:0000000000000000 _ZTI5baseA
-     /tmp/ccHuhKRj.s:518    .rodata._ZTS5baseB:0000000000000000 _ZTS5baseB
-     /tmp/ccHuhKRj.s:525    .rodata._ZTI5baseB:0000000000000000 _ZTI5baseB
-     /tmp/ccHuhKRj.s:536    .rodata._ZTS7subBoth:0000000000000000 _ZTS7subBoth
-     /tmp/ccHuhKRj.s:543    .rodata._ZTI7subBoth:0000000000000000 _ZTI7subBoth
-     /tmp/ccHuhKRj.s:566    .rodata._ZTT5baseA:0000000000000000 _ZTT5baseA
-     /tmp/ccHuhKRj.s:574    .rodata._ZTV5baseA:0000000000000000 _ZTV5baseA
-     /tmp/ccHuhKRj.s:588    .rodata._ZTT5baseB:0000000000000000 _ZTT5baseB
-     /tmp/ccHuhKRj.s:596    .rodata._ZTV5baseB:0000000000000000 _ZTV5baseB
-     /tmp/ccHuhKRj.s:611    .rodata._ZTC7subBoth16_5baseB:0000000000000000 _ZTC7subBoth16_5baseB
-     /tmp/ccHuhKRj.s:626    .rodata._ZTC7subBoth0_5baseA:0000000000000000 _ZTC7subBoth0_5baseA
+     /tmp/ccrgLAPL.s:7      .text:0000000000000000 _ZNK10bottomBase11getBaseDataEv
+     /tmp/ccrgLAPL.s:23     .text:0000000000000004 _ZNK5baseA8getDataAEv
+     /tmp/ccrgLAPL.s:38     .text:0000000000000008 _ZN5baseA8setDataAEi
+     /tmp/ccrgLAPL.s:53     .text._ZN10bottomBaseC2Ev:0000000000000000 _ZN10bottomBaseC2Ev
+     /tmp/ccrgLAPL.s:191    .rodata._ZTV10bottomBase:0000000000000000 _ZTV10bottomBase
+     /tmp/ccrgLAPL.s:53     .text._ZN10bottomBaseC2Ev:0000000000000000 _ZN10bottomBaseC1Ev
+     /tmp/ccrgLAPL.s:72     .text._ZN5baseAC1Ev:0000000000000000 _ZN5baseAC1Ev
+     /tmp/ccrgLAPL.s:208    .rodata._ZTV5baseA:0000000000000000 _ZTV5baseA
+     /tmp/ccrgLAPL.s:100    .text:000000000000000c main
+     /tmp/ccrgLAPL.s:158    .rodata._ZTS10bottomBase:0000000000000000 _ZTS10bottomBase
+     /tmp/ccrgLAPL.s:165    .rodata._ZTI10bottomBase:0000000000000000 _ZTI10bottomBase
+     /tmp/ccrgLAPL.s:172    .rodata._ZTS5baseA:0000000000000000 _ZTS5baseA
+     /tmp/ccrgLAPL.s:179    .rodata._ZTI5baseA:0000000000000000 _ZTI5baseA
+     /tmp/ccrgLAPL.s:200    .rodata._ZTT5baseA:0000000000000000 _ZTT5baseA
                            .group:0000000000000000 _ZN10bottomBaseC5Ev
 
 UNDEFINED SYMBOLS
-__printf_chk
 _Znwm
 _ZTVN10__cxxabiv117__class_type_infoE
 _ZTVN10__cxxabiv121__vmi_class_type_infoE
