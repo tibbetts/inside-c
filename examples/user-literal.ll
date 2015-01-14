@@ -29,7 +29,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str1 = private unnamed_addr constant [2 x i8] c" \00", align 1
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define double @_Zli2_me(x86_fp80 %arg) #0 {
   %1 = alloca %class.SomeLiteral, align 8
   %2 = fptrunc x86_fp80 %arg to double
@@ -39,13 +39,13 @@ define double @_Zli2_me(x86_fp80 %arg) #0 {
   ret double %4
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN11SomeLiteralC1Ed(%class.SomeLiteral* nocapture %this, double %arg) unnamed_addr #0 align 2 {
   tail call void @_ZN11SomeLiteralC2Ed(%class.SomeLiteral* %this, double %arg)
   ret void
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z11userLiteralv() #1 {
   %1 = alloca %"class.std::__1::locale", align 8
   %s = alloca %class.SomeLiteral, align 8
@@ -95,7 +95,7 @@ _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit: ; preds = %20
   ret void
 }
 
-; Function Attrs: noinline nounwind readnone ssp uwtable
+; Function Attrs: noinline nounwind readnone uwtable
 define linkonce_odr double @_Zli4_dege(x86_fp80 %deg) #2 {
   %1 = fmul x86_fp80 %deg, 0xK4000C90FDAA22168C000
   %2 = fdiv x86_fp80 %1, 0xK4006B400000000000000
@@ -103,7 +103,7 @@ define linkonce_odr double @_Zli4_dege(x86_fp80 %deg) #2 {
   ret double %3
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #1 {
   %1 = tail call i64 @strlen(i8* %__str) #8
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
@@ -112,7 +112,7 @@ define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_tra
 
 declare %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEd(%"class.std::__1::basic_ostream"*, double) #3
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define linkonce_odr double @_ZNK11SomeLiteral3getEv(%class.SomeLiteral* nocapture readonly %this) #4 align 2 {
   %1 = getelementptr inbounds %class.SomeLiteral* %this, i64 0, i32 0
   %2 = load double* %1, align 8, !tbaa !4
@@ -132,7 +132,7 @@ declare void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"*) #5
 
 declare %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"*, %"class.std::__1::locale::id"*) #3
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #1 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -307,7 +307,7 @@ declare i64 @strlen(i8* nocapture) #6
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #3
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #1 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -428,7 +428,7 @@ declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1E
 
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEmc(%"class.std::__1::basic_string"*, i64, i8 signext) #3
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN11SomeLiteralC2Ed(%class.SomeLiteral* nocapture %this, double %arg) unnamed_addr #0 align 2 {
   %1 = getelementptr inbounds %class.SomeLiteral* %this, i64 0, i32 0
   store double %arg, double* %1, align 8, !tbaa !4
@@ -441,11 +441,11 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #8
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #8
 
-attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { noinline nounwind readnone ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noinline nounwind readnone uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { nounwind readonly "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #7 = { noinline noreturn nounwind }

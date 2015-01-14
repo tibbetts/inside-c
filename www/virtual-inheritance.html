@@ -164,6 +164,40 @@
       </div>
     </div>
 
+
+    <h2>Polymorphic Function Pointers</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#polymorphic-fp-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="polymorphic-fp-cpp">
+          <pre data-src="../examples/polymorphic-fp.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-clang-s">
+          <pre data-src="../examples/polymorphic-fp-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-ll">
+          <pre data-src="../examples/polymorphic-fp.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-gcc-s">
+          <pre data-src="../examples/polymorphic-fp-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-listing">
+          <pre data-src="../examples/polymorphic-fp.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+
     <p>
       More information, including a better description of what VTT is for, at <a href="http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class">http://stackoverflow.com/questions/6258559/what-is-the-vtt-for-a-class</a>.
       <p>

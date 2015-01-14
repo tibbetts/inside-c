@@ -64,7 +64,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @"_ZTIZ12anonFunctionvE3$_0" = internal constant { i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv117__class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([22 x i8]* @"_ZTSZ12anonFunctionvE3$_0", i32 0, i32 0) }
 @_ZTVNSt3__110__function6__baseIFiiiEEE = linkonce_odr unnamed_addr constant [11 x i8*] [i8* null, i8* bitcast ({ i8*, i8* }* @_ZTINSt3__110__function6__baseIFiiiEEE to i8*), i8* bitcast (void (%"class.std::__1::__function::__base"*)* @_ZNSt3__110__function6__baseIFiiiEED1Ev to i8*), i8* bitcast (void (%"class.std::__1::__function::__base"*)* @_ZNSt3__110__function6__baseIFiiiEED0Ev to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*), i8* bitcast (void ()* @__cxa_pure_virtual to i8*)]
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z12anonFunctionv() #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %2 = alloca %"class.std::__1::function", align 16
@@ -119,13 +119,13 @@ _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit: ; preds = %17
   resume { i8*, i32 } %29
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_Z5applyRKNSt3__18functionIFiiiEEE(%"class.std::__1::function"* nocapture readonly %f) #0 {
   %1 = tail call i32 @_ZNKSt3__18functionIFiiiEEclEii(%"class.std::__1::function"* %f, i32 1, i32 2)
   ret i32 %1
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__18functionIFiiiEEC1IZ12anonFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"(%"class.std::__1::function"* %this) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__18functionIFiiiEEC2IZ12anonFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"(%"class.std::__1::function"* %this)
   ret void
@@ -133,13 +133,13 @@ define internal fastcc void @"_ZNSt3__18functionIFiiiEEC1IZ12anonFunctionvE3$_0E
 
 declare i32 @__gxx_personality_v0(...)
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__18functionIFiiiEED1Ev(%"class.std::__1::function"* readonly %this) unnamed_addr #1 align 2 {
   tail call void @_ZNSt3__18functionIFiiiEED2Ev(%"class.std::__1::function"* %this) #12
   ret void
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #0 {
   %1 = tail call i64 @strlen(i8* %__str) #12
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
@@ -148,7 +148,7 @@ define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_tra
 
 declare %"class.std::__1::basic_ostream"* @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi(%"class.std::__1::basic_ostream"*, i32) #2
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr i32 @_ZNKSt3__18functionIFiiiEEclEii(%"class.std::__1::function"* nocapture readonly %this, i32 %__arg, i32 %__arg1) #0 align 2 {
   %1 = alloca i32, align 4
   %2 = alloca i32, align 4
@@ -179,13 +179,13 @@ define linkonce_odr i32 @_ZNKSt3__18functionIFiiiEEclEii(%"class.std::__1::funct
 
 declare i8* @__cxa_allocate_exception(i64)
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__117bad_function_callC1Ev(%"class.std::__1::bad_function_call"* nocapture %this) unnamed_addr #1 align 2 {
   tail call void @_ZNSt3__117bad_function_callC2Ev(%"class.std::__1::bad_function_call"* %this) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__117bad_function_callD1Ev(%"class.std::__1::bad_function_call"* %this) unnamed_addr #1 align 2 {
   tail call void @_ZNSt3__117bad_function_callD2Ev(%"class.std::__1::bad_function_call"* %this) #12
   ret void
@@ -193,7 +193,7 @@ define linkonce_odr void @_ZNSt3__117bad_function_callD1Ev(%"class.std::__1::bad
 
 declare void @__cxa_throw(i8*, i8*, i8*)
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__117bad_function_callD2Ev(%"class.std::__1::bad_function_call"* %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %"class.std::__1::bad_function_call"* %this, i64 0, i32 0
   tail call void @_ZNSt9exceptionD2Ev(%"class.std::exception"* %1) #12
@@ -203,14 +203,14 @@ define linkonce_odr void @_ZNSt3__117bad_function_callD2Ev(%"class.std::__1::bad
 ; Function Attrs: nounwind
 declare void @_ZNSt9exceptionD2Ev(%"class.std::exception"*) #3
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__117bad_function_callC2Ev(%"class.std::__1::bad_function_call"* nocapture %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %"class.std::__1::bad_function_call"* %this, i64 0, i32 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([5 x i8*]* @_ZTVNSt3__117bad_function_callE, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__117bad_function_callD0Ev(%"class.std::__1::bad_function_call"* %this) unnamed_addr #1 align 2 {
   tail call void @_ZNSt3__117bad_function_callD1Ev(%"class.std::__1::bad_function_call"* %this) #12
   %1 = bitcast %"class.std::__1::bad_function_call"* %this to i8*
@@ -235,7 +235,7 @@ declare void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"*) #3
 
 declare %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"*, %"class.std::__1::locale::id"*) #2
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -410,7 +410,7 @@ declare i64 @strlen(i8* nocapture) #5
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #2
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #0 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -531,7 +531,7 @@ declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1E
 
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEmc(%"class.std::__1::basic_string"*, i64, i8 signext) #2
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZNSt3__18functionIFiiiEED2Ev(%"class.std::__1::function"* readonly %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %"class.std::__1::function"* %this, i64 0, i32 1
   %2 = load %"class.std::__1::__function::__base"** %1, align 8, !tbaa !7
@@ -563,7 +563,7 @@ define linkonce_odr void @_ZNSt3__18functionIFiiiEED2Ev(%"class.std::__1::functi
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__18functionIFiiiEEC2IZ12anonFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"(%"class.std::__1::function"* %this) unnamed_addr #1 align 2 {
   %1 = alloca %"class.std::__1::tuple", align 8
   %2 = alloca %"class.std::__1::tuple", align 8
@@ -592,19 +592,19 @@ define internal fastcc void @"_ZNSt3__18functionIFiiiEEC2IZ12anonFunctionvE3$_0E
   ret void
 }
 
-; Function Attrs: noinline nounwind readnone ssp uwtable
+; Function Attrs: noinline nounwind readnone uwtable
 define internal void @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEED1Ev"(%"class.std::__1::__function::__func"* nocapture %this) unnamed_addr #7 align 2 {
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal void @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEED0Ev"(%"class.std::__1::__function::__func"* %this) unnamed_addr #1 align 2 {
   %1 = bitcast %"class.std::__1::__function::__func"* %this to i8*
   tail call void @_ZdlPv(i8* %1) #14
   ret void
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define internal %"class.std::__1::__function::__base"* @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEv"(%"class.std::__1::__function::__func"* %this) unnamed_addr #0 align 2 {
   %1 = alloca %"class.std::__1::tuple.8", align 8
   %2 = alloca %"class.std::__1::tuple.19", align 8
@@ -645,7 +645,7 @@ define internal %"class.std::__1::__function::__base"* @"_ZNKSt3__110__function6
   ret %"class.std::__1::__function::__base"* %18
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal void @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEPNS0_6__baseIS5_EE"(%"class.std::__1::__function::__func"* %this, %"class.std::__1::__function::__base"* %__p) unnamed_addr #1 align 2 {
   %1 = alloca %"class.std::__1::tuple.8", align 8
   %2 = alloca %"class.std::__1::tuple.11", align 8
@@ -684,19 +684,19 @@ define internal void @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9al
   ret void
 }
 
-; Function Attrs: noinline nounwind readnone ssp uwtable
+; Function Attrs: noinline nounwind readnone uwtable
 define internal void @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7destroyEv"(%"class.std::__1::__function::__func"* nocapture %this) unnamed_addr #7 align 2 {
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal void @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE18destroy_deallocateEv"(%"class.std::__1::__function::__func"* %this) unnamed_addr #1 align 2 {
   %1 = bitcast %"class.std::__1::__function::__func"* %this to i8*
   tail call void @_ZdlPv(i8* %1) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define internal i32 @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEEclEOiS7_"(%"class.std::__1::__function::__func"* nocapture readnone %this, i32* nocapture readonly %__arg, i32* nocapture readonly %__arg1) unnamed_addr #8 align 2 {
   %1 = load i32* %__arg, align 4, !tbaa !4
   %2 = load i32* %__arg1, align 4, !tbaa !4
@@ -704,7 +704,7 @@ define internal i32 @"_ZNSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allo
   ret i32 %3
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define internal i8* @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE6targetERKSt9type_info"(%"class.std::__1::__function::__func"* readnone %this, %"class.std::type_info"* nocapture readonly %__ti) unnamed_addr #8 align 2 {
   %1 = getelementptr inbounds %"class.std::type_info"* %__ti, i64 0, i32 1
   %2 = load i8** %1, align 8, !tbaa !26
@@ -714,30 +714,30 @@ define internal i8* @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9all
   ret i8* %.
 }
 
-; Function Attrs: noinline nounwind readnone ssp uwtable
+; Function Attrs: noinline nounwind readnone uwtable
 define internal %"class.std::type_info"* @"_ZNKSt3__110__function6__funcIZ12anonFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE11target_typeEv"(%"class.std::__1::__function::__func"* nocapture readnone %this) unnamed_addr #7 align 2 {
   ret %"class.std::type_info"* bitcast ({ i8*, i8* }* @"_ZTIZ12anonFunctionvE3$_0" to %"class.std::type_info"*)
 }
 
-; Function Attrs: noinline nounwind readnone ssp uwtable
+; Function Attrs: noinline nounwind readnone uwtable
 define internal fastcc i32 @"_ZZ12anonFunctionvENK3$_0clEii"(i32 %a, i32 %b) #7 align 2 {
   %1 = add nsw i32 %b, %a
   ret i32 %1
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJRKZ12anonFunctionvE3$_0EEC1EOS4_"(%"class.std::__1::tuple.8"* nocapture %this, %"class.std::__1::tuple.8"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__15tupleIJRKZ12anonFunctionvE3$_0EEC2EOS4_"(%"class.std::__1::tuple.8"* %this, %"class.std::__1::tuple.8"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC1EOS6_"(%"class.std::__1::tuple.11"* nocapture %this, %"class.std::__1::tuple.11"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__15tupleIJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS6_"(%"class.std::__1::tuple.11"* %this, %"class.std::__1::tuple.11"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS6_"(%"class.std::__1::tuple.11"* nocapture %this, %"class.std::__1::tuple.11"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"class.std::__1::tuple.11"* %this, i64 0, i32 0
   %3 = getelementptr inbounds %"class.std::__1::tuple.11"* %0, i64 0, i32 0
@@ -745,13 +745,13 @@ define internal fastcc void @"_ZNSt3__15tupleIJRKNS_9allocatorIZ12anonFunctionvE
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC1EOS8_"(%"struct.std::__1::__tuple_impl.12"* nocapture %this, %"struct.std::__1::__tuple_impl.12"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS8_"(%"struct.std::__1::__tuple_impl.12"* %this, %"struct.std::__1::__tuple_impl.12"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS8_"(%"struct.std::__1::__tuple_impl.12"* nocapture %this, %"struct.std::__1::__tuple_impl.12"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"struct.std::__1::__tuple_impl.12"* %this, i64 0, i32 0, i32 0
   %3 = getelementptr inbounds %"struct.std::__1::__tuple_impl.12"* %0, i64 0, i32 0, i32 0
@@ -760,7 +760,7 @@ define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0E
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJRKZ12anonFunctionvE3$_0EEC2EOS4_"(%"class.std::__1::tuple.8"* nocapture %this, %"class.std::__1::tuple.8"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"class.std::__1::tuple.8"* %this, i64 0, i32 0
   %3 = getelementptr inbounds %"class.std::__1::tuple.8"* %0, i64 0, i32 0
@@ -768,13 +768,13 @@ define internal fastcc void @"_ZNSt3__15tupleIJRKZ12anonFunctionvE3$_0EEC2EOS4_"
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ12anonFunctionvE3$_0EEC1EOS6_"(%"struct.std::__1::__tuple_impl.9"* nocapture %this, %"struct.std::__1::__tuple_impl.9"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ12anonFunctionvE3$_0EEC2EOS6_"(%"struct.std::__1::__tuple_impl.9"* %this, %"struct.std::__1::__tuple_impl.9"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ12anonFunctionvE3$_0EEC2EOS6_"(%"struct.std::__1::__tuple_impl.9"* nocapture %this, %"struct.std::__1::__tuple_impl.9"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"struct.std::__1::__tuple_impl.9"* %this, i64 0, i32 0, i32 0
   %3 = getelementptr inbounds %"struct.std::__1::__tuple_impl.9"* %0, i64 0, i32 0, i32 0
@@ -783,13 +783,13 @@ define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0E
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC1EOS5_"(%"class.std::__1::tuple.19"* nocapture %this, %"class.std::__1::tuple.19"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__15tupleIJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS5_"(%"class.std::__1::tuple.19"* %this, %"class.std::__1::tuple.19"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS5_"(%"class.std::__1::tuple.19"* nocapture %this, %"class.std::__1::tuple.19"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"class.std::__1::tuple.19"* %this, i64 0, i32 0
   %3 = getelementptr inbounds %"class.std::__1::tuple.19"* %0, i64 0, i32 0
@@ -797,13 +797,13 @@ define internal fastcc void @"_ZNSt3__15tupleIJONS_9allocatorIZ12anonFunctionvE3
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC1EOS7_"(%"struct.std::__1::__tuple_impl.20"* nocapture %this, %"struct.std::__1::__tuple_impl.20"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS7_"(%"struct.std::__1::__tuple_impl.20"* %this, %"struct.std::__1::__tuple_impl.20"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ12anonFunctionvE3$_0EEEEC2EOS7_"(%"struct.std::__1::__tuple_impl.20"* nocapture %this, %"struct.std::__1::__tuple_impl.20"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"struct.std::__1::__tuple_impl.20"* %this, i64 0, i32 0, i32 0
   %3 = getelementptr inbounds %"struct.std::__1::__tuple_impl.20"* %0, i64 0, i32 0, i32 0
@@ -815,13 +815,13 @@ define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0E
 ; Function Attrs: nobuiltin
 declare noalias i8* @_Znwm(i64) #9
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJOZ12anonFunctionvE3$_0EEC1EOS3_"(%"class.std::__1::tuple"* nocapture %this, %"class.std::__1::tuple"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__15tupleIJOZ12anonFunctionvE3$_0EEC2EOS3_"(%"class.std::__1::tuple"* %this, %"class.std::__1::tuple"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__15tupleIJOZ12anonFunctionvE3$_0EEC2EOS3_"(%"class.std::__1::tuple"* nocapture %this, %"class.std::__1::tuple"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"class.std::__1::tuple"* %this, i64 0, i32 0
   %3 = getelementptr inbounds %"class.std::__1::tuple"* %0, i64 0, i32 0
@@ -829,13 +829,13 @@ define internal fastcc void @"_ZNSt3__15tupleIJOZ12anonFunctionvE3$_0EEC2EOS3_"(
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ12anonFunctionvE3$_0EEC1EOS5_"(%"struct.std::__1::__tuple_impl"* nocapture %this, %"struct.std::__1::__tuple_impl"* nocapture readonly) unnamed_addr #1 align 2 {
   tail call fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ12anonFunctionvE3$_0EEC2EOS5_"(%"struct.std::__1::__tuple_impl"* %this, %"struct.std::__1::__tuple_impl"* %0) #12
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ12anonFunctionvE3$_0EEC2EOS5_"(%"struct.std::__1::__tuple_impl"* nocapture %this, %"struct.std::__1::__tuple_impl"* nocapture readonly) unnamed_addr #1 align 2 {
   %2 = getelementptr inbounds %"struct.std::__1::__tuple_impl"* %this, i64 0, i32 0, i32 0
   %3 = getelementptr inbounds %"struct.std::__1::__tuple_impl"* %0, i64 0, i32 0, i32 0
@@ -844,12 +844,12 @@ define internal fastcc void @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0E
   ret void
 }
 
-; Function Attrs: alwaysinline nounwind readnone ssp uwtable
+; Function Attrs: alwaysinline nounwind readnone uwtable
 define linkonce_odr hidden void @_ZNSt3__110__function6__baseIFiiiEED1Ev(%"class.std::__1::__function::__base"* nocapture %this) unnamed_addr #10 align 2 {
   ret void
 }
 
-; Function Attrs: alwaysinline nounwind ssp uwtable
+; Function Attrs: alwaysinline nounwind uwtable
 define linkonce_odr hidden void @_ZNSt3__110__function6__baseIFiiiEED0Ev(%"class.std::__1::__function::__base"* %this) unnamed_addr #11 align 2 {
   %1 = bitcast %"class.std::__1::__function::__base"* %this to i8*
   tail call void @_ZdlPv(i8* %1) #14
@@ -864,18 +864,18 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #12
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #12
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #4 = { nobuiltin nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind readonly "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { noinline noreturn nounwind }
-attributes #7 = { noinline nounwind readnone ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #8 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #7 = { noinline nounwind readnone uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #8 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #9 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #10 = { alwaysinline nounwind readnone ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #11 = { alwaysinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #10 = { alwaysinline nounwind readnone uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #11 = { alwaysinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #12 = { nounwind }
 attributes #13 = { noreturn }
 attributes #14 = { builtin nounwind }

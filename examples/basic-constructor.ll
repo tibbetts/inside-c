@@ -7,7 +7,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [32 x i8] c"initial value of field was %d.\0A\00", align 1
 @.str1 = private unnamed_addr constant [29 x i8] c"Last value of field was %d.\0A\00", align 1
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_Z16basicConstructoriPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefield1, align 4
   call void @_ZN9onefield1C1Ei(%class.onefield1* %of, i32 13)
@@ -32,13 +32,13 @@ define i32 @_Z16basicConstructoriPPKc(i32 %argc, i8** nocapture readnone %argv) 
   resume { i8*, i32 } %6
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield1C1Ei(%class.onefield1* nocapture %this, i32 %f) unnamed_addr #1 align 2 {
   tail call void @_ZN9onefield1C2Ei(%class.onefield1* %this, i32 %f)
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield18setFieldEi(%class.onefield1* nocapture %this, i32 %f) #1 align 2 {
   %1 = getelementptr inbounds %class.onefield1* %this, i64 0, i32 0
   store i32 %f, i32* %1, align 4, !tbaa !1
@@ -53,20 +53,20 @@ declare noalias i8* @_Znwm(i64) #2
 ; Function Attrs: nobuiltin nounwind
 declare void @_ZdlPv(i8*) #3
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield1D1Ev(%class.onefield1* nocapture readonly %this) unnamed_addr #1 align 2 {
   tail call void @_ZN9onefield1D2Ev(%class.onefield1* %this) #8
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK9onefield18getFieldEv(%class.onefield1* nocapture readonly %this) #4 align 2 {
   %1 = getelementptr inbounds %class.onefield1* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !1
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield1C2Ei(%class.onefield1* nocapture %this, i32 %f) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.onefield1* %this, i64 0, i32 0
   store i32 %f, i32* %1, align 4, !tbaa !1
@@ -77,7 +77,7 @@ define void @_ZN9onefield1C2Ei(%class.onefield1* nocapture %this, i32 %f) unname
 ; Function Attrs: nounwind
 declare i32 @printf(i8* nocapture readonly, ...) #5
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield1D2Ev(%class.onefield1* nocapture readonly %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.onefield1* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !1
@@ -96,11 +96,11 @@ declare i8* @__cxa_begin_catch(i8*)
 
 declare void @_ZSt9terminatev()
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { noinline noreturn nounwind }
 attributes #7 = { builtin }

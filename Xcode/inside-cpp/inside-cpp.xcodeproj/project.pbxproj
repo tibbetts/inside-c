@@ -42,6 +42,9 @@
 		A4C7E63E1A66BC88007DB9B3 /* type-inference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62F1A66BC88007DB9B3 /* type-inference.cpp */; };
 		A4C7E63F1A66BC88007DB9B3 /* user-literal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6301A66BC88007DB9B3 /* user-literal.cpp */; };
 		A4C7E6401A66BC88007DB9B3 /* virtual-diamond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6311A66BC88007DB9B3 /* virtual-diamond.cpp */; };
+		A4C7E6441A66D2F2007DB9B3 /* capture-error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6411A66D2F2007DB9B3 /* capture-error.cpp */; };
+		A4C7E6451A66D2F2007DB9B3 /* capture-function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6421A66D2F2007DB9B3 /* capture-function.cpp */; };
+		A4C7E6461A66D2F2007DB9B3 /* capture-reference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6431A66D2F2007DB9B3 /* capture-reference.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +97,9 @@
 		A4C7E62F1A66BC88007DB9B3 /* type-inference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "type-inference.cpp"; path = "../../../examples/type-inference.cpp"; sourceTree = "<group>"; };
 		A4C7E6301A66BC88007DB9B3 /* user-literal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "user-literal.cpp"; path = "../../../examples/user-literal.cpp"; sourceTree = "<group>"; };
 		A4C7E6311A66BC88007DB9B3 /* virtual-diamond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "virtual-diamond.cpp"; path = "../../../examples/virtual-diamond.cpp"; sourceTree = "<group>"; };
+		A4C7E6411A66D2F2007DB9B3 /* capture-error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "capture-error.cpp"; path = "../../../examples/capture-error.cpp"; sourceTree = "<group>"; };
+		A4C7E6421A66D2F2007DB9B3 /* capture-function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "capture-function.cpp"; path = "../../../examples/capture-function.cpp"; sourceTree = "<group>"; };
+		A4C7E6431A66D2F2007DB9B3 /* capture-reference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "capture-reference.cpp"; path = "../../../examples/capture-reference.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				A4C7E5F51A65A6E4007DB9B3 /* main.cpp */,
+				A4C7E6411A66D2F2007DB9B3 /* capture-error.cpp */,
+				A4C7E6421A66D2F2007DB9B3 /* capture-function.cpp */,
+				A4C7E6431A66D2F2007DB9B3 /* capture-reference.cpp */,
 				A4C7E6231A66BC88007DB9B3 /* anon-function.cpp */,
 				A4C7E6241A66BC88007DB9B3 /* constexpr.cpp */,
 				A4C7E6251A66BC88007DB9B3 /* fibonacci.cpp */,
@@ -232,6 +241,7 @@
 				A4C7E6191A65A74C007DB9B3 /* object-ret.cpp in Sources */,
 				A4C7E6121A65A74C007DB9B3 /* basic-vtable.cpp in Sources */,
 				A4C7E6201A65A74C007DB9B3 /* vtable-null.cpp in Sources */,
+				A4C7E6461A66D2F2007DB9B3 /* capture-reference.cpp in Sources */,
 				A4C7E6361A66BC88007DB9B3 /* hello-exceptions.cpp in Sources */,
 				A4C7E63A1A66BC88007DB9B3 /* rethrow.cpp in Sources */,
 				A4C7E6331A66BC88007DB9B3 /* constexpr.cpp in Sources */,
@@ -239,6 +249,7 @@
 				A4C7E6371A66BC88007DB9B3 /* initialization-list.cpp in Sources */,
 				A4C7E63E1A66BC88007DB9B3 /* type-inference.cpp in Sources */,
 				A4C7E6391A66BC88007DB9B3 /* range-loop.cpp in Sources */,
+				A4C7E6441A66D2F2007DB9B3 /* capture-error.cpp in Sources */,
 				A4C7E6401A66BC88007DB9B3 /* virtual-diamond.cpp in Sources */,
 				A4C7E5F61A65A6E4007DB9B3 /* main.cpp in Sources */,
 				A4C7E6221A65C946007DB9B3 /* rtti.cpp in Sources */,
@@ -246,6 +257,7 @@
 				A4C7E6171A65A74C007DB9B3 /* mangling.cpp in Sources */,
 				A4C7E6111A65A74C007DB9B3 /* basic-struct.cpp in Sources */,
 				A4C7E61B1A65A74C007DB9B3 /* reference.cpp in Sources */,
+				A4C7E6451A66D2F2007DB9B3 /* capture-function.cpp in Sources */,
 				A4C7E61F1A65A74C007DB9B3 /* virtual-sub.cpp in Sources */,
 				A4C7E6341A66BC88007DB9B3 /* fibonacci.cpp in Sources */,
 				A4C7E6161A65A74C007DB9B3 /* extern-c.cpp in Sources */,
@@ -340,6 +352,10 @@
 		A4C7E5FA1A65A6E4007DB9B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fno-inline",
+					"-fno-stack-protector",
+				);
 				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,6 +364,10 @@
 		A4C7E5FB1A65A6E4007DB9B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fno-inline",
+					"-fno-stack-protector",
+				);
 				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -372,6 +392,7 @@
 				A4C7E5FB1A65A6E4007DB9B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

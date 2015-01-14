@@ -29,5 +29,8 @@ int vtableNull(int argc, const char** argv);
 int rtti(int argc, const char** argv);
 
 void anonFunction();
+void captureFunction();
+void captureReference();
+void captureError();
 
 #endif

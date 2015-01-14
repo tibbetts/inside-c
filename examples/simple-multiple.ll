@@ -30,35 +30,35 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [20 x i8] c"subBoth1::getSum()=\00", align 1
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN6baseA18setDataAEi(%class.baseA1* nocapture %this, i32 %a) #0 align 2 {
   %1 = getelementptr inbounds %class.baseA1* %this, i64 0, i32 0
   store i32 %a, i32* %1, align 4, !tbaa !1
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK6baseA18getDataAEv(%class.baseA1* nocapture readonly %this) #1 align 2 {
   %1 = getelementptr inbounds %class.baseA1* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !1
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN6baseB18setDataBEi(%class.baseB1* nocapture %this, i32 %b) #0 align 2 {
   %1 = getelementptr inbounds %class.baseB1* %this, i64 0, i32 0
   store i32 %b, i32* %1, align 4, !tbaa !6
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK6baseB18getDataBEv(%class.baseB1* nocapture readonly %this) #1 align 2 {
   %1 = getelementptr inbounds %class.baseB1* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !6
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK8subBoth16getSumEv(%class.subBoth1* nocapture readonly %this) #1 align 2 {
   %1 = getelementptr inbounds %class.subBoth1* %this, i64 0, i32 0
   %2 = tail call i32 @_ZNK6baseA18getDataAEv(%class.baseA1* %1)
@@ -68,7 +68,7 @@ define i32 @_ZNK8subBoth16getSumEv(%class.subBoth1* nocapture readonly %this) #1
   ret i32 %5
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_Z14simpleMultipleiPPKc(i32 %argc, i8** nocapture readnone %argv) #2 {
   %1 = alloca %"class.std::__1::locale", align 8
   %s = alloca %class.subBoth1, align 4
@@ -116,7 +116,7 @@ _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit: ; preds = %17
   ret i32 0
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #2 {
   %1 = tail call i64 @strlen(i8* %__str) #7
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
@@ -138,7 +138,7 @@ declare void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"*) #4
 
 declare %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"*, %"class.std::__1::locale::id"*) #3
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #2 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -313,7 +313,7 @@ declare i64 @strlen(i8* nocapture) #5
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #3
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #2 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -440,9 +440,9 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #7
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #7
 
-attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #4 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind readonly "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }

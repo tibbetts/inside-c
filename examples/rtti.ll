@@ -40,7 +40,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTI18onefield5_subclass = constant { i8*, i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([21 x i8]* @_ZTS18onefield5_subclass, i32 0, i32 0), i8* bitcast ({ i8*, i8* }* @_ZTI9onefield5 to i8*) }
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z8unmanglePKc(%"class.std::__1::basic_string"* noalias sret %agg.result, i8* %type) #0 {
   %status = alloca i32, align 4
   %out = alloca %"class.std::__1::basic_string", align 8
@@ -81,7 +81,7 @@ declare i32 @__gxx_personality_v0(...)
 ; Function Attrs: nounwind
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"*) #2
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_Z4rttiiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %2 = alloca %"class.std::__1::locale", align 8
@@ -191,20 +191,20 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; Function Attrs: nobuiltin
 declare noalias i8* @_Znwm(i64) #3
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN18onefield5_subclassC1Ev(%class.onefield5_subclass* nocapture %this) unnamed_addr #4 align 2 {
   tail call void @_ZN18onefield5_subclassC2Ev(%class.onefield5_subclass* %this) #7
   ret void
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #0 {
   %1 = tail call i64 @strlen(i8* %__str) #7
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
   ret %"class.std::__1::basic_ostream"* %2
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE(%"class.std::__1::basic_ostream"* %__os, %"class.std::__1::basic_string"* %__str) #0 {
   %1 = bitcast %"class.std::__1::basic_string"* %__str to i8*
   %2 = load i8* %1, align 1, !tbaa !4
@@ -245,21 +245,21 @@ _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4sizeEv.exit: ; 
   ret %"class.std::__1::basic_ostream"* %22
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN9onefield58setFieldEi(%class.onefield5* nocapture %this, i32 %f) unnamed_addr #4 align 2 {
   %1 = getelementptr inbounds %class.onefield5* %this, i64 0, i32 1
   store i32 %f, i32* %1, align 4, !tbaa !11
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK9onefield58getFieldEv(%class.onefield5* nocapture readonly %this) unnamed_addr #5 align 2 {
   %1 = getelementptr inbounds %class.onefield5* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !11
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN18onefield5_subclass8setFieldEi(%class.onefield5_subclass* nocapture %this, i32 %f) unnamed_addr #4 align 2 {
   %1 = bitcast %class.onefield5_subclass* %this to %class.onefield5*
   tail call void @_ZN9onefield58setFieldEi(%class.onefield5* %1, i32 %f)
@@ -268,7 +268,7 @@ define void @_ZN18onefield5_subclass8setFieldEi(%class.onefield5_subclass* nocap
   ret void
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -440,7 +440,7 @@ _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateEj.exit: ; preds = %2, %57, %
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #1
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #0 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -577,7 +577,7 @@ declare i64 @strlen(i8* nocapture) #8
 
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm(%"class.std::__1::basic_string"*, i8*, i64) #1
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN18onefield5_subclassC2Ev(%class.onefield5_subclass* nocapture %this) unnamed_addr #4 align 2 {
   %1 = bitcast %class.onefield5_subclass* %this to %class.onefield5*
   tail call void @_ZN9onefield5C2Ev(%class.onefield5* %1) #7
@@ -586,7 +586,7 @@ define linkonce_odr void @_ZN18onefield5_subclassC2Ev(%class.onefield5_subclass*
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN9onefield5C2Ev(%class.onefield5* nocapture %this) unnamed_addr #4 align 2 {
   %1 = getelementptr inbounds %class.onefield5* %this, i64 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV9onefield5, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
@@ -602,12 +602,12 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #7
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #7
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #5 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #5 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { noinline noreturn nounwind }
 attributes #7 = { nounwind }
 attributes #8 = { nounwind readonly "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }

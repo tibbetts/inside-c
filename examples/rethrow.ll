@@ -7,7 +7,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 %"class.std::__1::ios_base" = type { i32 (...)**, i32, i64, i64, i32, i32, i8*, i8*, void (i32, %"class.std::__1::ios_base"*, i32)**, i32*, i64, i64, i64*, i64, i64, i8**, i64, i64 }
 %"class.std::__1::locale::id" = type { %"struct.std::__1::once_flag", i32 }
 %"struct.std::__1::once_flag" = type { i64 }
-%class.MyException = type { %"class.std::exception", %"class.std::__1::basic_string" }
+%class.MyExceptionB = type { %"class.std::exception", %"class.std::__1::basic_string" }
 %"class.std::exception" = type { i32 (...)** }
 %"class.std::__1::basic_string" = type { %"class.std::__1::__compressed_pair" }
 %"class.std::__1::__compressed_pair" = type { %"class.std::__1::__libcpp_compressed_pair_imp" }
@@ -25,13 +25,13 @@ target triple = "x86_64-apple-macosx10.10.0"
 %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry" = type { i8, %"class.std::__1::basic_ostream"* }
 %"class.std::__1::basic_streambuf" = type { i32 (...)**, %"class.std::__1::locale", i8*, i8*, i8*, i8*, i8*, i8* }
 
-@_ZTV11MyException = unnamed_addr constant [5 x i8*] [i8* null, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*), i8* bitcast (void (%class.MyException*)* @_ZN11MyExceptionD1Ev to i8*), i8* bitcast (void (%class.MyException*)* @_ZN11MyExceptionD0Ev to i8*), i8* bitcast (i8* (%class.MyException*)* @_ZNK11MyException4whatEv to i8*)]
-@.str = private unnamed_addr constant [13 x i8] c"MyException(\00", align 1
+@_ZTV12MyExceptionB = unnamed_addr constant [5 x i8*] [i8* null, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*), i8* bitcast (void (%class.MyExceptionB*)* @_ZN12MyExceptionBD1Ev to i8*), i8* bitcast (void (%class.MyExceptionB*)* @_ZN12MyExceptionBD0Ev to i8*), i8* bitcast (i8* (%class.MyExceptionB*)* @_ZNK12MyExceptionB4whatEv to i8*)]
+@.str = private unnamed_addr constant [14 x i8] c"MyExceptionB(\00", align 1
 @.str1 = private unnamed_addr constant [2 x i8] c")\00", align 1
 @_ZTVN10__cxxabiv120__si_class_type_infoE = external global i8*
-@_ZTS11MyException = constant [14 x i8] c"11MyException\00"
+@_ZTS12MyExceptionB = constant [15 x i8] c"12MyExceptionB\00"
 @_ZTISt9exception = external constant i8*
-@_ZTI11MyException = constant { i8*, i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([14 x i8]* @_ZTS11MyException, i32 0, i32 0), i8* bitcast (i8** @_ZTISt9exception to i8*) }
+@_ZTI12MyExceptionB = constant { i8*, i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([15 x i8]* @_ZTS12MyExceptionB, i32 0, i32 0), i8* bitcast (i8** @_ZTISt9exception to i8*) }
 @.str2 = private unnamed_addr constant [4 x i8] c"Foo\00", align 1
 @_ZNSt3__14coutE = external global %"class.std::__1::basic_ostream"
 @.str3 = private unnamed_addr constant [15 x i8] c"Got exception:\00", align 1
@@ -43,11 +43,11 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZNSt3__15ctypeIcE2idE = external global %"class.std::__1::locale::id"
 @_ZTVSt9exception = external unnamed_addr constant [5 x i8*]
 
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN11MyExceptionC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyException* %this, %"class.std::__1::basic_string"* %what) unnamed_addr #0 align 2 {
-  %1 = getelementptr inbounds %class.MyException* %this, i64 0, i32 0, i32 0
-  store i32 (...)** bitcast (i8** getelementptr inbounds ([5 x i8*]* @_ZTV11MyException, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
-  %2 = getelementptr inbounds %class.MyException* %this, i64 0, i32 1
+; Function Attrs: noinline nounwind uwtable
+define void @_ZN12MyExceptionBC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyExceptionB* %this, %"class.std::__1::basic_string"* %what) unnamed_addr #0 align 2 {
+  %1 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 0, i32 0
+  store i32 (...)** bitcast (i8** getelementptr inbounds ([5 x i8*]* @_ZTV12MyExceptionB, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
+  %2 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 1
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_(%"class.std::__1::basic_string"* %2, %"class.std::__1::basic_string"* %what)
           to label %3 unwind label %4
 
@@ -57,7 +57,7 @@ define void @_ZN11MyExceptionC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_
 ; <label>:4                                       ; preds = %0
   %5 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           filter [0 x i8*] zeroinitializer
-  %6 = getelementptr inbounds %class.MyException* %this, i64 0, i32 0
+  %6 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 0
   %7 = extractvalue { i8*, i32 } %5, 0
   tail call void @_ZNSt9exceptionD2Ev(%"class.std::exception"* %6) #9
   tail call void @__cxa_call_unexpected(i8* %7) #11
@@ -73,19 +73,19 @@ declare void @_ZNSt9exceptionD2Ev(%"class.std::exception"*) #2
 
 declare void @__cxa_call_unexpected(i8*)
 
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN11MyExceptionC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyException* %this, %"class.std::__1::basic_string"* %what) unnamed_addr #0 align 2 {
-  tail call void @_ZN11MyExceptionC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyException* %this, %"class.std::__1::basic_string"* %what) #9
+; Function Attrs: noinline nounwind uwtable
+define void @_ZN12MyExceptionBC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyExceptionB* %this, %"class.std::__1::basic_string"* %what) unnamed_addr #0 align 2 {
+  tail call void @_ZN12MyExceptionBC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyExceptionB* %this, %"class.std::__1::basic_string"* %what) #9
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN11MyExceptionD2Ev(%class.MyException* %this) unnamed_addr #0 align 2 {
-  %1 = getelementptr inbounds %class.MyException* %this, i64 0, i32 0, i32 0
-  store i32 (...)** bitcast (i8** getelementptr inbounds ([5 x i8*]* @_ZTV11MyException, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
-  %2 = getelementptr inbounds %class.MyException* %this, i64 0, i32 1
+; Function Attrs: noinline nounwind uwtable
+define void @_ZN12MyExceptionBD2Ev(%class.MyExceptionB* %this) unnamed_addr #0 align 2 {
+  %1 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 0, i32 0
+  store i32 (...)** bitcast (i8** getelementptr inbounds ([5 x i8*]* @_ZTV12MyExceptionB, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
+  %2 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 1
   tail call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %2) #9
-  %3 = getelementptr inbounds %class.MyException* %this, i64 0, i32 0
+  %3 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 0
   tail call void @_ZNSt9exceptionD2Ev(%"class.std::exception"* %3) #9
   ret void
 }
@@ -93,16 +93,16 @@ define void @_ZN11MyExceptionD2Ev(%class.MyException* %this) unnamed_addr #0 ali
 ; Function Attrs: nounwind
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"*) #2
 
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN11MyExceptionD1Ev(%class.MyException* %this) unnamed_addr #0 align 2 {
-  tail call void @_ZN11MyExceptionD2Ev(%class.MyException* %this) #9
+; Function Attrs: noinline nounwind uwtable
+define void @_ZN12MyExceptionBD1Ev(%class.MyExceptionB* %this) unnamed_addr #0 align 2 {
+  tail call void @_ZN12MyExceptionBD2Ev(%class.MyExceptionB* %this) #9
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN11MyExceptionD0Ev(%class.MyException* %this) unnamed_addr #0 align 2 {
-  tail call void @_ZN11MyExceptionD1Ev(%class.MyException* %this) #9
-  %1 = bitcast %class.MyException* %this to i8*
+; Function Attrs: noinline nounwind uwtable
+define void @_ZN12MyExceptionBD0Ev(%class.MyExceptionB* %this) unnamed_addr #0 align 2 {
+  tail call void @_ZN12MyExceptionBD1Ev(%class.MyExceptionB* %this) #9
+  %1 = bitcast %class.MyExceptionB* %this to i8*
   tail call void @_ZdlPv(i8* %1) #12
   ret void
 }
@@ -110,9 +110,9 @@ define void @_ZN11MyExceptionD0Ev(%class.MyException* %this) unnamed_addr #0 ali
 ; Function Attrs: nobuiltin nounwind
 declare void @_ZdlPv(i8*) #3
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
-define i8* @_ZNK11MyException4whatEv(%class.MyException* readonly %this) unnamed_addr #4 align 2 {
-  %1 = getelementptr inbounds %class.MyException* %this, i64 0, i32 1
+; Function Attrs: noinline nounwind readonly uwtable
+define i8* @_ZNK12MyExceptionB4whatEv(%class.MyExceptionB* readonly %this) unnamed_addr #4 align 2 {
+  %1 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 1
   %2 = bitcast %"class.std::__1::basic_string"* %1 to i8*
   %3 = load i8* %2, align 1, !tbaa !4
   %4 = and i8 %3, 1
@@ -120,7 +120,7 @@ define i8* @_ZNK11MyException4whatEv(%class.MyException* readonly %this) unnamed
   br i1 %5, label %9, label %6
 
 ; <label>:6                                       ; preds = %0
-  %7 = getelementptr inbounds %class.MyException* %this, i64 0, i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 2
+  %7 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 2
   %8 = load i8** %7, align 8, !tbaa !6
   br label %_ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strEv.exit
 
@@ -134,11 +134,11 @@ _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strEv.exit: ;
   ret i8* %12
 }
 
-; Function Attrs: noinline ssp uwtable
-define void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* noalias nocapture sret %agg.result, %class.MyException* %this) #5 align 2 {
+; Function Attrs: noinline uwtable
+define void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* noalias nocapture sret %agg.result, %class.MyExceptionB* %this) #5 align 2 {
   %1 = alloca %"class.std::__1::basic_string", align 8
-  %2 = getelementptr inbounds %class.MyException* %this, i64 0, i32 1
-  call void @_ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9_(%"class.std::__1::basic_string"* sret %1, i8* getelementptr inbounds ([13 x i8]* @.str, i64 0, i64 0), %"class.std::__1::basic_string"* %2)
+  %2 = getelementptr inbounds %class.MyExceptionB* %this, i64 0, i32 1
+  call void @_ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9_(%"class.std::__1::basic_string"* sret %1, i8* getelementptr inbounds ([14 x i8]* @.str, i64 0, i64 0), %"class.std::__1::basic_string"* %2)
   %3 = invoke %"class.std::__1::basic_string"* @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKc(%"class.std::__1::basic_string"* %1, i8* getelementptr inbounds ([2 x i8]* @.str1, i64 0, i64 0))
           to label %4 unwind label %7
 
@@ -157,7 +157,7 @@ define void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* noal
   resume { i8*, i32 } %8
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr void @_ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9_(%"class.std::__1::basic_string"* noalias sret %agg.result, i8* %__lhs, %"class.std::__1::basic_string"* %__rhs) #5 {
   %this2.i.i.i = bitcast %"class.std::__1::basic_string"* %agg.result to i8*
   tail call void @llvm.memset.p0i8.i64(i8* %this2.i.i.i, i8 0, i64 24, i32 8, i1 false) #9
@@ -215,23 +215,23 @@ _ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE4dataEv.exit: ; 
   ret void
 }
 
-; Function Attrs: noinline noreturn ssp uwtable
-define void @_Z17throw_MyExceptionNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %message) #6 {
+; Function Attrs: noinline noreturn uwtable
+define void @_Z18throw_MyExceptionBNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %message) #6 {
   %1 = alloca %"class.std::__1::basic_string", align 8
   %2 = call i8* @__cxa_allocate_exception(i64 32) #9
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_(%"class.std::__1::basic_string"* %1, %"class.std::__1::basic_string"* %message)
           to label %3 unwind label %9
 
 ; <label>:3                                       ; preds = %0
-  %4 = bitcast i8* %2 to %class.MyException*
-  call void @_ZN11MyExceptionC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyException* %4, %"class.std::__1::basic_string"* %1) #9
-  invoke void @__cxa_throw(i8* %2, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*), i8* bitcast (void (%class.MyException*)* @_ZN11MyExceptionD1Ev to i8*)) #13
+  %4 = bitcast i8* %2 to %class.MyExceptionB*
+  call void @_ZN12MyExceptionBC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyExceptionB* %4, %"class.std::__1::basic_string"* %1) #9
+  invoke void @__cxa_throw(i8* %2, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*), i8* bitcast (void (%class.MyExceptionB*)* @_ZN12MyExceptionBD1Ev to i8*)) #13
           to label %19 unwind label %5
 
 ; <label>:5                                       ; preds = %3
   %6 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %7 = extractvalue { i8*, i32 } %6, 0
   %8 = extractvalue { i8*, i32 } %6, 1
   call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %1) #9
@@ -240,7 +240,7 @@ define void @_Z17throw_MyExceptionNSt3__112basic_stringIcNS_11char_traitsIcEENS_
 ; <label>:9                                       ; preds = %0
   %10 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %11 = extractvalue { i8*, i32 } %10, 0
   %12 = extractvalue { i8*, i32 } %10, 1
   call void @__cxa_free_exception(i8* %2) #9
@@ -271,7 +271,7 @@ declare void @__cxa_throw(i8*, i8*, i8*)
 
 declare void @__cxa_free_exception(i8*)
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z17catch_and_rethrowv() #5 {
   %1 = alloca %"class.std::__1::locale", align 8
   %2 = alloca %"class.std::__1::basic_string", align 8
@@ -280,7 +280,7 @@ define void @_Z17catch_and_rethrowv() #5 {
           to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit unwind label %5
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; preds = %0
-  invoke void @_Z17throw_MyExceptionNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %2)
+  invoke void @_Z18throw_MyExceptionBNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %2)
           to label %4 unwind label %9
 
 ; <label>:4                                       ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
@@ -289,7 +289,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 
 ; <label>:5                                       ; preds = %0
   %6 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
           filter [0 x i8*] zeroinitializer
   %7 = extractvalue { i8*, i32 } %6, 0
   %8 = extractvalue { i8*, i32 } %6, 1
@@ -297,7 +297,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 
 ; <label>:9                                       ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
   %10 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
           filter [0 x i8*] zeroinitializer
   %11 = extractvalue { i8*, i32 } %10, 0
   %12 = extractvalue { i8*, i32 } %10, 1
@@ -307,7 +307,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 ; <label>:13                                      ; preds = %9, %5
   %.01 = phi i32 [ %12, %9 ], [ %8, %5 ]
   %.0 = phi i8* [ %11, %9 ], [ %7, %5 ]
-  %14 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)) #9
+  %14 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)) #9
   %15 = icmp eq i32 %.01, %14
   br i1 %15, label %16, label %56
 
@@ -317,8 +317,8 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
           to label %19 unwind label %47
 
 ; <label>:19                                      ; preds = %16
-  %20 = bitcast i8* %17 to %class.MyException*
-  invoke void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyException* %20)
+  %20 = bitcast i8* %17 to %class.MyExceptionB*
+  invoke void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyExceptionB* %20)
           to label %21 unwind label %47
 
 ; <label>:21                                      ; preds = %19
@@ -359,7 +359,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 ; <label>:43                                      ; preds = %36, %.noexc6
   %44 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   call void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"* %1) #9
   br label %.body
 
@@ -381,7 +381,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; <label>:47                                      ; preds = %_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit, %19, %16
   %48 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %49 = extractvalue { i8*, i32 } %48, 0
   %50 = extractvalue { i8*, i32 } %48, 1
   br label %55
@@ -389,7 +389,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; <label>:51                                      ; preds = %25, %.noexc4, %.noexc, %23, %21
   %52 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   br label %.body
 
 .body:                                            ; preds = %43, %51
@@ -436,14 +436,14 @@ declare i32 @llvm.eh.typeid.for(i8*) #7
 
 declare i8* @__cxa_begin_catch(i8*)
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #5 {
   %1 = tail call i64 @strlen(i8* %__str) #9
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
   ret %"class.std::__1::basic_ostream"* %2
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE(%"class.std::__1::basic_ostream"* %__os, %"class.std::__1::basic_string"* %__str) #5 {
   %1 = bitcast %"class.std::__1::basic_string"* %__str to i8*
   %2 = load i8* %1, align 1, !tbaa !4
@@ -497,7 +497,7 @@ define linkonce_odr hidden void @__clang_call_terminate(i8*) #8 {
 
 declare void @_ZSt9terminatev()
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z23catch_and_throw_anotherv() #5 {
   %1 = alloca %"class.std::__1::locale", align 8
   %2 = alloca %"class.std::__1::basic_string", align 8
@@ -507,7 +507,7 @@ define void @_Z23catch_and_throw_anotherv() #5 {
           to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit unwind label %6
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; preds = %0
-  invoke void @_Z17throw_MyExceptionNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %2)
+  invoke void @_Z18throw_MyExceptionBNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %2)
           to label %5 unwind label %10
 
 ; <label>:5                                       ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
@@ -516,7 +516,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 
 ; <label>:6                                       ; preds = %0
   %7 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
           filter [0 x i8*] zeroinitializer
   %8 = extractvalue { i8*, i32 } %7, 0
   %9 = extractvalue { i8*, i32 } %7, 1
@@ -524,7 +524,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 
 ; <label>:10                                      ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
   %11 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
           filter [0 x i8*] zeroinitializer
   %12 = extractvalue { i8*, i32 } %11, 0
   %13 = extractvalue { i8*, i32 } %11, 1
@@ -534,18 +534,18 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 ; <label>:14                                      ; preds = %10, %6
   %.02 = phi i32 [ %13, %10 ], [ %9, %6 ]
   %.01 = phi i8* [ %12, %10 ], [ %8, %6 ]
-  %15 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)) #9
+  %15 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)) #9
   %16 = icmp eq i32 %.02, %15
   br i1 %16, label %17, label %68
 
 ; <label>:17                                      ; preds = %14
   %18 = call i8* @__cxa_begin_catch(i8* %.01) #9
-  %19 = bitcast i8* %18 to %class.MyException*
+  %19 = bitcast i8* %18 to %class.MyExceptionB*
   %20 = invoke %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* @_ZNSt3__14coutE, i8* getelementptr inbounds ([15 x i8]* @.str3, i64 0, i64 0))
           to label %21 unwind label %51
 
 ; <label>:21                                      ; preds = %17
-  invoke void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyException* %19)
+  invoke void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyExceptionB* %19)
           to label %22 unwind label %51
 
 ; <label>:22                                      ; preds = %21
@@ -586,7 +586,7 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
 ; <label>:44                                      ; preds = %37, %.noexc
   %45 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   call void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"* %1) #9
   br label %.body
 
@@ -603,19 +603,19 @@ _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit.i: ; preds = %37
 _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.noexc6
   call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %3) #9
   %48 = call i8* @__cxa_allocate_exception(i64 32) #9
-  invoke void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* sret %4, %class.MyException* %19)
+  invoke void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* sret %4, %class.MyExceptionB* %19)
           to label %49 unwind label %63
 
 ; <label>:49                                      ; preds = %_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit
-  %50 = bitcast i8* %48 to %class.MyException*
-  call void @_ZN11MyExceptionC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyException* %50, %"class.std::__1::basic_string"* %4) #9
-  invoke void @__cxa_throw(i8* %48, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*), i8* bitcast (void (%class.MyException*)* @_ZN11MyExceptionD1Ev to i8*)) #13
+  %50 = bitcast i8* %48 to %class.MyExceptionB*
+  call void @_ZN12MyExceptionBC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE(%class.MyExceptionB* %50, %"class.std::__1::basic_string"* %4) #9
+  invoke void @__cxa_throw(i8* %48, i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*), i8* bitcast (void (%class.MyExceptionB*)* @_ZN12MyExceptionBD1Ev to i8*)) #13
           to label %77 unwind label %59
 
 ; <label>:51                                      ; preds = %21, %17
   %52 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %53 = extractvalue { i8*, i32 } %52, 0
   %54 = extractvalue { i8*, i32 } %52, 1
   br label %67
@@ -623,7 +623,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; <label>:55                                      ; preds = %.noexc6, %_ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit.i, %26, %24, %22
   %56 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   br label %.body
 
 .body:                                            ; preds = %44, %55
@@ -636,7 +636,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; <label>:59                                      ; preds = %49
   %60 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %61 = extractvalue { i8*, i32 } %60, 0
   %62 = extractvalue { i8*, i32 } %60, 1
   call void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev(%"class.std::__1::basic_string"* %4) #9
@@ -645,7 +645,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 ; <label>:63                                      ; preds = %_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit
   %64 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
           cleanup
-          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)]
+          filter [1 x i8*] [i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)]
   %65 = extractvalue { i8*, i32 } %64, 0
   %66 = extractvalue { i8*, i32 } %64, 1
   call void @__cxa_free_exception(i8* %48) #9
@@ -683,14 +683,14 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
   unreachable
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_Z12doesnt_throwv() #0 {
   %1 = alloca %"class.std::__1::basic_string", align 8
   invoke void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm(%"class.std::__1::basic_string"* %1, i8* getelementptr inbounds ([4 x i8]* @.str7, i64 0, i64 0), i64 3)
           to label %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit unwind label %3
 
 _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; preds = %0
-  invoke void @_Z17throw_MyExceptionNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %1)
+  invoke void @_Z18throw_MyExceptionBNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE(%"class.std::__1::basic_string"* %1)
           to label %2 unwind label %6
 
 ; <label>:2                                       ; preds = %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
@@ -716,8 +716,8 @@ _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit: ; pr
   unreachable
 }
 
-; Function Attrs: noinline ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #5 {
+; Function Attrs: noinline uwtable
+define void @_Z9doRethrowv() #5 {
   %1 = alloca %"class.std::__1::locale", align 8
   %2 = alloca %"class.std::__1::locale", align 8
   %3 = alloca %"class.std::__1::basic_string", align 8
@@ -727,10 +727,10 @@ define i32 @main(i32 %argc, i8** nocapture readnone %argv) #5 {
 
 ; <label>:5                                       ; preds = %0
   %6 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
   %7 = extractvalue { i8*, i32 } %6, 0
   %8 = extractvalue { i8*, i32 } %6, 1
-  %9 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)) #9
+  %9 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)) #9
   %10 = icmp eq i32 %8, %9
   br i1 %10, label %11, label %95
 
@@ -740,8 +740,8 @@ define i32 @main(i32 %argc, i8** nocapture readnone %argv) #5 {
           to label %14 unwind label %41
 
 ; <label>:14                                      ; preds = %11
-  %15 = bitcast i8* %12 to %class.MyException*
-  invoke void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyException* %15)
+  %15 = bitcast i8* %12 to %class.MyExceptionB*
+  invoke void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* sret %3, %class.MyExceptionB* %15)
           to label %16 unwind label %41
 
 ; <label>:16                                      ; preds = %14
@@ -827,10 +827,10 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
 
 ; <label>:50                                      ; preds = %40
   %51 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
-          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)
+          catch i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)
   %52 = extractvalue { i8*, i32 } %51, 0
   %53 = extractvalue { i8*, i32 } %51, 1
-  %54 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI11MyException to i8*)) #9
+  %54 = call i32 @llvm.eh.typeid.for(i8* bitcast ({ i8*, i8*, i8* }* @_ZTI12MyExceptionB to i8*)) #9
   %55 = icmp eq i32 %53, %54
   br i1 %55, label %56, label %95
 
@@ -840,8 +840,8 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit: ; preds = %.n
           to label %59 unwind label %86
 
 ; <label>:59                                      ; preds = %56
-  %60 = bitcast i8* %57 to %class.MyException*
-  invoke void @_ZNK11MyException9as_stringEv(%"class.std::__1::basic_string"* sret %4, %class.MyException* %60)
+  %60 = bitcast i8* %57 to %class.MyExceptionB*
+  invoke void @_ZNK12MyExceptionB9as_stringEv(%"class.std::__1::basic_string"* sret %4, %class.MyExceptionB* %60)
           to label %61 unwind label %86
 
 ; <label>:61                                      ; preds = %59
@@ -898,7 +898,7 @@ _ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit8: ; preds = %.
 
 ; <label>:85                                      ; preds = %40, %_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEPFRS3_S4_E.exit8
   call void @_Z12doesnt_throwv() #9
-  ret i32 0
+  ret void
 
 ; <label>:86                                      ; preds = %59, %56
   %87 = landingpad { i8*, i32 } personality i8* bitcast (i32 (...)* @__gxx_personality_v0 to i8*)
@@ -951,7 +951,7 @@ declare void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"*) #2
 
 declare %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"*, %"class.std::__1::locale::id"*) #1
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #5 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -1123,7 +1123,7 @@ _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateEj.exit: ; preds = %2, %57, %
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #1
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #5 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -1251,13 +1251,13 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #9
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #9
 
-attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #5 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #6 = { noinline noreturn ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #5 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #6 = { noinline noreturn uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #7 = { nounwind readnone }
 attributes #8 = { noinline noreturn nounwind }
 attributes #9 = { nounwind }

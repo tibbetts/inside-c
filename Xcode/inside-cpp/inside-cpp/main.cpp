@@ -31,6 +31,9 @@ int main(int argc, const char * argv[]) {
     rtti(argc, argv);
 
     anonFunction();
+    captureFunction();
+    captureReference();
+    captureError();
     
     return 0;
 }

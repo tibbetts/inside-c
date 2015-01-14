@@ -12,6 +12,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @.str = private unnamed_addr constant [20 x i8] c"calling getDataA()\0A\00", align 1
 @.str1 = private unnamed_addr constant [20 x i8] c"calling getDataB()\0A\00", align 1
 @.str2 = private unnamed_addr constant [23 x i8] c"calling getBaseData()\0A\00", align 1
+@.str3 = private unnamed_addr constant [21 x i8] c"virtualDiamond %d %d\00", align 1
 @_ZTV7subBoth = unnamed_addr constant [15 x i8*] [i8* inttoptr (i64 32 to i8*), i8* null, i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth8getDataAEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth6getSumEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth8getDataBEv to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZNK7subBoth11getBaseDataEv to i8*), i8* inttoptr (i64 16 to i8*), i8* inttoptr (i64 -16 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZThn16_NK7subBoth8getDataBEv to i8*), i8* inttoptr (i64 -32 to i8*), i8* inttoptr (i64 -32 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64, i8*, i64 }* @_ZTI7subBoth to i8*), i8* bitcast (i32 (%class.subBoth*)* @_ZTv0_n24_NK7subBoth11getBaseDataEv to i8*)]
 @_ZTT7subBoth = unnamed_addr constant [7 x i8*] [i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth0_5baseA, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth0_5baseA, i64 0, i64 7) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth16_5baseB, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTC7subBoth16_5baseB, i64 0, i64 7) to i8*), i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 14) to i8*), i8* bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 10) to i8*)]
 @_ZTC7subBoth0_5baseA = unnamed_addr constant [8 x i8*] [i8* inttoptr (i64 32 to i8*), i8* null, i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64 }* @_ZTI5baseA to i8*), i8* bitcast (i32 (%class.baseA*)* @_ZNK5baseA8getDataAEv to i8*), i8* null, i8* inttoptr (i64 -32 to i8*), i8* bitcast ({ i8*, i8*, i32, i32, i8*, i64 }* @_ZTI5baseA to i8*), i8* bitcast (i32 (%class.bottomBase*)* @_ZNK10bottomBase11getBaseDataEv to i8*)]
@@ -32,45 +33,45 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTT5baseB = unnamed_addr constant [2 x i8*] [i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTV5baseB, i64 0, i64 3) to i8*), i8* bitcast (i8** getelementptr inbounds ([8 x i8*]* @_ZTV5baseB, i64 0, i64 7) to i8*)]
 @_ZTV10bottomBase = unnamed_addr constant [3 x i8*] [i8* null, i8* bitcast ({ i8*, i8* }* @_ZTI10bottomBase to i8*), i8* bitcast (i32 (%class.bottomBase*)* @_ZNK10bottomBase11getBaseDataEv to i8*)]
 @str = private unnamed_addr constant [19 x i8] c"calling getDataA()\00"
-@str3 = private unnamed_addr constant [19 x i8] c"calling getDataB()\00"
-@str4 = private unnamed_addr constant [22 x i8] c"calling getBaseData()\00"
+@str4 = private unnamed_addr constant [19 x i8] c"calling getDataB()\00"
+@str5 = private unnamed_addr constant [22 x i8] c"calling getBaseData()\00"
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK10bottomBase11getBaseDataEv(%class.bottomBase* nocapture readonly %this) unnamed_addr #0 align 2 {
   %1 = getelementptr inbounds %class.bottomBase* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !1
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN5baseA8setDataAEi(%class.baseA* nocapture %this, i32 %a) #1 align 2 {
   %1 = getelementptr inbounds %class.baseA* %this, i64 0, i32 1
   store i32 %a, i32* %1, align 4, !tbaa !6
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK5baseA8getDataAEv(%class.baseA* nocapture readonly %this) unnamed_addr #0 align 2 {
   %1 = getelementptr inbounds %class.baseA* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !6
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN5baseB8setDataBEi(%class.baseB* nocapture %this, i32 %b) #1 align 2 {
   %1 = getelementptr inbounds %class.baseB* %this, i64 0, i32 1
   store i32 %b, i32* %1, align 4, !tbaa !8
   ret void
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK5baseB8getDataBEv(%class.baseB* nocapture readonly %this) unnamed_addr #0 align 2 {
   %1 = getelementptr inbounds %class.baseB* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !8
   ret i32 %2
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_ZNK7subBoth6getSumEv(%class.subBoth* %this) unnamed_addr #2 align 2 {
   %1 = bitcast %class.subBoth* %this to i32 (%class.subBoth*)***
   %2 = load i32 (%class.subBoth*)*** %1, align 8, !tbaa !10
@@ -84,7 +85,7 @@ define i32 @_ZNK7subBoth6getSumEv(%class.subBoth* %this) unnamed_addr #2 align 2
   ret i32 %9
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define i32 @_ZNK7subBoth8getDataAEv(%class.subBoth* nocapture readonly %this) unnamed_addr #1 align 2 {
   %puts = tail call i32 @puts(i8* getelementptr inbounds ([19 x i8]* @str, i64 0, i64 0))
   %1 = bitcast %class.subBoth* %this to %class.baseA*
@@ -92,26 +93,29 @@ define i32 @_ZNK7subBoth8getDataAEv(%class.subBoth* nocapture readonly %this) un
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: nounwind
+declare i32 @printf(i8* nocapture readonly, ...) #3
+
+; Function Attrs: noinline nounwind uwtable
 define i32 @_ZNK7subBoth8getDataBEv(%class.subBoth* nocapture readonly %this) unnamed_addr #1 align 2 {
-  %puts = tail call i32 @puts(i8* getelementptr inbounds ([19 x i8]* @str3, i64 0, i64 0))
+  %puts = tail call i32 @puts(i8* getelementptr inbounds ([19 x i8]* @str4, i64 0, i64 0))
   %1 = getelementptr inbounds %class.subBoth* %this, i64 0, i32 1
   %2 = bitcast %class.baseB.base* %1 to %class.baseB*
   %3 = tail call i32 @_ZNK5baseB8getDataBEv(%class.baseB* %2)
   ret i32 %3
 }
 
-; Function Attrs: nounwind ssp uwtable
-define i32 @_ZThn16_NK7subBoth8getDataBEv(%class.subBoth* nocapture readonly %this) unnamed_addr #3 align 2 {
+; Function Attrs: nounwind uwtable
+define i32 @_ZThn16_NK7subBoth8getDataBEv(%class.subBoth* nocapture readonly %this) unnamed_addr #4 align 2 {
   %1 = getelementptr inbounds %class.subBoth* %this, i64 -1, i32 2
   %2 = bitcast %class.bottomBase* %1 to %class.subBoth*
   %3 = tail call i32 @_ZNK7subBoth8getDataBEv(%class.subBoth* %2)
   ret i32 %3
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define i32 @_ZNK7subBoth11getBaseDataEv(%class.subBoth* nocapture readonly %this) unnamed_addr #1 align 2 {
-  %puts = tail call i32 @puts(i8* getelementptr inbounds ([22 x i8]* @str4, i64 0, i64 0))
+  %puts = tail call i32 @puts(i8* getelementptr inbounds ([22 x i8]* @str5, i64 0, i64 0))
   %1 = bitcast %class.subBoth* %this to i8**
   %2 = load i8** %1, align 8, !tbaa !10
   %3 = getelementptr i8* %2, i64 -24
@@ -124,8 +128,8 @@ define i32 @_ZNK7subBoth11getBaseDataEv(%class.subBoth* nocapture readonly %this
   ret i32 %9
 }
 
-; Function Attrs: nounwind ssp uwtable
-define i32 @_ZTv0_n24_NK7subBoth11getBaseDataEv(%class.subBoth* nocapture readonly %this) unnamed_addr #3 align 2 {
+; Function Attrs: nounwind uwtable
+define i32 @_ZTv0_n24_NK7subBoth11getBaseDataEv(%class.subBoth* nocapture readonly %this) unnamed_addr #4 align 2 {
   %1 = bitcast %class.subBoth* %this to i8*
   %2 = bitcast %class.subBoth* %this to i8**
   %3 = load i8** %2, align 8
@@ -138,11 +142,11 @@ define i32 @_ZTv0_n24_NK7subBoth11getBaseDataEv(%class.subBoth* nocapture readon
   ret i32 %9
 }
 
-; Function Attrs: noinline ssp uwtable
-define i32 @main(i32 %argc, i8** nocapture readnone %argv) #2 {
-  %1 = tail call noalias i8* @_Znwm(i64 48) #6
+; Function Attrs: noinline uwtable
+define void @_Z14virtualDiamondv() #2 {
+  %1 = tail call noalias i8* @_Znwm(i64 48) #7
   %2 = bitcast i8* %1 to %class.subBoth*
-  tail call void @_ZN7subBothC1Ev(%class.subBoth* %2) #5
+  tail call void @_ZN7subBothC1Ev(%class.subBoth* %2) #6
   %3 = bitcast i8* %1 to i32 (%class.subBoth*)***
   %4 = load i32 (%class.subBoth*)*** %3, align 8, !tbaa !10
   %5 = getelementptr inbounds i32 (%class.subBoth*)** %4, i64 1
@@ -161,21 +165,22 @@ define i32 @main(i32 %argc, i8** nocapture readnone %argv) #2 {
   %16 = load i32 (%class.baseB*)*** %15, align 8, !tbaa !10
   %17 = load i32 (%class.baseB*)** %16, align 8
   %18 = tail call i32 %17(%class.baseB* %14)
-  ret i32 0
+  %19 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([21 x i8]* @.str3, i64 0, i64 0), i32 %7, i32 %18)
+  ret void
 }
 
 ; Function Attrs: nobuiltin
-declare noalias i8* @_Znwm(i64) #4
+declare noalias i8* @_Znwm(i64) #5
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN7subBothC1Ev(%class.subBoth* nocapture %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.subBoth* %this, i64 0, i32 2
-  tail call void @_ZN10bottomBaseC2Ev(%class.bottomBase* %1) #5
+  tail call void @_ZN10bottomBaseC2Ev(%class.bottomBase* %1) #6
   %2 = bitcast %class.subBoth* %this to %class.baseA*
-  tail call void @_ZN5baseAC2Ev(%class.baseA* %2, i8** getelementptr inbounds ([7 x i8*]* @_ZTT7subBoth, i64 0, i64 1)) #5
+  tail call void @_ZN5baseAC2Ev(%class.baseA* %2, i8** getelementptr inbounds ([7 x i8*]* @_ZTT7subBoth, i64 0, i64 1)) #6
   %3 = getelementptr inbounds %class.subBoth* %this, i64 0, i32 1
   %4 = bitcast %class.baseB.base* %3 to %class.baseB*
-  tail call void @_ZN5baseBC2Ev(%class.baseB* %4, i8** getelementptr inbounds ([7 x i8*]* @_ZTT7subBoth, i64 0, i64 3)) #5
+  tail call void @_ZN5baseBC2Ev(%class.baseB* %4, i8** getelementptr inbounds ([7 x i8*]* @_ZTT7subBoth, i64 0, i64 3)) #6
   %5 = getelementptr inbounds %class.subBoth* %this, i64 0, i32 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([15 x i8*]* @_ZTV7subBoth, i64 0, i64 3) to i32 (...)**), i32 (...)*** %5, align 8, !tbaa !10
   %6 = getelementptr inbounds %class.bottomBase* %1, i64 0, i32 0
@@ -185,14 +190,14 @@ define linkonce_odr void @_ZN7subBothC1Ev(%class.subBoth* nocapture %this) unnam
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN10bottomBaseC2Ev(%class.bottomBase* nocapture %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.bottomBase* %this, i64 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([3 x i8*]* @_ZTV10bottomBase, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !10
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN5baseAC2Ev(%class.baseA* nocapture %this, i8** nocapture readonly %vtt) unnamed_addr #1 align 2 {
   %1 = load i8** %vtt, align 8
   %2 = getelementptr inbounds %class.baseA* %this, i64 0, i32 0
@@ -210,7 +215,7 @@ define linkonce_odr void @_ZN5baseAC2Ev(%class.baseA* nocapture %this, i8** noca
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN5baseBC2Ev(%class.baseB* nocapture %this, i8** nocapture readonly %vtt) unnamed_addr #1 align 2 {
   %1 = load i8** %vtt, align 8
   %2 = getelementptr inbounds %class.baseB* %this, i64 0, i32 0
@@ -229,15 +234,16 @@ define linkonce_odr void @_ZN5baseBC2Ev(%class.baseB* nocapture %this, i8** noca
 }
 
 ; Function Attrs: nounwind
-declare i32 @puts(i8* nocapture readonly) #5
+declare i32 @puts(i8* nocapture readonly) #6
 
-attributes #0 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #3 = { nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #5 = { nounwind }
-attributes #6 = { builtin }
+attributes #0 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #5 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #6 = { nounwind }
+attributes #7 = { builtin }
 
 !llvm.ident = !{!0}
 

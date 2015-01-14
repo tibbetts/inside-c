@@ -33,7 +33,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTS20OperatorOverloadVirt = linkonce_odr constant [23 x i8] c"20OperatorOverloadVirt\00"
 @_ZTI20OperatorOverloadVirt = linkonce_odr constant { i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv117__class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([23 x i8]* @_ZTS20OperatorOverloadVirt, i32 0, i32 0) }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_ZplRK16OperatorOverloadRK20OperatorOverloadVirt(%class.OperatorOverload* nocapture readonly %oo, %class.OperatorOverloadVirt* %oov) #0 {
   %1 = tail call i32 @_ZNK16OperatorOverload5valueEv(%class.OperatorOverload* %oo)
   %2 = bitcast %class.OperatorOverloadVirt* %oov to i32 (%class.OperatorOverloadVirt*)***
@@ -45,14 +45,14 @@ define i32 @_ZplRK16OperatorOverloadRK20OperatorOverloadVirt(%class.OperatorOver
   ret i32 %7
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define linkonce_odr i32 @_ZNK16OperatorOverload5valueEv(%class.OperatorOverload* nocapture readonly %this) #1 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverload* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !4
   ret i32 %2
 }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define void @_Z16operatorOverloadv() #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %oo = alloca %class.OperatorOverload, align 4
@@ -105,13 +105,13 @@ _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit: ; preds = %22
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN16OperatorOverloadC1Ei(%class.OperatorOverload* nocapture %this, i32 %x) unnamed_addr #2 align 2 {
   tail call void @_ZN16OperatorOverloadC2Ei(%class.OperatorOverload* %this, i32 %x)
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr i32 @_ZN16OperatorOverloadpLEi(%class.OperatorOverload* nocapture %this, i32 %x) #2 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverload* %this, i64 0, i32 0
   %2 = load i32* %1, align 4, !tbaa !4
@@ -123,7 +123,7 @@ define linkonce_odr i32 @_ZN16OperatorOverloadpLEi(%class.OperatorOverload* noca
 ; Function Attrs: nobuiltin
 declare noalias i8* @_Znwm(i64) #3
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN20OperatorOverloadVirtC1Ei(%class.OperatorOverloadVirt* nocapture %this, i32 %x) unnamed_addr #2 align 2 {
   tail call void @_ZN20OperatorOverloadVirtC2Ei(%class.OperatorOverloadVirt* %this, i32 %x)
   ret void
@@ -131,7 +131,7 @@ define linkonce_odr void @_ZN20OperatorOverloadVirtC1Ei(%class.OperatorOverloadV
 
 declare i32 @__gxx_personality_v0(...)
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(%"class.std::__1::basic_ostream"* %__os, i8* %__str) #0 {
   %1 = tail call i64 @strlen(i8* %__str) #8
   %2 = tail call %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %1)
@@ -151,7 +151,7 @@ declare void @_ZNSt3__16localeD1Ev(%"class.std::__1::locale"*) #5
 
 declare %"class.std::__1::locale::facet"* @_ZNKSt3__16locale9use_facetERNS0_2idE(%"class.std::__1::locale"*, %"class.std::__1::locale::id"*) #4
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr %"class.std::__1::basic_ostream"* @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m(%"class.std::__1::basic_ostream"* %__os, i8* %__str, i64 %__len) #0 {
   %1 = alloca %"class.std::__1::locale", align 8
   %__s = alloca %"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry", align 8
@@ -326,7 +326,7 @@ declare i64 @strlen(i8* nocapture) #6
 
 declare void @_ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_(%"class.std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry"*, %"class.std::__1::basic_ostream"*) #4
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define linkonce_odr hidden %"class.std::__1::basic_streambuf"* @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_(%"class.std::__1::basic_streambuf"* %__s.coerce, i8* %__ob, i8* %__op, i8* %__oe, %"class.std::__1::ios_base"* nocapture %__iob, i8 signext %__fl) #0 {
   %__sp = alloca %"class.std::__1::basic_string", align 8
   %1 = icmp eq %"class.std::__1::basic_streambuf"* %__s.coerce, null
@@ -447,7 +447,7 @@ declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1E
 
 declare void @_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEmc(%"class.std::__1::basic_string"*, i64, i8 signext) #4
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN20OperatorOverloadVirtC2Ei(%class.OperatorOverloadVirt* nocapture %this, i32 %x) unnamed_addr #2 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverloadVirt* %this, i64 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV20OperatorOverloadVirt, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
@@ -456,7 +456,7 @@ define linkonce_odr void @_ZN20OperatorOverloadVirtC2Ei(%class.OperatorOverloadV
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr i32 @_ZN20OperatorOverloadVirtpLEi(%class.OperatorOverloadVirt* nocapture %this, i32 %x) unnamed_addr #2 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverloadVirt* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !24
@@ -465,14 +465,14 @@ define linkonce_odr i32 @_ZN20OperatorOverloadVirtpLEi(%class.OperatorOverloadVi
   ret i32 %3
 }
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define linkonce_odr i32 @_ZNK20OperatorOverloadVirt5valueEv(%class.OperatorOverloadVirt* nocapture readonly %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverloadVirt* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !24
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN16OperatorOverloadC2Ei(%class.OperatorOverload* nocapture %this, i32 %x) unnamed_addr #2 align 2 {
   %1 = getelementptr inbounds %class.OperatorOverload* %this, i64 0, i32 0
   store i32 %x, i32* %1, align 4, !tbaa !4
@@ -485,9 +485,9 @@ declare void @llvm.lifetime.start(i64, i8* nocapture) #8
 ; Function Attrs: nounwind
 declare void @llvm.lifetime.end(i64, i8* nocapture) #8
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #4 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }

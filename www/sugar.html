@@ -75,7 +75,6 @@
         <li>User Defined Literals
         <li>Constexpr
         <li>Intialization Lists
-        <li>Polymorphic Function Pointers
         <li>Range based loops
         <li>Type inference
       </ul>
@@ -216,39 +215,6 @@ is
 <code>std::__1::enable_if&lt;__is_forward_iterator&lt;int const*&gt;::value, void&gt;::type std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;::__construct_at_end&lt;int const*&gt;(int const*, int const*)</code>
 
 
-    <h2>Polymorphic Function Pointers</h2>
-    TODO: These are just sugar right?
-
-
-    <div role="tabpanel">
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#polymorphic-fp-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#polymorphic-fp-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#polymorphic-fp-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#polymorphic-fp-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#polymorphic-fp-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="polymorphic-fp-cpp">
-          <pre data-src="../examples/polymorphic-fp.cpp"></pre>
-        </div>
-        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-clang-s">
-          <pre data-src="../examples/polymorphic-fp-clang.s"></pre>
-        </div>
-        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-ll">
-          <pre data-src="../examples/polymorphic-fp.ll"></pre>
-        </div>
-        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-gcc-s">
-          <pre data-src="../examples/polymorphic-fp-gcc.s"></pre>
-        </div>
-        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-listing">
-          <pre data-src="../examples/polymorphic-fp.listing"></pre>
-        </div>
-      </div>
-    </div>
-
     <h2>Range Based Loops</h2>
 
 
@@ -309,6 +275,38 @@ is
         </div>
         <div role="tab-panel" class="tab-pane" id="type-inference-listing">
           <pre data-src="../examples/type-inference.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Threading Support</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#thread-local-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#thread-local-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#thread-local-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#thread-local-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#thread-local-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="thread-local-cpp">
+          <pre data-src="../examples/thread-local.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="thread-local-clang-s">
+          <pre data-src="../examples/thread-local-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="thread-local-ll">
+          <pre data-src="../examples/thread-local.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="thread-local-gcc-s">
+          <pre data-src="../examples/thread-local-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="thread-local-listing">
+          <pre data-src="../examples/thread-local.listing"></pre>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTS11onefieldBVT = constant [14 x i8] c"11onefieldBVT\00"
 @_ZTI11onefieldBVT = constant { i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv117__class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([14 x i8]* @_ZTS11onefieldBVT, i32 0, i32 0) }
 
-; Function Attrs: noinline ssp uwtable
+; Function Attrs: noinline uwtable
 define i32 @_Z11basicVtableiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   %of = alloca %class.onefieldBVT, align 8
   call void @_ZN11onefieldBVTC1Ev(%class.onefieldBVT* %of) #5
@@ -32,13 +32,13 @@ define i32 @_Z11basicVtableiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
   ret i32 %12
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN11onefieldBVTC1Ev(%class.onefieldBVT* nocapture %this) unnamed_addr #1 align 2 {
   tail call void @_ZN11onefieldBVTC2Ev(%class.onefieldBVT* %this) #5
   ret void
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define void @_ZN11onefieldBVT8setFieldEi(%class.onefieldBVT* nocapture %this, i32 %f) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.onefieldBVT* %this, i64 0, i32 1
   store i32 %f, i32* %1, align 4, !tbaa !4
@@ -51,25 +51,25 @@ declare noalias i8* @_Znwm(i64) #2
 ; Function Attrs: nobuiltin nounwind
 declare void @_ZdlPv(i8*) #3
 
-; Function Attrs: noinline nounwind readonly ssp uwtable
+; Function Attrs: noinline nounwind readonly uwtable
 define i32 @_ZNK11onefieldBVT8getFieldEv(%class.onefieldBVT* nocapture readonly %this) unnamed_addr #4 align 2 {
   %1 = getelementptr inbounds %class.onefieldBVT* %this, i64 0, i32 1
   %2 = load i32* %1, align 4, !tbaa !4
   ret i32 %2
 }
 
-; Function Attrs: noinline nounwind ssp uwtable
+; Function Attrs: noinline nounwind uwtable
 define linkonce_odr void @_ZN11onefieldBVTC2Ev(%class.onefieldBVT* nocapture %this) unnamed_addr #1 align 2 {
   %1 = getelementptr inbounds %class.onefieldBVT* %this, i64 0, i32 0
   store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV11onefieldBVT, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
   ret void
 }
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #0 = { noinline uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #4 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { noinline nounwind readonly uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #5 = { nounwind }
 attributes #6 = { builtin }
 attributes #7 = { builtin nounwind }

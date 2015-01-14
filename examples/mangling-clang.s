@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	__Z8manglingiPPKc
+	.globl	mangling(int, char const**)
 	.align	4, 0x90
-__Z8manglingiPPKc:                      ## @_Z8manglingiPPKc
+mangling(int, char const**):                      ## @_Z8manglingiPPKc
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin0:
@@ -25,119 +25,112 @@ Ltmp32:
 	.cfi_offset %r14, -32
 Ltmp33:
 	.cfi_offset %r15, -24
-	movq	___stack_chk_guard@GOTPCREL(%rip), %r15
-	movq	(%r15), %rax
-	movq	%rax, -32(%rbp)
-	movl	$11, __ZN9Something6Inside13anotherStaticE(%rip)
-	leaq	-112(%rbp), %rdi
+	movl	$11, Something::Inside::anotherStatic(%rip)
+	leaq	-32(%rbp), %rdi
 	movl	$23, %esi
-	callq	__ZN9Something6Inside6Deeper10deepMethodEi
+	callq	Something::Inside::Deeper::deepMethod(int)
 	leaq	L_.str(%rip), %rsi
-	leaq	-136(%rbp), %rbx
+	leaq	-56(%rbp), %rbx
 	movl	$3, %edx
 	movq	%rbx, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
 	movq	%rbx, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
-	leaq	-104(%rbp), %r14
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+	leaq	-152(%rbp), %r14
 Ltmp0:
 	leaq	L_.str1(%rip), %rsi
 	movq	%r14, %rbx
 	movl	$1, %edx
 	movq	%r14, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
 Ltmp1:
 ## BB#1:                                ## %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit
-	leaq	-80(%rbp), %rbx
+	leaq	-128(%rbp), %rbx
 Ltmp2:
 	leaq	L_.str2(%rip), %rsi
 	movl	$1, %edx
 	movq	%rbx, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
 Ltmp3:
 ## BB#2:                                ## %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit3
-	leaq	-56(%rbp), %rbx
+	leaq	-104(%rbp), %rbx
 Ltmp4:
 	leaq	L_.str3(%rip), %rsi
 	movl	$1, %edx
 	movq	%rbx, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcm
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
 Ltmp5:
 ## BB#3:                                ## %_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1EPKc.exit4
 	xorps	%xmm0, %xmm0
-	movaps	%xmm0, -160(%rbp)
-	movq	$0, -144(%rbp)
+	movaps	%xmm0, -80(%rbp)
+	movq	$0, -64(%rbp)
 Ltmp7:
-	leaq	-160(%rbp), %rdi
+	leaq	-80(%rbp), %rdi
 	movl	$3, %esi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::allocate(unsigned long)
 Ltmp8:
 ## BB#4:
 	movl	$48, %ebx
-	leaq	-32(%rbp), %rdx
+	leaq	-80(%rbp), %rdx
 Ltmp9:
-	leaq	-160(%rbp), %rdi
-	leaq	-104(%rbp), %rsi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_
+	leaq	-80(%rbp), %rdi
+	leaq	-152(%rbp), %rsi
+	callq	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*)
 Ltmp10:
 	.align	4, 0x90
 LBB0_5:                                 ## =>This Inner Loop Header: Depth=1
-	leaq	-104(%rbp,%rbx), %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	leaq	-152(%rbp,%rbx), %rdi
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 	addq	$-24, %rbx
 	cmpq	$-24, %rbx
 	jne	LBB0_5
 ## BB#6:
 Ltmp12:
-	leaq	-184(%rbp), %rdi
-	leaq	-160(%rbp), %rsi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_
+	leaq	-176(%rbp), %rdi
+	leaq	-80(%rbp), %rsi
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&)
 Ltmp13:
 ## BB#7:
-	leaq	-184(%rbp), %rdi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
-	leaq	-112(%rbp), %rdi
-	callq	__ZN9Something6Inside6Deeper10deepMethodEv
+	leaq	-176(%rbp), %rdi
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
+	leaq	-32(%rbp), %rdi
+	callq	Something::Inside::Deeper::deepMethod()
 	movl	%eax, %ebx
-	leaq	-192(%rbp), %rdi
+	leaq	-184(%rbp), %rdi
 	movl	$37, %esi
-	callq	__ZN7OutsideC1Ei
+	callq	Outside::Outside(int)
 Ltmp14:
-	movq	__ZNSt3__14coutE@GOTPCREL(%rip), %rdi
+	movq	std::__1::cout@GOTPCREL(%rip), %rdi
 	movl	$12, %esi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(int)
 Ltmp15:
 ## BB#8:
 Ltmp16:
 	leaq	L_.str4(%rip), %rsi
 	movq	%rax, %rdi
-	callq	__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<<<std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*)
 Ltmp17:
 ## BB#9:
-	movl	-192(%rbp), %esi
+	movl	-184(%rbp), %esi
 Ltmp18:
 	movq	%rax, %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(int)
 Ltmp19:
 ## BB#10:
 Ltmp20:
 	leaq	L_.str4(%rip), %rsi
 	movq	%rax, %rdi
-	callq	__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<<<std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*)
 Ltmp21:
 ## BB#11:
 Ltmp22:
 	movq	%rax, %rdi
 	movl	%ebx, %esi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(int)
 Ltmp23:
 ## BB#12:
-	leaq	-160(%rbp), %rdi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
-	movq	(%r15), %rax
-	cmpq	-32(%rbp), %rax
-	jne	LBB0_20
-## BB#13:
+	leaq	-80(%rbp), %rdi
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
 	xorl	%eax, %eax
 	addq	$168, %rsp
 	popq	%rbx
@@ -145,46 +138,44 @@ Ltmp23:
 	popq	%r15
 	popq	%rbp
 	retq
-LBB0_20:
-	callq	___stack_chk_fail
-LBB0_14:
+LBB0_13:
 Ltmp6:
 	movq	%rax, %r15
 	cmpq	%rbx, %r14
-	je	LBB0_19
-## BB#15:
-	leaq	-104(%rbp), %r14
-LBB0_16:                                ## %.preheader
+	je	LBB0_18
+## BB#14:
+	leaq	-152(%rbp), %r14
+LBB0_15:                                ## %.preheader
                                         ## =>This Inner Loop Header: Depth=1
 	addq	$-24, %rbx
 	movq	%rbx, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 	cmpq	%rbx, %r14
-	jne	LBB0_16
-	jmp	LBB0_19
-LBB0_17:                                ## %.body
+	jne	LBB0_15
+	jmp	LBB0_18
+LBB0_16:                                ## %.body
 Ltmp11:
 	movq	%rax, %r15
-	leaq	-160(%rbp), %rax
+	leaq	-80(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+	callq	std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base()
 	movl	$48, %ebx
-LBB0_18:                                ## =>This Inner Loop Header: Depth=1
-	leaq	-104(%rbp,%rbx), %rax
+LBB0_17:                                ## =>This Inner Loop Header: Depth=1
+	leaq	-152(%rbp,%rbx), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 	addq	$-24, %rbx
 	cmpq	$-24, %rbx
-	jne	LBB0_18
-LBB0_19:                                ## %.loopexit5
+	jne	LBB0_17
+LBB0_18:                                ## %.loopexit5
 	movq	%r15, %rdi
 	callq	__Unwind_Resume
-LBB0_21:
+LBB0_19:
 Ltmp24:
 	movq	%rax, %r15
-	leaq	-160(%rbp), %rax
+	leaq	-80(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
 	movq	%r15, %rdi
 	callq	__Unwind_Resume
 	.cfi_endproc
@@ -203,41 +194,41 @@ Lset0 = Leh_func_begin0-Leh_func_begin0 ## >> Call Site 1 <<
 Lset1 = Ltmp0-Leh_func_begin0           ##   Call between Leh_func_begin0 and Ltmp0
 	.long	Lset1
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset2 = Ltmp0-Leh_func_begin0           ## >> Call Site 2 <<
 	.long	Lset2
 Lset3 = Ltmp5-Ltmp0                     ##   Call between Ltmp0 and Ltmp5
 	.long	Lset3
 Lset4 = Ltmp6-Leh_func_begin0           ##     jumps to Ltmp6
 	.long	Lset4
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset5 = Ltmp7-Leh_func_begin0           ## >> Call Site 3 <<
 	.long	Lset5
 Lset6 = Ltmp10-Ltmp7                    ##   Call between Ltmp7 and Ltmp10
 	.long	Lset6
 Lset7 = Ltmp11-Leh_func_begin0          ##     jumps to Ltmp11
 	.long	Lset7
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset8 = Ltmp12-Leh_func_begin0          ## >> Call Site 4 <<
 	.long	Lset8
 Lset9 = Ltmp23-Ltmp12                   ##   Call between Ltmp12 and Ltmp23
 	.long	Lset9
 Lset10 = Ltmp24-Leh_func_begin0         ##     jumps to Ltmp24
 	.long	Lset10
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset11 = Ltmp23-Leh_func_begin0         ## >> Call Site 5 <<
 	.long	Lset11
 Lset12 = Leh_func_end0-Ltmp23           ##   Call between Ltmp23 and Leh_func_end0
 	.long	Lset12
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 	.align	2
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.globl	__ZN9Something6Inside6Deeper10deepMethodEi
-	.weak_def_can_be_hidden	__ZN9Something6Inside6Deeper10deepMethodEi
+	.globl	Something::Inside::Deeper::deepMethod(int)
+	.weak_def_can_be_hidden	Something::Inside::Deeper::deepMethod(int)
 	.align	4, 0x90
-__ZN9Something6Inside6Deeper10deepMethodEi: ## @_ZN9Something6Inside6Deeper10deepMethodEi
+Something::Inside::Deeper::deepMethod(int): ## @_ZN9Something6Inside6Deeper10deepMethodEi
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -254,10 +245,10 @@ Ltmp38:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE
-	.weak_def_can_be_hidden	__ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE
+	.globl	Something::Inside::Deeper::deepMethod(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >)
+	.weak_def_can_be_hidden	Something::Inside::Deeper::deepMethod(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >)
 	.align	4, 0x90
-__ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE: ## @_ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE
+Something::Inside::Deeper::deepMethod(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >): ## @_ZN9Something6Inside6Deeper10deepMethodENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -273,10 +264,10 @@ Ltmp43:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE
-	.weak_def_can_be_hidden	__ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE
+	.globl	Something::Inside::Deeper::deepMethod(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >)
+	.weak_def_can_be_hidden	Something::Inside::Deeper::deepMethod(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >)
 	.align	4, 0x90
-__ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE: ## @_ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE
+Something::Inside::Deeper::deepMethod(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >): ## @_ZN9Something6Inside6Deeper10deepMethodENSt3__16vectorINS2_12basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS7_IS9_EEEE
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -292,10 +283,10 @@ Ltmp48:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&)
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&)
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC1ERKS8_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -307,13 +298,13 @@ Ltmp52:
 Ltmp53:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_ ## TAILCALL
+	jmp	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&) ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector(): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED1Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -325,13 +316,13 @@ Ltmp57:
 Ltmp58:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev ## TAILCALL
+	jmp	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector() ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZN9Something6Inside6Deeper10deepMethodEv
-	.weak_def_can_be_hidden	__ZN9Something6Inside6Deeper10deepMethodEv
+	.globl	Something::Inside::Deeper::deepMethod()
+	.weak_def_can_be_hidden	Something::Inside::Deeper::deepMethod()
 	.align	4, 0x90
-__ZN9Something6Inside6Deeper10deepMethodEv: ## @_ZN9Something6Inside6Deeper10deepMethodEv
+Something::Inside::Deeper::deepMethod(): ## @_ZN9Something6Inside6Deeper10deepMethodEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -347,10 +338,10 @@ Ltmp63:
 	retq
 	.cfi_endproc
 
-	.globl	__ZN7OutsideC1Ei
-	.weak_def_can_be_hidden	__ZN7OutsideC1Ei
+	.globl	Outside::Outside(int)
+	.weak_def_can_be_hidden	Outside::Outside(int)
 	.align	4, 0x90
-__ZN7OutsideC1Ei:                       ## @_ZN7OutsideC1Ei
+Outside::Outside(int):                       ## @_ZN7OutsideC1Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -362,13 +353,13 @@ Ltmp67:
 Ltmp68:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZN7OutsideC2Ei        ## TAILCALL
+	jmp	Outside::Outside(int)        ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
-	.weak_def_can_be_hidden	__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
+	.globl	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<<<std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*)
+	.weak_def_can_be_hidden	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<<<std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*)
 	.align	4, 0x90
-__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc: ## @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
+std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<<<std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*): ## @_ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -395,13 +386,13 @@ Ltmp76:
 	popq	%rbx
 	popq	%r14
 	popq	%rbp
-	jmp	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m ## TAILCALL
+	jmp	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long) ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
-	.weak_def_can_be_hidden	__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
+	.globl	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+	.weak_def_can_be_hidden	std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
 	.align	4, 0x90
-__ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m: ## @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
+std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long): ## @_ZNSt3__124__put_character_sequenceIcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin9:
@@ -437,7 +428,7 @@ Ltmp108:
 Ltmp77:
 	leaq	-64(%rbp), %rdi
 	movq	%rbx, %rsi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3_
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::sentry(std::__1::basic_ostream<char, std::__1::char_traits<char> >&)
 Ltmp78:
 ## BB#1:
 	cmpb	$0, -64(%rbp)
@@ -465,13 +456,13 @@ Ltmp80:
 	movq	%rdi, -72(%rbp)         ## 8-byte Spill
 	leaq	-48(%rbp), %rdi
 	movq	%r12, %rsi
-	callq	__ZNKSt3__18ios_base6getlocEv
+	callq	std::__1::ios_base::getloc() const
 Ltmp81:
 ## BB#6:                                ## %.noexc
 Ltmp82:
-	movq	__ZNSt3__15ctypeIcE2idE@GOTPCREL(%rip), %rsi
+	movq	std::__1::ctype<char>::id@GOTPCREL(%rip), %rsi
 	leaq	-48(%rbp), %rdi
-	callq	__ZNKSt3__16locale9use_facetERNS0_2idE
+	callq	std::__1::locale::use_facet(std::__1::locale::id&) const
 Ltmp83:
 ## BB#7:
 	movq	(%rax), %rcx
@@ -484,7 +475,7 @@ Ltmp84:
 Ltmp85:
 ## BB#8:                                ## %_ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc.exit.i
 	leaq	-48(%rbp), %rdi
-	callq	__ZNSt3__16localeD1Ev
+	callq	std::__1::locale::~locale()
 	movsbl	-81(%rbp), %eax         ## 1-byte Folded Reload
 	movl	%eax, 144(%rbx,%r13)
 	movq	-72(%rbp), %rdi         ## 8-byte Reload
@@ -496,7 +487,7 @@ Ltmp87:
 	movq	%r15, %rsi
 	movq	%r14, %rcx
 	movq	%r12, %r8
-	callq	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
+	callq	std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
 Ltmp88:
 ## BB#10:
 	testq	%rax, %rax
@@ -508,11 +499,11 @@ Ltmp88:
 	movl	32(%rbx,%rax), %esi
 	orl	$5, %esi
 Ltmp89:
-	callq	__ZNSt3__18ios_base5clearEj
+	callq	std::__1::ios_base::clear(unsigned int)
 Ltmp90:
 LBB9_12:                                ## %_ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateEj.exit
 	leaq	-64(%rbp), %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()
 LBB9_17:
 	movq	%rbx, %rax
 	addq	$56, %rsp
@@ -532,7 +523,7 @@ Ltmp86:
 	movq	%rax, %r14
 	leaq	-48(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__16localeD1Ev
+	callq	std::__1::locale::~locale()
 	jmp	LBB9_14
 LBB9_13:
 Ltmp91:
@@ -540,7 +531,7 @@ Ltmp91:
 LBB9_14:                                ## %.body
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
+	callq	std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()
 LBB9_15:
 	movq	%r14, %rdi
 	callq	___cxa_begin_catch
@@ -549,7 +540,7 @@ LBB9_15:
 	addq	%rbx, %rax
 Ltmp92:
 	movq	%rax, %rdi
-	callq	__ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv
+	callq	std::__1::ios_base::__set_badbit_and_consider_rethrow()
 Ltmp93:
 ## BB#16:
 	callq	___cxa_end_catch
@@ -584,60 +575,60 @@ Lset14 = Ltmp78-Ltmp77                  ##   Call between Ltmp77 and Ltmp78
 	.long	Lset14
 Lset15 = Ltmp79-Leh_func_begin9         ##     jumps to Ltmp79
 	.long	Lset15
-	.byte	1                       ##   On action: 1
+	.byte	1                       ##   __int128&& action: 1
 Lset16 = Ltmp80-Leh_func_begin9         ## >> Call Site 2 <<
 	.long	Lset16
 Lset17 = Ltmp81-Ltmp80                  ##   Call between Ltmp80 and Ltmp81
 	.long	Lset17
 Lset18 = Ltmp91-Leh_func_begin9         ##     jumps to Ltmp91
 	.long	Lset18
-	.byte	1                       ##   On action: 1
+	.byte	1                       ##   __int128&& action: 1
 Lset19 = Ltmp82-Leh_func_begin9         ## >> Call Site 3 <<
 	.long	Lset19
 Lset20 = Ltmp85-Ltmp82                  ##   Call between Ltmp82 and Ltmp85
 	.long	Lset20
 Lset21 = Ltmp86-Leh_func_begin9         ##     jumps to Ltmp86
 	.long	Lset21
-	.byte	1                       ##   On action: 1
+	.byte	1                       ##   __int128&& action: 1
 Lset22 = Ltmp87-Leh_func_begin9         ## >> Call Site 4 <<
 	.long	Lset22
 Lset23 = Ltmp90-Ltmp87                  ##   Call between Ltmp87 and Ltmp90
 	.long	Lset23
 Lset24 = Ltmp91-Leh_func_begin9         ##     jumps to Ltmp91
 	.long	Lset24
-	.byte	1                       ##   On action: 1
+	.byte	1                       ##   __int128&& action: 1
 Lset25 = Ltmp90-Leh_func_begin9         ## >> Call Site 5 <<
 	.long	Lset25
 Lset26 = Ltmp92-Ltmp90                  ##   Call between Ltmp90 and Ltmp92
 	.long	Lset26
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset27 = Ltmp92-Leh_func_begin9         ## >> Call Site 6 <<
 	.long	Lset27
 Lset28 = Ltmp93-Ltmp92                  ##   Call between Ltmp92 and Ltmp93
 	.long	Lset28
 Lset29 = Ltmp94-Leh_func_begin9         ##     jumps to Ltmp94
 	.long	Lset29
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset30 = Ltmp93-Leh_func_begin9         ## >> Call Site 7 <<
 	.long	Lset30
 Lset31 = Ltmp95-Ltmp93                  ##   Call between Ltmp93 and Ltmp95
 	.long	Lset31
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset32 = Ltmp95-Leh_func_begin9         ## >> Call Site 8 <<
 	.long	Lset32
 Lset33 = Ltmp96-Ltmp95                  ##   Call between Ltmp95 and Ltmp96
 	.long	Lset33
 Lset34 = Ltmp97-Leh_func_begin9         ##     jumps to Ltmp97
 	.long	Lset34
-	.byte	1                       ##   On action: 1
+	.byte	1                       ##   __int128&& action: 1
 Lset35 = Ltmp96-Leh_func_begin9         ## >> Call Site 9 <<
 	.long	Lset35
 Lset36 = Leh_func_end9-Ltmp96           ##   Call between Ltmp96 and Leh_func_end9
 	.long	Lset36
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 	.byte	1                       ## >> Action Record 1 <<
                                         ##   Catch TypeInfo 1
 	.byte	0                       ##   No further actions
@@ -646,11 +637,11 @@ Lset36 = Leh_func_end9-Ltmp96           ##   Call between Ltmp96 and Leh_func_en
 	.align	2
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.private_extern	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-	.globl	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
-	.weak_def_can_be_hidden	__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
+	.private_extern	std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+	.globl	std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+	.weak_def_can_be_hidden	std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
 	.align	4, 0x90
-__ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_: ## @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
+std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char): ## @_ZNSt3__116__pad_and_outputIcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin10:
@@ -722,7 +713,7 @@ LBB10_3:
 	movsbl	%r9b, %edx
 	leaq	-64(%rbp), %rdi
 	movq	%rbx, %rsi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEmc
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(unsigned long, char)
 	testb	$1, -64(%rbp)
 	je	LBB10_6
 ## BB#5:
@@ -741,7 +732,7 @@ Ltmp109:
 Ltmp110:
 ## BB#8:                                ## %_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sputnEPKcl.exit
 	leaq	-64(%rbp), %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 	xorl	%eax, %eax
 	cmpq	%rbx, %r14
 	cmovneq	%rax, %r13
@@ -781,7 +772,7 @@ Ltmp111:
 	movq	%rax, %rbx
 	leaq	-64(%rbp), %rax
 	movq	%rax, %rdi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 	movq	%rbx, %rdi
 	callq	__Unwind_Resume
 	.cfi_endproc
@@ -800,20 +791,20 @@ Lset37 = Leh_func_begin10-Leh_func_begin10 ## >> Call Site 1 <<
 Lset38 = Ltmp109-Leh_func_begin10       ##   Call between Leh_func_begin10 and Ltmp109
 	.long	Lset38
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset39 = Ltmp109-Leh_func_begin10       ## >> Call Site 2 <<
 	.long	Lset39
 Lset40 = Ltmp110-Ltmp109                ##   Call between Ltmp109 and Ltmp110
 	.long	Lset40
 Lset41 = Ltmp111-Leh_func_begin10       ##     jumps to Ltmp111
 	.long	Lset41
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset42 = Ltmp110-Leh_func_begin10       ## >> Call Site 3 <<
 	.long	Lset42
 Lset43 = Leh_func_end10-Ltmp110         ##   Call between Ltmp110 and Leh_func_end10
 	.long	Lset43
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 	.align	2
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
@@ -826,12 +817,12 @@ ___clang_call_terminate:                ## @__clang_call_terminate
 	pushq	%rbp
 	movq	%rsp, %rbp
 	callq	___cxa_begin_catch
-	callq	__ZSt9terminatev
+	callq	std::terminate()
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&)
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&)
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::vector(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEC2ERKS8_
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin12:
@@ -865,14 +856,14 @@ Ltmp135:
 	imulq	%rax, %rsi
 Ltmp123:
 	movq	%r14, %rdi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::allocate(unsigned long)
 Ltmp124:
 ## BB#2:
 	movq	(%rbx), %rsi
 	movq	8(%rbx), %rdx
 Ltmp125:
 	movq	%r14, %rdi
-	callq	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
+	callq	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
 Ltmp126:
 LBB12_3:
 	popq	%rbx
@@ -883,7 +874,7 @@ LBB12_4:
 Ltmp127:
 	movq	%rax, %rbx
 	movq	%r14, %rdi
-	callq	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+	callq	std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base()
 	movq	%rbx, %rdi
 	callq	__Unwind_Resume
 	.cfi_endproc
@@ -903,20 +894,20 @@ Lset45 = Ltmp126-Ltmp123                ##   Call between Ltmp123 and Ltmp126
 	.long	Lset45
 Lset46 = Ltmp127-Leh_func_begin12       ##     jumps to Ltmp127
 	.long	Lset46
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 Lset47 = Ltmp126-Leh_func_begin12       ## >> Call Site 2 <<
 	.long	Lset47
 Lset48 = Leh_func_end12-Ltmp126         ##   Call between Ltmp126 and Leh_func_end12
 	.long	Lset48
 	.long	0                       ##     has no landing pad
-	.byte	0                       ##   On action: cleanup
+	.byte	0                       ##   __int128&& action: cleanup
 	.align	2
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::allocate(unsigned long)
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::allocate(unsigned long)
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::allocate(unsigned long): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8allocateEm
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -936,17 +927,17 @@ Ltmp143:
 	movq	%rsi, %rbx
 	movq	%rdi, %r14
                                         ## kill: RDI<def> R14<kill>
-	callq	__ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv
+	callq	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::max_size() const
 	cmpq	%rbx, %rax
 	jae	LBB13_2
 ## BB#1:
 	movq	%r14, %rdi
-	callq	__ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv
+	callq	std::__1::__vector_base_common<true>::__throw_length_error() const
 LBB13_2:
 	shlq	$3, %rbx
 	leaq	(%rbx,%rbx,2), %rbx
 	movq	%rbx, %rdi
-	callq	__Znwm
+	callq	operator new(unsigned long)
 	movq	%rax, 8(%r14)
 	movq	%rax, (%r14)
 	addq	%rbx, %rax
@@ -957,10 +948,10 @@ LBB13_2:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
+	.globl	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+	.weak_def_can_be_hidden	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
+std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESC_SC_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -994,7 +985,7 @@ LBB14_2:                                ## =>This Inner Loop Header: Depth=1
 	je	LBB14_4
 ## BB#3:                                ##   in Loop: Header=BB14_2 Depth=1
 	movq	%rbx, %rsi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::basic_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
 LBB14_4:                                ## %_ZNSt3__116allocator_traitsINS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEEE9constructIS6_JRS6_EEEvRS7_PT_DpOT0_.exit
                                         ##   in Loop: Header=BB14_2 Depth=1
 	movq	8(%r15), %rdi
@@ -1012,10 +1003,10 @@ LBB14_5:                                ## %._crit_edge
 	retq
 	.cfi_endproc
 
-	.globl	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
-	.weak_def_can_be_hidden	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+	.globl	std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base()
+	.weak_def_can_be_hidden	std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base()
 	.align	4, 0x90
-__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev: ## @_ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base(): ## @_ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1046,7 +1037,7 @@ LBB15_2:                                ## %.lr.ph.i.i
                                         ##   in Loop: Header=BB15_3 Depth=1
 	addq	$-24, %rdi
 	movq	%rdi, 8(%rbx)
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
 LBB15_3:                                ## %.lr.ph.i.i
                                         ## =>This Inner Loop Header: Depth=1
 	movq	8(%rbx), %rdi
@@ -1057,13 +1048,13 @@ LBB15_3:                                ## %.lr.ph.i.i
 	popq	%rbx
 	popq	%r14
 	popq	%rbp
-	jmp	__ZdlPv                 ## TAILCALL
+	jmp	operator delete(void*)                 ## TAILCALL
 	.cfi_endproc
 
-	.globl	__ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv
-	.weak_def_can_be_hidden	__ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::max_size() const
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::max_size() const
 	.align	4, 0x90
-__ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv: ## @_ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::max_size() const: ## @_ZNKSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE8max_sizeEv
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1079,10 +1070,10 @@ Ltmp165:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_
+	.globl	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*)
+	.weak_def_can_be_hidden	std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*)
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_
+std::__1::enable_if<__is_forward_iterator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>::value, void>::type std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__construct_at_end<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const*): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEE18__construct_at_endIPKS6_EENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeESD_SD_
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1116,7 +1107,7 @@ LBB17_2:                                ## =>This Inner Loop Header: Depth=1
 	je	LBB17_4
 ## BB#3:                                ##   in Loop: Header=BB17_2 Depth=1
 	movq	%rbx, %rsi
-	callq	__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_
+	callq	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::basic_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
 LBB17_4:                                ## %_ZNSt3__116allocator_traitsINS_9allocatorINS_12basic_stringIcNS_11char_traitsIcEENS1_IcEEEEEEE9constructIS6_JRKS6_EEEvRS7_PT_DpOT0_.exit
                                         ##   in Loop: Header=BB17_2 Depth=1
 	movq	8(%r15), %rdi
@@ -1134,10 +1125,10 @@ LBB17_5:                                ## %._crit_edge
 	retq
 	.cfi_endproc
 
-	.globl	__ZN7OutsideC2Ei
-	.weak_def_can_be_hidden	__ZN7OutsideC2Ei
+	.globl	Outside::Outside(int)
+	.weak_def_can_be_hidden	Outside::Outside(int)
 	.align	4, 0x90
-__ZN7OutsideC2Ei:                       ## @_ZN7OutsideC2Ei
+Outside::Outside(int):                       ## @_ZN7OutsideC2Ei
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1153,10 +1144,10 @@ Ltmp179:
 	retq
 	.cfi_endproc
 
-	.globl	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
-	.weak_def_can_be_hidden	__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+	.globl	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
+	.weak_def_can_be_hidden	std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector()
 	.align	4, 0x90
-__ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev: ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
+std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~vector(): ## @_ZNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1168,13 +1159,13 @@ Ltmp183:
 Ltmp184:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	__ZNSt3__113__vector_baseINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEED2Ev ## TAILCALL
+	jmp	std::__1::__vector_base<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::~__vector_base() ## TAILCALL
 	.cfi_endproc
 
 	.section	__DATA,__data
-	.globl	__ZN9Something6Inside13anotherStaticE ## @_ZN9Something6Inside13anotherStaticE
+	.globl	Something::Inside::anotherStatic ## @_ZN9Something6Inside13anotherStaticE
 	.align	2
-__ZN9Something6Inside13anotherStaticE:
+Something::Inside::anotherStatic:
 	.long	137                     ## 0x89
 
 	.section	__TEXT,__cstring,cstring_literals
@@ -1182,13 +1173,13 @@ L_.str:                                 ## @.str
 	.asciz	"foo"
 
 L_.str1:                                ## @.str1
-	.asciz	"x"
+	.asciz	"long long"
 
 L_.str2:                                ## @.str2
-	.asciz	"y"
+	.asciz	"unsigned long long"
 
 L_.str3:                                ## @.str3
-	.asciz	"z"
+	.asciz	"..."
 
 L_.str4:                                ## @.str4
 	.asciz	" and "
