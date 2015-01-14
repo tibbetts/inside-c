@@ -47,3 +47,6 @@ Enum classes
 
 
 TODO: Build the basic examples without exceptions for simpilicity.
+
+TODO: c++filt everything
+TODO: Have some mouseover thing to remind people about the meaning of assembly instructions and registers and things.
