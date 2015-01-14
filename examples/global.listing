@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccs4M5jB.s 			page 1
+GAS LISTING /tmp/cc3o2J9C.s 			page 1
 
 
    1              		.file	"global.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
   45 0006 895704   		movl	%edx, 4(%rdi)
   46 0009 895708   		movl	%edx, 8(%rdi)
   47 000c 4883C710 		addq	$16, %rdi
-GAS LISTING /tmp/ccs4M5jB.s 			page 2
+GAS LISTING /tmp/cc3o2J9C.s 			page 2
 
 
   48              	.LVL4:
@@ -109,127 +109,186 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
   90              	.LFE1248:
   92              		.weak	_ZN9my_structC1ERKS_
   93              		.set	_ZN9my_structC1ERKS_,_ZN9my_structC2ERKS_
-  94              		.text
-  95              		.globl	main
-  97              	main:
-  98              	.LFB1246:
+  94              		.section	.rodata.str1.1,"aMS",@progbits,1
+  95              	.LC0:
+  96 0000 676C6F62 		.string	"globalTest "
+  96      616C5465 
+  96      73742000 
+  97              	.LC1:
+  98 000c 2000     		.string	" "
+  99              		.text
+ 100              		.globl	_Z6globalv
+GAS LISTING /tmp/cc3o2J9C.s 			page 3
+
+
+ 102              	_Z6globalv:
+ 103              	.LFB1246:
   14:global.cpp    **** 
   15:global.cpp    **** // Globals.
   16:global.cpp    **** int global_int = 4;
   17:global.cpp    **** string global_string = "test";
   18:global.cpp    **** my_struct global_struct(global_string + "bob", 37);
-GAS LISTING /tmp/ccs4M5jB.s 			page 3
-
-
   19:global.cpp    **** 
-  20:global.cpp    **** int
-  21:global.cpp    **** main(int argc, char **argv) {
-  99              		.loc 1 21 0
- 100              		.cfi_startproc
- 101              		.cfi_personality 0x3,__gxx_personality_v0
- 102              		.cfi_lsda 0x3,.LLSDA1246
- 103              	.LVL9:
- 104 001a 53       		pushq	%rbx
- 105              		.cfi_def_cfa_offset 16
- 106              		.cfi_offset 3, -16
- 107 001b 4883EC30 		subq	$48, %rsp
- 108              		.cfi_def_cfa_offset 64
- 109              	.LVL10:
- 110              	.LBB5:
-  22:global.cpp    ****     int local_int = global_int;
-  23:global.cpp    ****     string local_string(global_string);
- 111              		.loc 1 23 0
- 112 001f BE000000 		movl	$global_string, %esi
- 112      00
- 113              	.LVL11:
- 114 0024 4889E7   		movq	%rsp, %rdi
- 115              	.LVL12:
- 116              	.LEHB0:
- 117 0027 E8000000 		call	_ZNSsC1ERKSs
- 117      00
- 118              	.LEHE0:
- 119              	.LVL13:
-  24:global.cpp    ****     my_struct local_struct(global_struct);
- 120              		.loc 1 24 0
- 121 002c BE000000 		movl	$global_struct, %esi
+  20:global.cpp    **** void global() {
+ 104              		.loc 1 20 0
+ 105              		.cfi_startproc
+ 106              		.cfi_personality 0x3,__gxx_personality_v0
+ 107              		.cfi_lsda 0x3,.LLSDA1246
+ 108 001a 53       		pushq	%rbx
+ 109              		.cfi_def_cfa_offset 16
+ 110              		.cfi_offset 3, -16
+ 111 001b 4883EC30 		subq	$48, %rsp
+ 112              		.cfi_def_cfa_offset 64
+ 113              	.LBB5:
+  21:global.cpp    ****     int local_int = global_int;
+ 114              		.loc 1 21 0
+ 115 001f 8B1D0000 		movl	global_int(%rip), %ebx
+ 115      0000
+ 116              	.LVL9:
+  22:global.cpp    ****     string local_string(global_string);
+ 117              		.loc 1 22 0
+ 118 0025 BE000000 		movl	$global_string, %esi
+ 118      00
+ 119 002a 4889E7   		movq	%rsp, %rdi
+ 120              	.LEHB0:
+ 121 002d E8000000 		call	_ZNSsC1ERKSs
  121      00
- 122 0031 488D7C24 		leaq	16(%rsp), %rdi
- 122      10
- 123              	.LEHB1:
- 124 0036 E8000000 		call	_ZN9my_structC1ERKS_
- 124      00
- 125              	.LEHE1:
- 126              	.LVL14:
- 127 003b EB13     		jmp	.L11
- 128              	.L9:
- 129 003d 4889C3   		movq	%rax, %rbx
-  25:global.cpp    ****     return 0;
- 130              		.loc 1 25 0
- 131 0040 4889E7   		movq	%rsp, %rdi
- 132 0043 E8000000 		call	_ZNSsD1Ev
+ 122              	.LEHE0:
+ 123              	.LVL10:
+  23:global.cpp    ****     my_struct local_struct(global_struct);
+ 124              		.loc 1 23 0
+ 125 0032 BE000000 		movl	$global_struct, %esi
+ 125      00
+ 126 0037 488D7C24 		leaq	16(%rsp), %rdi
+ 126      10
+ 127              	.LEHB1:
+ 128 003c E8000000 		call	_ZN9my_structC1ERKS_
+ 128      00
+ 129              	.LEHE1:
+ 130              	.LVL11:
+  24:global.cpp    ****     std::cout << "globalTest " << local_int << " " << local_string << std::endl;
+ 131              		.loc 1 24 0
+ 132 0041 BE000000 		movl	$.LC0, %esi
  132      00
- 133              	.LVL15:
- 134 0048 4889DF   		movq	%rbx, %rdi
- 135              	.LEHB2:
- 136 004b E8000000 		call	_Unwind_Resume
- 136      00
- 137              	.LEHE2:
- 138              	.LVL16:
- 139              	.L11:
-  24:global.cpp    ****     my_struct local_struct(global_struct);
- 140              		.loc 1 24 0
-GAS LISTING /tmp/ccs4M5jB.s 			page 4
+ 133 0046 BF000000 		movl	$_ZSt4cout, %edi
+ 133      00
+ 134              	.LEHB2:
+ 135 004b E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 135      00
+ 136              	.LVL12:
+ 137 0050 89DE     		movl	%ebx, %esi
+ 138 0052 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/cc3o2J9C.s 			page 4
 
 
- 141 0050 488D7C24 		leaq	16(%rsp), %rdi
- 141      10
- 142 0055 E8000000 		call	_ZN9my_structD1Ev
+ 139 0055 E8000000 		call	_ZNSolsEi
+ 139      00
+ 140              	.LVL13:
+ 141              		.loc 1 24 0 is_stmt 0 discriminator 1
+ 142 005a BE000000 		movl	$.LC1, %esi
  142      00
- 143              	.LVL17:
- 144              		.loc 1 25 0
- 145 005a 4889E7   		movq	%rsp, %rdi
- 146 005d E8000000 		call	_ZNSsD1Ev
- 146      00
- 147              	.LVL18:
- 148              	.LBE5:
-  26:global.cpp    **** }
- 149              		.loc 1 26 0
- 150 0062 B8000000 		movl	$0, %eax
+ 143 005f 4889C7   		movq	%rax, %rdi
+ 144 0062 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 144      00
+ 145              	.LVL14:
+ 146 0067 4889E6   		movq	%rsp, %rsi
+ 147 006a 4889C7   		movq	%rax, %rdi
+ 148 006d E8000000 		call	_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+ 148      00
+ 149              	.LVL15:
+ 150 0072 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
  150      00
- 151 0067 4883C430 		addq	$48, %rsp
- 152              		.cfi_def_cfa_offset 16
- 153 006b 5B       		popq	%rbx
- 154              		.cfi_def_cfa_offset 8
- 155 006c C3       		ret
- 156              		.cfi_endproc
- 157              	.LFE1246:
- 158              		.globl	__gxx_personality_v0
- 159              		.section	.gcc_except_table,"a",@progbits
- 160              	.LLSDA1246:
- 161 0000 FF       		.byte	0xff
- 162 0001 FF       		.byte	0xff
- 163 0002 01       		.byte	0x1
- 164 0003 0C       		.uleb128 .LLSDACSE1246-.LLSDACSB1246
- 165              	.LLSDACSB1246:
- 166 0004 0D       		.uleb128 .LEHB0-.LFB1246
- 167 0005 05       		.uleb128 .LEHE0-.LEHB0
- 168 0006 00       		.uleb128 0
- 169 0007 00       		.uleb128 0
- 170 0008 1C       		.uleb128 .LEHB1-.LFB1246
- 171 0009 05       		.uleb128 .LEHE1-.LEHB1
- 172 000a 23       		.uleb128 .L9-.LFB1246
- 173 000b 00       		.uleb128 0
- 174 000c 31       		.uleb128 .LEHB2-.LFB1246
- 175 000d 05       		.uleb128 .LEHE2-.LEHB2
- 176 000e 00       		.uleb128 0
- 177 000f 00       		.uleb128 0
- 178              	.LLSDACSE1246:
- 179              		.text
- 181              		.section	.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_,"axG",@progbits,_ZStplIcSt11
- 182              		.weak	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
- 184              	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:
- 185              	.LFB1313:
- 186              		.file 2 "/usr/include/c++/4.8/bits/basic_string.h"
+ 151 0077 4889C7   		movq	%rax, %rdi
+ 152 007a E8000000 		call	_ZNSolsEPFRSoS_E
+ 152      00
+ 153              	.LEHE2:
+ 154              	.LVL16:
+  23:global.cpp    ****     my_struct local_struct(global_struct);
+ 155              		.loc 1 23 0 is_stmt 1
+ 156 007f 488D7C24 		leaq	16(%rsp), %rdi
+ 156      10
+ 157 0084 E8000000 		call	_ZN9my_structD1Ev
+ 157      00
+ 158              	.LVL17:
+ 159              		.loc 1 24 0
+ 160 0089 4889E7   		movq	%rsp, %rdi
+ 161 008c E8000000 		call	_ZNSsD1Ev
+ 161      00
+ 162              	.LVL18:
+ 163 0091 EB22     		jmp	.L12
+ 164              	.L11:
+ 165 0093 4889C3   		movq	%rax, %rbx
+ 166              	.LVL19:
+  23:global.cpp    ****     my_struct local_struct(global_struct);
+ 167              		.loc 1 23 0
+ 168 0096 488D7C24 		leaq	16(%rsp), %rdi
+ 168      10
+ 169 009b E8000000 		call	_ZN9my_structD1Ev
+ 169      00
+ 170              	.LVL20:
+ 171 00a0 EB03     		jmp	.L9
+ 172              	.LVL21:
+ 173              	.L10:
+ 174 00a2 4889C3   		movq	%rax, %rbx
+ 175              	.LVL22:
+ 176              	.L9:
+ 177              		.loc 1 24 0
+ 178 00a5 4889E7   		movq	%rsp, %rdi
+ 179 00a8 E8000000 		call	_ZNSsD1Ev
+ 179      00
+ 180              	.LVL23:
+ 181 00ad 4889DF   		movq	%rbx, %rdi
+GAS LISTING /tmp/cc3o2J9C.s 			page 5
+
+
+ 182              	.LEHB3:
+ 183 00b0 E8000000 		call	_Unwind_Resume
+ 183      00
+ 184              	.LEHE3:
+ 185              	.LVL24:
+ 186              	.L12:
+ 187              	.LBE5:
+  25:global.cpp    **** }
+ 188              		.loc 1 25 0
+ 189 00b5 4883C430 		addq	$48, %rsp
+ 190              		.cfi_def_cfa_offset 16
+ 191 00b9 5B       		popq	%rbx
+ 192              		.cfi_def_cfa_offset 8
+ 193              	.LVL25:
+ 194 00ba C3       		ret
+ 195              		.cfi_endproc
+ 196              	.LFE1246:
+ 197              		.globl	__gxx_personality_v0
+ 198              		.section	.gcc_except_table,"a",@progbits
+ 199              	.LLSDA1246:
+ 200 0000 FF       		.byte	0xff
+ 201 0001 FF       		.byte	0xff
+ 202 0002 01       		.byte	0x1
+ 203 0003 12       		.uleb128 .LLSDACSE1246-.LLSDACSB1246
+ 204              	.LLSDACSB1246:
+ 205 0004 13       		.uleb128 .LEHB0-.LFB1246
+ 206 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 207 0006 00       		.uleb128 0
+ 208 0007 00       		.uleb128 0
+ 209 0008 22       		.uleb128 .LEHB1-.LFB1246
+ 210 0009 05       		.uleb128 .LEHE1-.LEHB1
+ 211 000a 8801     		.uleb128 .L10-.LFB1246
+ 212 000c 00       		.uleb128 0
+ 213 000d 31       		.uleb128 .LEHB2-.LFB1246
+ 214 000e 34       		.uleb128 .LEHE2-.LEHB2
+ 215 000f 79       		.uleb128 .L11-.LFB1246
+ 216 0010 00       		.uleb128 0
+ 217 0011 9601     		.uleb128 .LEHB3-.LFB1246
+ 218 0013 05       		.uleb128 .LEHE3-.LEHB3
+ 219 0014 00       		.uleb128 0
+ 220 0015 00       		.uleb128 0
+ 221              	.LLSDACSE1246:
+ 222              		.text
+ 224              		.section	.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_,"axG",@progbits,_ZStplIcSt11
+ 225              		.weak	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+ 227              	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:
+ 228              	.LFB1313:
+ 229              		.file 2 "/usr/include/c++/4.8/bits/basic_string.h"
    1:/usr/include/c++/4.8/bits/basic_string.h **** // Components for manipulating sequences of characters -*- C++ -*-
    2:/usr/include/c++/4.8/bits/basic_string.h **** 
    3:/usr/include/c++/4.8/bits/basic_string.h **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
@@ -238,10 +297,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
    6:/usr/include/c++/4.8/bits/basic_string.h **** // software; you can redistribute it and/or modify it under the
    7:/usr/include/c++/4.8/bits/basic_string.h **** // terms of the GNU General Public License as published by the
    8:/usr/include/c++/4.8/bits/basic_string.h **** // Free Software Foundation; either version 3, or (at your option)
-GAS LISTING /tmp/ccs4M5jB.s 			page 5
-
-
    9:/usr/include/c++/4.8/bits/basic_string.h **** // any later version.
+GAS LISTING /tmp/cc3o2J9C.s 			page 6
+
+
   10:/usr/include/c++/4.8/bits/basic_string.h **** 
   11:/usr/include/c++/4.8/bits/basic_string.h **** // This library is distributed in the hope that it will be useful,
   12:/usr/include/c++/4.8/bits/basic_string.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -298,10 +357,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
   63:/usr/include/c++/4.8/bits/basic_string.h ****    *  <a href="tables.html#67">sequence</a>.  Of the
   64:/usr/include/c++/4.8/bits/basic_string.h ****    *  <a href="tables.html#68">optional sequence requirements</a>, only
   65:/usr/include/c++/4.8/bits/basic_string.h ****    *  @c push_back, @c at, and @c %array access are supported.
-GAS LISTING /tmp/ccs4M5jB.s 			page 6
-
-
   66:/usr/include/c++/4.8/bits/basic_string.h ****    *
+GAS LISTING /tmp/cc3o2J9C.s 			page 7
+
+
   67:/usr/include/c++/4.8/bits/basic_string.h ****    *  @doctodo
   68:/usr/include/c++/4.8/bits/basic_string.h ****    *
   69:/usr/include/c++/4.8/bits/basic_string.h ****    *
@@ -358,10 +417,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  120:/usr/include/c++/4.8/bits/basic_string.h ****       typedef _Alloc					    allocator_type;
  121:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::size_type	    size_type;
  122:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::difference_type   difference_type;
-GAS LISTING /tmp/ccs4M5jB.s 			page 7
-
-
  123:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::reference	    reference;
+GAS LISTING /tmp/cc3o2J9C.s 			page 8
+
+
  124:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::const_reference   const_reference;
  125:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::pointer	    pointer;
  126:/usr/include/c++/4.8/bits/basic_string.h ****       typedef typename _CharT_alloc_type::const_pointer	    const_pointer;
@@ -418,10 +477,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  177:/usr/include/c++/4.8/bits/basic_string.h ****         // (carefully) in an empty string with one reference.
  178:/usr/include/c++/4.8/bits/basic_string.h ****         static size_type _S_empty_rep_storage[];
  179:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/ccs4M5jB.s 			page 8
-
-
  180:/usr/include/c++/4.8/bits/basic_string.h ****         static _Rep&
+GAS LISTING /tmp/cc3o2J9C.s 			page 9
+
+
  181:/usr/include/c++/4.8/bits/basic_string.h ****         _S_empty_rep()
  182:/usr/include/c++/4.8/bits/basic_string.h ****         { 
  183:/usr/include/c++/4.8/bits/basic_string.h **** 	  // NB: Mild hack to avoid strict-aliasing warnings.  Note that
@@ -478,10 +537,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  234:/usr/include/c++/4.8/bits/basic_string.h **** 	_S_create(size_type, size_type, const _Alloc&);
  235:/usr/include/c++/4.8/bits/basic_string.h **** 
  236:/usr/include/c++/4.8/bits/basic_string.h **** 	void
-GAS LISTING /tmp/ccs4M5jB.s 			page 9
-
-
  237:/usr/include/c++/4.8/bits/basic_string.h **** 	_M_dispose(const _Alloc& __a)
+GAS LISTING /tmp/cc3o2J9C.s 			page 10
+
+
  238:/usr/include/c++/4.8/bits/basic_string.h **** 	{
  239:/usr/include/c++/4.8/bits/basic_string.h **** #if _GLIBCXX_FULLY_DYNAMIC_STRING == 0
  240:/usr/include/c++/4.8/bits/basic_string.h **** 	  if (__builtin_expect(this != &_S_empty_rep(), false))
@@ -538,10 +597,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  291:/usr/include/c++/4.8/bits/basic_string.h ****       _CharT*
  292:/usr/include/c++/4.8/bits/basic_string.h ****       _M_data() const
  293:/usr/include/c++/4.8/bits/basic_string.h ****       { return  _M_dataplus._M_p; }
-GAS LISTING /tmp/ccs4M5jB.s 			page 10
-
-
  294:/usr/include/c++/4.8/bits/basic_string.h **** 
+GAS LISTING /tmp/cc3o2J9C.s 			page 11
+
+
  295:/usr/include/c++/4.8/bits/basic_string.h ****       _CharT*
  296:/usr/include/c++/4.8/bits/basic_string.h ****       _M_data(_CharT* __p)
  297:/usr/include/c++/4.8/bits/basic_string.h ****       { return (_M_dataplus._M_p = __p); }
@@ -598,10 +657,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  348:/usr/include/c++/4.8/bits/basic_string.h **** 		|| less<const _CharT*>()(_M_data() + this->size(), __s));
  349:/usr/include/c++/4.8/bits/basic_string.h ****       }
  350:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/ccs4M5jB.s 			page 11
-
-
  351:/usr/include/c++/4.8/bits/basic_string.h ****       // When __n = 1 way faster than the general multichar
+GAS LISTING /tmp/cc3o2J9C.s 			page 12
+
+
  352:/usr/include/c++/4.8/bits/basic_string.h ****       // traits_type::copy/move/assign.
  353:/usr/include/c++/4.8/bits/basic_string.h ****       static void
  354:/usr/include/c++/4.8/bits/basic_string.h ****       _M_copy(_CharT* __d, const _CharT* __s, size_type __n)
@@ -658,10 +717,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  405:/usr/include/c++/4.8/bits/basic_string.h **** 
  406:/usr/include/c++/4.8/bits/basic_string.h ****       static int
  407:/usr/include/c++/4.8/bits/basic_string.h ****       _S_compare(size_type __n1, size_type __n2)
-GAS LISTING /tmp/ccs4M5jB.s 			page 12
-
-
  408:/usr/include/c++/4.8/bits/basic_string.h ****       {
+GAS LISTING /tmp/cc3o2J9C.s 			page 13
+
+
  409:/usr/include/c++/4.8/bits/basic_string.h **** 	const difference_type __d = difference_type(__n1 - __n2);
  410:/usr/include/c++/4.8/bits/basic_string.h **** 
  411:/usr/include/c++/4.8/bits/basic_string.h **** 	if (__d > __gnu_cxx::__numeric_traits<int>::__max)
@@ -718,10 +777,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  462:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string(const basic_string& __str, size_type __pos,
  463:/usr/include/c++/4.8/bits/basic_string.h **** 		   size_type __n = npos);
  464:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/ccs4M5jB.s 			page 13
-
-
  465:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Construct string as copy of a substring.
+GAS LISTING /tmp/cc3o2J9C.s 			page 14
+
+
  466:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __str  Source string.
  467:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __pos  Index of first character to copy from.
  468:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __n  Number of characters to copy.
@@ -778,10 +837,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  519:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __l  std::initializer_list of characters.
  520:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param  __a  Allocator to use (default is default allocator).
  521:/usr/include/c++/4.8/bits/basic_string.h ****        */
-GAS LISTING /tmp/ccs4M5jB.s 			page 14
-
-
  522:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc());
+GAS LISTING /tmp/cc3o2J9C.s 			page 15
+
+
  523:/usr/include/c++/4.8/bits/basic_string.h **** #endif // C++11
  524:/usr/include/c++/4.8/bits/basic_string.h **** 
  525:/usr/include/c++/4.8/bits/basic_string.h ****       /**
@@ -838,10 +897,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  576:/usr/include/c++/4.8/bits/basic_string.h ****        *  The contents of @a str are moved into this string (without copying).
  577:/usr/include/c++/4.8/bits/basic_string.h ****        *  @a str is a valid, but unspecified string.
  578:/usr/include/c++/4.8/bits/basic_string.h ****        **/
-GAS LISTING /tmp/ccs4M5jB.s 			page 15
-
-
  579:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string&
+GAS LISTING /tmp/cc3o2J9C.s 			page 16
+
+
  580:/usr/include/c++/4.8/bits/basic_string.h ****       operator=(basic_string&& __str)
  581:/usr/include/c++/4.8/bits/basic_string.h ****       {
  582:/usr/include/c++/4.8/bits/basic_string.h **** 	// NB: DR 1204.
@@ -898,10 +957,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  633:/usr/include/c++/4.8/bits/basic_string.h ****        */
  634:/usr/include/c++/4.8/bits/basic_string.h ****       const_iterator
  635:/usr/include/c++/4.8/bits/basic_string.h ****       end() const _GLIBCXX_NOEXCEPT
-GAS LISTING /tmp/ccs4M5jB.s 			page 16
-
-
  636:/usr/include/c++/4.8/bits/basic_string.h ****       { return const_iterator(_M_data() + this->size()); }
+GAS LISTING /tmp/cc3o2J9C.s 			page 17
+
+
  637:/usr/include/c++/4.8/bits/basic_string.h **** 
  638:/usr/include/c++/4.8/bits/basic_string.h ****       /**
  639:/usr/include/c++/4.8/bits/basic_string.h ****        *  Returns a read/write reverse iterator that points to the last
@@ -958,10 +1017,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  690:/usr/include/c++/4.8/bits/basic_string.h **** 
  691:/usr/include/c++/4.8/bits/basic_string.h ****       /**
  692:/usr/include/c++/4.8/bits/basic_string.h ****        *  Returns a read-only (constant) reverse iterator that points
-GAS LISTING /tmp/ccs4M5jB.s 			page 17
-
-
  693:/usr/include/c++/4.8/bits/basic_string.h ****        *  to the last character in the %string.  Iteration is done in
+GAS LISTING /tmp/cc3o2J9C.s 			page 18
+
+
  694:/usr/include/c++/4.8/bits/basic_string.h ****        *  reverse element order.
  695:/usr/include/c++/4.8/bits/basic_string.h ****        */
  696:/usr/include/c++/4.8/bits/basic_string.h ****       const_reverse_iterator
@@ -1018,10 +1077,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  747:/usr/include/c++/4.8/bits/basic_string.h ****        *  the new size is smaller than the %string's current size the %string
  748:/usr/include/c++/4.8/bits/basic_string.h ****        *  is truncated, otherwise the %string is extended and new characters
  749:/usr/include/c++/4.8/bits/basic_string.h ****        *  are default-constructed.  For basic types such as char, this means
-GAS LISTING /tmp/ccs4M5jB.s 			page 18
-
-
  750:/usr/include/c++/4.8/bits/basic_string.h ****        *  setting them to 0.
+GAS LISTING /tmp/cc3o2J9C.s 			page 19
+
+
  751:/usr/include/c++/4.8/bits/basic_string.h ****        */
  752:/usr/include/c++/4.8/bits/basic_string.h ****       void
  753:/usr/include/c++/4.8/bits/basic_string.h ****       resize(size_type __n)
@@ -1078,10 +1137,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  804:/usr/include/c++/4.8/bits/basic_string.h ****       { _M_mutate(0, this->size(), 0); }
  805:/usr/include/c++/4.8/bits/basic_string.h **** 
  806:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/ccs4M5jB.s 			page 19
-
-
  807:/usr/include/c++/4.8/bits/basic_string.h ****        *  Returns true if the %string is empty.  Equivalent to 
+GAS LISTING /tmp/cc3o2J9C.s 			page 20
+
+
  808:/usr/include/c++/4.8/bits/basic_string.h ****        *  <code>*this == ""</code>.
  809:/usr/include/c++/4.8/bits/basic_string.h ****        */
  810:/usr/include/c++/4.8/bits/basic_string.h ****       bool
@@ -1138,10 +1197,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  861:/usr/include/c++/4.8/bits/basic_string.h ****        *  throws out_of_range if the check fails.
  862:/usr/include/c++/4.8/bits/basic_string.h ****        */
  863:/usr/include/c++/4.8/bits/basic_string.h ****       const_reference
-GAS LISTING /tmp/ccs4M5jB.s 			page 20
-
-
  864:/usr/include/c++/4.8/bits/basic_string.h ****       at(size_type __n) const
+GAS LISTING /tmp/cc3o2J9C.s 			page 21
+
+
  865:/usr/include/c++/4.8/bits/basic_string.h ****       {
  866:/usr/include/c++/4.8/bits/basic_string.h **** 	if (__n >= this->size())
  867:/usr/include/c++/4.8/bits/basic_string.h **** 	  __throw_out_of_range(__N("basic_string::at"));
@@ -1198,10 +1257,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  918:/usr/include/c++/4.8/bits/basic_string.h ****        *  last element of the %string.
  919:/usr/include/c++/4.8/bits/basic_string.h ****        */
  920:/usr/include/c++/4.8/bits/basic_string.h ****       const_reference
-GAS LISTING /tmp/ccs4M5jB.s 			page 21
-
-
  921:/usr/include/c++/4.8/bits/basic_string.h ****       back() const
+GAS LISTING /tmp/cc3o2J9C.s 			page 22
+
+
  922:/usr/include/c++/4.8/bits/basic_string.h ****       { return operator[](this->size() - 1); }
  923:/usr/include/c++/4.8/bits/basic_string.h **** #endif
  924:/usr/include/c++/4.8/bits/basic_string.h **** 
@@ -1258,10 +1317,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
  975:/usr/include/c++/4.8/bits/basic_string.h ****       /**
  976:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Append a substring.
  977:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __str  The string to append.
-GAS LISTING /tmp/ccs4M5jB.s 			page 22
-
-
  978:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of the first character of str to append.
+GAS LISTING /tmp/cc3o2J9C.s 			page 23
+
+
  979:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n  The number of characters to append.
  980:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
  981:/usr/include/c++/4.8/bits/basic_string.h ****        *  @throw  std::out_of_range if @a __pos is not a valid index.
@@ -1318,10 +1377,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1032:/usr/include/c++/4.8/bits/basic_string.h **** #endif // C++11
 1033:/usr/include/c++/4.8/bits/basic_string.h **** 
 1034:/usr/include/c++/4.8/bits/basic_string.h ****       /**
-GAS LISTING /tmp/ccs4M5jB.s 			page 23
-
-
 1035:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Append a range of characters.
+GAS LISTING /tmp/cc3o2J9C.s 			page 24
+
+
 1036:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __first  Iterator referencing the first character to append.
 1037:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __last  Iterator marking the end of the range.
 1038:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
@@ -1378,10 +1437,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1089:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of the first character of str.
 1090:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n  Number of characters to use.
 1091:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
-GAS LISTING /tmp/ccs4M5jB.s 			page 24
-
-
 1092:/usr/include/c++/4.8/bits/basic_string.h ****        *  @throw  std::out_of_range if @a pos is not a valid index.
+GAS LISTING /tmp/cc3o2J9C.s 			page 25
+
+
 1093:/usr/include/c++/4.8/bits/basic_string.h ****        *
 1094:/usr/include/c++/4.8/bits/basic_string.h ****        *  This function sets this string to the substring of @a __str
 1095:/usr/include/c++/4.8/bits/basic_string.h ****        *  consisting of @a __n characters at @a __pos.  If @a __n is
@@ -1438,10 +1497,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1146:/usr/include/c++/4.8/bits/basic_string.h **** 
 1147:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1148:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Set value to a range of characters.
-GAS LISTING /tmp/ccs4M5jB.s 			page 25
-
-
 1149:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __first  Iterator referencing the first character to append.
+GAS LISTING /tmp/cc3o2J9C.s 			page 26
+
+
 1150:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __last  Iterator marking the end of the range.
 1151:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
 1152:/usr/include/c++/4.8/bits/basic_string.h ****        *
@@ -1498,10 +1557,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1203:/usr/include/c++/4.8/bits/basic_string.h ****         { this->replace(__p, __p, __beg, __end); }
 1204:/usr/include/c++/4.8/bits/basic_string.h **** 
 1205:/usr/include/c++/4.8/bits/basic_string.h **** #if __cplusplus >= 201103L
-GAS LISTING /tmp/ccs4M5jB.s 			page 26
-
-
 1206:/usr/include/c++/4.8/bits/basic_string.h ****       /**
+GAS LISTING /tmp/cc3o2J9C.s 			page 27
+
+
 1207:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Insert an initializer_list of characters.
 1208:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __p  Iterator referencing location in string to insert at.
 1209:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __l  The initializer_list of characters to insert.
@@ -1558,10 +1617,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1260:/usr/include/c++/4.8/bits/basic_string.h **** 
 1261:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1262:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Insert a C substring.
-GAS LISTING /tmp/ccs4M5jB.s 			page 27
-
-
 1263:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Iterator referencing location in string to insert at.
+GAS LISTING /tmp/cc3o2J9C.s 			page 28
+
+
 1264:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __s  The C string to insert.
 1265:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n  The number of characters to insert.
 1266:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
@@ -1618,10 +1677,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1317:/usr/include/c++/4.8/bits/basic_string.h ****       */
 1318:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string&
 1319:/usr/include/c++/4.8/bits/basic_string.h ****       insert(size_type __pos, size_type __n, _CharT __c)
-GAS LISTING /tmp/ccs4M5jB.s 			page 28
-
-
 1320:/usr/include/c++/4.8/bits/basic_string.h ****       { return _M_replace_aux(_M_check(__pos, "basic_string::insert"),
+GAS LISTING /tmp/cc3o2J9C.s 			page 29
+
+
 1321:/usr/include/c++/4.8/bits/basic_string.h **** 			      size_type(0), __n, __c); }
 1322:/usr/include/c++/4.8/bits/basic_string.h **** 
 1323:/usr/include/c++/4.8/bits/basic_string.h ****       /**
@@ -1678,10 +1737,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1374:/usr/include/c++/4.8/bits/basic_string.h ****        *  Removes the character at @a __position from this string. The value
 1375:/usr/include/c++/4.8/bits/basic_string.h ****        *  of the string doesn't change if an error is thrown.
 1376:/usr/include/c++/4.8/bits/basic_string.h ****       */
-GAS LISTING /tmp/ccs4M5jB.s 			page 29
-
-
 1377:/usr/include/c++/4.8/bits/basic_string.h ****       iterator
+GAS LISTING /tmp/cc3o2J9C.s 			page 30
+
+
 1378:/usr/include/c++/4.8/bits/basic_string.h ****       erase(iterator __position)
 1379:/usr/include/c++/4.8/bits/basic_string.h ****       {
 1380:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_DEBUG_PEDASSERT(__position >= _M_ibegin()
@@ -1738,10 +1797,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1431:/usr/include/c++/4.8/bits/basic_string.h **** 
 1432:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1433:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Replace characters with value from another string.
-GAS LISTING /tmp/ccs4M5jB.s 			page 30
-
-
 1434:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos1  Index of first character to replace.
+GAS LISTING /tmp/cc3o2J9C.s 			page 31
+
+
 1435:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n1  Number of characters to be replaced.
 1436:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __str  String to insert.
 1437:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos2  Index of first character of str to use.
@@ -1798,10 +1857,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1488:/usr/include/c++/4.8/bits/basic_string.h ****        *  Removes the characters in the range [__pos,__pos + __n1)
 1489:/usr/include/c++/4.8/bits/basic_string.h ****        *  from this string.  In place, the characters of @a __s are
 1490:/usr/include/c++/4.8/bits/basic_string.h ****        *  inserted.  If @a __pos is beyond end of string, out_of_range
-GAS LISTING /tmp/ccs4M5jB.s 			page 31
-
-
 1491:/usr/include/c++/4.8/bits/basic_string.h ****        *  is thrown.  If the length of result exceeds max_size(),
+GAS LISTING /tmp/cc3o2J9C.s 			page 32
+
+
 1492:/usr/include/c++/4.8/bits/basic_string.h ****        *  length_error is thrown.  The value of the string doesn't
 1493:/usr/include/c++/4.8/bits/basic_string.h ****        *  change if an error is thrown.
 1494:/usr/include/c++/4.8/bits/basic_string.h ****       */
@@ -1858,10 +1917,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1545:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __s  C string value to insert.
 1546:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __n  Number of characters from s to insert.
 1547:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Reference to this string.
-GAS LISTING /tmp/ccs4M5jB.s 			page 32
-
-
 1548:/usr/include/c++/4.8/bits/basic_string.h ****        *  @throw  std::length_error  If new length exceeds @c max_size().
+GAS LISTING /tmp/cc3o2J9C.s 			page 33
+
+
 1549:/usr/include/c++/4.8/bits/basic_string.h ****        *
 1550:/usr/include/c++/4.8/bits/basic_string.h ****        *  Removes the characters in the range [__i1,__i2).  In place,
 1551:/usr/include/c++/4.8/bits/basic_string.h ****        *  the first @a __n characters of @a __s are inserted.  If the
@@ -1918,10 +1977,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1602:/usr/include/c++/4.8/bits/basic_string.h **** 				 && __i2 <= _M_iend());
 1603:/usr/include/c++/4.8/bits/basic_string.h **** 	return _M_replace_aux(__i1 - _M_ibegin(), __i2 - __i1, __n, __c);
 1604:/usr/include/c++/4.8/bits/basic_string.h ****       }
-GAS LISTING /tmp/ccs4M5jB.s 			page 33
-
-
 1605:/usr/include/c++/4.8/bits/basic_string.h **** 
+GAS LISTING /tmp/cc3o2J9C.s 			page 34
+
+
 1606:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1607:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Replace range of characters with range.
 1608:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __i1  Iterator referencing start of range to replace.
@@ -1978,10 +2037,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1659:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_DEBUG_PEDASSERT(_M_ibegin() <= __i1 && __i1 <= __i2
 1660:/usr/include/c++/4.8/bits/basic_string.h **** 				 && __i2 <= _M_iend());
 1661:/usr/include/c++/4.8/bits/basic_string.h **** 	__glibcxx_requires_valid_range(__k1, __k2);
-GAS LISTING /tmp/ccs4M5jB.s 			page 34
-
-
 1662:/usr/include/c++/4.8/bits/basic_string.h **** 	return this->replace(__i1 - _M_ibegin(), __i2 - __i1,
+GAS LISTING /tmp/cc3o2J9C.s 			page 35
+
+
 1663:/usr/include/c++/4.8/bits/basic_string.h **** 			     __k1.base(), __k2 - __k1);
 1664:/usr/include/c++/4.8/bits/basic_string.h ****       }
 1665:/usr/include/c++/4.8/bits/basic_string.h **** 
@@ -2038,10 +2097,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1716:/usr/include/c++/4.8/bits/basic_string.h **** 
 1717:/usr/include/c++/4.8/bits/basic_string.h ****       // _S_construct_aux is used to implement the 21.3.1 para 15 which
 1718:/usr/include/c++/4.8/bits/basic_string.h ****       // requires special behaviour if _InIter is an integral type
-GAS LISTING /tmp/ccs4M5jB.s 			page 35
-
-
 1719:/usr/include/c++/4.8/bits/basic_string.h ****       template<class _InIterator>
+GAS LISTING /tmp/cc3o2J9C.s 			page 36
+
+
 1720:/usr/include/c++/4.8/bits/basic_string.h ****         static _CharT*
 1721:/usr/include/c++/4.8/bits/basic_string.h ****         _S_construct_aux(_InIterator __beg, _InIterator __end,
 1722:/usr/include/c++/4.8/bits/basic_string.h **** 			 const _Alloc& __a, __false_type)
@@ -2098,10 +2157,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1773:/usr/include/c++/4.8/bits/basic_string.h ****        *  @throw  std::out_of_range  If __pos > size().
 1774:/usr/include/c++/4.8/bits/basic_string.h ****        *
 1775:/usr/include/c++/4.8/bits/basic_string.h ****        *  Copies up to @a __n characters starting at @a __pos into the
-GAS LISTING /tmp/ccs4M5jB.s 			page 36
-
-
 1776:/usr/include/c++/4.8/bits/basic_string.h ****        *  C string @a __s.  If @a __pos is %greater than size(),
+GAS LISTING /tmp/cc3o2J9C.s 			page 37
+
+
 1777:/usr/include/c++/4.8/bits/basic_string.h ****        *  out_of_range is thrown.
 1778:/usr/include/c++/4.8/bits/basic_string.h ****       */
 1779:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
@@ -2158,10 +2217,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1830:/usr/include/c++/4.8/bits/basic_string.h ****        *  npos.
 1831:/usr/include/c++/4.8/bits/basic_string.h ****       */
 1832:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
-GAS LISTING /tmp/ccs4M5jB.s 			page 37
-
-
 1833:/usr/include/c++/4.8/bits/basic_string.h ****       find(const _CharT* __s, size_type __pos, size_type __n) const;
+GAS LISTING /tmp/cc3o2J9C.s 			page 38
+
+
 1834:/usr/include/c++/4.8/bits/basic_string.h **** 
 1835:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 1836:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Find position of a string.
@@ -2218,10 +2277,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1887:/usr/include/c++/4.8/bits/basic_string.h ****        *  __str within this string.  If found, returns the index where
 1888:/usr/include/c++/4.8/bits/basic_string.h ****        *  it begins.  If not found, returns npos.
 1889:/usr/include/c++/4.8/bits/basic_string.h ****       */
-GAS LISTING /tmp/ccs4M5jB.s 			page 38
-
-
 1890:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
+GAS LISTING /tmp/cc3o2J9C.s 			page 39
+
+
 1891:/usr/include/c++/4.8/bits/basic_string.h ****       rfind(const basic_string& __str, size_type __pos = npos) const
 1892:/usr/include/c++/4.8/bits/basic_string.h **** 	_GLIBCXX_NOEXCEPT
 1893:/usr/include/c++/4.8/bits/basic_string.h ****       { return this->rfind(__str.data(), __pos, __str.size()); }
@@ -2278,10 +2337,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 1944:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Index of first occurrence.
 1945:/usr/include/c++/4.8/bits/basic_string.h ****        *
 1946:/usr/include/c++/4.8/bits/basic_string.h ****        *  Starting from @a __pos, searches forward for one of the
-GAS LISTING /tmp/ccs4M5jB.s 			page 39
-
-
 1947:/usr/include/c++/4.8/bits/basic_string.h ****        *  characters of @a __str within this string.  If found,
+GAS LISTING /tmp/cc3o2J9C.s 			page 40
+
+
 1948:/usr/include/c++/4.8/bits/basic_string.h ****        *  returns the index where it was found.  If not found, returns
 1949:/usr/include/c++/4.8/bits/basic_string.h ****        *  npos.
 1950:/usr/include/c++/4.8/bits/basic_string.h ****       */
@@ -2338,10 +2397,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2001:/usr/include/c++/4.8/bits/basic_string.h ****       find_first_of(_CharT __c, size_type __pos = 0) const _GLIBCXX_NOEXCEPT
 2002:/usr/include/c++/4.8/bits/basic_string.h ****       { return this->find(__c, __pos); }
 2003:/usr/include/c++/4.8/bits/basic_string.h **** 
-GAS LISTING /tmp/ccs4M5jB.s 			page 40
-
-
 2004:/usr/include/c++/4.8/bits/basic_string.h ****       /**
+GAS LISTING /tmp/cc3o2J9C.s 			page 41
+
+
 2005:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Find last position of a character of string.
 2006:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __str  String containing characters to locate.
 2007:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of character to search back from (default end).
@@ -2398,10 +2457,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2058:/usr/include/c++/4.8/bits/basic_string.h ****        *  Starting from @a __pos, searches backward for @a __c within
 2059:/usr/include/c++/4.8/bits/basic_string.h ****        *  this string.  If found, returns the index where it was
 2060:/usr/include/c++/4.8/bits/basic_string.h ****        *  found.  If not found, returns npos.
-GAS LISTING /tmp/ccs4M5jB.s 			page 41
-
-
 2061:/usr/include/c++/4.8/bits/basic_string.h ****        *
+GAS LISTING /tmp/cc3o2J9C.s 			page 42
+
+
 2062:/usr/include/c++/4.8/bits/basic_string.h ****        *  Note: equivalent to rfind(__c, __pos).
 2063:/usr/include/c++/4.8/bits/basic_string.h ****       */
 2064:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
@@ -2458,10 +2517,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2115:/usr/include/c++/4.8/bits/basic_string.h **** 
 2116:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 2117:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Find position of a different character.
-GAS LISTING /tmp/ccs4M5jB.s 			page 42
-
-
 2118:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __c  Character to avoid.
+GAS LISTING /tmp/cc3o2J9C.s 			page 43
+
+
 2119:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __pos  Index of character to search from (default 0).
 2120:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Index of first occurrence.
 2121:/usr/include/c++/4.8/bits/basic_string.h ****        *
@@ -2518,10 +2577,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2172:/usr/include/c++/4.8/bits/basic_string.h ****       size_type
 2173:/usr/include/c++/4.8/bits/basic_string.h ****       find_last_not_of(const _CharT* __s, size_type __pos = npos) const
 2174:/usr/include/c++/4.8/bits/basic_string.h ****       {
-GAS LISTING /tmp/ccs4M5jB.s 			page 43
-
-
 2175:/usr/include/c++/4.8/bits/basic_string.h **** 	__glibcxx_requires_string(__s);
+GAS LISTING /tmp/cc3o2J9C.s 			page 44
+
+
 2176:/usr/include/c++/4.8/bits/basic_string.h **** 	return this->find_last_not_of(__s, __pos, traits_type::length(__s));
 2177:/usr/include/c++/4.8/bits/basic_string.h ****       }
 2178:/usr/include/c++/4.8/bits/basic_string.h **** 
@@ -2578,10 +2637,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2229:/usr/include/c++/4.8/bits/basic_string.h **** 	const size_type __len = std::min(__size, __osize);
 2230:/usr/include/c++/4.8/bits/basic_string.h **** 
 2231:/usr/include/c++/4.8/bits/basic_string.h **** 	int __r = traits_type::compare(_M_data(), __str.data(), __len);
-GAS LISTING /tmp/ccs4M5jB.s 			page 44
-
-
 2232:/usr/include/c++/4.8/bits/basic_string.h **** 	if (!__r)
+GAS LISTING /tmp/cc3o2J9C.s 			page 45
+
+
 2233:/usr/include/c++/4.8/bits/basic_string.h **** 	  __r = _S_compare(__size, __osize);
 2234:/usr/include/c++/4.8/bits/basic_string.h **** 	return __r;
 2235:/usr/include/c++/4.8/bits/basic_string.h ****       }
@@ -2638,10 +2697,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2286:/usr/include/c++/4.8/bits/basic_string.h ****       /**
 2287:/usr/include/c++/4.8/bits/basic_string.h ****        *  @brief  Compare to a C string.
 2288:/usr/include/c++/4.8/bits/basic_string.h ****        *  @param __s  C string to compare against.
-GAS LISTING /tmp/ccs4M5jB.s 			page 45
-
-
 2289:/usr/include/c++/4.8/bits/basic_string.h ****        *  @return  Integer < 0, 0, or > 0.
+GAS LISTING /tmp/cc3o2J9C.s 			page 46
+
+
 2290:/usr/include/c++/4.8/bits/basic_string.h ****        *
 2291:/usr/include/c++/4.8/bits/basic_string.h ****        *  Returns an integer < 0 if this string is ordered before @a __s, 0 if
 2292:/usr/include/c++/4.8/bits/basic_string.h ****        *  their values are equivalent, or > 0 if this string is ordered after
@@ -2698,10 +2757,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2343:/usr/include/c++/4.8/bits/basic_string.h ****        *  function then compares the two strings by calling
 2344:/usr/include/c++/4.8/bits/basic_string.h ****        *  traits::compare(substring.data(),s,rlen).  If the result of
 2345:/usr/include/c++/4.8/bits/basic_string.h ****        *  the comparison is nonzero returns it, otherwise the shorter
-GAS LISTING /tmp/ccs4M5jB.s 			page 46
-
-
 2346:/usr/include/c++/4.8/bits/basic_string.h ****        *  one is ordered first.
+GAS LISTING /tmp/cc3o2J9C.s 			page 47
+
+
 2347:/usr/include/c++/4.8/bits/basic_string.h ****        *
 2348:/usr/include/c++/4.8/bits/basic_string.h ****        *  NB: s must have at least n2 characters, &apos;\\0&apos; has
 2349:/usr/include/c++/4.8/bits/basic_string.h ****        *  no special meaning.
@@ -2758,130 +2817,130 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
 2400:/usr/include/c++/4.8/bits/basic_string.h ****   template<typename _CharT, typename _Traits, typename _Alloc>
 2401:/usr/include/c++/4.8/bits/basic_string.h ****     inline basic_string<_CharT, _Traits, _Alloc>
 2402:/usr/include/c++/4.8/bits/basic_string.h ****     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
-GAS LISTING /tmp/ccs4M5jB.s 			page 47
+ 230              		.loc 2 2402 0
+GAS LISTING /tmp/cc3o2J9C.s 			page 48
 
 
- 187              		.loc 2 2402 0
- 188              		.cfi_startproc
- 189              		.cfi_personality 0x3,__gxx_personality_v0
- 190              		.cfi_lsda 0x3,.LLSDA1313
- 191              	.LVL19:
- 192 0000 55       		pushq	%rbp
- 193              		.cfi_def_cfa_offset 16
- 194              		.cfi_offset 6, -16
- 195 0001 53       		pushq	%rbx
- 196              		.cfi_def_cfa_offset 24
- 197              		.cfi_offset 3, -24
- 198 0002 4883EC08 		subq	$8, %rsp
- 199              		.cfi_def_cfa_offset 32
- 200 0006 4889FB   		movq	%rdi, %rbx
- 201 0009 4889D5   		movq	%rdx, %rbp
- 202              	.LEHB3:
- 203              	.LBB6:
+ 231              		.cfi_startproc
+ 232              		.cfi_personality 0x3,__gxx_personality_v0
+ 233              		.cfi_lsda 0x3,.LLSDA1313
+ 234              	.LVL26:
+ 235 0000 55       		pushq	%rbp
+ 236              		.cfi_def_cfa_offset 16
+ 237              		.cfi_offset 6, -16
+ 238 0001 53       		pushq	%rbx
+ 239              		.cfi_def_cfa_offset 24
+ 240              		.cfi_offset 3, -24
+ 241 0002 4883EC08 		subq	$8, %rsp
+ 242              		.cfi_def_cfa_offset 32
+ 243 0006 4889FB   		movq	%rdi, %rbx
+ 244 0009 4889D5   		movq	%rdx, %rbp
+ 245              	.LEHB4:
+ 246              	.LBB6:
 2403:/usr/include/c++/4.8/bits/basic_string.h **** 	     const _CharT* __rhs)
 2404:/usr/include/c++/4.8/bits/basic_string.h ****     {
 2405:/usr/include/c++/4.8/bits/basic_string.h ****       basic_string<_CharT, _Traits, _Alloc> __str(__lhs);
- 204              		.loc 2 2405 0
- 205 000c E8000000 		call	_ZNSsC1ERKSs
- 205      00
- 206              	.LEHE3:
- 207              	.LVL20:
+ 247              		.loc 2 2405 0
+ 248 000c E8000000 		call	_ZNSsC1ERKSs
+ 248      00
+ 249              	.LEHE4:
+ 250              	.LVL27:
 2406:/usr/include/c++/4.8/bits/basic_string.h ****       __str.append(__rhs);
- 208              		.loc 2 2406 0
- 209 0011 4889EE   		movq	%rbp, %rsi
- 210 0014 4889DF   		movq	%rbx, %rdi
- 211              	.LEHB4:
- 212 0017 E8000000 		call	_ZNSs6appendEPKc
- 212      00
- 213              	.LEHE4:
- 214              	.LVL21:
- 215 001c EB13     		jmp	.L16
- 216              	.L15:
- 217 001e 4889C5   		movq	%rax, %rbp
- 218              	.LVL22:
- 219 0021 4889DF   		movq	%rbx, %rdi
- 220 0024 E8000000 		call	_ZNSsD1Ev
- 220      00
- 221              	.LVL23:
- 222 0029 4889EF   		movq	%rbp, %rdi
- 223              	.LEHB5:
- 224 002c E8000000 		call	_Unwind_Resume
- 224      00
- 225              	.LEHE5:
- 226              	.LVL24:
- 227              	.L16:
- 228              	.LBE6:
+ 251              		.loc 2 2406 0
+ 252 0011 4889EE   		movq	%rbp, %rsi
+ 253 0014 4889DF   		movq	%rbx, %rdi
+ 254              	.LEHB5:
+ 255 0017 E8000000 		call	_ZNSs6appendEPKc
+ 255      00
+ 256              	.LEHE5:
+ 257              	.LVL28:
+ 258 001c EB13     		jmp	.L17
+ 259              	.L16:
+ 260 001e 4889C5   		movq	%rax, %rbp
+ 261              	.LVL29:
+ 262 0021 4889DF   		movq	%rbx, %rdi
+ 263 0024 E8000000 		call	_ZNSsD1Ev
+ 263      00
+ 264              	.LVL30:
+ 265 0029 4889EF   		movq	%rbp, %rdi
+ 266              	.LEHB6:
+ 267 002c E8000000 		call	_Unwind_Resume
+ 267      00
+ 268              	.LEHE6:
+ 269              	.LVL31:
+ 270              	.L17:
+ 271              	.LBE6:
 2407:/usr/include/c++/4.8/bits/basic_string.h ****       return __str;
 2408:/usr/include/c++/4.8/bits/basic_string.h ****     }
- 229              		.loc 2 2408 0
- 230 0031 4889D8   		movq	%rbx, %rax
- 231 0034 4883C408 		addq	$8, %rsp
- 232              		.cfi_def_cfa_offset 24
- 233 0038 5B       		popq	%rbx
-GAS LISTING /tmp/ccs4M5jB.s 			page 48
+ 272              		.loc 2 2408 0
+ 273 0031 4889D8   		movq	%rbx, %rax
+ 274 0034 4883C408 		addq	$8, %rsp
+ 275              		.cfi_def_cfa_offset 24
+ 276 0038 5B       		popq	%rbx
+ 277              		.cfi_def_cfa_offset 16
+GAS LISTING /tmp/cc3o2J9C.s 			page 49
 
 
- 234              		.cfi_def_cfa_offset 16
- 235              	.LVL25:
- 236 0039 5D       		popq	%rbp
- 237              		.cfi_def_cfa_offset 8
- 238              	.LVL26:
- 239 003a C3       		ret
- 240              		.cfi_endproc
- 241              	.LFE1313:
- 242              		.section	.gcc_except_table
- 243              	.LLSDA1313:
- 244 0010 FF       		.byte	0xff
- 245 0011 FF       		.byte	0xff
- 246 0012 01       		.byte	0x1
- 247 0013 0C       		.uleb128 .LLSDACSE1313-.LLSDACSB1313
- 248              	.LLSDACSB1313:
- 249 0014 0C       		.uleb128 .LEHB3-.LFB1313
- 250 0015 05       		.uleb128 .LEHE3-.LEHB3
- 251 0016 00       		.uleb128 0
- 252 0017 00       		.uleb128 0
- 253 0018 17       		.uleb128 .LEHB4-.LFB1313
- 254 0019 05       		.uleb128 .LEHE4-.LEHB4
- 255 001a 1E       		.uleb128 .L15-.LFB1313
- 256 001b 00       		.uleb128 0
- 257 001c 2C       		.uleb128 .LEHB5-.LFB1313
- 258 001d 05       		.uleb128 .LEHE5-.LEHB5
- 259 001e 00       		.uleb128 0
- 260 001f 00       		.uleb128 0
- 261              	.LLSDACSE1313:
- 262              		.section	.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_,"axG",@progbits,_ZStplIcSt11
- 264              		.section	.rodata.str1.1,"aMS",@progbits,1
- 265              	.LC0:
- 266 0000 74657374 		.string	"test"
- 266      00
- 267              	.LC1:
- 268 0005 626F6200 		.string	"bob"
- 269              		.text
- 271              	_Z41__static_initialization_and_destruction_0ii:
- 272              	.LFB1401:
- 273              		.loc 1 26 0
- 274              		.cfi_startproc
- 275              		.cfi_personality 0x3,__gxx_personality_v0
- 276              		.cfi_lsda 0x3,.LLSDA1401
- 277 006d 83FF01   		cmpl	$1, %edi
- 278 0070 0F85AF00 		jne	.L24
- 278      0000
- 279              		.loc 1 26 0 discriminator 1
- 280 0076 81FEFFFF 		cmpl	$65535, %esi
- 280      0000
- 281 007c 0F85A300 		jne	.L24
- 281      0000
- 282              		.loc 1 26 0 is_stmt 0
- 283 0082 53       		pushq	%rbx
- 284              		.cfi_def_cfa_offset 16
- 285              		.cfi_offset 3, -16
- 286 0083 4883EC10 		subq	$16, %rsp
- 287              		.cfi_def_cfa_offset 32
- 288              		.file 3 "/usr/include/c++/4.8/iostream"
-GAS LISTING /tmp/ccs4M5jB.s 			page 49
-
-
+ 278              	.LVL32:
+ 279 0039 5D       		popq	%rbp
+ 280              		.cfi_def_cfa_offset 8
+ 281              	.LVL33:
+ 282 003a C3       		ret
+ 283              		.cfi_endproc
+ 284              	.LFE1313:
+ 285              		.section	.gcc_except_table
+ 286              	.LLSDA1313:
+ 287 0016 FF       		.byte	0xff
+ 288 0017 FF       		.byte	0xff
+ 289 0018 01       		.byte	0x1
+ 290 0019 0C       		.uleb128 .LLSDACSE1313-.LLSDACSB1313
+ 291              	.LLSDACSB1313:
+ 292 001a 0C       		.uleb128 .LEHB4-.LFB1313
+ 293 001b 05       		.uleb128 .LEHE4-.LEHB4
+ 294 001c 00       		.uleb128 0
+ 295 001d 00       		.uleb128 0
+ 296 001e 17       		.uleb128 .LEHB5-.LFB1313
+ 297 001f 05       		.uleb128 .LEHE5-.LEHB5
+ 298 0020 1E       		.uleb128 .L16-.LFB1313
+ 299 0021 00       		.uleb128 0
+ 300 0022 2C       		.uleb128 .LEHB6-.LFB1313
+ 301 0023 05       		.uleb128 .LEHE6-.LEHB6
+ 302 0024 00       		.uleb128 0
+ 303 0025 00       		.uleb128 0
+ 304              	.LLSDACSE1313:
+ 305              		.section	.text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_,"axG",@progbits,_ZStplIcSt11
+ 307              		.section	.rodata.str1.1
+ 308              	.LC2:
+ 309 000e 74657374 		.string	"test"
+ 309      00
+ 310              	.LC3:
+ 311 0013 626F6200 		.string	"bob"
+ 312              		.text
+ 314              	_Z41__static_initialization_and_destruction_0ii:
+ 315              	.LFB1411:
+ 316              		.loc 1 25 0
+ 317              		.cfi_startproc
+ 318              		.cfi_personality 0x3,__gxx_personality_v0
+ 319              		.cfi_lsda 0x3,.LLSDA1411
+ 320 00bb 83FF01   		cmpl	$1, %edi
+ 321 00be 0F85AF00 		jne	.L25
+ 321      0000
+ 322              		.loc 1 25 0 discriminator 1
+ 323 00c4 81FEFFFF 		cmpl	$65535, %esi
+ 323      0000
+ 324 00ca 0F85A300 		jne	.L25
+ 324      0000
+ 325              		.loc 1 25 0 is_stmt 0
+ 326 00d0 53       		pushq	%rbx
+ 327              		.cfi_def_cfa_offset 16
+ 328              		.cfi_offset 3, -16
+ 329 00d1 4883EC10 		subq	$16, %rsp
+ 330              		.cfi_def_cfa_offset 32
+ 331              		.file 3 "/usr/include/c++/4.8/iostream"
    1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+GAS LISTING /tmp/cc3o2J9C.s 			page 50
+
+
    2:/usr/include/c++/4.8/iostream **** 
    3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
    4:/usr/include/c++/4.8/iostream **** //
@@ -2938,10 +2997,10 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
   55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
   56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
   57:/usr/include/c++/4.8/iostream ****    *  linked to above.
-GAS LISTING /tmp/ccs4M5jB.s 			page 50
-
-
   58:/usr/include/c++/4.8/iostream ****   */
+GAS LISTING /tmp/cc3o2J9C.s 			page 51
+
+
   59:/usr/include/c++/4.8/iostream ****   //@{
   60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
   61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
@@ -2958,224 +3017,227 @@ GAS LISTING /tmp/ccs4M5jB.s 			page 1
   72:/usr/include/c++/4.8/iostream **** 
   73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
   74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
- 289              		.loc 3 74 0 is_stmt 1
- 290 0087 BF000000 		movl	$_ZStL8__ioinit, %edi
- 290      00
- 291              	.LEHB6:
- 292 008c E8000000 		call	_ZNSt8ios_base4InitC1Ev
- 292      00
- 293 0091 BA000000 		movl	$__dso_handle, %edx
- 293      00
- 294 0096 BE000000 		movl	$_ZStL8__ioinit, %esi
- 294      00
- 295 009b BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
- 295      00
- 296 00a0 E8000000 		call	__cxa_atexit
- 296      00
-  17:global.cpp    **** my_struct global_struct(global_string + "bob", 37);
- 297              		.loc 1 17 0
- 298 00a5 4889E2   		movq	%rsp, %rdx
- 299 00a8 BE000000 		movl	$.LC0, %esi
- 299      00
- 300 00ad BF000000 		movl	$global_string, %edi
- 300      00
- 301 00b2 E8000000 		call	_ZNSsC1EPKcRKSaIcE
- 301      00
- 302 00b7 BA000000 		movl	$__dso_handle, %edx
- 302      00
- 303 00bc BE000000 		movl	$global_string, %esi
- 303      00
- 304 00c1 BF000000 		movl	$_ZNSsD1Ev, %edi
- 304      00
- 305 00c6 E8000000 		call	__cxa_atexit
- 305      00
-  18:global.cpp    **** 
- 306              		.loc 1 18 0
- 307 00cb BA000000 		movl	$.LC1, %edx
- 307      00
- 308 00d0 BE000000 		movl	$global_string, %esi
- 308      00
- 309 00d5 4889E7   		movq	%rsp, %rdi
- 310 00d8 E8000000 		call	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
- 310      00
-GAS LISTING /tmp/ccs4M5jB.s 			page 51
-
-
- 311              	.LEHE6:
- 312 00dd BA250000 		movl	$37, %edx
- 312      00
- 313 00e2 4889E6   		movq	%rsp, %rsi
- 314 00e5 BF000000 		movl	$global_struct, %edi
- 314      00
- 315              	.LEHB7:
- 316 00ea E8000000 		call	_ZN9my_structC1ESsi
- 316      00
- 317              	.LEHE7:
-  18:global.cpp    **** 
- 318              		.loc 1 18 0 is_stmt 0 discriminator 1
- 319 00ef 4889E7   		movq	%rsp, %rdi
- 320 00f2 E8000000 		call	_ZNSsD1Ev
- 320      00
- 321 00f7 BA000000 		movl	$__dso_handle, %edx
- 321      00
- 322 00fc BE000000 		movl	$global_struct, %esi
- 322      00
- 323 0101 BF000000 		movl	$_ZN9my_structD1Ev, %edi
- 323      00
- 324 0106 E8000000 		call	__cxa_atexit
- 324      00
- 325 010b EB13     		jmp	.L18
- 326              	.L21:
- 327 010d 4889C3   		movq	%rax, %rbx
-  18:global.cpp    **** 
- 328              		.loc 1 18 0
- 329 0110 4889E7   		movq	%rsp, %rdi
- 330 0113 E8000000 		call	_ZNSsD1Ev
- 330      00
- 331 0118 4889DF   		movq	%rbx, %rdi
- 332              	.LEHB8:
- 333 011b E8000000 		call	_Unwind_Resume
+ 332              		.loc 3 74 0 is_stmt 1
+ 333 00d5 BF000000 		movl	$_ZStL8__ioinit, %edi
  333      00
- 334              	.LEHE8:
- 335              	.L18:
- 336              		.loc 1 26 0 is_stmt 1
- 337 0120 4883C410 		addq	$16, %rsp
- 338              		.cfi_def_cfa_offset 16
- 339 0124 5B       		popq	%rbx
- 340              		.cfi_restore 3
- 341              		.cfi_def_cfa_offset 8
- 342              	.L24:
- 343 0125 C3       		ret
- 344              		.cfi_endproc
- 345              	.LFE1401:
- 346              		.section	.gcc_except_table
- 347              	.LLSDA1401:
- 348 0020 FF       		.byte	0xff
- 349 0021 FF       		.byte	0xff
- 350 0022 01       		.byte	0x1
- 351 0023 0E       		.uleb128 .LLSDACSE1401-.LLSDACSB1401
- 352              	.LLSDACSB1401:
- 353 0024 1F       		.uleb128 .LEHB6-.LFB1401
- 354 0025 51       		.uleb128 .LEHE6-.LEHB6
- 355 0026 00       		.uleb128 0
-GAS LISTING /tmp/ccs4M5jB.s 			page 52
+ 334              	.LEHB7:
+ 335 00da E8000000 		call	_ZNSt8ios_base4InitC1Ev
+ 335      00
+ 336 00df BA000000 		movl	$__dso_handle, %edx
+ 336      00
+ 337 00e4 BE000000 		movl	$_ZStL8__ioinit, %esi
+ 337      00
+ 338 00e9 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+ 338      00
+ 339 00ee E8000000 		call	__cxa_atexit
+ 339      00
+  17:global.cpp    **** my_struct global_struct(global_string + "bob", 37);
+ 340              		.loc 1 17 0
+ 341 00f3 4889E2   		movq	%rsp, %rdx
+ 342 00f6 BE000000 		movl	$.LC2, %esi
+ 342      00
+ 343 00fb BF000000 		movl	$global_string, %edi
+ 343      00
+ 344 0100 E8000000 		call	_ZNSsC1EPKcRKSaIcE
+ 344      00
+ 345 0105 BA000000 		movl	$__dso_handle, %edx
+ 345      00
+ 346 010a BE000000 		movl	$global_string, %esi
+ 346      00
+ 347 010f BF000000 		movl	$_ZNSsD1Ev, %edi
+ 347      00
+ 348 0114 E8000000 		call	__cxa_atexit
+ 348      00
+  18:global.cpp    **** 
+ 349              		.loc 1 18 0
+ 350 0119 BA000000 		movl	$.LC3, %edx
+ 350      00
+ 351 011e BE000000 		movl	$global_string, %esi
+ 351      00
+ 352 0123 4889E7   		movq	%rsp, %rdi
+ 353 0126 E8000000 		call	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+ 353      00
+ 354              	.LEHE7:
+GAS LISTING /tmp/cc3o2J9C.s 			page 52
 
 
- 356 0027 00       		.uleb128 0
- 357 0028 7D       		.uleb128 .LEHB7-.LFB1401
- 358 0029 05       		.uleb128 .LEHE7-.LEHB7
- 359 002a A001     		.uleb128 .L21-.LFB1401
- 360 002c 00       		.uleb128 0
- 361 002d AE01     		.uleb128 .LEHB8-.LFB1401
- 362 002f 05       		.uleb128 .LEHE8-.LEHB8
- 363 0030 00       		.uleb128 0
- 364 0031 00       		.uleb128 0
- 365              	.LLSDACSE1401:
- 366              		.text
- 369              	_GLOBAL__sub_I__ZN9my_structC2ESsi:
- 370              	.LFB1402:
- 371              		.loc 1 26 0
- 372              		.cfi_startproc
- 373 0126 4883EC08 		subq	$8, %rsp
- 374              		.cfi_def_cfa_offset 16
- 375              		.loc 1 26 0
- 376 012a BEFFFF00 		movl	$65535, %esi
+ 355 012b BA250000 		movl	$37, %edx
+ 355      00
+ 356 0130 4889E6   		movq	%rsp, %rsi
+ 357 0133 BF000000 		movl	$global_struct, %edi
+ 357      00
+ 358              	.LEHB8:
+ 359 0138 E8000000 		call	_ZN9my_structC1ESsi
+ 359      00
+ 360              	.LEHE8:
+  18:global.cpp    **** 
+ 361              		.loc 1 18 0 is_stmt 0 discriminator 1
+ 362 013d 4889E7   		movq	%rsp, %rdi
+ 363 0140 E8000000 		call	_ZNSsD1Ev
+ 363      00
+ 364 0145 BA000000 		movl	$__dso_handle, %edx
+ 364      00
+ 365 014a BE000000 		movl	$global_struct, %esi
+ 365      00
+ 366 014f BF000000 		movl	$_ZN9my_structD1Ev, %edi
+ 366      00
+ 367 0154 E8000000 		call	__cxa_atexit
+ 367      00
+ 368 0159 EB13     		jmp	.L19
+ 369              	.L22:
+ 370 015b 4889C3   		movq	%rax, %rbx
+  18:global.cpp    **** 
+ 371              		.loc 1 18 0
+ 372 015e 4889E7   		movq	%rsp, %rdi
+ 373 0161 E8000000 		call	_ZNSsD1Ev
+ 373      00
+ 374 0166 4889DF   		movq	%rbx, %rdi
+ 375              	.LEHB9:
+ 376 0169 E8000000 		call	_Unwind_Resume
  376      00
- 377 012f BF010000 		movl	$1, %edi
- 377      00
- 378 0134 E834FFFF 		call	_Z41__static_initialization_and_destruction_0ii
- 378      FF
- 379              	.LVL27:
- 380 0139 4883C408 		addq	$8, %rsp
- 381              		.cfi_def_cfa_offset 8
- 382 013d C3       		ret
- 383              		.cfi_endproc
- 384              	.LFE1402:
- 386              		.section	.init_array,"aw"
- 387              		.align 8
- 388 0000 00000000 		.quad	_GLOBAL__sub_I__ZN9my_structC2ESsi
- 388      00000000 
- 389              		.globl	global_struct
- 390              		.bss
- 391              		.align 16
- 394              	global_struct:
- 395 0000 00000000 		.zero	24
- 395      00000000 
- 395      00000000 
- 395      00000000 
- 395      00000000 
- 396              		.globl	global_string
- 397              		.align 8
- 400              	global_string:
- 401 0018 00000000 		.zero	8
- 401      00000000 
- 402              		.globl	global_int
- 403              		.data
- 404              		.align 4
- 407              	global_int:
- 408 0000 04000000 		.long	4
- 409              		.local	_ZStL8__ioinit
- 410              		.comm	_ZStL8__ioinit,1,1
- 411              		.text
- 412              	.Letext0:
-GAS LISTING /tmp/ccs4M5jB.s 			page 53
+ 377              	.LEHE9:
+ 378              	.L19:
+ 379              		.loc 1 25 0 is_stmt 1
+ 380 016e 4883C410 		addq	$16, %rsp
+ 381              		.cfi_def_cfa_offset 16
+ 382 0172 5B       		popq	%rbx
+ 383              		.cfi_restore 3
+ 384              		.cfi_def_cfa_offset 8
+ 385              	.L25:
+ 386 0173 C3       		ret
+ 387              		.cfi_endproc
+ 388              	.LFE1411:
+ 389              		.section	.gcc_except_table
+ 390              	.LLSDA1411:
+ 391 0026 FF       		.byte	0xff
+ 392 0027 FF       		.byte	0xff
+ 393 0028 01       		.byte	0x1
+ 394 0029 0E       		.uleb128 .LLSDACSE1411-.LLSDACSB1411
+ 395              	.LLSDACSB1411:
+ 396 002a 1F       		.uleb128 .LEHB7-.LFB1411
+ 397 002b 51       		.uleb128 .LEHE7-.LEHB7
+ 398 002c 00       		.uleb128 0
+ 399 002d 00       		.uleb128 0
+GAS LISTING /tmp/cc3o2J9C.s 			page 53
 
 
- 413              		.file 4 "/usr/include/libio.h"
- 414              		.file 5 "/usr/include/stdio.h"
- 415              		.file 6 "<built-in>"
- 416              		.file 7 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
- 417              		.file 8 "/usr/include/wchar.h"
- 418              		.file 9 "/usr/include/c++/4.8/cwchar"
- 419              		.file 10 "/usr/include/c++/4.8/bits/exception_ptr.h"
- 420              		.file 11 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
- 421              		.file 12 "/usr/include/c++/4.8/bits/char_traits.h"
- 422              		.file 13 "/usr/include/c++/4.8/cstdint"
- 423              		.file 14 "/usr/include/c++/4.8/clocale"
- 424              		.file 15 "/usr/include/c++/4.8/bits/allocator.h"
- 425              		.file 16 "/usr/include/c++/4.8/cstdlib"
- 426              		.file 17 "/usr/include/c++/4.8/cstdio"
- 427              		.file 18 "/usr/include/c++/4.8/bits/basic_string.tcc"
- 428              		.file 19 "/usr/include/c++/4.8/initializer_list"
- 429              		.file 20 "/usr/include/c++/4.8/bits/stringfwd.h"
- 430              		.file 21 "/usr/include/c++/4.8/bits/ios_base.h"
- 431              		.file 22 "/usr/include/c++/4.8/cwctype"
- 432              		.file 23 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
- 433              		.file 24 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
- 434              		.file 25 "/usr/include/time.h"
- 435              		.file 26 "/usr/include/c++/4.8/ext/new_allocator.h"
- 436              		.file 27 "/usr/include/c++/4.8/ext/numeric_traits.h"
- 437              		.file 28 "/usr/include/c++/4.8/bits/stl_iterator.h"
- 438              		.file 29 "/usr/include/c++/4.8/debug/debug.h"
- 439              		.file 30 "/usr/include/stdint.h"
- 440              		.file 31 "/usr/include/locale.h"
- 441              		.file 32 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 442              		.file 33 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
- 443              		.file 34 "/usr/include/stdlib.h"
- 444              		.file 35 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
- 445              		.file 36 "/usr/include/_G_config.h"
- 446              		.file 37 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
- 447              		.file 38 "/usr/include/wctype.h"
- 448              		.file 39 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/ccs4M5jB.s 			page 54
+ 400 002e 7D       		.uleb128 .LEHB8-.LFB1411
+ 401 002f 05       		.uleb128 .LEHE8-.LEHB8
+ 402 0030 A001     		.uleb128 .L22-.LFB1411
+ 403 0032 00       		.uleb128 0
+ 404 0033 AE01     		.uleb128 .LEHB9-.LFB1411
+ 405 0035 05       		.uleb128 .LEHE9-.LEHB9
+ 406 0036 00       		.uleb128 0
+ 407 0037 00       		.uleb128 0
+ 408              	.LLSDACSE1411:
+ 409              		.text
+ 412              	_GLOBAL__sub_I__ZN9my_structC2ESsi:
+ 413              	.LFB1412:
+ 414              		.loc 1 25 0
+ 415              		.cfi_startproc
+ 416 0174 4883EC08 		subq	$8, %rsp
+ 417              		.cfi_def_cfa_offset 16
+ 418              		.loc 1 25 0
+ 419 0178 BEFFFF00 		movl	$65535, %esi
+ 419      00
+ 420 017d BF010000 		movl	$1, %edi
+ 420      00
+ 421 0182 E834FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 421      FF
+ 422              	.LVL34:
+ 423 0187 4883C408 		addq	$8, %rsp
+ 424              		.cfi_def_cfa_offset 8
+ 425 018b C3       		ret
+ 426              		.cfi_endproc
+ 427              	.LFE1412:
+ 429              		.section	.init_array,"aw"
+ 430              		.align 8
+ 431 0000 00000000 		.quad	_GLOBAL__sub_I__ZN9my_structC2ESsi
+ 431      00000000 
+ 432              		.globl	global_struct
+ 433              		.bss
+ 434              		.align 16
+ 437              	global_struct:
+ 438 0000 00000000 		.zero	24
+ 438      00000000 
+ 438      00000000 
+ 438      00000000 
+ 438      00000000 
+ 439              		.globl	global_string
+ 440              		.align 8
+ 443              	global_string:
+ 444 0018 00000000 		.zero	8
+ 444      00000000 
+ 445              		.globl	global_int
+ 446              		.data
+ 447              		.align 4
+ 450              	global_int:
+ 451 0000 04000000 		.long	4
+ 452              		.local	_ZStL8__ioinit
+ 453              		.comm	_ZStL8__ioinit,1,1
+ 454              		.text
+ 455              	.Letext0:
+ 456              		.file 4 "/usr/include/libio.h"
+GAS LISTING /tmp/cc3o2J9C.s 			page 54
+
+
+ 457              		.file 5 "/usr/include/stdio.h"
+ 458              		.file 6 "<built-in>"
+ 459              		.file 7 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 460              		.file 8 "/usr/include/wchar.h"
+ 461              		.file 9 "/usr/include/c++/4.8/cwchar"
+ 462              		.file 10 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 463              		.file 11 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 464              		.file 12 "/usr/include/c++/4.8/bits/char_traits.h"
+ 465              		.file 13 "/usr/include/c++/4.8/cstdint"
+ 466              		.file 14 "/usr/include/c++/4.8/clocale"
+ 467              		.file 15 "/usr/include/c++/4.8/bits/allocator.h"
+ 468              		.file 16 "/usr/include/c++/4.8/cstdlib"
+ 469              		.file 17 "/usr/include/c++/4.8/cstdio"
+ 470              		.file 18 "/usr/include/c++/4.8/bits/basic_string.tcc"
+ 471              		.file 19 "/usr/include/c++/4.8/initializer_list"
+ 472              		.file 20 "/usr/include/c++/4.8/bits/stringfwd.h"
+ 473              		.file 21 "/usr/include/c++/4.8/bits/ios_base.h"
+ 474              		.file 22 "/usr/include/c++/4.8/cwctype"
+ 475              		.file 23 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 476              		.file 24 "/usr/include/c++/4.8/ostream"
+ 477              		.file 25 "/usr/include/c++/4.8/bits/stl_iterator_base_types.h"
+ 478              		.file 26 "/usr/include/c++/4.8/iosfwd"
+ 479              		.file 27 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 480              		.file 28 "/usr/include/time.h"
+ 481              		.file 29 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 482              		.file 30 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 483              		.file 31 "/usr/include/c++/4.8/bits/stl_iterator.h"
+ 484              		.file 32 "/usr/include/c++/4.8/debug/debug.h"
+ 485              		.file 33 "/usr/include/stdint.h"
+ 486              		.file 34 "/usr/include/locale.h"
+ 487              		.file 35 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 488              		.file 36 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 489              		.file 37 "/usr/include/stdlib.h"
+ 490              		.file 38 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 491              		.file 39 "/usr/include/_G_config.h"
+ 492              		.file 40 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 493              		.file 41 "/usr/include/wctype.h"
+ 494              		.file 42 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/cc3o2J9C.s 			page 55
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 global.cpp
-     /tmp/ccs4M5jB.s:8      .text._ZN9my_structD2Ev:0000000000000000 _ZN9my_structD2Ev
-     /tmp/ccs4M5jB.s:8      .text._ZN9my_structD2Ev:0000000000000000 _ZN9my_structD1Ev
-     /tmp/ccs4M5jB.s:35     .text:0000000000000000 _ZN9my_structC2ESsi
-     /tmp/ccs4M5jB.s:35     .text:0000000000000000 _ZN9my_structC1ESsi
-     /tmp/ccs4M5jB.s:65     .text._ZN9my_structC2ERKS_:0000000000000000 _ZN9my_structC2ERKS_
-     /tmp/ccs4M5jB.s:65     .text._ZN9my_structC2ERKS_:0000000000000000 _ZN9my_structC1ERKS_
-     /tmp/ccs4M5jB.s:97     .text:000000000000001a main
-     /tmp/ccs4M5jB.s:400    .bss:0000000000000018 global_string
-     /tmp/ccs4M5jB.s:394    .bss:0000000000000000 global_struct
-     /tmp/ccs4M5jB.s:184    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
-     /tmp/ccs4M5jB.s:271    .text:000000000000006d _Z41__static_initialization_and_destruction_0ii
+     /tmp/cc3o2J9C.s:8      .text._ZN9my_structD2Ev:0000000000000000 _ZN9my_structD2Ev
+     /tmp/cc3o2J9C.s:8      .text._ZN9my_structD2Ev:0000000000000000 _ZN9my_structD1Ev
+     /tmp/cc3o2J9C.s:35     .text:0000000000000000 _ZN9my_structC2ESsi
+     /tmp/cc3o2J9C.s:35     .text:0000000000000000 _ZN9my_structC1ESsi
+     /tmp/cc3o2J9C.s:65     .text._ZN9my_structC2ERKS_:0000000000000000 _ZN9my_structC2ERKS_
+     /tmp/cc3o2J9C.s:65     .text._ZN9my_structC2ERKS_:0000000000000000 _ZN9my_structC1ERKS_
+     /tmp/cc3o2J9C.s:102    .text:000000000000001a _Z6globalv
+     /tmp/cc3o2J9C.s:450    .data:0000000000000000 global_int
+     /tmp/cc3o2J9C.s:443    .bss:0000000000000018 global_string
+     /tmp/cc3o2J9C.s:437    .bss:0000000000000000 global_struct
+     /tmp/cc3o2J9C.s:227    .text._ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_:0000000000000000 _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+     /tmp/cc3o2J9C.s:314    .text:00000000000000bb _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000020 _ZStL8__ioinit
-     /tmp/ccs4M5jB.s:369    .text:0000000000000126 _GLOBAL__sub_I__ZN9my_structC2ESsi
-     /tmp/ccs4M5jB.s:407    .data:0000000000000000 global_int
+     /tmp/cc3o2J9C.s:412    .text:0000000000000174 _GLOBAL__sub_I__ZN9my_structC2ESsi
                            .group:0000000000000000 _ZN9my_structD5Ev
                            .group:0000000000000000 _ZN9my_structC5ERKS_
 
@@ -3183,6 +3245,12 @@ UNDEFINED SYMBOLS
 _ZNSsD1Ev
 _ZNSsC1ERKSs
 __gxx_personality_v0
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E
 _Unwind_Resume
 _ZNSs6appendEPKc
 _ZNSt8ios_base4InitC1Ev

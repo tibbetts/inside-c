@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccaAmNa0.s 			page 1
+GAS LISTING /tmp/cccJMGM0.s 			page 1
 
 
    1              		.file	"templated-method.cpp"
@@ -23,27 +23,26 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
   14:templated-method.cpp ****     }
   15:templated-method.cpp **** };
   16:templated-method.cpp **** 
-  17:templated-method.cpp **** int
-  18:templated-method.cpp **** main (int argc, char **argv) {
-  19:templated-method.cpp ****     my_struct<double> f1(3.3);
-  20:templated-method.cpp **** 
-  21:templated-method.cpp ****     cout << "f1._field=" << f1._field << endl;
-  22:templated-method.cpp **** 
-  23:templated-method.cpp ****     int i = 5;
-  24:templated-method.cpp ****     f1.set_field_from(5);
-  25:templated-method.cpp **** 
-  26:templated-method.cpp ****     cout << "f1._field=" << f1._field << endl;
-  27:templated-method.cpp **** }
-   8              		.loc 1 27 0
+  17:templated-method.cpp **** void templateMethod() {
+  18:templated-method.cpp ****     my_struct<double> f1(3.3);
+  19:templated-method.cpp **** 
+  20:templated-method.cpp ****     cout << "f1._field=" << f1._field << endl;
+  21:templated-method.cpp **** 
+  22:templated-method.cpp ****     int i = 5;
+  23:templated-method.cpp ****     f1.set_field_from(5);
+  24:templated-method.cpp **** 
+  25:templated-method.cpp ****     cout << "f1._field=" << f1._field << endl;
+  26:templated-method.cpp **** }
+   8              		.loc 1 26 0
    9              		.cfi_startproc
   10              	.LVL0:
   11 0000 83FF01   		cmpl	$1, %edi
   12 0003 752E     		jne	.L5
-  13              		.loc 1 27 0 discriminator 1
+  13              		.loc 1 26 0 discriminator 1
   14 0005 81FEFFFF 		cmpl	$65535, %esi
   14      0000
   15 000b 7526     		jne	.L5
-  16              		.loc 1 27 0 is_stmt 0
+  16              		.loc 1 26 0 is_stmt 0
   17 000d 4883EC08 		subq	$8, %rsp
   18              		.cfi_def_cfa_offset 16
   19              		.file 2 "/usr/include/c++/4.8/iostream"
@@ -58,10 +57,10 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
    9:/usr/include/c++/4.8/iostream **** // any later version.
   10:/usr/include/c++/4.8/iostream **** 
   11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
-GAS LISTING /tmp/ccaAmNa0.s 			page 2
-
-
   12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+GAS LISTING /tmp/cccJMGM0.s 			page 2
+
+
   13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
   15:/usr/include/c++/4.8/iostream **** 
@@ -118,10 +117,10 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
   66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
   67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
   68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
-GAS LISTING /tmp/ccaAmNa0.s 			page 3
-
-
   69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+GAS LISTING /tmp/cccJMGM0.s 			page 3
+
+
   70:/usr/include/c++/4.8/iostream **** #endif
   71:/usr/include/c++/4.8/iostream ****   //@}
   72:/usr/include/c++/4.8/iostream **** 
@@ -143,7 +142,7 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
   28 002a E8000000 		call	__cxa_atexit
   28      00
   29              	.LVL3:
-  30              		.loc 1 27 0
+  30              		.loc 1 26 0
   31 002f 4883C408 		addq	$8, %rsp
   32              		.cfi_def_cfa_offset 8
   33              	.L5:
@@ -178,10 +177,10 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
   63              		.loc 1 12 0
   64              		.cfi_startproc
   65              	.LVL5:
-GAS LISTING /tmp/ccaAmNa0.s 			page 4
-
-
   13:templated-method.cpp ****     }
+GAS LISTING /tmp/cccJMGM0.s 			page 4
+
+
   66              		.loc 1 13 0
   67 0000 F20F2AC6 		cvtsi2sd	%esi, %xmm0
   68 0004 F20F1107 		movsd	%xmm0, (%rdi)
@@ -194,182 +193,178 @@ GAS LISTING /tmp/ccaAmNa0.s 			page 1
   75      6669656C 
   75      643D00
   76              		.text
-  77              		.globl	main
-  79              	main:
+  77              		.globl	_Z14templateMethodv
+  79              	_Z14templateMethodv:
   80              	.LFB1245:
-  18:templated-method.cpp ****     my_struct<double> f1(3.3);
-  81              		.loc 1 18 0
+  17:templated-method.cpp ****     my_struct<double> f1(3.3);
+  81              		.loc 1 17 0
   82              		.cfi_startproc
-  83              	.LVL6:
-  84 0034 53       		pushq	%rbx
-  85              		.cfi_def_cfa_offset 16
-  86              		.cfi_offset 3, -16
-  87 0035 4883EC20 		subq	$32, %rsp
-  88              		.cfi_def_cfa_offset 48
-  89              	.LBB3:
-  19:templated-method.cpp **** 
-  90              		.loc 1 19 0
-  91 0039 F20F1005 		movsd	.LC0(%rip), %xmm0
-  91      00000000 
-  92 0041 488D7C24 		leaq	16(%rsp), %rdi
-  92      10
-  93              	.LVL7:
-  94 0046 E8000000 		call	_ZN9my_structIdEC1Ed
-  94      00
-  95              	.LVL8:
-  21:templated-method.cpp **** 
-  96              		.loc 1 21 0
-  97 004b 488B5C24 		movq	16(%rsp), %rbx
-  97      10
-  98 0050 BE000000 		movl	$.LC1, %esi
+  83 0034 53       		pushq	%rbx
+  84              		.cfi_def_cfa_offset 16
+  85              		.cfi_offset 3, -16
+  86 0035 4883EC20 		subq	$32, %rsp
+  87              		.cfi_def_cfa_offset 48
+  88              	.LBB3:
+  18:templated-method.cpp **** 
+  89              		.loc 1 18 0
+  90 0039 F20F1005 		movsd	.LC0(%rip), %xmm0
+  90      00000000 
+  91 0041 488D7C24 		leaq	16(%rsp), %rdi
+  91      10
+  92 0046 E8000000 		call	_ZN9my_structIdEC1Ed
+  92      00
+  93              	.LVL6:
+  20:templated-method.cpp **** 
+  94              		.loc 1 20 0
+  95 004b 488B5C24 		movq	16(%rsp), %rbx
+  95      10
+  96 0050 BE000000 		movl	$.LC1, %esi
+  96      00
+  97 0055 BF000000 		movl	$_ZSt4cout, %edi
+  97      00
+  98 005a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
   98      00
-  99 0055 BF000000 		movl	$_ZSt4cout, %edi
-  99      00
- 100 005a E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
- 100      00
- 101              	.LVL9:
- 102 005f 48895C24 		movq	%rbx, 8(%rsp)
- 102      08
- 103 0064 F20F1044 		movsd	8(%rsp), %xmm0
- 103      2408
- 104 006a 4889C7   		movq	%rax, %rdi
- 105 006d E8000000 		call	_ZNSolsEd
+  99              	.LVL7:
+ 100 005f 48895C24 		movq	%rbx, 8(%rsp)
+ 100      08
+ 101 0064 F20F1044 		movsd	8(%rsp), %xmm0
+ 101      2408
+ 102 006a 4889C7   		movq	%rax, %rdi
+ 103 006d E8000000 		call	_ZNSolsEd
+ 103      00
+ 104              	.LVL8:
+ 105 0072 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
  105      00
- 106              	.LVL10:
- 107 0072 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 106 0077 4889C7   		movq	%rax, %rdi
+ 107 007a E8000000 		call	_ZNSolsEPFRSoS_E
  107      00
-GAS LISTING /tmp/ccaAmNa0.s 			page 5
+GAS LISTING /tmp/cccJMGM0.s 			page 5
 
 
- 108 0077 4889C7   		movq	%rax, %rdi
- 109 007a E8000000 		call	_ZNSolsEPFRSoS_E
- 109      00
- 110              	.LVL11:
-  24:templated-method.cpp **** 
- 111              		.loc 1 24 0
- 112 007f BE050000 		movl	$5, %esi
+ 108              	.LVL9:
+  23:templated-method.cpp **** 
+ 109              		.loc 1 23 0
+ 110 007f BE050000 		movl	$5, %esi
+ 110      00
+ 111 0084 488D7C24 		leaq	16(%rsp), %rdi
+ 111      10
+ 112 0089 E8000000 		call	_ZN9my_structIdE14set_field_fromIiEEvT_
  112      00
- 113 0084 488D7C24 		leaq	16(%rsp), %rdi
- 113      10
- 114 0089 E8000000 		call	_ZN9my_structIdE14set_field_fromIiEEvT_
- 114      00
- 115              	.LVL12:
-  26:templated-method.cpp **** }
- 116              		.loc 1 26 0
- 117 008e 488B5C24 		movq	16(%rsp), %rbx
- 117      10
- 118 0093 BE000000 		movl	$.LC1, %esi
+ 113              	.LVL10:
+  25:templated-method.cpp **** }
+ 114              		.loc 1 25 0
+ 115 008e 488B5C24 		movq	16(%rsp), %rbx
+ 115      10
+ 116 0093 BE000000 		movl	$.LC1, %esi
+ 116      00
+ 117 0098 BF000000 		movl	$_ZSt4cout, %edi
+ 117      00
+ 118 009d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
  118      00
- 119 0098 BF000000 		movl	$_ZSt4cout, %edi
- 119      00
- 120 009d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
- 120      00
- 121              	.LVL13:
- 122 00a2 48895C24 		movq	%rbx, 8(%rsp)
- 122      08
- 123 00a7 F20F1044 		movsd	8(%rsp), %xmm0
- 123      2408
- 124 00ad 4889C7   		movq	%rax, %rdi
- 125 00b0 E8000000 		call	_ZNSolsEd
+ 119              	.LVL11:
+ 120 00a2 48895C24 		movq	%rbx, 8(%rsp)
+ 120      08
+ 121 00a7 F20F1044 		movsd	8(%rsp), %xmm0
+ 121      2408
+ 122 00ad 4889C7   		movq	%rax, %rdi
+ 123 00b0 E8000000 		call	_ZNSolsEd
+ 123      00
+ 124              	.LVL12:
+ 125 00b5 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
  125      00
- 126              	.LVL14:
- 127 00b5 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 126 00ba 4889C7   		movq	%rax, %rdi
+ 127 00bd E8000000 		call	_ZNSolsEPFRSoS_E
  127      00
- 128 00ba 4889C7   		movq	%rax, %rdi
- 129 00bd E8000000 		call	_ZNSolsEPFRSoS_E
- 129      00
- 130              	.LVL15:
- 131              	.LBE3:
- 132              		.loc 1 27 0
- 133 00c2 B8000000 		movl	$0, %eax
- 133      00
- 134 00c7 4883C420 		addq	$32, %rsp
- 135              		.cfi_def_cfa_offset 16
- 136 00cb 5B       		popq	%rbx
- 137              		.cfi_def_cfa_offset 8
- 138 00cc C3       		ret
- 139              		.cfi_endproc
- 140              	.LFE1245:
- 143              	_GLOBAL__sub_I_main:
- 144              	.LFB1406:
- 145              		.loc 1 27 0
- 146              		.cfi_startproc
- 147 00cd 4883EC08 		subq	$8, %rsp
- 148              		.cfi_def_cfa_offset 16
- 149              		.loc 1 27 0
- 150 00d1 BEFFFF00 		movl	$65535, %esi
-GAS LISTING /tmp/ccaAmNa0.s 			page 6
+ 128              	.LVL13:
+ 129              	.LBE3:
+ 130              		.loc 1 26 0
+ 131 00c2 4883C420 		addq	$32, %rsp
+ 132              		.cfi_def_cfa_offset 16
+ 133 00c6 5B       		popq	%rbx
+ 134              		.cfi_def_cfa_offset 8
+ 135 00c7 C3       		ret
+ 136              		.cfi_endproc
+ 137              	.LFE1245:
+ 140              	_GLOBAL__sub_I__Z14templateMethodv:
+ 141              	.LFB1406:
+ 142              		.loc 1 26 0
+ 143              		.cfi_startproc
+ 144 00c8 4883EC08 		subq	$8, %rsp
+ 145              		.cfi_def_cfa_offset 16
+ 146              		.loc 1 26 0
+ 147 00cc BEFFFF00 		movl	$65535, %esi
+ 147      00
+ 148 00d1 BF010000 		movl	$1, %edi
+ 148      00
+ 149 00d6 E825FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 149      FF
+GAS LISTING /tmp/cccJMGM0.s 			page 6
 
 
- 150      00
- 151 00d6 BF010000 		movl	$1, %edi
- 151      00
- 152 00db E820FFFF 		call	_Z41__static_initialization_and_destruction_0ii
- 152      FF
- 153              	.LVL16:
- 154 00e0 4883C408 		addq	$8, %rsp
- 155              		.cfi_def_cfa_offset 8
- 156 00e4 C3       		ret
- 157              		.cfi_endproc
- 158              	.LFE1406:
- 160              		.section	.init_array,"aw"
- 161              		.align 8
- 162 0000 00000000 		.quad	_GLOBAL__sub_I_main
- 162      00000000 
- 163              		.local	_ZStL8__ioinit
- 164              		.comm	_ZStL8__ioinit,1,1
- 165              		.section	.rodata.cst8,"aM",@progbits,8
- 166              		.align 8
- 167              	.LC0:
- 168 0000 66666666 		.long	1717986918
- 169 0004 66660A40 		.long	1074423398
- 170              		.text
- 171              	.Letext0:
- 172              		.file 3 "/usr/include/libio.h"
- 173              		.file 4 "/usr/include/stdio.h"
- 174              		.file 5 "<built-in>"
- 175              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
- 176              		.file 7 "/usr/include/wchar.h"
- 177              		.file 8 "/usr/include/c++/4.8/cwchar"
- 178              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
- 179              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
- 180              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
- 181              		.file 12 "/usr/include/c++/4.8/cstdint"
- 182              		.file 13 "/usr/include/c++/4.8/clocale"
- 183              		.file 14 "/usr/include/c++/4.8/cstdlib"
- 184              		.file 15 "/usr/include/c++/4.8/cstdio"
- 185              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
- 186              		.file 17 "/usr/include/c++/4.8/cwctype"
- 187              		.file 18 "/usr/include/c++/4.8/ostream"
- 188              		.file 19 "/usr/include/c++/4.8/iosfwd"
- 189              		.file 20 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
- 190              		.file 21 "/usr/include/time.h"
- 191              		.file 22 "/usr/include/c++/4.8/ext/new_allocator.h"
- 192              		.file 23 "/usr/include/c++/4.8/ext/numeric_traits.h"
- 193              		.file 24 "/usr/include/c++/4.8/debug/debug.h"
- 194              		.file 25 "/usr/include/stdint.h"
- 195              		.file 26 "/usr/include/locale.h"
- 196              		.file 27 "/usr/include/x86_64-linux-gnu/bits/types.h"
- 197              		.file 28 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
- 198              		.file 29 "/usr/include/stdlib.h"
- 199              		.file 30 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
- 200              		.file 31 "/usr/include/_G_config.h"
- 201              		.file 32 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
- 202              		.file 33 "/usr/include/wctype.h"
- 203              		.file 34 "/usr/include/c++/4.8/bits/stl_pair.h"
-GAS LISTING /tmp/ccaAmNa0.s 			page 7
+ 150              	.LVL14:
+ 151 00db 4883C408 		addq	$8, %rsp
+ 152              		.cfi_def_cfa_offset 8
+ 153 00df C3       		ret
+ 154              		.cfi_endproc
+ 155              	.LFE1406:
+ 157              		.section	.init_array,"aw"
+ 158              		.align 8
+ 159 0000 00000000 		.quad	_GLOBAL__sub_I__Z14templateMethodv
+ 159      00000000 
+ 160              		.local	_ZStL8__ioinit
+ 161              		.comm	_ZStL8__ioinit,1,1
+ 162              		.section	.rodata.cst8,"aM",@progbits,8
+ 163              		.align 8
+ 164              	.LC0:
+ 165 0000 66666666 		.long	1717986918
+ 166 0004 66660A40 		.long	1074423398
+ 167              		.text
+ 168              	.Letext0:
+ 169              		.file 3 "/usr/include/libio.h"
+ 170              		.file 4 "/usr/include/stdio.h"
+ 171              		.file 5 "<built-in>"
+ 172              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 173              		.file 7 "/usr/include/wchar.h"
+ 174              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 175              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 176              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 177              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 178              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 179              		.file 13 "/usr/include/c++/4.8/clocale"
+ 180              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 181              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 182              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 183              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 184              		.file 18 "/usr/include/c++/4.8/ostream"
+ 185              		.file 19 "/usr/include/c++/4.8/iosfwd"
+ 186              		.file 20 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 187              		.file 21 "/usr/include/time.h"
+ 188              		.file 22 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 189              		.file 23 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 190              		.file 24 "/usr/include/c++/4.8/debug/debug.h"
+ 191              		.file 25 "/usr/include/stdint.h"
+ 192              		.file 26 "/usr/include/locale.h"
+ 193              		.file 27 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 194              		.file 28 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 195              		.file 29 "/usr/include/stdlib.h"
+ 196              		.file 30 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 197              		.file 31 "/usr/include/_G_config.h"
+ 198              		.file 32 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 199              		.file 33 "/usr/include/wctype.h"
+ 200              		.file 34 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/cccJMGM0.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 templated-method.cpp
-     /tmp/ccaAmNa0.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/cccJMGM0.s:5      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/ccaAmNa0.s:42     .text._ZN9my_structIdEC2Ed:0000000000000000 _ZN9my_structIdEC2Ed
-     /tmp/ccaAmNa0.s:42     .text._ZN9my_structIdEC2Ed:0000000000000000 _ZN9my_structIdEC1Ed
-     /tmp/ccaAmNa0.s:61     .text._ZN9my_structIdE14set_field_fromIiEEvT_:0000000000000000 _ZN9my_structIdE14set_field_fromIiEEvT_
-     /tmp/ccaAmNa0.s:79     .text:0000000000000034 main
-     /tmp/ccaAmNa0.s:143    .text:00000000000000cd _GLOBAL__sub_I_main
-     /tmp/ccaAmNa0.s:167    .rodata.cst8:0000000000000000 .LC0
+     /tmp/cccJMGM0.s:42     .text._ZN9my_structIdEC2Ed:0000000000000000 _ZN9my_structIdEC2Ed
+     /tmp/cccJMGM0.s:42     .text._ZN9my_structIdEC2Ed:0000000000000000 _ZN9my_structIdEC1Ed
+     /tmp/cccJMGM0.s:61     .text._ZN9my_structIdE14set_field_fromIiEEvT_:0000000000000000 _ZN9my_structIdE14set_field_fromIiEEvT_
+     /tmp/cccJMGM0.s:79     .text:0000000000000034 _Z14templateMethodv
+     /tmp/cccJMGM0.s:140    .text:00000000000000c8 _GLOBAL__sub_I__Z14templateMethodv
+     /tmp/cccJMGM0.s:164    .rodata.cst8:0000000000000000 .LC0
                            .group:0000000000000000 _ZN9my_structIdEC5Ed
 
 UNDEFINED SYMBOLS

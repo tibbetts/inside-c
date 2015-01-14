@@ -1,9 +1,9 @@
 	.file	"rethrow.cpp"
 	.text
 	.align 2
-	.globl	_ZNK11MyException4whatEv
-	.type	_ZNK11MyException4whatEv, @function
-_ZNK11MyException4whatEv:
+	.globl	_ZNK12MyExceptionB4whatEv
+	.type	_ZNK12MyExceptionB4whatEv, @function
+_ZNK12MyExceptionB4whatEv:
 .LFB1250:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -15,18 +15,18 @@ _ZNK11MyException4whatEv:
 	ret
 	.cfi_endproc
 .LFE1250:
-	.size	_ZNK11MyException4whatEv, .-_ZNK11MyException4whatEv
+	.size	_ZNK12MyExceptionB4whatEv, .-_ZNK12MyExceptionB4whatEv
 	.align 2
-	.globl	_ZN11MyExceptionD2Ev
-	.type	_ZN11MyExceptionD2Ev, @function
-_ZN11MyExceptionD2Ev:
+	.globl	_ZN12MyExceptionBD2Ev
+	.type	_ZN12MyExceptionBD2Ev, @function
+_ZN12MyExceptionBD2Ev:
 .LFB1247:
 	.cfi_startproc
 	pushq	%rbx
 	.cfi_def_cfa_offset 16
 	.cfi_offset 3, -16
 	movq	%rdi, %rbx
-	movq	$_ZTV11MyException+16, (%rdi)
+	movq	$_ZTV12MyExceptionB+16, (%rdi)
 	leaq	8(%rdi), %rdi
 	call	_ZNSsD1Ev
 	movq	%rbx, %rdi
@@ -36,20 +36,20 @@ _ZN11MyExceptionD2Ev:
 	ret
 	.cfi_endproc
 .LFE1247:
-	.size	_ZN11MyExceptionD2Ev, .-_ZN11MyExceptionD2Ev
-	.globl	_ZN11MyExceptionD1Ev
-	.set	_ZN11MyExceptionD1Ev,_ZN11MyExceptionD2Ev
+	.size	_ZN12MyExceptionBD2Ev, .-_ZN12MyExceptionBD2Ev
+	.globl	_ZN12MyExceptionBD1Ev
+	.set	_ZN12MyExceptionBD1Ev,_ZN12MyExceptionBD2Ev
 	.align 2
-	.globl	_ZN11MyExceptionD0Ev
-	.type	_ZN11MyExceptionD0Ev, @function
-_ZN11MyExceptionD0Ev:
+	.globl	_ZN12MyExceptionBD0Ev
+	.type	_ZN12MyExceptionBD0Ev, @function
+_ZN12MyExceptionBD0Ev:
 .LFB1249:
 	.cfi_startproc
 	pushq	%rbx
 	.cfi_def_cfa_offset 16
 	.cfi_offset 3, -16
 	movq	%rdi, %rbx
-	call	_ZN11MyExceptionD1Ev
+	call	_ZN12MyExceptionBD1Ev
 	movq	%rbx, %rdi
 	call	_ZdlPv
 	popq	%rbx
@@ -57,7 +57,7 @@ _ZN11MyExceptionD0Ev:
 	ret
 	.cfi_endproc
 .LFE1249:
-	.size	_ZN11MyExceptionD0Ev, .-_ZN11MyExceptionD0Ev
+	.size	_ZN12MyExceptionBD0Ev, .-_ZN12MyExceptionBD0Ev
 	.type	_Z41__static_initialization_and_destruction_0ii, @function
 _Z41__static_initialization_and_destruction_0ii:
 .LFB1426:
@@ -112,9 +112,9 @@ _ZNSt11char_traitsIcE6lengthEPKc:
 	.size	_ZNSt11char_traitsIcE6lengthEPKc, .-_ZNSt11char_traitsIcE6lengthEPKc
 	.text
 	.align 2
-	.globl	_ZN11MyExceptionC2ESs
-	.type	_ZN11MyExceptionC2ESs, @function
-_ZN11MyExceptionC2ESs:
+	.globl	_ZN12MyExceptionBC2ESs
+	.type	_ZN12MyExceptionBC2ESs, @function
+_ZN12MyExceptionBC2ESs:
 .LFB1244:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -131,7 +131,7 @@ _ZN11MyExceptionC2ESs:
 	movq	%rdi, %rbx
 	movq	%rsi, %rbp
 	call	_ZNSt9exceptionC2Ev
-	movq	$_ZTV11MyException+16, (%rbx)
+	movq	$_ZTV12MyExceptionB+16, (%rbx)
 	leaq	8(%rbx), %rdi
 	movq	%rbp, %rsi
 .LEHB0:
@@ -190,12 +190,12 @@ _ZN11MyExceptionC2ESs:
 .LLSDATT1244:
 	.byte	0
 	.text
-	.size	_ZN11MyExceptionC2ESs, .-_ZN11MyExceptionC2ESs
-	.globl	_ZN11MyExceptionC1ESs
-	.set	_ZN11MyExceptionC1ESs,_ZN11MyExceptionC2ESs
-	.globl	_Z17throw_MyExceptionSs
-	.type	_Z17throw_MyExceptionSs, @function
-_Z17throw_MyExceptionSs:
+	.size	_ZN12MyExceptionBC2ESs, .-_ZN12MyExceptionBC2ESs
+	.globl	_ZN12MyExceptionBC1ESs
+	.set	_ZN12MyExceptionBC1ESs,_ZN12MyExceptionBC2ESs
+	.globl	_Z18throw_MyExceptionBSs
+	.type	_Z18throw_MyExceptionBSs, @function
+_Z18throw_MyExceptionBSs:
 .LFB1252:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -222,11 +222,11 @@ _Z17throw_MyExceptionSs:
 .LEHE2:
 	movq	%rsp, %rsi
 	movq	%rbx, %rdi
-	call	_ZN11MyExceptionC1ESs
+	call	_ZN12MyExceptionBC1ESs
 	movq	%rsp, %rdi
 	call	_ZNSsD1Ev
-	movl	$_ZN11MyExceptionD1Ev, %edx
-	movl	$_ZTI11MyException, %esi
+	movl	$_ZN12MyExceptionBD1Ev, %edx
+	movl	$_ZTI12MyExceptionB, %esi
 	movq	%rbx, %rdi
 .LEHB3:
 	call	__cxa_throw
@@ -279,12 +279,12 @@ _Z17throw_MyExceptionSs:
 	.byte	0
 	.byte	0x7d
 	.align 4
-	.long	_ZTI11MyException
+	.long	_ZTI12MyExceptionB
 .LLSDATT1252:
 	.byte	0x1
 	.byte	0
 	.text
-	.size	_Z17throw_MyExceptionSs, .-_Z17throw_MyExceptionSs
+	.size	_Z18throw_MyExceptionBSs, .-_Z18throw_MyExceptionBSs
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
 	.string	"Bar"
@@ -312,7 +312,7 @@ _Z12doesnt_throwv:
 .LEHE5:
 	leaq	16(%rsp), %rdi
 .LEHB6:
-	call	_Z17throw_MyExceptionSs
+	call	_Z18throw_MyExceptionBSs
 .LEHE6:
 .L32:
 	movq	%rax, %rbp
@@ -490,14 +490,14 @@ _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_:
 	.size	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_, .-_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_
 	.section	.rodata.str1.1
 .LC1:
-	.string	"MyException("
+	.string	"MyExceptionB("
 .LC2:
 	.string	")"
 	.text
 	.align 2
-	.globl	_ZNK11MyException9as_stringEv
-	.type	_ZNK11MyException9as_stringEv, @function
-_ZNK11MyException9as_stringEv:
+	.globl	_ZNK12MyExceptionB9as_stringEv
+	.type	_ZNK12MyExceptionB9as_stringEv, @function
+_ZNK12MyExceptionB9as_stringEv:
 .LFB1251:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -561,7 +561,7 @@ _ZNK11MyException9as_stringEv:
 	.uleb128 0
 .LLSDACSE1251:
 	.text
-	.size	_ZNK11MyException9as_stringEv, .-_ZNK11MyException9as_stringEv
+	.size	_ZNK12MyExceptionB9as_stringEv, .-_ZNK12MyExceptionB9as_stringEv
 	.section	.rodata.str1.1
 .LC3:
 	.string	"Foo"
@@ -593,7 +593,7 @@ _Z17catch_and_rethrowv:
 .LEHE13:
 	movq	%rsp, %rdi
 .LEHB14:
-	call	_Z17throw_MyExceptionSs
+	call	_Z18throw_MyExceptionBSs
 .LEHE14:
 .L58:
 	movq	%rax, %rbp
@@ -631,7 +631,7 @@ _Z17catch_and_rethrowv:
 	movq	%rax, %rsi
 	leaq	16(%rsp), %rdi
 .LEHB15:
-	call	_ZNK11MyException9as_stringEv
+	call	_ZNK12MyExceptionB9as_stringEv
 .LEHE15:
 	movl	$.LC4, %esi
 	movl	$_ZSt4cout, %edi
@@ -706,7 +706,7 @@ _Z17catch_and_rethrowv:
 	.byte	0
 	.byte	0x79
 	.align 4
-	.long	_ZTI11MyException
+	.long	_ZTI12MyExceptionB
 .LLSDATT1259:
 	.byte	0x1
 	.byte	0
@@ -744,7 +744,7 @@ _Z23catch_and_throw_anotherv:
 .LEHE19:
 	movq	%rsp, %rdi
 .LEHB20:
-	call	_Z17throw_MyExceptionSs
+	call	_Z18throw_MyExceptionBSs
 .LEHE20:
 .L74:
 	movq	%rax, %rbp
@@ -790,7 +790,7 @@ _Z23catch_and_throw_anotherv:
 	movq	%rax, %rsi
 	leaq	16(%rsp), %rdi
 .LEHB21:
-	call	_ZNK11MyException9as_stringEv
+	call	_ZNK12MyExceptionB9as_stringEv
 .LEHE21:
 	movl	$.LC4, %esi
 	movl	$_ZSt4cout, %edi
@@ -814,15 +814,15 @@ _Z23catch_and_throw_anotherv:
 	movq	%rbp, %rsi
 	leaq	32(%rsp), %rdi
 .LEHB23:
-	call	_ZNK11MyException9as_stringEv
+	call	_ZNK12MyExceptionB9as_stringEv
 .LEHE23:
 	leaq	32(%rsp), %rsi
 	movq	%rbx, %rdi
-	call	_ZN11MyExceptionC1ESs
+	call	_ZN12MyExceptionBC1ESs
 	leaq	32(%rsp), %rdi
 	call	_ZNSsD1Ev
-	movl	$_ZN11MyExceptionD1Ev, %edx
-	movl	$_ZTI11MyException, %esi
+	movl	$_ZN12MyExceptionBD1Ev, %edx
+	movl	$_ZTI12MyExceptionB, %esi
 	movq	%rbx, %rdi
 .LEHB24:
 	call	__cxa_throw
@@ -885,7 +885,7 @@ _Z23catch_and_throw_anotherv:
 	.byte	0
 	.byte	0x79
 	.align 4
-	.long	_ZTI11MyException
+	.long	_ZTI12MyExceptionB
 .LLSDATT1260:
 	.byte	0x1
 	.byte	0
@@ -895,9 +895,9 @@ _Z23catch_and_throw_anotherv:
 .LC8:
 	.string	"Main got exception: "
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z9doRethrowv
+	.type	_Z9doRethrowv, @function
+_Z9doRethrowv:
 .LFB1262:
 	.cfi_startproc
 	.cfi_personality 0x3,__gxx_personality_v0
@@ -933,7 +933,7 @@ main:
 	movq	%rax, %rsi
 	movq	%rsp, %rdi
 .LEHB28:
-	call	_ZNK11MyException9as_stringEv
+	call	_ZNK12MyExceptionB9as_stringEv
 .LEHE28:
 	movl	$.LC8, %esi
 	movl	$_ZSt4cout, %edi
@@ -975,7 +975,7 @@ main:
 	movq	%rax, %rsi
 	movq	%rsp, %rdi
 .LEHB32:
-	call	_ZNK11MyException9as_stringEv
+	call	_ZNK12MyExceptionB9as_stringEv
 .LEHE32:
 	movl	$.LC8, %esi
 	movl	$_ZSt4cout, %edi
@@ -1040,12 +1040,12 @@ main:
 	.byte	0x1
 	.byte	0
 	.align 4
-	.long	_ZTI11MyException
+	.long	_ZTI12MyExceptionB
 .LLSDATT1262:
 	.text
-	.size	main, .-main
-	.type	_GLOBAL__sub_I__ZN11MyExceptionC2ESs, @function
-_GLOBAL__sub_I__ZN11MyExceptionC2ESs:
+	.size	_Z9doRethrowv, .-_Z9doRethrowv
+	.type	_GLOBAL__sub_I__ZN12MyExceptionBC2ESs, @function
+_GLOBAL__sub_I__ZN12MyExceptionBC2ESs:
 .LFB1427:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -1058,36 +1058,36 @@ _GLOBAL__sub_I__ZN11MyExceptionC2ESs:
 	ret
 	.cfi_endproc
 .LFE1427:
-	.size	_GLOBAL__sub_I__ZN11MyExceptionC2ESs, .-_GLOBAL__sub_I__ZN11MyExceptionC2ESs
+	.size	_GLOBAL__sub_I__ZN12MyExceptionBC2ESs, .-_GLOBAL__sub_I__ZN12MyExceptionBC2ESs
 	.section	.init_array,"aw"
 	.align 8
-	.quad	_GLOBAL__sub_I__ZN11MyExceptionC2ESs
-	.weak	_ZTS11MyException
-	.section	.rodata._ZTS11MyException,"aG",@progbits,_ZTS11MyException,comdat
-	.type	_ZTS11MyException, @object
-	.size	_ZTS11MyException, 14
-_ZTS11MyException:
-	.string	"11MyException"
-	.weak	_ZTI11MyException
-	.section	.rodata._ZTI11MyException,"aG",@progbits,_ZTI11MyException,comdat
+	.quad	_GLOBAL__sub_I__ZN12MyExceptionBC2ESs
+	.weak	_ZTS12MyExceptionB
+	.section	.rodata._ZTS12MyExceptionB,"aG",@progbits,_ZTS12MyExceptionB,comdat
+	.type	_ZTS12MyExceptionB, @object
+	.size	_ZTS12MyExceptionB, 15
+_ZTS12MyExceptionB:
+	.string	"12MyExceptionB"
+	.weak	_ZTI12MyExceptionB
+	.section	.rodata._ZTI12MyExceptionB,"aG",@progbits,_ZTI12MyExceptionB,comdat
 	.align 16
-	.type	_ZTI11MyException, @object
-	.size	_ZTI11MyException, 24
-_ZTI11MyException:
+	.type	_ZTI12MyExceptionB, @object
+	.size	_ZTI12MyExceptionB, 24
+_ZTI12MyExceptionB:
 	.quad	_ZTVN10__cxxabiv120__si_class_type_infoE+16
-	.quad	_ZTS11MyException
+	.quad	_ZTS12MyExceptionB
 	.quad	_ZTISt9exception
-	.weak	_ZTV11MyException
-	.section	.rodata._ZTV11MyException,"aG",@progbits,_ZTV11MyException,comdat
+	.weak	_ZTV12MyExceptionB
+	.section	.rodata._ZTV12MyExceptionB,"aG",@progbits,_ZTV12MyExceptionB,comdat
 	.align 32
-	.type	_ZTV11MyException, @object
-	.size	_ZTV11MyException, 40
-_ZTV11MyException:
+	.type	_ZTV12MyExceptionB, @object
+	.size	_ZTV12MyExceptionB, 40
+_ZTV12MyExceptionB:
 	.quad	0
-	.quad	_ZTI11MyException
-	.quad	_ZN11MyExceptionD1Ev
-	.quad	_ZN11MyExceptionD0Ev
-	.quad	_ZNK11MyException4whatEv
+	.quad	_ZTI12MyExceptionB
+	.quad	_ZN12MyExceptionBD1Ev
+	.quad	_ZN12MyExceptionBD0Ev
+	.quad	_ZNK12MyExceptionB4whatEv
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
 	.hidden	__dso_handle

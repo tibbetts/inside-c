@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccILkc4g.s 			page 1
+GAS LISTING /tmp/ccHl7T6X.s 			page 1
 
 
    1              		.file	"object-arg.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
   26              	.LVL1:
   33:object-arg.cpp ****     return this->field;
   27              		.loc 1 33 0
-GAS LISTING /tmp/ccILkc4g.s 			page 2
+GAS LISTING /tmp/ccHl7T6X.s 			page 2
 
 
   28 0004 8B07     		movl	(%rdi), %eax
@@ -118,7 +118,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
   23:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __sprintf_chk (char *__restrict __s, int __flag, size_t __slen,
   24:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			  const char *__restrict __format, ...) __THROW;
   25:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** extern int __vsprintf_chk (char *__restrict __s, int __flag, size_t __slen,
-GAS LISTING /tmp/ccILkc4g.s 			page 3
+GAS LISTING /tmp/ccHl7T6X.s 			page 3
 
 
   26:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 			   const char *__restrict __format,
@@ -178,7 +178,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
   80:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
   81:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #endif
   82:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** 
-GAS LISTING /tmp/ccILkc4g.s 			page 4
+GAS LISTING /tmp/ccHl7T6X.s 			page 4
 
 
   83:/usr/include/x86_64-linux-gnu/bits/stdio2.h **** #if __USE_FORTIFY_LEVEL > 1
@@ -238,7 +238,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
   79              	.LFB24:
   35:object-arg.cpp **** 
   36:object-arg.cpp **** onefieldOA::onefieldOA(int f) {
-GAS LISTING /tmp/ccILkc4g.s 			page 5
+GAS LISTING /tmp/ccHl7T6X.s 			page 5
 
 
   80              		.loc 1 36 0
@@ -298,7 +298,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
  126              		.cfi_endproc
  127              	.LFE27:
  129              		.globl	_ZN10onefieldOAC1ERKS_
-GAS LISTING /tmp/ccILkc4g.s 			page 6
+GAS LISTING /tmp/ccHl7T6X.s 			page 6
 
 
  130              		.set	_ZN10onefieldOAC1ERKS_,_ZN10onefieldOAC2ERKS_
@@ -358,7 +358,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
  171 0000 FF       		.byte	0xff
  172 0001 FF       		.byte	0xff
  173 0002 01       		.byte	0x1
-GAS LISTING /tmp/ccILkc4g.s 			page 7
+GAS LISTING /tmp/ccHl7T6X.s 			page 7
 
 
  174 0003 00       		.uleb128 .LLSDACSE30-.LLSDACSB30
@@ -418,7 +418,7 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
  219      00
  220              	.LVL21:
   25:object-arg.cpp **** }
-GAS LISTING /tmp/ccILkc4g.s 			page 8
+GAS LISTING /tmp/ccHl7T6X.s 			page 8
 
 
  221              		.loc 1 25 0
@@ -478,26 +478,26 @@ GAS LISTING /tmp/ccILkc4g.s 			page 1
  266 0012 00       		.uleb128 0
  267 0013 00       		.uleb128 0
  268              	.LLSDACSE20:
-GAS LISTING /tmp/ccILkc4g.s 			page 9
+GAS LISTING /tmp/ccHl7T6X.s 			page 9
 
 
  269              		.text
  271              	.Letext0:
-GAS LISTING /tmp/ccILkc4g.s 			page 10
+GAS LISTING /tmp/ccHl7T6X.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 object-arg.cpp
-     /tmp/ccILkc4g.s:7      .text:0000000000000000 _ZN10onefieldOA8setFieldEi
-     /tmp/ccILkc4g.s:22     .text:0000000000000004 _ZNK10onefieldOA8getFieldEv
-     /tmp/ccILkc4g.s:41     .text:0000000000000007 _Z5print10onefieldOA
-     /tmp/ccILkc4g.s:78     .text:000000000000002c _ZN10onefieldOAC2Ei
-     /tmp/ccILkc4g.s:78     .text:000000000000002c _ZN10onefieldOAC1Ei
-     /tmp/ccILkc4g.s:115    .text:000000000000004e _ZN10onefieldOAC2ERKS_
-     /tmp/ccILkc4g.s:115    .text:000000000000004e _ZN10onefieldOAC1ERKS_
-     /tmp/ccILkc4g.s:138    .text:0000000000000054 _ZN10onefieldOAD2Ev
-     /tmp/ccILkc4g.s:138    .text:0000000000000054 _ZN10onefieldOAD1Ev
-     /tmp/ccILkc4g.s:183    .text:0000000000000073 _Z9objectArgiPPKc
+     /tmp/ccHl7T6X.s:7      .text:0000000000000000 _ZN10onefieldOA8setFieldEi
+     /tmp/ccHl7T6X.s:22     .text:0000000000000004 _ZNK10onefieldOA8getFieldEv
+     /tmp/ccHl7T6X.s:41     .text:0000000000000007 _Z5print10onefieldOA
+     /tmp/ccHl7T6X.s:78     .text:000000000000002c _ZN10onefieldOAC2Ei
+     /tmp/ccHl7T6X.s:78     .text:000000000000002c _ZN10onefieldOAC1Ei
+     /tmp/ccHl7T6X.s:115    .text:000000000000004e _ZN10onefieldOAC2ERKS_
+     /tmp/ccHl7T6X.s:115    .text:000000000000004e _ZN10onefieldOAC1ERKS_
+     /tmp/ccHl7T6X.s:138    .text:0000000000000054 _ZN10onefieldOAD2Ev
+     /tmp/ccHl7T6X.s:138    .text:0000000000000054 _ZN10onefieldOAD1Ev
+     /tmp/ccHl7T6X.s:183    .text:0000000000000073 _Z9objectArgiPPKc
 
 UNDEFINED SYMBOLS
 __printf_chk

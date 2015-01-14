@@ -1,4 +1,4 @@
-GAS LISTING /tmp/ccjwuZVF.s 			page 1
+GAS LISTING /tmp/cczfxf4m.s 			page 1
 
 
    1              		.file	"reference.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/ccjwuZVF.s 			page 1
   46 0019 E8000000 		call	_Z13use_referenceRi
   46      00
   47              	.LVL4:
-GAS LISTING /tmp/ccjwuZVF.s 			page 2
+GAS LISTING /tmp/cczfxf4m.s 			page 2
 
 
   13:reference.cpp ****     use_pointer(&foo);
@@ -79,13 +79,13 @@ GAS LISTING /tmp/ccjwuZVF.s 			page 1
   58              		.cfi_endproc
   59              	.LFE2:
   61              	.Letext0:
-GAS LISTING /tmp/ccjwuZVF.s 			page 3
+GAS LISTING /tmp/cczfxf4m.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 reference.cpp
-     /tmp/ccjwuZVF.s:6      .text:0000000000000000 _Z13use_referenceRi
-     /tmp/ccjwuZVF.s:20     .text:0000000000000004 _Z11use_pointerPi
-     /tmp/ccjwuZVF.s:33     .text:0000000000000008 _Z9referenceiPPKc
+     /tmp/cczfxf4m.s:6      .text:0000000000000000 _Z13use_referenceRi
+     /tmp/cczfxf4m.s:20     .text:0000000000000004 _Z11use_pointerPi
+     /tmp/cczfxf4m.s:33     .text:0000000000000008 _Z9referenceiPPKc
 
 NO UNDEFINED SYMBOLS

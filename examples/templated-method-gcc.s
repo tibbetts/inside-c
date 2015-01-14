@@ -54,9 +54,9 @@ _ZN9my_structIdE14set_field_fromIiEEvT_:
 .LC1:
 	.string	"f1._field="
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z14templateMethodv
+	.type	_Z14templateMethodv, @function
+_Z14templateMethodv:
 .LFB1245:
 	.cfi_startproc
 	pushq	%rbx
@@ -92,7 +92,6 @@ main:
 	movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
 	movq	%rax, %rdi
 	call	_ZNSolsEPFRSoS_E
-	movl	$0, %eax
 	addq	$32, %rsp
 	.cfi_def_cfa_offset 16
 	popq	%rbx
@@ -100,9 +99,9 @@ main:
 	ret
 	.cfi_endproc
 .LFE1245:
-	.size	main, .-main
-	.type	_GLOBAL__sub_I_main, @function
-_GLOBAL__sub_I_main:
+	.size	_Z14templateMethodv, .-_Z14templateMethodv
+	.type	_GLOBAL__sub_I__Z14templateMethodv, @function
+_GLOBAL__sub_I__Z14templateMethodv:
 .LFB1406:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -115,10 +114,10 @@ _GLOBAL__sub_I_main:
 	ret
 	.cfi_endproc
 .LFE1406:
-	.size	_GLOBAL__sub_I_main, .-_GLOBAL__sub_I_main
+	.size	_GLOBAL__sub_I__Z14templateMethodv, .-_GLOBAL__sub_I__Z14templateMethodv
 	.section	.init_array,"aw"
 	.align 8
-	.quad	_GLOBAL__sub_I_main
+	.quad	_GLOBAL__sub_I__Z14templateMethodv
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
 	.section	.rodata.cst8,"aM",@progbits,8

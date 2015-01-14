@@ -1,4 +1,4 @@
-GAS LISTING /tmp/cce07fSN.s 			page 1
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 1
 
 
    1              		.file	"vtable-null.cpp"
@@ -58,7 +58,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
   28:vtable-null.cpp **** 
   29:vtable-null.cpp ****     delete ofp;
   30:vtable-null.cpp **** 
-GAS LISTING /tmp/cce07fSN.s 			page 2
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 2
 
 
   31:vtable-null.cpp ****     return i;
@@ -118,7 +118,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
   73              	.LVL4:
   74 0000 53       		pushq	%rbx
   75              		.cfi_def_cfa_offset 16
-GAS LISTING /tmp/cce07fSN.s 			page 3
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 3
 
 
   76              		.cfi_offset 3, -16
@@ -178,7 +178,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  126              	.LBB4:
    1:vtable-null.cpp ****     int field;
  127              		.loc 1 1 0
-GAS LISTING /tmp/cce07fSN.s 			page 4
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 4
 
 
  128 0000 48C70700 		movq	$_ZTV10onefieldVN+16, (%rdi)
@@ -238,7 +238,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  180              		.globl	_ZN19onefieldVN_subclass8setFieldEi
  182              	_ZN19onefieldVN_subclass8setFieldEi:
  183              	.LFB13:
-GAS LISTING /tmp/cce07fSN.s 			page 5
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 5
 
 
   41:vtable-null.cpp **** 
@@ -298,7 +298,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  232 0023 E8000000 		call	_ZN19onefieldVN_subclassC1Ev
  232      00
  233              	.LVL23:
-GAS LISTING /tmp/cce07fSN.s 			page 6
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 6
 
 
   21:vtable-null.cpp **** 
@@ -358,7 +358,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  275              		.loc 1 31 0 is_stmt 1
  276 0075 4889E7   		movq	%rsp, %rdi
  277 0078 E8000000 		call	_ZN19onefieldVN_subclassD1Ev
-GAS LISTING /tmp/cce07fSN.s 			page 7
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 7
 
 
  277      00
@@ -418,7 +418,7 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  328              		.section	.rodata._ZTI10onefieldVN,"aG",@progbits,_ZTI10onefieldVN,comdat
  329              		.align 16
  332              	_ZTI10onefieldVN:
-GAS LISTING /tmp/cce07fSN.s 			page 8
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 8
 
 
  333 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
@@ -478,34 +478,34 @@ GAS LISTING /tmp/cce07fSN.s 			page 1
  374      00000000 
  375              		.text
  376              	.Letext0:
-GAS LISTING /tmp/cce07fSN.s 			page 9
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 9
 
 
-GAS LISTING /tmp/cce07fSN.s 			page 10
+GAS LISTING /tmp/ccQWJ9lQ.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 vtable-null.cpp
-     /tmp/cce07fSN.s:8      .text._ZN10onefieldVND2Ev:0000000000000000 _ZN10onefieldVND2Ev
-     /tmp/cce07fSN.s:356    .rodata._ZTV10onefieldVN:0000000000000000 _ZTV10onefieldVN
-     /tmp/cce07fSN.s:8      .text._ZN10onefieldVND2Ev:0000000000000000 _ZN10onefieldVND1Ev
-     /tmp/cce07fSN.s:28     .text:0000000000000000 _ZNK10onefieldVN8getFieldEv
-     /tmp/cce07fSN.s:44     .text._ZN19onefieldVN_subclassD2Ev:0000000000000000 _ZN19onefieldVN_subclassD2Ev
-     /tmp/cce07fSN.s:368    .rodata._ZTV19onefieldVN_subclass:0000000000000000 _ZTV19onefieldVN_subclass
-     /tmp/cce07fSN.s:44     .text._ZN19onefieldVN_subclassD2Ev:0000000000000000 _ZN19onefieldVN_subclassD1Ev
-     /tmp/cce07fSN.s:69     .text._ZN10onefieldVND0Ev:0000000000000000 _ZN10onefieldVND0Ev
-     /tmp/cce07fSN.s:95     .text._ZN19onefieldVN_subclassD0Ev:0000000000000000 _ZN19onefieldVN_subclassD0Ev
-     /tmp/cce07fSN.s:121    .text._ZN10onefieldVNC2Ev:0000000000000000 _ZN10onefieldVNC2Ev
-     /tmp/cce07fSN.s:121    .text._ZN10onefieldVNC2Ev:0000000000000000 _ZN10onefieldVNC1Ev
-     /tmp/cce07fSN.s:140    .text._ZN19onefieldVN_subclassC2Ev:0000000000000000 _ZN19onefieldVN_subclassC2Ev
-     /tmp/cce07fSN.s:140    .text._ZN19onefieldVN_subclassC2Ev:0000000000000000 _ZN19onefieldVN_subclassC1Ev
-     /tmp/cce07fSN.s:168    .text:0000000000000004 _ZN10onefieldVN8setFieldEi
-     /tmp/cce07fSN.s:182    .text:0000000000000008 _ZN19onefieldVN_subclass8setFieldEi
-     /tmp/cce07fSN.s:213    .text:000000000000001a _Z10vtableNulliPPKc
-     /tmp/cce07fSN.s:325    .rodata._ZTS10onefieldVN:0000000000000000 _ZTS10onefieldVN
-     /tmp/cce07fSN.s:332    .rodata._ZTI10onefieldVN:0000000000000000 _ZTI10onefieldVN
-     /tmp/cce07fSN.s:340    .rodata._ZTS19onefieldVN_subclass:0000000000000000 _ZTS19onefieldVN_subclass
-     /tmp/cce07fSN.s:347    .rodata._ZTI19onefieldVN_subclass:0000000000000000 _ZTI19onefieldVN_subclass
+     /tmp/ccQWJ9lQ.s:8      .text._ZN10onefieldVND2Ev:0000000000000000 _ZN10onefieldVND2Ev
+     /tmp/ccQWJ9lQ.s:356    .rodata._ZTV10onefieldVN:0000000000000000 _ZTV10onefieldVN
+     /tmp/ccQWJ9lQ.s:8      .text._ZN10onefieldVND2Ev:0000000000000000 _ZN10onefieldVND1Ev
+     /tmp/ccQWJ9lQ.s:28     .text:0000000000000000 _ZNK10onefieldVN8getFieldEv
+     /tmp/ccQWJ9lQ.s:44     .text._ZN19onefieldVN_subclassD2Ev:0000000000000000 _ZN19onefieldVN_subclassD2Ev
+     /tmp/ccQWJ9lQ.s:368    .rodata._ZTV19onefieldVN_subclass:0000000000000000 _ZTV19onefieldVN_subclass
+     /tmp/ccQWJ9lQ.s:44     .text._ZN19onefieldVN_subclassD2Ev:0000000000000000 _ZN19onefieldVN_subclassD1Ev
+     /tmp/ccQWJ9lQ.s:69     .text._ZN10onefieldVND0Ev:0000000000000000 _ZN10onefieldVND0Ev
+     /tmp/ccQWJ9lQ.s:95     .text._ZN19onefieldVN_subclassD0Ev:0000000000000000 _ZN19onefieldVN_subclassD0Ev
+     /tmp/ccQWJ9lQ.s:121    .text._ZN10onefieldVNC2Ev:0000000000000000 _ZN10onefieldVNC2Ev
+     /tmp/ccQWJ9lQ.s:121    .text._ZN10onefieldVNC2Ev:0000000000000000 _ZN10onefieldVNC1Ev
+     /tmp/ccQWJ9lQ.s:140    .text._ZN19onefieldVN_subclassC2Ev:0000000000000000 _ZN19onefieldVN_subclassC2Ev
+     /tmp/ccQWJ9lQ.s:140    .text._ZN19onefieldVN_subclassC2Ev:0000000000000000 _ZN19onefieldVN_subclassC1Ev
+     /tmp/ccQWJ9lQ.s:168    .text:0000000000000004 _ZN10onefieldVN8setFieldEi
+     /tmp/ccQWJ9lQ.s:182    .text:0000000000000008 _ZN19onefieldVN_subclass8setFieldEi
+     /tmp/ccQWJ9lQ.s:213    .text:000000000000001a _Z10vtableNulliPPKc
+     /tmp/ccQWJ9lQ.s:325    .rodata._ZTS10onefieldVN:0000000000000000 _ZTS10onefieldVN
+     /tmp/ccQWJ9lQ.s:332    .rodata._ZTI10onefieldVN:0000000000000000 _ZTI10onefieldVN
+     /tmp/ccQWJ9lQ.s:340    .rodata._ZTS19onefieldVN_subclass:0000000000000000 _ZTS19onefieldVN_subclass
+     /tmp/ccQWJ9lQ.s:347    .rodata._ZTI19onefieldVN_subclass:0000000000000000 _ZTI19onefieldVN_subclass
                            .group:0000000000000000 _ZN10onefieldVND5Ev
                            .group:0000000000000000 _ZN19onefieldVN_subclassD5Ev
                            .group:0000000000000000 _ZN10onefieldVNC5Ev

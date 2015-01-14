@@ -1,0 +1,565 @@
+GAS LISTING /tmp/ccEKHRDP.s 			page 1
+
+
+   1              		.file	"operator-overload.cpp"
+   2              		.text
+   3              	.Ltext0:
+   4              		.section	.text._ZN20OperatorOverloadVirtpLEi,"axG",@progbits,_ZN20OperatorOverloadVirtpLEi,comdat
+   5              		.align 2
+   6              		.weak	_ZN20OperatorOverloadVirtpLEi
+   8              	_ZN20OperatorOverloadVirtpLEi:
+   9              	.LFB1251:
+  10              		.file 1 "operator-overload.cpp"
+   1:operator-overload.cpp **** #include <iostream>
+   2:operator-overload.cpp **** 
+   3:operator-overload.cpp **** class OperatorOverload {
+   4:operator-overload.cpp ****   int member;
+   5:operator-overload.cpp ****   public:
+   6:operator-overload.cpp ****   OperatorOverload(int x) {
+   7:operator-overload.cpp ****     member = x;
+   8:operator-overload.cpp ****   }
+   9:operator-overload.cpp **** 
+  10:operator-overload.cpp ****   int operator+=(int x) {
+  11:operator-overload.cpp ****     return member += x;
+  12:operator-overload.cpp ****   }
+  13:operator-overload.cpp ****  
+  14:operator-overload.cpp ****   int value() const {
+  15:operator-overload.cpp ****     return member;
+  16:operator-overload.cpp ****   }
+  17:operator-overload.cpp **** };
+  18:operator-overload.cpp **** 
+  19:operator-overload.cpp **** class OperatorOverloadVirt {
+  20:operator-overload.cpp ****   int member;
+  21:operator-overload.cpp **** public:
+  22:operator-overload.cpp ****   OperatorOverloadVirt(int x) {
+  23:operator-overload.cpp ****     member = x;
+  24:operator-overload.cpp ****   }
+  25:operator-overload.cpp **** 
+  26:operator-overload.cpp ****   virtual int operator+=(int x) {
+  11              		.loc 1 26 0
+  12              		.cfi_startproc
+  13              	.LVL0:
+  27:operator-overload.cpp ****     return member += x;
+  14              		.loc 1 27 0
+  15 0000 89F0     		movl	%esi, %eax
+  16 0002 034708   		addl	8(%rdi), %eax
+  17 0005 894708   		movl	%eax, 8(%rdi)
+  28:operator-overload.cpp ****   }
+  18              		.loc 1 28 0
+  19 0008 C3       		ret
+  20              		.cfi_endproc
+  21              	.LFE1251:
+  23              		.section	.text._ZNK20OperatorOverloadVirt5valueEv,"axG",@progbits,_ZNK20OperatorOverloadVirt5value
+  24              		.align 2
+  25              		.weak	_ZNK20OperatorOverloadVirt5valueEv
+  27              	_ZNK20OperatorOverloadVirt5valueEv:
+  28              	.LFB1252:
+  29:operator-overload.cpp ****  
+  30:operator-overload.cpp ****   virtual int value() const {
+  29              		.loc 1 30 0
+  30              		.cfi_startproc
+GAS LISTING /tmp/ccEKHRDP.s 			page 2
+
+
+  31              	.LVL1:
+  31:operator-overload.cpp ****     return member;
+  32              		.loc 1 31 0
+  33 0000 8B4708   		movl	8(%rdi), %eax
+  32:operator-overload.cpp ****   }
+  34              		.loc 1 32 0
+  35 0003 C3       		ret
+  36              		.cfi_endproc
+  37              	.LFE1252:
+  39              		.text
+  41              	_Z41__static_initialization_and_destruction_0ii:
+  42              	.LFB1409:
+  33:operator-overload.cpp **** };
+  34:operator-overload.cpp **** 
+  35:operator-overload.cpp **** int operator+(const OperatorOverload &oo, const OperatorOverloadVirt &oov) {
+  36:operator-overload.cpp ****   return oo.value() + oov.value();
+  37:operator-overload.cpp **** }
+  38:operator-overload.cpp **** 
+  39:operator-overload.cpp **** void operatorOverload() {
+  40:operator-overload.cpp ****   OperatorOverload oo(37);
+  41:operator-overload.cpp **** 
+  42:operator-overload.cpp ****   oo += 12;
+  43:operator-overload.cpp **** 
+  44:operator-overload.cpp ****   OperatorOverloadVirt *oovp = new OperatorOverloadVirt(11);
+  45:operator-overload.cpp ****   *oovp += 13;
+  46:operator-overload.cpp **** 
+  47:operator-overload.cpp ****   int ret = oo + *oovp;
+  48:operator-overload.cpp **** 
+  49:operator-overload.cpp ****   std::cout << "operatorOverload: " << ret << std::endl;
+  50:operator-overload.cpp **** }
+  43              		.loc 1 50 0
+  44              		.cfi_startproc
+  45              	.LVL2:
+  46 0000 83FF01   		cmpl	$1, %edi
+  47 0003 752E     		jne	.L7
+  48              		.loc 1 50 0 discriminator 1
+  49 0005 81FEFFFF 		cmpl	$65535, %esi
+  49      0000
+  50 000b 7526     		jne	.L7
+  51              		.loc 1 50 0 is_stmt 0
+  52 000d 4883EC08 		subq	$8, %rsp
+  53              		.cfi_def_cfa_offset 16
+  54              		.file 2 "/usr/include/c++/4.8/iostream"
+   1:/usr/include/c++/4.8/iostream **** // Standard iostream objects -*- C++ -*-
+   2:/usr/include/c++/4.8/iostream **** 
+   3:/usr/include/c++/4.8/iostream **** // Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/usr/include/c++/4.8/iostream **** //
+   5:/usr/include/c++/4.8/iostream **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/include/c++/4.8/iostream **** // software; you can redistribute it and/or modify it under the
+   7:/usr/include/c++/4.8/iostream **** // terms of the GNU General Public License as published by the
+   8:/usr/include/c++/4.8/iostream **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/include/c++/4.8/iostream **** // any later version.
+  10:/usr/include/c++/4.8/iostream **** 
+  11:/usr/include/c++/4.8/iostream **** // This library is distributed in the hope that it will be useful,
+  12:/usr/include/c++/4.8/iostream **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/include/c++/4.8/iostream **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/include/c++/4.8/iostream **** // GNU General Public License for more details.
+GAS LISTING /tmp/ccEKHRDP.s 			page 3
+
+
+  15:/usr/include/c++/4.8/iostream **** 
+  16:/usr/include/c++/4.8/iostream **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/include/c++/4.8/iostream **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/include/c++/4.8/iostream **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/include/c++/4.8/iostream **** 
+  20:/usr/include/c++/4.8/iostream **** // You should have received a copy of the GNU General Public License and
+  21:/usr/include/c++/4.8/iostream **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/include/c++/4.8/iostream **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/include/c++/4.8/iostream **** // <http://www.gnu.org/licenses/>.
+  24:/usr/include/c++/4.8/iostream **** 
+  25:/usr/include/c++/4.8/iostream **** /** @file include/iostream
+  26:/usr/include/c++/4.8/iostream ****  *  This is a Standard C++ Library header.
+  27:/usr/include/c++/4.8/iostream ****  */
+  28:/usr/include/c++/4.8/iostream **** 
+  29:/usr/include/c++/4.8/iostream **** //
+  30:/usr/include/c++/4.8/iostream **** // ISO C++ 14882: 27.3  Standard iostream objects
+  31:/usr/include/c++/4.8/iostream **** //
+  32:/usr/include/c++/4.8/iostream **** 
+  33:/usr/include/c++/4.8/iostream **** #ifndef _GLIBCXX_IOSTREAM
+  34:/usr/include/c++/4.8/iostream **** #define _GLIBCXX_IOSTREAM 1
+  35:/usr/include/c++/4.8/iostream **** 
+  36:/usr/include/c++/4.8/iostream **** #pragma GCC system_header
+  37:/usr/include/c++/4.8/iostream **** 
+  38:/usr/include/c++/4.8/iostream **** #include <bits/c++config.h>
+  39:/usr/include/c++/4.8/iostream **** #include <ostream>
+  40:/usr/include/c++/4.8/iostream **** #include <istream>
+  41:/usr/include/c++/4.8/iostream **** 
+  42:/usr/include/c++/4.8/iostream **** namespace std _GLIBCXX_VISIBILITY(default)
+  43:/usr/include/c++/4.8/iostream **** {
+  44:/usr/include/c++/4.8/iostream **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  45:/usr/include/c++/4.8/iostream **** 
+  46:/usr/include/c++/4.8/iostream ****   /**
+  47:/usr/include/c++/4.8/iostream ****    *  @name Standard Stream Objects
+  48:/usr/include/c++/4.8/iostream ****    *
+  49:/usr/include/c++/4.8/iostream ****    *  The &lt;iostream&gt; header declares the eight <em>standard stream
+  50:/usr/include/c++/4.8/iostream ****    *  objects</em>.  For other declarations, see
+  51:/usr/include/c++/4.8/iostream ****    *  http://gcc.gnu.org/onlinedocs/libstdc++/manual/bk01pt11ch24.html
+  52:/usr/include/c++/4.8/iostream ****    *  and the @link iosfwd I/O forward declarations @endlink
+  53:/usr/include/c++/4.8/iostream ****    *
+  54:/usr/include/c++/4.8/iostream ****    *  They are required by default to cooperate with the global C
+  55:/usr/include/c++/4.8/iostream ****    *  library's @c FILE streams, and to be available during program
+  56:/usr/include/c++/4.8/iostream ****    *  startup and termination. For more information, see the HOWTO
+  57:/usr/include/c++/4.8/iostream ****    *  linked to above.
+  58:/usr/include/c++/4.8/iostream ****   */
+  59:/usr/include/c++/4.8/iostream ****   //@{
+  60:/usr/include/c++/4.8/iostream ****   extern istream cin;		/// Linked to standard input
+  61:/usr/include/c++/4.8/iostream ****   extern ostream cout;		/// Linked to standard output
+  62:/usr/include/c++/4.8/iostream ****   extern ostream cerr;		/// Linked to standard error (unbuffered)
+  63:/usr/include/c++/4.8/iostream ****   extern ostream clog;		/// Linked to standard error (buffered)
+  64:/usr/include/c++/4.8/iostream **** 
+  65:/usr/include/c++/4.8/iostream **** #ifdef _GLIBCXX_USE_WCHAR_T
+  66:/usr/include/c++/4.8/iostream ****   extern wistream wcin;		/// Linked to standard input
+  67:/usr/include/c++/4.8/iostream ****   extern wostream wcout;	/// Linked to standard output
+  68:/usr/include/c++/4.8/iostream ****   extern wostream wcerr;	/// Linked to standard error (unbuffered)
+  69:/usr/include/c++/4.8/iostream ****   extern wostream wclog;	/// Linked to standard error (buffered)
+  70:/usr/include/c++/4.8/iostream **** #endif
+  71:/usr/include/c++/4.8/iostream ****   //@}
+GAS LISTING /tmp/ccEKHRDP.s 			page 4
+
+
+  72:/usr/include/c++/4.8/iostream **** 
+  73:/usr/include/c++/4.8/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  74:/usr/include/c++/4.8/iostream ****   static ios_base::Init __ioinit;
+  55              		.loc 2 74 0 is_stmt 1
+  56 0011 BF000000 		movl	$_ZStL8__ioinit, %edi
+  56      00
+  57              	.LVL3:
+  58 0016 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+  58      00
+  59              	.LVL4:
+  60 001b BA000000 		movl	$__dso_handle, %edx
+  60      00
+  61 0020 BE000000 		movl	$_ZStL8__ioinit, %esi
+  61      00
+  62 0025 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+  62      00
+  63 002a E8000000 		call	__cxa_atexit
+  63      00
+  64              	.LVL5:
+  65              		.loc 1 50 0
+  66 002f 4883C408 		addq	$8, %rsp
+  67              		.cfi_def_cfa_offset 8
+  68              	.L7:
+  69 0033 C3       		ret
+  70              		.cfi_endproc
+  71              	.LFE1409:
+  73              		.section	.text._ZN16OperatorOverloadC2Ei,"axG",@progbits,_ZN16OperatorOverloadC5Ei,comdat
+  74              		.align 2
+  75              		.weak	_ZN16OperatorOverloadC2Ei
+  77              	_ZN16OperatorOverloadC2Ei:
+  78              	.LFB1244:
+   6:operator-overload.cpp ****     member = x;
+  79              		.loc 1 6 0
+  80              		.cfi_startproc
+  81              	.LVL6:
+  82              	.LBB2:
+   7:operator-overload.cpp ****   }
+  83              		.loc 1 7 0
+  84 0000 8937     		movl	%esi, (%rdi)
+  85 0002 C3       		ret
+  86              	.LBE2:
+  87              		.cfi_endproc
+  88              	.LFE1244:
+  90              		.weak	_ZN16OperatorOverloadC1Ei
+  91              		.set	_ZN16OperatorOverloadC1Ei,_ZN16OperatorOverloadC2Ei
+  92              		.section	.text._ZN16OperatorOverloadpLEi,"axG",@progbits,_ZN16OperatorOverloadpLEi,comdat
+  93              		.align 2
+  94              		.weak	_ZN16OperatorOverloadpLEi
+  96              	_ZN16OperatorOverloadpLEi:
+  97              	.LFB1246:
+  10:operator-overload.cpp ****     return member += x;
+  98              		.loc 1 10 0
+  99              		.cfi_startproc
+ 100              	.LVL7:
+  11:operator-overload.cpp ****   }
+ 101              		.loc 1 11 0
+ 102 0000 89F0     		movl	%esi, %eax
+GAS LISTING /tmp/ccEKHRDP.s 			page 5
+
+
+ 103 0002 0307     		addl	(%rdi), %eax
+ 104 0004 8907     		movl	%eax, (%rdi)
+  12:operator-overload.cpp ****  
+ 105              		.loc 1 12 0
+ 106 0006 C3       		ret
+ 107              		.cfi_endproc
+ 108              	.LFE1246:
+ 110              		.section	.text._ZNK16OperatorOverload5valueEv,"axG",@progbits,_ZNK16OperatorOverload5valueEv,comda
+ 111              		.align 2
+ 112              		.weak	_ZNK16OperatorOverload5valueEv
+ 114              	_ZNK16OperatorOverload5valueEv:
+ 115              	.LFB1247:
+  14:operator-overload.cpp ****     return member;
+ 116              		.loc 1 14 0
+ 117              		.cfi_startproc
+ 118              	.LVL8:
+  15:operator-overload.cpp ****   }
+ 119              		.loc 1 15 0
+ 120 0000 8B07     		movl	(%rdi), %eax
+  16:operator-overload.cpp **** };
+ 121              		.loc 1 16 0
+ 122 0002 C3       		ret
+ 123              		.cfi_endproc
+ 124              	.LFE1247:
+ 126              		.section	.text._ZN20OperatorOverloadVirtC2Ei,"axG",@progbits,_ZN20OperatorOverloadVirtC5Ei,comdat
+ 127              		.align 2
+ 128              		.weak	_ZN20OperatorOverloadVirtC2Ei
+ 130              	_ZN20OperatorOverloadVirtC2Ei:
+ 131              	.LFB1249:
+  22:operator-overload.cpp ****     member = x;
+ 132              		.loc 1 22 0
+ 133              		.cfi_startproc
+ 134              	.LVL9:
+ 135              	.LBB3:
+  22:operator-overload.cpp ****     member = x;
+ 136              		.loc 1 22 0
+ 137 0000 48C70700 		movq	$_ZTV20OperatorOverloadVirt+16, (%rdi)
+ 137      000000
+  23:operator-overload.cpp ****   }
+ 138              		.loc 1 23 0
+ 139 0007 897708   		movl	%esi, 8(%rdi)
+ 140 000a C3       		ret
+ 141              	.LBE3:
+ 142              		.cfi_endproc
+ 143              	.LFE1249:
+ 145              		.weak	_ZN20OperatorOverloadVirtC1Ei
+ 146              		.set	_ZN20OperatorOverloadVirtC1Ei,_ZN20OperatorOverloadVirtC2Ei
+ 147              		.text
+ 148              		.globl	_ZplRK16OperatorOverloadRK20OperatorOverloadVirt
+ 150              	_ZplRK16OperatorOverloadRK20OperatorOverloadVirt:
+ 151              	.LFB1253:
+  35:operator-overload.cpp ****   return oo.value() + oov.value();
+ 152              		.loc 1 35 0
+ 153              		.cfi_startproc
+ 154              	.LVL10:
+ 155 0034 55       		pushq	%rbp
+ 156              		.cfi_def_cfa_offset 16
+GAS LISTING /tmp/ccEKHRDP.s 			page 6
+
+
+ 157              		.cfi_offset 6, -16
+ 158 0035 53       		pushq	%rbx
+ 159              		.cfi_def_cfa_offset 24
+ 160              		.cfi_offset 3, -24
+ 161 0036 4883EC08 		subq	$8, %rsp
+ 162              		.cfi_def_cfa_offset 32
+ 163 003a 4889F3   		movq	%rsi, %rbx
+  36:operator-overload.cpp **** }
+ 164              		.loc 1 36 0
+ 165 003d E8000000 		call	_ZNK16OperatorOverload5valueEv
+ 165      00
+ 166              	.LVL11:
+ 167 0042 89C5     		movl	%eax, %ebp
+ 168 0044 488B03   		movq	(%rbx), %rax
+ 169 0047 4889DF   		movq	%rbx, %rdi
+ 170 004a FF5008   		call	*8(%rax)
+ 171              	.LVL12:
+ 172 004d 01E8     		addl	%ebp, %eax
+  37:operator-overload.cpp **** 
+ 173              		.loc 1 37 0
+ 174 004f 4883C408 		addq	$8, %rsp
+ 175              		.cfi_def_cfa_offset 24
+ 176 0053 5B       		popq	%rbx
+ 177              		.cfi_def_cfa_offset 16
+ 178              	.LVL13:
+ 179 0054 5D       		popq	%rbp
+ 180              		.cfi_def_cfa_offset 8
+ 181 0055 C3       		ret
+ 182              		.cfi_endproc
+ 183              	.LFE1253:
+ 185              		.section	.rodata.str1.1,"aMS",@progbits,1
+ 186              	.LC0:
+ 187 0000 6F706572 		.string	"operatorOverload: "
+ 187      61746F72 
+ 187      4F766572 
+ 187      6C6F6164 
+ 187      3A2000
+ 188              		.text
+ 189              		.globl	_Z16operatorOverloadv
+ 191              	_Z16operatorOverloadv:
+ 192              	.LFB1254:
+  39:operator-overload.cpp ****   OperatorOverload oo(37);
+ 193              		.loc 1 39 0
+ 194              		.cfi_startproc
+ 195 0056 53       		pushq	%rbx
+ 196              		.cfi_def_cfa_offset 16
+ 197              		.cfi_offset 3, -16
+ 198 0057 4883EC10 		subq	$16, %rsp
+ 199              		.cfi_def_cfa_offset 32
+ 200              	.LBB4:
+  40:operator-overload.cpp **** 
+ 201              		.loc 1 40 0
+ 202 005b BE250000 		movl	$37, %esi
+ 202      00
+ 203 0060 4889E7   		movq	%rsp, %rdi
+ 204 0063 E8000000 		call	_ZN16OperatorOverloadC1Ei
+ 204      00
+GAS LISTING /tmp/ccEKHRDP.s 			page 7
+
+
+ 205              	.LVL14:
+  42:operator-overload.cpp **** 
+ 206              		.loc 1 42 0
+ 207 0068 BE0C0000 		movl	$12, %esi
+ 207      00
+ 208 006d 4889E7   		movq	%rsp, %rdi
+ 209 0070 E8000000 		call	_ZN16OperatorOverloadpLEi
+ 209      00
+ 210              	.LVL15:
+  44:operator-overload.cpp ****   *oovp += 13;
+ 211              		.loc 1 44 0
+ 212 0075 BF100000 		movl	$16, %edi
+ 212      00
+ 213 007a E8000000 		call	_Znwm
+ 213      00
+ 214              	.LVL16:
+ 215 007f 4889C3   		movq	%rax, %rbx
+ 216 0082 BE0B0000 		movl	$11, %esi
+ 216      00
+ 217 0087 4889C7   		movq	%rax, %rdi
+ 218 008a E8000000 		call	_ZN20OperatorOverloadVirtC1Ei
+ 218      00
+ 219              	.LVL17:
+  45:operator-overload.cpp **** 
+ 220              		.loc 1 45 0
+ 221 008f 488B03   		movq	(%rbx), %rax
+ 222 0092 BE0D0000 		movl	$13, %esi
+ 222      00
+ 223 0097 4889DF   		movq	%rbx, %rdi
+ 224 009a FF10     		call	*(%rax)
+ 225              	.LVL18:
+  47:operator-overload.cpp **** 
+ 226              		.loc 1 47 0
+ 227 009c 4889DE   		movq	%rbx, %rsi
+ 228 009f 4889E7   		movq	%rsp, %rdi
+ 229 00a2 E8000000 		call	_ZplRK16OperatorOverloadRK20OperatorOverloadVirt
+ 229      00
+ 230              	.LVL19:
+ 231 00a7 89C3     		movl	%eax, %ebx
+ 232              	.LVL20:
+  49:operator-overload.cpp **** }
+ 233              		.loc 1 49 0
+ 234 00a9 BE000000 		movl	$.LC0, %esi
+ 234      00
+ 235 00ae BF000000 		movl	$_ZSt4cout, %edi
+ 235      00
+ 236 00b3 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 236      00
+ 237              	.LVL21:
+ 238 00b8 89DE     		movl	%ebx, %esi
+ 239 00ba 4889C7   		movq	%rax, %rdi
+ 240 00bd E8000000 		call	_ZNSolsEi
+ 240      00
+ 241              	.LVL22:
+ 242 00c2 BE000000 		movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 242      00
+ 243 00c7 4889C7   		movq	%rax, %rdi
+GAS LISTING /tmp/ccEKHRDP.s 			page 8
+
+
+ 244 00ca E8000000 		call	_ZNSolsEPFRSoS_E
+ 244      00
+ 245              	.LVL23:
+ 246              	.LBE4:
+ 247              		.loc 1 50 0
+ 248 00cf 4883C410 		addq	$16, %rsp
+ 249              		.cfi_def_cfa_offset 16
+ 250 00d3 5B       		popq	%rbx
+ 251              		.cfi_def_cfa_offset 8
+ 252              	.LVL24:
+ 253 00d4 C3       		ret
+ 254              		.cfi_endproc
+ 255              	.LFE1254:
+ 258              	_GLOBAL__sub_I__ZplRK16OperatorOverloadRK20OperatorOverloadVirt:
+ 259              	.LFB1410:
+ 260              		.loc 1 50 0
+ 261              		.cfi_startproc
+ 262 00d5 4883EC08 		subq	$8, %rsp
+ 263              		.cfi_def_cfa_offset 16
+ 264              		.loc 1 50 0
+ 265 00d9 BEFFFF00 		movl	$65535, %esi
+ 265      00
+ 266 00de BF010000 		movl	$1, %edi
+ 266      00
+ 267 00e3 E818FFFF 		call	_Z41__static_initialization_and_destruction_0ii
+ 267      FF
+ 268              	.LVL25:
+ 269 00e8 4883C408 		addq	$8, %rsp
+ 270              		.cfi_def_cfa_offset 8
+ 271 00ec C3       		ret
+ 272              		.cfi_endproc
+ 273              	.LFE1410:
+ 275              		.section	.init_array,"aw"
+ 276              		.align 8
+ 277 0000 00000000 		.quad	_GLOBAL__sub_I__ZplRK16OperatorOverloadRK20OperatorOverloadVirt
+ 277      00000000 
+ 278              		.weak	_ZTI20OperatorOverloadVirt
+ 279              		.section	.rodata._ZTI20OperatorOverloadVirt,"aG",@progbits,_ZTI20OperatorOverloadVirt,comdat
+ 280              		.align 16
+ 283              	_ZTI20OperatorOverloadVirt:
+ 284 0000 00000000 		.quad	_ZTVN10__cxxabiv117__class_type_infoE+16
+ 284      00000000 
+ 285 0008 00000000 		.quad	_ZTS20OperatorOverloadVirt
+ 285      00000000 
+ 286              		.weak	_ZTS20OperatorOverloadVirt
+ 287              		.section	.rodata._ZTS20OperatorOverloadVirt,"aG",@progbits,_ZTS20OperatorOverloadVirt,comdat
+ 288              		.align 16
+ 291              	_ZTS20OperatorOverloadVirt:
+ 292 0000 32304F70 		.string	"20OperatorOverloadVirt"
+ 292      65726174 
+ 292      6F724F76 
+ 292      65726C6F 
+ 292      61645669 
+ 293              		.weak	_ZTV20OperatorOverloadVirt
+ 294              		.section	.rodata._ZTV20OperatorOverloadVirt,"aG",@progbits,_ZTV20OperatorOverloadVirt,comdat
+ 295              		.align 32
+ 298              	_ZTV20OperatorOverloadVirt:
+GAS LISTING /tmp/ccEKHRDP.s 			page 9
+
+
+ 299 0000 00000000 		.quad	0
+ 299      00000000 
+ 300 0008 00000000 		.quad	_ZTI20OperatorOverloadVirt
+ 300      00000000 
+ 301 0010 00000000 		.quad	_ZN20OperatorOverloadVirtpLEi
+ 301      00000000 
+ 302 0018 00000000 		.quad	_ZNK20OperatorOverloadVirt5valueEv
+ 302      00000000 
+ 303              		.local	_ZStL8__ioinit
+ 304              		.comm	_ZStL8__ioinit,1,1
+ 305              		.text
+ 306              	.Letext0:
+ 307              		.file 3 "/usr/include/libio.h"
+ 308              		.file 4 "/usr/include/stdio.h"
+ 309              		.file 5 "<built-in>"
+ 310              		.file 6 "/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"
+ 311              		.file 7 "/usr/include/wchar.h"
+ 312              		.file 8 "/usr/include/c++/4.8/cwchar"
+ 313              		.file 9 "/usr/include/c++/4.8/bits/exception_ptr.h"
+ 314              		.file 10 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h"
+ 315              		.file 11 "/usr/include/c++/4.8/bits/char_traits.h"
+ 316              		.file 12 "/usr/include/c++/4.8/cstdint"
+ 317              		.file 13 "/usr/include/c++/4.8/clocale"
+ 318              		.file 14 "/usr/include/c++/4.8/cstdlib"
+ 319              		.file 15 "/usr/include/c++/4.8/cstdio"
+ 320              		.file 16 "/usr/include/c++/4.8/bits/ios_base.h"
+ 321              		.file 17 "/usr/include/c++/4.8/cwctype"
+ 322              		.file 18 "/usr/include/c++/4.8/bits/ostream.tcc"
+ 323              		.file 19 "/usr/include/c++/4.8/ostream"
+ 324              		.file 20 "/usr/include/c++/4.8/iosfwd"
+ 325              		.file 21 "/usr/include/x86_64-linux-gnu/bits/wchar2.h"
+ 326              		.file 22 "/usr/include/time.h"
+ 327              		.file 23 "/usr/include/c++/4.8/ext/new_allocator.h"
+ 328              		.file 24 "/usr/include/c++/4.8/ext/numeric_traits.h"
+ 329              		.file 25 "/usr/include/c++/4.8/debug/debug.h"
+ 330              		.file 26 "/usr/include/stdint.h"
+ 331              		.file 27 "/usr/include/locale.h"
+ 332              		.file 28 "/usr/include/x86_64-linux-gnu/bits/types.h"
+ 333              		.file 29 "/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h"
+ 334              		.file 30 "/usr/include/stdlib.h"
+ 335              		.file 31 "/usr/include/x86_64-linux-gnu/bits/stdlib.h"
+ 336              		.file 32 "/usr/include/_G_config.h"
+ 337              		.file 33 "/usr/include/x86_64-linux-gnu/bits/stdio2.h"
+ 338              		.file 34 "/usr/include/wctype.h"
+ 339              		.file 35 "/usr/include/c++/4.8/new"
+ 340              		.file 36 "/usr/include/c++/4.8/bits/stl_pair.h"
+GAS LISTING /tmp/ccEKHRDP.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 operator-overload.cpp
+     /tmp/ccEKHRDP.s:8      .text._ZN20OperatorOverloadVirtpLEi:0000000000000000 _ZN20OperatorOverloadVirtpLEi
+     /tmp/ccEKHRDP.s:27     .text._ZNK20OperatorOverloadVirt5valueEv:0000000000000000 _ZNK20OperatorOverloadVirt5valueEv
+     /tmp/ccEKHRDP.s:41     .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+                             .bss:0000000000000000 _ZStL8__ioinit
+     /tmp/ccEKHRDP.s:77     .text._ZN16OperatorOverloadC2Ei:0000000000000000 _ZN16OperatorOverloadC2Ei
+     /tmp/ccEKHRDP.s:77     .text._ZN16OperatorOverloadC2Ei:0000000000000000 _ZN16OperatorOverloadC1Ei
+     /tmp/ccEKHRDP.s:96     .text._ZN16OperatorOverloadpLEi:0000000000000000 _ZN16OperatorOverloadpLEi
+     /tmp/ccEKHRDP.s:114    .text._ZNK16OperatorOverload5valueEv:0000000000000000 _ZNK16OperatorOverload5valueEv
+     /tmp/ccEKHRDP.s:130    .text._ZN20OperatorOverloadVirtC2Ei:0000000000000000 _ZN20OperatorOverloadVirtC2Ei
+     /tmp/ccEKHRDP.s:298    .rodata._ZTV20OperatorOverloadVirt:0000000000000000 _ZTV20OperatorOverloadVirt
+     /tmp/ccEKHRDP.s:130    .text._ZN20OperatorOverloadVirtC2Ei:0000000000000000 _ZN20OperatorOverloadVirtC1Ei
+     /tmp/ccEKHRDP.s:150    .text:0000000000000034 _ZplRK16OperatorOverloadRK20OperatorOverloadVirt
+     /tmp/ccEKHRDP.s:191    .text:0000000000000056 _Z16operatorOverloadv
+     /tmp/ccEKHRDP.s:258    .text:00000000000000d5 _GLOBAL__sub_I__ZplRK16OperatorOverloadRK20OperatorOverloadVirt
+     /tmp/ccEKHRDP.s:283    .rodata._ZTI20OperatorOverloadVirt:0000000000000000 _ZTI20OperatorOverloadVirt
+     /tmp/ccEKHRDP.s:291    .rodata._ZTS20OperatorOverloadVirt:0000000000000000 _ZTS20OperatorOverloadVirt
+                           .group:0000000000000000 _ZN16OperatorOverloadC5Ei
+                           .group:0000000000000000 _ZN20OperatorOverloadVirtC5Ei
+
+UNDEFINED SYMBOLS
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+_ZNSt8ios_base4InitD1Ev
+__cxa_atexit
+_Znwm
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSolsEi
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E
+_ZTVN10__cxxabiv117__class_type_infoE

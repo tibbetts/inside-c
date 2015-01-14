@@ -29,9 +29,9 @@ _Z41__static_initialization_and_destruction_0ii:
 .LC1:
 	.string	">::value = "
 	.text
-	.globl	main
-	.type	main, @function
-main:
+	.globl	_Z12useFibonacciv
+	.type	_Z12useFibonacciv, @function
+_Z12useFibonacciv:
 .LFB1243:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -51,15 +51,14 @@ main:
 	movl	$_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
 	movq	%rax, %rdi
 	call	_ZNSolsEPFRSoS_E
-	movl	$0, %eax
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE1243:
-	.size	main, .-main
-	.type	_GLOBAL__sub_I_main, @function
-_GLOBAL__sub_I_main:
+	.size	_Z12useFibonacciv, .-_Z12useFibonacciv
+	.type	_GLOBAL__sub_I__Z12useFibonacciv, @function
+_GLOBAL__sub_I__Z12useFibonacciv:
 .LFB1399:
 	.cfi_startproc
 	subq	$8, %rsp
@@ -72,10 +71,10 @@ _GLOBAL__sub_I_main:
 	ret
 	.cfi_endproc
 .LFE1399:
-	.size	_GLOBAL__sub_I_main, .-_GLOBAL__sub_I_main
+	.size	_GLOBAL__sub_I__Z12useFibonacciv, .-_GLOBAL__sub_I__Z12useFibonacciv
 	.section	.init_array,"aw"
 	.align 8
-	.quad	_GLOBAL__sub_I_main
+	.quad	_GLOBAL__sub_I__Z12useFibonacciv
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
 	.hidden	__dso_handle
