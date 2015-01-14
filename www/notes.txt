@@ -24,23 +24,23 @@ Download links in the code areas, or links that open in new tab.
 Things not yet appearing anywhere:
 Rvalue references which are modifiable.
 Function forwarding?
-Array initialization
+x Array initialization
 Lambda and captures.  Non constant stack captures. Capturing this if not trivial. Invoking after scope dead.
-Initializer list constructors
+x Initializer list constructors
 Foo(NULL) calls the int version
 Variadac functions and templates?
-User defined literals?
+x User defined literals?
 Thread local
 Alignof and alignas
 Polymorphic function pointers - these are all statically typed right?
 
 
 Stuff that compiles away
-Constexpr
-Plain old data and standard layout
+x Constexpr
+x Plain old data and standard layout
 Extern template
-Type inference, auto and decltype
-Range based for loop
+x Type inference, auto and decltype
+x Range based for loop
 Default values of function parameters except not.
 Final and override
 Enum classes
