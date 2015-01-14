@@ -2,8 +2,11 @@ NAMES=reference object virtual-method basic-constructor basic-method	\
 basic-struct basic-vtable call-by-value-error complex-multiple		\
 dynamic-cast object-arg object-ret simple-multiple subclass-vtable	\
 virtual-sub vtable-null mangling extern-c rtti fibonacci global		\
-hello-exceptions rethrow template-max templated-method	\
-throw-nonexception virtual-diamond anon-function
+hello-exceptions rethrow template-max templated-method			\
+throw-nonexception virtual-diamond anon-function operator-overload	\
+user-literal constexpr initialization-list range-loop type-inference
+#polymorphic-fp range-loop	\
+#type-inference
 
 
 # Build different things on linux (where we assume we have gcc and gnu ld) and mac (where we have clang)

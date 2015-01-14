@@ -81,36 +81,236 @@
       </ul>
     </p>
 
-    TODO: Those things in some examples.
+    TODO: Fill all these out.
 
-    <h2>RTTI</h2>
+    <h2>Operator Overloading</h2>
 
 
     <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#operator-overload-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#operator-overload-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#operator-overload-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#operator-overload-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#operator-overload-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
-          <pre data-src="../examples/basic-struct.cpp"></pre>
+        <div role="tab-panel" class="tab-pane active" id="operator-overload-cpp">
+          <pre data-src="../examples/operator-overload.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="operator-overload-clang-s">
+          <pre data-src="../examples/operator-overload-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="operator-overload-ll">
+          <pre data-src="../examples/operator-overload.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="operator-overload-gcc-s">
+          <pre data-src="../examples/operator-overload-gcc.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="operator-overload-listing">
+          <pre data-src="../examples/operator-overload.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>User Defined Literals</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#user-literal-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#user-literal-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#user-literal-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#user-literal-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#user-literal-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="user-literal-cpp">
+          <pre data-src="../examples/user-literal.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="user-literal-clang-s">
+          <pre data-src="../examples/user-literal-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="user-literal-ll">
+          <pre data-src="../examples/user-literal.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="user-literal-gcc-s">
+          <pre data-src="../examples/user-literal-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="user-literal-listing">
+          <pre data-src="../examples/user-literal.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Constexpr</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#constexpr-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#constexpr-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#constexpr-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#constexpr-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#constexpr-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="constexpr-cpp">
+          <pre data-src="../examples/constexpr.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="constexpr-clang-s">
+          <pre data-src="../examples/constexpr-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="constexpr-ll">
+          <pre data-src="../examples/constexpr.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="constexpr-gcc-s">
+          <pre data-src="../examples/constexpr-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="constexpr-listing">
+          <pre data-src="../examples/constexpr.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Initialization Lists</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#initialization-list-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#initialization-list-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#initialization-list-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#initialization-list-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#initialization-list-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="initialization-list-cpp">
+          <pre data-src="../examples/initialization-list.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="initialization-list-clang-s">
+          <pre data-src="../examples/initialization-list-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="initialization-list-ll">
+          <pre data-src="../examples/initialization-list.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="initialization-list-gcc-s">
+          <pre data-src="../examples/initialization-list-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="initialization-list-listing">
+          <pre data-src="../examples/initialization-list.listing"></pre>
+        </div>
+      </div>
+    </div>
+    <code>__ZNSt3__16vectorIiNS_9allocatorIiEEE8allocateEm</code> means
+<code>std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;::allocate(unsigned long)</code>
+<p>
+<code>_ZNSt3__16vectorIiNS_9allocatorIiEEE18__construct_at_endIPKiEENS_9enable_ifIXsr21__is_forward_iteratorIT_EE5valueEvE4typeES8_S8_</code>
+is
+<code>std::__1::enable_if&lt;__is_forward_iterator&lt;int const*&gt;::value, void&gt;::type std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;::__construct_at_end&lt;int const*&gt;(int const*, int const*)</code>
+
+
+    <h2>Polymorphic Function Pointers</h2>
+    TODO: These are just sugar right?
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#polymorphic-fp-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#polymorphic-fp-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="polymorphic-fp-cpp">
+          <pre data-src="../examples/polymorphic-fp.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-clang-s">
+          <pre data-src="../examples/polymorphic-fp-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-ll">
+          <pre data-src="../examples/polymorphic-fp.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-gcc-s">
+          <pre data-src="../examples/polymorphic-fp-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="polymorphic-fp-listing">
+          <pre data-src="../examples/polymorphic-fp.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Range Based Loops</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#range-loop-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#range-loop-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#range-loop-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#range-loop-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#range-loop-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="range-loop-cpp">
+          <pre data-src="../examples/range-loop.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="range-loop-clang-s">
+          <pre data-src="../examples/range-loop-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="range-loop-ll">
+          <pre data-src="../examples/range-loop.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="range-loop-gcc-s">
+          <pre data-src="../examples/range-loop-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="range-loop-listing">
+          <pre data-src="../examples/range-loop.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Type Inference</h2>
+
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#type-inference-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#type-inference-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#type-inference-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#type-inference-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#type-inference-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="type-inference-cpp">
+          <pre data-src="../examples/type-inference.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="type-inference-clang-s">
+          <pre data-src="../examples/type-inference-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="type-inference-ll">
+          <pre data-src="../examples/type-inference.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="type-inference-gcc-s">
+          <pre data-src="../examples/type-inference-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="type-inference-listing">
+          <pre data-src="../examples/type-inference.listing"></pre>
         </div>
       </div>
     </div>
