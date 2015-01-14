@@ -72,8 +72,7 @@ int subBoth::getBaseData() const {
 }
 
 
-int main(int argc, char **argv) {
-
+void virtualDiamond() {
     subBoth *sb = new subBoth;
 
     int i = sb->getSum();
@@ -86,8 +85,7 @@ int main(int argc, char **argv) {
     baseB *bb = sb;
 
     bb->setDataB(13);
-    bb->getDataB();
-
-    return 0;
-
+    int j = bb->getDataB();
+    
+    printf("virtualDiamond %d %d", i, j);
 }

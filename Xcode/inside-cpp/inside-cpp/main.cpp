@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     simpleMultiple(argc, argv);
     subclassVtable(argc, argv);
     virtualMethod(argc, argv);
-    virtualSub(argc, argv);
+    virtualSub();
     vtableNull(argc, argv);
     rtti(argc, argv);
 

@@ -4,45 +4,45 @@
 
 using namespace std;
 
-class MyException : public exception {
+class MyExceptionA : public exception {
   private:
     string _what;
   public:
-    MyException(string what) throw ();
-    ~MyException() throw ();
+    MyExceptionA(string what) throw ();
+    ~MyExceptionA() throw ();
 
     virtual const char *what() const throw ();
     string as_string() const;
 };
 
-MyException::MyException(string what) throw ():
+MyExceptionA::MyExceptionA(string what) throw ():
     _what(what)
 {}
 
-MyException::~MyException() throw () {
+MyExceptionA::~MyExceptionA() throw () {
 }
 
-const char *MyException::what() const throw () {
+const char *MyExceptionA::what() const throw () {
     return _what.c_str();
 }
 
-string MyException::as_string() const {
-    return "MyException(" + _what + ")";
+string MyExceptionA::as_string() const {
+    return "MyExceptionA(" + _what + ")";
 }
 
 
 // arg must be greater than 0. Returns half arg, rounded down.
-int take_half(int arg) throw (MyException) {
+int take_half(int arg) throw (MyExceptionA) {
     if (arg <= 0) {
-        throw MyException("arg is not greater than 0.");
+        throw MyExceptionA("arg is not greater than 0.");
     }
     return arg / 2;
 }
 
-int main(int argc, char **argv) {
+void helloExceptions() {
     try {
-        int i = take_half(-2);
-    } catch (MyException &e) {
+        take_half(-2);
+    } catch (MyExceptionA &e) {
         cout << "Got exception: " << e.as_string() << endl;
     }
 }

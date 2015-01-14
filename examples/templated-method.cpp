@@ -14,8 +14,7 @@ struct my_struct {
     }
 };
 
-int
-main (int argc, char **argv) {
+void templateMethod() {
     my_struct<double> f1(3.3);
 
     cout << "f1._field=" << f1._field << endl;

@@ -19,8 +19,7 @@ struct fibonacci<1> {
 
 const int arg = 17;
 
-int
-main (int argc, char **argv) {
+void useFibonacci () {
     int result = fibonacci<arg>::value;
 
     std::cout << "fibonacci<" << arg << ">::value = "

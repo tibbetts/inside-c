@@ -10,10 +10,9 @@ struct down_to_zero<0> {
     static const int val = 0;
 };
 
-const int depth = 500;
+const int depth = 37;
 
-int
-main (int argc, char **argv) {
+int templateDepth (int argc, const char **argv) {
     std::cout << "down_to_zero<" << depth << ">::val="
          << down_to_zero<depth>::val << std::endl;
     return 0;

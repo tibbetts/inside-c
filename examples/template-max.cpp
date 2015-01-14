@@ -21,8 +21,7 @@ bool my_struct::operator>(const my_struct &rhs) const {
     return _field > rhs._field;
 }
 
-int
-main (int argc, char **argv) {
+int templateMax(int argc, const char **argv) {
     // int
     int i = max(2, 3);
 

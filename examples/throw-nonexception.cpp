@@ -25,7 +25,7 @@ void throw_struct() throw (my_struct) {
     throw my_struct(5);
 }
 
-int main(int argc, char **argv) {
+void throwNonexception() {
     try {
         try {
             throw_int();

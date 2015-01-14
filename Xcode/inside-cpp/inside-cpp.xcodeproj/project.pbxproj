@@ -27,6 +27,21 @@
 		A4C7E61F1A65A74C007DB9B3 /* virtual-sub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E60D1A65A74C007DB9B3 /* virtual-sub.cpp */; };
 		A4C7E6201A65A74C007DB9B3 /* vtable-null.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E60E1A65A74C007DB9B3 /* vtable-null.cpp */; };
 		A4C7E6221A65C946007DB9B3 /* rtti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6211A65C946007DB9B3 /* rtti.cpp */; };
+		A4C7E6321A66BC88007DB9B3 /* anon-function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6231A66BC88007DB9B3 /* anon-function.cpp */; };
+		A4C7E6331A66BC88007DB9B3 /* constexpr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6241A66BC88007DB9B3 /* constexpr.cpp */; };
+		A4C7E6341A66BC88007DB9B3 /* fibonacci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6251A66BC88007DB9B3 /* fibonacci.cpp */; };
+		A4C7E6351A66BC88007DB9B3 /* global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6261A66BC88007DB9B3 /* global.cpp */; };
+		A4C7E6361A66BC88007DB9B3 /* hello-exceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6271A66BC88007DB9B3 /* hello-exceptions.cpp */; };
+		A4C7E6371A66BC88007DB9B3 /* initialization-list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6281A66BC88007DB9B3 /* initialization-list.cpp */; };
+		A4C7E6381A66BC88007DB9B3 /* operator-overload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6291A66BC88007DB9B3 /* operator-overload.cpp */; };
+		A4C7E6391A66BC88007DB9B3 /* range-loop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62A1A66BC88007DB9B3 /* range-loop.cpp */; };
+		A4C7E63A1A66BC88007DB9B3 /* rethrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62B1A66BC88007DB9B3 /* rethrow.cpp */; };
+		A4C7E63B1A66BC88007DB9B3 /* template-depth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62C1A66BC88007DB9B3 /* template-depth.cpp */; };
+		A4C7E63C1A66BC88007DB9B3 /* templated-method.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62D1A66BC88007DB9B3 /* templated-method.cpp */; };
+		A4C7E63D1A66BC88007DB9B3 /* throw-nonexception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62E1A66BC88007DB9B3 /* throw-nonexception.cpp */; };
+		A4C7E63E1A66BC88007DB9B3 /* type-inference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E62F1A66BC88007DB9B3 /* type-inference.cpp */; };
+		A4C7E63F1A66BC88007DB9B3 /* user-literal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6301A66BC88007DB9B3 /* user-literal.cpp */; };
+		A4C7E6401A66BC88007DB9B3 /* virtual-diamond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4C7E6311A66BC88007DB9B3 /* virtual-diamond.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +79,21 @@
 		A4C7E60D1A65A74C007DB9B3 /* virtual-sub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "virtual-sub.cpp"; path = "../../../examples/virtual-sub.cpp"; sourceTree = "<group>"; };
 		A4C7E60E1A65A74C007DB9B3 /* vtable-null.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "vtable-null.cpp"; path = "../../../examples/vtable-null.cpp"; sourceTree = "<group>"; };
 		A4C7E6211A65C946007DB9B3 /* rtti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rtti.cpp; path = ../../../examples/rtti.cpp; sourceTree = "<group>"; };
+		A4C7E6231A66BC88007DB9B3 /* anon-function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "anon-function.cpp"; path = "../../../examples/anon-function.cpp"; sourceTree = "<group>"; };
+		A4C7E6241A66BC88007DB9B3 /* constexpr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = constexpr.cpp; path = ../../../examples/constexpr.cpp; sourceTree = "<group>"; };
+		A4C7E6251A66BC88007DB9B3 /* fibonacci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fibonacci.cpp; path = ../../../examples/fibonacci.cpp; sourceTree = "<group>"; };
+		A4C7E6261A66BC88007DB9B3 /* global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = global.cpp; path = ../../../examples/global.cpp; sourceTree = "<group>"; };
+		A4C7E6271A66BC88007DB9B3 /* hello-exceptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hello-exceptions.cpp"; path = "../../../examples/hello-exceptions.cpp"; sourceTree = "<group>"; };
+		A4C7E6281A66BC88007DB9B3 /* initialization-list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "initialization-list.cpp"; path = "../../../examples/initialization-list.cpp"; sourceTree = "<group>"; };
+		A4C7E6291A66BC88007DB9B3 /* operator-overload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "operator-overload.cpp"; path = "../../../examples/operator-overload.cpp"; sourceTree = "<group>"; };
+		A4C7E62A1A66BC88007DB9B3 /* range-loop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "range-loop.cpp"; path = "../../../examples/range-loop.cpp"; sourceTree = "<group>"; };
+		A4C7E62B1A66BC88007DB9B3 /* rethrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rethrow.cpp; path = ../../../examples/rethrow.cpp; sourceTree = "<group>"; };
+		A4C7E62C1A66BC88007DB9B3 /* template-depth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "template-depth.cpp"; path = "../../../examples/template-depth.cpp"; sourceTree = "<group>"; };
+		A4C7E62D1A66BC88007DB9B3 /* templated-method.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "templated-method.cpp"; path = "../../../examples/templated-method.cpp"; sourceTree = "<group>"; };
+		A4C7E62E1A66BC88007DB9B3 /* throw-nonexception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "throw-nonexception.cpp"; path = "../../../examples/throw-nonexception.cpp"; sourceTree = "<group>"; };
+		A4C7E62F1A66BC88007DB9B3 /* type-inference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "type-inference.cpp"; path = "../../../examples/type-inference.cpp"; sourceTree = "<group>"; };
+		A4C7E6301A66BC88007DB9B3 /* user-literal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "user-literal.cpp"; path = "../../../examples/user-literal.cpp"; sourceTree = "<group>"; };
+		A4C7E6311A66BC88007DB9B3 /* virtual-diamond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "virtual-diamond.cpp"; path = "../../../examples/virtual-diamond.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +127,21 @@
 			isa = PBXGroup;
 			children = (
 				A4C7E5F51A65A6E4007DB9B3 /* main.cpp */,
+				A4C7E6231A66BC88007DB9B3 /* anon-function.cpp */,
+				A4C7E6241A66BC88007DB9B3 /* constexpr.cpp */,
+				A4C7E6251A66BC88007DB9B3 /* fibonacci.cpp */,
+				A4C7E6261A66BC88007DB9B3 /* global.cpp */,
+				A4C7E6271A66BC88007DB9B3 /* hello-exceptions.cpp */,
+				A4C7E6281A66BC88007DB9B3 /* initialization-list.cpp */,
+				A4C7E6291A66BC88007DB9B3 /* operator-overload.cpp */,
+				A4C7E62A1A66BC88007DB9B3 /* range-loop.cpp */,
+				A4C7E62B1A66BC88007DB9B3 /* rethrow.cpp */,
+				A4C7E62C1A66BC88007DB9B3 /* template-depth.cpp */,
+				A4C7E62D1A66BC88007DB9B3 /* templated-method.cpp */,
+				A4C7E62E1A66BC88007DB9B3 /* throw-nonexception.cpp */,
+				A4C7E62F1A66BC88007DB9B3 /* type-inference.cpp */,
+				A4C7E6301A66BC88007DB9B3 /* user-literal.cpp */,
+				A4C7E6311A66BC88007DB9B3 /* virtual-diamond.cpp */,
 				A4C7E5FC1A65A70A007DB9B3 /* main.hpp */,
 				A4C7E5FD1A65A74C007DB9B3 /* basic-constructor.cpp */,
 				A4C7E5FE1A65A74C007DB9B3 /* basic-method.cpp */,
@@ -177,23 +222,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C7E63F1A66BC88007DB9B3 /* user-literal.cpp in Sources */,
+				A4C7E6381A66BC88007DB9B3 /* operator-overload.cpp in Sources */,
 				A4C7E6181A65A74C007DB9B3 /* object-arg.cpp in Sources */,
+				A4C7E63D1A66BC88007DB9B3 /* throw-nonexception.cpp in Sources */,
 				A4C7E61A1A65A74C007DB9B3 /* object.cpp in Sources */,
+				A4C7E63C1A66BC88007DB9B3 /* templated-method.cpp in Sources */,
 				A4C7E6141A65A74C007DB9B3 /* complex-multiple.cpp in Sources */,
 				A4C7E6191A65A74C007DB9B3 /* object-ret.cpp in Sources */,
 				A4C7E6121A65A74C007DB9B3 /* basic-vtable.cpp in Sources */,
 				A4C7E6201A65A74C007DB9B3 /* vtable-null.cpp in Sources */,
+				A4C7E6361A66BC88007DB9B3 /* hello-exceptions.cpp in Sources */,
+				A4C7E63A1A66BC88007DB9B3 /* rethrow.cpp in Sources */,
+				A4C7E6331A66BC88007DB9B3 /* constexpr.cpp in Sources */,
 				A4C7E6131A65A74C007DB9B3 /* call-by-value-error.cpp in Sources */,
+				A4C7E6371A66BC88007DB9B3 /* initialization-list.cpp in Sources */,
+				A4C7E63E1A66BC88007DB9B3 /* type-inference.cpp in Sources */,
+				A4C7E6391A66BC88007DB9B3 /* range-loop.cpp in Sources */,
+				A4C7E6401A66BC88007DB9B3 /* virtual-diamond.cpp in Sources */,
 				A4C7E5F61A65A6E4007DB9B3 /* main.cpp in Sources */,
 				A4C7E6221A65C946007DB9B3 /* rtti.cpp in Sources */,
+				A4C7E6321A66BC88007DB9B3 /* anon-function.cpp in Sources */,
 				A4C7E6171A65A74C007DB9B3 /* mangling.cpp in Sources */,
 				A4C7E6111A65A74C007DB9B3 /* basic-struct.cpp in Sources */,
 				A4C7E61B1A65A74C007DB9B3 /* reference.cpp in Sources */,
 				A4C7E61F1A65A74C007DB9B3 /* virtual-sub.cpp in Sources */,
+				A4C7E6341A66BC88007DB9B3 /* fibonacci.cpp in Sources */,
 				A4C7E6161A65A74C007DB9B3 /* extern-c.cpp in Sources */,
 				A4C7E61C1A65A74C007DB9B3 /* simple-multiple.cpp in Sources */,
+				A4C7E63B1A66BC88007DB9B3 /* template-depth.cpp in Sources */,
 				A4C7E60F1A65A74C007DB9B3 /* basic-constructor.cpp in Sources */,
 				A4C7E61E1A65A74C007DB9B3 /* virtual-method.cpp in Sources */,
+				A4C7E6351A66BC88007DB9B3 /* global.cpp in Sources */,
 				A4C7E6151A65A74C007DB9B3 /* dynamic-cast.cpp in Sources */,
 				A4C7E6101A65A74C007DB9B3 /* basic-method.cpp in Sources */,
 				A4C7E61D1A65A74C007DB9B3 /* subclass-vtable.cpp in Sources */,

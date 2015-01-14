@@ -17,10 +17,9 @@ int global_int = 4;
 string global_string = "test";
 my_struct global_struct(global_string + "bob", 37);
 
-int
-main(int argc, char **argv) {
+void global() {
     int local_int = global_int;
     string local_string(global_string);
     my_struct local_struct(global_struct);
-    return 0;
+    std::cout << "globalTest " << local_int << " " << local_string << std::endl;
 }

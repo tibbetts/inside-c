@@ -11,7 +11,6 @@ void dirtyArray(int *x) {
 void constExpr() {
   int x[myexpr(11)];
   x[3] = 17;
-  int y = 55;
 
   dirtyArray(x);
 

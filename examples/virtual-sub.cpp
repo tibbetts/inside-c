@@ -1,38 +1,39 @@
-#include <stdio.h>
+#include <iostream>
 
-class bottomBase {
+class aBase {
     int baseData;
   public:
     virtual int getBaseData() const;
+    virtual ~aBase() { }
 };
 
-class baseA : public virtual bottomBase {
+class aSub : public virtual aBase {
     int dataA;
   public:
     void setDataA(int a);
     virtual int getDataA() const;
 };
 
-int bottomBase::getBaseData() const {
+int aBase::getBaseData() const {
     return baseData;
 }
 
-void baseA::setDataA(int a) {
+void aSub::setDataA(int a) {
     dataA = a;
 }
-int baseA::getDataA() const {
+int aSub::getDataA() const {
     return dataA;
 }
 
-int main(int argc, char **argv) {
+void virtualSub() {
 
-    baseA *ba = new baseA();
+    aSub *ba = new aSub();
 
     int i  = ba->getDataA();
 
-    bottomBase *botb = ba;
+    aBase *botb = ba;
 
     int j = botb->getBaseData();
 
-    return 0;
+    std::cout << "virtualSub " << i << " " << j << std::endl;
 }
