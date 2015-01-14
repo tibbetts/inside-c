@@ -868,6 +868,8 @@ Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(f
 	code.textContent = 'Loading…';
 	
 	pre.appendChild(code);
+
+        pre.insertAdjacentHTML('afterbegin', '<div class="source-link"><a href="' + src + '">'+src+'</a></div>');
 	
 	var xhr = new XMLHttpRequest();
 	
