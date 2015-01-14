@@ -29,6 +29,8 @@ int main(int argc, const char * argv[]) {
     virtualSub(argc, argv);
     vtableNull(argc, argv);
     rtti(argc, argv);
+
+    anonFunction();
     
     return 0;
 }

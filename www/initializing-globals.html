@@ -66,44 +66,51 @@
     <div class="container">
     <h1>The Secret Life of C++: Initializing Globals</h1>
 
-    <p>
-      C++ objects in mdoern runtimes generally know their types, and can
-      use this for a little bit of introspection and for checking for
-      safe casts.
-    </p>
-    <h2>RTTI</h2>
-    First, a basic struct with no constructor:
-    <div role="tabpanel">
+    Global variables are tricky in C++, since they can have
+    constructors and destructors.
 
+    <h2>Simple Global Objects</h2>
+
+    Lets look at a simple example of initializing a global object:
+
+    <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#global-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#global-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#global-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#global-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#global-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
-
-          <pre data-src="../examples/basic-struct.cpp"></pre>
+        <div role="tab-panel" class="tab-pane active" id="global-cpp">
+          <pre data-src="../examples/global.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
-
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="global-clang-s">
+          <pre data-src="../examples/global-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="global-ll">
+          <pre data-src="../examples/global.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="global-gcc-s">
+          <pre data-src="../examples/global-gcc.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="global-listing">
+          <pre data-src="../examples/global.listing"></pre>
         </div>
       </div>
     </div>
+
+    <h2>Linker Magic</h2>
+
+    Basically, global constructors and destructors get "registered"
+    and called at program start and shutdown, using the _init and
+    _fini sections of the executable. Precisely how they get there is
+    linker magic.
+    <p>
+
+    TODO: Figure out linker magic.
 
     <footer role="contentinfo">
       <div class="container">

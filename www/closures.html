@@ -67,40 +67,36 @@
     <h1>The Secret Life of C++: Anonymous Functions and Captures</h1>
 
     <p>
-      C++ objects in mdoern runtimes generally know their types, and can
-      use this for a little bit of introspection and for checking for
-      safe casts.
+      A big addition to C++11 was standardized support for anonymous
+      functions and closures.
     </p>
-    <h2>RTTI</h2>
-    First, a basic struct with no constructor:
-    <div role="tabpanel">
+    <h2>Basic Anonymous Function</h2>
 
+    <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#anon-function-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#anon-function-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#anon-function-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#anon-function-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#anon-function-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
-
-          <pre data-src="../examples/basic-struct.cpp"></pre>
+        <div role="tab-panel" class="tab-pane active" id="anon-function-cpp">
+          <pre data-src="../examples/anon-function.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
-
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="anon-function-clang-s">
+          <pre data-src="../examples/anon-function-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="anon-function-ll">
+          <pre data-src="../examples/anon-function.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="anon-function-gcc-s">
+          <pre data-src="../examples/anon-function-gcc.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="anon-function-listing">
+          <pre data-src="../examples/anon-function.listing"></pre>
         </div>
       </div>
     </div>

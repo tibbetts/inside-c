@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Secret Life of C++: Exceptions</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/inside-c.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://innocuous.org">innocuous.org</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="./">The Secret Life of C++</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Outline <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="inside-c.html">The Not So Secret Life of C</a></li>
+                <li class="divider"></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="mangling.html">Symbol Mangling</a></li>
+                <li><a href="objects.html">Objects</a></li>
+                <li><a href="rtti.html">Runtime Time Type Information and Casting</a></li>
+                <li class="divider"></li>
+                <li><a href="virtual-inheritance.html">Virtual Inheritance Review</a></li>
+                <li><a href="initializing-globals.html">Initializing Global Objects</a></li>
+                <li><a href="exceptions.html">Exceptions</a></li>
+                <li class="divider"></li>
+                <li><a href="sugar.html">Syntactic Sugar</a>
+                <li><a href="templates.html">Templates</a>
+                <li><a href="closures.html">Anonymous Functions, Captures</a>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+    <h1>The Secret Life of C++: Exceptions</h1>
+
+    Exceptions are wonderful things. They let you report error
+    conditions in vaguely correct ways. But C++ exceptions have to
+    live in a highly hostile environment. No virtual machine to coddle
+    them, they have to leap over large blocks of legacy C code
+    unharmed. TODO: More flavortext.
+
+    <p>
+
+    For more detail about exception handling, check out <a
+    href="http://llvm.org/docs/ExceptionHandling.html"></a>.
+
+    <h2>How Exceptions Work</h2>
+
+    Exceptions are basically a non-local-goto. They allow a program to
+    transfer control up the stack, in cases when the code at the
+    bottom of the stack doesn't know what else to do. They are even
+    more flexible then this becuase there is a registry system, so
+    that an exception is thrown up the stack until it hits the first
+    stack frame where some expressed interest in dealing with it (ie,
+    a catch () handler).
+    <p>
+    But this is C++, and nothing is easy. So on our way up the stack,
+    it is important that we properly destroy our stack frames. In C,
+    we could just ignore them, becuase there is no such thing as a
+    destructor. Of course, this simplicity makes it very hard to make
+    C programs that properly handle non-local gotos. But we are
+    talking about C++ and complexity.
+    <p>
+    So the basic way in which we handle exceptions is to walk up the
+    stack, calling the cleanup code as we go, until we find someone
+    who wants to handle our exception.
+    <p>
+    Exceptions are also objects, and the fact that they can use
+    inheritance is important. They have an object lifecycle, they get
+    created and destroyed. We will look at this in more detail.
+
+    <h2>Hello World-ish example.</h2>
+
+    A Hello Worldish example of exceptions:
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#hello-exceptions-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#hello-exceptions-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#hello-exceptions-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#hello-exceptions-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#hello-exceptions-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="hello-exceptions-cpp">
+          <pre data-src="../examples/hello-exceptions.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-exceptions-clang-s">
+          <pre data-src="../examples/hello-exceptions-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-exceptions-ll">
+          <pre data-src="../examples/hello-exceptions.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-exceptions-gcc-s">
+          <pre data-src="../examples/hello-exceptions-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-exceptions-listing">
+          <pre data-src="../examples/hello-exceptions.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <p>
+    Time for our good old list of symbols:
+    <dl>
+    <dt>_ZNSaIcEC1E<dd>std::allocator&lt;char&gt;::allocator
+    <dt>_ZNSsC1EPKcRKSaIcE<dd>string(const char *)
+    <dt>_ZNSsD1Ev<dd>~string()
+
+    <dt>__cxa_allocate_exception<dd>Allocate memory for an exception.
+    Generally on the heap. Has access to a last-resort piece of memory
+    for this purpose, so we can throw out of memory exceptions.
+
+    <dt>__cxa_throw<dd>External interface to throw in the C++ support
+    library. Takes three arguments: an exception object, a typeinfo
+    for that object, and a pointer to the destructor to call when we
+    are done with that object.
+
+    <dt>_Unwind_RaiseException<dd>Function called by __cxa_throw.
+
+    <dt>_Unwind_Resume<dd>Resume the unwind process, called at the end
+    of cleanup code that didn't return to the normal thread of
+    execution (ie, not a catch).
+
+    <dt>__cxa_begin_catch<dd>Keeps track of which exceptions are being
+    caught in which order, pushes this exceptoin on the stack of
+    exceptions that are being handled.
+
+    <dt>__cxa_end_catch<dd>Take the exception we are processing off
+    the stack and free it. When it returns, we should be in our normal
+    execution thread.
+
+    </dl>
+
+    <h2>Unwinding the Stack</h2>
+
+    How does unwinding the stack really work? It happens in two passes.
+    <p>
+    On the first pass (Phase One), we walk up the stack until we find
+    an exception handler that wants to handle our exception. it is
+    even possible to find a handler up the stack that tells us to
+    ignore the exception. I'm told this functionality is used in
+    Common Lisp implementations.
+    <p>
+    The second pass (Phase Two) walks up the stack, executing the
+    cleanup code, until we get to the frame which is going to do the
+    catch.
+    <p>
+    There are two specific methods:
+
+    <h3>SjLj stack unwinding</h3>
+
+    In SjLj (Setjmp, Longjmp) stack unwinding, we do a setjmp-ish call
+    each time we enter a function. As we go up the stack, we just
+    longjmp to each setjmp point in succession.
+
+    <p>
+    An example of SjLj exceptions:
+    <p>
+      TODO: These aren't actually building for some reason. Maybe on G++?
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#hello-sjlj-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#hello-sjlj-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#hello-sjlj-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#hello-sjlj-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#hello-sjlj-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="hello-sjlj-cpp">
+          <pre data-src="../examples/hello-exceptions.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-sjlj-clang-s">
+          <pre data-src="../examples/hello-exceptions-sjlj-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-sjlj-ll">
+          <pre data-src="../examples/hello-exceptions-sjlj.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-sjlj-gcc-s">
+          <pre data-src="../examples/hello-exceptions-sjlj-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="hello-sjlj-listing">
+          <pre data-src="../examples/hello-exceptions-sjlj.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+
+    <h3>Dwarf2 stack unwinding</h3>
+
+    In Dwarf2 stack unwinding we don't have to do any work as long as
+    there are no exceptions, but complexity is increased. We create a
+    symbol table similar to debugging symbols that lets us find out
+    the right places to walk up the stack to.
+
+    <h2>Forced Unwind versus Regular</h2>
+
+    There is the concept of a Forced unwind of the stack. A Forced
+    unwind is not caused by an exception being thrown. A forced unwind
+    is when the exception handlers on the call stack aren't allowed to
+    catch an exception, and some other code takes care of knowing when
+    to stop. Two examples of forced unwind are longjmp() and
+    pthread_cancel().
+
+    <h2>Rethrowing</h2>
+
+    An example of rethrowing a caught exception:
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#rethrow-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#rethrow-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#rethrow-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#rethrow-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#rethrow-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="rethrow-cpp">
+          <pre data-src="../examples/rethrow.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rethrow-clang-s">
+          <pre data-src="../examples/rethrow-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rethrow-ll">
+          <pre data-src="../examples/rethrow.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rethrow-gcc-s">
+          <pre data-src="../examples/rethrow-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="rethrow-listing">
+          <pre data-src="../examples/rethrow.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Catching and Throwing a Different Exception</h2>
+
+    See the above example. Pretty straightforward. unless we want to
+    throw and catch an exception <i>while</i> handling an exception.
+
+    <h2>throw() specification on a function</h2>
+
+    TODO: There is a new syntax for this, and throw specifications are deprecated.
+    <p>
+    The throw() specification will cause the unwind Phase One to fail
+    with unexepected exception.
+
+    <h2>Passing through code that doesn't know about exceptions</h2>
+
+    THis works out, partly because code that doesn't know about
+    exceptions can't have destructors to be called. More succinctly,
+    longjmp just works in native C code, stack frames can just be
+    discarded.
+
+    <footer role="contentinfo">
+      <div class="container">
+        <p>Developed for SIPB IAP 2015 by <a href="http://innocuous.org">Richard Tibbetts</a>.</p>
+      </div>
+    </footer>
+
+
+
+<a href="https://github.com/tibbetts/inside-c"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>

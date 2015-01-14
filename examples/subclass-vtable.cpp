@@ -14,12 +14,18 @@ class onefieldSV_subclass : public onefieldSV {
     virtual void setField(int f);
 };
 
+void setFieldToValue(onefieldSV f) {
+  f.setField(33);
+}
+
 int subclassVtable(int argc, const char **argv) {
     onefieldSV of;
     onefieldSV_subclass ofs;
 
     of.setField(13);
     ofs.setField(17);
+
+    setFieldToValue(ofs);
 
     onefieldSV *ofp = new onefieldSV_subclass;
 

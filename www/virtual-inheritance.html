@@ -66,41 +66,100 @@
     <div class="container">
     <h1>The Secret Life of C++: Virtual Inheritance</h1>
 
-    <p>
-      C++ objects in mdoern runtimes generally know their types, and can
-      use this for a little bit of introspection and for checking for
-      safe casts.
-    </p>
-    <h2>RTTI</h2>
-    First, a basic struct with no constructor:
-    <div role="tabpanel">
+    <h2>Dreaded Diamond Problem</h2>
 
+    This is when we have a base class, a pair of derived classes, and
+    we want a class that inherits from both derrived classes.
+
+    <h2>Virtual Base Classes in Memory</h2>
+
+    Classes with a virtual base will have an entry in their VTable
+    indicating the offset at which that class can be found. Virtual
+    functions accessing the virtual base class will use this offset.
+    <p>
+    There will also be trampoline functions for any virtual function
+    that is not overridden, which sets the this* appropriately using
+    that offset.
+    <p>
+    An example of a simple virtual base class:
+    <a href="virtual-sub.cc">virtual-sub.cc</a>,
+    <a href="virtual-sub.s">virtual-sub.s</a>,
+    <a href="virtual-sub.listing">virtual-sub.listing</a>.
+    <p>
+    An example of the diamond problem:
+    <a href="virtual-diamond.cc">virtual-diamond.cc</a>,
+    <a href="virtual-diamond.s">virtual-diamond.s</a>,
+    <a href="virtual-diamond.listing">virtual-diamond.listing</a>.
+
+    <h2>Virtual Base Classes in the VTable</h2>
+
+    There are two things we will find the VTable: Entries for the
+    offsets, and
+
+
+    <h2>How they are constructed</h2>
+
+    When constructing a class with Virtual base classes, we need to
+    populate all the various VTable entries.
+
+    TODO: Slicing them off for passing references to base class.
+
+
+
+    <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#virtual-sub-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#virtual-sub-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#virtual-sub-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#virtual-sub-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#virtual-sub-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
+        <div role="tab-panel" class="tab-pane active" id="virtual-sub-cpp">
+          <pre data-src="../examples/virtual-sub.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="virtual-sub-clang-s">
+          <pre data-src="../examples/virtual-sub-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="virtual-sub-ll">
+          <pre data-src="../examples/virtual-sub.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="virtual-sub-gcc-s">
+          <pre data-src="../examples/virtual-sub-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="virtual-sub-listing">
+          <pre data-src="../examples/virtual-sub.listing"></pre>
+        </div>
+      </div>
+    </div>
 
-          <pre data-src="../examples/basic-struct.cpp"></pre>
-        </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#virtual-diamond-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#virtual-diamond-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#virtual-diamond-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#virtual-diamond-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#virtual-diamond-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
 
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="virtual-diamond-cpp">
+          <pre data-src="../examples/virtual-diamond.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="virtual-diamond-clang-s">
+          <pre data-src="../examples/virtual-diamond-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="virtual-diamond-ll">
+          <pre data-src="../examples/virtual-diamond.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="virtual-diamond-gcc-s">
+          <pre data-src="../examples/virtual-diamond-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="virtual-diamond-listing">
+          <pre data-src="../examples/virtual-diamond.listing"></pre>
         </div>
       </div>
     </div>

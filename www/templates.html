@@ -66,45 +66,147 @@
     <div class="container">
     <h1>The Secret Life of C++: Templates</h1>
 
-    <p>
-      C++ objects in mdoern runtimes generally know their types, and can
-      use this for a little bit of introspection and for checking for
-      safe casts.
-    </p>
-    <h2>RTTI</h2>
-    First, a basic struct with no constructor:
-    <div role="tabpanel">
 
+    Template code basically just tells the compiler to generate
+    multiple copies of the code, one for each set of arguments.
+
+    <h2>Simple template</h2>
+
+    Here is a simple template for the max function, and an instantiation of it:
+    <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#basic-struct-cpp" role="tab" data-toggle="tab">C++</a></li>
-        <li role="presentation"><a href="#basic-struct-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
-        <li role="presentation"><a href="#basic-struct-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
-        <li role="presentation"><a href="#basic-struct-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+        <li role="presentation" class="active"><a href="#template-max-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#template-max-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#template-max-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#template-max-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#template-max-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
       </ul>
 
       <div class="tab-content">
-        <div role="tab-panel" class="tab-pane active" id="basic-struct-cpp">
-
-          <pre data-src="../examples/basic-struct.cpp"></pre>
+        <div role="tab-panel" class="tab-pane active" id="template-max-cpp">
+          <pre data-src="../examples/template-max.cpp"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-clang-s">
-
-          <pre data-src="../examples/basic-struct-clang.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="template-max-clang-s">
+          <pre data-src="../examples/template-max-clang.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-ll">
-          <pre data-src="../examples/basic-struct.ll"></pre>
+        <div role="tab-panel" class="tab-pane" id="template-max-ll">
+          <pre data-src="../examples/template-max.ll"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-gcc-s">
-          <pre data-src="../examples/basic-struct-gcc.s"></pre>
+        <div role="tab-panel" class="tab-pane" id="template-max-gcc-s">
+          <pre data-src="../examples/template-max-gcc.s"></pre>
         </div>
-        <div role="tab-panel" class="tab-pane" id="basic-struct-listing">
-          <pre data-src="../examples/basic-struct.listing"></pre>
+        <div role="tab-panel" class="tab-pane" id="template-max-listing">
+          <pre data-src="../examples/template-max.listing"></pre>
         </div>
       </div>
     </div>
 
+    Symbol list:
+    <dl>
+
+    <dt>_Z3maxIiET_S0_S0_<dd> max&lt;int&gt; instantiation.
+    <dt>_Z3maxIdET_S0_S0_<dd> max&lt;double&gt; instantiation.
+    <dt>_Z3maxI9my_structET_S1_S1_<dd> max&lt;my_struct&gt; instantiation.
+    <dt>_Z3maxIbET_S0_S0_<dd> max over bool.
+    </dl>
+
+    <h2>Specialization</h2>
+
+    Template specialization is just a clarification to the compiler.
+    Of course, if you instantiate a specialization of a template, you
+    get the specialized code.
+
+    <h2>Templated Class Methods</h2>
+
+    Lets look at how templated class methods work:
+
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#templated-method-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#templated-method-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#templated-method-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#templated-method-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#templated-method-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="templated-method-cpp">
+          <pre data-src="../examples/templated-method.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="templated-method-clang-s">
+          <pre data-src="../examples/templated-method-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="templated-method-ll">
+          <pre data-src="../examples/templated-method.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="templated-method-gcc-s">
+          <pre data-src="../examples/templated-method-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="templated-method-listing">
+          <pre data-src="../examples/templated-method.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <p>
+
+    Pretty straight forward. You end up with a mangled symbol that
+    includes both types, something like:
+    <dl>
+    <dt>_ZN9my_structIdE14set_field_fromIiEEvT_<dd>
+    my_struct&lt;double&gt;::set_field_from&lt;int&gt;(void)
+    </dl>
+
+    And of course there is no way to have a templated virtual method,
+    which is mildly annoying but somewhat understandable.
+
+
+    <h2>Recursive Templating</h2>
+
+    So templating is just pattern matching. We can use this to do
+    strange tricks. The standard trick is computing Fibonacci numbers
+    at compile time:
+    <div role="tabpanel">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#fibonacci-cpp" role="tab" data-toggle="tab">C++</a></li>
+        <li role="presentation"><a href="#fibonacci-clang-s" role="tab" data-toggle="tab">clang Assembly</a></li>
+        <li role="presentation"><a href="#fibonacci-ll" role="tab" data-toggle="tab">LLVM bitcode</a></li>
+        <li role="presentation"><a href="#fibonacci-gcc-s" role="tab" data-toggle="tab">gcc Assembly</a></li>
+        <li role="presentation"><a href="#fibonacci-listing" role="tab" data-toggle="tab">gcc Listing</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tab-panel" class="tab-pane active" id="fibonacci-cpp">
+          <pre data-src="../examples/fibonacci.cpp"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="fibonacci-clang-s">
+          <pre data-src="../examples/fibonacci-clang.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="fibonacci-ll">
+          <pre data-src="../examples/fibonacci.ll"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="fibonacci-gcc-s">
+          <pre data-src="../examples/fibonacci-gcc.s"></pre>
+        </div>
+        <div role="tab-panel" class="tab-pane" id="fibonacci-listing">
+          <pre data-src="../examples/fibonacci.listing"></pre>
+        </div>
+      </div>
+    </div>
+
+    <p>
+    As we can see from this example, the computation is done at
+    compile time, and the result (2584) is placed in the binary
+    directly.
+
+    <p>
+
+      TODO: Exceeding the template depth.
+      <p>
+      TODO: Pointer to modern template metaprogramming link.
 
     <footer role="contentinfo">
       <div class="container">

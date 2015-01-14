@@ -14,58 +14,74 @@ target triple = "x86_64-apple-macosx10.10.0"
 @_ZTS19onefieldSV_subclass = constant [22 x i8] c"19onefieldSV_subclass\00"
 @_ZTI19onefieldSV_subclass = constant { i8*, i8*, i8* } { i8* bitcast (i8** getelementptr inbounds (i8** @_ZTVN10__cxxabiv120__si_class_type_infoE, i64 2) to i8*), i8* getelementptr inbounds ([22 x i8]* @_ZTS19onefieldSV_subclass, i32 0, i32 0), i8* bitcast ({ i8*, i8* }* @_ZTI10onefieldSV to i8*) }
 
-; Function Attrs: noinline ssp uwtable
-define i32 @_Z14subclassVtableiPPKc(i32 %argc, i8** nocapture readnone %argv) #0 {
-  %of = alloca %class.onefieldSV, align 8
-  %ofs = alloca %class.onefieldSV_subclass, align 8
-  call void @_ZN10onefieldSVC1Ev(%class.onefieldSV* %of) #5
-  call void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* %ofs) #5
-  call void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* %of, i32 13)
-  call void @_ZN19onefieldSV_subclass8setFieldEi(%class.onefieldSV_subclass* %ofs, i32 17)
-  %1 = tail call noalias i8* @_Znwm(i64 16) #6
-  %2 = bitcast i8* %1 to %class.onefieldSV_subclass*
-  tail call void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* %2) #5
-  %3 = bitcast i8* %1 to %class.onefieldSV*
-  %4 = bitcast i8* %1 to void (%class.onefieldSV*, i32)***
-  %5 = load void (%class.onefieldSV*, i32)*** %4, align 8, !tbaa !1
-  %6 = load void (%class.onefieldSV*, i32)** %5, align 8
-  tail call void %6(%class.onefieldSV* %3, i32 27)
-  %7 = bitcast i8* %1 to i32 (%class.onefieldSV*)***
-  %8 = load i32 (%class.onefieldSV*)*** %7, align 8, !tbaa !1
-  %9 = getelementptr inbounds i32 (%class.onefieldSV*)** %8, i64 1
-  %10 = load i32 (%class.onefieldSV*)** %9, align 8
-  %11 = tail call i32 %10(%class.onefieldSV* %3)
-  tail call void @_ZdlPv(i8* %1) #7
-  %12 = call i32 @_ZNK10onefieldSV8getFieldEv(%class.onefieldSV* %of)
-  %13 = add nsw i32 %12, %11
-  ret i32 %13
+; Function Attrs: noinline nounwind ssp uwtable
+define void @_Z15setFieldToValue10onefieldSV(%class.onefieldSV* nocapture %f) #0 {
+  tail call void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* %f, i32 33)
+  ret void
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define linkonce_odr void @_ZN10onefieldSVC1Ev(%class.onefieldSV* nocapture %this) unnamed_addr #1 align 2 {
+define void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* nocapture %this, i32 %f) unnamed_addr #0 align 2 {
+  %1 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 1
+  store i32 %f, i32* %1, align 4, !tbaa !1
+  ret void
+}
+
+; Function Attrs: noinline ssp uwtable
+define i32 @_Z14subclassVtableiPPKc(i32 %argc, i8** nocapture readnone %argv) #1 {
+  %of = alloca %class.onefieldSV, align 8
+  %ofs = alloca %class.onefieldSV, align 8
+  %tmpcast = bitcast %class.onefieldSV* %ofs to %class.onefieldSV_subclass*
+  %1 = alloca %class.onefieldSV, align 8
+  call void @_ZN10onefieldSVC1Ev(%class.onefieldSV* %of) #5
+  call void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* %tmpcast) #5
+  call void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* %of, i32 13)
+  call void @_ZN19onefieldSV_subclass8setFieldEi(%class.onefieldSV_subclass* %tmpcast, i32 17)
+  call void @_ZN10onefieldSVC1ERKS_(%class.onefieldSV* %1, %class.onefieldSV* %ofs) #5
+  call void @_Z15setFieldToValue10onefieldSV(%class.onefieldSV* %1)
+  %2 = tail call noalias i8* @_Znwm(i64 16) #6
+  %3 = bitcast i8* %2 to %class.onefieldSV_subclass*
+  tail call void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* %3) #5
+  %4 = bitcast i8* %2 to %class.onefieldSV*
+  %5 = bitcast i8* %2 to void (%class.onefieldSV*, i32)***
+  %6 = load void (%class.onefieldSV*, i32)*** %5, align 8, !tbaa !6
+  %7 = load void (%class.onefieldSV*, i32)** %6, align 8
+  tail call void %7(%class.onefieldSV* %4, i32 27)
+  %8 = bitcast i8* %2 to i32 (%class.onefieldSV*)***
+  %9 = load i32 (%class.onefieldSV*)*** %8, align 8, !tbaa !6
+  %10 = getelementptr inbounds i32 (%class.onefieldSV*)** %9, i64 1
+  %11 = load i32 (%class.onefieldSV*)** %10, align 8
+  %12 = tail call i32 %11(%class.onefieldSV* %4)
+  tail call void @_ZdlPv(i8* %2) #7
+  %13 = call i32 @_ZNK10onefieldSV8getFieldEv(%class.onefieldSV* %of)
+  %14 = add nsw i32 %13, %12
+  ret i32 %14
+}
+
+; Function Attrs: noinline nounwind ssp uwtable
+define linkonce_odr void @_ZN10onefieldSVC1Ev(%class.onefieldSV* nocapture %this) unnamed_addr #0 align 2 {
   tail call void @_ZN10onefieldSVC2Ev(%class.onefieldSV* %this) #5
   ret void
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define linkonce_odr void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* nocapture %this) unnamed_addr #1 align 2 {
+define linkonce_odr void @_ZN19onefieldSV_subclassC1Ev(%class.onefieldSV_subclass* nocapture %this) unnamed_addr #0 align 2 {
   tail call void @_ZN19onefieldSV_subclassC2Ev(%class.onefieldSV_subclass* %this) #5
   ret void
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* nocapture %this, i32 %f) unnamed_addr #1 align 2 {
-  %1 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 1
-  store i32 %f, i32* %1, align 4, !tbaa !4
-  ret void
-}
-
-; Function Attrs: noinline nounwind ssp uwtable
-define void @_ZN19onefieldSV_subclass8setFieldEi(%class.onefieldSV_subclass* nocapture %this, i32 %f) unnamed_addr #1 align 2 {
+define void @_ZN19onefieldSV_subclass8setFieldEi(%class.onefieldSV_subclass* nocapture %this, i32 %f) unnamed_addr #0 align 2 {
   %1 = bitcast %class.onefieldSV_subclass* %this to %class.onefieldSV*
   tail call void @_ZN10onefieldSV8setFieldEi(%class.onefieldSV* %1, i32 %f)
   %2 = getelementptr inbounds %class.onefieldSV_subclass* %this, i64 0, i32 1
   store i32 %f, i32* %2, align 4, !tbaa !8
+  ret void
+}
+
+; Function Attrs: noinline nounwind ssp uwtable
+define linkonce_odr void @_ZN10onefieldSVC1ERKS_(%class.onefieldSV* nocapture %this, %class.onefieldSV* nocapture readonly) unnamed_addr #0 align 2 {
+  tail call void @_ZN10onefieldSVC2ERKS_(%class.onefieldSV* %this, %class.onefieldSV* %0) #5
   ret void
 }
 
@@ -78,28 +94,39 @@ declare void @_ZdlPv(i8*) #3
 ; Function Attrs: noinline nounwind readonly ssp uwtable
 define i32 @_ZNK10onefieldSV8getFieldEv(%class.onefieldSV* nocapture readonly %this) unnamed_addr #4 align 2 {
   %1 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 1
-  %2 = load i32* %1, align 4, !tbaa !4
+  %2 = load i32* %1, align 4, !tbaa !1
   ret i32 %2
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define linkonce_odr void @_ZN19onefieldSV_subclassC2Ev(%class.onefieldSV_subclass* nocapture %this) unnamed_addr #1 align 2 {
-  %1 = bitcast %class.onefieldSV_subclass* %this to %class.onefieldSV*
-  tail call void @_ZN10onefieldSVC2Ev(%class.onefieldSV* %1) #5
-  %2 = bitcast %class.onefieldSV_subclass* %this to i8***
-  store i8** getelementptr inbounds ([4 x i8*]* @_ZTV19onefieldSV_subclass, i64 0, i64 2), i8*** %2, align 8, !tbaa !1
+define linkonce_odr void @_ZN10onefieldSVC2ERKS_(%class.onefieldSV* nocapture %this, %class.onefieldSV* nocapture readonly) unnamed_addr #0 align 2 {
+  %2 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 0
+  store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV10onefieldSV, i64 0, i64 2) to i32 (...)**), i32 (...)*** %2, align 8, !tbaa !6
+  %3 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 1
+  %4 = getelementptr inbounds %class.onefieldSV* %0, i64 0, i32 1
+  %5 = load i32* %4, align 4, !tbaa !1
+  store i32 %5, i32* %3, align 4, !tbaa !1
   ret void
 }
 
 ; Function Attrs: noinline nounwind ssp uwtable
-define linkonce_odr void @_ZN10onefieldSVC2Ev(%class.onefieldSV* nocapture %this) unnamed_addr #1 align 2 {
-  %1 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 0
-  store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV10onefieldSV, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !1
+define linkonce_odr void @_ZN19onefieldSV_subclassC2Ev(%class.onefieldSV_subclass* nocapture %this) unnamed_addr #0 align 2 {
+  %1 = bitcast %class.onefieldSV_subclass* %this to %class.onefieldSV*
+  tail call void @_ZN10onefieldSVC2Ev(%class.onefieldSV* %1) #5
+  %2 = bitcast %class.onefieldSV_subclass* %this to i8***
+  store i8** getelementptr inbounds ([4 x i8*]* @_ZTV19onefieldSV_subclass, i64 0, i64 2), i8*** %2, align 8, !tbaa !6
   ret void
 }
 
-attributes #0 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+; Function Attrs: noinline nounwind ssp uwtable
+define linkonce_odr void @_ZN10onefieldSVC2Ev(%class.onefieldSV* nocapture %this) unnamed_addr #0 align 2 {
+  %1 = getelementptr inbounds %class.onefieldSV* %this, i64 0, i32 0
+  store i32 (...)** bitcast (i8** getelementptr inbounds ([4 x i8*]* @_ZTV10onefieldSV, i64 0, i64 2) to i32 (...)**), i32 (...)*** %1, align 8, !tbaa !6
+  ret void
+}
+
+attributes #0 = { noinline nounwind ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #2 = { nobuiltin "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #3 = { nobuiltin nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #4 = { noinline nounwind readonly ssp uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
@@ -110,12 +137,12 @@ attributes #7 = { builtin nounwind }
 !llvm.ident = !{!0}
 
 !0 = metadata !{metadata !"Apple LLVM version 6.0 (clang-600.0.56) (based on LLVM 3.5svn)"}
-!1 = metadata !{metadata !2, metadata !2, i64 0}
-!2 = metadata !{metadata !"vtable pointer", metadata !3, i64 0}
-!3 = metadata !{metadata !"Simple C/C++ TBAA"}
-!4 = metadata !{metadata !5, metadata !6, i64 8}
-!5 = metadata !{metadata !"_ZTS10onefieldSV", metadata !6, i64 8}
-!6 = metadata !{metadata !"int", metadata !7, i64 0}
-!7 = metadata !{metadata !"omnipotent char", metadata !3, i64 0}
-!8 = metadata !{metadata !9, metadata !6, i64 12}
-!9 = metadata !{metadata !"_ZTS19onefieldSV_subclass", metadata !6, i64 12}
+!1 = metadata !{metadata !2, metadata !3, i64 8}
+!2 = metadata !{metadata !"_ZTS10onefieldSV", metadata !3, i64 8}
+!3 = metadata !{metadata !"int", metadata !4, i64 0}
+!4 = metadata !{metadata !"omnipotent char", metadata !5, i64 0}
+!5 = metadata !{metadata !"Simple C/C++ TBAA"}
+!6 = metadata !{metadata !7, metadata !7, i64 0}
+!7 = metadata !{metadata !"vtable pointer", metadata !5, i64 0}
+!8 = metadata !{metadata !9, metadata !3, i64 12}
+!9 = metadata !{metadata !"_ZTS19onefieldSV_subclass", metadata !3, i64 12}

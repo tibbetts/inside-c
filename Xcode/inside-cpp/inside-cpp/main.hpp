@@ -28,4 +28,6 @@ int virtualSub(int argc, const char** argv);
 int vtableNull(int argc, const char** argv);
 int rtti(int argc, const char** argv);
 
+void anonFunction();
+
 #endif

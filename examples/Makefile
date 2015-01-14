@@ -1,4 +1,9 @@
-NAMES=reference object virtual-method basic-constructor basic-method basic-struct basic-vtable call-by-value-error complex-multiple dynamic-cast object-arg object-ret simple-multiple subclass-vtable virtual-sub vtable-null mangling extern-c rtti
+NAMES=reference object virtual-method basic-constructor basic-method	\
+basic-struct basic-vtable call-by-value-error complex-multiple		\
+dynamic-cast object-arg object-ret simple-multiple subclass-vtable	\
+virtual-sub vtable-null mangling extern-c rtti fibonacci global		\
+hello-exceptions rethrow template-max templated-method	\
+throw-nonexception virtual-diamond anon-function
 
 
 # Build different things on linux (where we assume we have gcc and gnu ld) and mac (where we have clang)
@@ -16,6 +21,8 @@ LLVM=$(addsuffix .ll, $(NAMES))
 ASSEMBLIES=$(addsuffix -clang.s, $(NAMES))
 TARGETS=$(LLVM) $(ASSEMBLIES)
 
+#hello-exceptions-sjlj-clang.s hello-exceptions-sjlj.ll
+
 CFLAGS=-fno-inline -O1 -std=c++11
 # I used -fno-stackprotect in Xcode but not here for some reason.
 endif
@@ -28,11 +35,17 @@ all: $(TARGETS)
 %-clang.s: %.cpp Makefile
 	c++ $(CFLAGS) -S -o $@ $<
 
+%-sjlj-clang.s: %.cpp Makefile
+	c++ $(CFLAGS) -fsjlj-exceptions -S -o $@ $<
+
 %-gcc.s: %.cpp Makefile
 	c++ $(CFLAGS) -S -o $@ $<
 
 %.ll: %.cpp Makefile
 	c++ $(CFLAGS) -S -emit-llvm -o $@ $<
+
+%-sjlj.ll: %.cpp Makefile
+	c++ $(CFLAGS) -S -emit-llvm -fsjlj-exceptions -o $@ $<
 
 clean:
 	rm -f $(TARGETS)
