@@ -135,21 +135,18 @@
     </div>
 
     <p>
-    Time for our good old list of symbols:
-    <dl>
-    <dt>_ZNSaIcEC1E<dd>std::allocator&lt;char&gt;::allocator
-    <dt>_ZNSsC1EPKcRKSaIcE<dd>string(const char *)
-    <dt>_ZNSsD1Ev<dd>~string()
-
+      <dl>
     <dt>__cxa_allocate_exception<dd>Allocate memory for an exception.
     Generally on the heap. Has access to a last-resort piece of memory
     for this purpose, so we can throw out of memory exceptions.
-
+<p>
+        <a href="https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/libsupc%2B%2B/eh_alloc.cc#L100">eh_alloc.cc</a>
     <dt>__cxa_throw<dd>External interface to throw in the C++ support
     library. Takes three arguments: an exception object, a typeinfo
     for that object, and a pointer to the destructor to call when we
     are done with that object.
-
+        <p>
+          <a href="https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/libsupc%2B%2B/eh_throw.cc#L60">eh_throw.cc</a>
     <dt>_Unwind_RaiseException<dd>Function called by __cxa_throw.
 
     <dt>_Unwind_Resume<dd>Resume the unwind process, called at the end
@@ -159,6 +156,8 @@
     <dt>__cxa_begin_catch<dd>Keeps track of which exceptions are being
     caught in which order, pushes this exceptoin on the stack of
     exceptions that are being handled.
+        <p>
+          <a href="https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/libsupc%2B%2B/eh_catch.cc#L40">eh_catch.cc</a>
 
     <dt>__cxa_end_catch<dd>Take the exception we are processing off
     the stack and free it. When it returns, we should be in our normal
@@ -228,6 +227,11 @@
     there are no exceptions, but complexity is increased. We create a
     symbol table similar to debugging symbols that lets us find out
     the right places to walk up the stack to.
+    <ul>
+      <li><a href="http://llvm.org/docs/ExceptionHandling.html">http://llvm.org/docs/ExceptionHandling.html</a>
+      <li><a href="http://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-Core-generic/LSB-Core-generic/ehframechpt.html">DWARF4 formats</a>
+    </ul>
+
 
     <h2>Forced Unwind versus Regular</h2>
 
@@ -275,12 +279,13 @@
     See the above example. Pretty straightforward. unless we want to
     throw and catch an exception <i>while</i> handling an exception.
 
-    <h2>throw() specification on a function</h2>
+    <h2>noexcept specification on a function</h2>
 
-    TODO: There is a new syntax for this, and throw specifications are deprecated.
     <p>
-    The throw() specification will cause the unwind Phase One to fail
+    The noexcept specification will cause the unwind Phase One to fail
     with unexepected exception.
+
+    TODO: Example
 
     <h2>Passing through code that doesn't know about exceptions</h2>
 
@@ -288,6 +293,8 @@
     exceptions can't have destructors to be called. More succinctly,
     longjmp just works in native C code, stack frames can just be
     discarded.
+    <p>
+      TODO: Does it work for library code which was compiled without exceptions in dwarf unwinding?
 
     <footer role="contentinfo">
       <div class="container">

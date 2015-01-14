@@ -21,17 +21,17 @@ void setFieldToValue(onefieldP f) {
   f.setField(33);
 }
 
-void dirtyFunction(void (onefieldP::** func)(int), void (*regularFunc)(int)) {
+void dirtyFunction(void (onefieldP::** func)(int), void (**regularFunc)(onefieldP)) {
   // do nothing.
 }
 
 void polymorphicFp() {
     
     void (onefieldP::* func)(int) = &onefieldP::setField;
-    void (regularFunc)(int) = &setFieldToValue;
+    void (*regularFunc)(onefieldP) = &setFieldToValue;
 
     // Force those to be real memory locations
-    dirtyFunction(func, regularfunc);
+    dirtyFunction(&func, &regularFunc);
 
     onefieldP of;
     onefieldP_subclass ofs;
@@ -40,6 +40,7 @@ void polymorphicFp() {
     (ofs.*func)(17);
 
     setFieldToValue(ofs);
+    (*regularFunc)(ofs);
 
     onefieldP *ofp = new onefieldP_subclass;
 

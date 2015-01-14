@@ -1,7 +1,7 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.globl	captureFunction()
+	.globl	captureReference()
 	.align	4, 0x90
-captureFunction():                  ## @_Z15captureFunctionv
+captureReference():                 ## @_Z16captureReferencev
 	.cfi_startproc
 	.cfi_personality 155, ___gxx_personality_v0
 Leh_func_begin0:
@@ -26,7 +26,7 @@ Ltmp18:
 	leaq	-80(%rbp), %rbx
 	leaq	-28(%rbp), %rsi
 	movq	%rbx, %rdi
-	callq	std::__1::function<int (int, int)>::function<captureFunction()::$_0>(captureFunction()::$_0, std::__1::enable_if<(__callable<captureFunction()::$_0>::value) && (!(is_same<captureFunction()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*)
+	callq	std::__1::function<int (int, int)>::function<captureReference()::$_0>(captureReference()::$_0, std::__1::enable_if<(__callable<captureReference()::$_0>::value) && (!(is_same<captureReference()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*)
 Ltmp0:
 	movq	%rbx, %rdi
 	callq	apply(std::__1::function<int (int, int)> const&)
@@ -39,7 +39,7 @@ Ltmp1:
 	leaq	-128(%rbp), %rbx
 	leaq	-28(%rbp), %rsi
 	movq	%rbx, %rdi
-	callq	std::__1::function<int (int, int)>::function<captureFunction()::$_0>(captureFunction()::$_0, std::__1::enable_if<(__callable<captureFunction()::$_0>::value) && (!(is_same<captureFunction()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*)
+	callq	std::__1::function<int (int, int)>::function<captureReference()::$_0>(captureReference()::$_0, std::__1::enable_if<(__callable<captureReference()::$_0>::value) && (!(is_same<captureReference()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*)
 Ltmp3:
 	movq	%rbx, %rdi
 	callq	apply(std::__1::function<int (int, int)> const&)
@@ -182,7 +182,7 @@ Ltmp23:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::function<int (int, int)>::function<captureFunction()::$_0>(captureFunction()::$_0, std::__1::enable_if<(__callable<captureFunction()::$_0>::value) && (!(is_same<captureFunction()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*): ## @"_ZNSt3__18functionIFiiiEEC1IZ15captureFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"
+std::__1::function<int (int, int)>::function<captureReference()::$_0>(captureReference()::$_0, std::__1::enable_if<(__callable<captureReference()::$_0>::value) && (!(is_same<captureReference()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*): ## @"_ZNSt3__18functionIFiiiEEC1IZ16captureReferencevE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -194,7 +194,7 @@ Ltmp27:
 Ltmp28:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::function<int (int, int)>::function<captureFunction()::$_0>(captureFunction()::$_0, std::__1::enable_if<(__callable<captureFunction()::$_0>::value) && (!(is_same<captureFunction()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*) ## TAILCALL
+	jmp	std::__1::function<int (int, int)>::function<captureReference()::$_0>(captureReference()::$_0, std::__1::enable_if<(__callable<captureReference()::$_0>::value) && (!(is_same<captureReference()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*) ## TAILCALL
 	.cfi_endproc
 
 	.section	__TEXT,__textcoal_nt,coalesced,pure_instructions
@@ -715,7 +715,7 @@ LBB8_2:
 
 	.section	__TEXT,__text,regular,pure_instructions
 	.align	4, 0x90
-std::__1::function<int (int, int)>::function<captureFunction()::$_0>(captureFunction()::$_0, std::__1::enable_if<(__callable<captureFunction()::$_0>::value) && (!(is_same<captureFunction()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*): ## @"_ZNSt3__18functionIFiiiEEC2IZ15captureFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"
+std::__1::function<int (int, int)>::function<captureReference()::$_0>(captureReference()::$_0, std::__1::enable_if<(__callable<captureReference()::$_0>::value) && (!(is_same<captureReference()::$_0, std::__1::function<int (int, int)> >::value)), void>::type*): ## @"_ZNSt3__18functionIFiiiEEC2IZ16captureReferencevE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -736,13 +736,13 @@ Ltmp99:
 	testq	%rbx, %rbx
 	je	LBB9_2
 ## BB#1:
-	leaq	vtable for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>+16(%rip), %rax
+	leaq	vtable for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>+16(%rip), %rax
 	movq	%rax, (%rbx)
 	leaq	-32(%rbp), %rax
 	movq	%rax, -24(%rbp)
 	leaq	-16(%rbp), %rdi
 	leaq	-24(%rbp), %rsi
-	callq	std::__1::tuple<captureFunction()::$_0&&>::tuple(std::__1::tuple<captureFunction()::$_0&&>&&)
+	callq	std::__1::tuple<captureReference()::$_0&&>::tuple(std::__1::tuple<captureReference()::$_0&&>&&)
 	movq	-16(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, 8(%rbx)
@@ -754,7 +754,7 @@ LBB9_2:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::~__func(): ## @"_ZNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEED1Ev"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::~__func(): ## @"_ZNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEED1Ev"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -770,7 +770,7 @@ Ltmp104:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::~__func(): ## @"_ZNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEED0Ev"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::~__func(): ## @"_ZNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEED0Ev"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -786,7 +786,7 @@ Ltmp109:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::__clone() const: ## @"_ZNKSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEv"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::__clone() const: ## @"_ZNKSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEv"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -812,21 +812,21 @@ Ltmp117:
 	je	LBB12_2
 ## BB#1:
 	addq	$8, %r14
-	leaq	vtable for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>+16(%rip), %rax
+	leaq	vtable for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>+16(%rip), %rax
 	movq	%rax, (%rbx)
 	movq	%r14, -40(%rbp)
 	leaq	-56(%rbp), %rax
 	movq	%rax, -48(%rbp)
 	leaq	-24(%rbp), %rdi
 	leaq	-40(%rbp), %rsi
-	callq	std::__1::tuple<captureFunction()::$_0 const&>::tuple(std::__1::tuple<captureFunction()::$_0 const&>&&)
+	callq	std::__1::tuple<captureReference()::$_0 const&>::tuple(std::__1::tuple<captureReference()::$_0 const&>&&)
 	leaq	-32(%rbp), %rdi
 	leaq	-48(%rbp), %rsi
-	callq	std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>&&)
+	callq	std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>&&)
 	movq	-24(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, 8(%rbx)
-LBB12_2:                                ## %_ZNSt3__110unique_ptrINS_10__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS3_EEFiiiEEENS_22__allocator_destructorINS4_IS7_EEEEED1Ev.exit
+LBB12_2:                                ## %_ZNSt3__110unique_ptrINS_10__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS3_EEFiiiEEENS_22__allocator_destructorINS4_IS7_EEEEED1Ev.exit
 	movq	%rbx, %rax
 	addq	$48, %rsp
 	popq	%rbx
@@ -836,7 +836,7 @@ LBB12_2:                                ## %_ZNSt3__110unique_ptrINS_10__functio
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::__clone(std::__1::__function::__base<int (int, int)>*) const: ## @"_ZNKSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEPNS0_6__baseIS5_EE"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::__clone(std::__1::__function::__base<int (int, int)>*) const: ## @"_ZNKSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE7__cloneEPNS0_6__baseIS5_EE"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -856,16 +856,16 @@ Ltmp124:
 	je	LBB13_2
 ## BB#1:
 	addq	$8, %rdi
-	leaq	vtable for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>+16(%rip), %rax
+	leaq	vtable for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>+16(%rip), %rax
 	movq	%rax, (%rbx)
 	movq	%rdi, -32(%rbp)
 	movq	%rdi, -40(%rbp)
 	leaq	-16(%rbp), %rdi
 	leaq	-32(%rbp), %rsi
-	callq	std::__1::tuple<captureFunction()::$_0 const&>::tuple(std::__1::tuple<captureFunction()::$_0 const&>&&)
+	callq	std::__1::tuple<captureReference()::$_0 const&>::tuple(std::__1::tuple<captureReference()::$_0 const&>&&)
 	leaq	-24(%rbp), %rdi
 	leaq	-40(%rbp), %rsi
-	callq	std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>&&)
+	callq	std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>&&)
 	movq	-16(%rbp), %rax
 	movq	(%rax), %rax
 	movq	%rax, 8(%rbx)
@@ -877,7 +877,7 @@ LBB13_2:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::destroy(): ## @"_ZNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE7destroyEv"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::destroy(): ## @"_ZNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE7destroyEv"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -893,7 +893,7 @@ Ltmp129:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::destroy_deallocate(): ## @"_ZNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE18destroy_deallocateEv"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::destroy_deallocate(): ## @"_ZNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE18destroy_deallocateEv"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -909,7 +909,7 @@ Ltmp134:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::operator()(int&&, int&&): ## @"_ZNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEEclEOiS7_"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::operator()(int&&, int&&): ## @"_ZNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEEclEOiS7_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -924,11 +924,11 @@ Ltmp139:
 	movl	(%rsi), %esi
 	movl	(%rdx), %edx
 	popq	%rbp
-	jmp	captureFunction()::$_0::operator()(int, int) const ## TAILCALL
+	jmp	captureReference()::$_0::operator()(int, int) const ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::target(std::type_info const&) const: ## @"_ZNKSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE6targetERKSt9type_info"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::target(std::type_info const&) const: ## @"_ZNKSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE6targetERKSt9type_info"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -940,7 +940,7 @@ Ltmp143:
 Ltmp144:
 	.cfi_def_cfa_register %rbp
 	xorl	%eax, %eax
-	leaq	typeinfo name for captureFunction()::$_0(%rip), %rcx
+	leaq	typeinfo name for captureReference()::$_0(%rip), %rcx
 	cmpq	%rcx, 8(%rsi)
 	jne	LBB17_2
 ## BB#1:
@@ -952,7 +952,7 @@ LBB17_2:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::target_type() const: ## @"_ZNKSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEE11target_typeEv"
+std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::target_type() const: ## @"_ZNKSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEE11target_typeEv"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -963,13 +963,13 @@ Ltmp148:
 	movq	%rsp, %rbp
 Ltmp149:
 	.cfi_def_cfa_register %rbp
-	leaq	typeinfo for captureFunction()::$_0(%rip), %rax
+	leaq	typeinfo for captureReference()::$_0(%rip), %rax
 	popq	%rbp
 	retq
 	.cfi_endproc
 
 	.align	4, 0x90
-captureFunction()::$_0::operator()(int, int) const:     ## @"_ZZ15captureFunctionvENK3$_0clEii"
+captureReference()::$_0::operator()(int, int) const:    ## @"_ZZ16captureReferencevENK3$_0clEii"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -989,7 +989,7 @@ Ltmp154:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<captureFunction()::$_0 const&>::tuple(std::__1::tuple<captureFunction()::$_0 const&>&&): ## @"_ZNSt3__15tupleIJRKZ15captureFunctionvE3$_0EEC1EOS4_"
+std::__1::tuple<captureReference()::$_0 const&>::tuple(std::__1::tuple<captureReference()::$_0 const&>&&): ## @"_ZNSt3__15tupleIJRKZ16captureReferencevE3$_0EEC1EOS4_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1001,11 +1001,11 @@ Ltmp158:
 Ltmp159:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::tuple<captureFunction()::$_0 const&>::tuple(std::__1::tuple<captureFunction()::$_0 const&>&&) ## TAILCALL
+	jmp	std::__1::tuple<captureReference()::$_0 const&>::tuple(std::__1::tuple<captureReference()::$_0 const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>&&): ## @"_ZNSt3__15tupleIJRKNS_9allocatorIZ15captureFunctionvE3$_0EEEEC1EOS6_"
+std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>&&): ## @"_ZNSt3__15tupleIJRKNS_9allocatorIZ16captureReferencevE3$_0EEEEC1EOS6_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1017,11 +1017,11 @@ Ltmp163:
 Ltmp164:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>&&) ## TAILCALL
+	jmp	std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0> const&>&&): ## @"_ZNSt3__15tupleIJRKNS_9allocatorIZ15captureFunctionvE3$_0EEEEC2EOS6_"
+std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0> const&>&&): ## @"_ZNSt3__15tupleIJRKNS_9allocatorIZ16captureReferencevE3$_0EEEEC2EOS6_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1033,11 +1033,11 @@ Ltmp168:
 Ltmp169:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ15captureFunctionvE3$_0EEEEC1EOS8_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ16captureReferencevE3$_0EEEEC1EOS8_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1049,11 +1049,11 @@ Ltmp173:
 Ltmp174:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0> const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ15captureFunctionvE3$_0EEEEC2EOS8_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0> const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKNS_9allocatorIZ16captureReferencevE3$_0EEEEC2EOS8_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1071,7 +1071,7 @@ Ltmp179:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<captureFunction()::$_0 const&>::tuple(std::__1::tuple<captureFunction()::$_0 const&>&&): ## @"_ZNSt3__15tupleIJRKZ15captureFunctionvE3$_0EEC2EOS4_"
+std::__1::tuple<captureReference()::$_0 const&>::tuple(std::__1::tuple<captureReference()::$_0 const&>&&): ## @"_ZNSt3__15tupleIJRKZ16captureReferencevE3$_0EEC2EOS4_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1083,11 +1083,11 @@ Ltmp183:
 Ltmp184:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ15captureFunctionvE3$_0EEC1EOS6_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ16captureReferencevE3$_0EEC1EOS6_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1099,11 +1099,11 @@ Ltmp188:
 Ltmp189:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0 const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ15captureFunctionvE3$_0EEC2EOS6_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0 const&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJRKZ16captureReferencevE3$_0EEC2EOS6_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1121,7 +1121,7 @@ Ltmp194:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>&&): ## @"_ZNSt3__15tupleIJONS_9allocatorIZ15captureFunctionvE3$_0EEEEC1EOS5_"
+std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>&&): ## @"_ZNSt3__15tupleIJONS_9allocatorIZ16captureReferencevE3$_0EEEEC1EOS5_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1133,11 +1133,11 @@ Ltmp198:
 Ltmp199:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>&&) ## TAILCALL
+	jmp	std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureFunction()::$_0>&&>&&): ## @"_ZNSt3__15tupleIJONS_9allocatorIZ15captureFunctionvE3$_0EEEEC2EOS5_"
+std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>::tuple(std::__1::tuple<std::__1::allocator<captureReference()::$_0>&&>&&): ## @"_ZNSt3__15tupleIJONS_9allocatorIZ16captureReferencevE3$_0EEEEC2EOS5_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1149,11 +1149,11 @@ Ltmp203:
 Ltmp204:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ15captureFunctionvE3$_0EEEEC1EOS7_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ16captureReferencevE3$_0EEEEC1EOS7_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1165,11 +1165,11 @@ Ltmp208:
 Ltmp209:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureFunction()::$_0>&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ15captureFunctionvE3$_0EEEEC2EOS7_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, std::__1::allocator<captureReference()::$_0>&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJONS_9allocatorIZ16captureReferencevE3$_0EEEEC2EOS7_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1187,7 +1187,7 @@ Ltmp214:
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<captureFunction()::$_0&&>::tuple(std::__1::tuple<captureFunction()::$_0&&>&&): ## @"_ZNSt3__15tupleIJOZ15captureFunctionvE3$_0EEC1EOS3_"
+std::__1::tuple<captureReference()::$_0&&>::tuple(std::__1::tuple<captureReference()::$_0&&>&&): ## @"_ZNSt3__15tupleIJOZ16captureReferencevE3$_0EEC1EOS3_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1199,11 +1199,11 @@ Ltmp218:
 Ltmp219:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::tuple<captureFunction()::$_0&&>::tuple(std::__1::tuple<captureFunction()::$_0&&>&&) ## TAILCALL
+	jmp	std::__1::tuple<captureReference()::$_0&&>::tuple(std::__1::tuple<captureReference()::$_0&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::tuple<captureFunction()::$_0&&>::tuple(std::__1::tuple<captureFunction()::$_0&&>&&): ## @"_ZNSt3__15tupleIJOZ15captureFunctionvE3$_0EEC2EOS3_"
+std::__1::tuple<captureReference()::$_0&&>::tuple(std::__1::tuple<captureReference()::$_0&&>&&): ## @"_ZNSt3__15tupleIJOZ16captureReferencevE3$_0EEC2EOS3_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1215,11 +1215,11 @@ Ltmp223:
 Ltmp224:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ15captureFunctionvE3$_0EEC1EOS5_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ16captureReferencevE3$_0EEC1EOS5_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1231,11 +1231,11 @@ Ltmp228:
 Ltmp229:
 	.cfi_def_cfa_register %rbp
 	popq	%rbp
-	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>&&) ## TAILCALL
+	jmp	std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>&&) ## TAILCALL
 	.cfi_endproc
 
 	.align	4, 0x90
-std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureFunction()::$_0&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ15captureFunctionvE3$_0EEC2EOS5_"
+std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>::__tuple_impl(std::__1::__tuple_impl<std::__1::__tuple_indices<0ul>, captureReference()::$_0&&>&&): ## @"_ZNSt3__112__tuple_implINS_15__tuple_indicesIJLm0EEEEJOZ16captureReferencevE3$_0EEC2EOS5_"
 	.cfi_startproc
 ## BB#0:
 	pushq	%rbp
@@ -1449,24 +1449,24 @@ L_.str1:                                ## @.str1
 	.asciz	" second="
 
 	.section	__DATA,__const
-	.align	4                       ## @"_ZTVNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEEE"
-vtable for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>:
+	.align	4                       ## @"_ZTVNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEEE"
+vtable for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>:
 	.quad	0
-	.quad	typeinfo for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::~__func()
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::~__func()
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::__clone() const
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::__clone(std::__1::__function::__base<int (int, int)>*) const
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::destroy()
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::destroy_deallocate()
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::operator()(int&&, int&&)
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::target(std::type_info const&) const
-	.quad	std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>::target_type() const
+	.quad	typeinfo for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::~__func()
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::~__func()
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::__clone() const
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::__clone(std::__1::__function::__base<int (int, int)>*) const
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::destroy()
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::destroy_deallocate()
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::operator()(int&&, int&&)
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::target(std::type_info const&) const
+	.quad	std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>::target_type() const
 
 	.section	__TEXT,__const
-	.align	4                       ## @"_ZTSNSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEEE"
-typeinfo name for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>:
-	.asciz	"std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>"
+	.align	4                       ## @"_ZTSNSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEEE"
+typeinfo name for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>:
+	.asciz	"std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>"
 
 	.section	__TEXT,__const_coal,coalesced
 	.globl	typeinfo name for std::__1::__function::__base<int (int, int)> ## @_ZTSNSt3__110__function6__baseIFiiiEEE
@@ -1484,22 +1484,22 @@ typeinfo for std::__1::__function::__base<int (int, int)>:
 	.quad	typeinfo name for std::__1::__function::__base<int (int, int)>
 
 	.section	__DATA,__const
-	.align	4                       ## @"_ZTINSt3__110__function6__funcIZ15captureFunctionvE3$_0NS_9allocatorIS2_EEFiiiEEE"
-typeinfo for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>:
+	.align	4                       ## @"_ZTINSt3__110__function6__funcIZ16captureReferencevE3$_0NS_9allocatorIS2_EEFiiiEEE"
+typeinfo for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>:
 	.quad	vtable for __cxxabiv1::__si_class_type_info+16
-	.quad	typeinfo name for std::__1::__function::__func<captureFunction()::$_0, std::__1::allocator<captureFunction()::$_0>, int (int, int)>
+	.quad	typeinfo name for std::__1::__function::__func<captureReference()::$_0, std::__1::allocator<captureReference()::$_0>, int (int, int)>
 	.quad	typeinfo for std::__1::__function::__base<int (int, int)>
 
 	.section	__TEXT,__const
-	.align	4                       ## @"_ZTSZ15captureFunctionvE3$_0"
-typeinfo name for captureFunction()::$_0:
-	.asciz	"captureFunction()::$_0"
+	.align	4                       ## @"_ZTSZ16captureReferencevE3$_0"
+typeinfo name for captureReference()::$_0:
+	.asciz	"captureReference()::$_0"
 
 	.section	__DATA,__const
-	.align	3                       ## @"_ZTIZ15captureFunctionvE3$_0"
-typeinfo for captureFunction()::$_0:
+	.align	3                       ## @"_ZTIZ16captureReferencevE3$_0"
+typeinfo for captureReference()::$_0:
 	.quad	vtable for __cxxabiv1::__class_type_info+16
-	.quad	typeinfo name for captureFunction()::$_0
+	.quad	typeinfo name for captureReference()::$_0
 
 	.section	__DATA,__datacoal_nt,coalesced
 	.globl	vtable for std::__1::__function::__base<int (int, int)> ## @_ZTVNSt3__110__function6__baseIFiiiEEE

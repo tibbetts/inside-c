@@ -72,6 +72,9 @@
     </p>
     <h2>Basic Anonymous Function</h2>
 
+    Anonymous function is an object with a vtable. It is generally stack allocated. What we can see here is that our function invocation bounces through multiple entry points.
+
+
     <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
@@ -103,13 +106,20 @@
 
 
     <code>__ZNSt3__18functionIFiiiEEC1IZ12anonFunctionvE3$_0EET_PNS_9enable_ifIXaasr10__callableIS5_EE5valuentsr7is_sameIS5_S2_EE5valueEvE4typeE</code> is <code>std::__1::function&lt;int (int, int)&gt;::function&lt;anonFunction()::$_0&gt;(anonFunction()::$_0, std::__1::enable_if&lt;(__callable&lt;anonFunction()::$_0&gt;::value) && (!(is_same&lt;anonFunction()::$_0, std::__1::function&lt;int (int, int)&gt; &gt;::value)), void&gt;::type*)</code>
-<p>
-<code>__ZNSt3__18functionIFiiiEED1Ev</code> is
-<code>std::__1::function&lt;int (int, int)&gt;::~function()</code>
-<p>
-<code>__ZNKSt3__18functionIFiiiEEclEii</code> is <code>std::__1::function&lt;int (int, int)&gt;::operator()(int, int) const</code>
+    <p>
+      <code>__ZNSt3__18functionIFiiiEED1Ev</code> is
+      <code>std::__1::function&lt;int (int, int)&gt;::~function()</code>
+    <p>
+      <code>__ZNKSt3__18functionIFiiiEEclEii</code> is <code>std::__1::function&lt;int (int, int)&gt;::operator()(int, int) const</code>
+
+    <p>
+      TODO: Any way to heap allocated them? I suppose you could copy them.<br>
+      TODO: What is _clone for?
+
 
     <h2>Anonymous Function with Capture</h2>
+
+    With a capture, the object gets a field populated from the constructor.
 
     <div role="tabpanel">
       <!-- Nav tabs -->
@@ -142,6 +152,8 @@
 
     <h2>Capture by Reference on the Stack</h2>
 
+    Can also capture by reference. Also capture this, or other things through the capture specification.
+
     <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
@@ -172,6 +184,8 @@
     </div>
 
     <h2>Calling with Reference on the Stack after return</h2>
+
+    What happens to a captured reference after we return? This is why I like Rust.
 
     <div role="tabpanel">
       <!-- Nav tabs -->
